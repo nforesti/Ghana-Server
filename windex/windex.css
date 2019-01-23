@@ -1,0 +1,84 @@
+/* Windex directory listing
+------------------------- */
+
+body {
+  font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+  color: #333;
+  background: white;
+  padding-bottom: 120px;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+  color: #15E;
+}
+a:visited { color: #818;}
+a:hover { color: #038;}
+
+/* table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* hide header row */
+tr:first-child { display: none; }
+
+/* icon */
+td:nth-child(1) {
+  width: 24px;
+  vertical-align: middle;
+}
+
+td:nth-child(1) a { display: block; }
+
+/* file name */
+td:nth-child(2) {
+  width: 100%;
+}
+
+td:nth-child(2) a {
+  display: block;
+  padding: 8px 10px;
+  border-radius: 4px;
+  position: relative;
+}
+
+/* pointer for folders */
+td:nth-child(2) a[href$="/"]:after {
+  content: '';
+  display: block;
+  width: 9px;
+  height: 9px;
+  position: absolute;
+  right: 15px;
+  top: 11px;
+  transform: rotate(45deg);
+  border-style: solid;
+  border-width: 3px 3px 0 0;
+  border-color: #08F;
+}
+
+/* Parent directory */
+/* select href="/folder/" but not "folder/" */
+td:nth-child(2) a[href^="/"][href$="/"]:after {
+  border-width:  0 0 3px 3px;
+  border-color: #AAA;
+  right: 11px
+}
+
+td:nth-child(2) a:hover {
+  background: #CDF;
+}
+
+/* size */
+td:nth-child(3) {
+  color: #888;
+  font-size: 0.9rem;
+}
+

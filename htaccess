@@ -1,0 +1,59 @@
+# Windex .htaccess
+# see options at https://httpd.apache.org/docs/2.4/mod/mod_autoindex.html
+
+Options +Indexes
+
+IndexOptions FancyIndexing
+IndexOptions FoldersFirst IgnoreCase XHTML NameWidth=* HTMLTable
+IndexOptions SuppressHTMLPreamble SuppressRules SuppressDescription
+IndexOptions IconHeight=24 IconWidth=24
+IndexOptions IconsAreLinks
+
+# I disable this stuff, but you might like it
+IndexOptions SuppressLastModified SuppressColumnSorting
+
+# Do not ignore README
+IndexIgnoreReset ON
+IndexIgnore .??* *~ HEADER* RCS CVS *,v *,t *#
+# Uncomment this to hide windex/ in listing
+IndexIgnore windex
+IndexIgnore ..
+
+
+HeaderName /windex/header.html
+ReadmeName /windex/footer.html
+
+# Icons
+
+DefaultIcon /windex/icons/file.svg
+
+AddIcon /windex/icons/blank.svg       ^^BLANKICON^^
+AddIcon /windex/icons/folder.svg      ^^DIRECTORY^^
+AddIcon /windex/icons/back.svg        ..
+
+# Specific icons
+
+AddIcon /windex/icons/file.svg        README
+AddIcon /windex/icons/text.svg        .md
+AddIcon /windex/icons/script.svg      .js .json .mjs .php .sh .bash
+AddIcon /windex/icons/archive.svg     .zip .bin .tar .rar .tgz .7z
+AddIcon /windex/icons/vector.svg      .ai .svg .eps
+AddIcon /windex/icons/site.svg        .html .php .mustache .hbs .pug .jade
+AddIcon /windex/icons/stylesheet.svg  .css .scss .sass .less
+AddIcon /windex/icons/spreadsheet.svg .csv .xls .xslx .sql
+AddIcon /windex/icons/code.svg        .jar .rb .py .c
+AddIcon /windex/icons/png.svg         .png
+AddIcon /windex/icons/gif.svg         .gif
+
+# Generic icons
+
+AddIconByType (TXT,/windex/icons/text.svg) text/*
+AddIconByType (IMG,/windex/icons/image.svg) image/*
+AddIconByType (SND,/windex/icons/audio.svg) audio/*
+AddIconByType (VID,/windex/icons/video.svg) video/*
+
+# Enable viewing .html files without .html extension
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^(.*)$ $1.html
