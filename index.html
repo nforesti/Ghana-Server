@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<header>
+    <h1>Web Crawler Example</h1>
+</header>
+<body>
+    <h4>Youtube:
+        <form onsubmit="download">
+            <input id="utube_url" placeholder="youtube url"></input>
+            <button type="button" onclick="download()">Download </button>
+        </form>
+    </h4>
+
+    <div id="url_display"></div>
+    <div id="content_display"></div>
+    <video width="500" height="281" controls>
+            <source src="./myvideo.mp4" type="video/mp4"/>
+    </video>
+</body>
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+    function download() {
+        axios.get('http://localhost:3000/youtube?url='+document.getElementById("utube_url").value ).then( function(res) {
+            document.getElementById("url_display").innerHTML = res.data;
+            document.getElementById("content_display").innerHTML="<video src=\"/home/anson/Desktop/SchoolHouseGhana/myvideo.mp4\"></video>"
+       });
+    }
+</script>
+
+</html>
