@@ -50,6 +50,9 @@ app.get('/youtube*', function(req, res) {
             
             video.pipe(fs.createWriteStream('myvideo.mp4'));
         
+            
+            // Access-Control-Allow-Origin: *
+
             res.send(url);
         }
         else {

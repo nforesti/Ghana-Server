@@ -1,6 +1,13 @@
 HOW TO RUN:
+npm install (ONLY FIRST BOOT UP - SETS UP FILES AND LIBRARIES)
 nodemon Crawler2.js
 google-chrome index.html
+
+Things to download (NOT COMPREHENSIVE):
+node
+npm
+nodemon
+
 
 
 NOTES for further development:
