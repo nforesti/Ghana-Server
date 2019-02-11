@@ -3,6 +3,13 @@
 <header>
     <h1>Web Crawler Example</h1>
 </header>
+
+<script src="/socket.io/socket.io.js"></script>
+<script>
+    /*** WILL NEED TO LOCK SCOPE ***/
+    var socket = io();
+</script>
+
 <body>
     <h4>Youtube:
         <form onsubmit="download">
@@ -11,21 +18,38 @@
         </form>
     </h4>
 
+    <h4>Static sites:
+        <form onsubmit="regularDownload">
+            <input id="url" placeholder="url"/>
+            <button type="button" onclick="reg_download()">Download</button>
+        </form>
+    </h4>
+
     <div id="url_display"></div>
     <div id="content_display"></div>
     <video width="500" height="281" controls>
-            <source src="./myvideo.mp4" type="video/mp4"/>
+        <source src="http://localhost:3000/video" type="video/mp4">
     </video>
 </body>
 
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script>
+
     function download() {
         axios.get('http://localhost:3000/youtube?url='+document.getElementById("utube_url").value ).then( function(res) {
             document.getElementById("url_display").innerHTML = res.data;
             document.getElementById("content_display").innerHTML="<video src=\"/home/anson/Desktop/SchoolHouseGhana/myvideo.mp4\"></video>"
        });
     }
+
+    function reg_download() {
+        axios.get('http://localhost:3000/api/reg?url='+document.getElementById("url").value).then(function(res) {
+            console.log(res.data);
+            document.getElementById("url_display").innerHTML = res.data;
+        })
+    }
+
+
 </script>
 
 </html>
