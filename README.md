@@ -32,3 +32,7 @@ sudo /etc/init.d/apache2 <start, stop, restart>
 Running RESTful API's with Nodejs servers (useful for paths/urls + file
 management)
 https://www.youtube.com/watch?v=P4mT5Tbx_KE
+
+
+*** NOTES ***
+URL: http://schoolhouseghana:3000/

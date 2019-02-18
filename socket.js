@@ -12,6 +12,8 @@ app.get('/', function(req, res){
   res.sendFile(__dirname + '/index.html');
 });
 
+var exe;
+
 app.get('/api/reg?*', function(req, res) {
   let url = req.url.substring(req.url.indexOf('?url=')+5);
 
@@ -19,39 +21,77 @@ app.get('/api/reg?*', function(req, res) {
 
   urlExists(url, function(err, exists) {
       if ( exists) {
-          
-          //shell.exec('httrack -r1 -%i '+url);
-          //-*p3 = save all files
 
-          //shell.exec('httrack ' + url + '-O ./TESTSITES');
+        let dirName = url.substring(url.indexOf("//") +2);
 
-          res.setHeader("Access-Control-Allow-Origin", "*");
-          res.send(url);
-
-          /*** This likes to stall and take forever to download for -rN where N >= 2 ***/
-          /* N controls the depth of the mirror (aka recursive depth) */
-          shell.exec('httrack ' + url + ' -O ' + url + ' --verbose -r1 +*', 
-            (error, stdout, stderr) => {
-
-              /* SET UP SOCKET */
-              
-              console.log("Error: ", error);
-              console.log("Stdout:", stdout);
-              console.log("Stderr:", stderr);
-          })
+        httrackWrap(url, dirName);
+        res.setHeader("Access-Control-Allow-Origin", "*");
+        res.send("Queued: ", url, "dirName: ", dirName);
       }
       else {
-
-        io.sockets.emit('hi', 'everyone');
-
-          console.error('invalid url');
-          res.setHeader("Access-Control-Allow-Origin", "*");
-          res.send("invalid url");
+        console.error('invalid url');
+        res.setHeader("Access-Control-Allow-Origin", "*");
+        res.send("invalid url");
       }
   })
 })
 
+function httrackWrap(url, dirName) {
+  console.log("DIRECTORY NAME", dirName);
+  //shell.exec('httrack -r1 -%i '+url);
+  //-*p3 = save all files
+
+  //shell.exec('httrack ' + url + '-O ./TESTSITES');
+
+  /*** This likes to stall and take forever to download for -rN where N >= 2 ***/
+  /* N controls the depth of the mirror (aka recursive depth) */
+  var exe = shell.exec('httrack ' + url + ' -O SITES/' + dirName + ' --verbose -r3 +*', {async: true});
+
+  setTimeout((elem) => {
+    console.log("WAITED 5 SEC");
+    exe.kill();
+  }, 5000);
+  //exe.kill("SIGINT");
+
+  /*
+  shell.exec('httrack ' + url + ' -O ' + url + ' --verbose -r1 +*', 
+    (error, stdout, stderr) => {
+
+      // SET UP SOCKET 
+      
+      console.log("Error: ", error);
+      console.log("Stdout:", stdout);
+      console.log("Stderr:", stderr);
+  })
+  */
+}
+
+const time = new Date().getTime();
+
+function sendTime() {
+  io.emit('time', { time: new Date().getTime() });
+}
+
+// Send current time every 10 secs
+setInterval(sendTime, 3000);
+
+app.get('/index.css', function(req, res) {
+  res.sendFile(__dirname + '/index.css');
+})
+
 io.on('connection', function(socket){
+  socket.emit("welcome", { message: 'Welome!', id: socket.id });
+
+  socket.on("terminate", (data) => {
+    console.log("terminate command detected");
+    if ( exe ) {
+      console.log("TERMINATING DOWNLOAD");
+      console.log("exe: ", exe);
+      //exe.kill("SIGINT");
+      exe.kill();
+    }
+  })
+
   console.log('a user connected');
 });
 

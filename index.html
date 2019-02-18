@@ -2,15 +2,34 @@
 <html>
 <header>
     <h1>Web Crawler Example</h1>
+    <link rel="stylesheet" href="index.css" />
+    <script src="/socket.io/socket.io.js"></script>
 </header>
-
-<script src="/socket.io/socket.io.js"></script>
 <script>
     /*** WILL NEED TO LOCK SCOPE ***/
     var socket = io();
+
+/*
+    // PREVENT RELOAD MECHANIC
+    window.onbeforeunload = function() {
+        console.log("cancel reload");
+        return "Dude, are you sure you want to leave? Think of the kittens!";
+    }
+*/
+
+    socket.on("time", function(data) {
+        console.log("received");
+        console.log(data)
+    })
 </script>
 
-<body>
+<body class="body">
+    <div class="container">
+        <div class="dash uno"></div>
+        <div class="dash dos"></div>
+        <div class="dash tres"></div>
+        <div class="dash cuatro"></div>
+    </div>
     <h4>Youtube:
         <form onsubmit="download">
             <input id="utube_url" placeholder="youtube url"></input>
@@ -24,12 +43,17 @@
             <button type="button" onclick="reg_download()">Download</button>
         </form>
     </h4>
+    <button type="button" onclick="terminate()"> TERMINATE </button>
 
     <div id="url_display"></div>
     <div id="content_display"></div>
+
+    
+<!--
     <video width="500" height="281" controls>
         <source src="http://localhost:3000/video" type="video/mp4">
     </video>
+-->
 </body>
 
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
@@ -48,6 +72,12 @@
             document.getElementById("url_display").innerHTML = res.data;
         })
     }
+
+    function terminate() {
+        console.log("terminate linked");
+        socket.emit("terminate", {stop: "1"})
+    }
+
 
 
 </script>
