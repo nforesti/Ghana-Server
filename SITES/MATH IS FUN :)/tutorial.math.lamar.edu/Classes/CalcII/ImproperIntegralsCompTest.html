@@ -1,0 +1,1215 @@
+
+
+<!DOCTYPE html>
+
+<html>
+
+<!-- Mirrored from tutorial.math.lamar.edu/Classes/CalcII/ImproperIntegralsCompTest.aspx by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 27 Feb 2019 06:15:35 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=yes" /><meta http-equiv="X-UA-Compatible" content="IE=edge" />  <!-- For best MathJax performance on IE  -->
+
+  <meta name="google-site-verification" content="uLoA31CJfOhIVMJWBjCmQL8xNMmmLybZU3LRKavy9WQ" /><title>
+	Calculus II - Comparison Test for Improper Integrals
+</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="../../../www.googletagmanager.com/gtag/js1872?id=UA-331594-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-331594-1');
+  </script>
+
+  <link type="text/css" href="../../css/jquery.mmenu.all.css" rel="stylesheet" /><link type="text/css" href="../../css/jquery.dropdown.css" rel="stylesheet" /><link href="../../FA/css/fontawesome-all.min.css" rel="stylesheet" /><link type="text/css" href="../../css/notes-all.css" rel="stylesheet" /><link type="text/css" href="../../css/notes-google.css" rel="stylesheet" /><link type="text/css" href="../../css/notes-mmenu.css" rel="stylesheet" /><link type="text/css" href="../../css/notes-dropdown.css" rel="stylesheet" />
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+     TeX: { equationNumbers: { autoNumber: "AMS" } }
+    });
+  </script>
+  <script type="text/javascript" async src="../../../cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax2ba6.js?config=TeX-AMS_CHTML-full"></script>
+  <script type="text/javascript" src="../../../code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="../../js/jquery.mmenu.all.js"></script>
+  <script type="text/javascript" src="../../js/jquery.dropdown.js"></script>
+  <script type="text/javascript" src="../../js/notes-all.js"></script>  
+
+  <script>
+    (function () {
+      var cx = '001004262401526223570:11yv6vpcqvy';
+      var gcse = document.createElement('script');
+      gcse.type = 'text/javascript';
+      gcse.async = true;
+      gcse.src = '../../../cse.google.com/cse07b6.html?cx=' + cx;
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(gcse, s);
+    })();
+  </script>
+
+<meta http-equiv="keywords" name="keywords" content="improper integral, comparison test, comparison test for improper integral" /><meta http-equiv="description" name="description" content="It will not always be possible to evaluate improper integrals and yet we still need to determine if they converge or diverge (i.e. if they have a finite value or not).  So, in this section we will use the Comparison Test to determine if improper integrals converge or diverge." /></head>
+<body onload="init({Notes: 'NoteMobile;8/21/2018;true'})">
+
+  <div id="page">
+
+    <div class="header">
+      <div class="header-row">
+        <!--<a href="#menu"><span></span></a>-->
+        <div id="side-menu-icon" class="header-side-menu-icon"><a href="#menu"><span class="fas fa-bars fa-lg" aria-hidden="true" title="Main Menu - Change between topics, chapters and sections as well as a few extra pages."></span></a></div>
+        <span class="header-title"><a href="../../index.html" class="header-title-link">Paul's Online Notes</a></span>
+        <div class="header-spacer"></div>
+
+        <div id="content-top-menu" class="top-menu">
+          <button id="content-type-menu" class="top-menu-button" data-jq-dropdown="#jq-dropdown-type" title="View (Notes, Practice Problems or Assignment Problems, Show/Hide Solutions and/or Steps) Menu">
+            <span id="tab_top_menu_notes" class="top-menu-item-title">Notes</span> <span class="far fa-eye fa-lg" aria-hidden="true"></span>
+          </button>
+
+          <button id="quicknav-menu" class="top-menu-button" data-jq-dropdown="#jq-dropdown-quicknav" title="Quick Navigation (Previous/Next Sections and Problems and Full Problem List) Menu">
+            <span class="top-menu-item-title">Quick Nav</span> <span class="fas fa-exchange fa-lg" aria-hidden="true"></span>
+          </button>
+          
+          <button id="download-menu" class="top-menu-button" data-jq-dropdown="#jq-dropdown-download" title="Download pdf Menu">
+            <span class="top-menu-item-title">Download</span> <span class="far fa-download fa-lg" aria-hidden="true"></span>
+          </button>
+
+          <button id="print-menu" class="top-menu-button top-menu-button-icon-only" data-jq-dropdown="#jq-print-download" title="Print Menu">
+            <span class="far fa-print fa-lg" aria-hidden="true"></span>
+          </button>
+        </div>
+
+        <div id="header-google-search" class="header-search">
+          <gcse:search></gcse:search>
+        </div>
+        <div id="header-search-icon" title="Site Search" class="header-menu-icon"><span id="search-icon" class="fas fa-search" aria-hidden="true"></span></div>
+
+      </div>
+    </div>
+
+     <div id="jq-dropdown-type" class="jq-dropdown jq-dropdown-tip">
+      <ul class="jq-dropdown-menu">
+        
+        <li id="li_type_menu_goto" class="top-menu-nav-title">Go To</li>
+        <li id="li_type_menu_notes">
+          <span id="type_menu_notes_span" title="Viewing the Notes for the current topic." class="top-menu-current">Notes</span>
+          
+        </li>
+        <li id="li_type_menu_practice">
+          
+          
+          <a href="http://tutorial.math.lamar.edu/Problems/CalcII/ImproperIntegralsCompTest.aspx" id="type_menu_practice_link" title="Go to Practice Problems for current topic.">Practice Problems</a>
+        </li>
+        <li id="li_type_menu_asgn">
+          
+          <a href="http://tutorial.math.lamar.edu/ProblemsNS/CalcII/ImproperIntegralsCompTest.aspx" id="type_menu_asgn_link" title="Go to Assignment Problems for current topic.">Assignment Problems</a>
+        </li>
+        <li id="li_type_menu_sh" class="top-menu-nav-title">Show/Hide</li>
+        <li id="li_type_menu_show" title="Show any hidden solutions and/or steps that may be present on the page."><a href="javascript:SHPrintPage(1,0)" id="view_menu_show">Show all Solutions/Steps/<em>etc.</em></a></li>
+        <li id="li_type_menu_hide" title="Hide any visible solutions and/or steps that may be present on the page."><a href="javascript:SHPrintPage(0,0)" id="view_menu_hide">Hide all Solutions/Steps/<em>etc.</em></a></li>
+      </ul>
+    </div>
+
+    <div id="jq-dropdown-quicknav" class="jq-dropdown jq-dropdown-tip">
+      <ul class="jq-dropdown-menu">
+        <li id="li_nav_menu_sections" class="top-menu-nav-title">Sections</li>
+        <li id="li_nav_menu_prev_section"><a href="ImproperIntegrals.html" id="a_nav_menu_prev_section" class="top-menu-nav-link" title="Previous Section : Improper Integrals"><span class="top-menu-prev fas fa-chevron-left"></span> Improper Integrals</a></li>
+        <li id="li_nav_menu_next_section"><a href="ApproximatingDefIntegrals.html" id="a_nav_menu_next_section" class="top-menu-nav-link" title="Next Section : Approximating Definite Integrals"><span class="top-menu-prev-hidden fas fa-chevron-left"></span> Approximating Definite Integrals <span class="top-menu-next fas fa-chevron-right"></span></a></li>
+        <li id="li_nav_menu_chapters" class="top-menu-nav-title">Chapters</li>
+        
+        <li id="li_nav_menu_next_chapter"><a href="IntAppsIntro.html" id="a_nav_menu_next_chapter" class="top-menu-nav-link" title="Next Chapter : Applications of Integrals">Applications of Integrals <span class="top-menu-next fas fa-chevron-right"></span><span class="top-menu-next fas fa-chevron-right"></span></a></li>
+        
+        
+        
+        
+        <li id="li_nav_menu_classes" class="top-menu-nav-title">Classes</li>
+        <li>
+          
+          <a href="../Alg/Alg.html" id="nav_menu_alg_link" title="Go To Algebra Notes">Algebra</a>
+        </li>
+        <li>
+          
+          <a href="../CalcI/CalcI.html" id="nav_menu_calci_link" title="Go To Calculus I Notes">Calculus I</a>
+        </li>
+        <li>
+          <span id="nav_menu_calcii_span" title="Currently Viewing Calculus II Material" class="top-menu-current">Calculus II</span>
+          
+        </li>
+        <li>
+          
+          <a href="../CalcIII/CalcIII.html" id="nav_menu_calciii_link" title="Go To Calculus III Notes">Calculus III</a>
+        </li>
+        <li>
+          
+          <a href="../DE/DE.html" id="nav_menu_de_link" title="Go To Differential Equations Notes">Differential Equations</a>
+        </li>
+        <li id="li_nav_menu_extras" class="top-menu-nav-title">Extras</li>
+        <li>
+          
+          <a href="../../Extras/AlgebraTrigReview/AlgebraTrig.html" id="nav_menu_algtrig_link" title="Go To Algebra &amp; Trig Review">Algebra &amp; Trig Review</a>
+        </li>
+        <li>
+          
+          <a href="../../Extras/CommonErrors/CommonMathErrors.html" id="nav_menu_commonerrors_link" title="Go To Common Math Errors">Common Math Errors</a>
+        </li>
+        <li>
+          
+          <a href="../../Extras/ComplexPrimer/ComplexNumbers.html" id="nav_menu_complexnumbers_link" title="Go To Complex Numbers Primer">Complex Number Primer</a>
+        </li>
+        <li>
+          
+          <a href="../../Extras/StudyMath/HowToStudyMath.html" id="nav_menu_studymath_link" title="Go To How To Study Math">How To Study Math</a>
+        </li>
+        <li>
+          
+          <a href="../../Extras/CheatSheets_Tables.html" id="nav_menu_cheattables_link" title="Go To List of Cheat Sheets and Tables">Cheat Sheets &amp; Tables</a>
+        </li>
+        <li id="li_nav_menu_misc" class="top-menu-nav-title">Misc</li>
+        <li><a href="http://tutorial.math.lamar.edu/contact.aspx" id="nav_menu_contact" title="Contact Me!">Contact Me</a></li>
+        <li><a href="../../mathjax.html" id="nav_menu_mathjax" title="Info on MathJax and MathJax Configuration Menu">MathJax Help and Configuration</a></li>
+        <li><a href="../../mystudents.html" id="nav_menu_students" title="Go here if you are currently taking a class from me!">My Students</a></li>
+      </ul>
+    </div>
+
+    <div id="jq-dropdown-download" class="jq-dropdown jq-dropdown-anchor-right jq-dropdown-tip">
+      <ul class="jq-dropdown-menu">
+        
+        <li id="li_download_menu_notes" class="top-menu-nav-title">Notes Downloads</li>
+        <li id="li_download_menu_notes_book"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=B,2,N" id="download_menu_notes_book" data-PDF="Download - Menu$Notes - Book$Calculus II$/Downloads/CalcII/Notes/Complete.pdf">Complete Book</a></li>
+        
+        <li id="li_download_menu_notes_chapter"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=C,5,N" id="download_menu_notes_chapter" data-PDF="Download - Menu$Notes - Chapter$Calculus II - Integration Techniques$/Downloads/CalcII/Notes/IntegrationTechniques.pdf">Current Chapter</a></li>
+        <li id="li_download_menu_notes_section"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=S,286,N" id="download_menu_notes_section" data-PDF="Download - Menu$Notes - Section$Calculus II - Comparison Test for Improper Integrals$/Downloads/CalcII/Notes/CompTestImproperInt.pdf">Current Section</a></li>
+        <li id="li_download_menu_practice" class="top-menu-nav-title">Practice Problems Downloads</li>
+        
+        <li id="li_download_menu_practice_book"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=B,2,P" id="download_menu_practice_book" data-PDF="Download - Menu$Practice Problems - Book$Calculus II$/Downloads/CalcII/Practice Problems/Complete.pdf">Complete Book - Problems Only</a></li>
+        <li id="li_download_menu_solutions_book"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=B,2,S" id="download_menu_solutions_book" data-PDF="Download - Menu$Practice Problems Solutions - Book$Calculus II$/Downloads/CalcII/Practice Problems Solutions/Complete.pdf">Complete Book - Solutions</a></li>
+        <li id="li_download_menu_b_c" class="top-menu-divider"></li>
+        <li id="li_download_menu_practice_chapter"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=C,5,P" id="download_menu_practice_chapter" data-PDF="Download - Menu$Practice Problems - Chapter$Calculus II - Integration Techniques$/Downloads/CalcII/Practice Problems/IntegrationTechniques.pdf">Current Chapter - Problems Only</a></li>
+        <li id="li_download_menu_solutions_chapter"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=C,5,S" id="download_menu_solutions_chapter" data-PDF="Download - Menu$Practice Problems Solutions - Chapter$Calculus II - Integration Techniques$/Downloads/CalcII/Practice Problems Solutions/IntegrationTechniques.pdf">Current Chapter - Solutions</a></li>
+        <li id="li_download_menu_c_s" class="top-menu-divider"></li>
+        <li id="li_download_menu_practice_section"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=S,286,P" id="download_menu_practice_section" data-PDF="Download - Menu$Practice Problems - Section$Calculus II - Comparison Test for Improper Integrals$/Downloads/CalcII/Practice Problems/CompTestImproperInt.pdf">Current Section - Problems Only</a></li>
+        <li id="li_download_menu_solutions_section"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=S,286,S" id="download_menu_solutions_section" data-PDF="Download - Menu$Practice Problems Solutions - Section$Calculus II - Comparison Test for Improper Integrals$/Downloads/CalcII/Practice Problems Solutions/CompTestImproperInt.pdf">Current Section - Solutions</a></li>
+        <li id="li_download_menu_asgn" class="top-menu-nav-title">Assignment Problems Downloads</li>
+        
+        <li id="li_download_menu_asgn_book"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=B,2,A" id="download_menu_asgn_book" data-PDF="Download - Menu$Assignment Problems - Book$Calculus II$/Downloads/CalcII/Assignment Problems/Complete.pdf">Complete Book</a></li>
+        <li id="li_download_menu_asgn_chapter"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=C,5,A" id="download_menu_asgn_chapter" data-PDF="Download - Menu$Assignment Problems - Chapter$Calculus II - Integration Techniques$/Downloads/CalcII/Assignment Problems/IntegrationTechniques.pdf">Current Chapter</a></li>
+        <li id="li_download_menu_asgn_section"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=S,286,A" id="download_menu_asgn_section" data-PDF="Download - Menu$Assignment Problems - Section$Calculus II - Comparison Test for Improper Integrals$/Downloads/CalcII/Assignment Problems/CompTestImproperInt.pdf">Current Section</a></li>
+        <li id="li_download_menu_other" class="top-menu-nav-title">Other Items</li>
+        <li id="li_download_menu_urls">
+          <a href="http://tutorial.math.lamar.edu/DownloadURLs.aspx?bi=2&amp;ci=5&amp;si=286" id="download_menu_urls">Get URL's for Download Items</a>
+        </li>
+      </ul>
+    </div>
+
+    <div id="jq-print-download" class="jq-dropdown jq-dropdown-anchor-right jq-dropdown-tip">
+      <ul class="jq-dropdown-menu">
+        <li id="li_print_menu_default"><a href="javascript:SHPrintPage()" id="print_menu_default">Print Page in Current Form (Default)</a></li>
+        <li id="li_print_menu_show"><a href="javascript:SHPrintPage(1,1)" id="print_menu_show">Show all Solutions/Steps and Print Page</a></li>
+        <li id="li_print_menu_hide"><a href="javascript:SHPrintPage(0,1)" id="print_menu_hide">Hide all Solutions/Steps and Print Page</a></li>
+      </ul>
+    </div>
+
+
+
+   
+
+    <nav id="menu" class="notes-nav">
+      <ul>
+        <li><a href="../../index.html" class="mm-link">Home</a></li>
+        <li><span>Classes</span></li>
+        <li><a href="../Alg/Alg.html" class="mm-link">Algebra</a>
+          <ul>
+            <li><a href="../Alg/Preliminaries.html" class="mm-link">Preliminaries</a>
+              <ul>
+                <li><a href="../Alg/IntegerExponents.html" class="mm-link">Integer Exponents</a></li>
+                <li><a href="../Alg/RationalExponents.html" class="mm-link">Rational Exponents</a></li>
+                <li><a href="../Alg/Radicals.html" class="mm-link">Radicals</a></li>
+                <li><a href="../Alg/Polynomials.html" class="mm-link">Polynomials</a></li>
+                <li><a href="../Alg/Factoring.html" class="mm-link">Factoring Polynomials</a></li>
+                <li><a href="../Alg/RationalExpressions.html" class="mm-link">Rational Expressions</a></li>
+                <li><a href="../Alg/ComplexNumbers.html" class="mm-link">Complex Numbers</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/Solving.html" class="mm-link">Solving Equations and Inequalities</a>
+              <ul>
+                <li><a href="../Alg/SolutionSets.html" class="mm-link">Solutions and Solution Sets</a></li>
+                <li><a href="../Alg/SolveLinearEqns.html" class="mm-link">Linear Equations</a></li>
+                <li><a href="../Alg/LinearApps.html" class="mm-link">Applications of Linear Equations</a></li>
+                <li><a href="../Alg/SolveMultiVariable.html" class="mm-link">Equations With More Than One Variable</a></li>
+                <li><a href="../Alg/SolveQuadraticEqnsI.html" class="mm-link">Quadratic Equations - Part I</a></li>
+                <li><a href="../Alg/SolveQuadraticEqnsII.html" class="mm-link">Quadratic Equations - Part II</a></li>
+                <li><a href="../Alg/SolveQuadraticEqnSummary.html" class="mm-link">Quadratic Equations : A Summary</a></li>
+                <li><a href="../Alg/QuadraticApps.html" class="mm-link">Applications of Quadratic Equations</a></li>
+                <li><a href="../Alg/ReducibleToQuadratic.html" class="mm-link">Equations Reducible to Quadratic in Form</a></li>
+                <li><a href="../Alg/SolveRadicalEqns.html" class="mm-link">Equations with Radicals</a></li>
+                <li><a href="../Alg/SolveLinearInequalities.html" class="mm-link">Linear Inequalities</a></li>
+                <li><a href="../Alg/SolvePolyInequalities.html" class="mm-link">Polynomial Inequalities</a></li>
+                <li><a href="../Alg/SolveRationalInequalities.html" class="mm-link">Rational Inequalities</a></li>
+                <li><a href="../Alg/SolveAbsValueEqns.html" class="mm-link">Absolute Value Equations</a></li>
+                <li><a href="../Alg/SolveAbsValueIneq.html" class="mm-link">Absolute Value Inequalities</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/Graphing_Functions.html" class="mm-link">Graphing and Functions</a>
+              <ul>
+                <li><a href="../Alg/Graphing.html" class="mm-link">Graphing</a></li>
+                <li><a href="../Alg/Lines.html" class="mm-link">Lines</a></li>
+                <li><a href="../Alg/Circles.html" class="mm-link">Circles</a></li>
+                <li><a href="../Alg/FunctionDefn.html" class="mm-link">The Definition of a Function</a></li>
+                <li><a href="../Alg/GraphFunctions.html" class="mm-link">Graphing Functions</a></li>
+                <li><a href="../Alg/CombineFunctions.html" class="mm-link">Combining Functions</a></li>
+                <li><a href="../Alg/InverseFunctions.html" class="mm-link">Inverse Functions</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/CommonGraphs.html" class="mm-link">Common Graphs</a>
+              <ul>
+                <li><a href="../Alg/Lines_Circles_PWF.html" class="mm-link">Lines, Circles and Piecewise Functions</a></li>
+                <li><a href="../Alg/Parabolas.html" class="mm-link">Parabolas</a></li>
+                <li><a href="../Alg/Ellipses.html" class="mm-link">Ellipses</a></li>
+                <li><a href="../Alg/Hyperbolas.html" class="mm-link">Hyperbolas</a></li>
+                <li><a href="../Alg/MiscFunctions.html" class="mm-link">Miscellaneous Functions</a></li>
+                <li><a href="../Alg/Transformations.html" class="mm-link">Transformations</a></li>
+                <li><a href="../Alg/Symmetry.html" class="mm-link">Symmetry</a></li>
+                <li><a href="../Alg/GraphRationalFcns.html" class="mm-link">Rational Functions</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/PolynomialFunctions.html" class="mm-link">Polynomial Functions</a>
+              <ul>
+                <li><a href="../Alg/DividingPolynomials.html" class="mm-link">Dividing Polynomials</a></li>
+                <li><a href="../Alg/ZeroesOfPolynomials.html" class="mm-link">Zeroes/Roots of Polynomials</a></li>
+                <li><a href="../Alg/GraphingPolynomials.html" class="mm-link">Graphing Polynomials</a></li>
+                <li><a href="../Alg/FindingZeroesOfPolynomials.html" class="mm-link">Finding Zeroes of Polynomials</a></li>
+                <li><a href="../Alg/PartialFractions.html" class="mm-link">Partial Fractions</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/ExpAndLog.html" class="mm-link">Exponential and Logarithm Functions</a>
+              <ul>
+                <li><a href="../Alg/ExpFunctions.html" class="mm-link">Exponential Functions</a></li>
+                <li><a href="../Alg/LogFunctions.html" class="mm-link">Logarithm Functions</a></li>
+                <li><a href="../Alg/SolveExpEqns.html" class="mm-link">Solving Exponential Equations</a></li>
+                <li><a href="../Alg/SolveLogEqns.html" class="mm-link">Solving Logarithm Equations</a></li>
+                <li><a href="../Alg/ExpLogApplications.html" class="mm-link">Applications</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/Systems.html" class="mm-link">Systems of Equations</a>
+              <ul>
+                <li><a href="../Alg/SystemsTwoVrble.html" class="mm-link">Linear Systems with Two Variables</a></li>
+                <li><a href="../Alg/SystemsThreeVrble.html" class="mm-link">Linear Systems with Three Variables</a></li>
+                <li><a href="../Alg/AugmentedMatrix.html" class="mm-link">Augmented Matrices</a></li>
+                <li><a href="../Alg/AugmentedMatrixII.html" class="mm-link">More on the Augmented Matrix</a></li>
+                <li><a href="../Alg/NonlinearSystems.html" class="mm-link">Nonlinear Systems</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../CalcI/CalcI.html" class="mm-link">Calculus I</a>
+          <ul>
+            <li><a href="../CalcI/ReviewIntro.html" class="mm-link">Review</a>
+              <ul>
+                <li><a href="../CalcI/Functions.html" class="mm-link">Functions</a></li>
+                <li><a href="../CalcI/InverseFunctions.html" class="mm-link">Inverse Functions</a></li>
+                <li><a href="../CalcI/TrigFcns.html" class="mm-link">Trig Functions</a></li>
+                <li><a href="../CalcI/TrigEquations.html" class="mm-link">Solving Trig Equations</a></li>
+                <li><a href="../CalcI/TrigEquations_CalcI.html" class="mm-link">Trig Equations with Calculators, Part I</a></li>
+                <li><a href="../CalcI/TrigEquations_CalcII.html" class="mm-link">Trig Equations with Calculators, Part II</a></li>
+                <li><a href="../CalcI/ExpFunctions.html" class="mm-link">Exponential Functions</a></li>
+                <li><a href="../CalcI/LogFcns.html" class="mm-link">Logarithm Functions</a></li>
+                <li><a href="../CalcI/ExpLogEqns.html" class="mm-link">Exponential and Logarithm Equations</a></li>
+                <li><a href="../CalcI/CommonGraphs.html" class="mm-link">Common Graphs</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcI/limitsIntro.html" class="mm-link">Limits</a>
+              <ul>
+                <li><a href="../CalcI/Tangents_Rates.html" class="mm-link">Tangent Lines and Rates of Change</a></li>
+                <li><a href="../CalcI/TheLimit.html" class="mm-link">The Limit</a></li>
+                <li><a href="../CalcI/OneSidedLimits.html" class="mm-link">One-Sided Limits</a></li>
+                <li><a href="../CalcI/LimitsProperties.html" class="mm-link">Limit Properties</a></li>
+                <li><a href="../CalcI/ComputingLimits.html" class="mm-link">Computing Limits</a></li>
+                <li><a href="../CalcI/InfiniteLimits.html" class="mm-link">Infinite Limits</a></li>
+                <li><a href="../CalcI/LimitsAtInfinityI.html" class="mm-link">Limits At Infinity, Part I</a></li>
+                <li><a href="../CalcI/LimitsAtInfinityII.html" class="mm-link">Limits At Infinity, Part II</a></li>
+                <li><a href="../CalcI/Continuity.html" class="mm-link">Continuity</a></li>
+                <li><a href="../CalcI/DefnOfLimit.html" class="mm-link">The Definition of the Limit</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcI/DerivativeIntro.html" class="mm-link">Derivatives</a>
+              <ul>
+                <li><a href="../CalcI/DefnOfDerivative.html" class="mm-link">The Definition of the Derivative</a></li>
+                <li><a href="../CalcI/DerivativeInterp.html" class="mm-link">Interpretation of the Derivative</a></li>
+                <li><a href="../CalcI/DiffFormulas.html" class="mm-link">Differentiation Formulas</a></li>
+                <li><a href="../CalcI/ProductQuotientRule.html" class="mm-link">Product and Quotient Rule</a></li>
+                <li><a href="../CalcI/DiffTrigFcns.html" class="mm-link">Derivatives of Trig Functions</a></li>
+                <li><a href="../CalcI/DiffExpLogFcns.html" class="mm-link">Derivatives of Exponential and Logarithm Functions</a></li>
+                <li><a href="../CalcI/DiffInvTrigFcns.html" class="mm-link">Derivatives of Inverse Trig Functions</a></li>
+                <li><a href="../CalcI/DiffHyperFcns.html" class="mm-link">Derivatives of Hyperbolic Functions</a></li>
+                <li><a href="../CalcI/ChainRule.html" class="mm-link">Chain Rule</a></li>
+                <li><a href="../CalcI/ImplicitDIff.html" class="mm-link">Implicit Differentiation</a></li>
+                <li><a href="../CalcI/RelatedRates.html" class="mm-link">Related Rates</a></li>
+                <li><a href="../CalcI/HigherOrderDerivatives.html" class="mm-link">Higher Order Derivatives</a></li>
+                <li><a href="../CalcI/LogDiff.html" class="mm-link">Logarithmic Differentiation</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcI/DerivAppsIntro.html" class="mm-link">Applications of Derivatives</a>
+              <ul>
+                <li><a href="../CalcI/RateOfChange.html" class="mm-link">Rates of Change</a></li>
+                <li><a href="../CalcI/CriticalPoints.html" class="mm-link">Critical Points</a></li>
+                <li><a href="../CalcI/MinMaxValues.html" class="mm-link">Minimum and Maximum Values</a></li>
+                <li><a href="../CalcI/AbsExtrema.html" class="mm-link">Finding Absolute Extrema</a></li>
+                <li><a href="../CalcI/ShapeofGraphPtI.html" class="mm-link">The Shape of a Graph, Part I</a></li>
+                <li><a href="../CalcI/ShapeofGraphPtII.html" class="mm-link">The Shape of a Graph, Part II</a></li>
+                <li><a href="../CalcI/MeanValueTheorem.html" class="mm-link">The Mean Value Theorem</a></li>
+                <li><a href="../CalcI/Optimization.html" class="mm-link">Optimization</a></li>
+                <li><a href="../CalcI/MoreOptimization.html" class="mm-link">More Optimization Problems</a></li>
+                <li><a href="../CalcI/LHospitalsRule.html" class="mm-link">L'Hospital's Rule and Indeterminate Forms</a></li>
+                <li><a href="../CalcI/LinearApproximations.html" class="mm-link">Linear Approximations</a></li>
+                <li><a href="../CalcI/Differentials.html" class="mm-link">Differentials</a></li>
+                <li><a href="../CalcI/NewtonsMethod.html" class="mm-link">Newton's Method</a></li>
+                <li><a href="../CalcI/BusinessApps.html" class="mm-link">Business Applications</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcI/IntegralsIntro.html" class="mm-link">Integrals</a>
+              <ul>
+                <li><a href="../CalcI/IndefiniteIntegrals.html" class="mm-link">Indefinite Integrals</a></li>
+                <li><a href="../CalcI/ComputingIndefiniteIntegrals.html" class="mm-link">Computing Indefinite Integrals</a></li>
+                <li><a href="../CalcI/SubstitutionRuleIndefinite.html" class="mm-link">Substitution Rule for Indefinite Integrals</a></li>
+                <li><a href="../CalcI/SubstitutionRuleIndefinitePtII.html" class="mm-link">More Substitution Rule</a></li>
+                <li><a href="../CalcI/AreaProblem.html" class="mm-link">Area Problem</a></li>
+                <li><a href="../CalcI/DefnOfDefiniteIntegral.html" class="mm-link">Definition of the Definite Integral</a></li>
+                <li><a href="../CalcI/ComputingDefiniteIntegrals.html" class="mm-link">Computing Definite Integrals</a></li>
+                <li><a href="../CalcI/SubstitutionRuleDefinite.html" class="mm-link">Substitution Rule for Definite Integrals</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcI/IntAppsIntro.html" class="mm-link">Applications of Integrals</a>
+              <ul>
+                <li><a href="../CalcI/AvgFcnValue.html" class="mm-link">Average Function Value</a></li>
+                <li><a href="../CalcI/AreaBetweenCurves.html" class="mm-link">Area Between Curves</a></li>
+                <li><a href="../CalcI/VolumeWithRings.html" class="mm-link">Volumes of Solids of Revolution / Method of Rings</a></li>
+                <li><a href="../CalcI/VolumeWithCylinder.html" class="mm-link">Volumes of Solids of Revolution/Method of Cylinders</a></li>
+                <li><a href="../CalcI/MoreVolume.html" class="mm-link">More Volume Problems</a></li>
+                <li><a href="../CalcI/Work.html" class="mm-link">Work</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcI/ExtrasIntro.html" class="mm-link">Extras</a>
+              <ul>
+                <li><a href="../CalcI/LimitProofs.html" class="mm-link">Proof of Various Limit Properties</a></li>
+                <li><a href="../CalcI/DerivativeProofs.html" class="mm-link">Proof of Various Derivative Properties</a></li>
+                <li><a href="../CalcI/ProofTrigDeriv.html" class="mm-link">Proof of Trig Limits</a></li>
+                <li><a href="../CalcI/DerivativeAppsProofs.html" class="mm-link">Proofs of Derivative Applications Facts</a></li>
+                <li><a href="../CalcI/ProofIntProp.html" class="mm-link">Proof of Various Integral Properties </a></li>
+                <li><a href="../CalcI/Area_Volume_Formulas.html" class="mm-link">Area and Volume Formulas</a></li>
+                <li><a href="../CalcI/TypesOfInfinity.html" class="mm-link">Types of Infinity</a></li>
+                <li><a href="../CalcI/SummationNotation.html" class="mm-link">Summation Notation</a></li>
+                <li><a href="../CalcI/ConstantofIntegration.html" class="mm-link">Constant of Integration</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="CalcII.html" class="mm-link">Calculus II</a>
+          <ul>
+            <li><a href="IntTechIntro.html" class="mm-link">Integration Techniques</a>
+              <ul>
+                <li><a href="IntegrationByParts.html" class="mm-link">Integration by Parts</a></li>
+                <li><a href="IntegralsWithTrig.html" class="mm-link">Integrals Involving Trig Functions</a></li>
+                <li><a href="TrigSubstitutions.html" class="mm-link">Trig Substitutions</a></li>
+                <li><a href="PartialFractions.html" class="mm-link">Partial Fractions</a></li>
+                <li><a href="IntegralsWithRoots.html" class="mm-link">Integrals Involving Roots</a></li>
+                <li><a href="IntegralsWithQuadratics.html" class="mm-link">Integrals Involving Quadratics</a></li>
+                <li><a href="IntegrationStrategy.html" class="mm-link">Integration Strategy</a></li>
+                <li><a href="ImproperIntegrals.html" class="mm-link">Improper Integrals</a></li>
+                <li><a href="ImproperIntegralsCompTest.html" class="mm-link">Comparison Test for Improper Integrals</a></li>
+                <li><a href="ApproximatingDefIntegrals.html" class="mm-link">Approximating Definite Integrals</a></li>
+              </ul>
+            </li>
+            <li><a href="IntAppsIntro.html" class="mm-link">Applications of Integrals</a>
+              <ul>
+                <li><a href="ArcLength.html" class="mm-link">Arc Length</a></li>
+                <li><a href="SurfaceArea.html" class="mm-link">Surface Area</a></li>
+                <li><a href="CenterOfMass.html" class="mm-link">Center of Mass</a></li>
+                <li><a href="HydrostaticPressure.html" class="mm-link">Hydrostatic Pressure</a></li>
+                <li><a href="Probability.html" class="mm-link">Probability</a></li>
+              </ul>
+            </li>
+            <li><a href="ParametricIntro.html" class="mm-link">Parametric Equations and Polar Coordinates</a>
+              <ul>
+                <li><a href="ParametricEqn.html" class="mm-link">Parametric Equations and Curves</a></li>
+                <li><a href="ParaTangent.html" class="mm-link">Tangents with Parametric Equations</a></li>
+                <li><a href="ParaArea.html" class="mm-link">Area with Parametric Equations</a></li>
+                <li><a href="ParaArcLength.html" class="mm-link">Arc Length with Parametric Equations</a></li>
+                <li><a href="ParaSurfaceArea.html" class="mm-link">Surface Area with Parametric Equations</a></li>
+                <li><a href="PolarCoordinates.html" class="mm-link">Polar Coordinates</a></li>
+                <li><a href="PolarTangents.html" class="mm-link">Tangents with Polar Coordinates</a></li>
+                <li><a href="PolarArea.html" class="mm-link">Area with Polar Coordinates</a></li>
+                <li><a href="PolarArcLength.html" class="mm-link">Arc Length with Polar Coordinates</a></li>
+                <li><a href="PolarSurfaceArea.html" class="mm-link">Surface Area with Polar Coordinates</a></li>
+                <li><a href="ArcLength_SurfaceArea.html" class="mm-link">Arc Length and Surface Area Revisited</a></li>
+              </ul>
+            </li>
+            <li><a href="SeriesIntro.html" class="mm-link">Series & Sequences</a>
+              <ul>
+                <li><a href="Sequences.html" class="mm-link">Sequences</a></li>
+                <li><a href="MoreSequences.html" class="mm-link">More on Sequences</a></li>
+                <li><a href="Series_Basics.html" class="mm-link">Series - The Basics</a></li>
+                <li><a href="ConvergenceOfSeries.html" class="mm-link">Convergence/Divergence of Series</a></li>
+                <li><a href="Series_Special.html" class="mm-link">Special Series</a></li>
+                <li><a href="IntegralTest.html" class="mm-link">Integral Test</a></li>
+                <li><a href="SeriesCompTest.html" class="mm-link">Comparison Test/Limit Comparison Test</a></li>
+                <li><a href="AlternatingSeries.html" class="mm-link">Alternating Series Test</a></li>
+                <li><a href="AbsoluteConvergence.html" class="mm-link">Absolute Convergence</a></li>
+                <li><a href="RatioTest.html" class="mm-link">Ratio Test</a></li>
+                <li><a href="RootTest.html" class="mm-link">Root Test</a></li>
+                <li><a href="SeriesStrategy.html" class="mm-link">Strategy for Series</a></li>
+                <li><a href="EstimatingSeries.html" class="mm-link">Estimating the Value of a Series</a></li>
+                <li><a href="PowerSeries.html" class="mm-link">Power Series</a></li>
+                <li><a href="PowerSeriesandFunctions.html" class="mm-link">Power Series and Functions</a></li>
+                <li><a href="TaylorSeries.html" class="mm-link">Taylor Series</a></li>
+                <li><a href="TaylorSeriesApps.html" class="mm-link">Applications of Series</a></li>
+                <li><a href="BinomialSeries.html" class="mm-link">Binomial Series</a></li>
+              </ul>
+            </li>
+            <li><a href="VectorsIntro.html" class="mm-link">Vectors</a>
+              <ul>
+                <li><a href="Vectors_Basics.html" class="mm-link">Vectors - The Basics</a></li>
+                <li><a href="VectorArithmetic.html" class="mm-link">Vector Arithmetic</a></li>
+                <li><a href="DotProduct.html" class="mm-link">Dot Product</a></li>
+                <li><a href="CrossProduct.html" class="mm-link">Cross Product</a></li>
+              </ul>
+            </li>
+            <li><a href="3DSpace.html" class="mm-link">3-Dimensional Space</a>
+              <ul>
+                <li><a href="3DCoords.html" class="mm-link">The 3-D Coordinate System</a></li>
+                <li><a href="EqnsOfLines.html" class="mm-link">Equations of Lines</a></li>
+                <li><a href="EqnsOfPlanes.html" class="mm-link">Equations of Planes</a></li>
+                <li><a href="QuadricSurfaces.html" class="mm-link">Quadric Surfaces</a></li>
+                <li><a href="MultiVrbleFcns.html" class="mm-link">Functions of Several Variables</a></li>
+                <li><a href="VectorFunctions.html" class="mm-link">Vector Functions</a></li>
+                <li><a href="VectorFcnsCalculus.html" class="mm-link">Calculus with Vector Functions</a></li>
+                <li><a href="TangentNormalVectors.html" class="mm-link">Tangent, Normal and Binormal Vectors</a></li>
+                <li><a href="VectorArcLength.html" class="mm-link">Arc Length with Vector Functions</a></li>
+                <li><a href="Curvature.html" class="mm-link">Curvature</a></li>
+                <li><a href="Velocity_Acceleration.html" class="mm-link">Velocity and Acceleration</a></li>
+                <li><a href="CylindricalCoords.html" class="mm-link">Cylindrical Coordinates</a></li>
+                <li><a href="SphericalCoords.html" class="mm-link">Spherical Coordinates</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../CalcIII/CalcIII.html" class="mm-link">Calculus III</a>
+          <ul>
+            <li><a href="../CalcIII/3DSpace.html" class="mm-link">3-Dimensional Space</a>
+              <ul>
+                <li><a href="../CalcIII/3DCoords.html" class="mm-link">The 3-D Coordinate System</a></li>
+                <li><a href="../CalcIII/EqnsOfLines.html" class="mm-link">Equations of Lines</a></li>
+                <li><a href="../CalcIII/EqnsOfPlanes.html" class="mm-link">Equations of Planes</a></li>
+                <li><a href="../CalcIII/QuadricSurfaces.html" class="mm-link">Quadric Surfaces</a></li>
+                <li><a href="../CalcIII/MultiVrbleFcns.html" class="mm-link">Functions of Several Variables</a></li>
+                <li><a href="../CalcIII/VectorFunctions.html" class="mm-link">Vector Functions</a></li>
+                <li><a href="../CalcIII/VectorFcnsCalculus.html" class="mm-link">Calculus with Vector Functions</a></li>
+                <li><a href="../CalcIII/TangentNormalVectors.html" class="mm-link">Tangent, Normal and Binormal Vectors</a></li>
+                <li><a href="../CalcIII/VectorArcLength.html" class="mm-link">Arc Length with Vector Functions</a></li>
+                <li><a href="../CalcIII/Curvature.html" class="mm-link">Curvature</a></li>
+                <li><a href="../CalcIII/Velocity_Acceleration.html" class="mm-link">Velocity and Acceleration</a></li>
+                <li><a href="../CalcIII/CylindricalCoords.html" class="mm-link">Cylindrical Coordinates</a></li>
+                <li><a href="../CalcIII/SphericalCoords.html" class="mm-link">Spherical Coordinates</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/PartialDerivsIntro.html" class="mm-link">Partial Derivatives</a>
+              <ul>
+                <li><a href="../CalcIII/Limits.html" class="mm-link">Limits</a></li>
+                <li><a href="../CalcIII/PartialDerivatives.html" class="mm-link">Partial Derivatives</a></li>
+                <li><a href="../CalcIII/PartialDerivInterp.html" class="mm-link">Interpretations of Partial Derivatives</a></li>
+                <li><a href="../CalcIII/HighOrderPartialDerivs.html" class="mm-link">Higher Order Partial Derivatives</a></li>
+                <li><a href="../CalcIII/Differentials.html" class="mm-link">Differentials</a></li>
+                <li><a href="../CalcIII/ChainRule.html" class="mm-link">Chain Rule</a></li>
+                <li><a href="../CalcIII/DirectionalDeriv.html" class="mm-link">Directional Derivatives</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/PartialDerivAppsIntro.html" class="mm-link">Applications of Partial Derivatives</a>
+              <ul>
+                <li><a href="../CalcIII/TangentPlanes.html" class="mm-link">Tangent Planes and Linear Approximations</a></li>
+                <li><a href="../CalcIII/GradientVectorTangentPlane.html" class="mm-link">Gradient Vector, Tangent Planes and Normal Lines</a></li>
+                <li><a href="../CalcIII/RelativeExtrema.html" class="mm-link">Relative Minimums and Maximums</a></li>
+                <li><a href="../CalcIII/AbsoluteExtrema.html" class="mm-link">Absolute Minimums and Maximums</a></li>
+                <li><a href="../CalcIII/LagrangeMultipliers.html" class="mm-link">Lagrange Multipliers</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/MultipleIntegralsIntro.html" class="mm-link">Multiple Integrals</a>
+              <ul>
+                <li><a href="../CalcIII/DoubleIntegrals.html" class="mm-link">Double Integrals</a></li>
+                <li><a href="../CalcIII/IteratedIntegrals.html" class="mm-link">Iterated Integrals</a></li>
+                <li><a href="../CalcIII/DIGeneralRegion.html" class="mm-link">Double Integrals over General Regions</a></li>
+                <li><a href="../CalcIII/DIPolarCoords.html" class="mm-link">Double Integrals in Polar Coordinates</a></li>
+                <li><a href="../CalcIII/TripleIntegrals.html" class="mm-link">Triple Integrals</a></li>
+                <li><a href="../CalcIII/TICylindricalCoords.html" class="mm-link">Triple Integrals in Cylindrical Coordinates</a></li>
+                <li><a href="../CalcIII/TISphericalCoords.html" class="mm-link">Triple Integrals in Spherical Coordinates</a></li>
+                <li><a href="../CalcIII/ChangeOfVariables.html" class="mm-link">Change of Variables</a></li>
+                <li><a href="../CalcIII/SurfaceArea.html" class="mm-link">Surface Area</a></li>
+                <li><a href="../CalcIII/Area_Volume.html" class="mm-link">Area and Volume Revisited</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/LineIntegralsIntro.html" class="mm-link">Line Integrals</a>
+              <ul>
+                <li><a href="../CalcIII/VectorFields.html" class="mm-link">Vector Fields</a></li>
+                <li><a href="../CalcIII/LineIntegralsPtI.html" class="mm-link">Line Integrals - Part I</a></li>
+                <li><a href="../CalcIII/LineIntegralsPtII.html" class="mm-link">Line Integrals - Part II</a></li>
+                <li><a href="../CalcIII/LineIntegralsVectorFields.html" class="mm-link">Line Integrals of Vector Fields</a></li>
+                <li><a href="../CalcIII/FundThmLineIntegrals.html" class="mm-link">Fundamental Theorem for Line Integrals</a></li>
+                <li><a href="../CalcIII/ConservativeVectorField.html" class="mm-link">Conservative Vector Fields</a></li>
+                <li><a href="../CalcIII/GreensTheorem.html" class="mm-link">Green's Theorem</a></li>
+                <li><a href="../CalcIII/CurlDivergence.html" class="mm-link">Curl and Divergence</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/SurfaceIntegralsIntro.html" class="mm-link">Surface Integrals</a>
+              <ul>
+                <li><a href="../CalcIII/ParametricSurfaces.html" class="mm-link">Parametric Surfaces</a></li>
+                <li><a href="../CalcIII/SurfaceIntegrals.html" class="mm-link">Surface Integrals</a></li>
+                <li><a href="../CalcIII/SurfIntVectorField.html" class="mm-link">Surface Integrals of Vector Fields</a></li>
+                <li><a href="../CalcIII/StokesTheorem.html" class="mm-link">Stokes' Theorem</a></li>
+                <li><a href="../CalcIII/DivergenceTheorem.html" class="mm-link">Divergence Theorem</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../DE/DE.html" class="mm-link">Differential Equations</a>
+          <ul>
+            <li><a href="../DE/IntroBasic.html" class="mm-link">Basic Concepts</a>
+              <ul>
+                <li><a href="../DE/Definitions.html" class="mm-link">Definitions</a></li>
+                <li><a href="../DE/DirectionFields.html" class="mm-link">Direction Fields</a></li>
+                <li><a href="../DE/FinalThoughts.html" class="mm-link">Final Thoughts</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/IntroFirstOrder.html" class="mm-link">First Order DE's</a>
+              <ul>
+                <li><a href="../DE/Linear.html" class="mm-link">Linear Equations</a></li>
+                <li><a href="../DE/Separable.html" class="mm-link">Separable Equations</a></li>
+                <li><a href="../DE/Exact.html" class="mm-link">Exact Equations</a></li>
+                <li><a href="../DE/Bernoulli.html" class="mm-link">Bernoulli Differential Equations</a></li>
+                <li><a href="../DE/Substitutions.html" class="mm-link">Substitutions</a></li>
+                <li><a href="../DE/IoV.html" class="mm-link">Intervals of Validity</a></li>
+                <li><a href="../DE/Modeling.html" class="mm-link">Modeling with First Order DE's</a></li>
+                <li><a href="../DE/EquilibriumSolutions.html" class="mm-link">Equilibrium Solutions</a></li>
+                <li><a href="../DE/EulersMethod.html" class="mm-link">Euler's Method</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/IntroSecondOrder.html" class="mm-link">Second Order DE's</a>
+              <ul>
+                <li><a href="../DE/SecondOrderConcepts.html" class="mm-link">Basic Concepts</a></li>
+                <li><a href="../DE/RealRoots.html" class="mm-link">Real & Distinct Roots</a></li>
+                <li><a href="../DE/ComplexRoots.html" class="mm-link">Complex Roots</a></li>
+                <li><a href="../DE/RepeatedRoots.html" class="mm-link">Repeated Roots</a></li>
+                <li><a href="../DE/ReductionofOrder.html" class="mm-link">Reduction of Order</a></li>
+                <li><a href="../DE/FundamentalSetsofSolutions.html" class="mm-link">Fundamental Sets of Solutions</a></li>
+                <li><a href="../DE/Wronskian.html" class="mm-link">More on the  Wronskian</a></li>
+                <li><a href="../DE/NonhomogeneousDE.html" class="mm-link">Nonhomogeneous Differential Equations</a></li>
+                <li><a href="../DE/UndeterminedCoefficients.html" class="mm-link">Undetermined Coefficients</a></li>
+                <li><a href="../DE/VariationofParameters.html" class="mm-link">Variation of Parameters</a></li>
+                <li><a href="../DE/Vibrations.html" class="mm-link">Mechanical Vibrations</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/LaplaceIntro.html" class="mm-link">Laplace Transforms</a>
+              <ul>
+                <li><a href="../DE/LaplaceDefinition.html" class="mm-link">The Definition</a></li>
+                <li><a href="../DE/LaplaceTransforms.html" class="mm-link">Laplace Transforms</a></li>
+                <li><a href="../DE/InverseTransforms.html" class="mm-link">Inverse Laplace Transforms</a></li>
+                <li><a href="../DE/StepFunctions.html" class="mm-link">Step Functions</a></li>
+                <li><a href="../DE/IVPWithLaplace.html" class="mm-link">Solving IVP's with Laplace Transforms</a></li>
+                <li><a href="../DE/IVPWithNonConstantCoefficient.html" class="mm-link">Nonconstant Coefficient IVP's</a></li>
+                <li><a href="../DE/IVPWithStepFunction.html" class="mm-link">IVP's With Step Functions</a></li>
+                <li><a href="../DE/DiracDeltaFunction.html" class="mm-link">Dirac Delta Function</a></li>
+                <li><a href="../DE/ConvolutionIntegrals.html" class="mm-link">Convolution Integrals</a></li>
+                <li><a href="../DE/Laplace_Table.html" class="mm-link">Table Of Laplace Transforms</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/SystemsIntro.html" class="mm-link">Systems of DE's</a>
+              <ul>
+                <li><a href="../DE/LA_Systems.html" class="mm-link">Review : Systems of Equations</a></li>
+                <li><a href="../DE/LA_Matrix.html" class="mm-link">Review : Matrices & Vectors</a></li>
+                <li><a href="../DE/LA_Eigen.html" class="mm-link">Review : Eigenvalues & Eigenvectors</a></li>
+                <li><a href="../DE/SystemsDE.html" class="mm-link">Systems of Differential Equations</a></li>
+                <li><a href="../DE/SolutionsToSystems.html" class="mm-link">Solutions to Systems</a></li>
+                <li><a href="../DE/PhasePlane.html" class="mm-link">Phase Plane</a></li>
+                <li><a href="../DE/RealEigenvalues.html" class="mm-link">Real Eigenvalues</a></li>
+                <li><a href="../DE/ComplexEigenvalues.html" class="mm-link">Complex Eigenvalues</a></li>
+                <li><a href="../DE/RepeatedEigenvalues.html" class="mm-link">Repeated Eigenvalues</a></li>
+                <li><a href="../DE/NonhomogeneousSystems.html" class="mm-link">Nonhomogeneous Systems</a></li>
+                <li><a href="../DE/SystemsLaplace.html" class="mm-link">Laplace Transforms</a></li>
+                <li><a href="../DE/SystemsModeling.html" class="mm-link">Modeling</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/SeriesIntro.html" class="mm-link">Series Solutions to DE's</a>
+              <ul>
+                <li><a href="../DE/PowerSeries.html" class="mm-link">Review : Power Series</a></li>
+                <li><a href="../DE/TaylorSeries.html" class="mm-link">Review : Taylor Series</a></li>
+                <li><a href="../DE/SeriesSolutions.html" class="mm-link">Series Solutions</a></li>
+                <li><a href="../DE/EulerEquations.html" class="mm-link">Euler Equations</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/IntroHigherOrder.html" class="mm-link">Higher Order Differential Equations</a>
+              <ul>
+                <li><a href="../DE/HOBasicConcepts.html" class="mm-link">Basic Concepts for <em>n</em><sup>th</sup> Order Linear Equations</a></li>
+                <li><a href="../DE/HOHomogeneousDE.html" class="mm-link">Linear Homogeneous Differential Equations</a></li>
+                <li><a href="../DE/HOUndeterminedCoeff.html" class="mm-link">Undetermined Coefficients</a></li>
+                <li><a href="../DE/HOVariationOfParam.html" class="mm-link">Variation of Parameters</a></li>
+                <li><a href="../DE/HOLaplaceTransforms.html" class="mm-link">Laplace Transforms</a></li>
+                <li><a href="../DE/HOSystems.html" class="mm-link">Systems of Differential Equations</a></li>
+                <li><a href="../DE/HOSeries.html" class="mm-link">Series Solutions</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/IntroBVP.html" class="mm-link">Boundary Value Problems &amp; Fourier Series</a>
+              <ul>
+                <li><a href="../DE/BoundaryValueProblem.html" class="mm-link">Boundary Value Problems</a></li>
+                <li><a href="../DE/BVPEvals.html" class="mm-link">Eigenvalues and Eigenfunctions</a></li>
+                <li><a href="../DE/PeriodicOrthogonal.html" class="mm-link">Periodic Functions &amp; Orthogonal Functions</a></li>
+                <li><a href="../DE/FourierSineSeries.html" class="mm-link">Fourier Sine Series</a></li>
+                <li><a href="../DE/FourierCosineSeries.html" class="mm-link">Fourier Cosine Series</a></li>
+                <li><a href="../DE/FourierSeries.html" class="mm-link">Fourier Series</a></li>
+                <li><a href="../DE/ConvergenceFourierSeries.html" class="mm-link">Convergence of Fourier Series</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/IntroPDE.html" class="mm-link">Partial Differential Equations </a>
+              <ul>
+                <li><a href="../DE/TheHeatEquation.html" class="mm-link">The Heat Equation</a></li>
+                <li><a href="../DE/TheWaveEquation.html" class="mm-link">The Wave Equation</a></li>
+                <li><a href="../DE/PDETerminology.html" class="mm-link">Terminology</a></li>
+                <li><a href="../DE/SeparationofVariables.html" class="mm-link">Separation of Variables</a></li>
+                <li><a href="../DE/SolvingHeatEquation.html" class="mm-link">Solving the Heat Equation</a></li>
+                <li><a href="../DE/HeatEqnNonZero.html" class="mm-link">Heat Equation with Non-Zero Temperature Boundaries</a></li>
+                <li><a href="../DE/LaplacesEqn.html" class="mm-link">Laplace's Equation</a></li>
+                <li><a href="../DE/VibratingString.html" class="mm-link">Vibrating String</a></li>
+                <li><a href="../DE/PDESummary.html" class="mm-link">Summary of Separation of Variables</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><span>Extras</span></li>
+        <li><a href="../../Extras/AlgebraTrigReview/AlgebraTrig.html" class="mm-link">Algebra &amp; Trig Review</a>
+          <ul>
+            <li><a href="../../Extras/AlgebraTrigReview/AlgebraIntro.html" class="mm-link">Algebra</a>
+              <ul>
+                <li><a href="../../Extras/AlgebraTrigReview/Exponents.html" class="mm-link">Exponents </a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/AbsoluteValue.html" class="mm-link">Absolute Value</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Radicals.html" class="mm-link">Radicals</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Rationalizing.html" class="mm-link">Rationalizing </a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Functions.html" class="mm-link">Functions </a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/MultPoly.html" class="mm-link">Multiplying Polynomials</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Factoring.html" class="mm-link">Factoring</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SimpRatExp.html" class="mm-link">Simplifying Rational Expressions</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Graphing.html" class="mm-link">Graphing and Common Graphs</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveEqnPtI.html" class="mm-link">Solving Equations, Part I</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveEqnPtII.html" class="mm-link">Solving Equations, Part II</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveSystems.html" class="mm-link">Solving Systems of Equations</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveIneq.html" class="mm-link">Solving Inequalities</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveAbsValue.html" class="mm-link">Absolute Value Equations and Inequalities</a></li>
+              </ul>
+            </li>
+            <li><a href="../../Extras/AlgebraTrigReview/TrigIntro.html" class="mm-link">Trigonometry</a>
+              <ul>
+                <li><a href="../../Extras/AlgebraTrigReview/TrigFunctions.html" class="mm-link">Trig Function Evaluation</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/TrigGraphs.html" class="mm-link">Graphs of Trig Functions</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/TrigFormulas.html" class="mm-link">Trig Formulas</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveTrigEqn.html" class="mm-link">Solving Trig Equations</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/InverseTrig.html" class="mm-link">Inverse Trig Functions</a></li>
+              </ul>
+            </li>
+            <li><a href="../../Extras/AlgebraTrigReview/ExpLogIntro.html" class="mm-link">Exponentials & Logarithms</a>
+              <ul>
+                <li><a href="../../Extras/AlgebraTrigReview/ExponentialFcns.html" class="mm-link">Basic Exponential Functions</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/LogarithmFcns.html" class="mm-link">Basic Logarithm Functions</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/LogProperties.html" class="mm-link">Logarithm Properties</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SimpLogs.html" class="mm-link">Simplifying Logarithms</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveExpEqn.html" class="mm-link">Solving Exponential Equations</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveLogEqn.html" class="mm-link">Solving Logarithm Equations</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../../Extras/CommonErrors/CommonMathErrors.html" class="mm-link">Common Math Errors</a>
+          <ul>
+            <li><a href="../../Extras/CommonErrors/GeneralErrors.html" class="mm-link">General Errors</a>
+            </li>
+            <li><a href="../../Extras/CommonErrors/AlgebraErrors.html" class="mm-link">Algebra Errors</a>
+            </li>
+            <li><a href="../../Extras/CommonErrors/TrigErrors.html" class="mm-link">Trig Errors</a>
+            </li>
+            <li><a href="../../Extras/CommonErrors/CommonErrors.html" class="mm-link">Common Errors</a>
+            </li>
+            <li><a href="../../Extras/CommonErrors/CalculusErrors.html" class="mm-link">Calculus Errors</a>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../../Extras/ComplexPrimer/ComplexNumbers.html" class="mm-link">Complex Number Primer</a>
+          <ul>
+            <li><a href="../../Extras/ComplexPrimer/Definition.html" class="mm-link">The Definition</a>
+            </li>
+            <li><a href="../../Extras/ComplexPrimer/Arithmetic.html" class="mm-link">Arithmetic</a>
+            </li>
+            <li><a href="../../Extras/ComplexPrimer/ConjugateModulus.html" class="mm-link">Conjugate and Modulus</a>
+            </li>
+            <li><a href="../../Extras/ComplexPrimer/Forms.html" class="mm-link">Polar and Exponential Forms</a>
+            </li>
+            <li><a href="../../Extras/ComplexPrimer/Roots.html" class="mm-link">Powers and Roots</a>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../../Extras/StudyMath/HowToStudyMath.html" class="mm-link">How To Study Math</a>
+          <ul>
+            <li><a href="../../Extras/StudyMath/GeneralTips.html" class="mm-link">General Tips</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/TakingNotes.html" class="mm-link">Taking Notes</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/GettingHelp.html" class="mm-link">Getting Help</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/Homework.html" class="mm-link">Doing Homework</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/ProblemSolving.html" class="mm-link">Problem Solving</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/StudyForExam.html" class="mm-link">Studying For an Exam</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/TakingExam.html" class="mm-link">Taking an Exam</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/Errors.html" class="mm-link">Learn From Your Errors</a>
+            </li>
+          </ul>
+        </li>
+
+        <li><span>Misc Links</span></li>
+        <li><a href="http://tutorial.math.lamar.edu/contact.aspx" class="mm-link">Contact Me</a></li>
+        <li><a href="../../links.html" class="mm-link">Links</a></li>
+        <li><a href="../../mathjax.html" class="mm-link">MathJax Help and Configuration</a></li>
+        <li><a href="../../mystudents.html" class="mm-link">My Students</a></li>
+        <li><a href="http://tutorial.math.lamar.edu/privacy.aspx" class="mm-link">Privacy Statement</a></li>
+        <li><a href="../../help.html" class="mm-link">Site Help & FAQ</a></li>
+        <li><a href="http://tutorial.math.lamar.edu/terms.aspx" class="mm-link">Terms of Use</a></li>
+      </ul>
+    </nav>
+
+
+
+    <div class="top-info-bar">
+      <span id="mobile-title" class="mobile-header-title header-title">Paul's Online Notes</span>
+      <br />
+      <span class="top-menu-breadcrumb">
+        <a href="../../index.html" id="breadcrumb_home_link" title="Go to Main Page">Home</a>
+        <span id="breadcrumb_h_b_sep_span">/ </span>
+        <a href="CalcII.html" id="breadcrumb_book_link" title="Go to Book Introduction">Calculus II</a>
+        
+        <span id="breadcrumb_b_c_sep_span">/ </span>
+        <a href="IntTechIntro.html" id="breadcrumb_chapter_link" title="Go to Chapter Introduction">Integration Techniques</a>
+        
+        <span id="breadcrumb_section_span"> / Comparison Test for Improper Integrals</span>
+      </span>
+
+    </div>
+
+    <div id="nav_links" class="top-nav-bar">
+      
+      <span id="nav_current_notes">Notes</span>
+      <a href="http://tutorial.math.lamar.edu/Problems/CalcII/ImproperIntegralsCompTest.aspx" id="nav_links_practice" title="Go to Practice Problems for current topic.">Practice<span class="nav_desktop_extra"> Problems</span></a>
+      
+      <a href="http://tutorial.math.lamar.edu/ProblemsNS/CalcII/ImproperIntegralsCompTest.aspx" id="nav_links_asgn" title="Go to Assignment Problems for current topic.">Assignment<span class="nav_desktop_extra">  Problems</span></a>
+      
+    </div>
+
+    <div class="header-divider"></div>
+
+    <div class="content">  
+      
+      
+      <span id="SHLink_NoteMobile" class="SH-Link content-note-link-mobile">Show Mobile Notice</span>
+      <span id="SHImg_NoteMobile" class="fas fa-caret-right SH-padding content-note-link-mobile" aria-hidden="true"></span>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+
+      <span id="SHALink_S_Note" class="SH-Link SH-Hide SH-Bracket">Show All Notes</span>&nbsp;<span id="SHALink_H_Note" class="SH-Link SH-Hide SH-Bracket">Hide All Notes</span>
+      
+      
+      <div id="SHObj_NoteMobile" class="content-note-container content-note-container-mobile">
+        <div class="content-note-header">Mobile Notice</div>
+        <div class="content-note">You appear to be on a device with a "narrow" screen width (<em>i.e.</em> you are probably on a mobile phone).  Due to the nature of the mathematics on this site it is best views in landscape mode.  If your device is not in landscape mode many of the equations will run off the side of your device (should be able to scroll to see them) and some of the menu items will be cut off due to the narrow screen width.</div>
+      </div>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+
+      
+
+
+  <form method="post" action="http://tutorial.math.lamar.edu/Classes/CalcII/ImproperIntegralsCompTest.aspx" id="ctl00">
+<div class="aspNetHidden">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+</div>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="B7B1BBF5" />
+</div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </form>
+
+  <h3>Section 1-9 : Comparison Test for Improper Integrals</h3>
+    
+    <p>Now that we’ve seen how to actually compute improper integrals we need to address one more topic about them.  Often we aren’t concerned with the actual value of these integrals.  Instead we might only be interested in whether the integral is convergent or divergent.  Also, there will be some integrals that we simply won’t be able to integrate and yet we would still like to know if they converge or diverge.</p>
+    
+    <p>To deal with this we’ve got a test for convergence or divergence that we can use to help us answer the question of convergence for an improper integral.</p>
+    
+    <p>We will give this test only for a sub-case of the infinite interval integral, however versions of the test exist for the other sub-cases of the infinite interval integrals as well as integrals with discontinuous integrands.</p>
+    
+    <h4>Comparison Test</h4>
+    <div class="fact">
+      <p>If \(f\left( x \right) \ge g\left( x \right) \ge 0\) on the interval \(\left[ {a,\infty } \right)\) then,</p>
+          <ol class="general-list">
+            <li>If \(\displaystyle \int_{{\,a}}^{{\,\infty }}{{f\left( x \right)\,dx}}\) converges then so does \(\displaystyle \int_{{\,a}}^{{\,\infty }}{{g\left( x \right)\,dx}}\).<br /><br /></li>
+            <li>If \(\displaystyle \int_{{\,a}}^{{\,\infty }}{{g\left( x \right)\,dx}}\) diverges then so does \(\displaystyle \int_{{\,a}}^{{\,\infty }}{{f\left( x \right)\,dx}}\).</li>
+          </ol>
+    </div>
+
+    <p>Note that if you think in terms of area the Comparison Test makes a lot of sense.  If \(f\left( x \right)\) is larger than \(g\left( x \right)\) then the area under \(f\left( x \right)\) must also be larger than the area under \(g\left( x \right)\).</p>
+    
+    <p>So, if the area under the larger function is finite (<em>i.e.</em> \(\int_{{\,a}}^{{\,\infty }}{{f\left( x \right)\,dx}}\) converges) then the area under the smaller function must also be finite (<em>i.e.</em> \(\int_{{\,a}}^{{\,\infty }}{{g\left( x \right)\,dx}}\) converges).  Likewise, if the area under the smaller function is infinite (<em>i.e.</em> \(\int_{{\,a}}^{{\,\infty }}{{g\left( x \right)\,dx}}\) diverges) then  the area under the larger function must also be infinite (<em>i.e.</em> \(\int_{{\,a}}^{{\,\infty }}{{f\left( x \right)\,dx}}\) diverges).</p>
+    
+    <p>Be careful not to misuse this test.  If the smaller function converges there is no reason to believe that the larger will also converge (after all infinity is larger than a finite number…) and if the larger function diverges there is no reason to believe that the smaller function will also diverge.</p>
+    
+    <p>Let’s work a couple of examples using the comparison test.  Note that all we’ll be able to do is determine the convergence of the integral.  We won’t be able to determine the value of the integrals and so won’t even bother with that.</p>
+    
+    <a class="anchor" name="Int_CompTest_Ex1"></a>
+  <div class="example">
+    <span class="example-title">Example 1</span> Determine if the following integral is convergent or divergent.
+          
+              \[\int_{{\,2}}^{{\,\infty }}{{\frac{{{{\cos }^2}x}}{{{x^2}}}\,dx}}\]
+    <div class="example-content">
+      <span id="SHLink_Soln1" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln1" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln1" class="soln-content">
+        <p>Let’s take a second and think about how the Comparison Test works.  If this integral is convergent then we’ll need to find a larger function that also converges on the same interval.  Likewise, if this integral is divergent then we’ll need to find a smaller function that also diverges.</p>
+          
+          <p>So, it seems like it would be nice to have some idea as to whether the integral converges or diverges ahead of time so we will know whether we will need to look for a larger (and convergent) function or a smaller (and divergent) function.</p>
+          
+          <p>To get the guess for this function let’s notice that the numerator is nice and bounded because we know that,</p>
+          
+          <p>\[0 \le {\cos ^2}x \le 1\]
+          
+          <p>Therefore, the numerator simply won’t get too large.</p>
+          
+          <p>So, it seems likely that the denominator will determine the convergence/divergence of this integral and we know that</p>
+          
+              \[\int_{{\,2}}^{{\,\infty }}{{\frac{1}{{{x^2}}}\,dx}}\]
+          <p>converges since \(p = 2 &gt; 1\) by the fact in the previous <a href="ImproperIntegrals.html#Int_xp">section</a>.  So, let’s guess that this integral will converge.</p>
+          
+          <p>So we now know that we need to find a function that is larger than</p>
+          
+              \[\frac{{{{\cos }^2}x}}{{{x^2}}}\]
+
+          <p>and also converges.  Making a fraction larger is actually a fairly simple process.  We can either make the numerator larger or we can make the denominator smaller.  In this case we can’t do a lot about the denominator in a way that will help.  However, we can use the fact that \(0 \le {\cos ^2}x \le 1\) to make the numerator larger (<em>i.e.</em> we’ll replace the cosine with something we know to be larger, namely 1).  So,</p>
+          
+              \[\frac{{{{\cos }^2}x}}{{{x^2}}} \le \frac{1}{{{x^2}}}\]
+
+          <p>Now, as we’ve already noted</p>
+          
+              \[\int_{{\,2}}^{{\,\infty }}{{\frac{1}{{{x^2}}}\,dx}}\]
+
+          <p>converges and so by the Comparison Test we know that</p>
+          
+              \[\int_{{\,2}}^{{\,\infty }}{{\frac{{{{\cos }^2}x}}{{{x^2}}}\,dx}}\]
+
+          <p>must also converge.</p>
+      </div>
+    </div>
+  </div>
+
+    <a class="anchor" name="Int_CompTest_Ex2"></a>
+  <div class="example">
+    <span class="example-title">Example 2</span> Determine if the following integral is convergent or divergent.</p>
+          
+              \[\int_{{\,3}}^{{\,\infty }}{{\frac{1}{{x + {{\bf{e}}^x}}}\,dx}}\]
+    <div class="example-content">
+      <span id="SHLink_Soln2" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln2" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln2" class="soln-content">
+        <p>Let’s first take a guess about the convergence of this integral.  As noted after the fact in the last section about</p>
+          
+              \[\int_{{\,a}}^{{\,\infty }}{{\frac{1}{{{x^p}}}\,dx}}\]
+
+          <p>if the integrand goes to zero faster than \(\frac{1}{x}\) then the integral will probably converge.  Now, we’ve got an exponential in the denominator which is approaching infinity much faster than the \(x\) and so it looks like this integral should probably converge.</p>
+          
+          <p>So, we need a larger function that will also converge.  In this case we can’t really make the numerator larger and so we’ll need to make the denominator smaller in order to make the function larger as a whole.  We will need to be careful however.  There are two ways to do this and only one, in this case only one, of them will work for us.</p>
+          
+          <p>First, notice that since the lower limit of integration is 3 we can say that \(x \ge 3 &gt; 0\) and we know that exponentials are always positive.  So, the denominator is the sum of two positive terms and if we were to drop one of them the denominator would get smaller.  This would in turn make the function larger.</p>
+          
+          <p>The question then is which one to drop?  Let’s first drop the exponential.  Doing this gives,</p>
+          
+              \[\frac{1}{{x + {{\bf{e}}^x}}} &lt; \frac{1}{x}\]
+
+          <p>This is a problem however, since</p>
+          
+              \[\int_{{\,3}}^{{\,\infty }}{{\frac{1}{x}\,dx}}\]
+
+          <p>diverges by the <a href="ImproperIntegrals.html#Int_xp">fact</a>.  We’ve got a larger function that is divergent.  This doesn’t say anything about the smaller function.  Therefore, we chose the wrong one to drop.</p>
+          
+          <p>Let’s try it again and this time let’s drop the \(x\).</p>
+          
+              \[\frac{1}{{x + {{\bf{e}}^x}}} &lt; \frac{1}{{{{\bf{e}}^x}}} = {{\bf{e}}^{ - x}}\]
+
+          <p>Also,</p>
+          
+            \[\begin{align*}\int_{{\,3}}^{{\,\infty }}{{{{\bf{e}}^{ - x}}\,dx}} & = \mathop {\lim }\limits_{t \to \infty } \int_{{\,3}}^{{\,t}}{{{{\bf{e}}^{ - x}}\,dx}}\\ &amp;  = \mathop {\lim }\limits_{t \to \infty } \left( { - {{\bf{e}}^{ - t}} + {{\bf{e}}^{ - 3}}} \right)\\ &amp;  = {{\bf{e}}^{ - 3}}\end{align*}\]
+          
+          <p>So, \(\int_{{\,3}}^{{\,\infty }}{{{{\bf{e}}^{ - x}}\,dx}}\) is convergent.  Therefore, by the Comparison test</p>
+          
+              \[\int_{{\,3}}^{{\,\infty }}{{\frac{1}{{x + {{\bf{e}}^x}}}\,dx}}\]
+          <p>is also convergent.</p>
+      </div>
+    </div>
+  </div>
+
+    <a class="anchor" name="Int_CompTest_Ex3"></a>
+  <div class="example">
+    <span class="example-title">Example 3</span> Determine if the following integral is convergent or divergent.
+          
+              \[\int_{{\,3}}^{{\,\infty }}{{\frac{1}{{x - {{\bf{e}}^{ - x}}}}\,dx}}\]
+    <div class="example-content">
+      <span id="SHLink_Soln3" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln3" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln3" class="soln-content">
+        <p>This is very similar to the previous example with a couple of very important differences.  First, notice that the exponential now goes to zero as \(x\) increases instead of growing larger as it did in the previous example (because of the negative in the exponent).  Also note that the exponential is now subtracted off the \(x\) instead of added onto it.</p>
+          
+          <p>The fact that the exponential goes to zero means that this time the \(x\) in the denominator will probably dominate the term and that means that the integral probably diverges.  We will therefore need to find a smaller function that also diverges.</p>
+          
+          <p>Making fractions smaller is pretty much the same as making fractions larger.  In this case we’ll need to either make the numerator smaller or the denominator larger.</p>
+          
+          <p>This is where the second change will come into play.  As before we know that both \(x\) and the exponential are positive.  However, this time since we are subtracting the exponential from the \(x\) if we were to drop the exponential the denominator will become larger (we will no longer be subtracting a positive number off the \(x\)) and so the fraction will become smaller.  In other words,</p>
+          
+              \[\frac{1}{{x - {{\bf{e}}^{ - x}}}} &gt; \frac{1}{x}\]
+
+          <p>and we know that</p>
+          
+              \[\int_{{\,3}}^{{\,\infty }}{{\frac{1}{x}\,dx}}\]
+
+          <p>diverges and so by the Comparison Test we know that</p>
+          
+              \[\int_{{\,3}}^{{\,\infty }}{{\frac{1}{{x - {{\bf{e}}^{ - x}}}}\,dx}}\]
+
+          <p>must also diverge.</p>
+      </div>
+    </div>
+  </div>
+
+    <a class="anchor" name="Int_CompTest_Ex4"></a>
+  <div class="example">
+    <span class="example-title">Example 4</span> Determine if the following integral is convergent or divergent.
+          
+            \[\int_{{\,1}}^{{\,\infty }}{{\frac{{1 + 3{{\sin }^4}\left( {2x} \right)}}{{\sqrt x }}\,dx}}\]
+    <div class="example-content">
+      <span id="SHLink_Soln4" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln4" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln4" class="soln-content">
+        <p>First notice that as with the first example, the numerator in this function is going to be bounded since the sine is never larger than 1.  Therefore, since the exponent on the denominator is less than 1 we can guess that the integral will probably diverge.  We will need a smaller function that also diverges.</p>
+          
+          <p>We know that \(0 \le 3{\sin ^4}\left( {2x} \right) \le 3\).  In particular, this term is positive and so if we drop it from the numerator the numerator will get smaller.  This gives,</p>
+          
+              \[\frac{{1 + 3{{\sin }^4}\left( {2x} \right)}}{{\sqrt x }} &gt; \frac{1}{{\sqrt x }}\]
+          <p>and</p>
+          
+              \[\int_{{\,1}}^{{\,\infty }}{{\frac{1}{{\sqrt x }}\,dx}}\]
+          <p>diverges so by the Comparison Test</p>
+          
+            \[\int_{{\,1}}^{{\,\infty }}{{\frac{{1 + 3{{\sin }^4}\left( {2x} \right)}}{{\sqrt x }}\,dx}}\]
+          <p>also diverges.</p>
+      </div>
+    </div>
+  </div>
+    
+    <p>Up to this point all the examples used on manipulation of either the numerator or the denominator in order to use the Comparison Test.  Don’t get so locked into that idea that you decide that is all you will ever have to do.  Sometimes you will need to manipulate both the numerator and the denominator.</p>
+    
+    <p>Let’s do an example like that.</p>
+    <a class="anchor" name="Int_CompTest_Ex5"></a>
+  <div class="example">
+    <span class="example-title">Example 5</span> Determine if the following integral is convergent or divergent.
+          
+            \[\int_{{\,2}}^{{\,\infty }}{{\frac{{1 + {{\cos }^2}\left( x \right)}}{{\sqrt x \left[ {2 - {{\sin }^4}\left( x \right)} \right]}}\,dx}}\]
+    <div class="example-content">
+      <span id="SHLink_Soln5" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln5" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln5" class="soln-content">
+        <p>In this case we can notice that because the cosine in the numerator is bounded the numerator will never get too large.  Likewise, the sine in the denominator is bounded and so again that term will not get too large or too small.</p>
+          
+          <p>That leaves only the square root in the denominator and because the exponent is less than one we can guess that the integral will probably diverge.  Therefore, we will need a smaller function that also diverges.</p>
+          
+          <p>We know that \(0 \le {\cos ^2}\left( x \right) \le 1\).  In particular, this term is positive and so if we drop it from the numerator the numerator will get smaller.  This gives,</p>
+          
+            \[\frac{{1 + {{\cos }^2}\left( x \right)}}{{\sqrt x \left[ {2 - {{\sin }^4}\left( x \right)} \right]}} &gt; \frac{1}{{\sqrt x \left[ {2 - {{\sin }^4}\left( x \right)} \right]}}\]
+          
+          <p>Next, we also know that \(0 \le {\sin ^4}\left( x \right) \le 1\).  Again, this is a positive term and so if we now longer subtract this off from the 2 the term in the brackets will get larger and so the rational expression will get smaller.  This gives,</p>
+          
+          <p>\[\frac{{1 + {{\cos }^2}\left( x \right)}}{{\sqrt x \left[ {2 - {{\sin }^4}\left( x \right)} \right]}} &gt; \frac{1}{{\sqrt x \left[ {2 - {{\sin }^4}\left( x \right)} \right]}} &gt; \frac{1}{{2\sqrt x }}\]
+          
+          <p>Finally, we know that</p>
+          
+              \[\int_{{\,2}}^{{\,\infty }}{{\frac{1}{{2\sqrt x }}\,dx}}\]
+          <p>Diverges (the 2 in the denominator will not affect this) so by the Comparison Test</p>
+          
+            \[\int_{{\,2}}^{{\,\infty }}{{\frac{{1 + {{\cos }^2}\left( x \right)}}{{\sqrt x \left[ {2 - {{\sin }^4}\left( x \right)} \right]}}\,dx}}\]
+          <p>also diverges.</p>
+      </div>
+    </div>
+  </div>
+    
+    <p>Okay, we’ve seen a few examples of the Comparison Test now.  However, most of them worked pretty much the same way.  All the functions were rational and all we did for most of them was add or subtract something from the numerator and/or the denominator to get what we want.</p>
+    
+    <p>Let’s take a look at an example that works a little differently so we don’t get too locked into these ideas.</p>
+    <a class="anchor" name="Int_CompTest_Ex6"></a>
+  <div class="example">
+    <span class="example-title">Example 6</span> Determine if the following integral is convergent or divergent.
+          
+              \[\int_{{\,1}}^{{\,\infty }}{{\frac{{{{\bf{e}}^{ - x}}}}{x}\,dx}}\]
+    <div class="example-content">
+      <span id="SHLink_Soln6" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln6" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln6" class="soln-content">
+        <p>Normally, the presence of just an \(x\) in the denominator would lead us to guess divergent for this integral.  However, the exponential in the numerator will approach zero so fast that instead we’ll need to guess that this integral converges.</p>
+          
+          <p>To get a larger function we’ll use the fact that we know from the limits of integration that \(x &gt; 1\).  This means that if we just replace the \(x\) in the denominator with 1 (which is always smaller than \(x\)) we will make the denominator smaller and so the function will get larger.</p>
+          
+            \[\frac{{{{\bf{e}}^{ - x}}}}{x} &lt; \frac{{{{\bf{e}}^{ - x}}}}{1} = {{\bf{e}}^{ - x}}\]
+          <p>and we can show that</p>
+          
+              \[\int_{{\,1}}^{{\,\infty }}{{{{\bf{e}}^{ - x}}\,dx}}\]
+          <p>converges.  In fact, we’ve already done this for a lower limit of 3 and changing that to a 1 won’t change the convergence of the integral.  Therefore, by the Comparison Test</p>
+          
+            \[\int_{{\,1}}^{{\,\infty }}{{\frac{{{{\bf{e}}^{ - x}}}}{x}\,dx}}\]
+          <p>also converges.</p>
+      </div>
+    </div>
+  </div>
+    
+    <p>We should also really work an example that doesn’t involve a rational function since there is no reason to assume that we’ll always be working with rational functions.</p>
+    <a class="anchor" name="Int_CompTest_Ex7"></a>
+  <div class="example">
+    <span class="example-title">Example 7</span> Determine if the following integral is convergent or divergent.
+          
+              \[\int_{{\,1}}^{{\,\infty }}{{{{\bf{e}}^{ - {x^2}}}\,dx}}\]
+    <div class="example-content">
+      <span id="SHLink_Soln7" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln7" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln7" class="soln-content">
+        <p>We know that exponentials with negative exponents die down to zero very fast so it makes sense to guess that this integral will be convergent.  We need a larger function, but this time we don’t have a fraction to work with so we’ll need to do something different.</p>
+          
+          <p>We’ll take advantage of the fact that \({{\bf{e}}^{ - x}}\) is a decreasing function.  This means that</p>
+          
+            \[{x_1} &gt; {x_2}\hspace{0.25in}\hspace{0.25in} \Rightarrow \hspace{0.25in}\hspace{0.25in}{{\bf{e}}^{ - {x_1}}} &lt; {{\bf{e}}^{ - {x_2}}}\]
+          <p>In other words, plug in a larger number and the function gets smaller.</p>
+          
+          <p>From the limits of integration we know that \(x &gt; 1\) and this means that if we square \(x\) it will get larger.  Or,</p>
+          
+              \[{x^2} &gt; x\hspace{0.25in}\hspace{0.25in}{\mbox{provided }}x &gt; 1\]
+          
+          <p>Note that we can only say this since \(x &gt; 1\).  This won’t be true if \(x \le 1\)!  We can now use the fact that \({{\bf{e}}^{ - x}}\) is a decreasing function to get,</p>
+          
+              \[{{\bf{e}}^{ - {x^2}}} &lt; {{\bf{e}}^{ - x}}\]
+          
+          <p>So, \({{\bf{e}}^{ - x}}\) is a larger function than \({{\bf{e}}^{ - {x^2}}}\) and we know that</p>
+          
+            \[\int_{{\,1}}^{{\,\infty }}{{{{\bf{e}}^{ - x}}\,dx}}\]
+          <p>converges so by the Comparison Test we also know that</p>
+          
+              \[\int_{{\,1}}^{{\,\infty }}{{{{\bf{e}}^{ - {x^2}}}\,dx}}\]
+          <p>is convergent.</p>
+      </div>
+    </div>
+  </div>
+    
+    <p>The last two examples made use of the fact that \(x &gt; 1\).  Let’s take a look at an example to see how we would have to go about these if the lower limit had been smaller than 1.</p>
+    <a class="anchor" name="Int_CompTest_Ex8"></a>
+  <div class="example">
+    <span class="example-title">Example 8</span> Determine if the following integral is convergent or divergent.
+          
+            \[\int_{{\,\frac{1}{2}}}^{{\,\infty }}{{{{\bf{e}}^{ - {x^2}}}\,dx}}\]
+    <div class="example-content">
+      <span id="SHLink_Soln8" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln8" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln8" class="soln-content">
+        <p>First, we need to note that \({{\bf{e}}^{ - {x^2}}} \le {{\bf{e}}^{ - x}}\) is only true on the interval \(\left[ {1,\infty } \right)\) as is illustrated in the graph below.</p>
+          
+            <div class="center-div"><img alt="This is the graph of ${{\mathbf{e}}^{-x}}$ and ${{\mathbf{e}}^{-{{x}^{2}}}}$ on the domain 0&lt;x&lt;4.  Both are in the first quadrant and decreasing curves.  In the domain 0&lt;x&lt;1 ${{\mathbf{e}}^{-x}}$ is less than ${{\mathbf{e}}^{-{{x}^{2}}}}$ and in the domain 1&lt;x&lt;4 ${{\mathbf{e}}^{-x}}$ is greater than ${{\mathbf{e}}^{-{{x}^{2}}}}$." border="0" height="241" src="http://tutorial.math.lamar.edu/Classes/CalcII/ImproperIntegralsCompTest_Files/image001.png"  width="360" /></div>
+          
+          <p>So, we can’t just proceed as we did in the previous example with the Comparison Test on the interval \(\left[ {\frac{1}{2},\infty } \right)\).  However, this isn’t the problem it might at first appear to be.  We can always write the integral as follows,</p>
+          
+              \[\begin{align*}\int_{{\,\frac{1}{2}}}^{{\,\infty }}{{{{\bf{e}}^{ - {x^2}}}\,dx}} & = \int_{{\,\frac{1}{2}}}^{{\,1}}{{{{\bf{e}}^{ - {x^2}}}\,dx}} + \int_{{\,1}}^{{\,\infty }}{{{{\bf{e}}^{ - {x^2}}}\,dx}}\\ &amp;  = 0.28554 + \int_{{\,1}}^{{\,\infty }}{{{{\bf{e}}^{ - {x^2}}}\,dx}}\end{align*}\]
+          
+          <p>We used <a href="http://www.wolfram.com/mathematica/">Mathematica</a> to get the value of the first integral.  Now, if the second integral converges it will have a finite value and so the sum of two finite values will also be finite and so the original integral will converge.  Likewise, if the second integral diverges it will either be infinite or not have a value at all and adding a finite number onto this will not all of a sudden make it finite or exist and so the original integral will diverge.  Therefore, this integral will converge or diverge depending only on the convergence of the second integral.</p>
+          
+          <p>As we saw in Example 7 the second integral does converge and so the whole integral must also converge.</p>
+      </div>
+    </div>
+  </div>
+
+    <p>As we saw in this example, if we need to, we can split the integral up into one that doesn’t involve any problems and can be computed and one that may contain a problem that we can use the Comparison Test on to determine its convergence.</p>
+    
+
+
+  
+
+
+      
+
+
+
+    </div>
+    <!-- End of content div -->
+
+
+    <div class="footer">
+      <div class="footer-links">
+        [<a href="http://tutorial.math.lamar.edu/Contact.aspx">Contact Me</a>]&nbsp;[<a href="../../MyStudents-2.html">My Students</a>]&nbsp;[<a href="http://tutorial.math.lamar.edu/Privacy.aspx">Privacy Statement</a>]&nbsp;[<a href="../../Help-2.html">Site Help &amp; FAQ</a>]&nbsp;[<a href="http://tutorial.math.lamar.edu/Terms.aspx">Terms of Use</a>]
+      </div>
+      <div class="footer-dates">
+        <div class="footer-copyright"><span id="lblCopyRight">&copy; 2003 - 2019 Paul Dawkins</span></div>
+        <div class="footer-spacer"></div>
+        <div class="footer-modified-date">Page Last Modified : <span id="lblModified">10/8/2018</span></div>
+      </div>
+      
+
+    </div>
+  </div>
+  <!-- End of page div...  -->
+</body>
+
+<!-- Mirrored from tutorial.math.lamar.edu/Classes/CalcII/ImproperIntegralsCompTest.aspx by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 27 Feb 2019 06:15:35 GMT -->
+</html>

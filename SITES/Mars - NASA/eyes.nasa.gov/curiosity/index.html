@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from eyes.nasa.gov/curiosity/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 27 Feb 2019 05:57:22 GMT -->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="apple-touch-icon" href="https://eyes.nasa.gov/curiosity/images/ec_ios_60.png"/>
+    <link rel="apple-touch-icon" sizes="76x76" href="https://eyes.nasa.gov/curiosity/images/ec_ios_76.png"/>
+    <link rel="apple-touch-icon" sizes="120x120" href="https://eyes.nasa.gov/curiosity/images/ec_ios_120.png"/>
+    <link rel="apple-touch-icon" sizes="152x152" href="https://eyes.nasa.gov/curiosity/images/ec_ios_152.png"/>
+    <link rel="apple-touch-icon" sizes="180x180" href="https://eyes.nasa.gov/curiosity/images/ec_ios_180.png"/>
+
+    <meta content='A WebGL experience that lets you learn about the Curiosity rover and what it has done at the Pahrump Hills region of Gale Crater.' name='description'>
+    <meta content='A WebGL experience that lets you learn about the Curiosity rover and what it has done at the Pahrump Hills region of Gale Crater.' property='og:description'>
+    <meta content='Experience Curiosity' property='og:title'>
+    <meta content='http://eyes.nasa.gov/curiosity/' property='og:url'>
+    <meta content='website' property='og:type'>
+    <meta content='http://eyes.nasa.gov/curiosity/images/ec-social-400x400.jpg' property='og:image'>
+    <link href='http://eyes.nasa.gov/curiosity/images/ec-social-400x400.jpg' rel='image_src'>
+
+    <link rel="stylesheet" href="https://eyes.nasa.gov/curiosity/css/perfect-scrollbar.css"/>
+    <!--[if lt IE 9 ]>
+        <link rel="stylesheet" href="NoCuriosity.css"/>
+    <![endif]-->
+    <!--[if (gt IE 8)|!(IE)]><!-->
+        <link rel="stylesheet" href="https://eyes.nasa.gov/curiosity/ExperienceCuriosity.css"/>
+    <!--<![endif]-->
+
+    <script type="text/javascript" src="https://eyes.nasa.gov/curiosity/v3d.js" async="async"></script>
+    <script type="text/javascript" src="https://eyes.nasa.gov/curiosity/ExperienceCuriosity.js" async="async"></script>
+
+    <title>Experience Curiosity</title>
+    <script type="text/javascript">window.title = "Experience Curiosity";</script>
+</head>
+<body>
+    <div id="canvas3d"></div>
+    <img id="title" src="https://eyes.nasa.gov/curiosity/images/curiosity-logo.svg">
+    <img id="brand" src="https://eyes.nasa.gov/curiosity/images/nasa-jpl.svg">
+    <img id="titleBrand" src="https://eyes.nasa.gov/curiosity/images/exc-logo-horiz-nasa.svg">
+    <div id="loading">
+        <div id="loadingContainer">
+            <img id="loadingImage" src="https://eyes.nasa.gov/curiosity/images/loader-bg.jpg" width="2340" height="1560">
+        </div>
+        <div id="progressOuter">
+            <div id="progress"></div>
+        </div>
+    </div>
+    <div id="images">
+        <svg version="1.1" id="info" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 35 35" enable-background="new 0 0 35 35" xml:space="preserve"><g><path d="M17.5,2C26,2,33,9,33,17.5S26,33,17.5,33S2,26,2,17.5S9,2,17.5,2 M17.5,0C7.8,0,0,7.8,0,17.5 S7.8,35,17.5,35S35,27.2,35,17.5S27.2,0,17.5,0L17.5,0z"></path><path d="M16.3,9.1c-0.4,0.4-0.6,0.9-0.6,1.4c0,0.5,0.2,1,0.6,1.4c0.4,0.4,0.8,0.6,1.4,0.6c0.5,0,1-0.2,1.4-0.6 c0.4-0.4,0.6-0.9,0.6-1.4c0-0.5-0.2-1-0.6-1.4c-0.4-0.4-0.8-0.6-1.4-0.6C17.2,8.5,16.7,8.7,16.3,9.1z M18.4,14.3 c-0.4,0.2-0.7,0.3-1,0.4C17,14.9,16.6,15,16,15.1c-0.5,0.1-1.1,0.2-1.6,0.2v2H16v5.1c0,0.3,0,0.5-0.1,0.6c-0.1,0.1-0.1,0.2-0.2,0.2 c-0.1,0-0.3,0.1-0.7,0.1h-0.6v2.1H21v-2.1h-0.6c-0.4,0-0.6,0-0.7-0.1c-0.1,0-0.2-0.1-0.2-0.2c0-0.1-0.1-0.3-0.1-0.7v-7.9H18.4z"></path></g></svg>
+        <div id="fullscreen">
+            <div id="setFullscreen">
+            <svg version="1.1" id="setFullscreens" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                viewBox="0 0 29 29" enable-background="new 0 0 29 29" xml:space="preserve">
+                <g>
+                    <g>
+                        <path d="M1.4,20.1L0,28.3c0,0.1,0,0.3,0.1,0.4c0,0,0,0,0,0c0.1,0.1,0.3,0.2,0.4,0.1l8.1-1.4c0.2,0,0.3-0.2,0.4-0.3 c0.1-0.2,0-0.3-0.1-0.5l-1.6-1.6l4.3-4.3c0.2-0.2,0.2-0.5,0-0.7l-2.9-2.9C8.5,17,8.2,17,8,17.2l-4.3,4.3l-1.6-1.6 c-0.1-0.1-0.3-0.2-0.5-0.1C1.5,19.8,1.4,20,1.4,20.1z"></path>
+                    </g><g>
+                        <path d="M27.5,8.7l1.4-8.2c0-0.1,0-0.3-0.1-0.4l0,0C28.6,0,28.4,0,28.3,0l-8.1,1.4c-0.2,0-0.3,0.2-0.4,0.3 c-0.1,0.2,0,0.3,0.1,0.5l1.6,1.6L17.2,8c-0.2,0.2-0.2,0.5,0,0.7l2.9,2.9c0.2,0.2,0.5,0.2,0.7,0l4.3-4.3l1.6,1.6 c0.1,0.1,0.3,0.2,0.5,0.1C27.3,9,27.4,8.9,27.5,8.7z"></path>
+                    </g><g>
+                        <path d="M20.1,27.5l8.2,1.4c0.1,0,0.3,0,0.4-0.1l0,0c0.1-0.1,0.2-0.3,0.1-0.4l-1.4-8.1c0-0.2-0.2-0.3-0.3-0.4 c-0.2-0.1-0.3,0-0.5,0.1l-1.6,1.6l-4.3-4.3c-0.2-0.2-0.5-0.2-0.7,0l-2.9,2.9c-0.2,0.2-0.2,0.5,0,0.7l4.3,4.3l-1.6,1.6 c-0.1,0.1-0.2,0.3-0.1,0.5C19.8,27.3,20,27.4,20.1,27.5z"></path>
+                    </g><g>
+                        <path d="M8.7,1.4L0.5,0C0.4,0,0.2,0,0.1,0.1c0,0,0,0,0,0C0,0.2,0,0.4,0,0.5l1.4,8.1C1.4,8.8,1.5,9,1.7,9 C1.9,9.1,2,9,2.2,8.9l1.6-1.6L8,11.6c0.2,0.2,0.5,0.2,0.7,0l2.9-2.9c0.2-0.2,0.2-0.5,0-0.7L7.4,3.7l1.6-1.6C9.1,2,9.1,1.8,9.1,1.7 C9,1.5,8.9,1.4,8.7,1.4z"></path>
+                    </g>
+                </g>
+            </svg></div>
+            <div id="clearFullscreen">
+            <svg version="1.1" id="clearFullscreens" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                viewBox="0 0 29 29" enable-background="new 0 0 29 29" xml:space="preserve">
+                <g>
+                    <g>
+                        <path d="M10.4,25.7l1.4-8.1c0-0.1,0-0.3-0.1-0.4c0,0,0,0,0,0c-0.1-0.1-0.3-0.2-0.4-0.1l-8.1,1.4 c-0.2,0-0.3,0.2-0.4,0.3c-0.1,0.2,0,0.3,0.1,0.5l1.6,1.6l-4.3,4.3c-0.2,0.2-0.2,0.5,0,0.7l2.9,2.9c0.2,0.2,0.5,0.2,0.7,0L8,24.4 L9.6,26c0.1,0.1,0.3,0.2,0.5,0.1C10.2,26.1,10.3,25.9,10.4,25.7z"></path>
+                    </g><g>
+                        <path d="M18.4,3.1l-1.4,8.1c0,0.1,0,0.3,0.1,0.4c0,0,0,0,0,0c0.1,0.1,0.3,0.2,0.4,0.1l8.1-1.4 c0.2,0,0.3-0.2,0.4-0.3c0.1-0.2,0-0.3-0.1-0.5L24.4,8l4.3-4.3c0.2-0.2,0.2-0.5,0-0.7l-2.9-2.9c-0.2-0.2-0.5-0.2-0.7,0l-4.3,4.3 l-1.6-1.6c-0.1-0.1-0.3-0.2-0.5-0.1C18.6,2.8,18.5,2.9,18.4,3.1z"></path>
+                    </g><g>
+                        <path d="M25.7,18.4l-8.1-1.4c-0.1,0-0.3,0-0.4,0.1c0,0,0,0,0,0c-0.1,0.1-0.2,0.3-0.1,0.4l1.4,8.1 c0,0.2,0.2,0.3,0.3,0.4c0.2,0.1,0.3,0,0.5-0.1l1.6-1.6l4.3,4.3c0.2,0.2,0.5,0.2,0.7,0l2.9-2.9c0.2-0.2,0.2-0.5,0-0.7l-4.3-4.3 l1.6-1.6c0.1-0.1,0.2-0.3,0.1-0.5C26.1,18.6,25.9,18.5,25.7,18.4z"></path>
+                    </g><g>
+                        <path d="M3.1,10.4l8.1,1.4c0.1,0,0.3,0,0.4-0.1c0,0,0,0,0,0c0.1-0.1,0.2-0.3,0.1-0.4l-1.4-8.1 c0-0.2-0.2-0.3-0.3-0.4c-0.2-0.1-0.3,0-0.5,0.1L8,4.4L3.7,0.1C3.5,0,3.3,0,3.1,0.1L0.1,3.1C0,3.3,0,3.5,0.1,3.7L4.4,8L2.8,9.6 c-0.1,0.1-0.2,0.3-0.1,0.5C2.8,10.2,2.9,10.3,3.1,10.4z"></path>
+                    </g>
+                </g>
+            </svg>
+            </div>
+        </div>
+        <div id="back">
+        <svg version="1.1" id="backs" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 33.5 27" enable-background="new 0 0 33.5 27" xml:space="preserve">
+            <g>
+                <path d="M30.3,15.1H3.6c-1,0-1.8-0.8-1.8-1.8s0.8-1.8,1.8-1.8h26.7c1,0,1.8,0.8,1.8,1.8S31.2,15.1,30.3,15.1z"></path>
+                <path d="M14.1,25.6c-0.4,0-0.9-0.2-1.2-0.5L1.1,13.4L12.8,1.7c0.7-0.7,1.8-0.7,2.5,0c0.7,0.7,0.7,1.8,0,2.5 l-9.2,9.2l9.2,9.2c0.7,0.7,0.7,1.8,0,2.5C15,25.4,14.5,25.6,14.1,25.6z"></path>
+            </g>
+        </svg>
+        </div>
+    </div>
+    <div id="cameras">
+        <div id="rightCollapse">
+            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                x="0px" y="0px" viewBox="0 0 35 22" enable-background="new 0 0 35 22" xml:space="preserve">
+                <path d="M0,22h35V0L10,0L0,22z"></path>
+            </svg>
+            <svg version="1.1" id="rightRight" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                x="0px" y="0px" viewBox="0 0 35 22" enable-background="new 0 0 35 22" xml:space="preserve">
+                <g>
+                    <path d="M18.2,11l2.4,3.4h-0.9l-2.6-3.3v-0.2l2.6-3.3h0.9L18.2,11z"></path>
+                    <path d="M23.6,11l2.4,3.4h-0.9l-2.6-3.3v-0.2l2.6-3.3H26L23.6,11z"></path>
+                </g>
+            </svg>
+            <svg version="1.1" id="rightLeft" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                x="0px" y="0px" viewBox="0 0 35 22" enable-background="new 0 0 35 22" xml:space="preserve">
+                <g>
+                    <path d="M22.5,7.6h0.9l2.6,3.3v0.2l-2.6,3.3h-0.9l2.4-3.4L22.5,7.6z"></path>
+                    <path d="M17.1,7.6H18l2.6,3.3v0.2L18,14.4h-0.9l2.4-3.4L17.1,7.6z"></path>
+                </g>
+            </svg>
+        </div>
+        <div id="cameraItems">
+            <canvas id="rendertarget" width="512" height="512"></canvas>
+            <div id="vignette" width="512" height="512"></div>
+            <div>
+                <svg id="cameraLeft" version="1.1" id="camera-arrow-left" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                    x="0px" y="0px" viewBox="0 0 10 17" enable-background="new 0 0 10 17" xml:space="preserve">
+                    <g>
+                        <path d="M3.2,8.5L9.4,17H6.1L0,8.5L6.1,0h3.3L3.2,8.5z"></path>
+                    </g>
+                </svg>
+                <div id="cameraText">None</div>
+                <svg id="cameraRight" version="1.1" id="camera-arrow-right" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                    x="0px" y="0px" viewBox="0 0 10 17" enable-background="new 0 0 10 17" xml:space="preserve">
+                    <g>
+                        <path d="M0.6,0l3.3,0L10,8.5L3.9,17H0.6l6.2-8.5L0.6,0z"></path>
+                    </g>
+                </svg>
+            </div>
+        </div>
+        <svg id="cameraButton" version="1.1" id="camera-icon_1_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            x="0px" y="0px" viewBox="0 0 60 60" enable-background="new 0 0 60 60" xml:space="preserve">
+            <g>
+                <polygon points="18.5,22 18.5,26 16.5,26 16.5,20 22.5,20 22.5,22"></polygon>
+                <polygon points="18.5,38 22.5,38 22.5,40 16.5,40 16.5,34 18.5,34"></polygon>
+                <polygon points="41.5,22 37.5,22 37.5,20 43.5,20 43.5,26 41.5,26"></polygon>
+                <polygon points="41.5,38 41.5,34 43.5,34 43.5,40 37.5,40 37.5,38"></polygon>
+                <rect x="29.5" y="25.4" width="1" height="9.1"></rect>
+                <rect x="25.4" y="29.5" width="9.1" height="1"></rect>
+            </g>
+        </svg>
+    </div>
+    <div id="leftPanel">
+        <div id="leftCollapse">
+            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                x="0px" y="0px" viewBox="0 0 35 22" enable-background="new 0 0 35 22" xml:space="preserve">
+                <path d="M25,0H0v22h35L25,0z"></path>
+            </svg>
+            <svg version="1.1" id="leftLeft" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                x="0px" y="0px" viewBox="0 0 35 22" enable-background="new 0 0 35 22" xml:space="preserve">
+                <g>
+                    <path d="M18.2,11l2.4,3.4h-0.9l-2.6-3.3v-0.2l2.6-3.3h0.9L18.2,11z"></path>
+                    <path d="M23.6,11l2.4,3.4h-0.9l-2.6-3.3v-0.2l2.6-3.3H26L23.6,11z"></path>
+                </g>
+            </svg>
+            <svg version="1.1" id="leftRight" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                x="0px" y="0px" viewBox="0 0 35 22" enable-background="new 0 0 35 22" xml:space="preserve">
+                <g>
+                    <path d="M22.5,7.6h0.9l2.6,3.3v0.2l-2.6,3.3h-0.9l2.4-3.4L22.5,7.6z"></path>
+                    <path d="M17.1,7.6H18l2.6,3.3v0.2L18,14.4h-0.9l2.4-3.4L17.1,7.6z"></path>
+                </g>
+            </svg>
+        </div>
+        <div id="leftFlyout">
+            <div id="roverReplayPanel" class="panel">
+                <p class="title">Free Drive and Rover Replay</p>
+                <div id="replayList">
+                    <p class="normal">Click a marker to watch Curiosity in action, or choose from the list below.</p>
+                    <br>
+                    <div id="replayItems"></div>
+                    <br>
+                </div>
+                <div id="replayDescription" class="hide">
+                    <p id="replayTitle" class="name"></p>
+                    <br>
+                    <div id="replayScroll" class="scroll">
+                        <img id="replayThumb">
+                        <p id="replayText" class="normal"></p>
+                    </div>
+                    <div id="replayButtons">
+                        <div id="replayBack" class="leftButtons">
+                            <svg version="1.1" id="iconBack" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                x="0px" y="0px" viewBox="0 0 8 14" enable-background="new 0 0 8 14" xml:space="preserve">
+                                <g>
+                                    <path d="M2.6,7l5.1,7H5L0,7l5-7h2.7L2.6,7z"></path>
+                                </g>
+                            </svg>
+                            <p>BACK</p>
+                        </div>
+                        <div id="replayReplay" class="leftButtons">
+                            <svg version="1.1" id="iconReplay" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                x="0px" y="0px" viewBox="0 0 15 14" enable-background="new 0 0 15 14" xml:space="preserve">
+                                <g>
+                                    <path d="M11.3,9.6C10.4,11,8.8,12,7,12c-2.8,0-5-2.2-5-5s2.2-5,5-5c1.9,0,3.5,1.1,4.4,2.6l1.8-0.9C12,1.5,9.7,0,7,0 l0,0C3.1,0,0,3.1,0,7s3.1,7,7,7c2.6,0,4.8-1.4,6-3.4L11.3,9.6z"></path>
+                                    <polygon points="14.5,12.1 9.4,8.9 14.4,6.5"></polygon>
+                                </g>
+                            </svg>
+                            <p>REPLAY</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="controlCuriosityPanel" class="panel inactive">
+                <p class="title">Control Curiosity</p>
+                <p class="normal">Bring Curiosity to life by moving the parts highlighted in blue.  Click and drag the parts to make the rover's robotic arm, antenna and mast move.</p>
+            </div>
+            <div id="learnPanel" class="panel inactive">
+                <p class="title">Learn About Curiosity</p>
+                <div>
+                    <p class="normal">Mouse over the rover to learn about its components, or choose from the list below.</p>
+                    <br>
+                    <div id="learnItems" class="scroll"><div>
+                    </div></div>
+                    <br>
+                </div>
+            </div>
+            <div id="highlightsPanel" class="panel inactive">
+                <p class="title">Pahrump Hills Highlights</p>
+                <div id="highlightsList">
+                    <p class="normal">Click a marker to learn about highlights in the region, or choose from the list below.</p>
+                    <br>
+                    <div id="highlightItems"></div>
+                    <br>
+                </div>
+                <div id="highlightDescription" class="hide">
+                    <p id="highlightTitle" class="name"></p>
+                    <div id="highlightScroll" class="scroll">
+                        <img id="highlightThumb">
+                        <p id="highlightText" class="normal"></p>
+                    </div>
+                    <div id="highlightButton">
+                        <div id="highlightBack" class="leftButtons">
+                            <svg version="1.1" id="iconBack" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                x="0px" y="0px" viewBox="0 0 8 14" enable-background="new 0 0 8 14" xml:space="preserve">
+                                <g>
+                                    <path d="M2.6,7l5.1,7H5L0,7l5-7h2.7L2.6,7z"></path>
+                                </g>
+                            </svg>
+                            <p>BACK</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <ul>
+            <li id="roverReplay" class="mainMode">
+                <svg version="1.1" id="menu-icon-control" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                    x="0px" y="0px" viewBox="0 0 60 60" enable-background="new 0 0 60 60" xml:space="preserve">
+                    <g>
+                        <polygon points="41.9,38.4 33.6,32.1 41.4,30.5"></polygon>
+                        <polygon points="27.3,33.5 27.3,26 32.7,29.8"></polygon>
+                        <path d="M36.9,34.4c-1.5,2.5-4.2,4.1-7.3,4.1c-4.7,0-8.5-3.8-8.5-8.5s3.8-8.5,8.5-8.5c3.3,0,6.2,1.9,7.6,4.7l2.8-1 c-1.8-3.9-5.8-6.7-10.4-6.7l0,0c-6.3,0-11.5,5.1-11.5,11.5s5.1,11.5,11.5,11.5c4.2,0,7.8-2.2,9.8-5.5L36.9,34.4z"></path>
+                    </g>
+                </svg>
+            </li>
+            <li class="space"></li>
+            <li id="controlCuriosity" class="mainMode inactive">
+                <svg version="1.1" id="menu-icon-control" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                    x="0px" y="0px" viewBox="0 0 60 60" enable-background="new 0 0 60 60" xml:space="preserve">
+                    <g>
+                        <path d="M31.4,38.3v-9.4c0-0.8,0.6-1.4,1.4-1.4l0,0c0.8,0,1.4,0.6,1.4,1.4v4.6h6.1c0,0,1.1,0.3,1.1,1.1s0,6.8,0,6.8 s-0.3,1.2-1.2,1.2c-0.9,0-7.7,0-7.7,0c-0.4,0-0.7-0.1-1-0.4L27,37.6c-0.5-0.5-0.5-1.4,0-1.9l0,0c0.5-0.5,1.4-0.5,1.9,0L31.4,38.3z"></path>
+                        <path d="M39.2,20.6c-1.9-1.4-4.2-2.2-6.6-2.2l0,0c-6.3,0-11.3,5.1-11.3,11.3h3c0-4.6,3.7-8.3,8.3-8.3 c1.7,0,3.3,0.5,4.7,1.4C37.2,22.9,39.2,20.2,39.2,20.6z"></path>
+                        <polygon points="17.5,29.3 27.9,29.3 22.7,35.3 "></polygon>
+                        <polygon points="34.6,25.4 41.2,17.4 42.5,25.2 "></polygon>
+                    </g>
+                </svg>
+            </li>
+            <li class="space"></li>
+            <li id="learn" class="mainMode inactive">
+                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                    x="0px" y="0px" viewBox="0 0 60 60" enable-background="new 0 0 60 60" xml:space="preserve">
+                    <g>
+                        <polygon points="31.8,19.7 31.8,16.9 35.6,16.1 36.6,17.5 36.6,20.2 35.5,18.9"></polygon>
+                        <path d="M20.7,38.6c0,0,0.7-1.2,1.6-1.7c1-0.6,3.8-1.9,6.5,1.4l0.2-0.1l0.6,0.3c0.5-2.3,2.7-3.1,4-3.1 c2.3,0.1,3.7,2.4,3.7,2.4s0.1-1,0.7-1.7v0v-3.6h0.6v-1.2h-1.7l0-0.5l-2-2.4v-4h1.2v-1.2h-1l0-0.9l-0.2,0.1v-0.6l1.6-0.5l-1.3-1.7 l-3.8,0.7l1.6,1v2h-0.6v1l0.6,0.3v3.6h-0.6v3.1h-1.2v-0.7L30,30.1v-1.4l-9.9,0.9v1.7h1.2v1.9h-2.5v1.9h1.2v3.3L20.7,38.6z"></path>
+                        <path d="M38.2,38l-0.1-0.2l0.1-0.3l0.2-0.1l0.1-0.3l0-0.3l0.2-0.3l0.3,0l0.2-0.1L39.1,36l0.1-0.1l0.2,0l0.1-0.3 l0.2-0.1l0.3,0.1l0.2-0.2l1.3,0l0.3,0.1l0.4,0l0.2,0.2l0.3,0l0.1,0.1l0.3,0l0.1,0.2l0.2,0.2l0.1,0.2l0.3,0.2c0,0,0,0.3,0,0.4 c0,0,0.2,0.3,0.2,0.3l0.3,0.2v0.3L43.8,38l0.1,0.2l0.2,0.1l0,0.3l-0.1,0.2l-0.1,0.3l0.2,0.2l-0.1,0.3l-0.2,0l-0.1,0.3l0.1,0.2 l-0.1,0.1l-0.2,0.1l-0.1,0.2l0,0.3l-0.3,0.1L42.7,41l-0.1,0.4l-0.3,0.1c0,0-0.5,0.1-1.1,0.2c-0.6,0-1.7-0.2-1.7-0.2s-1.2-1-1.4-1.4 C38,39.7,38,39.7,38,39.7l0-0.2l0.1-0.1l0-0.3l-0.2-0.1l0-0.2l0.2-0.3l0-0.1L38.2,38z M42.2,37c-0.6-0.1-1.2,0.7-1.4,1.7 c-0.1,1,0.2,1.9,0.8,2c0.6,0.1,1.2-0.7,1.4-1.7C43.2,38,42.8,37.1,42.2,37z"></path>
+                        <path d="M36.3,37.5c0,0,0.1,0.3,0.2,0.5c0,0,0.2,0.2,0.2,0.2v0.3l-0.2,0.1l0.1,0.2l0.3,0.2l0.1,0.4l-0.2,0.2l0,0.3 l0.2,0.2L37,40.2l-0.2,0l-0.1,0.5l0.2,0.2l-0.2,0.2l-0.3,0l-0.1,0.4l0.1,0.2L36.1,42l-0.2-0.1l-0.2,0.3l0,0.2l-0.2,0.2l-0.3-0.1 l-0.2,0.1l0,0.2L34.5,43c0,0-0.2,0-1,0c-0.9,0-1.3-0.2-1.7-0.5c-0.4-0.3-1.1-1.2-1.1-1.2L30.5,41l-0.2-0.2l-0.1-0.4l0.1-0.2 l0.1-0.3l-0.2-0.2l0.1-0.3l0.1-0.1l0-0.5l0-0.3l0.1-0.4l0.2-0.1l0.2-0.4l0-0.2l0.3-0.3l0.2,0l0.2-0.2l0.1-0.1l0.4,0h0.2l0.2-0.5 l0.2-0.2l0.4-0.1l0.3-0.1l0.4,0.1l0.5-0.1l0.3,0.1l0.3,0.1l0.3,0.3l0.4,0.2l0.4,0.4L36.3,37.5z M34.6,37.8 c-0.9-0.1-1.7,0.7-1.9,1.8c-0.2,1.1,0.4,2.1,1.3,2.2c0.9,0.1,1.7-0.7,1.9-1.8C36,38.9,35.4,38,34.6,37.8z"></path>
+                        <path d="M28.1,38.9v0.5l0.1,0.1l0,0.1l-0.2,0.1l0,0.2l0.3,0.3l0,0.3l-0.2,0.1l0,0.6l0.2,0.2l-0.1,0.2l-0.2,0.1 l-0.2,0.5l0.1,0.2l-0.1,0.2l-0.3,0l-0.1,0.3l0,0.3l-0.2,0.3L27,43.3l-0.1,0.2l-0.1,0.4c0,0-0.1,0.2-0.7,0.4s-2.5,0.3-2.8,0.2 c-0.3-0.1-1.2-0.7-1.3-0.8c-0.1-0.1-0.6-0.5-0.6-0.5l0-0.3l-0.4-0.4l0.1-0.3l0.2,0v0.1l-0.5-0.6l0-0.3l0.2-0.2l0-0.3l-0.2-0.3 l0.1-0.3l0.2-0.1l0.2-0.4l-0.1-0.2l0.2-0.4l0.3-0.1l0.2-0.2l-0.1-0.3l0.3-0.3l0.4-0.1l0.2-0.2l0-0.2l0.3-0.2l0.3,0l0.5-0.3l0.2-0.2 l0.5-0.1l0.5,0.1l0.4-0.2l0.3,0l0.5,0.3l0.4,0l0.2,0.2l0.5,0.1l0.4,0.3l0.3,0.3l0.2,0.3L28.1,38.9z M26.2,38.8 c-0.8-0.2-1.7,0.7-1.9,1.9c-0.2,1.2,0.2,2.4,1,2.5c0.8,0.2,1.7-0.7,1.9-1.9C27.5,40.1,27,39,26.2,38.8z"></path>
+                        <path d="M20.5,39.3l-0.1,0.4l0,0.2l-0.1,0.1l-0.2,0l-0.2,0.2l0,0.2l-0.2,0.2h-0.3l-0.1,0.1l0,0.2 c0,0-0.5,0.2-0.7,0.2c-0.3,0-1,0.1-1.6-0.1c-0.6-0.2-1-0.5-1-0.5l-0.3-0.3l-0.4-0.5l-0.3-0.3l0-0.3l-0.2-0.3l0-0.3l0.1-0.1l0-0.3 L14.9,38l0-0.2l0.2-0.1l0.1-0.4L15,37.2l0.1-0.2l0.2-0.1l0.1-0.2l-0.1-0.3l0.1-0.1l0.2,0l0.2-0.2l0-0.3l0.2-0.1l0.2,0.1l0.2-0.1 l0-0.2l0.3-0.1l0.3,0l0.1-0.1l0.6,0l0.2,0.1l0.3,0.1l0.2,0.5l0.9,0v3.3L20.5,39.3z M18.5,36.5c-0.6-0.1-1.1,0.7-1.2,1.6 c-0.1,0.9,0.3,1.8,0.9,1.8c0.6,0.1,1.1-0.7,1.2-1.6C19.5,37.3,19.1,36.5,18.5,36.5z"></path>
+                    </g>
+                </svg>
+            </li>
+            <li class="space"></li>
+            <li id="highlights" class="mainMode inactive">
+                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                    x="0px" y="0px" viewBox="0 0 60 60" enable-background="new 0 0 60 60" xml:space="preserve">
+                    <g>
+                        <path d="M30,16.3c-5,0-9,4-9,9c0,5.9,9,18.5,9,18.5s9-12.8,9-18.5C39,20.3,35,16.3,30,16.3z M29.9,29.8 c-2.4,0-4.4-2-4.4-4.4c0-2.4,2-4.4,4.4-4.4s4.4,2,4.4,4.4S32.4,29.8,29.9,29.8z"></path>
+                    </g>
+                </svg>
+            </li>
+        </ul>
+    </div>
+    <p id="caveat" class="normal"></p>
+    <div id="start" class="enable">
+        <p class="big">Welcome to Experience Curiosity</p>
+        <p class="normal">Click the information button 
+            <svg version="1.1" id="startInfo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 35 35" enable-background="new 0 0 35 35" xml:space="preserve"><g><path d="M17.5,2C26,2,33,9,33,17.5S26,33,17.5,33S2,26,2,17.5S9,2,17.5,2 M17.5,0C7.8,0,0,7.8,0,17.5 S7.8,35,17.5,35S35,27.2,35,17.5S27.2,0,17.5,0L17.5,0z"></path><path d="M16.3,9.1c-0.4,0.4-0.6,0.9-0.6,1.4c0,0.5,0.2,1,0.6,1.4c0.4,0.4,0.8,0.6,1.4,0.6c0.5,0,1-0.2,1.4-0.6 c0.4-0.4,0.6-0.9,0.6-1.4c0-0.5-0.2-1-0.6-1.4c-0.4-0.4-0.8-0.6-1.4-0.6C17.2,8.5,16.7,8.7,16.3,9.1z M18.4,14.3 c-0.4,0.2-0.7,0.3-1,0.4C17,14.9,16.6,15,16,15.1c-0.5,0.1-1.1,0.2-1.6,0.2v2H16v5.1c0,0.3,0,0.5-0.1,0.6c-0.1,0.1-0.1,0.2-0.2,0.2 c-0.1,0-0.3,0.1-0.7,0.1h-0.6v2.1H21v-2.1h-0.6c-0.4,0-0.6,0-0.7-0.1c-0.1,0-0.2-0.1-0.2-0.2c0-0.1-0.1-0.3-0.1-0.7v-7.9H18.4z"></path></g></svg>
+            in the top right corner to get started.
+        </p>
+        <p id="fullscreenTip" class="normal">This application is best viewed in fullscreen, click the 
+            <svg version="1.1" id="startFS" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                viewBox="0 0 29 29" enable-background="new 0 0 29 29" xml:space="preserve">
+                <g>
+                    <g>
+                        <path d="M1.4,20.1L0,28.3c0,0.1,0,0.3,0.1,0.4c0,0,0,0,0,0c0.1,0.1,0.3,0.2,0.4,0.1l8.1-1.4c0.2,0,0.3-0.2,0.4-0.3 c0.1-0.2,0-0.3-0.1-0.5l-1.6-1.6l4.3-4.3c0.2-0.2,0.2-0.5,0-0.7l-2.9-2.9C8.5,17,8.2,17,8,17.2l-4.3,4.3l-1.6-1.6 c-0.1-0.1-0.3-0.2-0.5-0.1C1.5,19.8,1.4,20,1.4,20.1z"></path>
+                    </g><g>
+                        <path d="M27.5,8.7l1.4-8.2c0-0.1,0-0.3-0.1-0.4l0,0C28.6,0,28.4,0,28.3,0l-8.1,1.4c-0.2,0-0.3,0.2-0.4,0.3 c-0.1,0.2,0,0.3,0.1,0.5l1.6,1.6L17.2,8c-0.2,0.2-0.2,0.5,0,0.7l2.9,2.9c0.2,0.2,0.5,0.2,0.7,0l4.3-4.3l1.6,1.6 c0.1,0.1,0.3,0.2,0.5,0.1C27.3,9,27.4,8.9,27.5,8.7z"></path>
+                    </g><g>
+                        <path d="M20.1,27.5l8.2,1.4c0.1,0,0.3,0,0.4-0.1l0,0c0.1-0.1,0.2-0.3,0.1-0.4l-1.4-8.1c0-0.2-0.2-0.3-0.3-0.4 c-0.2-0.1-0.3,0-0.5,0.1l-1.6,1.6l-4.3-4.3c-0.2-0.2-0.5-0.2-0.7,0l-2.9,2.9c-0.2,0.2-0.2,0.5,0,0.7l4.3,4.3l-1.6,1.6 c-0.1,0.1-0.2,0.3-0.1,0.5C19.8,27.3,20,27.4,20.1,27.5z"></path>
+                    </g><g>
+                        <path d="M8.7,1.4L0.5,0C0.4,0,0.2,0,0.1,0.1c0,0,0,0,0,0C0,0.2,0,0.4,0,0.5l1.4,8.1C1.4,8.8,1.5,9,1.7,9 C1.9,9.1,2,9,2.2,8.9l1.6-1.6L8,11.6c0.2,0.2,0.5,0.2,0.7,0l2.9-2.9c0.2-0.2,0.2-0.5,0-0.7L7.4,3.7l1.6-1.6C9.1,2,9.1,1.8,9.1,1.7 C9,1.5,8.9,1.4,8.7,1.4z"></path>
+                    </g>
+                </g>
+            </svg>
+            button to switch.
+        </p>
+        <p id="backTip" class="normal">To return to <span id="backTipData"></span>, click the 
+            <svg version="1.1" id="startBack" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 33.5 27" enable-background="new 0 0 33.5 27" xml:space="preserve">
+                <g>
+                    <path d="M30.3,15.1H3.6c-1,0-1.8-0.8-1.8-1.8s0.8-1.8,1.8-1.8h26.7c1,0,1.8,0.8,1.8,1.8S31.2,15.1,30.3,15.1z"></path>
+                    <path d="M14.1,25.6c-0.4,0-0.9-0.2-1.2-0.5L1.1,13.4L12.8,1.7c0.7-0.7,1.8-0.7,2.5,0c0.7,0.7,0.7,1.8,0,2.5 l-9.2,9.2l9.2,9.2c0.7,0.7,0.7,1.8,0,2.5C15,25.4,14.5,25.6,14.1,25.6z"></path>
+                </g>
+            </svg>
+            button.
+    </div>
+    <div id="annotation"></div>
+    <div id="imageModal">
+        <div id="imageModalInner">
+            <figure>
+                <div id="imageClose">
+                    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                        x="0px" y="0px" viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve">
+                        <g>
+                            <g>
+                                <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#DD8B3A" points="24,22.6 13.4,12 23.9,1.5 22.5,0.1 12,10.6 1.4,0 0,1.4 10.6,12 0.1,22.5 1.5,23.9 12,13.4 22.6,24"></polygon>
+                            </g>
+                        </g>
+                    </svg>
+                </div>
+                <img id="image">
+                <figcaption id="imageCaption"></figcaption>
+            </figure>
+        </div>
+    </div>
+    <div id="infoOverlay">
+        <div id="infoArea">
+            <div id="infoClose">
+                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                    x="0px" y="0px" viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve">
+                    <g>
+                        <g>
+                            <polygon fill-rule="evenodd" clip-rule="evenodd" fill="#DD8B3A" points="24,22.6 13.4,12 23.9,1.5 22.5,0.1 12,10.6 1.4,0 0,1.4 10.6,12 0.1,22.5 1.5,23.9 12,13.4 22.6,24"></polygon>
+                        </g>
+                    </g>
+                </svg>
+            </div>
+            <p class="infoTitle">About Experience Curiosity</p>
+            <div id="infoScroll" class="scroll">
+                <p class="infoNormal">Welcome to Experience Curiosity, a WebGL tool to learn about the Curiosity Rover and its adventures in the Pahrump Hills region of Gale Crater on Mars.    Explore the highlights of the Pahrump Hills area, replay some of Curiosity's activities, or take control and use a virtual rover to have a look around.</p>
+                <p class="infoNormal">To best experience this web application, we recommend using one of the following WebGL enabled browsers:</p>
+                <ol class="infoNormal">
+                    <li>Google Chrome 34+</li>
+                    <li>Mozilla Firefox 31+</li>
+                    <li>Apple Safari 8+</li>
+                    <li>Microsoft Internet Explorer 11+ <i>(experimental)</i></li>
+                </ol>
+                <p class="infoNormal">Other browsers may work, but Chrome or Firefox are suggested for a better experience except on iOS where Safari is prefered.</p>
+                <p class="infoTitle">How to Use</p>
+                <p class="infoNormal">Click and drag on the background to rotate the camera view.  Use your mouse wheel or pinch the screen to zoom in and out from Curiosity.<p>
+                <p class="infoNormal">From the <span class="infoBold">left panel</span> you can choose your view and explore features of Experience Curiosity.<p>
+                <p class="infoSubtitle">Free Drive and Rover Replay</p>
+                <table class="infoTable">
+                    <tr>
+                        <td class="infoThumb"><img src="https://eyes.nasa.gov/curiosity/images/help-thumb-fdrr-1.jpg"></td>
+                        <td class="infoDesc">
+                            Choose Free Drive and Rover Replay to explore the landscape or to watch Curiosity reenact events.
+                            For Free Drive, click/tap anywhere in the landscape and Curiosity will drive to that location.
+                            <br><br>
+                            For Rover Replay, choose from the list to select an event and watch Curiosity in action.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="infoThumb"><img src="https://eyes.nasa.gov/curiosity/images/help-thumb-fdrr-2.jpg"></td>
+                        <td class="infoDesc">You can also click/tap the corresponding markers in the landscape to experience Rover Replay.</td>
+                    </tr>
+                </table>
+                <p class="infoSubtitle">Control Curiosity</p>
+                <table class="infoTable">
+                    <tr>
+                        <td class="infoThumb"><img src="https://eyes.nasa.gov/curiosity/images/help-thumb-cc-1.jpg"></td>
+                        <td class="infoDesc">Choose Control Curiosity to manually operate Curiosity components.</td>
+                    </tr>
+                    <tr>
+                        <td class="infoThumb"><img src="https://eyes.nasa.gov/curiosity/images/help-thumb-cc-2.jpg"></td>
+                        <td class="infoDesc">Several rover components will glow to indicate they are operable.</td>
+                    </tr>
+                    <tr>
+                        <td class="infoThumb"><img src="https://eyes.nasa.gov/curiosity/images/help-thumb-cc-3.jpg"></td>
+                        <td class="infoDesc">
+                            Click/tap an operable component as indicated by the highlighting above.
+                            A blue arrow will appear indicating how to maneuver the part.
+                            Click/tap and drag to move the part in the indicated direction.
+                        </td>
+                    </tr>
+                </table>
+                <p class="infoSubtitle">Learn About Curiosity</p>
+                <table class="infoTable">
+                    <tr>
+                        <td class="infoThumb"><img src="https://eyes.nasa.gov/curiosity/images/help-thumb-lac-1.jpg"></td>
+                        <td class="infoDesc">
+                            Choose Learn About Curiosity to learn all about the rover components.
+                            Click/tap a component from the list to view a description of that part.
+                            Scroll the list to view more components.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="infoThumb"><img src="https://eyes.nasa.gov/curiosity/images/help-thumb-lac-2.jpg"></td>
+                        <td class="infoDesc">
+                            You can also click/tap directly on the rover to select a component.
+                            The rover component will highlight.
+                        </td>
+                    </tr>
+                </table>
+                <p class="infoSubtitle">Pahrump Hills Highlights</p>
+                <table class="infoTable">
+                    <tr>
+                        <td class="infoThumb"><img src="https://eyes.nasa.gov/curiosity/images/help-thumb-phh-1.jpg"></td>
+                        <td class="infoDesc">
+                            Choose Pahrump Hills Highlights to explore important sites in the region.
+                            Click/tap a location from the list to go there and view an image and description of that site.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="infoThumb"><img src="https://eyes.nasa.gov/curiosity/images/help-thumb-phh-2.jpg"></td>
+                        <td class="infoDesc">You can also click/tap the corresponding markers in the landscape to visit a location.</td>
+                    </tr>
+                </table>
+                <br>
+                <p class="infoDesc">The <span class="infoBold">right camera panel</span> provides views from various cameras mounted on the rover and is available in all modes except Pahrump Hills Highlights.</p>
+                <table class="infoTable">
+                    <tr>
+                        <td class="infoThumb"><img src="https://eyes.nasa.gov/curiosity/images/help-thumb-camera.jpg"></td>
+                        <td class="infoDesc">
+                            Click the left and right arrows to cycle through the seven available camera views.
+                            In the Control Curiosity mode, you can also click/tap and drag inside the camera window to control the camera's view.
+                        </td>
+                    </tr>
+                </table>
+                <p class="infoTitle"><br>Tips and Tricks</p>
+                <table class="infoTable">
+                    <tr>
+                        <td class="infoIcon"><img src="https://eyes.nasa.gov/curiosity/images/help-icon-i.png"></td>
+                        <td class="infoDesc narrow">For more info about Experience Curiosity, tips on how to use the interface, and credits, click the circle "i" icon in the top right.</td>
+                    </tr>
+                    <tr>
+                        <td class="infoIcon"><img src="https://eyes.nasa.gov/curiosity/images/help-icon-tab.png"></td>
+                        <td class="infoDesc narrow">Click/tap the arrows tab to collapse or expand a panel.</td>
+                    </tr>
+                </table>
+                <p class="infoTitle"><br>Credits</p>
+                <p class="infoNormal">Project Lead and Art Direction: <br>Brian Kumanchik</p>
+                <p class="infoNormal">Design:<br> Brian Kumanchik, Erik Boettcher</p>
+                <p class="infoNormal">Producers:<br> Kevin Hussey, Stephen Kulczycki</p>
+                <p class="infoNormal">Technical Director:<br> Doug Ellison</p>
+                <p class="infoNormal">Programming Lead:<br> Erik Boettcher</p>
+                <p class="infoNormal">3D art:<br> Brian Kumanchik, Doug Ellison</p>
+                <p class="infoNormal">RKSML Importer/Exporter:<br> Andrew Boettcher</p>
+                <p class="infoNormal">Copywriters:<br> Carolina Carnalla-Martinez, Doug Ellison</p>
+                <p class="infoNormal">UI Layout and Design:<br> Andrea Boeck and Justin Moore (Moore Boeck), Brian Kumanchik</p>
+                <p class="infoNormal">Voice Talent:<br> Ashwin Vasavada and Jennifer Trosper</p>
+                <p class="infoNormal">3D Web Engine: <a href="https://www.soft8soft.com/verge3d">Verge3D</a><br>
+                   Yuri and Alex Kovelenov, Ivan Lyubovnikov, Mikhail Luzyanin
+                </p>
+                <p class="infoNormal">Special Thanks:<br> Alexander Menzies</p>
+                <p class="infoNormal">Testers:<br>
+                    Daniel Sedlacko, Henry Kline, Elizabeth Landau, Tony Rice, Joe Kumanchik, Melody Ho,
+                    Davit Stepanyan, Whitney Clavin, Alan Buis, Ashwin Vasavada, Grigory Odegov,
+                    Rachel Zimmerman-Brachman, Randal Jackson, Holly Shaftel, Brian Morrison,
+                    David Mittman, Steven Muckley, Alan Rich, Eric Hambright
+                </p>
+            </div>
+            <div></div>
+        </div>
+    </div>
+    <div id="error">
+        <div id="errorModal">
+            <p class="infoTitle">Problem While Starting</p>
+            <p class="infoNormal">To best experience this web application, we recommend using one of the following WebGL enabled browsers:</p>
+            <ol class="infoNormal">
+                <li>Google Chrome 34+</li>
+                <li>Mozilla Firefox 31+</li>
+                <li>Apple Safari 8+</li>
+                <li>Microsoft Internet Explorer 11+ <i>(experimental)</i></li>
+            </ol>
+            <p class="infoNormal">Other browsers may work, but Chrome or Firefox are suggested for a better experience exception on iOS where Safari is prefered.
+                To check if your browser supports WebGL, you can visit <a href="https://get.webgl.org/">https://get.webgl.org</a>.</p>
+        </div>
+    </div>
+    <script>
+        var result = window.location.search.match(/loader=([^&]+)/);
+        if(result && result.length > 1 && result[1])
+            document.getElementById('loadingImage').src = result[1];
+    </script>
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','../../www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-19316180-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+</body>
+
+<!-- Mirrored from eyes.nasa.gov/curiosity/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 27 Feb 2019 05:57:22 GMT -->
+</html>
+

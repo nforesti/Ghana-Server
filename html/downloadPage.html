@@ -2,7 +2,7 @@
 <html>
 <header>
     <h1>Web Crawler Example</h1>
-    <link rel="stylesheet" href="downloadPage.css" />
+    <link rel="stylesheet" href="css/downloadPage.css" />
 </header>
 <body class="body">
     <div class="container">
@@ -32,24 +32,40 @@
                         <option value="Grade_6" >6th Grade</option>
                     </select>
                 </li>
+                <li>Subject:
+                    <select id="subject" multiple required>
+                        <option value="math">Math</option>
+                        <option value="reading">Reading</option>
+                        <option value="science">Science</option>
+                    </select>
+                </li>
             </ul>
             <input type="submit" value="Download">
         </form>
-    </h4>   
+    </h4>
+
+    <a href="gradepage">GRADE PAGE</a>
 
 </body>
 
-<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="axios"></script>
 <script>
     function download() {
         var name = document.getElementById("name").value;
         var url = document.getElementById("url").value;
         var grades = [];
+        var subjects = [];
 
         var options = document.getElementById("grade").options;
         for ( var i = 0; i < options.length; i ++) {
             if ( options[i].selected ) {
                 grades.push(options[i].value);
+            }
+        }
+        options = document.getElementById("subject").options;
+        for ( var i = 0; i < options.length; i ++) {
+            if ( options[i].selected ) {
+                subjects.push(options[i].value);
             }
         }
 
@@ -58,7 +74,8 @@
         downloadRequest[name] = {
             name: name,
             url: url,
-            grades: 15,
+            grades: grades,
+            subjects: subjects,
             time: new Date()
         }
 

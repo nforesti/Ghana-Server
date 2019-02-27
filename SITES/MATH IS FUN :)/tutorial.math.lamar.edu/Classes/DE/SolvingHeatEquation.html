@@ -1,0 +1,1283 @@
+
+
+<!DOCTYPE html>
+
+<html>
+
+<!-- Mirrored from tutorial.math.lamar.edu/Classes/DE/SolvingHeatEquation.aspx by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 27 Feb 2019 06:15:37 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=yes" /><meta http-equiv="X-UA-Compatible" content="IE=edge" />  <!-- For best MathJax performance on IE  -->
+
+  <meta name="google-site-verification" content="uLoA31CJfOhIVMJWBjCmQL8xNMmmLybZU3LRKavy9WQ" /><title>
+	Differential Equations - Solving the Heat Equation
+</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="../../../www.googletagmanager.com/gtag/js1872?id=UA-331594-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-331594-1');
+  </script>
+
+  <link type="text/css" href="../../css/jquery.mmenu.all.css" rel="stylesheet" /><link type="text/css" href="../../css/jquery.dropdown.css" rel="stylesheet" /><link href="../../FA/css/fontawesome-all.min.css" rel="stylesheet" /><link type="text/css" href="../../css/notes-all.css" rel="stylesheet" /><link type="text/css" href="../../css/notes-google.css" rel="stylesheet" /><link type="text/css" href="../../css/notes-mmenu.css" rel="stylesheet" /><link type="text/css" href="../../css/notes-dropdown.css" rel="stylesheet" />
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+     TeX: { equationNumbers: { autoNumber: "AMS" } }
+    });
+  </script>
+  <script type="text/javascript" async src="../../../cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax2ba6.js?config=TeX-AMS_CHTML-full"></script>
+  <script type="text/javascript" src="../../../code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="../../js/jquery.mmenu.all.js"></script>
+  <script type="text/javascript" src="../../js/jquery.dropdown.js"></script>
+  <script type="text/javascript" src="../../js/notes-all.js"></script>  
+
+  <script>
+    (function () {
+      var cx = '001004262401526223570:11yv6vpcqvy';
+      var gcse = document.createElement('script');
+      gcse.type = 'text/javascript';
+      gcse.async = true;
+      gcse.src = '../../../cse.google.com/cse07b6.html?cx=' + cx;
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(gcse, s);
+    })();
+  </script>
+
+<meta http-equiv="keywords" name="keywords" content="separation of variables, method of separation of variables, heat equation, solving heat equation" /><meta http-equiv="description" name="description" content="In this section we go through the complete separation of variables process, including solving the two ordinary differential equations the process generates.  We will do this by solving the heat equation with three different sets of boundary conditions.  Included is an example solving the heat equation on a bar of length L but instead on a thin circular ring." /></head>
+<body onload="init({Notes: 'NoteMobile;8/21/2018;true'})">
+
+  <div id="page">
+
+    <div class="header">
+      <div class="header-row">
+        <!--<a href="#menu"><span></span></a>-->
+        <div id="side-menu-icon" class="header-side-menu-icon"><a href="#menu"><span class="fas fa-bars fa-lg" aria-hidden="true" title="Main Menu - Change between topics, chapters and sections as well as a few extra pages."></span></a></div>
+        <span class="header-title"><a href="../../index.html" class="header-title-link">Paul's Online Notes</a></span>
+        <div class="header-spacer"></div>
+
+        <div id="content-top-menu" class="top-menu">
+          <button id="content-type-menu" class="top-menu-button" data-jq-dropdown="#jq-dropdown-type" title="View (Notes, Practice Problems or Assignment Problems, Show/Hide Solutions and/or Steps) Menu">
+            <span id="tab_top_menu_notes" class="top-menu-item-title">Notes</span> <span class="far fa-eye fa-lg" aria-hidden="true"></span>
+          </button>
+
+          <button id="quicknav-menu" class="top-menu-button" data-jq-dropdown="#jq-dropdown-quicknav" title="Quick Navigation (Previous/Next Sections and Problems and Full Problem List) Menu">
+            <span class="top-menu-item-title">Quick Nav</span> <span class="fas fa-exchange fa-lg" aria-hidden="true"></span>
+          </button>
+          
+          <button id="download-menu" class="top-menu-button" data-jq-dropdown="#jq-dropdown-download" title="Download pdf Menu">
+            <span class="top-menu-item-title">Download</span> <span class="far fa-download fa-lg" aria-hidden="true"></span>
+          </button>
+
+          <button id="print-menu" class="top-menu-button top-menu-button-icon-only" data-jq-dropdown="#jq-print-download" title="Print Menu">
+            <span class="far fa-print fa-lg" aria-hidden="true"></span>
+          </button>
+        </div>
+
+        <div id="header-google-search" class="header-search">
+          <gcse:search></gcse:search>
+        </div>
+        <div id="header-search-icon" title="Site Search" class="header-menu-icon"><span id="search-icon" class="fas fa-search" aria-hidden="true"></span></div>
+
+      </div>
+    </div>
+
+     <div id="jq-dropdown-type" class="jq-dropdown jq-dropdown-tip">
+      <ul class="jq-dropdown-menu">
+        
+        <li id="li_type_menu_goto" class="top-menu-nav-title">Go To</li>
+        <li id="li_type_menu_notes">
+          <span id="type_menu_notes_span" title="Viewing the Notes for the current topic." class="top-menu-current">Notes</span>
+          
+        </li>
+        <li id="li_type_menu_practice">
+          <span id="type_menu_problem_span_de" class="top-menu-item-text">Practice and Assignment problems are not yet written.  As time permits I am working on them, however I don't have the amount of free time that I used to so it will take a while before anything shows up here.</span>
+          
+          
+        </li>
+        <li id="li_type_menu_asgn">
+          
+          
+        </li>
+        <li id="li_type_menu_sh" class="top-menu-nav-title">Show/Hide</li>
+        <li id="li_type_menu_show" title="Show any hidden solutions and/or steps that may be present on the page."><a href="javascript:SHPrintPage(1,0)" id="view_menu_show">Show all Solutions/Steps/<em>etc.</em></a></li>
+        <li id="li_type_menu_hide" title="Hide any visible solutions and/or steps that may be present on the page."><a href="javascript:SHPrintPage(0,0)" id="view_menu_hide">Hide all Solutions/Steps/<em>etc.</em></a></li>
+      </ul>
+    </div>
+
+    <div id="jq-dropdown-quicknav" class="jq-dropdown jq-dropdown-tip">
+      <ul class="jq-dropdown-menu">
+        <li id="li_nav_menu_sections" class="top-menu-nav-title">Sections</li>
+        <li id="li_nav_menu_prev_section"><a href="SeparationofVariables.html" id="a_nav_menu_prev_section" class="top-menu-nav-link" title="Previous Section : Separation of Variables"><span class="top-menu-prev fas fa-chevron-left"></span> Separation of Variables</a></li>
+        <li id="li_nav_menu_next_section"><a href="HeatEqnNonZero.html" id="a_nav_menu_next_section" class="top-menu-nav-link" title="Next Section : Heat Equation with Non-Zero Temperature Boundaries"><span class="top-menu-prev-hidden fas fa-chevron-left"></span> Heat Equation with Non-Zero Temperature Boundaries <span class="top-menu-next fas fa-chevron-right"></span></a></li>
+        <li id="li_nav_menu_chapters" class="top-menu-nav-title">Chapters</li>
+        <li id="li_nav_menu_prev_chapter"><a href="IntroBVP.html" id="a_nav_menu_prev_chapter" class="top-menu-nav-link" title="Previous Chapter : Boundary Value Problems &amp; Fourier Series"><span class="top-menu-prev fas fa-chevron-left"></span><span class="top-menu-prev fas fa-chevron-left"></span> Boundary Value Problems & Fourier Series</a></li>
+        
+        
+        
+        
+        
+        <li id="li_nav_menu_classes" class="top-menu-nav-title">Classes</li>
+        <li>
+          
+          <a href="../Alg/Alg.html" id="nav_menu_alg_link" title="Go To Algebra Notes">Algebra</a>
+        </li>
+        <li>
+          
+          <a href="../CalcI/CalcI.html" id="nav_menu_calci_link" title="Go To Calculus I Notes">Calculus I</a>
+        </li>
+        <li>
+          
+          <a href="../CalcII/CalcII.html" id="nav_menu_calcii_link" title="Go To Calculus II Notes">Calculus II</a>
+        </li>
+        <li>
+          
+          <a href="../CalcIII/CalcIII.html" id="nav_menu_calciii_link" title="Go To Calculus III Notes">Calculus III</a>
+        </li>
+        <li>
+          <span id="nav_menu_de_span" title="Currently Viewing Differential Equations Material" class="top-menu-current">Differential Equations</span>
+          
+        </li>
+        <li id="li_nav_menu_extras" class="top-menu-nav-title">Extras</li>
+        <li>
+          
+          <a href="../../Extras/AlgebraTrigReview/AlgebraTrig.html" id="nav_menu_algtrig_link" title="Go To Algebra &amp; Trig Review">Algebra &amp; Trig Review</a>
+        </li>
+        <li>
+          
+          <a href="../../Extras/CommonErrors/CommonMathErrors.html" id="nav_menu_commonerrors_link" title="Go To Common Math Errors">Common Math Errors</a>
+        </li>
+        <li>
+          
+          <a href="../../Extras/ComplexPrimer/ComplexNumbers.html" id="nav_menu_complexnumbers_link" title="Go To Complex Numbers Primer">Complex Number Primer</a>
+        </li>
+        <li>
+          
+          <a href="../../Extras/StudyMath/HowToStudyMath.html" id="nav_menu_studymath_link" title="Go To How To Study Math">How To Study Math</a>
+        </li>
+        <li>
+          
+          <a href="../../Extras/CheatSheets_Tables.html" id="nav_menu_cheattables_link" title="Go To List of Cheat Sheets and Tables">Cheat Sheets &amp; Tables</a>
+        </li>
+        <li id="li_nav_menu_misc" class="top-menu-nav-title">Misc</li>
+        <li><a href="http://tutorial.math.lamar.edu/contact.aspx" id="nav_menu_contact" title="Contact Me!">Contact Me</a></li>
+        <li><a href="../../mathjax.html" id="nav_menu_mathjax" title="Info on MathJax and MathJax Configuration Menu">MathJax Help and Configuration</a></li>
+        <li><a href="../../mystudents.html" id="nav_menu_students" title="Go here if you are currently taking a class from me!">My Students</a></li>
+      </ul>
+    </div>
+
+    <div id="jq-dropdown-download" class="jq-dropdown jq-dropdown-anchor-right jq-dropdown-tip">
+      <ul class="jq-dropdown-menu">
+        
+        <li id="li_download_menu_notes" class="top-menu-nav-title">Notes Downloads</li>
+        <li id="li_download_menu_notes_book"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=B,1,N" id="download_menu_notes_book" data-PDF="Download - Menu$Notes - Book$Differential Equations$/Downloads/DE/Notes/Complete.pdf">Complete Book</a></li>
+        
+        <li id="li_download_menu_notes_chapter"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=C,78,N" id="download_menu_notes_chapter" data-PDF="Download - Menu$Notes - Chapter$Differential Equations - Partial Differential Equations $/Downloads/DE/Notes/PDE.pdf">Current Chapter</a></li>
+        <li id="li_download_menu_notes_section"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=S,475,N" id="download_menu_notes_section" data-PDF="Download - Menu$Notes - Section$Differential Equations - Solving the Heat Equation$/Downloads/DE/Notes/SolvingHeatEquation.pdf">Current Section</a></li>
+        <li id="li_download_menu_practice" class="top-menu-nav-title">Practice Problems Downloads</li>
+        <li id="li_download_menu_practice_de"><span class="top-menu-item-text">Problems not yet written.</span></li>
+        
+        
+        
+        
+        
+        
+        
+        
+        <li id="li_download_menu_asgn" class="top-menu-nav-title">Assignment Problems Downloads</li>
+        <li id="li_download_menu_asgn_de"><span class="top-menu-item-text">Problems not yet written.</span></li>
+        
+        
+        
+        <li id="li_download_menu_other" class="top-menu-nav-title">Other Items</li>
+        <li id="li_download_menu_urls">
+          <a href="http://tutorial.math.lamar.edu/DownloadURLs.aspx?bi=1&amp;ci=78&amp;si=475" id="download_menu_urls">Get URL's for Download Items</a>
+        </li>
+      </ul>
+    </div>
+
+    <div id="jq-print-download" class="jq-dropdown jq-dropdown-anchor-right jq-dropdown-tip">
+      <ul class="jq-dropdown-menu">
+        <li id="li_print_menu_default"><a href="javascript:SHPrintPage()" id="print_menu_default">Print Page in Current Form (Default)</a></li>
+        <li id="li_print_menu_show"><a href="javascript:SHPrintPage(1,1)" id="print_menu_show">Show all Solutions/Steps and Print Page</a></li>
+        <li id="li_print_menu_hide"><a href="javascript:SHPrintPage(0,1)" id="print_menu_hide">Hide all Solutions/Steps and Print Page</a></li>
+      </ul>
+    </div>
+
+
+
+   
+
+    <nav id="menu" class="notes-nav">
+      <ul>
+        <li><a href="../../index.html" class="mm-link">Home</a></li>
+        <li><span>Classes</span></li>
+        <li><a href="../Alg/Alg.html" class="mm-link">Algebra</a>
+          <ul>
+            <li><a href="../Alg/Preliminaries.html" class="mm-link">Preliminaries</a>
+              <ul>
+                <li><a href="../Alg/IntegerExponents.html" class="mm-link">Integer Exponents</a></li>
+                <li><a href="../Alg/RationalExponents.html" class="mm-link">Rational Exponents</a></li>
+                <li><a href="../Alg/Radicals.html" class="mm-link">Radicals</a></li>
+                <li><a href="../Alg/Polynomials.html" class="mm-link">Polynomials</a></li>
+                <li><a href="../Alg/Factoring.html" class="mm-link">Factoring Polynomials</a></li>
+                <li><a href="../Alg/RationalExpressions.html" class="mm-link">Rational Expressions</a></li>
+                <li><a href="../Alg/ComplexNumbers.html" class="mm-link">Complex Numbers</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/Solving.html" class="mm-link">Solving Equations and Inequalities</a>
+              <ul>
+                <li><a href="../Alg/SolutionSets.html" class="mm-link">Solutions and Solution Sets</a></li>
+                <li><a href="../Alg/SolveLinearEqns.html" class="mm-link">Linear Equations</a></li>
+                <li><a href="../Alg/LinearApps.html" class="mm-link">Applications of Linear Equations</a></li>
+                <li><a href="../Alg/SolveMultiVariable.html" class="mm-link">Equations With More Than One Variable</a></li>
+                <li><a href="../Alg/SolveQuadraticEqnsI.html" class="mm-link">Quadratic Equations - Part I</a></li>
+                <li><a href="../Alg/SolveQuadraticEqnsII.html" class="mm-link">Quadratic Equations - Part II</a></li>
+                <li><a href="../Alg/SolveQuadraticEqnSummary.html" class="mm-link">Quadratic Equations : A Summary</a></li>
+                <li><a href="../Alg/QuadraticApps.html" class="mm-link">Applications of Quadratic Equations</a></li>
+                <li><a href="../Alg/ReducibleToQuadratic.html" class="mm-link">Equations Reducible to Quadratic in Form</a></li>
+                <li><a href="../Alg/SolveRadicalEqns.html" class="mm-link">Equations with Radicals</a></li>
+                <li><a href="../Alg/SolveLinearInequalities.html" class="mm-link">Linear Inequalities</a></li>
+                <li><a href="../Alg/SolvePolyInequalities.html" class="mm-link">Polynomial Inequalities</a></li>
+                <li><a href="../Alg/SolveRationalInequalities.html" class="mm-link">Rational Inequalities</a></li>
+                <li><a href="../Alg/SolveAbsValueEqns.html" class="mm-link">Absolute Value Equations</a></li>
+                <li><a href="../Alg/SolveAbsValueIneq.html" class="mm-link">Absolute Value Inequalities</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/Graphing_Functions.html" class="mm-link">Graphing and Functions</a>
+              <ul>
+                <li><a href="../Alg/Graphing.html" class="mm-link">Graphing</a></li>
+                <li><a href="../Alg/Lines.html" class="mm-link">Lines</a></li>
+                <li><a href="../Alg/Circles.html" class="mm-link">Circles</a></li>
+                <li><a href="../Alg/FunctionDefn.html" class="mm-link">The Definition of a Function</a></li>
+                <li><a href="../Alg/GraphFunctions.html" class="mm-link">Graphing Functions</a></li>
+                <li><a href="../Alg/CombineFunctions.html" class="mm-link">Combining Functions</a></li>
+                <li><a href="../Alg/InverseFunctions.html" class="mm-link">Inverse Functions</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/CommonGraphs.html" class="mm-link">Common Graphs</a>
+              <ul>
+                <li><a href="../Alg/Lines_Circles_PWF.html" class="mm-link">Lines, Circles and Piecewise Functions</a></li>
+                <li><a href="../Alg/Parabolas.html" class="mm-link">Parabolas</a></li>
+                <li><a href="../Alg/Ellipses.html" class="mm-link">Ellipses</a></li>
+                <li><a href="../Alg/Hyperbolas.html" class="mm-link">Hyperbolas</a></li>
+                <li><a href="../Alg/MiscFunctions.html" class="mm-link">Miscellaneous Functions</a></li>
+                <li><a href="../Alg/Transformations.html" class="mm-link">Transformations</a></li>
+                <li><a href="../Alg/Symmetry.html" class="mm-link">Symmetry</a></li>
+                <li><a href="../Alg/GraphRationalFcns.html" class="mm-link">Rational Functions</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/PolynomialFunctions.html" class="mm-link">Polynomial Functions</a>
+              <ul>
+                <li><a href="../Alg/DividingPolynomials.html" class="mm-link">Dividing Polynomials</a></li>
+                <li><a href="../Alg/ZeroesOfPolynomials.html" class="mm-link">Zeroes/Roots of Polynomials</a></li>
+                <li><a href="../Alg/GraphingPolynomials.html" class="mm-link">Graphing Polynomials</a></li>
+                <li><a href="../Alg/FindingZeroesOfPolynomials.html" class="mm-link">Finding Zeroes of Polynomials</a></li>
+                <li><a href="../Alg/PartialFractions.html" class="mm-link">Partial Fractions</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/ExpAndLog.html" class="mm-link">Exponential and Logarithm Functions</a>
+              <ul>
+                <li><a href="../Alg/ExpFunctions.html" class="mm-link">Exponential Functions</a></li>
+                <li><a href="../Alg/LogFunctions.html" class="mm-link">Logarithm Functions</a></li>
+                <li><a href="../Alg/SolveExpEqns.html" class="mm-link">Solving Exponential Equations</a></li>
+                <li><a href="../Alg/SolveLogEqns.html" class="mm-link">Solving Logarithm Equations</a></li>
+                <li><a href="../Alg/ExpLogApplications.html" class="mm-link">Applications</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/Systems.html" class="mm-link">Systems of Equations</a>
+              <ul>
+                <li><a href="../Alg/SystemsTwoVrble.html" class="mm-link">Linear Systems with Two Variables</a></li>
+                <li><a href="../Alg/SystemsThreeVrble.html" class="mm-link">Linear Systems with Three Variables</a></li>
+                <li><a href="../Alg/AugmentedMatrix.html" class="mm-link">Augmented Matrices</a></li>
+                <li><a href="../Alg/AugmentedMatrixII.html" class="mm-link">More on the Augmented Matrix</a></li>
+                <li><a href="../Alg/NonlinearSystems.html" class="mm-link">Nonlinear Systems</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../CalcI/CalcI.html" class="mm-link">Calculus I</a>
+          <ul>
+            <li><a href="../CalcI/ReviewIntro.html" class="mm-link">Review</a>
+              <ul>
+                <li><a href="../CalcI/Functions.html" class="mm-link">Functions</a></li>
+                <li><a href="../CalcI/InverseFunctions.html" class="mm-link">Inverse Functions</a></li>
+                <li><a href="../CalcI/TrigFcns.html" class="mm-link">Trig Functions</a></li>
+                <li><a href="../CalcI/TrigEquations.html" class="mm-link">Solving Trig Equations</a></li>
+                <li><a href="../CalcI/TrigEquations_CalcI.html" class="mm-link">Trig Equations with Calculators, Part I</a></li>
+                <li><a href="../CalcI/TrigEquations_CalcII.html" class="mm-link">Trig Equations with Calculators, Part II</a></li>
+                <li><a href="../CalcI/ExpFunctions.html" class="mm-link">Exponential Functions</a></li>
+                <li><a href="../CalcI/LogFcns.html" class="mm-link">Logarithm Functions</a></li>
+                <li><a href="../CalcI/ExpLogEqns.html" class="mm-link">Exponential and Logarithm Equations</a></li>
+                <li><a href="../CalcI/CommonGraphs.html" class="mm-link">Common Graphs</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcI/limitsIntro.html" class="mm-link">Limits</a>
+              <ul>
+                <li><a href="../CalcI/Tangents_Rates.html" class="mm-link">Tangent Lines and Rates of Change</a></li>
+                <li><a href="../CalcI/TheLimit.html" class="mm-link">The Limit</a></li>
+                <li><a href="../CalcI/OneSidedLimits.html" class="mm-link">One-Sided Limits</a></li>
+                <li><a href="../CalcI/LimitsProperties.html" class="mm-link">Limit Properties</a></li>
+                <li><a href="../CalcI/ComputingLimits.html" class="mm-link">Computing Limits</a></li>
+                <li><a href="../CalcI/InfiniteLimits.html" class="mm-link">Infinite Limits</a></li>
+                <li><a href="../CalcI/LimitsAtInfinityI.html" class="mm-link">Limits At Infinity, Part I</a></li>
+                <li><a href="../CalcI/LimitsAtInfinityII.html" class="mm-link">Limits At Infinity, Part II</a></li>
+                <li><a href="../CalcI/Continuity.html" class="mm-link">Continuity</a></li>
+                <li><a href="../CalcI/DefnOfLimit.html" class="mm-link">The Definition of the Limit</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcI/DerivativeIntro.html" class="mm-link">Derivatives</a>
+              <ul>
+                <li><a href="../CalcI/DefnOfDerivative.html" class="mm-link">The Definition of the Derivative</a></li>
+                <li><a href="../CalcI/DerivativeInterp.html" class="mm-link">Interpretation of the Derivative</a></li>
+                <li><a href="../CalcI/DiffFormulas.html" class="mm-link">Differentiation Formulas</a></li>
+                <li><a href="../CalcI/ProductQuotientRule.html" class="mm-link">Product and Quotient Rule</a></li>
+                <li><a href="../CalcI/DiffTrigFcns.html" class="mm-link">Derivatives of Trig Functions</a></li>
+                <li><a href="../CalcI/DiffExpLogFcns.html" class="mm-link">Derivatives of Exponential and Logarithm Functions</a></li>
+                <li><a href="../CalcI/DiffInvTrigFcns.html" class="mm-link">Derivatives of Inverse Trig Functions</a></li>
+                <li><a href="../CalcI/DiffHyperFcns.html" class="mm-link">Derivatives of Hyperbolic Functions</a></li>
+                <li><a href="../CalcI/ChainRule.html" class="mm-link">Chain Rule</a></li>
+                <li><a href="../CalcI/ImplicitDIff.html" class="mm-link">Implicit Differentiation</a></li>
+                <li><a href="../CalcI/RelatedRates.html" class="mm-link">Related Rates</a></li>
+                <li><a href="../CalcI/HigherOrderDerivatives.html" class="mm-link">Higher Order Derivatives</a></li>
+                <li><a href="../CalcI/LogDiff.html" class="mm-link">Logarithmic Differentiation</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcI/DerivAppsIntro.html" class="mm-link">Applications of Derivatives</a>
+              <ul>
+                <li><a href="../CalcI/RateOfChange.html" class="mm-link">Rates of Change</a></li>
+                <li><a href="../CalcI/CriticalPoints.html" class="mm-link">Critical Points</a></li>
+                <li><a href="../CalcI/MinMaxValues.html" class="mm-link">Minimum and Maximum Values</a></li>
+                <li><a href="../CalcI/AbsExtrema.html" class="mm-link">Finding Absolute Extrema</a></li>
+                <li><a href="../CalcI/ShapeofGraphPtI.html" class="mm-link">The Shape of a Graph, Part I</a></li>
+                <li><a href="../CalcI/ShapeofGraphPtII.html" class="mm-link">The Shape of a Graph, Part II</a></li>
+                <li><a href="../CalcI/MeanValueTheorem.html" class="mm-link">The Mean Value Theorem</a></li>
+                <li><a href="../CalcI/Optimization.html" class="mm-link">Optimization</a></li>
+                <li><a href="../CalcI/MoreOptimization.html" class="mm-link">More Optimization Problems</a></li>
+                <li><a href="../CalcI/LHospitalsRule.html" class="mm-link">L'Hospital's Rule and Indeterminate Forms</a></li>
+                <li><a href="../CalcI/LinearApproximations.html" class="mm-link">Linear Approximations</a></li>
+                <li><a href="../CalcI/Differentials.html" class="mm-link">Differentials</a></li>
+                <li><a href="../CalcI/NewtonsMethod.html" class="mm-link">Newton's Method</a></li>
+                <li><a href="../CalcI/BusinessApps.html" class="mm-link">Business Applications</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcI/IntegralsIntro.html" class="mm-link">Integrals</a>
+              <ul>
+                <li><a href="../CalcI/IndefiniteIntegrals.html" class="mm-link">Indefinite Integrals</a></li>
+                <li><a href="../CalcI/ComputingIndefiniteIntegrals.html" class="mm-link">Computing Indefinite Integrals</a></li>
+                <li><a href="../CalcI/SubstitutionRuleIndefinite.html" class="mm-link">Substitution Rule for Indefinite Integrals</a></li>
+                <li><a href="../CalcI/SubstitutionRuleIndefinitePtII.html" class="mm-link">More Substitution Rule</a></li>
+                <li><a href="../CalcI/AreaProblem.html" class="mm-link">Area Problem</a></li>
+                <li><a href="../CalcI/DefnOfDefiniteIntegral.html" class="mm-link">Definition of the Definite Integral</a></li>
+                <li><a href="../CalcI/ComputingDefiniteIntegrals.html" class="mm-link">Computing Definite Integrals</a></li>
+                <li><a href="../CalcI/SubstitutionRuleDefinite.html" class="mm-link">Substitution Rule for Definite Integrals</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcI/IntAppsIntro.html" class="mm-link">Applications of Integrals</a>
+              <ul>
+                <li><a href="../CalcI/AvgFcnValue.html" class="mm-link">Average Function Value</a></li>
+                <li><a href="../CalcI/AreaBetweenCurves.html" class="mm-link">Area Between Curves</a></li>
+                <li><a href="../CalcI/VolumeWithRings.html" class="mm-link">Volumes of Solids of Revolution / Method of Rings</a></li>
+                <li><a href="../CalcI/VolumeWithCylinder.html" class="mm-link">Volumes of Solids of Revolution/Method of Cylinders</a></li>
+                <li><a href="../CalcI/MoreVolume.html" class="mm-link">More Volume Problems</a></li>
+                <li><a href="../CalcI/Work.html" class="mm-link">Work</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcI/ExtrasIntro.html" class="mm-link">Extras</a>
+              <ul>
+                <li><a href="../CalcI/LimitProofs.html" class="mm-link">Proof of Various Limit Properties</a></li>
+                <li><a href="../CalcI/DerivativeProofs.html" class="mm-link">Proof of Various Derivative Properties</a></li>
+                <li><a href="../CalcI/ProofTrigDeriv.html" class="mm-link">Proof of Trig Limits</a></li>
+                <li><a href="../CalcI/DerivativeAppsProofs.html" class="mm-link">Proofs of Derivative Applications Facts</a></li>
+                <li><a href="../CalcI/ProofIntProp.html" class="mm-link">Proof of Various Integral Properties </a></li>
+                <li><a href="../CalcI/Area_Volume_Formulas.html" class="mm-link">Area and Volume Formulas</a></li>
+                <li><a href="../CalcI/TypesOfInfinity.html" class="mm-link">Types of Infinity</a></li>
+                <li><a href="../CalcI/SummationNotation.html" class="mm-link">Summation Notation</a></li>
+                <li><a href="../CalcI/ConstantofIntegration.html" class="mm-link">Constant of Integration</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../CalcII/CalcII.html" class="mm-link">Calculus II</a>
+          <ul>
+            <li><a href="../CalcII/IntTechIntro.html" class="mm-link">Integration Techniques</a>
+              <ul>
+                <li><a href="../CalcII/IntegrationByParts.html" class="mm-link">Integration by Parts</a></li>
+                <li><a href="../CalcII/IntegralsWithTrig.html" class="mm-link">Integrals Involving Trig Functions</a></li>
+                <li><a href="../CalcII/TrigSubstitutions.html" class="mm-link">Trig Substitutions</a></li>
+                <li><a href="../CalcII/PartialFractions.html" class="mm-link">Partial Fractions</a></li>
+                <li><a href="../CalcII/IntegralsWithRoots.html" class="mm-link">Integrals Involving Roots</a></li>
+                <li><a href="../CalcII/IntegralsWithQuadratics.html" class="mm-link">Integrals Involving Quadratics</a></li>
+                <li><a href="../CalcII/IntegrationStrategy.html" class="mm-link">Integration Strategy</a></li>
+                <li><a href="../CalcII/ImproperIntegrals.html" class="mm-link">Improper Integrals</a></li>
+                <li><a href="../CalcII/ImproperIntegralsCompTest.html" class="mm-link">Comparison Test for Improper Integrals</a></li>
+                <li><a href="../CalcII/ApproximatingDefIntegrals.html" class="mm-link">Approximating Definite Integrals</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/IntAppsIntro.html" class="mm-link">Applications of Integrals</a>
+              <ul>
+                <li><a href="../CalcII/ArcLength.html" class="mm-link">Arc Length</a></li>
+                <li><a href="../CalcII/SurfaceArea.html" class="mm-link">Surface Area</a></li>
+                <li><a href="../CalcII/CenterOfMass.html" class="mm-link">Center of Mass</a></li>
+                <li><a href="../CalcII/HydrostaticPressure.html" class="mm-link">Hydrostatic Pressure</a></li>
+                <li><a href="../CalcII/Probability.html" class="mm-link">Probability</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/ParametricIntro.html" class="mm-link">Parametric Equations and Polar Coordinates</a>
+              <ul>
+                <li><a href="../CalcII/ParametricEqn.html" class="mm-link">Parametric Equations and Curves</a></li>
+                <li><a href="../CalcII/ParaTangent.html" class="mm-link">Tangents with Parametric Equations</a></li>
+                <li><a href="../CalcII/ParaArea.html" class="mm-link">Area with Parametric Equations</a></li>
+                <li><a href="../CalcII/ParaArcLength.html" class="mm-link">Arc Length with Parametric Equations</a></li>
+                <li><a href="../CalcII/ParaSurfaceArea.html" class="mm-link">Surface Area with Parametric Equations</a></li>
+                <li><a href="../CalcII/PolarCoordinates.html" class="mm-link">Polar Coordinates</a></li>
+                <li><a href="../CalcII/PolarTangents.html" class="mm-link">Tangents with Polar Coordinates</a></li>
+                <li><a href="../CalcII/PolarArea.html" class="mm-link">Area with Polar Coordinates</a></li>
+                <li><a href="../CalcII/PolarArcLength.html" class="mm-link">Arc Length with Polar Coordinates</a></li>
+                <li><a href="../CalcII/PolarSurfaceArea.html" class="mm-link">Surface Area with Polar Coordinates</a></li>
+                <li><a href="../CalcII/ArcLength_SurfaceArea.html" class="mm-link">Arc Length and Surface Area Revisited</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/SeriesIntro.html" class="mm-link">Series & Sequences</a>
+              <ul>
+                <li><a href="../CalcII/Sequences.html" class="mm-link">Sequences</a></li>
+                <li><a href="../CalcII/MoreSequences.html" class="mm-link">More on Sequences</a></li>
+                <li><a href="../CalcII/Series_Basics.html" class="mm-link">Series - The Basics</a></li>
+                <li><a href="../CalcII/ConvergenceOfSeries.html" class="mm-link">Convergence/Divergence of Series</a></li>
+                <li><a href="../CalcII/Series_Special.html" class="mm-link">Special Series</a></li>
+                <li><a href="../CalcII/IntegralTest.html" class="mm-link">Integral Test</a></li>
+                <li><a href="../CalcII/SeriesCompTest.html" class="mm-link">Comparison Test/Limit Comparison Test</a></li>
+                <li><a href="../CalcII/AlternatingSeries.html" class="mm-link">Alternating Series Test</a></li>
+                <li><a href="../CalcII/AbsoluteConvergence.html" class="mm-link">Absolute Convergence</a></li>
+                <li><a href="../CalcII/RatioTest.html" class="mm-link">Ratio Test</a></li>
+                <li><a href="../CalcII/RootTest.html" class="mm-link">Root Test</a></li>
+                <li><a href="../CalcII/SeriesStrategy.html" class="mm-link">Strategy for Series</a></li>
+                <li><a href="../CalcII/EstimatingSeries.html" class="mm-link">Estimating the Value of a Series</a></li>
+                <li><a href="../CalcII/PowerSeries.html" class="mm-link">Power Series</a></li>
+                <li><a href="../CalcII/PowerSeriesandFunctions.html" class="mm-link">Power Series and Functions</a></li>
+                <li><a href="../CalcII/TaylorSeries.html" class="mm-link">Taylor Series</a></li>
+                <li><a href="../CalcII/TaylorSeriesApps.html" class="mm-link">Applications of Series</a></li>
+                <li><a href="../CalcII/BinomialSeries.html" class="mm-link">Binomial Series</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/VectorsIntro.html" class="mm-link">Vectors</a>
+              <ul>
+                <li><a href="../CalcII/Vectors_Basics.html" class="mm-link">Vectors - The Basics</a></li>
+                <li><a href="../CalcII/VectorArithmetic.html" class="mm-link">Vector Arithmetic</a></li>
+                <li><a href="../CalcII/DotProduct.html" class="mm-link">Dot Product</a></li>
+                <li><a href="../CalcII/CrossProduct.html" class="mm-link">Cross Product</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/3DSpace.html" class="mm-link">3-Dimensional Space</a>
+              <ul>
+                <li><a href="../CalcII/3DCoords.html" class="mm-link">The 3-D Coordinate System</a></li>
+                <li><a href="../CalcII/EqnsOfLines.html" class="mm-link">Equations of Lines</a></li>
+                <li><a href="../CalcII/EqnsOfPlanes.html" class="mm-link">Equations of Planes</a></li>
+                <li><a href="../CalcII/QuadricSurfaces.html" class="mm-link">Quadric Surfaces</a></li>
+                <li><a href="../CalcII/MultiVrbleFcns.html" class="mm-link">Functions of Several Variables</a></li>
+                <li><a href="../CalcII/VectorFunctions.html" class="mm-link">Vector Functions</a></li>
+                <li><a href="../CalcII/VectorFcnsCalculus.html" class="mm-link">Calculus with Vector Functions</a></li>
+                <li><a href="../CalcII/TangentNormalVectors.html" class="mm-link">Tangent, Normal and Binormal Vectors</a></li>
+                <li><a href="../CalcII/VectorArcLength.html" class="mm-link">Arc Length with Vector Functions</a></li>
+                <li><a href="../CalcII/Curvature.html" class="mm-link">Curvature</a></li>
+                <li><a href="../CalcII/Velocity_Acceleration.html" class="mm-link">Velocity and Acceleration</a></li>
+                <li><a href="../CalcII/CylindricalCoords.html" class="mm-link">Cylindrical Coordinates</a></li>
+                <li><a href="../CalcII/SphericalCoords.html" class="mm-link">Spherical Coordinates</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../CalcIII/CalcIII.html" class="mm-link">Calculus III</a>
+          <ul>
+            <li><a href="../CalcIII/3DSpace.html" class="mm-link">3-Dimensional Space</a>
+              <ul>
+                <li><a href="../CalcIII/3DCoords.html" class="mm-link">The 3-D Coordinate System</a></li>
+                <li><a href="../CalcIII/EqnsOfLines.html" class="mm-link">Equations of Lines</a></li>
+                <li><a href="../CalcIII/EqnsOfPlanes.html" class="mm-link">Equations of Planes</a></li>
+                <li><a href="../CalcIII/QuadricSurfaces.html" class="mm-link">Quadric Surfaces</a></li>
+                <li><a href="../CalcIII/MultiVrbleFcns.html" class="mm-link">Functions of Several Variables</a></li>
+                <li><a href="../CalcIII/VectorFunctions.html" class="mm-link">Vector Functions</a></li>
+                <li><a href="../CalcIII/VectorFcnsCalculus.html" class="mm-link">Calculus with Vector Functions</a></li>
+                <li><a href="../CalcIII/TangentNormalVectors.html" class="mm-link">Tangent, Normal and Binormal Vectors</a></li>
+                <li><a href="../CalcIII/VectorArcLength.html" class="mm-link">Arc Length with Vector Functions</a></li>
+                <li><a href="../CalcIII/Curvature.html" class="mm-link">Curvature</a></li>
+                <li><a href="../CalcIII/Velocity_Acceleration.html" class="mm-link">Velocity and Acceleration</a></li>
+                <li><a href="../CalcIII/CylindricalCoords.html" class="mm-link">Cylindrical Coordinates</a></li>
+                <li><a href="../CalcIII/SphericalCoords.html" class="mm-link">Spherical Coordinates</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/PartialDerivsIntro.html" class="mm-link">Partial Derivatives</a>
+              <ul>
+                <li><a href="../CalcIII/Limits.html" class="mm-link">Limits</a></li>
+                <li><a href="../CalcIII/PartialDerivatives.html" class="mm-link">Partial Derivatives</a></li>
+                <li><a href="../CalcIII/PartialDerivInterp.html" class="mm-link">Interpretations of Partial Derivatives</a></li>
+                <li><a href="../CalcIII/HighOrderPartialDerivs.html" class="mm-link">Higher Order Partial Derivatives</a></li>
+                <li><a href="../CalcIII/Differentials.html" class="mm-link">Differentials</a></li>
+                <li><a href="../CalcIII/ChainRule.html" class="mm-link">Chain Rule</a></li>
+                <li><a href="../CalcIII/DirectionalDeriv.html" class="mm-link">Directional Derivatives</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/PartialDerivAppsIntro.html" class="mm-link">Applications of Partial Derivatives</a>
+              <ul>
+                <li><a href="../CalcIII/TangentPlanes.html" class="mm-link">Tangent Planes and Linear Approximations</a></li>
+                <li><a href="../CalcIII/GradientVectorTangentPlane.html" class="mm-link">Gradient Vector, Tangent Planes and Normal Lines</a></li>
+                <li><a href="../CalcIII/RelativeExtrema.html" class="mm-link">Relative Minimums and Maximums</a></li>
+                <li><a href="../CalcIII/AbsoluteExtrema.html" class="mm-link">Absolute Minimums and Maximums</a></li>
+                <li><a href="../CalcIII/LagrangeMultipliers.html" class="mm-link">Lagrange Multipliers</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/MultipleIntegralsIntro.html" class="mm-link">Multiple Integrals</a>
+              <ul>
+                <li><a href="../CalcIII/DoubleIntegrals.html" class="mm-link">Double Integrals</a></li>
+                <li><a href="../CalcIII/IteratedIntegrals.html" class="mm-link">Iterated Integrals</a></li>
+                <li><a href="../CalcIII/DIGeneralRegion.html" class="mm-link">Double Integrals over General Regions</a></li>
+                <li><a href="../CalcIII/DIPolarCoords.html" class="mm-link">Double Integrals in Polar Coordinates</a></li>
+                <li><a href="../CalcIII/TripleIntegrals.html" class="mm-link">Triple Integrals</a></li>
+                <li><a href="../CalcIII/TICylindricalCoords.html" class="mm-link">Triple Integrals in Cylindrical Coordinates</a></li>
+                <li><a href="../CalcIII/TISphericalCoords.html" class="mm-link">Triple Integrals in Spherical Coordinates</a></li>
+                <li><a href="../CalcIII/ChangeOfVariables.html" class="mm-link">Change of Variables</a></li>
+                <li><a href="../CalcIII/SurfaceArea.html" class="mm-link">Surface Area</a></li>
+                <li><a href="../CalcIII/Area_Volume.html" class="mm-link">Area and Volume Revisited</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/LineIntegralsIntro.html" class="mm-link">Line Integrals</a>
+              <ul>
+                <li><a href="../CalcIII/VectorFields.html" class="mm-link">Vector Fields</a></li>
+                <li><a href="../CalcIII/LineIntegralsPtI.html" class="mm-link">Line Integrals - Part I</a></li>
+                <li><a href="../CalcIII/LineIntegralsPtII.html" class="mm-link">Line Integrals - Part II</a></li>
+                <li><a href="../CalcIII/LineIntegralsVectorFields.html" class="mm-link">Line Integrals of Vector Fields</a></li>
+                <li><a href="../CalcIII/FundThmLineIntegrals.html" class="mm-link">Fundamental Theorem for Line Integrals</a></li>
+                <li><a href="../CalcIII/ConservativeVectorField.html" class="mm-link">Conservative Vector Fields</a></li>
+                <li><a href="../CalcIII/GreensTheorem.html" class="mm-link">Green's Theorem</a></li>
+                <li><a href="../CalcIII/CurlDivergence.html" class="mm-link">Curl and Divergence</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/SurfaceIntegralsIntro.html" class="mm-link">Surface Integrals</a>
+              <ul>
+                <li><a href="../CalcIII/ParametricSurfaces.html" class="mm-link">Parametric Surfaces</a></li>
+                <li><a href="../CalcIII/SurfaceIntegrals.html" class="mm-link">Surface Integrals</a></li>
+                <li><a href="../CalcIII/SurfIntVectorField.html" class="mm-link">Surface Integrals of Vector Fields</a></li>
+                <li><a href="../CalcIII/StokesTheorem.html" class="mm-link">Stokes' Theorem</a></li>
+                <li><a href="../CalcIII/DivergenceTheorem.html" class="mm-link">Divergence Theorem</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="DE.html" class="mm-link">Differential Equations</a>
+          <ul>
+            <li><a href="IntroBasic.html" class="mm-link">Basic Concepts</a>
+              <ul>
+                <li><a href="Definitions.html" class="mm-link">Definitions</a></li>
+                <li><a href="DirectionFields.html" class="mm-link">Direction Fields</a></li>
+                <li><a href="FinalThoughts.html" class="mm-link">Final Thoughts</a></li>
+              </ul>
+            </li>
+            <li><a href="IntroFirstOrder.html" class="mm-link">First Order DE's</a>
+              <ul>
+                <li><a href="Linear.html" class="mm-link">Linear Equations</a></li>
+                <li><a href="Separable.html" class="mm-link">Separable Equations</a></li>
+                <li><a href="Exact.html" class="mm-link">Exact Equations</a></li>
+                <li><a href="Bernoulli.html" class="mm-link">Bernoulli Differential Equations</a></li>
+                <li><a href="Substitutions.html" class="mm-link">Substitutions</a></li>
+                <li><a href="IoV.html" class="mm-link">Intervals of Validity</a></li>
+                <li><a href="Modeling.html" class="mm-link">Modeling with First Order DE's</a></li>
+                <li><a href="EquilibriumSolutions.html" class="mm-link">Equilibrium Solutions</a></li>
+                <li><a href="EulersMethod.html" class="mm-link">Euler's Method</a></li>
+              </ul>
+            </li>
+            <li><a href="IntroSecondOrder.html" class="mm-link">Second Order DE's</a>
+              <ul>
+                <li><a href="SecondOrderConcepts.html" class="mm-link">Basic Concepts</a></li>
+                <li><a href="RealRoots.html" class="mm-link">Real & Distinct Roots</a></li>
+                <li><a href="ComplexRoots.html" class="mm-link">Complex Roots</a></li>
+                <li><a href="RepeatedRoots.html" class="mm-link">Repeated Roots</a></li>
+                <li><a href="ReductionofOrder.html" class="mm-link">Reduction of Order</a></li>
+                <li><a href="FundamentalSetsofSolutions.html" class="mm-link">Fundamental Sets of Solutions</a></li>
+                <li><a href="Wronskian.html" class="mm-link">More on the  Wronskian</a></li>
+                <li><a href="NonhomogeneousDE.html" class="mm-link">Nonhomogeneous Differential Equations</a></li>
+                <li><a href="UndeterminedCoefficients.html" class="mm-link">Undetermined Coefficients</a></li>
+                <li><a href="VariationofParameters.html" class="mm-link">Variation of Parameters</a></li>
+                <li><a href="Vibrations.html" class="mm-link">Mechanical Vibrations</a></li>
+              </ul>
+            </li>
+            <li><a href="LaplaceIntro.html" class="mm-link">Laplace Transforms</a>
+              <ul>
+                <li><a href="LaplaceDefinition.html" class="mm-link">The Definition</a></li>
+                <li><a href="LaplaceTransforms.html" class="mm-link">Laplace Transforms</a></li>
+                <li><a href="InverseTransforms.html" class="mm-link">Inverse Laplace Transforms</a></li>
+                <li><a href="StepFunctions.html" class="mm-link">Step Functions</a></li>
+                <li><a href="IVPWithLaplace.html" class="mm-link">Solving IVP's with Laplace Transforms</a></li>
+                <li><a href="IVPWithNonConstantCoefficient.html" class="mm-link">Nonconstant Coefficient IVP's</a></li>
+                <li><a href="IVPWithStepFunction.html" class="mm-link">IVP's With Step Functions</a></li>
+                <li><a href="DiracDeltaFunction.html" class="mm-link">Dirac Delta Function</a></li>
+                <li><a href="ConvolutionIntegrals.html" class="mm-link">Convolution Integrals</a></li>
+                <li><a href="Laplace_Table.html" class="mm-link">Table Of Laplace Transforms</a></li>
+              </ul>
+            </li>
+            <li><a href="SystemsIntro.html" class="mm-link">Systems of DE's</a>
+              <ul>
+                <li><a href="LA_Systems.html" class="mm-link">Review : Systems of Equations</a></li>
+                <li><a href="LA_Matrix.html" class="mm-link">Review : Matrices & Vectors</a></li>
+                <li><a href="LA_Eigen.html" class="mm-link">Review : Eigenvalues & Eigenvectors</a></li>
+                <li><a href="SystemsDE.html" class="mm-link">Systems of Differential Equations</a></li>
+                <li><a href="SolutionsToSystems.html" class="mm-link">Solutions to Systems</a></li>
+                <li><a href="PhasePlane.html" class="mm-link">Phase Plane</a></li>
+                <li><a href="RealEigenvalues.html" class="mm-link">Real Eigenvalues</a></li>
+                <li><a href="ComplexEigenvalues.html" class="mm-link">Complex Eigenvalues</a></li>
+                <li><a href="RepeatedEigenvalues.html" class="mm-link">Repeated Eigenvalues</a></li>
+                <li><a href="NonhomogeneousSystems.html" class="mm-link">Nonhomogeneous Systems</a></li>
+                <li><a href="SystemsLaplace.html" class="mm-link">Laplace Transforms</a></li>
+                <li><a href="SystemsModeling.html" class="mm-link">Modeling</a></li>
+              </ul>
+            </li>
+            <li><a href="SeriesIntro.html" class="mm-link">Series Solutions to DE's</a>
+              <ul>
+                <li><a href="PowerSeries.html" class="mm-link">Review : Power Series</a></li>
+                <li><a href="TaylorSeries.html" class="mm-link">Review : Taylor Series</a></li>
+                <li><a href="SeriesSolutions.html" class="mm-link">Series Solutions</a></li>
+                <li><a href="EulerEquations.html" class="mm-link">Euler Equations</a></li>
+              </ul>
+            </li>
+            <li><a href="IntroHigherOrder.html" class="mm-link">Higher Order Differential Equations</a>
+              <ul>
+                <li><a href="HOBasicConcepts.html" class="mm-link">Basic Concepts for <em>n</em><sup>th</sup> Order Linear Equations</a></li>
+                <li><a href="HOHomogeneousDE.html" class="mm-link">Linear Homogeneous Differential Equations</a></li>
+                <li><a href="HOUndeterminedCoeff.html" class="mm-link">Undetermined Coefficients</a></li>
+                <li><a href="HOVariationOfParam.html" class="mm-link">Variation of Parameters</a></li>
+                <li><a href="HOLaplaceTransforms.html" class="mm-link">Laplace Transforms</a></li>
+                <li><a href="HOSystems.html" class="mm-link">Systems of Differential Equations</a></li>
+                <li><a href="HOSeries.html" class="mm-link">Series Solutions</a></li>
+              </ul>
+            </li>
+            <li><a href="IntroBVP.html" class="mm-link">Boundary Value Problems &amp; Fourier Series</a>
+              <ul>
+                <li><a href="BoundaryValueProblem.html" class="mm-link">Boundary Value Problems</a></li>
+                <li><a href="BVPEvals.html" class="mm-link">Eigenvalues and Eigenfunctions</a></li>
+                <li><a href="PeriodicOrthogonal.html" class="mm-link">Periodic Functions &amp; Orthogonal Functions</a></li>
+                <li><a href="FourierSineSeries.html" class="mm-link">Fourier Sine Series</a></li>
+                <li><a href="FourierCosineSeries.html" class="mm-link">Fourier Cosine Series</a></li>
+                <li><a href="FourierSeries.html" class="mm-link">Fourier Series</a></li>
+                <li><a href="ConvergenceFourierSeries.html" class="mm-link">Convergence of Fourier Series</a></li>
+              </ul>
+            </li>
+            <li><a href="IntroPDE.html" class="mm-link">Partial Differential Equations </a>
+              <ul>
+                <li><a href="TheHeatEquation.html" class="mm-link">The Heat Equation</a></li>
+                <li><a href="TheWaveEquation.html" class="mm-link">The Wave Equation</a></li>
+                <li><a href="PDETerminology.html" class="mm-link">Terminology</a></li>
+                <li><a href="SeparationofVariables.html" class="mm-link">Separation of Variables</a></li>
+                <li><a href="SolvingHeatEquation.html" class="mm-link">Solving the Heat Equation</a></li>
+                <li><a href="HeatEqnNonZero.html" class="mm-link">Heat Equation with Non-Zero Temperature Boundaries</a></li>
+                <li><a href="LaplacesEqn.html" class="mm-link">Laplace's Equation</a></li>
+                <li><a href="VibratingString.html" class="mm-link">Vibrating String</a></li>
+                <li><a href="PDESummary.html" class="mm-link">Summary of Separation of Variables</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><span>Extras</span></li>
+        <li><a href="../../Extras/AlgebraTrigReview/AlgebraTrig.html" class="mm-link">Algebra &amp; Trig Review</a>
+          <ul>
+            <li><a href="../../Extras/AlgebraTrigReview/AlgebraIntro.html" class="mm-link">Algebra</a>
+              <ul>
+                <li><a href="../../Extras/AlgebraTrigReview/Exponents.html" class="mm-link">Exponents </a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/AbsoluteValue.html" class="mm-link">Absolute Value</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Radicals.html" class="mm-link">Radicals</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Rationalizing.html" class="mm-link">Rationalizing </a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Functions.html" class="mm-link">Functions </a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/MultPoly.html" class="mm-link">Multiplying Polynomials</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Factoring.html" class="mm-link">Factoring</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SimpRatExp.html" class="mm-link">Simplifying Rational Expressions</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Graphing.html" class="mm-link">Graphing and Common Graphs</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveEqnPtI.html" class="mm-link">Solving Equations, Part I</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveEqnPtII.html" class="mm-link">Solving Equations, Part II</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveSystems.html" class="mm-link">Solving Systems of Equations</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveIneq.html" class="mm-link">Solving Inequalities</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveAbsValue.html" class="mm-link">Absolute Value Equations and Inequalities</a></li>
+              </ul>
+            </li>
+            <li><a href="../../Extras/AlgebraTrigReview/TrigIntro.html" class="mm-link">Trigonometry</a>
+              <ul>
+                <li><a href="../../Extras/AlgebraTrigReview/TrigFunctions.html" class="mm-link">Trig Function Evaluation</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/TrigGraphs.html" class="mm-link">Graphs of Trig Functions</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/TrigFormulas.html" class="mm-link">Trig Formulas</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveTrigEqn.html" class="mm-link">Solving Trig Equations</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/InverseTrig.html" class="mm-link">Inverse Trig Functions</a></li>
+              </ul>
+            </li>
+            <li><a href="../../Extras/AlgebraTrigReview/ExpLogIntro.html" class="mm-link">Exponentials & Logarithms</a>
+              <ul>
+                <li><a href="../../Extras/AlgebraTrigReview/ExponentialFcns.html" class="mm-link">Basic Exponential Functions</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/LogarithmFcns.html" class="mm-link">Basic Logarithm Functions</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/LogProperties.html" class="mm-link">Logarithm Properties</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SimpLogs.html" class="mm-link">Simplifying Logarithms</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveExpEqn.html" class="mm-link">Solving Exponential Equations</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveLogEqn.html" class="mm-link">Solving Logarithm Equations</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../../Extras/CommonErrors/CommonMathErrors.html" class="mm-link">Common Math Errors</a>
+          <ul>
+            <li><a href="../../Extras/CommonErrors/GeneralErrors.html" class="mm-link">General Errors</a>
+            </li>
+            <li><a href="../../Extras/CommonErrors/AlgebraErrors.html" class="mm-link">Algebra Errors</a>
+            </li>
+            <li><a href="../../Extras/CommonErrors/TrigErrors.html" class="mm-link">Trig Errors</a>
+            </li>
+            <li><a href="../../Extras/CommonErrors/CommonErrors.html" class="mm-link">Common Errors</a>
+            </li>
+            <li><a href="../../Extras/CommonErrors/CalculusErrors.html" class="mm-link">Calculus Errors</a>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../../Extras/ComplexPrimer/ComplexNumbers.html" class="mm-link">Complex Number Primer</a>
+          <ul>
+            <li><a href="../../Extras/ComplexPrimer/Definition.html" class="mm-link">The Definition</a>
+            </li>
+            <li><a href="../../Extras/ComplexPrimer/Arithmetic.html" class="mm-link">Arithmetic</a>
+            </li>
+            <li><a href="../../Extras/ComplexPrimer/ConjugateModulus.html" class="mm-link">Conjugate and Modulus</a>
+            </li>
+            <li><a href="../../Extras/ComplexPrimer/Forms.html" class="mm-link">Polar and Exponential Forms</a>
+            </li>
+            <li><a href="../../Extras/ComplexPrimer/Roots.html" class="mm-link">Powers and Roots</a>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../../Extras/StudyMath/HowToStudyMath.html" class="mm-link">How To Study Math</a>
+          <ul>
+            <li><a href="../../Extras/StudyMath/GeneralTips.html" class="mm-link">General Tips</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/TakingNotes.html" class="mm-link">Taking Notes</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/GettingHelp.html" class="mm-link">Getting Help</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/Homework.html" class="mm-link">Doing Homework</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/ProblemSolving.html" class="mm-link">Problem Solving</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/StudyForExam.html" class="mm-link">Studying For an Exam</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/TakingExam.html" class="mm-link">Taking an Exam</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/Errors.html" class="mm-link">Learn From Your Errors</a>
+            </li>
+          </ul>
+        </li>
+
+        <li><span>Misc Links</span></li>
+        <li><a href="http://tutorial.math.lamar.edu/contact.aspx" class="mm-link">Contact Me</a></li>
+        <li><a href="../../links.html" class="mm-link">Links</a></li>
+        <li><a href="../../mathjax.html" class="mm-link">MathJax Help and Configuration</a></li>
+        <li><a href="../../mystudents.html" class="mm-link">My Students</a></li>
+        <li><a href="http://tutorial.math.lamar.edu/privacy.aspx" class="mm-link">Privacy Statement</a></li>
+        <li><a href="../../help.html" class="mm-link">Site Help & FAQ</a></li>
+        <li><a href="http://tutorial.math.lamar.edu/terms.aspx" class="mm-link">Terms of Use</a></li>
+      </ul>
+    </nav>
+
+
+
+    <div class="top-info-bar">
+      <span id="mobile-title" class="mobile-header-title header-title">Paul's Online Notes</span>
+      <br />
+      <span class="top-menu-breadcrumb">
+        <a href="../../index.html" id="breadcrumb_home_link" title="Go to Main Page">Home</a>
+        <span id="breadcrumb_h_b_sep_span">/ </span>
+        <a href="DE.html" id="breadcrumb_book_link" title="Go to Book Introduction">Differential Equations</a>
+        
+        <span id="breadcrumb_b_c_sep_span">/ </span>
+        <a href="IntroPDE.html" id="breadcrumb_chapter_link" title="Go to Chapter Introduction">Partial Differential Equations </a>
+        
+        <span id="breadcrumb_section_span"> / Solving the Heat Equation</span>
+      </span>
+
+    </div>
+
+    
+
+    <div class="header-divider"></div>
+
+    <div class="content">  
+      
+      
+      <span id="SHLink_NoteMobile" class="SH-Link content-note-link-mobile">Show Mobile Notice</span>
+      <span id="SHImg_NoteMobile" class="fas fa-caret-right SH-padding content-note-link-mobile" aria-hidden="true"></span>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+
+      <span id="SHALink_S_Note" class="SH-Link SH-Hide SH-Bracket">Show All Notes</span>&nbsp;<span id="SHALink_H_Note" class="SH-Link SH-Hide SH-Bracket">Hide All Notes</span>
+      
+      
+      <div id="SHObj_NoteMobile" class="content-note-container content-note-container-mobile">
+        <div class="content-note-header">Mobile Notice</div>
+        <div class="content-note">You appear to be on a device with a "narrow" screen width (<em>i.e.</em> you are probably on a mobile phone).  Due to the nature of the mathematics on this site it is best views in landscape mode.  If your device is not in landscape mode many of the equations will run off the side of your device (should be able to scroll to see them) and some of the menu items will be cut off due to the narrow screen width.</div>
+      </div>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+
+      
+
+
+  <form method="post" action="http://tutorial.math.lamar.edu/Classes/DE/SolvingHeatEquation.aspx" id="ctl00">
+<div class="aspNetHidden">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+</div>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="CA81CB4C" />
+</div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </form>
+
+  <h3>Section 9-5 : Solving the Heat Equation</h3>
+    
+    <p>Okay, it is finally time to completely solve a partial differential equation.  In the previous section we applied separation of variables to several partial differential equations and reduced the problem down to needing to solve two ordinary differential equations.  In this section we will now solve those ordinary differential equations and use the results to get a solution to the partial differential equation.  We will be concentrating on the heat equation in this section and will do the wave equation and Laplace’s equation in later sections.</p>
+    
+    <p>The first problem that we’re going to look at will be the temperature distribution in a bar with zero temperature boundaries.  We are going to do the work in a couple of steps so we can take our time and see how everything works.</p>
+    
+    <p>The first thing that we need to do is find a solution that will satisfy the partial differential equation and the boundary conditions.  At this point we will not worry about the initial condition.  The solution we’ll get first will not satisfy the vast majority of initial conditions but as we’ll see it can be used to find a solution that will satisfy a sufficiently nice initial condition.</p>
+    <a class="anchor" name="PDE_HeatEqn_Ex1"></a>
+  <div class="example">
+    <span class="example-title">Example 1</span> Find a solution to the following partial differential equation that will also satisfy the boundary conditions.
+          
+            \[\begin{align*}& \frac{{\partial u}}{{\partial t}} = k\frac{{{\partial ^2}u}}{{\partial {x^2}}}\\ &amp; u\left( {x,0} \right) = f\left( x \right)\hspace{0.25in}u\left( {0,t} \right) = 0\hspace{0.25in}u\left( {L,t} \right) = 0\end{align*}\]
+    <div class="example-content">
+      <span id="SHLink_Soln1" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln1" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln1" class="soln-content">
+        <p>Okay the first thing we technically need to do here is apply separation of variables. Even though we did that in the previous section let’s recap here what we did.</p>
+          
+          <p>First, we assume that the solution will take the form,</p>
+          \[u\left( {x,t} \right) = \varphi \left( x \right)G\left( t \right)\]
+          <p>and we plug this into the partial differential equation and boundary conditions.  We separate the equation to get a function of only <tstrong> on one side and a function of only \(x\) on the other side and then introduce a separation constant.  This leaves us with two ordinary differential equations.</p>
+          
+          <p>We did all of this in <a href="SeparationofVariables.html#PDE_SepVariables_Ex1">Example 1</a> of the previous section and the two ordinary differential equations are,</p>
+          \[\begin{align*}\frac{{dG}}{{dt}} =  - k\lambda G\hspace{0.25in} & \frac{{{d^2}\varphi }}{{d{x^2}}} + \lambda \varphi  = 0\\ &amp; \varphi \left( 0 \right) = 0\hspace{0.25in}\varphi \left( L \right) = 0\end{align*}\]
+          
+          <p>The time dependent equation can really be solved at any time, but since we don’t know what \(\lambda \) is yet let’s hold off on that one.  Also note that in many problems only the boundary value problem can be solved at this point so don’t always expect to be able to solve either one at this point.</p>
+          
+          <p>The spatial equation is a boundary value problem and we know from our work in the previous chapter that it will only have non-trivial solutions (which we want) for certain values of \(\lambda \), which we’ll recall are called eigenvalues.  Once we have those we can determine the non-trivial solutions for each \(\lambda \), <em>i.e.</em> eigenfunctions.</p>
+          
+          <p>Now, we actually solved the spatial problem,</p>
+          \[\begin{align*}& \frac{{{d^2}\varphi }}{{d{x^2}}} + \lambda \varphi  = 0\\ &amp; \varphi \left( 0 \right) = 0\hspace{0.25in}\varphi \left( L \right) = 0\end{align*}\]
+          <p>in <a href="BVPEvals.html#BVPFourier_Eval_Ex1">Example 1</a> of the Eigenvalues and Eigenfunctions section of the previous chapter for \(L = 2\pi \).  So, because we’ve solved this once for a specific \(L\) and the work is not all that much different for a general \(L\) we’re not going to be putting in a lot of explanation here and if you need a reminder on how something works or why we did something go back to Example 1 from the Eigenvalues and Eigenfunctions section for a reminder.</p>
+          
+          <p>We’ve got three cases to deal with so let’s get going.</p>
+          
+          
+          <p>\(\underline {\lambda  &gt; 0} \)<br />
+            In this case we know the solution to the differential equation is,</p>
+          \[\varphi \left( x \right) = {c_1}\cos \left( {\sqrt \lambda  \,x} \right) + {c_2}\sin \left( {\sqrt \lambda  \,x} \right)\]
+          
+          <p>Applying the first boundary condition gives,</p>
+          \[0 = \varphi \left( 0 \right) = {c_1}\]
+          
+          <p>Now applying the second boundary condition, and using the above result of course, gives,</p>
+          \[0 = \varphi \left( L \right) = {c_2}\sin \left( {L\sqrt \lambda  } \right)\]
+          
+          <p>Now, we are after non-trivial solutions and so this means we must have,</p>
+          \[\sin \left( {L\sqrt \lambda  } \right) = 0\hspace{0.25in} \Rightarrow \hspace{0.25in}L\sqrt \lambda  = n\pi \hspace{0.25in}n = 1,2,3, \ldots \]
+          
+          <p>The positive eigenvalues and their corresponding eigenfunctions of this boundary value problem are then,</p>
+          \[{\lambda _{\,n}} = {\left( {\frac{{n\pi }}{L}} \right)^2}\hspace{0.25in}{\varphi _n}\left( x \right) = \sin \left( {\frac{{n\,\pi \,x}}{L}} \right)\hspace{0.25in}n = 1,2,3, \ldots \]
+          
+          <p>Note that we don’t need the \({c_2}\) in the eigenfunction as it will just get absorbed into another constant that we’ll be picking up later on.</p>
+          
+          
+          
+          <p>\(\underline {\lambda  = 0} \)<br />
+            The solution to the differential equation in this case is,</p>
+          \[\varphi \left( x \right) = {c_1} + {c_2}x\]
+          
+          <p>Applying the boundary conditions gives,</p>
+          \[0 = \varphi \left( 0 \right) = {c_1}\hspace{0.25in}0 = \varphi \left( L \right) = {c_2}L\hspace{0.25in} \Rightarrow \hspace{0.25in}{c_2} = 0\]
+          <p>So, in this case the only solution is the trivial solution and so \(\lambda  = 0\) is not an eigenvalue for this boundary value problem.</p>
+          
+          
+          <p>\(\underline {\lambda  &lt; 0} \)<br />
+            Here the solution to the differential equation is,</p>
+          \[\varphi \left( x \right) = {c_1}\cosh \left( {\sqrt { - \lambda } \,x} \right) + {c_2}\sinh \left( {\sqrt { - \lambda } \,x} \right)\]
+          
+          <p>Applying the first boundary condition gives,</p>
+          \[0 = \varphi \left( 0 \right) = {c_1}\]
+          <p>and applying the second gives,</p>
+          \[0 = \varphi \left( L \right) = {c_2}\sinh \left( {L\sqrt { - \lambda } } \right)\]
+          
+          <p>So, we are assuming \(\lambda  &lt; 0\)  and so \(L\sqrt { - \lambda }  \ne 0\) and this means \(\sinh \left( {L\sqrt { - \lambda } } \right) \ne 0\).  We therefore we must have \({c_2} = 0\) and so we can only get the trivial solution in this case.</p>
+          
+          <p>Therefore, there will be no negative eigenvalues for this boundary value problem.</p>
+          
+          <p>The complete list of eigenvalues and eigenfunctions for this problem are then,</p>
+          \[{\lambda _{\,n}} = {\left( {\frac{{n\pi }}{L}} \right)^2}\hspace{0.25in}{\varphi _n}\left( x \right) = \sin \left( {\frac{{n\,\pi \,x}}{L}} \right)\hspace{0.25in}n = 1,2,3, \ldots \]
+          <p>Now let’s solve the time differential equation,</p>
+          \[\frac{{dG}}{{dt}} =  - k{\lambda _n}G\]
+          <p>and note that even though we now know \(\lambda \) we’re not going to plug it in quite yet to keep the mess to a minimum.  We will however now use \({\lambda _n}\) to remind us that we actually have an infinite number of possible values here.</p>
+          
+          <p>This is a simple linear (and separable for that matter) 1<sup>st</sup> order differential equation and so we’ll let you verify that the solution is,</p>
+          \[G\left( t \right) = c{{\bf{e}}^{ - k{\lambda _{\,n}}t}} = c{{\bf{e}}^{ - k{{\left( {\frac{{n\pi }}{L}} \right)}^2}\,t}}\]
+          
+          <p>Okay, now that we’ve gotten both of the ordinary differential equations solved we can finally write down a solution.  Note however that we have in fact found infinitely many solutions since there are infinitely many solutions (<em>i.e.</em> eigenfunctions) to the spatial problem.</p>
+          
+          <p>Our product solution are then,</p>
+          \[{u_n}\left( {x,t} \right) = {B_n}\sin \left( {\frac{{n\pi x}}{L}} \right){{\bf{e}}^{ - k{{\left( {\frac{{n\pi }}{L}} \right)}^2}\,t}}\hspace{0.25in}n = 1,2,3, \ldots \]
+          <p>We’ve denoted the product solution \({u_n}\) to acknowledge that each value of \(n\) will yield a different solution.  Also note that we’ve changed the \(c\) in the solution to the time problem to \({B_n}\) to denote the fact that it will probably be different for each value of \(n\) as well and because had we kept the \({c_2}\) with the eigenfunction we’d have absorbed it into the \(c\) to get a single constant in our solution.</p>
+      </div>
+    </div>
+  </div>
+    
+    <p>So, there we have it.  The function above will satisfy the heat equation and the boundary condition of zero temperature on the ends of the bar.</p>
+    
+    <p>The problem with this solution is that it simply will not satisfy almost every possible initial condition we could possibly want to use.  That does not mean however, that there aren’t at least a few that it will satisfy as the next example illustrates.</p>
+    <a class="anchor" name="PDE_HeatEqn_Ex2"></a>
+  <div class="example">
+    <span class="example-title">Example 2</span> Solve the following heat problem for the given initial conditions.
+          
+            \[\begin{align*}&\frac{{\partial u}}{{\partial t}} = k\frac{{{\partial ^2}u}}{{\partial {x^2}}}\\ &amp; u\left( {x,0} \right) = f\left( x \right)\hspace{0.25in}u\left( {0,t} \right) = 0\hspace{0.25in}u\left( {L,t} \right) = 0\end{align*}\] 
+    <ol class="example_parts_list">
+      <li>\(\displaystyle f\left( x \right) = 6\sin \left( {\frac{{\pi x}}{L}} \right)\)</li>
+      <li>\(\displaystyle f\left( x \right) = 12\sin \left( {\frac{{9\pi x}}{L}} \right) - 7\sin \left( {\frac{{4\pi x}}{L}} \right)\)</li>
+    </ol>
+    <span id="SHALink_S_Soln2" class="SH-Link SH-All">Show All Solutions</span>&nbsp;<span id="SHALink_H_Soln2" class="SH-Link SH-All">Hide All Solutions</span>
+    <div class="example-content">
+      <span class="soln-list-item soln-list-subitem">a</span> \(\displaystyle f\left( x \right) = 6\sin \left( {\frac{{\pi x}}{L}} \right)\) <span id="SHLink_Soln2a" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln2a" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln2a" class="soln-content">
+        <p>This is actually easier than it looks like.  All we need to do is choose \(n = 1\) and \({B_1} = 6\) in the product solution above to get,</p>
+          \[u\left( {x,t} \right) = 6\sin \left( {\frac{{\pi x}}{L}} \right){{\bf{e}}^{ - k{{\left( {\frac{\pi }{L}} \right)}^2}\,t}}\]
+          <p>and we’ve got the solution we need.  This is a product solution for the first example and so satisfies the partial differential equation and boundary conditions and will satisfy the initial condition since plugging in \(t = 0\) will drop out the exponential.</p>
+      </div>
+
+      <br />
+      <span class="soln-list-item soln-list-subitem">b</span> \(\displaystyle f\left( x \right) = 12\sin \left( {\frac{{9\pi x}}{L}} \right) - 7\sin \left( {\frac{{4\pi x}}{L}} \right)\) <span id="SHLink_Soln2b" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln2b" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln2b" class="soln-content">
+        <p>This is almost as simple as the first part.  Recall from the <a href="PDETerminology.html#PDE_Terminology_Superposition">Principle of Superposition</a> that if we have two solutions to a linear homogeneous differential equation (which we’ve got here) then their sum is also a solution.  So, all we need to do is choose \(n\) and \({B_n}\) as we did in the first part to get a solution that satisfies each part of the initial condition and then add them up.  Doing this gives,</p>
+          \[u\left( {x,t} \right) = 12\sin \left( {\frac{{9\pi x}}{L}} \right){{\bf{e}}^{ - k{{\left( {\frac{{9\pi }}{L}} \right)}^2}\,t}} - 7\sin \left( {\frac{{4\pi x}}{L}} \right){{\bf{e}}^{ - k{{\left( {\frac{{4\pi }}{L}} \right)}^2}\,t}}\]
+
+        <p>We’ll leave it to you to verify that this does in fact satisfy the initial condition and the boundary conditions.</p>
+      </div>
+    </div>
+  </div>
+    
+    <p>So, we’ve seen that our solution from the first example will satisfy at least a small number of highly specific initial conditions.</p>
+    
+    <p>Now, let’s extend the idea out that we used in the second part of the previous example a little to see how we can get a solution that will satisfy any sufficiently nice initial condition.  The Principle of Superposition is, of course, not restricted to only two solutions.  For instance, the following is also a solution to the partial differential equation.</p>
+    
+      \[u\left( {x,t} \right) = \sum\limits_{n = 1}^M {{B_n}\sin \left( {\frac{{n\pi x}}{L}} \right){{\bf{e}}^{ - k{{\left( {\frac{{n\pi }}{L}} \right)}^2}\,t}}} \]
+    <p>and notice that this solution will not only satisfy the boundary conditions but it will also satisfy the initial condition,</p>
+    
+      \[u\left( {x,0} \right) = \sum\limits_{n = 1}^M {{B_n}\sin \left( {\frac{{n\pi x}}{L}} \right)} \]
+    
+    <a class="anchor" name="PDE_HeatEqn_Soln1"></a>
+    <p>Let’s extend this out even further and take the limit as \(M \to \infty \).  Doing this our solution now becomes,</p>
+    
+      \[u\left( {x,t} \right) = \sum\limits_{n = 1}^\infty  {{B_n}\sin \left( {\frac{{n\pi x}}{L}} \right){{\bf{e}}^{ - k{{\left( {\frac{{n\pi }}{L}} \right)}^2}\,t}}} \]
+    
+    <p>This solution will satisfy any initial condition that can be written in the form,</p>
+    
+      \[u\left( {x,0} \right) = f\left( x \right) = \sum\limits_{n = 1}^\infty  {{B_n}\sin \left( {\frac{{n\pi x}}{L}} \right)} \]
+    
+    <p>This may still seem to be very restrictive, but the series on the right should look awful familiar to you after the previous chapter.  The series on the left is exactly the <a href="FourierSineSeries.html">Fourier sine series</a> we looked at in that chapter.  Also recall that when we can write down the Fourier sine series for any <a href="ConvergenceFourierSeries.html#BVPFourier_Conv_Piecewise">piecewise smooth</a> function on \(0 \le x \le L\).</p>
+    
+    <p>So, provided our initial condition is piecewise smooth after applying the initial condition to our solution we can determine the \({B_n}\) as if we were finding the Fourier sine series of initial condition.  So we can either proceed as we did in that section and use the orthogonality of the sines to derive them or we can acknowledge that we’ve already done that work and know that coefficients  are given by,</p>
+    <p></p>
+    
+      \[{B_n} = \frac{2}{L}\int_{{\,0}}^{{\,L}}{{f\left( x \right)\sin \left( {\frac{{n\,\pi x}}{L}} \right)\,dx}}\,\,\,\,\,\,\,n = 1,2,3, \ldots \]
+    
+    <p>So, we finally can completely solve a partial differential equation.</p>
+    <a class="anchor" name="PDE_HeatEqn_Ex3"></a>
+  <div class="example">
+    <span class="example-title">Example 3</span> Solve the following BVP.
+          
+            \[\begin{align*}& \frac{{\partial u}}{{\partial t}} = k\frac{{{\partial ^2}u}}{{\partial {x^2}}}\\ &amp; u\left( {x,0} \right) = 20\hspace{0.25in}u\left( {0,t} \right) = 0\hspace{0.25in}u\left( {L,t} \right) = 0\end{align*}\]
+    <div class="example-content">
+      <span id="SHLink_Soln3" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln3" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln3" class="soln-content">
+        <p>There isn’t really all that much to do here as we’ve done most of it in the examples and discussion above.</p>
+          
+          <p>First, the solution is,</p>
+          \[u\left( {x,t} \right) = \sum\limits_{n = 1}^\infty  {{B_n}\sin \left( {\frac{{n\pi x}}{L}} \right){{\bf{e}}^{ - k{{\left( {\frac{{n\pi }}{L}} \right)}^2}\,t}}} \]
+          
+          <p>The coefficients are given by,</p>
+          \[{B_n} = \frac{2}{L}\int_{{\,0}}^{{\,L}}{{20\sin \left( {\frac{{n\,\pi x}}{L}} \right)\,dx}} = \frac{2}{L}\left( {\frac{{20L\left( {1 - \cos \left( {n\pi } \right)} \right)}}{{n\pi }}} \right) = \frac{{40\left( {1 - {{\left( { - 1} \right)}^n}} \right)}}{{n\pi }}\]
+          
+          <p>If we plug these in we get the solution,</p>
+          \[u\left( {x,t} \right) = \sum\limits_{n = 1}^\infty  {\frac{{40\left( {1 - \,{{\left( { - 1} \right)}^n}} \right)}}{{n\,\pi }}\sin \left( {\frac{{n\pi x}}{L}} \right){{\bf{e}}^{ - k{{\left( {\frac{{n\pi }}{L}} \right)}^2}\,t}}} \]
+      </div>
+    </div>
+  </div>
+    
+    <p>That almost seems anti-climactic.  This was a very short problem.  Of course, some of that came about because we had a really simple constant initial condition and so the integral was very simple.  However, don’t forget all the work that we had to put into discussing Fourier sine series, solving boundary value problems, applying separation of variables and then putting all of that together to reach this point.</p>
+    
+    <p>While the example itself was very simple, it was only simple because of all the work that we had to put into developing the ideas that even allowed us to do this.  Because of how “simple” it will often be to actually get these solutions we’re not actually going to do anymore with specific initial conditions.  We will instead concentrate on simply developing the formulas that we’d be required to evaluate in order to get an actual solution.</p>
+    
+    <p>So, having said that let’s move onto the next example.  In this case we’re going to again look at the temperature distribution in a bar with <a href="TheHeatEquation.html#PDE_HeatEqn_PerfectInsulated">perfectly insulated</a> boundaries.  We are also no longer going to go in steps.  We will do the full solution as a single example and end up with a solution that will satisfy any piecewise smooth initial condition.</p>
+    
+    
+    <a class="anchor" name="PDE_HeatEqn_Ex4"></a>
+  <div class="example">
+    <span class="example-title">Example 4</span> Find a solution to the following partial differential equation.
+          
+            \[\begin{align*}& \frac{{\partial u}}{{\partial t}} = k\frac{{{\partial ^2}u}}{{\partial {x^2}}}\\ &amp; u\left( {x,0} \right) = f\left( x \right)\hspace{0.25in}\frac{{\partial u}}{{\partial x}}\left( {0,t} \right) = 0\hspace{0.25in}\frac{{\partial u}}{{\partial x}}\left( {L,t} \right) = 0\end{align*}\]
+    <div class="example-content">
+      <span id="SHLink_Soln4" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln4" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln4" class="soln-content">
+        <p>We applied separation of variables to this problem in <a href="SeparationofVariables.html#PDE_SepVariables_Ex2">Example 2</a> of the previous section.  So, after assuming that our solution is in the form,</p>
+          \[u\left( {x,t} \right) = \varphi \left( x \right)G\left( t \right)\]
+          <p>and applying separation of variables we get the following two ordinary differential equations that we need to solve.</p>
+          \[\begin{align*}\frac{{dG}}{{dt}} =  - k\lambda G\hspace{0.25in} & \frac{{{d^2}\varphi }}{{d{x^2}}} + \lambda \varphi  = 0\\ &amp; \frac{{d\varphi }}{{dx}}\left( 0 \right) = 0\hspace{0.25in}\frac{{d\varphi }}{{dx}}\left( L \right) = 0\end{align*}\]
+          
+          <p>We solved the boundary value problem in <a href="BVPEvals.html#BVPFourier_Eval_Ex2">Example 2</a> of the Eigenvalues and Eigenfunctions section of the previous chapter for \(L = 2\pi \) so as with the first example in this section we’re not going to put a lot of explanation into the work here.  If you need a reminder on how this works go back to the previous chapter and review the example we worked there.  Let’s get going on the three cases we’ve got to work for this problem.</p>
+          
+          
+          <p>\(\underline {\lambda  &gt; 0} \)<br />
+            The solution to the differential equation is,</p>
+          \[\varphi \left( x \right) = {c_1}\cos \left( {\sqrt \lambda  \,x} \right) + {c_2}\sin \left( {\sqrt \lambda  \,x} \right)\]
+          
+          <p>Applying the first boundary condition gives,</p>
+          \[0 = \frac{{d\varphi }}{{dx}}\left( 0 \right) = \sqrt \lambda  \,{c_2}\hspace{0.25in} \Rightarrow \hspace{0.25in}{c_2} = 0\]
+          
+          <p>The second boundary condition gives,</p>
+          \[0 = \frac{{d\varphi }}{{dx}}\left( L \right) =  - \sqrt \lambda  \,{c_1}\sin \left( {L\sqrt \lambda  } \right)\]
+          
+          <p>Recall that \(\lambda  &gt; 0\)  and so we will only get non-trivial solutions if we require that,</p>
+          \[\sin \left( {L\sqrt \lambda  } \right) = 0\hspace{0.25in} \Rightarrow \hspace{0.25in}L\sqrt \lambda  = n\pi \hspace{0.25in}n = 1,2,3, \ldots \]
+          
+          <p>The positive eigenvalues and their corresponding eigenfunctions of this boundary value problem are then,</p>
+          \[{\lambda _{\,n}} = {\left( {\frac{{n\pi }}{L}} \right)^2}\hspace{0.25in}{\varphi _n}\left( x \right) = \cos \left( {\frac{{n\,\pi x}}{L}} \right)\hspace{0.25in}n = 1,2,3, \ldots \]
+          
+          
+          <p>\(\underline {\lambda  = 0} \)<br />
+            The general solution is,</p>
+          \[\varphi \left( x \right) = {c_1} + {c_2}x\]
+          
+          <p>Applying the first boundary condition gives,</p>
+          \[0 = \frac{{d\varphi }}{{dx}}\left( 0 \right) = {c_2}\]
+          
+          <p>Using this the general solution is then,</p>
+          \[\varphi \left( x \right) = {c_1}\]
+          <p>and note that this will trivially satisfy the second boundary condition.  Therefore \(\lambda  = 0\) is an eigenvalue for this BVP and the eigenfunctions corresponding to this eigenvalue is,</p>
+          \[\varphi \left( x \right) = 1\]
+          
+          
+          <p>\(\underline {\lambda  &lt; 0} \)<br />
+            The general solution here is,</p>
+          \[\varphi \left( x \right) = {c_1}\cosh \left( {\sqrt { - \lambda } \,x} \right) + {c_2}\sinh \left( {\sqrt { - \lambda } \,x} \right)\]
+          
+          <p>Applying the first boundary condition gives,</p>
+          \[0 = \frac{{d\varphi }}{{dx}}\left( 0 \right) = \sqrt { - \lambda } \,{c_2}\hspace{0.25in} \Rightarrow \hspace{0.25in}{c_2} = 0\]
+          
+          <p>The second boundary condition gives,</p>
+          \[0 = \frac{{d\varphi }}{{dx}}\left( L \right) = \sqrt { - \lambda } \,{c_1}\sinh \left( {L\sqrt { - \lambda } } \right)\]
+          
+          <p>We know that \(L\sqrt { - \lambda }  \ne 0\) and so \(\sinh \left( {L\sqrt { - \lambda } } \right) \ne 0\).  Therefore, we must have \({c_1} = 0\) and so, this boundary value problem will have no negative eigenvalues.</p>
+          
+          <p>So, the complete list of eigenvalues and eigenfunctions for this problem is then,</p>
+          \[\begin{align*}{\lambda _{\,n}} & = {\left( {\frac{{n\pi }}{L}} \right)^2} & \hspace{0.25in}{\varphi _n}\left( x \right) & = \cos \left( {\frac{{n\,\pi x}}{L}} \right)\hspace{0.25in}n = 1,2,3, \ldots \\ {\lambda _{\,0}} & = 0 & \hspace{0.25in}{\varphi _0}\left( x \right) & = 1\end{align*}\]
+          <p>and notice that we get the \({\lambda _{\,0}} = 0\) eigenvalue and its eigenfunction if we allow \(n = 0\) in the first set and so we’ll use the following as our set of eigenvalues and eigenfunctions.</p>
+          \[{\lambda _{\,n}} = {\left( {\frac{{n\pi }}{L}} \right)^2}\hspace{0.25in}{\varphi _n}\left( x \right) = \cos \left( {\frac{{n\,\pi x}}{L}} \right)\hspace{0.25in}n = 0,1,2,3, \ldots \]
+          
+          <p>The time problem here is identical to the first problem we looked at so,</p>
+          \[G\left( t \right) = c{{\bf{e}}^{ - k{{\left( {\frac{{n\pi }}{L}} \right)}^2}\,t}}\]
+          
+          <p>Our product solutions will then be,</p>
+          \[{u_n}\left( {x,t} \right) = {A_n}\cos \left( {\frac{{n\pi x}}{L}} \right){{\bf{e}}^{ - k{{\left( {\frac{{n\pi }}{L}} \right)}^2}\,t}}\hspace{0.25in}n = 0,1,2,3, \ldots \]
+          <p>and the solution to this partial differential equation is,</p>
+          \[u\left( {x,t} \right) = \sum\limits_{n = 0}^\infty  {{A_n}\cos \left( {\frac{{n\pi x}}{L}} \right){{\bf{e}}^{ - k{{\left( {\frac{{n\pi }}{L}} \right)}^2}\,t}}} \]
+          
+          <p>If we apply the initial condition to this we get,</p>
+          \[u\left( {x,0} \right) = f\left( x \right) = \sum\limits_{n = 0}^\infty  {{A_n}\cos \left( {\frac{{n\,\pi x}}{L}} \right)} \]
+          <p>and we can see that this is nothing more than the <a href="FourierCosineSeries.html">Fourier cosine series</a> for \(f\left( x \right)\)on \(0 \le x \le L\) and so again we could use the orthogonality of the cosines to derive the coefficients or we could recall that we’ve already done that in the previous chapter and know that the coefficients are given by,</p>
+          
+          \[{A_n} = \left\{ {\begin{array}{*{20}{l}}{\frac{1}{L}\int_{{\,0}}^{{\,L}}{{f\left( x \right)\,dx}}}&amp;{\,\,\,\,\,n = 0}\\{\frac{2}{L}\int_{{\,0}}^{{\,L}}{{f\left( x \right)\cos \left( {\frac{{n\,\pi x}}{L}} \right)\,dx}}}&amp;{\,\,\,\,\,n \ne 0}\end{array}} \right.\]
+      </div>
+    </div>
+  </div>
+    
+    <p>The last example that we’re going to work in this section is a little different from the first two.  We are going to consider the temperature distribution in a thin circular ring.  We will consider the lateral surfaces to be perfectly insulated and we are also going to assume that the ring is thin enough so that the temperature does not vary with distance from the center of the ring.</p>
+    
+    <p>So, what does that leave us with?  Let’s set \(x = 0\) as shown below and then let \(x\) be the arc length of the ring as measured from this point.</p>
+    
+      <div class="center-div"><img alt="This is a sketch of a thin ring.  The very bottom is marked at “x=0” and the very top is marked as “x=-L” and “x=L”." border="0" height="186" src="http://tutorial.math.lamar.edu/Classes/DE/SolvingHeatEquation_Files/image001.png" width="178" /></div>
+    
+    <p>We will measure \(x\) as positive if we move to the right and negative if we move to the left of \(x = 0\).  This means that at the top of the ring we’ll meet where \(x = L\) (if we move to the right) and \(x =  - L\) (if we move to the left).  By doing this we can consider this ring to be a bar of length 2\(L\) and the heat equation that we <a href="TheHeatEquation.html#PDE_HeatEqn_1D">developed</a> earlier in this chapter will still hold.</p>
+    
+    <p>At the point of the ring we consider the two “ends” to be in <strong>perfect thermal contact</strong>.  This means that at the two ends both the temperature and the heat flux must be equal.  In other words we must have,</p>
+    
+      \[u\left( { - L,t} \right) = u\left( {L,t} \right)\hspace{0.25in}\frac{{\partial u}}{{\partial x}}\left( { - L,t} \right) = \frac{{\partial u}}{{\partial x}}\left( {L,t} \right)\]
+    
+    <p>If you recall from the <a href="TheHeatEquation.html">section</a> in which we derived the heat equation we called these periodic boundary conditions.  So, the problem we need to solve to get the temperature distribution in this case is,</p>
+    <a class="anchor" name="PDE_HeatEqn_Ex5"></a>
+  <div class="example">
+    <span class="example-title">Example 5</span> Find a solution to the following partial differential equation.
+          
+            \[\begin{align*}& \frac{{\partial u}}{{\partial t}} = k\frac{{{\partial ^2}u}}{{\partial {x^2}}}\\ &amp; u\left( {x,0} \right) = f\left( x \right)\hspace{0.25in}u\left( { - L,t} \right) = u\left( {L,t} \right)\hspace{0.25in}\frac{{\partial u}}{{\partial x}}\left( { - L,t} \right) = \frac{{\partial u}}{{\partial x}}\left( {L,t} \right)\end{align*}\]
+    <div class="example-content">
+      <span id="SHLink_Soln5" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln5" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln5" class="soln-content">
+        <p>We applied separation of variables to this problem in <a href="SeparationofVariables.html#PDE_SepVariables_Ex3">Example 3</a> of the previous section.  So, if we assume the solution is in the form,</p>
+          \[u\left( {x,t} \right) = \varphi \left( x \right)G\left( t \right)\]
+          <p>we get the following two ordinary differential equations that we need to solve.</p>
+          \[\begin{align*}\frac{{dG}}{{dt}} =  - k\lambda G\hspace{0.25in} & \frac{{{d^2}\varphi }}{{d{x^2}}} + \lambda \varphi  = 0\\ &amp; \varphi \left( { - L} \right) = \varphi \left( L \right)\hspace{0.25in}\frac{{d\varphi }}{{dx}}\left( { - L} \right) = \frac{{d\varphi }}{{dx}}\left( L \right)\end{align*}\]
+          
+          <p>As we’ve seen with the previous two problems we’ve already solved a boundary value problem like this one back in the Eigenvalues and Eigenfunctions section of the previous chapter, <a href="BVPEvals.html#BVPFourier_Eval_Ex3">Example 3</a> to be exact with \(L = \pi \).  So, if you need a little more explanation of what’s going on here go back to this example and you can see a little more explanation.</p>
+          
+          <p>We again have three cases to deal with here.</p>
+          
+          
+          <p>\(\underline {\lambda  &gt; 0} \)<br />
+            The general solution to the differential equation is,</p>
+          \[\varphi \left( x \right) = {c_1}\cos \left( {\sqrt \lambda  \,x} \right) + {c_2}\sin \left( {\sqrt \lambda  \,x} \right)\]
+          
+          <p>Applying the first boundary condition and recalling that cosine is an even function and sine is an odd function gives us,</p>
+          \[\begin{align*}{c_1}\cos \left( { - L\sqrt \lambda  } \right) + {c_2}\sin \left( { - L\sqrt \lambda  } \right)&  = {c_1}\cos \left( {L\sqrt \lambda  } \right) + {c_2}\sin \left( {L\sqrt \lambda  } \right)\\  - {c_2}\sin \left( {L\sqrt \lambda  } \right) & = {c_2}\sin \left( {L\sqrt \lambda  } \right)\\  0 & = 2{c_2}\sin \left( {L\sqrt \lambda  } \right)\end{align*}\]
+          
+          <p>At this stage we can’t really say anything as either \({c_2}\) or sine could be zero.  So, let’s apply the second boundary condition and see what we get.</p>
+          \[\begin{align*} - \sqrt \lambda  \,{c_1}\sin \left( { - L\sqrt \lambda  } \right) + \sqrt \lambda  \,{c_2}\cos \left( { - L\sqrt \lambda  } \right) & =  - \sqrt \lambda  \,{c_1}\sin \left( {L\sqrt \lambda  } \right) + \sqrt \lambda  \,{c_2}\cos \left( {L\sqrt \lambda  } \right)\\  \sqrt \lambda  \,{c_1}\sin \left( {L\sqrt \lambda  } \right) & =  - \sqrt \lambda  \,{c_1}\sin \left( {L\sqrt \lambda 
+            } \right)\\ 2\sqrt \lambda  \,{c_1}\sin \left( {L\sqrt \lambda  } \right) & = 0\end{align*}\]
+          
+          <p>We get something similar.  However, notice that if \(\sin \left( {L\sqrt \lambda  } \right) \ne 0\) then we would be forced to have \({c_1} = {c_2} = 0\) and this would give us the trivial solution which we don’t want.</p>
+          
+          <p>This means therefore that we must have \(\sin \left( {L\sqrt \lambda  } \right) = 0\) which in turn means (from work in our previous examples) that the positive eigenvalues for this problem are,</p>
+          \[{\lambda _{\,n}} = {\left( {\frac{{n\pi }}{L}} \right)^2}\hspace{0.25in}n = 1,2,3, \ldots \]
+          
+          <p>Now, there is no reason to believe that \({c_1} = 0\) or \({c_2} = 0\).  All we know is that they both can’t be zero and so that means that we in fact have two sets of eigenfunctions for this problem corresponding to positive eigenvalues.  They are,</p>
+          \[{\varphi _n}\left( x \right) = \cos \left( {\frac{{n\pi x}}{L}} \right)\hspace{0.25in}{\varphi _n}\left( x \right) = \sin \left( {\frac{{n\pi x}}{L}} \right)\hspace{0.25in}n = 1,2,3, \ldots \]
+          
+          
+          <p>\(\underline {\lambda  = 0} \)<br />
+            The general solution in this case is,</p>
+          \[\varphi \left( x \right) = {c_1} + {c_2}x\]
+          
+          <p>Applying the first boundary condition gives,</p>
+          \[\begin{align*}{c_1} + {c_2}\left( { - L} \right) & = {c_1} + {c_2}\left( L \right)\\  2L{c_2} & = 0\hspace{0.25in} \Rightarrow \hspace{0.25in}{c_2} = 0\end{align*}\]
+          
+          <p>The general solution is then,</p>
+          \[\varphi \left( x \right) = {c_1}\]
+          <p>and this will trivially satisfy the second boundary condition.  Therefore \(\lambda  = 0\) is an eigenvalue for this BVP and the eigenfunctions corresponding to this eigenvalue is,</p>
+          \[\varphi \left( x \right) = 1\]
+          
+          
+          <p>\(\underline {\lambda  &lt; 0} \)<br />
+            For this final case the general solution here is,</p>
+          \[\varphi \left( x \right) = {c_1}\cosh \left( {\sqrt { - \lambda } \,x} \right) + {c_2}\sinh \left( {\sqrt { - \lambda } \,x} \right)\]
+          
+          <p>Applying the first boundary condition and using the fact that hyperbolic cosine is even and hyperbolic sine is odd gives,</p>
+          \[\begin{align*}{c_1}\cosh \left( { - L\sqrt { - \lambda } } \right) + {c_2}\sinh \left( { - L\sqrt { - \lambda } } \right) & = {c_1}\cosh \left( {L\sqrt { - \lambda } } \right) + {c_2}\sinh \left( {L\sqrt { - \lambda } } \right)\\  - {c_2}\sinh \left( { - L\sqrt { - \lambda } } \right) & = {c_2}\sinh \left( {L\sqrt { - \lambda } } \right)\\  2{c_2}\sinh \left( {L\sqrt { - \lambda } } \right) & = 0\end{align*}\]
+          
+          <p>Now, in this case we are assuming that \(\lambda  &lt; 0\) and so \(L\sqrt { - \lambda }  \ne 0\).  This turn tells us that \(\sinh \left( {L\sqrt { - \lambda } } \right) \ne 0\).  We therefore must have \({c_2} = 0\).</p>
+          
+          <p>Let’s now apply the second boundary condition to get,</p>
+          \[\begin{align*}\sqrt { - \lambda } \,{c_1}\sinh \left( { - L\sqrt { - \lambda } } \right) & = \sqrt { - \lambda } \,{c_1}\sinh \left( {L\sqrt { - \lambda } } \right)\\ 2\sqrt { - \lambda } \,{c_1}\sinh \left( {L\sqrt { - \lambda } } \right) & = 0\hspace{0.25in} \Rightarrow \hspace{0.25in}{c_1} = 0\end{align*}\]
+          
+          <p>By our assumption on \(\lambda \) we again have no choice here but to have \({c_1} = 0\) and so for this boundary value problem there are no negative eigenvalues.</p>
+          
+          <p>Summarizing up then we have the following sets of eigenvalues and eigenfunctions and note that we’ve merged the \(\lambda  = 0\) case into the cosine case since it can be here to simplify things up a little.</p>
+          
+          \[\begin{align*}{\lambda _{\,n}} & = {\left( {\frac{{n\pi }}{L}} \right)^2} & \hspace{0.25in}{\varphi _n}\left( x \right) & = \cos \left( {\frac{{n\,\pi x}}{L}} \right)\hspace{0.25in}n = 0,1,2,3, \ldots \\ {\lambda _{\,n}} & = {\left( {\frac{{n\pi }}{L}} \right)^2} & \hspace{0.25in}{\varphi _n}\left( x \right) & = \sin \left( {\frac{{n\,\pi x}}{L}} \right)\hspace{0.25in}n = 1,2,3, \ldots \end{align*}\]
+          
+          <p>The time problem is again identical to the two we’ve already worked here and so we have,</p>
+          \[G\left( t \right) = c{{\bf{e}}^{ - k{{\left( {\frac{{n\pi }}{L}} \right)}^2}\,t}}\]
+          
+          <p>Now, this example is a little different from the previous two heat problems that we’ve looked at.  In this case we actually have two different possible product solutions that will satisfy the partial differential equation and the boundary conditions.  They are,</p>
+          \[\begin{align*}{u_n}\left( {x,t} \right) & = {A_n}\cos \left( {\frac{{n\pi x}}{L}} \right){{\bf{e}}^{ - k{{\left( {\frac{{n\pi }}{L}} \right)}^2}\,t}}\hspace{0.25in}n = 0,1,2,3, \ldots \\ {u_n}\left( {x,t} \right) & = {B_n}\sin \left( {\frac{{n\pi x}}{L}} \right){{\bf{e}}^{ - k{{\left( {\frac{{n\pi }}{L}} \right)}^2}\,t}}\hspace{0.25in}n = 1,2,3, \ldots \end{align*}\]
+          
+          <p>The Principle of Superposition is still valid however and so a sum of any of these will also be a solution and so the solution to this partial differential equation is,</p>
+          \[u\left( {x,t} \right) = \sum\limits_{n = 0}^\infty  {{A_n}\cos \left( {\frac{{n\pi x}}{L}} \right){{\bf{e}}^{ - k{{\left( {\frac{{n\pi }}{L}} \right)}^2}\,t}}}  + \sum\limits_{n = 1}^\infty  {{B_n}\sin \left( {\frac{{n\pi x}}{L}} \right){{\bf{e}}^{ - k{{\left( {\frac{{n\pi }}{L}} \right)}^2}\,t}}} \]
+          
+          <p>If we apply the initial condition to this we get,</p>
+          \[u\left( {x,0} \right) = f\left( x \right) = \sum\limits_{n = 0}^\infty  {{A_n}\cos \left( {\frac{{n\pi x}}{L}} \right)}  + \sum\limits_{n = 1}^\infty  {{B_n}\sin \left( {\frac{{n\pi x}}{L}} \right)} \]
+          <p>and just as we saw in the previous two examples we get a Fourier series.  The difference this time is that we get the full <a href="FourierSeries.html">Fourier series</a> for a piecewise smooth initial condition on \( - L \le x \le L\).  As noted for the previous two examples we could either rederive formulas for the coefficients using the orthogonality of the sines and cosines or we can recall the work we’ve already done.  There’s really no reason at this point to redo work already done so the coefficients are given by,</p>
+          
+          \[\begin{align*}{A_0} & = \frac{1}{{2L}}\int_{{\, - L}}^{L}{{f\left( x \right)\,dx}}\\ {A_n} & = \frac{1}{L}\int_{{\, - L}}^{L}{{f\left( x \right)\cos \left( {\frac{{n\,\pi x}}{L}} \right)\,dx}}\hspace{0.25in}n = 1,2,3, \ldots \\  {B_n} & = \frac{1}{L}\int_{{\, - L}}^{L}{{f\left( x \right)\sin \left( {\frac{{n\,\pi x}}{L}} \right)\,dx}}\hspace{0.25in}n = 1,2,3, \ldots \end{align*}\]
+          
+          <p>Note that this is the reason for setting up \(x\) as we did at the start of this problem.  A full Fourier series needs an interval of \( - L \le x \le L\) whereas the Fourier sine and cosines series we saw in the first two problems need \(0 \le x \le L\).</p>
+      </div>
+    </div>
+  </div>
+    
+    <p>Okay, we’ve now seen three heat equation problems solved and so we’ll leave this section.  You might want to go through and do the two cases where we have a zero temperature on one boundary and a perfectly insulated boundary on the other to see if you’ve got this process down.</p>
+    
+
+  
+
+
+      
+
+
+
+    </div>
+    <!-- End of content div -->
+
+
+    <div class="footer">
+      <div class="footer-links">
+        [<a href="http://tutorial.math.lamar.edu/Contact.aspx">Contact Me</a>]&nbsp;[<a href="../../MyStudents-2.html">My Students</a>]&nbsp;[<a href="http://tutorial.math.lamar.edu/Privacy.aspx">Privacy Statement</a>]&nbsp;[<a href="../../Help-2.html">Site Help &amp; FAQ</a>]&nbsp;[<a href="http://tutorial.math.lamar.edu/Terms.aspx">Terms of Use</a>]
+      </div>
+      <div class="footer-dates">
+        <div class="footer-copyright"><span id="lblCopyRight">&copy; 2003 - 2019 Paul Dawkins</span></div>
+        <div class="footer-spacer"></div>
+        <div class="footer-modified-date">Page Last Modified : <span id="lblModified">6/4/2018</span></div>
+      </div>
+      
+
+    </div>
+  </div>
+  <!-- End of page div...  -->
+</body>
+
+<!-- Mirrored from tutorial.math.lamar.edu/Classes/DE/SolvingHeatEquation.aspx by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 27 Feb 2019 06:15:37 GMT -->
+</html>

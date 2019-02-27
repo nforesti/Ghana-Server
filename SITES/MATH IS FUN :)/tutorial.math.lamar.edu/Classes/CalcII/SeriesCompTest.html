@@ -1,0 +1,1280 @@
+
+
+<!DOCTYPE html>
+
+<html>
+
+<!-- Mirrored from tutorial.math.lamar.edu/Classes/CalcII/SeriesCompTest.aspx by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 27 Feb 2019 06:15:35 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=yes" /><meta http-equiv="X-UA-Compatible" content="IE=edge" />  <!-- For best MathJax performance on IE  -->
+
+  <meta name="google-site-verification" content="uLoA31CJfOhIVMJWBjCmQL8xNMmmLybZU3LRKavy9WQ" /><title>
+	Calculus II - Comparison Test/Limit Comparison Test
+</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="../../../www.googletagmanager.com/gtag/js1872?id=UA-331594-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-331594-1');
+  </script>
+
+  <link type="text/css" href="../../css/jquery.mmenu.all.css" rel="stylesheet" /><link type="text/css" href="../../css/jquery.dropdown.css" rel="stylesheet" /><link href="../../FA/css/fontawesome-all.min.css" rel="stylesheet" /><link type="text/css" href="../../css/notes-all.css" rel="stylesheet" /><link type="text/css" href="../../css/notes-google.css" rel="stylesheet" /><link type="text/css" href="../../css/notes-mmenu.css" rel="stylesheet" /><link type="text/css" href="../../css/notes-dropdown.css" rel="stylesheet" />
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+     TeX: { equationNumbers: { autoNumber: "AMS" } }
+    });
+  </script>
+  <script type="text/javascript" async src="../../../cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax2ba6.js?config=TeX-AMS_CHTML-full"></script>
+  <script type="text/javascript" src="../../../code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="../../js/jquery.mmenu.all.js"></script>
+  <script type="text/javascript" src="../../js/jquery.dropdown.js"></script>
+  <script type="text/javascript" src="../../js/notes-all.js"></script>  
+
+  <script>
+    (function () {
+      var cx = '001004262401526223570:11yv6vpcqvy';
+      var gcse = document.createElement('script');
+      gcse.type = 'text/javascript';
+      gcse.async = true;
+      gcse.src = '../../../cse.google.com/cse07b6.html?cx=' + cx;
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(gcse, s);
+    })();
+  </script>
+
+<meta http-equiv="keywords" name="keywords" content="series, convergent series, divergent series, series convergence, series divergence, comparision test, limit comparision test" /><meta http-equiv="description" name="description" content="In this section we will discuss using the Comparison Test and Limit Comparison Tests to determine if an infinite series converges or diverges.  In order to use either test the terms of the infinite series must be positive.  Proofs for both tests are also given." /></head>
+<body onload="init({Notes: 'NoteMobile;8/21/2018;true'})">
+
+  <div id="page">
+
+    <div class="header">
+      <div class="header-row">
+        <!--<a href="#menu"><span></span></a>-->
+        <div id="side-menu-icon" class="header-side-menu-icon"><a href="#menu"><span class="fas fa-bars fa-lg" aria-hidden="true" title="Main Menu - Change between topics, chapters and sections as well as a few extra pages."></span></a></div>
+        <span class="header-title"><a href="../../index.html" class="header-title-link">Paul's Online Notes</a></span>
+        <div class="header-spacer"></div>
+
+        <div id="content-top-menu" class="top-menu">
+          <button id="content-type-menu" class="top-menu-button" data-jq-dropdown="#jq-dropdown-type" title="View (Notes, Practice Problems or Assignment Problems, Show/Hide Solutions and/or Steps) Menu">
+            <span id="tab_top_menu_notes" class="top-menu-item-title">Notes</span> <span class="far fa-eye fa-lg" aria-hidden="true"></span>
+          </button>
+
+          <button id="quicknav-menu" class="top-menu-button" data-jq-dropdown="#jq-dropdown-quicknav" title="Quick Navigation (Previous/Next Sections and Problems and Full Problem List) Menu">
+            <span class="top-menu-item-title">Quick Nav</span> <span class="fas fa-exchange fa-lg" aria-hidden="true"></span>
+          </button>
+          
+          <button id="download-menu" class="top-menu-button" data-jq-dropdown="#jq-dropdown-download" title="Download pdf Menu">
+            <span class="top-menu-item-title">Download</span> <span class="far fa-download fa-lg" aria-hidden="true"></span>
+          </button>
+
+          <button id="print-menu" class="top-menu-button top-menu-button-icon-only" data-jq-dropdown="#jq-print-download" title="Print Menu">
+            <span class="far fa-print fa-lg" aria-hidden="true"></span>
+          </button>
+        </div>
+
+        <div id="header-google-search" class="header-search">
+          <gcse:search></gcse:search>
+        </div>
+        <div id="header-search-icon" title="Site Search" class="header-menu-icon"><span id="search-icon" class="fas fa-search" aria-hidden="true"></span></div>
+
+      </div>
+    </div>
+
+     <div id="jq-dropdown-type" class="jq-dropdown jq-dropdown-tip">
+      <ul class="jq-dropdown-menu">
+        
+        <li id="li_type_menu_goto" class="top-menu-nav-title">Go To</li>
+        <li id="li_type_menu_notes">
+          <span id="type_menu_notes_span" title="Viewing the Notes for the current topic." class="top-menu-current">Notes</span>
+          
+        </li>
+        <li id="li_type_menu_practice">
+          
+          
+          <a href="http://tutorial.math.lamar.edu/Problems/CalcII/SeriesCompTest.aspx" id="type_menu_practice_link" title="Go to Practice Problems for current topic.">Practice Problems</a>
+        </li>
+        <li id="li_type_menu_asgn">
+          
+          <a href="http://tutorial.math.lamar.edu/ProblemsNS/CalcII/SeriesCompTest.aspx" id="type_menu_asgn_link" title="Go to Assignment Problems for current topic.">Assignment Problems</a>
+        </li>
+        <li id="li_type_menu_sh" class="top-menu-nav-title">Show/Hide</li>
+        <li id="li_type_menu_show" title="Show any hidden solutions and/or steps that may be present on the page."><a href="javascript:SHPrintPage(1,0)" id="view_menu_show">Show all Solutions/Steps/<em>etc.</em></a></li>
+        <li id="li_type_menu_hide" title="Hide any visible solutions and/or steps that may be present on the page."><a href="javascript:SHPrintPage(0,0)" id="view_menu_hide">Hide all Solutions/Steps/<em>etc.</em></a></li>
+      </ul>
+    </div>
+
+    <div id="jq-dropdown-quicknav" class="jq-dropdown jq-dropdown-tip">
+      <ul class="jq-dropdown-menu">
+        <li id="li_nav_menu_sections" class="top-menu-nav-title">Sections</li>
+        <li id="li_nav_menu_prev_section"><a href="IntegralTest.html" id="a_nav_menu_prev_section" class="top-menu-nav-link" title="Previous Section : Integral Test"><span class="top-menu-prev fas fa-chevron-left"></span> Integral Test</a></li>
+        <li id="li_nav_menu_next_section"><a href="AlternatingSeries.html" id="a_nav_menu_next_section" class="top-menu-nav-link" title="Next Section : Alternating Series Test"><span class="top-menu-prev-hidden fas fa-chevron-left"></span> Alternating Series Test <span class="top-menu-next fas fa-chevron-right"></span></a></li>
+        <li id="li_nav_menu_chapters" class="top-menu-nav-title">Chapters</li>
+        <li id="li_nav_menu_prev_chapter"><a href="ParametricIntro.html" id="a_nav_menu_prev_chapter" class="top-menu-nav-link" title="Previous Chapter : Parametric Equations and Polar Coordinates"><span class="top-menu-prev fas fa-chevron-left"></span><span class="top-menu-prev fas fa-chevron-left"></span> Parametric Equations and Polar Coordinates</a></li>
+        <li id="li_nav_menu_next_chapter"><a href="VectorsIntro.html" id="a_nav_menu_next_chapter" class="top-menu-nav-link" title="Next Chapter : Vectors"><span class="top-menu-prev-hidden fas fa-chevron-left"></span><span class="top-menu-prev-hidden fas fa-chevron-left"></span> Vectors <span class="top-menu-next fas fa-chevron-right"></span><span class="top-menu-next fas fa-chevron-right"></span></a></li>
+        
+        
+        
+        
+        <li id="li_nav_menu_classes" class="top-menu-nav-title">Classes</li>
+        <li>
+          
+          <a href="../Alg/Alg.html" id="nav_menu_alg_link" title="Go To Algebra Notes">Algebra</a>
+        </li>
+        <li>
+          
+          <a href="../CalcI/CalcI.html" id="nav_menu_calci_link" title="Go To Calculus I Notes">Calculus I</a>
+        </li>
+        <li>
+          <span id="nav_menu_calcii_span" title="Currently Viewing Calculus II Material" class="top-menu-current">Calculus II</span>
+          
+        </li>
+        <li>
+          
+          <a href="../CalcIII/CalcIII.html" id="nav_menu_calciii_link" title="Go To Calculus III Notes">Calculus III</a>
+        </li>
+        <li>
+          
+          <a href="../DE/DE.html" id="nav_menu_de_link" title="Go To Differential Equations Notes">Differential Equations</a>
+        </li>
+        <li id="li_nav_menu_extras" class="top-menu-nav-title">Extras</li>
+        <li>
+          
+          <a href="../../Extras/AlgebraTrigReview/AlgebraTrig.html" id="nav_menu_algtrig_link" title="Go To Algebra &amp; Trig Review">Algebra &amp; Trig Review</a>
+        </li>
+        <li>
+          
+          <a href="../../Extras/CommonErrors/CommonMathErrors.html" id="nav_menu_commonerrors_link" title="Go To Common Math Errors">Common Math Errors</a>
+        </li>
+        <li>
+          
+          <a href="../../Extras/ComplexPrimer/ComplexNumbers.html" id="nav_menu_complexnumbers_link" title="Go To Complex Numbers Primer">Complex Number Primer</a>
+        </li>
+        <li>
+          
+          <a href="../../Extras/StudyMath/HowToStudyMath.html" id="nav_menu_studymath_link" title="Go To How To Study Math">How To Study Math</a>
+        </li>
+        <li>
+          
+          <a href="../../Extras/CheatSheets_Tables.html" id="nav_menu_cheattables_link" title="Go To List of Cheat Sheets and Tables">Cheat Sheets &amp; Tables</a>
+        </li>
+        <li id="li_nav_menu_misc" class="top-menu-nav-title">Misc</li>
+        <li><a href="http://tutorial.math.lamar.edu/contact.aspx" id="nav_menu_contact" title="Contact Me!">Contact Me</a></li>
+        <li><a href="../../mathjax.html" id="nav_menu_mathjax" title="Info on MathJax and MathJax Configuration Menu">MathJax Help and Configuration</a></li>
+        <li><a href="../../mystudents.html" id="nav_menu_students" title="Go here if you are currently taking a class from me!">My Students</a></li>
+      </ul>
+    </div>
+
+    <div id="jq-dropdown-download" class="jq-dropdown jq-dropdown-anchor-right jq-dropdown-tip">
+      <ul class="jq-dropdown-menu">
+        
+        <li id="li_download_menu_notes" class="top-menu-nav-title">Notes Downloads</li>
+        <li id="li_download_menu_notes_book"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=B,2,N" id="download_menu_notes_book" data-PDF="Download - Menu$Notes - Book$Calculus II$/Downloads/CalcII/Notes/Complete.pdf">Complete Book</a></li>
+        
+        <li id="li_download_menu_notes_chapter"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=C,23,N" id="download_menu_notes_chapter" data-PDF="Download - Menu$Notes - Chapter$Calculus II - Series &amp; Sequences$/Downloads/CalcII/Notes/Seq_Series.pdf">Current Chapter</a></li>
+        <li id="li_download_menu_notes_section"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=S,158,N" id="download_menu_notes_section" data-PDF="Download - Menu$Notes - Section$Calculus II - Comparison Test/Limit Comparison Test$/Downloads/CalcII/Notes/CompTestSeries.pdf">Current Section</a></li>
+        <li id="li_download_menu_practice" class="top-menu-nav-title">Practice Problems Downloads</li>
+        
+        <li id="li_download_menu_practice_book"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=B,2,P" id="download_menu_practice_book" data-PDF="Download - Menu$Practice Problems - Book$Calculus II$/Downloads/CalcII/Practice Problems/Complete.pdf">Complete Book - Problems Only</a></li>
+        <li id="li_download_menu_solutions_book"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=B,2,S" id="download_menu_solutions_book" data-PDF="Download - Menu$Practice Problems Solutions - Book$Calculus II$/Downloads/CalcII/Practice Problems Solutions/Complete.pdf">Complete Book - Solutions</a></li>
+        <li id="li_download_menu_b_c" class="top-menu-divider"></li>
+        <li id="li_download_menu_practice_chapter"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=C,23,P" id="download_menu_practice_chapter" data-PDF="Download - Menu$Practice Problems - Chapter$Calculus II - Series &amp; Sequences$/Downloads/CalcII/Practice Problems/Seq_Series.pdf">Current Chapter - Problems Only</a></li>
+        <li id="li_download_menu_solutions_chapter"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=C,23,S" id="download_menu_solutions_chapter" data-PDF="Download - Menu$Practice Problems Solutions - Chapter$Calculus II - Series &amp; Sequences$/Downloads/CalcII/Practice Problems Solutions/Seq_Series.pdf">Current Chapter - Solutions</a></li>
+        <li id="li_download_menu_c_s" class="top-menu-divider"></li>
+        <li id="li_download_menu_practice_section"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=S,158,P" id="download_menu_practice_section" data-PDF="Download - Menu$Practice Problems - Section$Calculus II - Comparison Test/Limit Comparison Test$/Downloads/CalcII/Practice Problems/CompTestSeries.pdf">Current Section - Problems Only</a></li>
+        <li id="li_download_menu_solutions_section"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=S,158,S" id="download_menu_solutions_section" data-PDF="Download - Menu$Practice Problems Solutions - Section$Calculus II - Comparison Test/Limit Comparison Test$/Downloads/CalcII/Practice Problems Solutions/CompTestSeries.pdf">Current Section - Solutions</a></li>
+        <li id="li_download_menu_asgn" class="top-menu-nav-title">Assignment Problems Downloads</li>
+        
+        <li id="li_download_menu_asgn_book"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=B,2,A" id="download_menu_asgn_book" data-PDF="Download - Menu$Assignment Problems - Book$Calculus II$/Downloads/CalcII/Assignment Problems/Complete.pdf">Complete Book</a></li>
+        <li id="li_download_menu_asgn_chapter"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=C,23,A" id="download_menu_asgn_chapter" data-PDF="Download - Menu$Assignment Problems - Chapter$Calculus II - Series &amp; Sequences$/Downloads/CalcII/Assignment Problems/Seq_Series.pdf">Current Chapter</a></li>
+        <li id="li_download_menu_asgn_section"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=S,158,A" id="download_menu_asgn_section" data-PDF="Download - Menu$Assignment Problems - Section$Calculus II - Comparison Test/Limit Comparison Test$/Downloads/CalcII/Assignment Problems/CompTestSeries.pdf">Current Section</a></li>
+        <li id="li_download_menu_other" class="top-menu-nav-title">Other Items</li>
+        <li id="li_download_menu_urls">
+          <a href="http://tutorial.math.lamar.edu/DownloadURLs.aspx?bi=2&amp;ci=23&amp;si=158" id="download_menu_urls">Get URL's for Download Items</a>
+        </li>
+      </ul>
+    </div>
+
+    <div id="jq-print-download" class="jq-dropdown jq-dropdown-anchor-right jq-dropdown-tip">
+      <ul class="jq-dropdown-menu">
+        <li id="li_print_menu_default"><a href="javascript:SHPrintPage()" id="print_menu_default">Print Page in Current Form (Default)</a></li>
+        <li id="li_print_menu_show"><a href="javascript:SHPrintPage(1,1)" id="print_menu_show">Show all Solutions/Steps and Print Page</a></li>
+        <li id="li_print_menu_hide"><a href="javascript:SHPrintPage(0,1)" id="print_menu_hide">Hide all Solutions/Steps and Print Page</a></li>
+      </ul>
+    </div>
+
+
+
+   
+
+    <nav id="menu" class="notes-nav">
+      <ul>
+        <li><a href="../../index.html" class="mm-link">Home</a></li>
+        <li><span>Classes</span></li>
+        <li><a href="../Alg/Alg.html" class="mm-link">Algebra</a>
+          <ul>
+            <li><a href="../Alg/Preliminaries.html" class="mm-link">Preliminaries</a>
+              <ul>
+                <li><a href="../Alg/IntegerExponents.html" class="mm-link">Integer Exponents</a></li>
+                <li><a href="../Alg/RationalExponents.html" class="mm-link">Rational Exponents</a></li>
+                <li><a href="../Alg/Radicals.html" class="mm-link">Radicals</a></li>
+                <li><a href="../Alg/Polynomials.html" class="mm-link">Polynomials</a></li>
+                <li><a href="../Alg/Factoring.html" class="mm-link">Factoring Polynomials</a></li>
+                <li><a href="../Alg/RationalExpressions.html" class="mm-link">Rational Expressions</a></li>
+                <li><a href="../Alg/ComplexNumbers.html" class="mm-link">Complex Numbers</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/Solving.html" class="mm-link">Solving Equations and Inequalities</a>
+              <ul>
+                <li><a href="../Alg/SolutionSets.html" class="mm-link">Solutions and Solution Sets</a></li>
+                <li><a href="../Alg/SolveLinearEqns.html" class="mm-link">Linear Equations</a></li>
+                <li><a href="../Alg/LinearApps.html" class="mm-link">Applications of Linear Equations</a></li>
+                <li><a href="../Alg/SolveMultiVariable.html" class="mm-link">Equations With More Than One Variable</a></li>
+                <li><a href="../Alg/SolveQuadraticEqnsI.html" class="mm-link">Quadratic Equations - Part I</a></li>
+                <li><a href="../Alg/SolveQuadraticEqnsII.html" class="mm-link">Quadratic Equations - Part II</a></li>
+                <li><a href="../Alg/SolveQuadraticEqnSummary.html" class="mm-link">Quadratic Equations : A Summary</a></li>
+                <li><a href="../Alg/QuadraticApps.html" class="mm-link">Applications of Quadratic Equations</a></li>
+                <li><a href="../Alg/ReducibleToQuadratic.html" class="mm-link">Equations Reducible to Quadratic in Form</a></li>
+                <li><a href="../Alg/SolveRadicalEqns.html" class="mm-link">Equations with Radicals</a></li>
+                <li><a href="../Alg/SolveLinearInequalities.html" class="mm-link">Linear Inequalities</a></li>
+                <li><a href="../Alg/SolvePolyInequalities.html" class="mm-link">Polynomial Inequalities</a></li>
+                <li><a href="../Alg/SolveRationalInequalities.html" class="mm-link">Rational Inequalities</a></li>
+                <li><a href="../Alg/SolveAbsValueEqns.html" class="mm-link">Absolute Value Equations</a></li>
+                <li><a href="../Alg/SolveAbsValueIneq.html" class="mm-link">Absolute Value Inequalities</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/Graphing_Functions.html" class="mm-link">Graphing and Functions</a>
+              <ul>
+                <li><a href="../Alg/Graphing.html" class="mm-link">Graphing</a></li>
+                <li><a href="../Alg/Lines.html" class="mm-link">Lines</a></li>
+                <li><a href="../Alg/Circles.html" class="mm-link">Circles</a></li>
+                <li><a href="../Alg/FunctionDefn.html" class="mm-link">The Definition of a Function</a></li>
+                <li><a href="../Alg/GraphFunctions.html" class="mm-link">Graphing Functions</a></li>
+                <li><a href="../Alg/CombineFunctions.html" class="mm-link">Combining Functions</a></li>
+                <li><a href="../Alg/InverseFunctions.html" class="mm-link">Inverse Functions</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/CommonGraphs.html" class="mm-link">Common Graphs</a>
+              <ul>
+                <li><a href="../Alg/Lines_Circles_PWF.html" class="mm-link">Lines, Circles and Piecewise Functions</a></li>
+                <li><a href="../Alg/Parabolas.html" class="mm-link">Parabolas</a></li>
+                <li><a href="../Alg/Ellipses.html" class="mm-link">Ellipses</a></li>
+                <li><a href="../Alg/Hyperbolas.html" class="mm-link">Hyperbolas</a></li>
+                <li><a href="../Alg/MiscFunctions.html" class="mm-link">Miscellaneous Functions</a></li>
+                <li><a href="../Alg/Transformations.html" class="mm-link">Transformations</a></li>
+                <li><a href="../Alg/Symmetry.html" class="mm-link">Symmetry</a></li>
+                <li><a href="../Alg/GraphRationalFcns.html" class="mm-link">Rational Functions</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/PolynomialFunctions.html" class="mm-link">Polynomial Functions</a>
+              <ul>
+                <li><a href="../Alg/DividingPolynomials.html" class="mm-link">Dividing Polynomials</a></li>
+                <li><a href="../Alg/ZeroesOfPolynomials.html" class="mm-link">Zeroes/Roots of Polynomials</a></li>
+                <li><a href="../Alg/GraphingPolynomials.html" class="mm-link">Graphing Polynomials</a></li>
+                <li><a href="../Alg/FindingZeroesOfPolynomials.html" class="mm-link">Finding Zeroes of Polynomials</a></li>
+                <li><a href="../Alg/PartialFractions.html" class="mm-link">Partial Fractions</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/ExpAndLog.html" class="mm-link">Exponential and Logarithm Functions</a>
+              <ul>
+                <li><a href="../Alg/ExpFunctions.html" class="mm-link">Exponential Functions</a></li>
+                <li><a href="../Alg/LogFunctions.html" class="mm-link">Logarithm Functions</a></li>
+                <li><a href="../Alg/SolveExpEqns.html" class="mm-link">Solving Exponential Equations</a></li>
+                <li><a href="../Alg/SolveLogEqns.html" class="mm-link">Solving Logarithm Equations</a></li>
+                <li><a href="../Alg/ExpLogApplications.html" class="mm-link">Applications</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/Systems.html" class="mm-link">Systems of Equations</a>
+              <ul>
+                <li><a href="../Alg/SystemsTwoVrble.html" class="mm-link">Linear Systems with Two Variables</a></li>
+                <li><a href="../Alg/SystemsThreeVrble.html" class="mm-link">Linear Systems with Three Variables</a></li>
+                <li><a href="../Alg/AugmentedMatrix.html" class="mm-link">Augmented Matrices</a></li>
+                <li><a href="../Alg/AugmentedMatrixII.html" class="mm-link">More on the Augmented Matrix</a></li>
+                <li><a href="../Alg/NonlinearSystems.html" class="mm-link">Nonlinear Systems</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../CalcI/CalcI.html" class="mm-link">Calculus I</a>
+          <ul>
+            <li><a href="../CalcI/ReviewIntro.html" class="mm-link">Review</a>
+              <ul>
+                <li><a href="../CalcI/Functions.html" class="mm-link">Functions</a></li>
+                <li><a href="../CalcI/InverseFunctions.html" class="mm-link">Inverse Functions</a></li>
+                <li><a href="../CalcI/TrigFcns.html" class="mm-link">Trig Functions</a></li>
+                <li><a href="../CalcI/TrigEquations.html" class="mm-link">Solving Trig Equations</a></li>
+                <li><a href="../CalcI/TrigEquations_CalcI.html" class="mm-link">Trig Equations with Calculators, Part I</a></li>
+                <li><a href="../CalcI/TrigEquations_CalcII.html" class="mm-link">Trig Equations with Calculators, Part II</a></li>
+                <li><a href="../CalcI/ExpFunctions.html" class="mm-link">Exponential Functions</a></li>
+                <li><a href="../CalcI/LogFcns.html" class="mm-link">Logarithm Functions</a></li>
+                <li><a href="../CalcI/ExpLogEqns.html" class="mm-link">Exponential and Logarithm Equations</a></li>
+                <li><a href="../CalcI/CommonGraphs.html" class="mm-link">Common Graphs</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcI/limitsIntro.html" class="mm-link">Limits</a>
+              <ul>
+                <li><a href="../CalcI/Tangents_Rates.html" class="mm-link">Tangent Lines and Rates of Change</a></li>
+                <li><a href="../CalcI/TheLimit.html" class="mm-link">The Limit</a></li>
+                <li><a href="../CalcI/OneSidedLimits.html" class="mm-link">One-Sided Limits</a></li>
+                <li><a href="../CalcI/LimitsProperties.html" class="mm-link">Limit Properties</a></li>
+                <li><a href="../CalcI/ComputingLimits.html" class="mm-link">Computing Limits</a></li>
+                <li><a href="../CalcI/InfiniteLimits.html" class="mm-link">Infinite Limits</a></li>
+                <li><a href="../CalcI/LimitsAtInfinityI.html" class="mm-link">Limits At Infinity, Part I</a></li>
+                <li><a href="../CalcI/LimitsAtInfinityII.html" class="mm-link">Limits At Infinity, Part II</a></li>
+                <li><a href="../CalcI/Continuity.html" class="mm-link">Continuity</a></li>
+                <li><a href="../CalcI/DefnOfLimit.html" class="mm-link">The Definition of the Limit</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcI/DerivativeIntro.html" class="mm-link">Derivatives</a>
+              <ul>
+                <li><a href="../CalcI/DefnOfDerivative.html" class="mm-link">The Definition of the Derivative</a></li>
+                <li><a href="../CalcI/DerivativeInterp.html" class="mm-link">Interpretation of the Derivative</a></li>
+                <li><a href="../CalcI/DiffFormulas.html" class="mm-link">Differentiation Formulas</a></li>
+                <li><a href="../CalcI/ProductQuotientRule.html" class="mm-link">Product and Quotient Rule</a></li>
+                <li><a href="../CalcI/DiffTrigFcns.html" class="mm-link">Derivatives of Trig Functions</a></li>
+                <li><a href="../CalcI/DiffExpLogFcns.html" class="mm-link">Derivatives of Exponential and Logarithm Functions</a></li>
+                <li><a href="../CalcI/DiffInvTrigFcns.html" class="mm-link">Derivatives of Inverse Trig Functions</a></li>
+                <li><a href="../CalcI/DiffHyperFcns.html" class="mm-link">Derivatives of Hyperbolic Functions</a></li>
+                <li><a href="../CalcI/ChainRule.html" class="mm-link">Chain Rule</a></li>
+                <li><a href="../CalcI/ImplicitDIff.html" class="mm-link">Implicit Differentiation</a></li>
+                <li><a href="../CalcI/RelatedRates.html" class="mm-link">Related Rates</a></li>
+                <li><a href="../CalcI/HigherOrderDerivatives.html" class="mm-link">Higher Order Derivatives</a></li>
+                <li><a href="../CalcI/LogDiff.html" class="mm-link">Logarithmic Differentiation</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcI/DerivAppsIntro.html" class="mm-link">Applications of Derivatives</a>
+              <ul>
+                <li><a href="../CalcI/RateOfChange.html" class="mm-link">Rates of Change</a></li>
+                <li><a href="../CalcI/CriticalPoints.html" class="mm-link">Critical Points</a></li>
+                <li><a href="../CalcI/MinMaxValues.html" class="mm-link">Minimum and Maximum Values</a></li>
+                <li><a href="../CalcI/AbsExtrema.html" class="mm-link">Finding Absolute Extrema</a></li>
+                <li><a href="../CalcI/ShapeofGraphPtI.html" class="mm-link">The Shape of a Graph, Part I</a></li>
+                <li><a href="../CalcI/ShapeofGraphPtII.html" class="mm-link">The Shape of a Graph, Part II</a></li>
+                <li><a href="../CalcI/MeanValueTheorem.html" class="mm-link">The Mean Value Theorem</a></li>
+                <li><a href="../CalcI/Optimization.html" class="mm-link">Optimization</a></li>
+                <li><a href="../CalcI/MoreOptimization.html" class="mm-link">More Optimization Problems</a></li>
+                <li><a href="../CalcI/LHospitalsRule.html" class="mm-link">L'Hospital's Rule and Indeterminate Forms</a></li>
+                <li><a href="../CalcI/LinearApproximations.html" class="mm-link">Linear Approximations</a></li>
+                <li><a href="../CalcI/Differentials.html" class="mm-link">Differentials</a></li>
+                <li><a href="../CalcI/NewtonsMethod.html" class="mm-link">Newton's Method</a></li>
+                <li><a href="../CalcI/BusinessApps.html" class="mm-link">Business Applications</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcI/IntegralsIntro.html" class="mm-link">Integrals</a>
+              <ul>
+                <li><a href="../CalcI/IndefiniteIntegrals.html" class="mm-link">Indefinite Integrals</a></li>
+                <li><a href="../CalcI/ComputingIndefiniteIntegrals.html" class="mm-link">Computing Indefinite Integrals</a></li>
+                <li><a href="../CalcI/SubstitutionRuleIndefinite.html" class="mm-link">Substitution Rule for Indefinite Integrals</a></li>
+                <li><a href="../CalcI/SubstitutionRuleIndefinitePtII.html" class="mm-link">More Substitution Rule</a></li>
+                <li><a href="../CalcI/AreaProblem.html" class="mm-link">Area Problem</a></li>
+                <li><a href="../CalcI/DefnOfDefiniteIntegral.html" class="mm-link">Definition of the Definite Integral</a></li>
+                <li><a href="../CalcI/ComputingDefiniteIntegrals.html" class="mm-link">Computing Definite Integrals</a></li>
+                <li><a href="../CalcI/SubstitutionRuleDefinite.html" class="mm-link">Substitution Rule for Definite Integrals</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcI/IntAppsIntro.html" class="mm-link">Applications of Integrals</a>
+              <ul>
+                <li><a href="../CalcI/AvgFcnValue.html" class="mm-link">Average Function Value</a></li>
+                <li><a href="../CalcI/AreaBetweenCurves.html" class="mm-link">Area Between Curves</a></li>
+                <li><a href="../CalcI/VolumeWithRings.html" class="mm-link">Volumes of Solids of Revolution / Method of Rings</a></li>
+                <li><a href="../CalcI/VolumeWithCylinder.html" class="mm-link">Volumes of Solids of Revolution/Method of Cylinders</a></li>
+                <li><a href="../CalcI/MoreVolume.html" class="mm-link">More Volume Problems</a></li>
+                <li><a href="../CalcI/Work.html" class="mm-link">Work</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcI/ExtrasIntro.html" class="mm-link">Extras</a>
+              <ul>
+                <li><a href="../CalcI/LimitProofs.html" class="mm-link">Proof of Various Limit Properties</a></li>
+                <li><a href="../CalcI/DerivativeProofs.html" class="mm-link">Proof of Various Derivative Properties</a></li>
+                <li><a href="../CalcI/ProofTrigDeriv.html" class="mm-link">Proof of Trig Limits</a></li>
+                <li><a href="../CalcI/DerivativeAppsProofs.html" class="mm-link">Proofs of Derivative Applications Facts</a></li>
+                <li><a href="../CalcI/ProofIntProp.html" class="mm-link">Proof of Various Integral Properties </a></li>
+                <li><a href="../CalcI/Area_Volume_Formulas.html" class="mm-link">Area and Volume Formulas</a></li>
+                <li><a href="../CalcI/TypesOfInfinity.html" class="mm-link">Types of Infinity</a></li>
+                <li><a href="../CalcI/SummationNotation.html" class="mm-link">Summation Notation</a></li>
+                <li><a href="../CalcI/ConstantofIntegration.html" class="mm-link">Constant of Integration</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="CalcII.html" class="mm-link">Calculus II</a>
+          <ul>
+            <li><a href="IntTechIntro.html" class="mm-link">Integration Techniques</a>
+              <ul>
+                <li><a href="IntegrationByParts.html" class="mm-link">Integration by Parts</a></li>
+                <li><a href="IntegralsWithTrig.html" class="mm-link">Integrals Involving Trig Functions</a></li>
+                <li><a href="TrigSubstitutions.html" class="mm-link">Trig Substitutions</a></li>
+                <li><a href="PartialFractions.html" class="mm-link">Partial Fractions</a></li>
+                <li><a href="IntegralsWithRoots.html" class="mm-link">Integrals Involving Roots</a></li>
+                <li><a href="IntegralsWithQuadratics.html" class="mm-link">Integrals Involving Quadratics</a></li>
+                <li><a href="IntegrationStrategy.html" class="mm-link">Integration Strategy</a></li>
+                <li><a href="ImproperIntegrals.html" class="mm-link">Improper Integrals</a></li>
+                <li><a href="ImproperIntegralsCompTest.html" class="mm-link">Comparison Test for Improper Integrals</a></li>
+                <li><a href="ApproximatingDefIntegrals.html" class="mm-link">Approximating Definite Integrals</a></li>
+              </ul>
+            </li>
+            <li><a href="IntAppsIntro.html" class="mm-link">Applications of Integrals</a>
+              <ul>
+                <li><a href="ArcLength.html" class="mm-link">Arc Length</a></li>
+                <li><a href="SurfaceArea.html" class="mm-link">Surface Area</a></li>
+                <li><a href="CenterOfMass.html" class="mm-link">Center of Mass</a></li>
+                <li><a href="HydrostaticPressure.html" class="mm-link">Hydrostatic Pressure</a></li>
+                <li><a href="Probability.html" class="mm-link">Probability</a></li>
+              </ul>
+            </li>
+            <li><a href="ParametricIntro.html" class="mm-link">Parametric Equations and Polar Coordinates</a>
+              <ul>
+                <li><a href="ParametricEqn.html" class="mm-link">Parametric Equations and Curves</a></li>
+                <li><a href="ParaTangent.html" class="mm-link">Tangents with Parametric Equations</a></li>
+                <li><a href="ParaArea.html" class="mm-link">Area with Parametric Equations</a></li>
+                <li><a href="ParaArcLength.html" class="mm-link">Arc Length with Parametric Equations</a></li>
+                <li><a href="ParaSurfaceArea.html" class="mm-link">Surface Area with Parametric Equations</a></li>
+                <li><a href="PolarCoordinates.html" class="mm-link">Polar Coordinates</a></li>
+                <li><a href="PolarTangents.html" class="mm-link">Tangents with Polar Coordinates</a></li>
+                <li><a href="PolarArea.html" class="mm-link">Area with Polar Coordinates</a></li>
+                <li><a href="PolarArcLength.html" class="mm-link">Arc Length with Polar Coordinates</a></li>
+                <li><a href="PolarSurfaceArea.html" class="mm-link">Surface Area with Polar Coordinates</a></li>
+                <li><a href="ArcLength_SurfaceArea.html" class="mm-link">Arc Length and Surface Area Revisited</a></li>
+              </ul>
+            </li>
+            <li><a href="SeriesIntro.html" class="mm-link">Series & Sequences</a>
+              <ul>
+                <li><a href="Sequences.html" class="mm-link">Sequences</a></li>
+                <li><a href="MoreSequences.html" class="mm-link">More on Sequences</a></li>
+                <li><a href="Series_Basics.html" class="mm-link">Series - The Basics</a></li>
+                <li><a href="ConvergenceOfSeries.html" class="mm-link">Convergence/Divergence of Series</a></li>
+                <li><a href="Series_Special.html" class="mm-link">Special Series</a></li>
+                <li><a href="IntegralTest.html" class="mm-link">Integral Test</a></li>
+                <li><a href="SeriesCompTest.html" class="mm-link">Comparison Test/Limit Comparison Test</a></li>
+                <li><a href="AlternatingSeries.html" class="mm-link">Alternating Series Test</a></li>
+                <li><a href="AbsoluteConvergence.html" class="mm-link">Absolute Convergence</a></li>
+                <li><a href="RatioTest.html" class="mm-link">Ratio Test</a></li>
+                <li><a href="RootTest.html" class="mm-link">Root Test</a></li>
+                <li><a href="SeriesStrategy.html" class="mm-link">Strategy for Series</a></li>
+                <li><a href="EstimatingSeries.html" class="mm-link">Estimating the Value of a Series</a></li>
+                <li><a href="PowerSeries.html" class="mm-link">Power Series</a></li>
+                <li><a href="PowerSeriesandFunctions.html" class="mm-link">Power Series and Functions</a></li>
+                <li><a href="TaylorSeries.html" class="mm-link">Taylor Series</a></li>
+                <li><a href="TaylorSeriesApps.html" class="mm-link">Applications of Series</a></li>
+                <li><a href="BinomialSeries.html" class="mm-link">Binomial Series</a></li>
+              </ul>
+            </li>
+            <li><a href="VectorsIntro.html" class="mm-link">Vectors</a>
+              <ul>
+                <li><a href="Vectors_Basics.html" class="mm-link">Vectors - The Basics</a></li>
+                <li><a href="VectorArithmetic.html" class="mm-link">Vector Arithmetic</a></li>
+                <li><a href="DotProduct.html" class="mm-link">Dot Product</a></li>
+                <li><a href="CrossProduct.html" class="mm-link">Cross Product</a></li>
+              </ul>
+            </li>
+            <li><a href="3DSpace.html" class="mm-link">3-Dimensional Space</a>
+              <ul>
+                <li><a href="3DCoords.html" class="mm-link">The 3-D Coordinate System</a></li>
+                <li><a href="EqnsOfLines.html" class="mm-link">Equations of Lines</a></li>
+                <li><a href="EqnsOfPlanes.html" class="mm-link">Equations of Planes</a></li>
+                <li><a href="QuadricSurfaces.html" class="mm-link">Quadric Surfaces</a></li>
+                <li><a href="MultiVrbleFcns.html" class="mm-link">Functions of Several Variables</a></li>
+                <li><a href="VectorFunctions.html" class="mm-link">Vector Functions</a></li>
+                <li><a href="VectorFcnsCalculus.html" class="mm-link">Calculus with Vector Functions</a></li>
+                <li><a href="TangentNormalVectors.html" class="mm-link">Tangent, Normal and Binormal Vectors</a></li>
+                <li><a href="VectorArcLength.html" class="mm-link">Arc Length with Vector Functions</a></li>
+                <li><a href="Curvature.html" class="mm-link">Curvature</a></li>
+                <li><a href="Velocity_Acceleration.html" class="mm-link">Velocity and Acceleration</a></li>
+                <li><a href="CylindricalCoords.html" class="mm-link">Cylindrical Coordinates</a></li>
+                <li><a href="SphericalCoords.html" class="mm-link">Spherical Coordinates</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../CalcIII/CalcIII.html" class="mm-link">Calculus III</a>
+          <ul>
+            <li><a href="../CalcIII/3DSpace.html" class="mm-link">3-Dimensional Space</a>
+              <ul>
+                <li><a href="../CalcIII/3DCoords.html" class="mm-link">The 3-D Coordinate System</a></li>
+                <li><a href="../CalcIII/EqnsOfLines.html" class="mm-link">Equations of Lines</a></li>
+                <li><a href="../CalcIII/EqnsOfPlanes.html" class="mm-link">Equations of Planes</a></li>
+                <li><a href="../CalcIII/QuadricSurfaces.html" class="mm-link">Quadric Surfaces</a></li>
+                <li><a href="../CalcIII/MultiVrbleFcns.html" class="mm-link">Functions of Several Variables</a></li>
+                <li><a href="../CalcIII/VectorFunctions.html" class="mm-link">Vector Functions</a></li>
+                <li><a href="../CalcIII/VectorFcnsCalculus.html" class="mm-link">Calculus with Vector Functions</a></li>
+                <li><a href="../CalcIII/TangentNormalVectors.html" class="mm-link">Tangent, Normal and Binormal Vectors</a></li>
+                <li><a href="../CalcIII/VectorArcLength.html" class="mm-link">Arc Length with Vector Functions</a></li>
+                <li><a href="../CalcIII/Curvature.html" class="mm-link">Curvature</a></li>
+                <li><a href="../CalcIII/Velocity_Acceleration.html" class="mm-link">Velocity and Acceleration</a></li>
+                <li><a href="../CalcIII/CylindricalCoords.html" class="mm-link">Cylindrical Coordinates</a></li>
+                <li><a href="../CalcIII/SphericalCoords.html" class="mm-link">Spherical Coordinates</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/PartialDerivsIntro.html" class="mm-link">Partial Derivatives</a>
+              <ul>
+                <li><a href="../CalcIII/Limits.html" class="mm-link">Limits</a></li>
+                <li><a href="../CalcIII/PartialDerivatives.html" class="mm-link">Partial Derivatives</a></li>
+                <li><a href="../CalcIII/PartialDerivInterp.html" class="mm-link">Interpretations of Partial Derivatives</a></li>
+                <li><a href="../CalcIII/HighOrderPartialDerivs.html" class="mm-link">Higher Order Partial Derivatives</a></li>
+                <li><a href="../CalcIII/Differentials.html" class="mm-link">Differentials</a></li>
+                <li><a href="../CalcIII/ChainRule.html" class="mm-link">Chain Rule</a></li>
+                <li><a href="../CalcIII/DirectionalDeriv.html" class="mm-link">Directional Derivatives</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/PartialDerivAppsIntro.html" class="mm-link">Applications of Partial Derivatives</a>
+              <ul>
+                <li><a href="../CalcIII/TangentPlanes.html" class="mm-link">Tangent Planes and Linear Approximations</a></li>
+                <li><a href="../CalcIII/GradientVectorTangentPlane.html" class="mm-link">Gradient Vector, Tangent Planes and Normal Lines</a></li>
+                <li><a href="../CalcIII/RelativeExtrema.html" class="mm-link">Relative Minimums and Maximums</a></li>
+                <li><a href="../CalcIII/AbsoluteExtrema.html" class="mm-link">Absolute Minimums and Maximums</a></li>
+                <li><a href="../CalcIII/LagrangeMultipliers.html" class="mm-link">Lagrange Multipliers</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/MultipleIntegralsIntro.html" class="mm-link">Multiple Integrals</a>
+              <ul>
+                <li><a href="../CalcIII/DoubleIntegrals.html" class="mm-link">Double Integrals</a></li>
+                <li><a href="../CalcIII/IteratedIntegrals.html" class="mm-link">Iterated Integrals</a></li>
+                <li><a href="../CalcIII/DIGeneralRegion.html" class="mm-link">Double Integrals over General Regions</a></li>
+                <li><a href="../CalcIII/DIPolarCoords.html" class="mm-link">Double Integrals in Polar Coordinates</a></li>
+                <li><a href="../CalcIII/TripleIntegrals.html" class="mm-link">Triple Integrals</a></li>
+                <li><a href="../CalcIII/TICylindricalCoords.html" class="mm-link">Triple Integrals in Cylindrical Coordinates</a></li>
+                <li><a href="../CalcIII/TISphericalCoords.html" class="mm-link">Triple Integrals in Spherical Coordinates</a></li>
+                <li><a href="../CalcIII/ChangeOfVariables.html" class="mm-link">Change of Variables</a></li>
+                <li><a href="../CalcIII/SurfaceArea.html" class="mm-link">Surface Area</a></li>
+                <li><a href="../CalcIII/Area_Volume.html" class="mm-link">Area and Volume Revisited</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/LineIntegralsIntro.html" class="mm-link">Line Integrals</a>
+              <ul>
+                <li><a href="../CalcIII/VectorFields.html" class="mm-link">Vector Fields</a></li>
+                <li><a href="../CalcIII/LineIntegralsPtI.html" class="mm-link">Line Integrals - Part I</a></li>
+                <li><a href="../CalcIII/LineIntegralsPtII.html" class="mm-link">Line Integrals - Part II</a></li>
+                <li><a href="../CalcIII/LineIntegralsVectorFields.html" class="mm-link">Line Integrals of Vector Fields</a></li>
+                <li><a href="../CalcIII/FundThmLineIntegrals.html" class="mm-link">Fundamental Theorem for Line Integrals</a></li>
+                <li><a href="../CalcIII/ConservativeVectorField.html" class="mm-link">Conservative Vector Fields</a></li>
+                <li><a href="../CalcIII/GreensTheorem.html" class="mm-link">Green's Theorem</a></li>
+                <li><a href="../CalcIII/CurlDivergence.html" class="mm-link">Curl and Divergence</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/SurfaceIntegralsIntro.html" class="mm-link">Surface Integrals</a>
+              <ul>
+                <li><a href="../CalcIII/ParametricSurfaces.html" class="mm-link">Parametric Surfaces</a></li>
+                <li><a href="../CalcIII/SurfaceIntegrals.html" class="mm-link">Surface Integrals</a></li>
+                <li><a href="../CalcIII/SurfIntVectorField.html" class="mm-link">Surface Integrals of Vector Fields</a></li>
+                <li><a href="../CalcIII/StokesTheorem.html" class="mm-link">Stokes' Theorem</a></li>
+                <li><a href="../CalcIII/DivergenceTheorem.html" class="mm-link">Divergence Theorem</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../DE/DE.html" class="mm-link">Differential Equations</a>
+          <ul>
+            <li><a href="../DE/IntroBasic.html" class="mm-link">Basic Concepts</a>
+              <ul>
+                <li><a href="../DE/Definitions.html" class="mm-link">Definitions</a></li>
+                <li><a href="../DE/DirectionFields.html" class="mm-link">Direction Fields</a></li>
+                <li><a href="../DE/FinalThoughts.html" class="mm-link">Final Thoughts</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/IntroFirstOrder.html" class="mm-link">First Order DE's</a>
+              <ul>
+                <li><a href="../DE/Linear.html" class="mm-link">Linear Equations</a></li>
+                <li><a href="../DE/Separable.html" class="mm-link">Separable Equations</a></li>
+                <li><a href="../DE/Exact.html" class="mm-link">Exact Equations</a></li>
+                <li><a href="../DE/Bernoulli.html" class="mm-link">Bernoulli Differential Equations</a></li>
+                <li><a href="../DE/Substitutions.html" class="mm-link">Substitutions</a></li>
+                <li><a href="../DE/IoV.html" class="mm-link">Intervals of Validity</a></li>
+                <li><a href="../DE/Modeling.html" class="mm-link">Modeling with First Order DE's</a></li>
+                <li><a href="../DE/EquilibriumSolutions.html" class="mm-link">Equilibrium Solutions</a></li>
+                <li><a href="../DE/EulersMethod.html" class="mm-link">Euler's Method</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/IntroSecondOrder.html" class="mm-link">Second Order DE's</a>
+              <ul>
+                <li><a href="../DE/SecondOrderConcepts.html" class="mm-link">Basic Concepts</a></li>
+                <li><a href="../DE/RealRoots.html" class="mm-link">Real & Distinct Roots</a></li>
+                <li><a href="../DE/ComplexRoots.html" class="mm-link">Complex Roots</a></li>
+                <li><a href="../DE/RepeatedRoots.html" class="mm-link">Repeated Roots</a></li>
+                <li><a href="../DE/ReductionofOrder.html" class="mm-link">Reduction of Order</a></li>
+                <li><a href="../DE/FundamentalSetsofSolutions.html" class="mm-link">Fundamental Sets of Solutions</a></li>
+                <li><a href="../DE/Wronskian.html" class="mm-link">More on the  Wronskian</a></li>
+                <li><a href="../DE/NonhomogeneousDE.html" class="mm-link">Nonhomogeneous Differential Equations</a></li>
+                <li><a href="../DE/UndeterminedCoefficients.html" class="mm-link">Undetermined Coefficients</a></li>
+                <li><a href="../DE/VariationofParameters.html" class="mm-link">Variation of Parameters</a></li>
+                <li><a href="../DE/Vibrations.html" class="mm-link">Mechanical Vibrations</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/LaplaceIntro.html" class="mm-link">Laplace Transforms</a>
+              <ul>
+                <li><a href="../DE/LaplaceDefinition.html" class="mm-link">The Definition</a></li>
+                <li><a href="../DE/LaplaceTransforms.html" class="mm-link">Laplace Transforms</a></li>
+                <li><a href="../DE/InverseTransforms.html" class="mm-link">Inverse Laplace Transforms</a></li>
+                <li><a href="../DE/StepFunctions.html" class="mm-link">Step Functions</a></li>
+                <li><a href="../DE/IVPWithLaplace.html" class="mm-link">Solving IVP's with Laplace Transforms</a></li>
+                <li><a href="../DE/IVPWithNonConstantCoefficient.html" class="mm-link">Nonconstant Coefficient IVP's</a></li>
+                <li><a href="../DE/IVPWithStepFunction.html" class="mm-link">IVP's With Step Functions</a></li>
+                <li><a href="../DE/DiracDeltaFunction.html" class="mm-link">Dirac Delta Function</a></li>
+                <li><a href="../DE/ConvolutionIntegrals.html" class="mm-link">Convolution Integrals</a></li>
+                <li><a href="../DE/Laplace_Table.html" class="mm-link">Table Of Laplace Transforms</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/SystemsIntro.html" class="mm-link">Systems of DE's</a>
+              <ul>
+                <li><a href="../DE/LA_Systems.html" class="mm-link">Review : Systems of Equations</a></li>
+                <li><a href="../DE/LA_Matrix.html" class="mm-link">Review : Matrices & Vectors</a></li>
+                <li><a href="../DE/LA_Eigen.html" class="mm-link">Review : Eigenvalues & Eigenvectors</a></li>
+                <li><a href="../DE/SystemsDE.html" class="mm-link">Systems of Differential Equations</a></li>
+                <li><a href="../DE/SolutionsToSystems.html" class="mm-link">Solutions to Systems</a></li>
+                <li><a href="../DE/PhasePlane.html" class="mm-link">Phase Plane</a></li>
+                <li><a href="../DE/RealEigenvalues.html" class="mm-link">Real Eigenvalues</a></li>
+                <li><a href="../DE/ComplexEigenvalues.html" class="mm-link">Complex Eigenvalues</a></li>
+                <li><a href="../DE/RepeatedEigenvalues.html" class="mm-link">Repeated Eigenvalues</a></li>
+                <li><a href="../DE/NonhomogeneousSystems.html" class="mm-link">Nonhomogeneous Systems</a></li>
+                <li><a href="../DE/SystemsLaplace.html" class="mm-link">Laplace Transforms</a></li>
+                <li><a href="../DE/SystemsModeling.html" class="mm-link">Modeling</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/SeriesIntro.html" class="mm-link">Series Solutions to DE's</a>
+              <ul>
+                <li><a href="../DE/PowerSeries.html" class="mm-link">Review : Power Series</a></li>
+                <li><a href="../DE/TaylorSeries.html" class="mm-link">Review : Taylor Series</a></li>
+                <li><a href="../DE/SeriesSolutions.html" class="mm-link">Series Solutions</a></li>
+                <li><a href="../DE/EulerEquations.html" class="mm-link">Euler Equations</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/IntroHigherOrder.html" class="mm-link">Higher Order Differential Equations</a>
+              <ul>
+                <li><a href="../DE/HOBasicConcepts.html" class="mm-link">Basic Concepts for <em>n</em><sup>th</sup> Order Linear Equations</a></li>
+                <li><a href="../DE/HOHomogeneousDE.html" class="mm-link">Linear Homogeneous Differential Equations</a></li>
+                <li><a href="../DE/HOUndeterminedCoeff.html" class="mm-link">Undetermined Coefficients</a></li>
+                <li><a href="../DE/HOVariationOfParam.html" class="mm-link">Variation of Parameters</a></li>
+                <li><a href="../DE/HOLaplaceTransforms.html" class="mm-link">Laplace Transforms</a></li>
+                <li><a href="../DE/HOSystems.html" class="mm-link">Systems of Differential Equations</a></li>
+                <li><a href="../DE/HOSeries.html" class="mm-link">Series Solutions</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/IntroBVP.html" class="mm-link">Boundary Value Problems &amp; Fourier Series</a>
+              <ul>
+                <li><a href="../DE/BoundaryValueProblem.html" class="mm-link">Boundary Value Problems</a></li>
+                <li><a href="../DE/BVPEvals.html" class="mm-link">Eigenvalues and Eigenfunctions</a></li>
+                <li><a href="../DE/PeriodicOrthogonal.html" class="mm-link">Periodic Functions &amp; Orthogonal Functions</a></li>
+                <li><a href="../DE/FourierSineSeries.html" class="mm-link">Fourier Sine Series</a></li>
+                <li><a href="../DE/FourierCosineSeries.html" class="mm-link">Fourier Cosine Series</a></li>
+                <li><a href="../DE/FourierSeries.html" class="mm-link">Fourier Series</a></li>
+                <li><a href="../DE/ConvergenceFourierSeries.html" class="mm-link">Convergence of Fourier Series</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/IntroPDE.html" class="mm-link">Partial Differential Equations </a>
+              <ul>
+                <li><a href="../DE/TheHeatEquation.html" class="mm-link">The Heat Equation</a></li>
+                <li><a href="../DE/TheWaveEquation.html" class="mm-link">The Wave Equation</a></li>
+                <li><a href="../DE/PDETerminology.html" class="mm-link">Terminology</a></li>
+                <li><a href="../DE/SeparationofVariables.html" class="mm-link">Separation of Variables</a></li>
+                <li><a href="../DE/SolvingHeatEquation.html" class="mm-link">Solving the Heat Equation</a></li>
+                <li><a href="../DE/HeatEqnNonZero.html" class="mm-link">Heat Equation with Non-Zero Temperature Boundaries</a></li>
+                <li><a href="../DE/LaplacesEqn.html" class="mm-link">Laplace's Equation</a></li>
+                <li><a href="../DE/VibratingString.html" class="mm-link">Vibrating String</a></li>
+                <li><a href="../DE/PDESummary.html" class="mm-link">Summary of Separation of Variables</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><span>Extras</span></li>
+        <li><a href="../../Extras/AlgebraTrigReview/AlgebraTrig.html" class="mm-link">Algebra &amp; Trig Review</a>
+          <ul>
+            <li><a href="../../Extras/AlgebraTrigReview/AlgebraIntro.html" class="mm-link">Algebra</a>
+              <ul>
+                <li><a href="../../Extras/AlgebraTrigReview/Exponents.html" class="mm-link">Exponents </a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/AbsoluteValue.html" class="mm-link">Absolute Value</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Radicals.html" class="mm-link">Radicals</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Rationalizing.html" class="mm-link">Rationalizing </a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Functions.html" class="mm-link">Functions </a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/MultPoly.html" class="mm-link">Multiplying Polynomials</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Factoring.html" class="mm-link">Factoring</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SimpRatExp.html" class="mm-link">Simplifying Rational Expressions</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Graphing.html" class="mm-link">Graphing and Common Graphs</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveEqnPtI.html" class="mm-link">Solving Equations, Part I</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveEqnPtII.html" class="mm-link">Solving Equations, Part II</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveSystems.html" class="mm-link">Solving Systems of Equations</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveIneq.html" class="mm-link">Solving Inequalities</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveAbsValue.html" class="mm-link">Absolute Value Equations and Inequalities</a></li>
+              </ul>
+            </li>
+            <li><a href="../../Extras/AlgebraTrigReview/TrigIntro.html" class="mm-link">Trigonometry</a>
+              <ul>
+                <li><a href="../../Extras/AlgebraTrigReview/TrigFunctions.html" class="mm-link">Trig Function Evaluation</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/TrigGraphs.html" class="mm-link">Graphs of Trig Functions</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/TrigFormulas.html" class="mm-link">Trig Formulas</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveTrigEqn.html" class="mm-link">Solving Trig Equations</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/InverseTrig.html" class="mm-link">Inverse Trig Functions</a></li>
+              </ul>
+            </li>
+            <li><a href="../../Extras/AlgebraTrigReview/ExpLogIntro.html" class="mm-link">Exponentials & Logarithms</a>
+              <ul>
+                <li><a href="../../Extras/AlgebraTrigReview/ExponentialFcns.html" class="mm-link">Basic Exponential Functions</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/LogarithmFcns.html" class="mm-link">Basic Logarithm Functions</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/LogProperties.html" class="mm-link">Logarithm Properties</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SimpLogs.html" class="mm-link">Simplifying Logarithms</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveExpEqn.html" class="mm-link">Solving Exponential Equations</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveLogEqn.html" class="mm-link">Solving Logarithm Equations</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../../Extras/CommonErrors/CommonMathErrors.html" class="mm-link">Common Math Errors</a>
+          <ul>
+            <li><a href="../../Extras/CommonErrors/GeneralErrors.html" class="mm-link">General Errors</a>
+            </li>
+            <li><a href="../../Extras/CommonErrors/AlgebraErrors.html" class="mm-link">Algebra Errors</a>
+            </li>
+            <li><a href="../../Extras/CommonErrors/TrigErrors.html" class="mm-link">Trig Errors</a>
+            </li>
+            <li><a href="../../Extras/CommonErrors/CommonErrors.html" class="mm-link">Common Errors</a>
+            </li>
+            <li><a href="../../Extras/CommonErrors/CalculusErrors.html" class="mm-link">Calculus Errors</a>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../../Extras/ComplexPrimer/ComplexNumbers.html" class="mm-link">Complex Number Primer</a>
+          <ul>
+            <li><a href="../../Extras/ComplexPrimer/Definition.html" class="mm-link">The Definition</a>
+            </li>
+            <li><a href="../../Extras/ComplexPrimer/Arithmetic.html" class="mm-link">Arithmetic</a>
+            </li>
+            <li><a href="../../Extras/ComplexPrimer/ConjugateModulus.html" class="mm-link">Conjugate and Modulus</a>
+            </li>
+            <li><a href="../../Extras/ComplexPrimer/Forms.html" class="mm-link">Polar and Exponential Forms</a>
+            </li>
+            <li><a href="../../Extras/ComplexPrimer/Roots.html" class="mm-link">Powers and Roots</a>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../../Extras/StudyMath/HowToStudyMath.html" class="mm-link">How To Study Math</a>
+          <ul>
+            <li><a href="../../Extras/StudyMath/GeneralTips.html" class="mm-link">General Tips</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/TakingNotes.html" class="mm-link">Taking Notes</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/GettingHelp.html" class="mm-link">Getting Help</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/Homework.html" class="mm-link">Doing Homework</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/ProblemSolving.html" class="mm-link">Problem Solving</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/StudyForExam.html" class="mm-link">Studying For an Exam</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/TakingExam.html" class="mm-link">Taking an Exam</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/Errors.html" class="mm-link">Learn From Your Errors</a>
+            </li>
+          </ul>
+        </li>
+
+        <li><span>Misc Links</span></li>
+        <li><a href="http://tutorial.math.lamar.edu/contact.aspx" class="mm-link">Contact Me</a></li>
+        <li><a href="../../links.html" class="mm-link">Links</a></li>
+        <li><a href="../../mathjax.html" class="mm-link">MathJax Help and Configuration</a></li>
+        <li><a href="../../mystudents.html" class="mm-link">My Students</a></li>
+        <li><a href="http://tutorial.math.lamar.edu/privacy.aspx" class="mm-link">Privacy Statement</a></li>
+        <li><a href="../../help.html" class="mm-link">Site Help & FAQ</a></li>
+        <li><a href="http://tutorial.math.lamar.edu/terms.aspx" class="mm-link">Terms of Use</a></li>
+      </ul>
+    </nav>
+
+
+
+    <div class="top-info-bar">
+      <span id="mobile-title" class="mobile-header-title header-title">Paul's Online Notes</span>
+      <br />
+      <span class="top-menu-breadcrumb">
+        <a href="../../index.html" id="breadcrumb_home_link" title="Go to Main Page">Home</a>
+        <span id="breadcrumb_h_b_sep_span">/ </span>
+        <a href="CalcII.html" id="breadcrumb_book_link" title="Go to Book Introduction">Calculus II</a>
+        
+        <span id="breadcrumb_b_c_sep_span">/ </span>
+        <a href="SeriesIntro.html" id="breadcrumb_chapter_link" title="Go to Chapter Introduction">Series &amp; Sequences</a>
+        
+        <span id="breadcrumb_section_span"> / Comparison Test/Limit Comparison Test</span>
+      </span>
+
+    </div>
+
+    <div id="nav_links" class="top-nav-bar">
+      
+      <span id="nav_current_notes">Notes</span>
+      <a href="http://tutorial.math.lamar.edu/Problems/CalcII/SeriesCompTest.aspx" id="nav_links_practice" title="Go to Practice Problems for current topic.">Practice<span class="nav_desktop_extra"> Problems</span></a>
+      
+      <a href="http://tutorial.math.lamar.edu/ProblemsNS/CalcII/SeriesCompTest.aspx" id="nav_links_asgn" title="Go to Assignment Problems for current topic.">Assignment<span class="nav_desktop_extra">  Problems</span></a>
+      
+    </div>
+
+    <div class="header-divider"></div>
+
+    <div class="content">  
+      
+      
+      <span id="SHLink_NoteMobile" class="SH-Link content-note-link-mobile">Show Mobile Notice</span>
+      <span id="SHImg_NoteMobile" class="fas fa-caret-right SH-padding content-note-link-mobile" aria-hidden="true"></span>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+
+      <span id="SHALink_S_Note" class="SH-Link SH-Hide SH-Bracket">Show All Notes</span>&nbsp;<span id="SHALink_H_Note" class="SH-Link SH-Hide SH-Bracket">Hide All Notes</span>
+      
+      
+      <div id="SHObj_NoteMobile" class="content-note-container content-note-container-mobile">
+        <div class="content-note-header">Mobile Notice</div>
+        <div class="content-note">You appear to be on a device with a "narrow" screen width (<em>i.e.</em> you are probably on a mobile phone).  Due to the nature of the mathematics on this site it is best views in landscape mode.  If your device is not in landscape mode many of the equations will run off the side of your device (should be able to scroll to see them) and some of the menu items will be cut off due to the narrow screen width.</div>
+      </div>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+
+      
+
+
+  <form method="post" action="http://tutorial.math.lamar.edu/Classes/CalcII/SeriesCompTest.aspx" id="ctl00">
+<div class="aspNetHidden">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="Qfq7WzDAA3GSwlYX6aCYXm/d2KaZpqXIBI7EDaF74lTcW8jZILLhAy/o6hss+yzHAcC/1aUjglpsGL4BaW3fQ7wjKQWGnxuO4ZJ2j0GevmkzdhX3InAqT1U7fj4Y7rCh++dd8DTkF2CtunADzPo1nWb1HA4mCI3+zRKqcaD/ELytPUcyShccVTmu9hX8UCu18Km/Kc9sjxJnFsSxhECa+x3W9g0fna9WDyYZFnwTyQA9dq0ac7GyxQAlRbrfsmVqc8aahrW9T8O7/O5uhCc93XgEdK4G1e6tltimAl+8X/WR8in1IpxDutYGC7kV/CZdlI3W5uqzAVh0FSs31LwxQmoKGwOHIZu/c2i5gtfi0VYCodxldAf9R5j1w+kMVRWZNaGBo+llndKisZEER1KytJSoTxsq/CBy02jyM5EOkZ6q62o52rXkH3Gk/kveX/C12sYRg5xbeuOsKZRGkefwb3/y8b4rywKwRFh7lnAvCmZdLMa3+MWHJHMlw2vt7dszTRHrL86VzVYyF+rW8A5qqhrs9hGYhOuUvA2lxvbtqfVGVvBbbOlczAAQSH+L1ck/AUs1m5x+MZQBUv/CWIvBm9VZIQlWf5YPiS/PVUwu4d1h1JuU1yWKQBSSkNt0F6L7bqzQa8QZIvyUTSlwx/JMV8F95SbnllGttvAlQsOXpcryNnC8fjlQXBHnP3FZOLzX/5XzttVpFNnaXYXdhUXiDuKoesjTAIGabs65I2Ng1GoR7TzAIUNTd428wZCG7bOiR+4Cm5xU2UZfDhzpGFJTr0f7gLCkbYr5+/S5sQGCllfJTrqUJ0cdpxWzWMHI5+YUu/C53lUqEdBv1XbJZokn3ok5bU9YTx0rrJhTsHyt8dkUxxcv96cLwlIDqiMXnjOo9M+y30MU99ddE2b4YL3ca9S6bk6rK4l90AspgtFSD6fHMg2JGsQByphd37ljBF9f6GDjdUscbbY5SF4nOjqDh645rWRItdQPP9Mi/Z3ktHZaan8T4XECIqE72TCiw8WorjMn8eU8D6cNuI1MCT5aglQLCUKe/ShSyEk927fVd7QNMt6La5wJHvLxyYeppdkAQYjAjnr35p4yXbsG5IJm8s/UDj6tp0nDUMUHw31gSSb0q4/mVXxpENWl7tOZZgWlucnCwAt+UuLbxuByYrHefyMp/h/nZhmxwCoBue4Sq7xB7YXW3GOrz0wMYk0H65sYX47lqOrLVau3obcwVFKVTS++pUDVo1yed3XryjkW9yKkAUtTqzU2eVPkYG01omEp/vQ7KcaKuvZrlY0U1oIaZy96lsI4Y359ZVm8L2361ZNi56iV0V+sEANFjVcl/LJAclqhNmjMbhu0g+vu++dvJ83Y3j9x8Azr+FYB4QVGXcwXxMco+BuEirkhC0uBPERQsEABqtpYYzBitCuVjLsGrWQG1FH1wbsmqSFCyQofgiForT5IMRLO7g4Ras/ow2f43vyl5BjL7O7kxjM+2chPLAqAoRbjhJZb5MUFFSW4CEesafBGHNrYvCW9BueSjGhn9LabmE+9TS89oSAxZKQUlx5yKz74RBaMN59Z/BqW3vhOGxksPE2tJo53gBIRzs7XYIQ6aLvuO2kvaL02+zBZ1XqouL4/Y8QCSjTsYI6Tw6Bd/CG6xeDTnwzcK+m/PRvB1OBkjliaRuNjGx/dY6UcRCmnjY3r/jwmQZ1Ep+BHKhYzytdKzi9VcjqyLbWXo1IgJYaMaP2KG2jp77A4xnPBos4o5E9B7y6In1W2Zu2gZtT3ji65BhnZx2zjnJexZY0w5OAVk6p/oQDInT/P0OreAJr+QF7VHjD/oCpivT3hcPuPcWSuBep9MJ63P3Q8HBG3MAPBPzZDeEIOLIzR/0eGF8Nx6TW14wnKKbYcDT6qTQGpfB3hcmWlqpQ2+hZ3Nm+zf+04j0ayWgVkbR3hq/+gIqMXzLX1woB/W5o9Za7SmtVfhjsxsftxshpqYymuqRb5dCKQ2brM2Tchz8flQ8fNbupNlCq0m+q0zr+oPib6XjtxhATtWNjEjJwG7rIPEj5uJl4LV5ZiN2RdoRPauz1tJ86azO623rc8G33/9wtJM2VLE9acWQUuEeu34HQy9F59xtLC4hBJevN5DI0nnesOc1VmrlCeYTB7EYs2HYRcKEApoaZxM1LhfZeslsoNPglOCdVr10A4FjS/Khwv9IdzO4ANQbmqf37STrwUsKbb3jcNrPyTimAicz8glG2TK5aommUwop7lOyiZR2NTLLjcsaFd7RqGCNqt1oYBeiycJ3EF5SMM5fUXEwK59B9xr9SWWGeskccs7rfjZQLT4ba8XiDwXfDemZYSsXtuCYbLbPzf23SZ5TDTsFrjTdPq7T1BTL5twm86fBtM3qzmHawpQN0V//MuRiD8nd69jW4on1yjjDXSd5l5Yiq8EWOvOwsx2OKmrCOKRnpBThMszBqy3rTBkhJJM8C0+jdJU8yX8N2a3raEU05D3Zcme6dAF+HtNVnrcCNcO0Gq7Jsq46beBo4PZYJoaZjWuAkNCjBCI9fJrfeSWpdRqSyIPDBDHb/JC8R9dEQeVKIEome25LxQ1+l1Z1f9bSRL/UNhmgzFLJ+/RaPM+ZhX2aghcfWXlO5dTH+LiFWnf9we7fsZh6P0lEzfF5N7c4n7wl7sLzQ0Dgit5SL9HuCJrhDHBl86w1xP2rQsYLKcb+l2lREC2EsBkckmx7N2PCmN+R65ZLG3pMg2LWswutkGK6FN6NfNspG/EtRAMsI+XhMrts6Ur1ix8vAFXveJBo667Rt5GHd1yOrBi3oWeSHCZ4AzxHFutegQPdoZtyTymQIQYiPi+AHYPzvb+fliv2fjUewmcnGTKditVokWktKcUKT5CrWgPBDvU2wN/LGtduh5zr82yaB9A0SHbDWgCkzefCv0YGsgGmCa54nwJWABLrzmhGM23qYb72aaDuJZoNQyjVvrnervE7Bh5tm/6J91ED/TVRb0ZHf+3vfAv4rjkhkjbst8ftthF4xPs307GvJZl5lTZvI+lTD3qk7um2jHqOdW2pfofafi06Ge//z1tczriOieWTmCfzrDJfF0LrCTjj7Y8si9Pez5bGXXWBpxzH3h4PsXlOf/KwWC2HMq5UISX52pzbzHWExls/NllqqCCLB7MNjSXvq6A99loxKKlt2Jemohc2r+MdKMo7DiHlmaRX2PEqEGRLLtDyyQFi/Gwvpjuv5yNi32TwrmBPgExTiP83dCqznHYJtkOWP7A6x/ILodcMUVfu/tW404Do+X6l3TRUuygiknKWPcMFfuPCcVp+E3Gy1uCjJ32qhPw4UoyfKxAyCsA6hcmmBKaNm/XaFanWCXWD/HYYvUjzyJ8Agg1XQxcXkfs904cgwvUPs9oEYcCR8oogtmyDs0IcGZvA1PlOsFz5HIX6bbOIdEaz7gczlfi/VUdJmOSnYwZkeL3VlQhreUqH0MhyODNIv1aWyp3DGMbKFrGrqyfM1lT3EOLH+FBhZ15dpUXgefqEV+er7aXJIZGEHCBxleEKD4cWmzFdNgAL/zConN+B/qn0Xv+cD/FspkuVWxWOGv4/scbbnRNOdgEuSSmm5ojMbc4PVNi+wjzbSDyTETCIDnERHuXWmOqkSS1SulCjl9/PHsq1htNC9KOpWWKivDBARTOL1zKIHAIS1JSUqATDMS/RoDrEBzVeqW3mzlP2Xk6CX6S7mwa7HiEXOzpOrbhDM8a8IeqZaobZ3sdmsy+ZWAOkSD5ac1Fs3SMI3yP+cFz/H3ZbHaNtsG+U/vY2pB8lNCQ+7s17WNko6iugNM44CYVYOddXNMt9zFS8Na+EBel+Qc1evrULRFb/wyiWWtbGDk+jM1yyBSl8fMyX1V5WXf0bhVGrjx/4KwrpmZFguken5fxLsAGeBCjO+kCtygPhhBovTwk50vLRN3tkMShxc5PYJ1gqaQ+OnHL7iD0AQGmIwDOIzjvShoHPxGvq3z1onqMSrdxcyOxPYtCfCR5UBkBnE6mKAYZ60EsMgEil6aHT148QTlRwbAd47heyXXb/iz51GH0CP67cY1m5/tNlAukSziDqfJFU/u5b6BfqtHu24PYYw3i5yvUIqMo+k5V+dGkGd6CnA/jE5JP0X9n/OtRiXaXkhy3B0eL9OmTY9I1b5o4UI62CzM/LlvJBbhsLhADF+NtWLsZX9CFZXY9aMgTHXcmP2QTBddq+mRp6m37bZeGBLnpFSL5o0TZaco5Oq/MZEl2vIpkStVxh7rKX5ibUpolDBegbEFHRD7I0BA9jMApr58LqHdB5CRdygFpAOhacibptuOUWtyr8VYVEo2S/BNWAg08ufyYFCpfCgv8m8DYUzahVRQo1iTtEkIPUlFoygAXUadrwdRStNr8HlJcSww6/BTPw9Szrz4A0Fan9xBaZHOL1Pa2kWVzfG7QOVb2872GkST4KFvd6OYl8pILyB5gH9DDpGnS5TV/sXhUndkVE0bERpf5MCADYsA6+dI3lGj2hIuv72EYfHT71H/xlEhweogHa3LptWF8BuNDnmZ3/GdR3L8OPGHWmeHfw/XBRdsnujg/T/olK2nDhJGbg3XtLOxdA47NSGY0p5Xwy8C8MOXx8kAfyOKvm2YVIiAoXMf8BLuHMKInSAb5xqyzIa8QN9aimWRbP4UarWJgp5QYnDaOhaFx8KF761/LuI986FY8ek8OvuGSUAooaDtSnQFLKXSNK5wlgOA8CzWyrO0Epggru5C0aM5MW6a+05CyG7anLssjLTypExv0N23YKT3uawBzxcJcryQLXq9uaibl+PoEQggmVIy/QyadWaIR7580MGm72VVnkvFSrlQ1lIa2YspxgLUnjkvHGXNdqy51tDOj59wPYB3dHmf/M/F8lgxUthJQwvKm3Gyg6LaKzQClIe8VhQpFZsQg7XMK+qQGgVOwibGfleCANUXeVOct3Vu6cjkO+q6HaEoo9jMeSAtdUqVzDIriYoshozhlZkykibFu0Th0+gqqi7KyxFdbghEPNuWwDJNGgZRzqkvEeGT8p2pDGN/HROlj4CvjnKqjGpy+Mr9wPDKjdZ7UyzM4Ni16qm2D1A/zvnEWNvx3KQs4+JBBXBwQ0+kW5nZtcXPJdf2aepXdrlYlhdmJS6WQM+zLdxR6AbuSWWBn5Fu45OtqD68Xc9YjbJz1cj5wXozl/DsmyXhJEgctmkWgvtMCjhIhotwFC+VYYP8u6U6dB5Pnsk4lbKaf90CNRj6l/SmzsKEbGX+wwRsErXNBNburyzcA4YNHpr+Q5ORfEiKdl02kTTVta05MU3OYrIwDqzlFTX3jCAkubvap+wXtQeNaqHkSJ8XCSkaXVXHGRYvaD5hNDBd+Tn2ZNfcV3uWo6J37IeG1e+I" />
+</div>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="98081A57" />
+</div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </form>
+
+  <h3>Section 4-7 : Comparison Test/Limit Comparison Test</h3>
+    
+    <p>In the previous section we saw how to relate a series to an improper integral to determine the convergence of a series.  While the integral test is a nice test, it does force us to do improper integrals which aren’t always easy and, in some cases, may be impossible to determine the convergence of.</p>
+    
+    <p>For instance, consider the following series.</p>
+    
+        \[\sum\limits_{n = 0}^\infty  {\frac{1}{{{3^n} + n}}} \]
+    
+    <p>In order to use the Integral Test we would have to integrate</p>
+    
+        \[\int_{{\,0}}^{{\,\infty }}{{\frac{1}{{{3^x} + x}}\,dx}}\]
+    <p>and we're not even sure if it’s possible to do this integral.  Nicely enough for us there is another test that we can use on this series that will be much easier to use.</p>
+    
+    <p>First, let’s note that the series terms are positive.  As with the Integral Test that will be important in this section.  Next let’s note that we must have \(x &gt; 0\) since we are integrating on the interval \(0 \le x &lt; \infty \).  Likewise, regardless of the value of \(x\) we will always have \({3^x} &gt; 0\). So, if we drop the \(x\) from the denominator the denominator will get smaller and hence the whole fraction will get larger.  So,</p>
+    
+        \[\frac{1}{{{3^n} + n}} &lt; \frac{1}{{{3^n}}}\]
+    
+    <p>Now,</p>
+    
+        \[\sum\limits_{n = 0}^\infty  {\frac{1}{{{3^n}}}} \]
+    <p>is a <a href="Series_Special.html#GeometricSeries">geometric series</a> and we know that since \(\left| r \right| = \left| {\frac{1}{3}} \right| &lt; 1\) the series will converge and its value will be,</p>
+    
+      \[\sum\limits_{n = 0}^\infty  {\frac{1}{{{3^n}}}}  = \frac{1}{{1 - \frac{1}{3}}} = \frac{3}{2}\]
+    
+    <p>Now, if we go back to our original series and write down the partial sums we get,</p>
+    
+        \[{s_n} = \sum\limits_{i = 0}^n {\frac{1}{{{3^i} + i}}} \]
+    
+    <p>Since all the terms are positive adding a new term will only make the number larger and so the sequence of partial sums must be an increasing sequence.</p>
+    
+      \[{s_n} = \sum\limits_{i = 0}^n {\frac{1}{{{3^i} + i}}}  &lt; \sum\limits_{i = 0}^{n + 1} {\frac{1}{{{3^i} + i}}}  = {s_{n + 1}}\]
+    
+    <p>Then since,</p>
+    
+        \[\frac{1}{{{3^n} + n}} &lt; \frac{1}{{{3^n}}}\]
+    <p>and because the terms in these two sequences are positive we can also say that,</p>
+    
+      \[{s_n} = \sum\limits_{i = 0}^n {\frac{1}{{{3^i} + i}}}  &lt; \sum\limits_{i = 0}^n {\frac{1}{{{3^i}}} &lt; \sum\limits_{i = 0}^\infty  {\frac{1}{{{3^n}}} = \frac{3}{2}\hspace{0.25in}\hspace{0.25in} \Rightarrow \hspace{0.25in}\,\,\,\,\,{s_n} &lt; \frac{3}{2}} } \]
+    
+    <p>Therefore, the sequence of partial sums is also a bounded sequence.  Then from the <a href="MoreSequences.html#Series_MoreSeq_BndMon">second section</a> on sequences we know that a monotonic and bounded sequence is also convergent.</p>
+    
+    <p>So, the sequence of partial sums of our series is a convergent sequence.  This means that the series itself,</p>
+    
+      \[\sum\limits_{n = 0}^\infty  {\frac{1}{{{3^n} + n}}} \]
+    <p>is also convergent.</p>
+    
+    <p>So, what did we do here?  We found a series whose terms were always larger than the original series terms and this new series was also convergent.  Then since the original series terms were positive (very important) this meant that the original series was also convergent.</p>
+    
+    <p>To show that a series (with only positive terms) was divergent we could go through a similar argument and find a new divergent series whose terms are always smaller than the original series.  In this case the original series would have to take a value larger than the new series.  However, since the new series is divergent its value will be infinite.  This means that the original series must also be infinite and hence divergent.</p>
+    
+    <p>We can summarize all this in the following test.</p>
+    <a class="anchor" name="CompTest"></a>
+
+    <h4>Comparison Test</h4>
+  <div class="fact">
+    <p>Suppose that we have two series \(\displaystyle \sum {{a_n}} \) and \(\displaystyle \sum {{b_n}} \) with \({a_n},{b_n} \ge 0\) for all \(n\) and \({a_n} \le {b_n}\) for all \(n\).  Then,</p>
+          <ol class="general-list">
+            <li>If \(\displaystyle \sum {{b_n}} \) is convergent then so is \(\sum {{a_n}} \).<br /><br /></li>
+            <li>If \(\displaystyle \sum {{a_n}} \) is divergent then so is \(\sum {{b_n}} \).</li>
+          </ol>
+  </div>
+    
+    <p>In other words, we have two series of positive terms and the terms of one of the series is always larger than the terms of the other series.  Then if the larger series is convergent the smaller series must also be convergent.  Likewise, if the smaller series is divergent then the larger series must also be divergent.  Note as well that in order to apply this test we need both series to start at the same place.</p>
+    
+    <p>A formal <a href="#Series_CompTest_CTProof">proof</a> of this test is at the end of this section.</p>
+    
+    <p>Do not misuse this test.  Just because the smaller of the two series converges does not say anything about the larger series.  The larger series may still diverge.  Likewise, just because we know that the larger of two series diverges we can’t say that the smaller series will also diverge!  Be very careful in using this test</p>
+    
+    <p>Recall that we had a similar test for <a href="ImproperIntegralsCompTest.html">improper integrals</a> back when we were looking at integration techniques.  So, if you could use the comparison test for improper integrals you can use the comparison test for series as they are pretty much the same idea.</p>
+    
+    <p>Note as well that the requirement that \({a_n},{b_n} \ge 0\)  and \({a_n} \le {b_n}\) really only need to be true eventually.  In other words, if a couple of the first terms are negative or \({a_n}\require{cancel} \cancel{ \le }\,{b_n}\) for a couple of the first few terms we’re okay.  As long as we eventually reach a point where \({a_n},{b_n} \ge 0\)  and \({a_n} \le {b_n}\) for all sufficiently large \(n\) the test will work.</p>
+    
+    <p>To see why this is true let’s suppose that the series start at \(n = k\) and that the conditions of the test are only true for for \(n \ge N + 1\) and for \(k \le n \le N\) at least one of the conditions is not true.  If we then look at \(\sum {{a_n}} \) (the same thing could be done for \(\sum {{b_n}} \)) we get,</p>
+    
+      \[\sum\limits_{\,n = k}^\infty  {{a_n}}  = \sum\limits_{\,n = k}^N {{a_n}}  + \sum\limits_{\,n = N + 1}^\infty  {{a_n}} \]
+    
+    <p>The first series is nothing more than a finite sum (no matter how large \(N\) is) of finite terms and so will be finite.  So, the original series will be convergent/divergent only if the second infinite series on the right is convergent/divergent and the test can be done on the second series as it satisfies the conditions of the test.</p>
+    
+    <p>Let’s take a look at some examples.</p>
+    <a class="anchor" name="Series_CompTest_Ex1"></a>
+  <div class="example">
+    <span class="example-title">Example 1</span> Determine if the following series is convergent or divergent.
+          
+              \[\sum\limits_{n = 1}^\infty  {\frac{n}{{{n^2} - {{\cos }^2}\left( n \right)}}} \]
+    <div class="example-content">
+      <span id="SHLink_Soln1" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln1" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln1" class="soln-content">
+        <p>Since the cosine term in the denominator doesn’t get too large we can assume that the series terms will behave like,</p>
+          
+              \[\frac{n}{{{n^2}}} = \frac{1}{n}\]
+          <p>which, as a series, will diverge.  So, from this we can guess that the series will probably diverge and so we’ll need to find a smaller series that will also diverge.</p>
+          
+          <p>Recall that from the comparison test with improper integrals that we determined that we can make a fraction smaller by either making the numerator smaller or the denominator larger.  In this case the two terms in the denominator are both positive. So, if we drop the cosine term we will in fact be making the denominator larger since we will no longer be subtracting off a positive quantity.  Therefore,</p>
+          
+          
+              \[\frac{n}{{{n^2} - {{\cos }^2}\left( n \right)}} &gt; \frac{n}{{{n^2}}} = \frac{1}{n}\]
+          
+          <p>Then, since</p>
+          
+              \[\sum\limits_{n = 1}^\infty  {\frac{1}{n}} \]
+          <p>diverges (it’s harmonic or the \(p\)-series test) by the Comparison Test our original series must also diverge.</p>
+      </div>
+    </div>
+  </div>
+
+    <a class="anchor" name="Series_CompTest_Ex2"></a>
+  <div class="example">
+    <span class="example-title">Example 2</span> Determine if the following series is convergent or divergent.
+	\[\sum\limits_{n = 1}^\infty  {\frac{{{{\bf{e}}^{ - n}}}}{{n + {{\cos }^2}\left( n \right)}}} \]
+    <div class="example-content">
+      <span id="SHLink_Soln2" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln2" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln2" class="soln-content">
+        <p>This example looks somewhat similar to the first one but we are going to have to be careful with it as there are some significant differences.</p>
+
+        <p>First, as with the first example the cosine term in the denominator will not get very large and so it won’t affect the behavior of the terms in any meaningful way.  Therefore, the temptation at this point is to focus in on the n in the denominator and think that because it is just an n the series will diverge.  </p>
+
+        <p>That would be correct if we didn’t have much going on in the numerator.  In this example, however, we also have an exponential in the numerator that is going to zero very fast.  In fact, it is going to zero so fast that it will, in all likelihood, force the series to converge.</p>  
+
+        <p>So, let’s guess that this series will converge and we’ll need to find a larger series that will also converge.</p>
+
+        <p>First, because we are adding two positive numbers in the denominator we can drop the cosine term from the denominator.  This will, in turn, make the denominator smaller and so the term will get larger or,</p>
+	
+          \[\frac{{{{\bf{e}}^{ - n}}}}{{n + {{\cos }^2}\left( n \right)}} \le \frac{{{{\bf{e}}^{ - n}}}}{n}\]
+
+        <p>Next, we know that \(n \ge 1\) and so if we replace the n in the denominator with its smallest possible value (i.e. 1) the term will again get larger.  Doing this gives,</p>
+
+	      \[\frac{{{{\bf{e}}^{ - n}}}}{{n + {{\cos }^2}\left( n \right)}} \le \frac{{{{\bf{e}}^{ - n}}}}{n} \le \frac{{{{\bf{e}}^{ - n}}}}{1} = {{\bf{e}}^{ - n}}\]
+
+
+        <p>We can’t do much more, in a way that is useful anyway, to make this larger so let’s see if we can determine if,</p>
+	
+          \[\sum\limits_{n = 1}^\infty  {{{\bf{e}}^{ - n}}} \] 
+
+        <p>converges or diverges.</p>
+
+        <p>We can notice that \(f\left( x \right) = {{\bf{e}}^{ - x}}\) is always positive and it is also decreasing (you can verify that correct?) and so we can use the Integral Test on this series.  Doing this gives,</p>
+
+	      \[\int_{1}^{\infty }{{{{\bf{e}}^{ - x}}\,dx}} = \mathop {\lim }\limits_{t \to \infty } \int_{1}^{t}{{{{\bf{e}}^{ - x}}\,dx}} = \mathop {\lim }\limits_{t \to \infty } \left. {\left( { - {{\bf{e}}^{ - x}}} \right)} \right|_1^t = \mathop {\lim }\limits_{t \to \infty } \left( { - {{\bf{e}}^{ - x}} + {{\bf{e}}^{ - 1}}} \right) = {{\bf{e}}^{ - 1}}\] 
+
+        <p>Okay, we now know that the integral is convergent and so the series \(\sum\limits_{n = 1}^\infty  {{{\bf{e}}^{ - n}}} \) must also be convergent. </p> 
+
+        <p>Therefore, because \(\sum\limits_{n = 1}^\infty  {{{\bf{e}}^{ - n}}} \) is larger than the original series we know that the original series must also converge.</p>
+
+      </div>
+    </div>
+  </div>
+
+  <p>With each of the previous examples we saw that we can’t always just focus in on the denominator when making a guess about the convergence of a series.  Sometimes there is something going on in the numerator that will change the convergence of a series from what the denominator tells us should be happening.</p>
+
+  <p>We also saw in the previous example that, unlike most of the examples of the comparison test that we’ve done (or will do) both in this section and in the Comparison Test for Improper Integrals, that it won’t always be the denominator that is driving the convergence or divergence.  Sometimes it is the numerator that will determine if something will converge or diverge so do not get too locked into only looking at the denominator.</p>
+
+  <p>One of the more common mistakes is to just focus in on the denominator and make a guess based just on that.  If we’d done that with both of the previous examples we would have guessed wrong so be careful.</p>
+
+  <p>Let’s work another example of the comparison test before we move on to a different topic.</p>
+  
+  <a class="anchor" name="Series_CompTest_Ex3"></a>
+  <div class="example">
+    <span class="example-title">Example 3</span> Determine if the following series converges or diverges.</p>
+          
+              \[\sum\limits_{n = 1}^\infty  {\frac{{{n^2} + 2}}{{{n^4} + 5}}} \]
+    <div class="example-content">
+      <span id="SHLink_Soln3" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln3" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln3" class="soln-content">
+        <p>In this case the “+2” and the “+5” don’t really add anything to the series and so the series terms should behave pretty much like</p>
+          
+              \[\frac{{{n^2}}}{{{n^4}}} = \frac{1}{{{n^2}}}\]
+          <p>which will converge as a series.  Therefore, we can guess that the original series will converge and we will need to find a larger series which also converges.</p>
+          
+          <p>This means that we’ll either have to make the numerator larger or the denominator smaller.  We can make the denominator smaller by dropping the “+5”.  Doing this gives,</p>
+          
+              \[\frac{{{n^2} + 2}}{{{n^4} + 5}} &lt; \frac{{{n^2} + 2}}{{{n^4}}}\]
+          
+          <p>At this point, notice that we can’t drop the “+2” from the numerator since this would make the term smaller and that’s not what we want.  However, this is actually the furthest that we need to go.  Let’s take a look at the following series.</p>
+          
+            \[\begin{align*}\sum\limits_{n = 1}^\infty  {\frac{{{n^2} + 2}}{{{n^4}}}}  & = \sum\limits_{n = 1}^\infty  {\frac{{{n^2}}}{{{n^4}}}}  + \sum\limits_{n = 1}^\infty  {\frac{2}{{{n^4}}}} \\ &amp;  = \sum\limits_{n = 1}^\infty  {\frac{1}{{{n^2}}}}  + \sum\limits_{n = 1}^\infty  {\frac{2}{{{n^4}}}} \end{align*}\]
+          
+          <p>As shown, we can write the series as a sum of two series and both of these series are convergent by the \(p\)-series test.  Therefore, since each of these series are convergent we know that the sum,</p>
+          
+              \[\sum\limits_{n = 1}^\infty  {\frac{{{n^2} + 2}}{{{n^4}}}} \]
+          <p>is also a convergent series.  Recall that the sum of two convergent series will also be convergent.</p>
+          
+          <p>Now, since the terms of this series are larger than the terms of the original series we know that the original series must also be convergent by the Comparison Test.</p>
+      </div>
+    </div>
+  </div>
+    
+    <p>The comparison test is a nice test that allows us to do problems that either we couldn’t have done with the integral test or at the best would have been very difficult to do with the integral test.  That doesn’t mean that it doesn’t have problems of its own.</p>
+    
+    <p>Consider the following series.</p>
+    
+      \[\sum\limits_{n = 0}^\infty  {\frac{1}{{{3^n} - n}}} \]
+    
+      
+    <p>This is not much different from the first series that we looked at.  The original series converged because the \(3^{n}\) gets very large very fast and will be significantly larger than the \(n\).  Therefore, the \(n\) doesn’t really affect the convergence of the series in that case.  The fact that we are now subtracting the \(n\) off instead of adding the \(n\) on really shouldn’t change the convergence.  We can say this because the \(3^{n}\) gets very large very fast and the fact that we’re subtracting \(n\) off won’t really change the size of this term for all sufficiently large values of \(n\).</p>
+    
+    <p>So, we would expect this series to converge.  However, the comparison test won’t work with this series.  To use the comparison test on this series we would need to find a larger series that we could easily determine the convergence of.  In this case we can’t do what we did with the original series.  If we drop the \(n\) we will make the denominator larger (since the \(n\) was subtracted off) and so the fraction will get smaller and just like when we looked at the comparison test for improper integrals knowing that the smaller of two series converges does not mean that the larger of the two will also converge.</p>
+    
+    <p>So, we will need something else to do help us determine the convergence of this series.  The following variant of the comparison test will allow us to determine the convergence of this series.</p>
+    
+  <a class="anchor" name="LimitCompTest"></a>
+  <h4>Limit Comparison Test</h4>
+  <div class="fact">
+    <p>Suppose that we have two series \(\sum {{a_n}} \) and \(\sum {{b_n}} \) with \({a_n} \ge 0,{b_n} &gt; 0\) for all \(n\).  Define,</p>
+          
+              \[c = \mathop {\lim }\limits_{n \to \infty } \frac{{{a_n}}}{{{b_n}}}\]
+          <p>If \(c\) is positive (<em>i.e.</em> \(c &gt; 0\)) and is finite (<em>i.e.</em> \(c &lt; \infty \)) then either both series converge or both series diverge.</p>
+  </div>
+    
+    <p>The <a href="#Series_CompTest_LCTProof">proof</a> of this test is at the end of this section.</p>
+    
+    <p>Note that it doesn’t really matter which series term is in the numerator for this test, we could just have easily defined \(c\) as,</p>
+    
+        \[c = \mathop {\lim }\limits_{n \to \infty } \frac{{{b_n}}}{{{a_n}}}\]
+    <p>and we would get the same results.  To see why this is, consider the following two definitions.</p>
+    
+        \[c = \mathop {\lim }\limits_{n \to \infty } \frac{{{a_n}}}{{{b_n}}}\hspace{0.25in}\hspace{0.25in}\overline{c} = \mathop {\lim }\limits_{n \to \infty } \frac{{{b_n}}}{{{a_n}}}\]
+    
+    <p>Start with the first definition and rewrite it as follows, then take the limit.</p>
+    
+      \[c = \mathop {\lim }\limits_{n \to \infty } \frac{{{a_n}}}{{{b_n}}} = \mathop {\lim }\limits_{n \to \infty } \frac{1}{{\,\,\frac{{{b_n}}}{{{a_n}}}\,\,}} = \frac{1}{{\mathop {\lim }\limits_{n \to \infty } \frac{{{b_n}}}{{{a_n}}}}} = \frac{1}{{\overline{c}}}\]
+    
+    <p>In other words, if \(c\) is positive and finite then so is \(\overline{c}\) and if \(\overline{c}\) is positive and finite then so is \(c\).  Likewise if \(\overline{c} = 0\) then \(c = \infty \) and if \(\overline{c} = \infty \) then \(c = 0\).  Both definitions will give the same results from the test so don’t worry about which series terms should be in the numerator and which should be in the denominator.  Choose this to make the limit easy to compute.</p>
+    
+    <p>Also, this really is a comparison test in some ways.  If \(c\) is positive and finite this is saying that both of the series terms will behave in generally the same fashion and so we can expect the series themselves to also behave in a similar fashion.  If \(c = 0\) or \(c = \infty \) we can’t say this and so the test fails to give any information.</p>
+    
+    <p>The limit in this test will often be written as,</p>
+    
+        \[c = \mathop {\lim }\limits_{n \to \infty } {a_n} \cdot \,\,\frac{1}{{{b_n}}}\]
+    <p>since often both terms will be fractions and this will make the limit easier to deal with.</p>
+    
+    <p>Let’s see how this test works.</p>
+    <a class="anchor" name="Series_CompTest_Ex4"></a>
+  <div class="example">
+    <span class="example-title">Example 4</span> Determine if the following series converges or diverges.</p>
+          
+              \[\sum\limits_{n = 0}^\infty  {\frac{1}{{{3^n} - n}}} \]
+    <div class="example-content">
+      <span id="SHLink_Soln4" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln4" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln4" class="soln-content">
+        <p>To use the limit comparison test we need to find a second series that we can determine the convergence of easily and has what we assume is the same convergence as the given series.  On top of that we will need to choose the new series in such a way as to give us an easy limit to compute for \(c\).</p>
+          
+          <p>We’ve already guessed that this series converges and since it’s vaguely geometric let’s use</p>
+          
+              \[\sum\limits_{n = 0}^\infty  {\frac{1}{{{3^n}}}} \]
+          <p>as the second series.  We know that this series converges and there is a chance that since both series have the <em>3<sup>n</sup></em> in it the limit won’t be too bad.</p>
+          
+          <p>Here’s the limit.</p>
+          
+            \[\begin{align*}c & = \mathop {\lim }\limits_{n \to \infty } \frac{1}{{{3^n}}}\frac{{{3^n} - n}}{1}\\ &amp;  = \mathop {\lim }\limits_{n \to \infty } 1 - \frac{n}{{{3^n}}}\end{align*}\]
+          
+          <p>Now, we’ll need to use L’Hospital’s Rule on the second term in order to actually evaluate this limit.</p>
+          
+            \[\begin{align*}c & = 1 - \mathop {\lim }\limits_{n \to \infty } \frac{1}{{{3^n}\ln \left( 3 \right)}}\\ &amp;  = 1\end{align*}\]
+          
+          <p>So, \(c\) is positive and finite so by the Comparison Test both series must converge since</p>
+          
+            \[\sum\limits_{n = 0}^\infty  {\frac{1}{{{3^n}}}} \]
+          <p>converges.</p>
+      </div>
+    </div>
+  </div>
+
+    <a class="anchor" name="Series_CompTest_Ex5"></a>
+  <div class="example">
+    <span class="example-title">Example 5</span> Determine if the following series converges or diverges.</p>
+          
+              \[\sum\limits_{n = 2}^\infty  {\frac{{4{n^2} + n}}{{\sqrt[3]{{{n^7} + {n^3}}}}}} \]
+    <div class="example-content">
+      <span id="SHLink_Soln5" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln5" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln5" class="soln-content">
+        <p>Fractions involving only polynomials or polynomials under radicals will behave in the same way as the largest power of \(n\) will behave in the limit.  So, the terms in this series should behave as,</p>
+          
+              \[\frac{{{n^2}}}{{\sqrt[3]{{{n^7}}}}} = \frac{{{n^2}}}{{{n^{\frac{7}{3}}}}} = \frac{1}{{{n^{\frac{1}{3}}}}}\]
+          <p>and as a series this will diverge by the \(p\)-series test.  In fact, this would make a nice choice for our second series in the limit comparison test so let’s use it.</p>
+          
+            \[\begin{align*}\mathop {\lim }\limits_{n \to \infty } \frac{{4{n^2} + n}}{{\sqrt[3]{{{n^7} + {n^3}}}}}\frac{{{n^{\frac{1}{3}}}}}{1} & = \mathop {\lim }\limits_{n \to \infty } \frac{{4{n^{\frac{7}{3}}} + {n^{\frac{4}{3}}}}}{{\sqrt[3]{{{n^7}\left( {1 + \frac{1}{{{n^4}}}} \right)}}}}\\ &amp;  = \mathop {\lim }\limits_{n \to \infty } \frac{{{n^{\frac{7}{3}}}\left( {4 + \frac{1}{n}} \right)}}{{{n^{\frac{7}{3}}}\sqrt[3]{{1 + \frac{1}{{{n^4}}}}}}}\\ &amp;  = \frac{4}{{\sqrt[3]{1}}} = 4 = c\end{align*}\]
+          
+          <p>So, \(c\) is positive and finite and so both limits will diverge since</p>
+          
+              \[\sum\limits_{n = 2}^\infty  {\frac{1}{{{n^{\frac{1}{3}}}}}} \]
+          <p>diverges.</p>
+      </div>
+    </div>
+  </div>
+    
+    <p>Finally, to see why we need \(c\) to be positive and finite (<em>i.e.</em> \(c \ne 0\) and \(c \ne \infty \)) consider the following two series.</p>
+    
+      \[\sum\limits_{n = 1}^\infty  {\frac{1}{n}} \hspace{0.25in}\hspace{0.25in}\sum\limits_{n = 1}^\infty  {\frac{1}{{{n^2}}}} \]
+    <p>The first diverges and the second converges.</p>
+    
+    <p>Now compute each of the following limits.</p>
+
+  \[\underset{n\to \infty }{\mathop{\lim }}\,\frac{1}{n}\centerdot \frac{{{n}^{2}}}{1}=\underset{n\to \infty }{\mathop{\lim }}\,n=\infty \hspace{0.5in} \underset{n\to \infty }{\mathop{\lim }}\,\frac{1}{{{n}^{2}}}\centerdot \frac{n}{1}=\underset{n\to \infty }{\mathop{\lim }}\,\frac{1}{n}=0\]
+    
+    <p>In the first case the limit from the limit comparison test yields \(c = \infty \) and in the second case the limit yields \(c = 0\).  Clearly, both series do not have the same convergence.</p>
+    
+    <p>Note however, that just because we get \(c = 0\) or \(c = \infty \) doesn’t mean that the series will have the opposite convergence.  To see this consider the series,</p>
+    
+      \[\sum\limits_{n = 1}^\infty  {\frac{1}{{{n^3}}}} \hspace{0.25in}\hspace{0.25in}\sum\limits_{n = 1}^\infty  {\frac{1}{{{n^2}}}} \]
+    
+    <p>Both of these series converge and here are the two possible limits that the limit comparison test uses.</p>
+
+  \[\underset{n\to \infty }{\mathop{\lim }}\,\frac{1}{{{n}^{3}}}\centerdot \frac{{{n}^{2}}}{1}=\underset{n\to \infty }{\mathop{\lim }}\,\frac{1}{n}=0  \hspace{0.5in} \underset{n\to \infty }{\mathop{\lim }}\,\frac{1}{{{n}^{2}}}\centerdot \frac{{{n}^{3}}}{1}=\underset{n\to \infty }{\mathop{\lim }}\,n=\infty \]
+    
+    <p>So, even though both series had the same convergence we got both \(c = 0\) and \(c = \infty \).</p>
+    
+    <p>The point of all of this is to remind us that if we get \(c = 0\) or \(c = \infty \) from the limit comparison test we will know that we have chosen the second series incorrectly and we’ll need to find a different choice in order to get any information about the convergence of the series.</p>
+    
+    <p>We’ll close out this section with proofs of the two tests.</p>
+    <a class="anchor" name="Series_CompTest_CTProof"></a>
+    <h4>Proof of Comparison Test</h4>
+  <div class="proof">
+    <p>The test statement did not specify where each series should start.  We only need to require that they start at the same place so to help with the proof we’ll assume that the series start at \(n = 1\).  If the series don’t start at \(n = 1\) the proof can be redone in exactly the same manner or you could use an <a href="Series_Basics.html#IndexShift">index shift</a> to start the series at \(n = 1\) and then this proof will apply.</p>
+          
+          <p>We’ll start off with the partial sums of each series.</p>
+          \[{s_n} = \sum\limits_{i = 1}^n {{a_i}} \hspace{0.25in}\hspace{0.25in}\hspace{0.25in}{t_n} = \sum\limits_{i = 1}^n {{b_i}} \]
+          
+          <p>Let’s notice a couple of nice facts about these two partial sums.  First, because \({a_n},{b_n} \ge 0\) we know that,</p>
+
+          \[\begin{align*}{s_n} & \le {s_n} + {a_{n + 1}} = \sum\limits_{i = 1}^n {{a_i}}  + {a_{n + 1}} = \sum\limits_{i = 1}^{n + 1} {{a_i}}  = {s_{n + 1}}\hspace{0.25in}\,\,\, \Rightarrow \hspace{0.25in}{s_n} \le {s_{n + 1}}\\ {t_n} & \le {t_n} + {b_{n + 1}} = \sum\limits_{i = 1}^n {{b_i}}  + {b_{n + 1}} = \sum\limits_{i = 1}^{n + 1} {{b_i}}  = {t_{n + 1}}\hspace{0.25in}\hspace{0.25in} \Rightarrow \hspace{0.25in}{t_n} \le {t_{n + 1}}\end{align*}\]
+          
+          <p>So, both partial sums form increasing sequences.</p>
+          
+          <p>Also, because \({a_n} \le {b_n}\) for all \(n\) we know that we must have \({s_n} \le {t_n}\) for all \(n\).</p>
+          
+          <p>With these preliminary facts out of the way we can proceed with the proof of the test itself.</p>
+          
+          <p>Let’s start out by assuming that \(\sum\limits_{n = 1}^\infty  {{b_n}} \) is a convergent series.  Since \({b_n} \ge 0\) we know that,</p>
+          \[{t_n} = \sum\limits_{i = 1}^n {{b_i}}  \le \sum\limits_{i = 1}^\infty  {{b_i}} \]
+          
+          <p>However, we also have established that \({s_n} \le {t_n}\) for all \(n\) and so for all \(n\) we also have,</p>
+          \[{s_n} \le \sum\limits_{i = 1}^\infty  {{b_i}} \]
+          
+          <p>Finally, since \(\sum\limits_{n = 1}^\infty  {{b_n}} \) is a convergent series it must have a finite value and so the partial sums, \({s_n}\) are bounded above.  Therefore, from the <a href="MoreSequences.html#Series_MoreSeq_BndMon">second section</a> on sequences we know that a monotonic and bounded sequence is also convergent and so \(\left\{ {{s_n}} \right\}_{n = 1}^\infty \) is a convergent sequence and so \(\sum\limits_{n = 1}^\infty  {{a_n}} \) is convergent.</p>
+          
+          <p>Next, let’s assume that \(\sum\limits_{n = 1}^\infty  {{a_n}} \) is divergent.  Because \({a_n} \ge 0\) we then know that we must have \({s_n} \to \infty \) as \(n \to \infty \).  However, we also know that for all \(n\) we have\({s_n} \le {t_n}\) and therefore we also know that \({t_n} \to \infty \) as \(n \to \infty \).</p>
+          
+          <p>So, \(\left\{ {{t_n}} \right\}_{n = 1}^\infty \) is a divergent sequence and so \(\sum\limits_{n = 1}^\infty  {{b_n}} \) is divergent.</p>
+  </div>
+
+    <a class="anchor" name="Series_CompTest_LCTProof"></a>
+    <h4>Proof of Limit Comparison Test</h4>
+  <div class="proof">
+    <p>Because \(0 &lt; c &lt; \infty \) we can find two positive and finite numbers, \(m\) and \(M\), such that \(m &lt; c &lt; M\).  Now, because \(c = \mathop {\lim }\limits_{n \to \infty } \frac{{{a_n}}}{{{b_n}}}\) we know that for large enough \(n\) the quotient \(\frac{{{a_n}}}{{{b_n}}}\) must be close to \(c\) and so there must be a positive integer \(N\) such that if \(n &gt; N\) we also have,</p>
+
+          \[m &lt; \frac{{{a_n}}}{{{b_n}}} &lt; M\]
+
+          <p>Multiplying through by \({b_n}\) gives,</p>
+
+          \[m{b_n} &lt; {a_n} &lt; M{b_n}\]
+
+          <p>provided \(n &gt; N\).</p>
+          
+          <p>Now, if \(\sum {{b_n}} \) diverges then so does \(\sum {m{b_n}} \) and so since \(m{b_n} &lt; {a_n}\) for all sufficiently large \(n\) by the Comparison Test \(\sum {{a_n}} \) also diverges.</p>
+          
+          <p>Likewise, if \(\sum {{b_n}} \) converges then so does \(\sum {M{b_n}} \) and since \({a_n} &lt; M{b_n}\) for all sufficiently large \(n\) by the Comparison Test \(\sum {{a_n}} \) also converges.</p>
+  </div>
+    
+
+
+      
+
+
+
+    </div>
+    <!-- End of content div -->
+
+
+    <div class="footer">
+      <div class="footer-links">
+        [<a href="http://tutorial.math.lamar.edu/Contact.aspx">Contact Me</a>]&nbsp;[<a href="../../MyStudents-2.html">My Students</a>]&nbsp;[<a href="http://tutorial.math.lamar.edu/Privacy.aspx">Privacy Statement</a>]&nbsp;[<a href="../../Help-2.html">Site Help &amp; FAQ</a>]&nbsp;[<a href="http://tutorial.math.lamar.edu/Terms.aspx">Terms of Use</a>]
+      </div>
+      <div class="footer-dates">
+        <div class="footer-copyright"><span id="lblCopyRight">&copy; 2003 - 2019 Paul Dawkins</span></div>
+        <div class="footer-spacer"></div>
+        <div class="footer-modified-date">Page Last Modified : <span id="lblModified">1/25/2019</span></div>
+      </div>
+      
+
+    </div>
+  </div>
+  <!-- End of page div...  -->
+</body>
+
+<!-- Mirrored from tutorial.math.lamar.edu/Classes/CalcII/SeriesCompTest.aspx by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 27 Feb 2019 06:15:35 GMT -->
+</html>

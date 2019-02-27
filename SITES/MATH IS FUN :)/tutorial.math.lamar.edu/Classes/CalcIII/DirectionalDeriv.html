@@ -1,0 +1,1211 @@
+
+
+<!DOCTYPE html>
+
+<html>
+
+<!-- Mirrored from tutorial.math.lamar.edu/Classes/CalcIII/DirectionalDeriv.aspx by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 27 Feb 2019 06:15:36 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=yes" /><meta http-equiv="X-UA-Compatible" content="IE=edge" />  <!-- For best MathJax performance on IE  -->
+
+  <meta name="google-site-verification" content="uLoA31CJfOhIVMJWBjCmQL8xNMmmLybZU3LRKavy9WQ" /><title>
+	Calculus III - Directional Derivatives
+</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="../../../www.googletagmanager.com/gtag/js1872?id=UA-331594-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-331594-1');
+  </script>
+
+  <link type="text/css" href="../../css/jquery.mmenu.all.css" rel="stylesheet" /><link type="text/css" href="../../css/jquery.dropdown.css" rel="stylesheet" /><link href="../../FA/css/fontawesome-all.min.css" rel="stylesheet" /><link type="text/css" href="../../css/notes-all.css" rel="stylesheet" /><link type="text/css" href="../../css/notes-google.css" rel="stylesheet" /><link type="text/css" href="../../css/notes-mmenu.css" rel="stylesheet" /><link type="text/css" href="../../css/notes-dropdown.css" rel="stylesheet" />
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+     TeX: { equationNumbers: { autoNumber: "AMS" } }
+    });
+  </script>
+  <script type="text/javascript" async src="../../../cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax2ba6.js?config=TeX-AMS_CHTML-full"></script>
+  <script type="text/javascript" src="../../../code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="../../js/jquery.mmenu.all.js"></script>
+  <script type="text/javascript" src="../../js/jquery.dropdown.js"></script>
+  <script type="text/javascript" src="../../js/notes-all.js"></script>  
+
+  <script>
+    (function () {
+      var cx = '001004262401526223570:11yv6vpcqvy';
+      var gcse = document.createElement('script');
+      gcse.type = 'text/javascript';
+      gcse.async = true;
+      gcse.src = '../../../cse.google.com/cse07b6.html?cx=' + cx;
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(gcse, s);
+    })();
+  </script>
+
+<meta http-equiv="keywords" name="keywords" content="directional derivatives, gradient, gradient vector, maximum directional derivative" /><meta http-equiv="description" name="description" content="In the section we introduce the concept of directional derivatives.  With directional derivatives we can now ask how a function is changing if we allow all the independent variables to change rather than holding all but one constant as we had to do with partial derivatives.  In addition, we will define the gradient vector to help with some of the notation and work here.  The gradient vector will be very useful in some later sections as well.  We will also give a nice fact that will allow us to determine the direction in which a given function is changing the fastest." /></head>
+<body onload="init({Notes: 'NoteMobile;8/21/2018;true'})">
+
+  <div id="page">
+
+    <div class="header">
+      <div class="header-row">
+        <!--<a href="#menu"><span></span></a>-->
+        <div id="side-menu-icon" class="header-side-menu-icon"><a href="#menu"><span class="fas fa-bars fa-lg" aria-hidden="true" title="Main Menu - Change between topics, chapters and sections as well as a few extra pages."></span></a></div>
+        <span class="header-title"><a href="../../index.html" class="header-title-link">Paul's Online Notes</a></span>
+        <div class="header-spacer"></div>
+
+        <div id="content-top-menu" class="top-menu">
+          <button id="content-type-menu" class="top-menu-button" data-jq-dropdown="#jq-dropdown-type" title="View (Notes, Practice Problems or Assignment Problems, Show/Hide Solutions and/or Steps) Menu">
+            <span id="tab_top_menu_notes" class="top-menu-item-title">Notes</span> <span class="far fa-eye fa-lg" aria-hidden="true"></span>
+          </button>
+
+          <button id="quicknav-menu" class="top-menu-button" data-jq-dropdown="#jq-dropdown-quicknav" title="Quick Navigation (Previous/Next Sections and Problems and Full Problem List) Menu">
+            <span class="top-menu-item-title">Quick Nav</span> <span class="fas fa-exchange fa-lg" aria-hidden="true"></span>
+          </button>
+          
+          <button id="download-menu" class="top-menu-button" data-jq-dropdown="#jq-dropdown-download" title="Download pdf Menu">
+            <span class="top-menu-item-title">Download</span> <span class="far fa-download fa-lg" aria-hidden="true"></span>
+          </button>
+
+          <button id="print-menu" class="top-menu-button top-menu-button-icon-only" data-jq-dropdown="#jq-print-download" title="Print Menu">
+            <span class="far fa-print fa-lg" aria-hidden="true"></span>
+          </button>
+        </div>
+
+        <div id="header-google-search" class="header-search">
+          <gcse:search></gcse:search>
+        </div>
+        <div id="header-search-icon" title="Site Search" class="header-menu-icon"><span id="search-icon" class="fas fa-search" aria-hidden="true"></span></div>
+
+      </div>
+    </div>
+
+     <div id="jq-dropdown-type" class="jq-dropdown jq-dropdown-tip">
+      <ul class="jq-dropdown-menu">
+        
+        <li id="li_type_menu_goto" class="top-menu-nav-title">Go To</li>
+        <li id="li_type_menu_notes">
+          <span id="type_menu_notes_span" title="Viewing the Notes for the current topic." class="top-menu-current">Notes</span>
+          
+        </li>
+        <li id="li_type_menu_practice">
+          
+          
+          <a href="http://tutorial.math.lamar.edu/Problems/CalcIII/DirectionalDeriv.aspx" id="type_menu_practice_link" title="Go to Practice Problems for current topic.">Practice Problems</a>
+        </li>
+        <li id="li_type_menu_asgn">
+          
+          <a href="http://tutorial.math.lamar.edu/ProblemsNS/CalcIII/DirectionalDeriv.aspx" id="type_menu_asgn_link" title="Go to Assignment Problems for current topic.">Assignment Problems</a>
+        </li>
+        <li id="li_type_menu_sh" class="top-menu-nav-title">Show/Hide</li>
+        <li id="li_type_menu_show" title="Show any hidden solutions and/or steps that may be present on the page."><a href="javascript:SHPrintPage(1,0)" id="view_menu_show">Show all Solutions/Steps/<em>etc.</em></a></li>
+        <li id="li_type_menu_hide" title="Hide any visible solutions and/or steps that may be present on the page."><a href="javascript:SHPrintPage(0,0)" id="view_menu_hide">Hide all Solutions/Steps/<em>etc.</em></a></li>
+      </ul>
+    </div>
+
+    <div id="jq-dropdown-quicknav" class="jq-dropdown jq-dropdown-tip">
+      <ul class="jq-dropdown-menu">
+        <li id="li_nav_menu_sections" class="top-menu-nav-title">Sections</li>
+        <li id="li_nav_menu_prev_section"><a href="ChainRule.html" id="a_nav_menu_prev_section" class="top-menu-nav-link" title="Previous Section : Chain Rule"><span class="top-menu-prev fas fa-chevron-left"></span> Chain Rule</a></li>
+        <li id="li_nav_menu_next_section"><a href="PartialDerivAppsIntro.html" id="a_nav_menu_next_section" class="top-menu-nav-link" title="Next Section : Applications of Partial Derivatives Introduction"><span class="top-menu-prev-hidden fas fa-chevron-left"></span> Applications of Partial Derivatives Introduction <span class="top-menu-next fas fa-chevron-right"></span></a></li>
+        <li id="li_nav_menu_chapters" class="top-menu-nav-title">Chapters</li>
+        <li id="li_nav_menu_prev_chapter"><a href="3DSpace.html" id="a_nav_menu_prev_chapter" class="top-menu-nav-link" title="Previous Chapter : 3-Dimensional Space"><span class="top-menu-prev fas fa-chevron-left"></span><span class="top-menu-prev fas fa-chevron-left"></span> 3-Dimensional Space</a></li>
+        <li id="li_nav_menu_next_chapter"><a href="PartialDerivAppsIntro.html" id="a_nav_menu_next_chapter" class="top-menu-nav-link" title="Next Chapter : Applications of Partial Derivatives"><span class="top-menu-prev-hidden fas fa-chevron-left"></span><span class="top-menu-prev-hidden fas fa-chevron-left"></span> Applications of Partial Derivatives <span class="top-menu-next fas fa-chevron-right"></span><span class="top-menu-next fas fa-chevron-right"></span></a></li>
+        
+        
+        
+        
+        <li id="li_nav_menu_classes" class="top-menu-nav-title">Classes</li>
+        <li>
+          
+          <a href="../Alg/Alg.html" id="nav_menu_alg_link" title="Go To Algebra Notes">Algebra</a>
+        </li>
+        <li>
+          
+          <a href="../CalcI/CalcI.html" id="nav_menu_calci_link" title="Go To Calculus I Notes">Calculus I</a>
+        </li>
+        <li>
+          
+          <a href="../CalcII/CalcII.html" id="nav_menu_calcii_link" title="Go To Calculus II Notes">Calculus II</a>
+        </li>
+        <li>
+          <span id="nav_menu_calciii_span" title="Currently Viewing Calculus III Material" class="top-menu-current">Calculus III</span>
+          
+        </li>
+        <li>
+          
+          <a href="../DE/DE.html" id="nav_menu_de_link" title="Go To Differential Equations Notes">Differential Equations</a>
+        </li>
+        <li id="li_nav_menu_extras" class="top-menu-nav-title">Extras</li>
+        <li>
+          
+          <a href="../../Extras/AlgebraTrigReview/AlgebraTrig.html" id="nav_menu_algtrig_link" title="Go To Algebra &amp; Trig Review">Algebra &amp; Trig Review</a>
+        </li>
+        <li>
+          
+          <a href="../../Extras/CommonErrors/CommonMathErrors.html" id="nav_menu_commonerrors_link" title="Go To Common Math Errors">Common Math Errors</a>
+        </li>
+        <li>
+          
+          <a href="../../Extras/ComplexPrimer/ComplexNumbers.html" id="nav_menu_complexnumbers_link" title="Go To Complex Numbers Primer">Complex Number Primer</a>
+        </li>
+        <li>
+          
+          <a href="../../Extras/StudyMath/HowToStudyMath.html" id="nav_menu_studymath_link" title="Go To How To Study Math">How To Study Math</a>
+        </li>
+        <li>
+          
+          <a href="../../Extras/CheatSheets_Tables.html" id="nav_menu_cheattables_link" title="Go To List of Cheat Sheets and Tables">Cheat Sheets &amp; Tables</a>
+        </li>
+        <li id="li_nav_menu_misc" class="top-menu-nav-title">Misc</li>
+        <li><a href="http://tutorial.math.lamar.edu/contact.aspx" id="nav_menu_contact" title="Contact Me!">Contact Me</a></li>
+        <li><a href="../../mathjax.html" id="nav_menu_mathjax" title="Info on MathJax and MathJax Configuration Menu">MathJax Help and Configuration</a></li>
+        <li><a href="../../mystudents.html" id="nav_menu_students" title="Go here if you are currently taking a class from me!">My Students</a></li>
+      </ul>
+    </div>
+
+    <div id="jq-dropdown-download" class="jq-dropdown jq-dropdown-anchor-right jq-dropdown-tip">
+      <ul class="jq-dropdown-menu">
+        
+        <li id="li_download_menu_notes" class="top-menu-nav-title">Notes Downloads</li>
+        <li id="li_download_menu_notes_book"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=B,11,N" id="download_menu_notes_book" data-PDF="Download - Menu$Notes - Book$Calculus III$/Downloads/CalcIII/Notes/Complete.pdf">Complete Book</a></li>
+        
+        <li id="li_download_menu_notes_chapter"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=C,58,N" id="download_menu_notes_chapter" data-PDF="Download - Menu$Notes - Chapter$Calculus III - Partial Derivatives$/Downloads/CalcIII/Notes/PartialDerivatives.pdf">Current Chapter</a></li>
+        <li id="li_download_menu_notes_section"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=S,362,N" id="download_menu_notes_section" data-PDF="Download - Menu$Notes - Section$Calculus III - Directional Derivatives$/Downloads/CalcIII/Notes/DirectionalDerivatives.pdf">Current Section</a></li>
+        <li id="li_download_menu_practice" class="top-menu-nav-title">Practice Problems Downloads</li>
+        
+        <li id="li_download_menu_practice_book"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=B,11,P" id="download_menu_practice_book" data-PDF="Download - Menu$Practice Problems - Book$Calculus III$/Downloads/CalcIII/Practice Problems/Complete.pdf">Complete Book - Problems Only</a></li>
+        <li id="li_download_menu_solutions_book"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=B,11,S" id="download_menu_solutions_book" data-PDF="Download - Menu$Practice Problems Solutions - Book$Calculus III$/Downloads/CalcIII/Practice Problems Solutions/Complete.pdf">Complete Book - Solutions</a></li>
+        <li id="li_download_menu_b_c" class="top-menu-divider"></li>
+        <li id="li_download_menu_practice_chapter"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=C,58,P" id="download_menu_practice_chapter" data-PDF="Download - Menu$Practice Problems - Chapter$Calculus III - Partial Derivatives$/Downloads/CalcIII/Practice Problems/PartialDerivatives.pdf">Current Chapter - Problems Only</a></li>
+        <li id="li_download_menu_solutions_chapter"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=C,58,S" id="download_menu_solutions_chapter" data-PDF="Download - Menu$Practice Problems Solutions - Chapter$Calculus III - Partial Derivatives$/Downloads/CalcIII/Practice Problems Solutions/PartialDerivatives.pdf">Current Chapter - Solutions</a></li>
+        <li id="li_download_menu_c_s" class="top-menu-divider"></li>
+        <li id="li_download_menu_practice_section"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=S,362,P" id="download_menu_practice_section" data-PDF="Download - Menu$Practice Problems - Section$Calculus III - Directional Derivatives$/Downloads/CalcIII/Practice Problems/DirectionalDerivatives.pdf">Current Section - Problems Only</a></li>
+        <li id="li_download_menu_solutions_section"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=S,362,S" id="download_menu_solutions_section" data-PDF="Download - Menu$Practice Problems Solutions - Section$Calculus III - Directional Derivatives$/Downloads/CalcIII/Practice Problems Solutions/DirectionalDerivatives.pdf">Current Section - Solutions</a></li>
+        <li id="li_download_menu_asgn" class="top-menu-nav-title">Assignment Problems Downloads</li>
+        
+        <li id="li_download_menu_asgn_book"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=B,11,A" id="download_menu_asgn_book" data-PDF="Download - Menu$Assignment Problems - Book$Calculus III$/Downloads/CalcIII/Assignment Problems/Complete.pdf">Complete Book</a></li>
+        <li id="li_download_menu_asgn_chapter"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=C,58,A" id="download_menu_asgn_chapter" data-PDF="Download - Menu$Assignment Problems - Chapter$Calculus III - Partial Derivatives$/Downloads/CalcIII/Assignment Problems/PartialDerivatives.pdf">Current Chapter</a></li>
+        <li id="li_download_menu_asgn_section"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=S,362,A" id="download_menu_asgn_section" data-PDF="Download - Menu$Assignment Problems - Section$Calculus III - Directional Derivatives$/Downloads/CalcIII/Assignment Problems/DirectionalDerivatives.pdf">Current Section</a></li>
+        <li id="li_download_menu_other" class="top-menu-nav-title">Other Items</li>
+        <li id="li_download_menu_urls">
+          <a href="http://tutorial.math.lamar.edu/DownloadURLs.aspx?bi=11&amp;ci=58&amp;si=362" id="download_menu_urls">Get URL's for Download Items</a>
+        </li>
+      </ul>
+    </div>
+
+    <div id="jq-print-download" class="jq-dropdown jq-dropdown-anchor-right jq-dropdown-tip">
+      <ul class="jq-dropdown-menu">
+        <li id="li_print_menu_default"><a href="javascript:SHPrintPage()" id="print_menu_default">Print Page in Current Form (Default)</a></li>
+        <li id="li_print_menu_show"><a href="javascript:SHPrintPage(1,1)" id="print_menu_show">Show all Solutions/Steps and Print Page</a></li>
+        <li id="li_print_menu_hide"><a href="javascript:SHPrintPage(0,1)" id="print_menu_hide">Hide all Solutions/Steps and Print Page</a></li>
+      </ul>
+    </div>
+
+
+
+   
+
+    <nav id="menu" class="notes-nav">
+      <ul>
+        <li><a href="../../index.html" class="mm-link">Home</a></li>
+        <li><span>Classes</span></li>
+        <li><a href="../Alg/Alg.html" class="mm-link">Algebra</a>
+          <ul>
+            <li><a href="../Alg/Preliminaries.html" class="mm-link">Preliminaries</a>
+              <ul>
+                <li><a href="../Alg/IntegerExponents.html" class="mm-link">Integer Exponents</a></li>
+                <li><a href="../Alg/RationalExponents.html" class="mm-link">Rational Exponents</a></li>
+                <li><a href="../Alg/Radicals.html" class="mm-link">Radicals</a></li>
+                <li><a href="../Alg/Polynomials.html" class="mm-link">Polynomials</a></li>
+                <li><a href="../Alg/Factoring.html" class="mm-link">Factoring Polynomials</a></li>
+                <li><a href="../Alg/RationalExpressions.html" class="mm-link">Rational Expressions</a></li>
+                <li><a href="../Alg/ComplexNumbers.html" class="mm-link">Complex Numbers</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/Solving.html" class="mm-link">Solving Equations and Inequalities</a>
+              <ul>
+                <li><a href="../Alg/SolutionSets.html" class="mm-link">Solutions and Solution Sets</a></li>
+                <li><a href="../Alg/SolveLinearEqns.html" class="mm-link">Linear Equations</a></li>
+                <li><a href="../Alg/LinearApps.html" class="mm-link">Applications of Linear Equations</a></li>
+                <li><a href="../Alg/SolveMultiVariable.html" class="mm-link">Equations With More Than One Variable</a></li>
+                <li><a href="../Alg/SolveQuadraticEqnsI.html" class="mm-link">Quadratic Equations - Part I</a></li>
+                <li><a href="../Alg/SolveQuadraticEqnsII.html" class="mm-link">Quadratic Equations - Part II</a></li>
+                <li><a href="../Alg/SolveQuadraticEqnSummary.html" class="mm-link">Quadratic Equations : A Summary</a></li>
+                <li><a href="../Alg/QuadraticApps.html" class="mm-link">Applications of Quadratic Equations</a></li>
+                <li><a href="../Alg/ReducibleToQuadratic.html" class="mm-link">Equations Reducible to Quadratic in Form</a></li>
+                <li><a href="../Alg/SolveRadicalEqns.html" class="mm-link">Equations with Radicals</a></li>
+                <li><a href="../Alg/SolveLinearInequalities.html" class="mm-link">Linear Inequalities</a></li>
+                <li><a href="../Alg/SolvePolyInequalities.html" class="mm-link">Polynomial Inequalities</a></li>
+                <li><a href="../Alg/SolveRationalInequalities.html" class="mm-link">Rational Inequalities</a></li>
+                <li><a href="../Alg/SolveAbsValueEqns.html" class="mm-link">Absolute Value Equations</a></li>
+                <li><a href="../Alg/SolveAbsValueIneq.html" class="mm-link">Absolute Value Inequalities</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/Graphing_Functions.html" class="mm-link">Graphing and Functions</a>
+              <ul>
+                <li><a href="../Alg/Graphing.html" class="mm-link">Graphing</a></li>
+                <li><a href="../Alg/Lines.html" class="mm-link">Lines</a></li>
+                <li><a href="../Alg/Circles.html" class="mm-link">Circles</a></li>
+                <li><a href="../Alg/FunctionDefn.html" class="mm-link">The Definition of a Function</a></li>
+                <li><a href="../Alg/GraphFunctions.html" class="mm-link">Graphing Functions</a></li>
+                <li><a href="../Alg/CombineFunctions.html" class="mm-link">Combining Functions</a></li>
+                <li><a href="../Alg/InverseFunctions.html" class="mm-link">Inverse Functions</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/CommonGraphs.html" class="mm-link">Common Graphs</a>
+              <ul>
+                <li><a href="../Alg/Lines_Circles_PWF.html" class="mm-link">Lines, Circles and Piecewise Functions</a></li>
+                <li><a href="../Alg/Parabolas.html" class="mm-link">Parabolas</a></li>
+                <li><a href="../Alg/Ellipses.html" class="mm-link">Ellipses</a></li>
+                <li><a href="../Alg/Hyperbolas.html" class="mm-link">Hyperbolas</a></li>
+                <li><a href="../Alg/MiscFunctions.html" class="mm-link">Miscellaneous Functions</a></li>
+                <li><a href="../Alg/Transformations.html" class="mm-link">Transformations</a></li>
+                <li><a href="../Alg/Symmetry.html" class="mm-link">Symmetry</a></li>
+                <li><a href="../Alg/GraphRationalFcns.html" class="mm-link">Rational Functions</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/PolynomialFunctions.html" class="mm-link">Polynomial Functions</a>
+              <ul>
+                <li><a href="../Alg/DividingPolynomials.html" class="mm-link">Dividing Polynomials</a></li>
+                <li><a href="../Alg/ZeroesOfPolynomials.html" class="mm-link">Zeroes/Roots of Polynomials</a></li>
+                <li><a href="../Alg/GraphingPolynomials.html" class="mm-link">Graphing Polynomials</a></li>
+                <li><a href="../Alg/FindingZeroesOfPolynomials.html" class="mm-link">Finding Zeroes of Polynomials</a></li>
+                <li><a href="../Alg/PartialFractions.html" class="mm-link">Partial Fractions</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/ExpAndLog.html" class="mm-link">Exponential and Logarithm Functions</a>
+              <ul>
+                <li><a href="../Alg/ExpFunctions.html" class="mm-link">Exponential Functions</a></li>
+                <li><a href="../Alg/LogFunctions.html" class="mm-link">Logarithm Functions</a></li>
+                <li><a href="../Alg/SolveExpEqns.html" class="mm-link">Solving Exponential Equations</a></li>
+                <li><a href="../Alg/SolveLogEqns.html" class="mm-link">Solving Logarithm Equations</a></li>
+                <li><a href="../Alg/ExpLogApplications.html" class="mm-link">Applications</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/Systems.html" class="mm-link">Systems of Equations</a>
+              <ul>
+                <li><a href="../Alg/SystemsTwoVrble.html" class="mm-link">Linear Systems with Two Variables</a></li>
+                <li><a href="../Alg/SystemsThreeVrble.html" class="mm-link">Linear Systems with Three Variables</a></li>
+                <li><a href="../Alg/AugmentedMatrix.html" class="mm-link">Augmented Matrices</a></li>
+                <li><a href="../Alg/AugmentedMatrixII.html" class="mm-link">More on the Augmented Matrix</a></li>
+                <li><a href="../Alg/NonlinearSystems.html" class="mm-link">Nonlinear Systems</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../CalcI/CalcI.html" class="mm-link">Calculus I</a>
+          <ul>
+            <li><a href="../CalcI/ReviewIntro.html" class="mm-link">Review</a>
+              <ul>
+                <li><a href="../CalcI/Functions.html" class="mm-link">Functions</a></li>
+                <li><a href="../CalcI/InverseFunctions.html" class="mm-link">Inverse Functions</a></li>
+                <li><a href="../CalcI/TrigFcns.html" class="mm-link">Trig Functions</a></li>
+                <li><a href="../CalcI/TrigEquations.html" class="mm-link">Solving Trig Equations</a></li>
+                <li><a href="../CalcI/TrigEquations_CalcI.html" class="mm-link">Trig Equations with Calculators, Part I</a></li>
+                <li><a href="../CalcI/TrigEquations_CalcII.html" class="mm-link">Trig Equations with Calculators, Part II</a></li>
+                <li><a href="../CalcI/ExpFunctions.html" class="mm-link">Exponential Functions</a></li>
+                <li><a href="../CalcI/LogFcns.html" class="mm-link">Logarithm Functions</a></li>
+                <li><a href="../CalcI/ExpLogEqns.html" class="mm-link">Exponential and Logarithm Equations</a></li>
+                <li><a href="../CalcI/CommonGraphs.html" class="mm-link">Common Graphs</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcI/limitsIntro.html" class="mm-link">Limits</a>
+              <ul>
+                <li><a href="../CalcI/Tangents_Rates.html" class="mm-link">Tangent Lines and Rates of Change</a></li>
+                <li><a href="../CalcI/TheLimit.html" class="mm-link">The Limit</a></li>
+                <li><a href="../CalcI/OneSidedLimits.html" class="mm-link">One-Sided Limits</a></li>
+                <li><a href="../CalcI/LimitsProperties.html" class="mm-link">Limit Properties</a></li>
+                <li><a href="../CalcI/ComputingLimits.html" class="mm-link">Computing Limits</a></li>
+                <li><a href="../CalcI/InfiniteLimits.html" class="mm-link">Infinite Limits</a></li>
+                <li><a href="../CalcI/LimitsAtInfinityI.html" class="mm-link">Limits At Infinity, Part I</a></li>
+                <li><a href="../CalcI/LimitsAtInfinityII.html" class="mm-link">Limits At Infinity, Part II</a></li>
+                <li><a href="../CalcI/Continuity.html" class="mm-link">Continuity</a></li>
+                <li><a href="../CalcI/DefnOfLimit.html" class="mm-link">The Definition of the Limit</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcI/DerivativeIntro.html" class="mm-link">Derivatives</a>
+              <ul>
+                <li><a href="../CalcI/DefnOfDerivative.html" class="mm-link">The Definition of the Derivative</a></li>
+                <li><a href="../CalcI/DerivativeInterp.html" class="mm-link">Interpretation of the Derivative</a></li>
+                <li><a href="../CalcI/DiffFormulas.html" class="mm-link">Differentiation Formulas</a></li>
+                <li><a href="../CalcI/ProductQuotientRule.html" class="mm-link">Product and Quotient Rule</a></li>
+                <li><a href="../CalcI/DiffTrigFcns.html" class="mm-link">Derivatives of Trig Functions</a></li>
+                <li><a href="../CalcI/DiffExpLogFcns.html" class="mm-link">Derivatives of Exponential and Logarithm Functions</a></li>
+                <li><a href="../CalcI/DiffInvTrigFcns.html" class="mm-link">Derivatives of Inverse Trig Functions</a></li>
+                <li><a href="../CalcI/DiffHyperFcns.html" class="mm-link">Derivatives of Hyperbolic Functions</a></li>
+                <li><a href="../CalcI/ChainRule.html" class="mm-link">Chain Rule</a></li>
+                <li><a href="../CalcI/ImplicitDIff.html" class="mm-link">Implicit Differentiation</a></li>
+                <li><a href="../CalcI/RelatedRates.html" class="mm-link">Related Rates</a></li>
+                <li><a href="../CalcI/HigherOrderDerivatives.html" class="mm-link">Higher Order Derivatives</a></li>
+                <li><a href="../CalcI/LogDiff.html" class="mm-link">Logarithmic Differentiation</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcI/DerivAppsIntro.html" class="mm-link">Applications of Derivatives</a>
+              <ul>
+                <li><a href="../CalcI/RateOfChange.html" class="mm-link">Rates of Change</a></li>
+                <li><a href="../CalcI/CriticalPoints.html" class="mm-link">Critical Points</a></li>
+                <li><a href="../CalcI/MinMaxValues.html" class="mm-link">Minimum and Maximum Values</a></li>
+                <li><a href="../CalcI/AbsExtrema.html" class="mm-link">Finding Absolute Extrema</a></li>
+                <li><a href="../CalcI/ShapeofGraphPtI.html" class="mm-link">The Shape of a Graph, Part I</a></li>
+                <li><a href="../CalcI/ShapeofGraphPtII.html" class="mm-link">The Shape of a Graph, Part II</a></li>
+                <li><a href="../CalcI/MeanValueTheorem.html" class="mm-link">The Mean Value Theorem</a></li>
+                <li><a href="../CalcI/Optimization.html" class="mm-link">Optimization</a></li>
+                <li><a href="../CalcI/MoreOptimization.html" class="mm-link">More Optimization Problems</a></li>
+                <li><a href="../CalcI/LHospitalsRule.html" class="mm-link">L'Hospital's Rule and Indeterminate Forms</a></li>
+                <li><a href="../CalcI/LinearApproximations.html" class="mm-link">Linear Approximations</a></li>
+                <li><a href="../CalcI/Differentials.html" class="mm-link">Differentials</a></li>
+                <li><a href="../CalcI/NewtonsMethod.html" class="mm-link">Newton's Method</a></li>
+                <li><a href="../CalcI/BusinessApps.html" class="mm-link">Business Applications</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcI/IntegralsIntro.html" class="mm-link">Integrals</a>
+              <ul>
+                <li><a href="../CalcI/IndefiniteIntegrals.html" class="mm-link">Indefinite Integrals</a></li>
+                <li><a href="../CalcI/ComputingIndefiniteIntegrals.html" class="mm-link">Computing Indefinite Integrals</a></li>
+                <li><a href="../CalcI/SubstitutionRuleIndefinite.html" class="mm-link">Substitution Rule for Indefinite Integrals</a></li>
+                <li><a href="../CalcI/SubstitutionRuleIndefinitePtII.html" class="mm-link">More Substitution Rule</a></li>
+                <li><a href="../CalcI/AreaProblem.html" class="mm-link">Area Problem</a></li>
+                <li><a href="../CalcI/DefnOfDefiniteIntegral.html" class="mm-link">Definition of the Definite Integral</a></li>
+                <li><a href="../CalcI/ComputingDefiniteIntegrals.html" class="mm-link">Computing Definite Integrals</a></li>
+                <li><a href="../CalcI/SubstitutionRuleDefinite.html" class="mm-link">Substitution Rule for Definite Integrals</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcI/IntAppsIntro.html" class="mm-link">Applications of Integrals</a>
+              <ul>
+                <li><a href="../CalcI/AvgFcnValue.html" class="mm-link">Average Function Value</a></li>
+                <li><a href="../CalcI/AreaBetweenCurves.html" class="mm-link">Area Between Curves</a></li>
+                <li><a href="../CalcI/VolumeWithRings.html" class="mm-link">Volumes of Solids of Revolution / Method of Rings</a></li>
+                <li><a href="../CalcI/VolumeWithCylinder.html" class="mm-link">Volumes of Solids of Revolution/Method of Cylinders</a></li>
+                <li><a href="../CalcI/MoreVolume.html" class="mm-link">More Volume Problems</a></li>
+                <li><a href="../CalcI/Work.html" class="mm-link">Work</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcI/ExtrasIntro.html" class="mm-link">Extras</a>
+              <ul>
+                <li><a href="../CalcI/LimitProofs.html" class="mm-link">Proof of Various Limit Properties</a></li>
+                <li><a href="../CalcI/DerivativeProofs.html" class="mm-link">Proof of Various Derivative Properties</a></li>
+                <li><a href="../CalcI/ProofTrigDeriv.html" class="mm-link">Proof of Trig Limits</a></li>
+                <li><a href="../CalcI/DerivativeAppsProofs.html" class="mm-link">Proofs of Derivative Applications Facts</a></li>
+                <li><a href="../CalcI/ProofIntProp.html" class="mm-link">Proof of Various Integral Properties </a></li>
+                <li><a href="../CalcI/Area_Volume_Formulas.html" class="mm-link">Area and Volume Formulas</a></li>
+                <li><a href="../CalcI/TypesOfInfinity.html" class="mm-link">Types of Infinity</a></li>
+                <li><a href="../CalcI/SummationNotation.html" class="mm-link">Summation Notation</a></li>
+                <li><a href="../CalcI/ConstantofIntegration.html" class="mm-link">Constant of Integration</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../CalcII/CalcII.html" class="mm-link">Calculus II</a>
+          <ul>
+            <li><a href="../CalcII/IntTechIntro.html" class="mm-link">Integration Techniques</a>
+              <ul>
+                <li><a href="../CalcII/IntegrationByParts.html" class="mm-link">Integration by Parts</a></li>
+                <li><a href="../CalcII/IntegralsWithTrig.html" class="mm-link">Integrals Involving Trig Functions</a></li>
+                <li><a href="../CalcII/TrigSubstitutions.html" class="mm-link">Trig Substitutions</a></li>
+                <li><a href="../CalcII/PartialFractions.html" class="mm-link">Partial Fractions</a></li>
+                <li><a href="../CalcII/IntegralsWithRoots.html" class="mm-link">Integrals Involving Roots</a></li>
+                <li><a href="../CalcII/IntegralsWithQuadratics.html" class="mm-link">Integrals Involving Quadratics</a></li>
+                <li><a href="../CalcII/IntegrationStrategy.html" class="mm-link">Integration Strategy</a></li>
+                <li><a href="../CalcII/ImproperIntegrals.html" class="mm-link">Improper Integrals</a></li>
+                <li><a href="../CalcII/ImproperIntegralsCompTest.html" class="mm-link">Comparison Test for Improper Integrals</a></li>
+                <li><a href="../CalcII/ApproximatingDefIntegrals.html" class="mm-link">Approximating Definite Integrals</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/IntAppsIntro.html" class="mm-link">Applications of Integrals</a>
+              <ul>
+                <li><a href="../CalcII/ArcLength.html" class="mm-link">Arc Length</a></li>
+                <li><a href="../CalcII/SurfaceArea.html" class="mm-link">Surface Area</a></li>
+                <li><a href="../CalcII/CenterOfMass.html" class="mm-link">Center of Mass</a></li>
+                <li><a href="../CalcII/HydrostaticPressure.html" class="mm-link">Hydrostatic Pressure</a></li>
+                <li><a href="../CalcII/Probability.html" class="mm-link">Probability</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/ParametricIntro.html" class="mm-link">Parametric Equations and Polar Coordinates</a>
+              <ul>
+                <li><a href="../CalcII/ParametricEqn.html" class="mm-link">Parametric Equations and Curves</a></li>
+                <li><a href="../CalcII/ParaTangent.html" class="mm-link">Tangents with Parametric Equations</a></li>
+                <li><a href="../CalcII/ParaArea.html" class="mm-link">Area with Parametric Equations</a></li>
+                <li><a href="../CalcII/ParaArcLength.html" class="mm-link">Arc Length with Parametric Equations</a></li>
+                <li><a href="../CalcII/ParaSurfaceArea.html" class="mm-link">Surface Area with Parametric Equations</a></li>
+                <li><a href="../CalcII/PolarCoordinates.html" class="mm-link">Polar Coordinates</a></li>
+                <li><a href="../CalcII/PolarTangents.html" class="mm-link">Tangents with Polar Coordinates</a></li>
+                <li><a href="../CalcII/PolarArea.html" class="mm-link">Area with Polar Coordinates</a></li>
+                <li><a href="../CalcII/PolarArcLength.html" class="mm-link">Arc Length with Polar Coordinates</a></li>
+                <li><a href="../CalcII/PolarSurfaceArea.html" class="mm-link">Surface Area with Polar Coordinates</a></li>
+                <li><a href="../CalcII/ArcLength_SurfaceArea.html" class="mm-link">Arc Length and Surface Area Revisited</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/SeriesIntro.html" class="mm-link">Series & Sequences</a>
+              <ul>
+                <li><a href="../CalcII/Sequences.html" class="mm-link">Sequences</a></li>
+                <li><a href="../CalcII/MoreSequences.html" class="mm-link">More on Sequences</a></li>
+                <li><a href="../CalcII/Series_Basics.html" class="mm-link">Series - The Basics</a></li>
+                <li><a href="../CalcII/ConvergenceOfSeries.html" class="mm-link">Convergence/Divergence of Series</a></li>
+                <li><a href="../CalcII/Series_Special.html" class="mm-link">Special Series</a></li>
+                <li><a href="../CalcII/IntegralTest.html" class="mm-link">Integral Test</a></li>
+                <li><a href="../CalcII/SeriesCompTest.html" class="mm-link">Comparison Test/Limit Comparison Test</a></li>
+                <li><a href="../CalcII/AlternatingSeries.html" class="mm-link">Alternating Series Test</a></li>
+                <li><a href="../CalcII/AbsoluteConvergence.html" class="mm-link">Absolute Convergence</a></li>
+                <li><a href="../CalcII/RatioTest.html" class="mm-link">Ratio Test</a></li>
+                <li><a href="../CalcII/RootTest.html" class="mm-link">Root Test</a></li>
+                <li><a href="../CalcII/SeriesStrategy.html" class="mm-link">Strategy for Series</a></li>
+                <li><a href="../CalcII/EstimatingSeries.html" class="mm-link">Estimating the Value of a Series</a></li>
+                <li><a href="../CalcII/PowerSeries.html" class="mm-link">Power Series</a></li>
+                <li><a href="../CalcII/PowerSeriesandFunctions.html" class="mm-link">Power Series and Functions</a></li>
+                <li><a href="../CalcII/TaylorSeries.html" class="mm-link">Taylor Series</a></li>
+                <li><a href="../CalcII/TaylorSeriesApps.html" class="mm-link">Applications of Series</a></li>
+                <li><a href="../CalcII/BinomialSeries.html" class="mm-link">Binomial Series</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/VectorsIntro.html" class="mm-link">Vectors</a>
+              <ul>
+                <li><a href="../CalcII/Vectors_Basics.html" class="mm-link">Vectors - The Basics</a></li>
+                <li><a href="../CalcII/VectorArithmetic.html" class="mm-link">Vector Arithmetic</a></li>
+                <li><a href="../CalcII/DotProduct.html" class="mm-link">Dot Product</a></li>
+                <li><a href="../CalcII/CrossProduct.html" class="mm-link">Cross Product</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/3DSpace.html" class="mm-link">3-Dimensional Space</a>
+              <ul>
+                <li><a href="../CalcII/3DCoords.html" class="mm-link">The 3-D Coordinate System</a></li>
+                <li><a href="../CalcII/EqnsOfLines.html" class="mm-link">Equations of Lines</a></li>
+                <li><a href="../CalcII/EqnsOfPlanes.html" class="mm-link">Equations of Planes</a></li>
+                <li><a href="../CalcII/QuadricSurfaces.html" class="mm-link">Quadric Surfaces</a></li>
+                <li><a href="../CalcII/MultiVrbleFcns.html" class="mm-link">Functions of Several Variables</a></li>
+                <li><a href="../CalcII/VectorFunctions.html" class="mm-link">Vector Functions</a></li>
+                <li><a href="../CalcII/VectorFcnsCalculus.html" class="mm-link">Calculus with Vector Functions</a></li>
+                <li><a href="../CalcII/TangentNormalVectors.html" class="mm-link">Tangent, Normal and Binormal Vectors</a></li>
+                <li><a href="../CalcII/VectorArcLength.html" class="mm-link">Arc Length with Vector Functions</a></li>
+                <li><a href="../CalcII/Curvature.html" class="mm-link">Curvature</a></li>
+                <li><a href="../CalcII/Velocity_Acceleration.html" class="mm-link">Velocity and Acceleration</a></li>
+                <li><a href="../CalcII/CylindricalCoords.html" class="mm-link">Cylindrical Coordinates</a></li>
+                <li><a href="../CalcII/SphericalCoords.html" class="mm-link">Spherical Coordinates</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="CalcIII.html" class="mm-link">Calculus III</a>
+          <ul>
+            <li><a href="3DSpace.html" class="mm-link">3-Dimensional Space</a>
+              <ul>
+                <li><a href="3DCoords.html" class="mm-link">The 3-D Coordinate System</a></li>
+                <li><a href="EqnsOfLines.html" class="mm-link">Equations of Lines</a></li>
+                <li><a href="EqnsOfPlanes.html" class="mm-link">Equations of Planes</a></li>
+                <li><a href="QuadricSurfaces.html" class="mm-link">Quadric Surfaces</a></li>
+                <li><a href="MultiVrbleFcns.html" class="mm-link">Functions of Several Variables</a></li>
+                <li><a href="VectorFunctions.html" class="mm-link">Vector Functions</a></li>
+                <li><a href="VectorFcnsCalculus.html" class="mm-link">Calculus with Vector Functions</a></li>
+                <li><a href="TangentNormalVectors.html" class="mm-link">Tangent, Normal and Binormal Vectors</a></li>
+                <li><a href="VectorArcLength.html" class="mm-link">Arc Length with Vector Functions</a></li>
+                <li><a href="Curvature.html" class="mm-link">Curvature</a></li>
+                <li><a href="Velocity_Acceleration.html" class="mm-link">Velocity and Acceleration</a></li>
+                <li><a href="CylindricalCoords.html" class="mm-link">Cylindrical Coordinates</a></li>
+                <li><a href="SphericalCoords.html" class="mm-link">Spherical Coordinates</a></li>
+              </ul>
+            </li>
+            <li><a href="PartialDerivsIntro.html" class="mm-link">Partial Derivatives</a>
+              <ul>
+                <li><a href="Limits.html" class="mm-link">Limits</a></li>
+                <li><a href="PartialDerivatives.html" class="mm-link">Partial Derivatives</a></li>
+                <li><a href="PartialDerivInterp.html" class="mm-link">Interpretations of Partial Derivatives</a></li>
+                <li><a href="HighOrderPartialDerivs.html" class="mm-link">Higher Order Partial Derivatives</a></li>
+                <li><a href="Differentials.html" class="mm-link">Differentials</a></li>
+                <li><a href="ChainRule.html" class="mm-link">Chain Rule</a></li>
+                <li><a href="DirectionalDeriv.html" class="mm-link">Directional Derivatives</a></li>
+              </ul>
+            </li>
+            <li><a href="PartialDerivAppsIntro.html" class="mm-link">Applications of Partial Derivatives</a>
+              <ul>
+                <li><a href="TangentPlanes.html" class="mm-link">Tangent Planes and Linear Approximations</a></li>
+                <li><a href="GradientVectorTangentPlane.html" class="mm-link">Gradient Vector, Tangent Planes and Normal Lines</a></li>
+                <li><a href="RelativeExtrema.html" class="mm-link">Relative Minimums and Maximums</a></li>
+                <li><a href="AbsoluteExtrema.html" class="mm-link">Absolute Minimums and Maximums</a></li>
+                <li><a href="LagrangeMultipliers.html" class="mm-link">Lagrange Multipliers</a></li>
+              </ul>
+            </li>
+            <li><a href="MultipleIntegralsIntro.html" class="mm-link">Multiple Integrals</a>
+              <ul>
+                <li><a href="DoubleIntegrals.html" class="mm-link">Double Integrals</a></li>
+                <li><a href="IteratedIntegrals.html" class="mm-link">Iterated Integrals</a></li>
+                <li><a href="DIGeneralRegion.html" class="mm-link">Double Integrals over General Regions</a></li>
+                <li><a href="DIPolarCoords.html" class="mm-link">Double Integrals in Polar Coordinates</a></li>
+                <li><a href="TripleIntegrals.html" class="mm-link">Triple Integrals</a></li>
+                <li><a href="TICylindricalCoords.html" class="mm-link">Triple Integrals in Cylindrical Coordinates</a></li>
+                <li><a href="TISphericalCoords.html" class="mm-link">Triple Integrals in Spherical Coordinates</a></li>
+                <li><a href="ChangeOfVariables.html" class="mm-link">Change of Variables</a></li>
+                <li><a href="SurfaceArea.html" class="mm-link">Surface Area</a></li>
+                <li><a href="Area_Volume.html" class="mm-link">Area and Volume Revisited</a></li>
+              </ul>
+            </li>
+            <li><a href="LineIntegralsIntro.html" class="mm-link">Line Integrals</a>
+              <ul>
+                <li><a href="VectorFields.html" class="mm-link">Vector Fields</a></li>
+                <li><a href="LineIntegralsPtI.html" class="mm-link">Line Integrals - Part I</a></li>
+                <li><a href="LineIntegralsPtII.html" class="mm-link">Line Integrals - Part II</a></li>
+                <li><a href="LineIntegralsVectorFields.html" class="mm-link">Line Integrals of Vector Fields</a></li>
+                <li><a href="FundThmLineIntegrals.html" class="mm-link">Fundamental Theorem for Line Integrals</a></li>
+                <li><a href="ConservativeVectorField.html" class="mm-link">Conservative Vector Fields</a></li>
+                <li><a href="GreensTheorem.html" class="mm-link">Green's Theorem</a></li>
+                <li><a href="CurlDivergence.html" class="mm-link">Curl and Divergence</a></li>
+              </ul>
+            </li>
+            <li><a href="SurfaceIntegralsIntro.html" class="mm-link">Surface Integrals</a>
+              <ul>
+                <li><a href="ParametricSurfaces.html" class="mm-link">Parametric Surfaces</a></li>
+                <li><a href="SurfaceIntegrals.html" class="mm-link">Surface Integrals</a></li>
+                <li><a href="SurfIntVectorField.html" class="mm-link">Surface Integrals of Vector Fields</a></li>
+                <li><a href="StokesTheorem.html" class="mm-link">Stokes' Theorem</a></li>
+                <li><a href="DivergenceTheorem.html" class="mm-link">Divergence Theorem</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../DE/DE.html" class="mm-link">Differential Equations</a>
+          <ul>
+            <li><a href="../DE/IntroBasic.html" class="mm-link">Basic Concepts</a>
+              <ul>
+                <li><a href="../DE/Definitions.html" class="mm-link">Definitions</a></li>
+                <li><a href="../DE/DirectionFields.html" class="mm-link">Direction Fields</a></li>
+                <li><a href="../DE/FinalThoughts.html" class="mm-link">Final Thoughts</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/IntroFirstOrder.html" class="mm-link">First Order DE's</a>
+              <ul>
+                <li><a href="../DE/Linear.html" class="mm-link">Linear Equations</a></li>
+                <li><a href="../DE/Separable.html" class="mm-link">Separable Equations</a></li>
+                <li><a href="../DE/Exact.html" class="mm-link">Exact Equations</a></li>
+                <li><a href="../DE/Bernoulli.html" class="mm-link">Bernoulli Differential Equations</a></li>
+                <li><a href="../DE/Substitutions.html" class="mm-link">Substitutions</a></li>
+                <li><a href="../DE/IoV.html" class="mm-link">Intervals of Validity</a></li>
+                <li><a href="../DE/Modeling.html" class="mm-link">Modeling with First Order DE's</a></li>
+                <li><a href="../DE/EquilibriumSolutions.html" class="mm-link">Equilibrium Solutions</a></li>
+                <li><a href="../DE/EulersMethod.html" class="mm-link">Euler's Method</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/IntroSecondOrder.html" class="mm-link">Second Order DE's</a>
+              <ul>
+                <li><a href="../DE/SecondOrderConcepts.html" class="mm-link">Basic Concepts</a></li>
+                <li><a href="../DE/RealRoots.html" class="mm-link">Real & Distinct Roots</a></li>
+                <li><a href="../DE/ComplexRoots.html" class="mm-link">Complex Roots</a></li>
+                <li><a href="../DE/RepeatedRoots.html" class="mm-link">Repeated Roots</a></li>
+                <li><a href="../DE/ReductionofOrder.html" class="mm-link">Reduction of Order</a></li>
+                <li><a href="../DE/FundamentalSetsofSolutions.html" class="mm-link">Fundamental Sets of Solutions</a></li>
+                <li><a href="../DE/Wronskian.html" class="mm-link">More on the  Wronskian</a></li>
+                <li><a href="../DE/NonhomogeneousDE.html" class="mm-link">Nonhomogeneous Differential Equations</a></li>
+                <li><a href="../DE/UndeterminedCoefficients.html" class="mm-link">Undetermined Coefficients</a></li>
+                <li><a href="../DE/VariationofParameters.html" class="mm-link">Variation of Parameters</a></li>
+                <li><a href="../DE/Vibrations.html" class="mm-link">Mechanical Vibrations</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/LaplaceIntro.html" class="mm-link">Laplace Transforms</a>
+              <ul>
+                <li><a href="../DE/LaplaceDefinition.html" class="mm-link">The Definition</a></li>
+                <li><a href="../DE/LaplaceTransforms.html" class="mm-link">Laplace Transforms</a></li>
+                <li><a href="../DE/InverseTransforms.html" class="mm-link">Inverse Laplace Transforms</a></li>
+                <li><a href="../DE/StepFunctions.html" class="mm-link">Step Functions</a></li>
+                <li><a href="../DE/IVPWithLaplace.html" class="mm-link">Solving IVP's with Laplace Transforms</a></li>
+                <li><a href="../DE/IVPWithNonConstantCoefficient.html" class="mm-link">Nonconstant Coefficient IVP's</a></li>
+                <li><a href="../DE/IVPWithStepFunction.html" class="mm-link">IVP's With Step Functions</a></li>
+                <li><a href="../DE/DiracDeltaFunction.html" class="mm-link">Dirac Delta Function</a></li>
+                <li><a href="../DE/ConvolutionIntegrals.html" class="mm-link">Convolution Integrals</a></li>
+                <li><a href="../DE/Laplace_Table.html" class="mm-link">Table Of Laplace Transforms</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/SystemsIntro.html" class="mm-link">Systems of DE's</a>
+              <ul>
+                <li><a href="../DE/LA_Systems.html" class="mm-link">Review : Systems of Equations</a></li>
+                <li><a href="../DE/LA_Matrix.html" class="mm-link">Review : Matrices & Vectors</a></li>
+                <li><a href="../DE/LA_Eigen.html" class="mm-link">Review : Eigenvalues & Eigenvectors</a></li>
+                <li><a href="../DE/SystemsDE.html" class="mm-link">Systems of Differential Equations</a></li>
+                <li><a href="../DE/SolutionsToSystems.html" class="mm-link">Solutions to Systems</a></li>
+                <li><a href="../DE/PhasePlane.html" class="mm-link">Phase Plane</a></li>
+                <li><a href="../DE/RealEigenvalues.html" class="mm-link">Real Eigenvalues</a></li>
+                <li><a href="../DE/ComplexEigenvalues.html" class="mm-link">Complex Eigenvalues</a></li>
+                <li><a href="../DE/RepeatedEigenvalues.html" class="mm-link">Repeated Eigenvalues</a></li>
+                <li><a href="../DE/NonhomogeneousSystems.html" class="mm-link">Nonhomogeneous Systems</a></li>
+                <li><a href="../DE/SystemsLaplace.html" class="mm-link">Laplace Transforms</a></li>
+                <li><a href="../DE/SystemsModeling.html" class="mm-link">Modeling</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/SeriesIntro.html" class="mm-link">Series Solutions to DE's</a>
+              <ul>
+                <li><a href="../DE/PowerSeries.html" class="mm-link">Review : Power Series</a></li>
+                <li><a href="../DE/TaylorSeries.html" class="mm-link">Review : Taylor Series</a></li>
+                <li><a href="../DE/SeriesSolutions.html" class="mm-link">Series Solutions</a></li>
+                <li><a href="../DE/EulerEquations.html" class="mm-link">Euler Equations</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/IntroHigherOrder.html" class="mm-link">Higher Order Differential Equations</a>
+              <ul>
+                <li><a href="../DE/HOBasicConcepts.html" class="mm-link">Basic Concepts for <em>n</em><sup>th</sup> Order Linear Equations</a></li>
+                <li><a href="../DE/HOHomogeneousDE.html" class="mm-link">Linear Homogeneous Differential Equations</a></li>
+                <li><a href="../DE/HOUndeterminedCoeff.html" class="mm-link">Undetermined Coefficients</a></li>
+                <li><a href="../DE/HOVariationOfParam.html" class="mm-link">Variation of Parameters</a></li>
+                <li><a href="../DE/HOLaplaceTransforms.html" class="mm-link">Laplace Transforms</a></li>
+                <li><a href="../DE/HOSystems.html" class="mm-link">Systems of Differential Equations</a></li>
+                <li><a href="../DE/HOSeries.html" class="mm-link">Series Solutions</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/IntroBVP.html" class="mm-link">Boundary Value Problems &amp; Fourier Series</a>
+              <ul>
+                <li><a href="../DE/BoundaryValueProblem.html" class="mm-link">Boundary Value Problems</a></li>
+                <li><a href="../DE/BVPEvals.html" class="mm-link">Eigenvalues and Eigenfunctions</a></li>
+                <li><a href="../DE/PeriodicOrthogonal.html" class="mm-link">Periodic Functions &amp; Orthogonal Functions</a></li>
+                <li><a href="../DE/FourierSineSeries.html" class="mm-link">Fourier Sine Series</a></li>
+                <li><a href="../DE/FourierCosineSeries.html" class="mm-link">Fourier Cosine Series</a></li>
+                <li><a href="../DE/FourierSeries.html" class="mm-link">Fourier Series</a></li>
+                <li><a href="../DE/ConvergenceFourierSeries.html" class="mm-link">Convergence of Fourier Series</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/IntroPDE.html" class="mm-link">Partial Differential Equations </a>
+              <ul>
+                <li><a href="../DE/TheHeatEquation.html" class="mm-link">The Heat Equation</a></li>
+                <li><a href="../DE/TheWaveEquation.html" class="mm-link">The Wave Equation</a></li>
+                <li><a href="../DE/PDETerminology.html" class="mm-link">Terminology</a></li>
+                <li><a href="../DE/SeparationofVariables.html" class="mm-link">Separation of Variables</a></li>
+                <li><a href="../DE/SolvingHeatEquation.html" class="mm-link">Solving the Heat Equation</a></li>
+                <li><a href="../DE/HeatEqnNonZero.html" class="mm-link">Heat Equation with Non-Zero Temperature Boundaries</a></li>
+                <li><a href="../DE/LaplacesEqn.html" class="mm-link">Laplace's Equation</a></li>
+                <li><a href="../DE/VibratingString.html" class="mm-link">Vibrating String</a></li>
+                <li><a href="../DE/PDESummary.html" class="mm-link">Summary of Separation of Variables</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><span>Extras</span></li>
+        <li><a href="../../Extras/AlgebraTrigReview/AlgebraTrig.html" class="mm-link">Algebra &amp; Trig Review</a>
+          <ul>
+            <li><a href="../../Extras/AlgebraTrigReview/AlgebraIntro.html" class="mm-link">Algebra</a>
+              <ul>
+                <li><a href="../../Extras/AlgebraTrigReview/Exponents.html" class="mm-link">Exponents </a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/AbsoluteValue.html" class="mm-link">Absolute Value</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Radicals.html" class="mm-link">Radicals</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Rationalizing.html" class="mm-link">Rationalizing </a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Functions.html" class="mm-link">Functions </a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/MultPoly.html" class="mm-link">Multiplying Polynomials</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Factoring.html" class="mm-link">Factoring</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SimpRatExp.html" class="mm-link">Simplifying Rational Expressions</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Graphing.html" class="mm-link">Graphing and Common Graphs</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveEqnPtI.html" class="mm-link">Solving Equations, Part I</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveEqnPtII.html" class="mm-link">Solving Equations, Part II</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveSystems.html" class="mm-link">Solving Systems of Equations</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveIneq.html" class="mm-link">Solving Inequalities</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveAbsValue.html" class="mm-link">Absolute Value Equations and Inequalities</a></li>
+              </ul>
+            </li>
+            <li><a href="../../Extras/AlgebraTrigReview/TrigIntro.html" class="mm-link">Trigonometry</a>
+              <ul>
+                <li><a href="../../Extras/AlgebraTrigReview/TrigFunctions.html" class="mm-link">Trig Function Evaluation</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/TrigGraphs.html" class="mm-link">Graphs of Trig Functions</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/TrigFormulas.html" class="mm-link">Trig Formulas</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveTrigEqn.html" class="mm-link">Solving Trig Equations</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/InverseTrig.html" class="mm-link">Inverse Trig Functions</a></li>
+              </ul>
+            </li>
+            <li><a href="../../Extras/AlgebraTrigReview/ExpLogIntro.html" class="mm-link">Exponentials & Logarithms</a>
+              <ul>
+                <li><a href="../../Extras/AlgebraTrigReview/ExponentialFcns.html" class="mm-link">Basic Exponential Functions</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/LogarithmFcns.html" class="mm-link">Basic Logarithm Functions</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/LogProperties.html" class="mm-link">Logarithm Properties</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SimpLogs.html" class="mm-link">Simplifying Logarithms</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveExpEqn.html" class="mm-link">Solving Exponential Equations</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveLogEqn.html" class="mm-link">Solving Logarithm Equations</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../../Extras/CommonErrors/CommonMathErrors.html" class="mm-link">Common Math Errors</a>
+          <ul>
+            <li><a href="../../Extras/CommonErrors/GeneralErrors.html" class="mm-link">General Errors</a>
+            </li>
+            <li><a href="../../Extras/CommonErrors/AlgebraErrors.html" class="mm-link">Algebra Errors</a>
+            </li>
+            <li><a href="../../Extras/CommonErrors/TrigErrors.html" class="mm-link">Trig Errors</a>
+            </li>
+            <li><a href="../../Extras/CommonErrors/CommonErrors.html" class="mm-link">Common Errors</a>
+            </li>
+            <li><a href="../../Extras/CommonErrors/CalculusErrors.html" class="mm-link">Calculus Errors</a>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../../Extras/ComplexPrimer/ComplexNumbers.html" class="mm-link">Complex Number Primer</a>
+          <ul>
+            <li><a href="../../Extras/ComplexPrimer/Definition.html" class="mm-link">The Definition</a>
+            </li>
+            <li><a href="../../Extras/ComplexPrimer/Arithmetic.html" class="mm-link">Arithmetic</a>
+            </li>
+            <li><a href="../../Extras/ComplexPrimer/ConjugateModulus.html" class="mm-link">Conjugate and Modulus</a>
+            </li>
+            <li><a href="../../Extras/ComplexPrimer/Forms.html" class="mm-link">Polar and Exponential Forms</a>
+            </li>
+            <li><a href="../../Extras/ComplexPrimer/Roots.html" class="mm-link">Powers and Roots</a>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../../Extras/StudyMath/HowToStudyMath.html" class="mm-link">How To Study Math</a>
+          <ul>
+            <li><a href="../../Extras/StudyMath/GeneralTips.html" class="mm-link">General Tips</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/TakingNotes.html" class="mm-link">Taking Notes</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/GettingHelp.html" class="mm-link">Getting Help</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/Homework.html" class="mm-link">Doing Homework</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/ProblemSolving.html" class="mm-link">Problem Solving</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/StudyForExam.html" class="mm-link">Studying For an Exam</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/TakingExam.html" class="mm-link">Taking an Exam</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/Errors.html" class="mm-link">Learn From Your Errors</a>
+            </li>
+          </ul>
+        </li>
+
+        <li><span>Misc Links</span></li>
+        <li><a href="http://tutorial.math.lamar.edu/contact.aspx" class="mm-link">Contact Me</a></li>
+        <li><a href="../../links.html" class="mm-link">Links</a></li>
+        <li><a href="../../mathjax.html" class="mm-link">MathJax Help and Configuration</a></li>
+        <li><a href="../../mystudents.html" class="mm-link">My Students</a></li>
+        <li><a href="http://tutorial.math.lamar.edu/privacy.aspx" class="mm-link">Privacy Statement</a></li>
+        <li><a href="../../help.html" class="mm-link">Site Help & FAQ</a></li>
+        <li><a href="http://tutorial.math.lamar.edu/terms.aspx" class="mm-link">Terms of Use</a></li>
+      </ul>
+    </nav>
+
+
+
+    <div class="top-info-bar">
+      <span id="mobile-title" class="mobile-header-title header-title">Paul's Online Notes</span>
+      <br />
+      <span class="top-menu-breadcrumb">
+        <a href="../../index.html" id="breadcrumb_home_link" title="Go to Main Page">Home</a>
+        <span id="breadcrumb_h_b_sep_span">/ </span>
+        <a href="CalcIII.html" id="breadcrumb_book_link" title="Go to Book Introduction">Calculus III</a>
+        
+        <span id="breadcrumb_b_c_sep_span">/ </span>
+        <a href="PartialDerivsIntro.html" id="breadcrumb_chapter_link" title="Go to Chapter Introduction">Partial Derivatives</a>
+        
+        <span id="breadcrumb_section_span"> / Directional Derivatives</span>
+      </span>
+
+    </div>
+
+    <div id="nav_links" class="top-nav-bar">
+      
+      <span id="nav_current_notes">Notes</span>
+      <a href="http://tutorial.math.lamar.edu/Problems/CalcIII/DirectionalDeriv.aspx" id="nav_links_practice" title="Go to Practice Problems for current topic.">Practice<span class="nav_desktop_extra"> Problems</span></a>
+      
+      <a href="http://tutorial.math.lamar.edu/ProblemsNS/CalcIII/DirectionalDeriv.aspx" id="nav_links_asgn" title="Go to Assignment Problems for current topic.">Assignment<span class="nav_desktop_extra">  Problems</span></a>
+      
+    </div>
+
+    <div class="header-divider"></div>
+
+    <div class="content">  
+      
+      
+      <span id="SHLink_NoteMobile" class="SH-Link content-note-link-mobile">Show Mobile Notice</span>
+      <span id="SHImg_NoteMobile" class="fas fa-caret-right SH-padding content-note-link-mobile" aria-hidden="true"></span>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+
+      <span id="SHALink_S_Note" class="SH-Link SH-Hide SH-Bracket">Show All Notes</span>&nbsp;<span id="SHALink_H_Note" class="SH-Link SH-Hide SH-Bracket">Hide All Notes</span>
+      
+      
+      <div id="SHObj_NoteMobile" class="content-note-container content-note-container-mobile">
+        <div class="content-note-header">Mobile Notice</div>
+        <div class="content-note">You appear to be on a device with a "narrow" screen width (<em>i.e.</em> you are probably on a mobile phone).  Due to the nature of the mathematics on this site it is best views in landscape mode.  If your device is not in landscape mode many of the equations will run off the side of your device (should be able to scroll to see them) and some of the menu items will be cut off due to the narrow screen width.</div>
+      </div>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+
+      
+
+
+  <form method="post" action="http://tutorial.math.lamar.edu/Classes/CalcIII/DirectionalDeriv.aspx" id="ctl00">
+<div class="aspNetHidden">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+</div>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="6165B6AB" />
+</div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </form>
+
+  <h3>Section 2-7 : Directional Derivatives</h3>
+
+    
+    <p>To this point we’ve only looked at the two partial derivatives \({f_x}\left( {x,y} \right)\) and \({f_y}\left( {x,y} \right)\).  Recall that these derivatives represent the rate of change of \(f\) as we vary \(x\) (holding \(y\) fixed) and as we vary \(y\) (holding \(x\) fixed) respectively.  We now need to discuss how to find the rate of change of \(f\) if we allow both \(x\) and \(y\) to change simultaneously.  The problem here is that there are many ways to allow both \(x\) and \(y\) to change.  For instance, one could be changing faster than the other and then there is also the issue of whether or not each is increasing or decreasing.  So, before we get into finding the rate of change we need to get a couple of preliminary ideas taken care of first.  The main idea that we need to look at is just how are we going to define the changing of \(x\) and/or \(y\).</p>
+    
+    <p>Let’s start off by supposing that we wanted the rate of change of \(f\) at a particular point, say \(\left( {{x_0},{y_0}} \right)\).  Let’s also suppose that both \(x\) and \(y\) are increasing and that, in this case, \(x\) is increasing twice as fast as \(y\) is increasing.  So, as \(y\) increases one unit of measure \(x\) will increase two units of measure.</p>
+    
+    <p>To help us see how we’re going to define this change let’s suppose that a particle is sitting at \(\left( {{x_0},{y_0}} \right)\) and the particle will move in the direction given by the changing \(x\) and \(y\).  Therefore, the particle will move off in a direction of increasing \(x\) and \(y\) and the \(x\) coordinate of the point will increase twice as fast as the \(y\) coordinate.  Now that we’re thinking of this changing \(x\) and \(y\) as a direction of movement we can get a way of defining the change.  We know from Calculus II that vectors can be used to define a direction and so the particle, at this point, can be said to be moving in the direction,</p>
+    
+        \[\vec v = \left\langle {2,1} \right\rangle \]
+    
+    <p>Since this vector can be used to define how a particle at a point is changing we can also use it describe how \(x\) and/or \(y\) is changing at a point.  For our example we will say that we want the rate of change of \(f\) in the direction of \(\vec v = \left\langle {2,1} \right\rangle \).  In this way we will know that \(x\) is increasing twice as fast as \(y\) is.  There is still a small problem with this however.  There are many vectors that point in the same direction.  For instance, all of the following vectors point in the same direction as \(\vec v = \left\langle {2,1} \right\rangle \).</p>
+    
+      \[\vec v = \left\langle {\frac{1}{5},\frac{1}{{10}}} \right\rangle \,\hspace{0.25in}\,\,\,\vec v = \left\langle {6,3} \right\rangle \hspace{0.25in}\vec v = \left\langle {\frac{2}{{\sqrt 5 }},\frac{1}{{\sqrt 5 }}} \right\rangle \]
+    
+    <p>We need a way to consistently find the rate of change of a function in a given direction.  We will do this by insisting that the vector that defines the direction of change be a unit vector.  Recall that a unit vector is a vector with length, or magnitude, of 1.  This means that for the example that we started off thinking about we would want to use</p>
+    
+        \[\vec v = \left\langle {\frac{2}{{\sqrt 5 }},\frac{1}{{\sqrt 5 }}} \right\rangle \]
+    <p>since this is the unit vector that points in the direction of change.</p>
+    
+    <p>For reference purposes recall that the magnitude or length of the vector \(\vec v = \left\langle {a,b,c} \right\rangle \) is given by,</p>
+    
+        \[\left\| {\vec v} \right\| = \sqrt {{a^2} + {b^2} + {c^2}} \]
+    <p>For two dimensional vectors we drop the \(c\) from the formula.</p>
+    
+    <p>Sometimes we will give the direction of changing \(x\) and \(y\) as an angle.  For instance, we may say that we want the rate of change of \(f\) in the direction of \(\theta  = \frac{\pi }{3}\).  The unit vector that points in this direction is given by,</p>
+    
+        \[\vec u = \left\langle {\cos \theta ,\sin \theta } \right\rangle \]
+    
+    <p>Okay, now that we know how to define the direction of changing \(x\) and \(y\) its time to start talking about finding the rate of change of \(f\) in this direction.  Let’s start off with the official definition.</p>
+    
+    <h4>Definition</h4>
+  <div class="definition">
+    <p>The rate of change of \(f\left( {x,y} \right)\) in the direction of the unit vector \(\vec u = \left\langle {a,b} \right\rangle \) is called the <strong>directional derivative</strong> and is denoted by \({D_{\vec u}}f\left( {x,y} \right)\).  The definition of the directional derivative is,</p>
+          
+            \[{D_{\vec u}}f\left( {x,y} \right) = \mathop {\lim }\limits_{h \to 0} \frac{{f\left( {x + ah,y + bh} \right) - f\left( {x,y} \right)}}{h}\]
+  </div>
+    
+    <p>So, the definition of the directional derivative is very similar to the definition of partial derivatives.  However, in practice this can be a very difficult limit to compute so we need an easier way of taking directional derivatives.  It’s actually fairly simple to derive an equivalent formula for taking directional derivatives.</p>
+    
+    <p>To see how we can do this let’s define a new function of a single variable,</p>
+    
+        \[g\left( z \right) = f\left( {{x_0} + az,{y_0} + bz} \right)\]
+    <p>where \({x_0}\), \({y_0}\), \(a\), and \(b\) are some fixed numbers.  Note that this really is a function of a single variable now since \(z\) is the only letter that is not representing a fixed number.</p>
+    
+    <p>Then by the definition of the derivative for functions of a single variable we have,</p>
+    
+      \[g'\left( z \right) = \mathop {\lim }\limits_{h \to 0} \frac{{g\left( {z + h} \right) - g\left( z \right)}}{h}\]
+    <p>and the derivative at \(z = 0\) is given by,</p>
+    
+      \[g'\left( 0 \right) = \mathop {\lim }\limits_{h \to 0} \frac{{g\left( h \right) - g\left( 0 \right)}}{h}\]
+    
+    <p>If we now substitute in for \(g\left( z \right)\) we get,</p>
+    
+      \[g'\left( 0 \right) = \mathop {\lim }\limits_{h \to 0} \frac{{g\left( h \right) - g\left( 0 \right)}}{h} = \mathop {\lim }\limits_{h \to 0} \frac{{f\left( {{x_0} + ah,{y_0} + bh} \right) - f\left( {{x_0},{y_0}} \right)}}{h} = {D_{\vec u}}f\left( {{x_0},{y_0}} \right)\]
+    
+    <p>So, it looks like we have the following relationship.</p>
+    
+    
+        \[\begin{equation}g'\left( 0 \right) = {D_{\vec u}}f\left( {{x_0},{y_0}} \right) \label{eq:eq1} \end{equation}\] 
+    
+    <p>Now, let’s look at this from another perspective.  Let’s rewrite \(g\left( z \right)\) as follows,</p>
+    
+    
+      \[g\left( z \right) = f\left( {x,y} \right)\,\,\,\,{\mbox{where}}\,\,\,x = {x_0} + az{\mbox{  and  }}y = {y_0} + bz\]
+    
+    <p>We can now use the chain rule from the previous section to compute,</p>
+    
+      \[g'\left( z \right) = \frac{{dg}}{{dz}} = \frac{{\partial f}}{{\partial x}}\frac{{dx}}{{dz}} + \frac{{\partial f}}{{\partial y}}\frac{{dy}}{{dz}} = {f_x}\left( {x,y} \right)a + {f_y}\left( {x,y} \right)b\]
+    <p>So, from the chain rule we get the following relationship.</p>
+    
+    
+        \[\begin{equation}g'\left( z \right) = {f_x}\left( {x,y} \right)a + {f_y}\left( {x,y} \right)b \label{eq:eq2}\end{equation}\]
+    
+    <p>If we now take \(z = 0\) we will get that \(x = {x_0}\) and \(y = {y_0}\) (from how we defined \(x\) and \(y\) above) and plug these into \(\eqref{eq:eq2}\) we get,</p>
+    
+      \[\begin{equation}g'\left( 0 \right) = {f_x}\left( {{x_0},{y_0}} \right)a + {f_y}\left( {{x_0},{y_0}} \right)b \label{eq:eq3}\end{equation}\] 
+    
+    <p>Now, simply equate \(\eqref{eq:eq1}\) and \(\eqref{eq:eq3}\) to get that,</p>
+    
+      \[{D_{\vec u}}f\left( {{x_0},{y_0}} \right) = g'\left( 0 \right) = {f_x}\left( {{x_0},{y_0}} \right)a + {f_y}\left( {{x_0},{y_0}} \right)b\]
+    
+    <p>If we now go back to allowing \(x\) and \(y\) to be any number we get the following formula for computing directional derivatives.</p>
+    
+  <div class="fact">
+    \[{D_{\vec u}}f\left( {x,y} \right) = {f_x}\left( {x,y} \right)a + {f_y}\left( {x,y} \right)b\]
+  </div>
+    
+    <p>This is much simpler than the limit definition.  Also note that this definition assumed that we were working with functions of two variables.  There are similar formulas that can be derived by the same type of argument for functions with more than two variables.  For instance, the directional derivative of \(f\left( {x,y,z} \right)\) in the direction of the unit vector \(\vec u = \left\langle {a,b,c} \right\rangle \) is given by,</p>
+    
+  <div class="fact">
+    \[{D_{\vec u}}f\left( {x,y,z} \right) = {f_x}\left( {x,y,z} \right)a + {f_y}\left( {x,y,z} \right)b + {f_z}\left( {x,y,z} \right)c\]
+  </div>
+
+    
+    <p>Let’s work a couple of examples.</p>
+
+    <a class="anchor" name="PD_DirectDeriv_Ex1"></a>
+  <div class="example">
+    <span class="example-title">Example 1</span> Find each of the directional derivatives.
+    <ol class="example_parts_list">
+      <li>\({D_{\vec u}}f\left( {2,0} \right)\) where \(f\left( {x,y} \right) = x{{\bf{e}}^{xy}} + y\) and \(\vec u\) is the unit vector in the direction of \(\displaystyle \theta  = \frac{{2\pi }}{3}\).</li>
+      <li>\({D_{\vec u}}f\left( {x,y,z} \right)\) where \(f\left( {x,y,z} \right) = {x^2}z + {y^3}{z^2} - xyz\) in the direction of \(\vec v = \left\langle { - 1,0,3} \right\rangle \).</li>
+    </ol>
+    <span id="SHALink_S_Soln1" class="SH-Link SH-All">Show All Solutions</span>&nbsp;<span id="SHALink_H_Soln1" class="SH-Link SH-All">Hide All Solutions</span>
+    <div class="example-content">
+      <span class="soln-list-item soln-list-subitem">a</span> \({D_{\vec u}}f\left( {2,0} \right)\) where \(f\left( {x,y} \right) = x{{\bf{e}}^{xy}} + y\) and \(\vec u\) is the unit vector in the direction of \(\displaystyle \theta  = \frac{{2\pi }}{3}\). <span id="SHLink_Soln1a" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln1a" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln1a" class="soln-content">
+        <p>We’ll first find \({D_{\vec u}}f\left( {x,y} \right)\) and then use this a formula for finding \({D_{\vec u}}f\left( {2,0} \right)\).  The unit vector giving the direction is,</p>
+          
+            \[\vec u = \left\langle {\cos \left( {\frac{{2\pi }}{3}} \right),\sin \left( {\frac{{2\pi }}{3}} \right)} \right\rangle  = \left\langle { - \frac{1}{2},\frac{{\sqrt 3 }}{2}} \right\rangle \]
+          
+          <p>So, the directional derivative is,</p>
+          
+            \[{D_{\vec u}}f\left( {x,y} \right) = \left( { - \frac{1}{2}} \right)\left( {{{\bf{e}}^{xy}} + xy{{\bf{e}}^{xy}}} \right) + \left( {\frac{{\sqrt 3 }}{2}} \right)\left( {{x^2}{{\bf{e}}^{xy}} + 1} \right)\]
+          
+          <p>Now, plugging in the point in question gives,</p>
+          
+            \[{D_{\vec u}}f\left( {2,0} \right) = \left( { - \frac{1}{2}} \right)\left( 1 \right) + \left( {\frac{{\sqrt 3 }}{2}} \right)\left( 5 \right) = \frac{{5\sqrt 3  - 1}}{2}\]
+          
+      </div>
+
+      <br />
+      <span class="soln-list-item soln-list-subitem">b</span> \({D_{\vec u}}f\left( {x,y,z} \right)\) where \(f\left( {x,y,z} \right) = {x^2}z + {y^3}{z^2} - xyz\) in the direction of \(\vec v = \left\langle { - 1,0,3} \right\rangle \). <span id="SHLink_Soln1b" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln1b" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln1b" class="soln-content">
+        <p>In this case let’s first check to see if the direction vector is a unit vector or not and if it isn’t convert it into one.  To do this all we need to do is compute its magnitude.</p>
+          
+              \[\left\| {\vec v} \right\| = \sqrt {1 + 0 + 9}  = \sqrt {10}  \ne 1\]
+          <p>So, it’s not a unit vector.  Recall that we can convert any vector into a unit vector that points in the same direction by dividing the vector by its magnitude.  So, the unit vector that we need is,</p>
+          
+            \[\vec u = \frac{1}{{\sqrt {10} }}\left\langle { - 1,0,3} \right\rangle  = \left\langle { - \frac{1}{{\sqrt {10} }},0,\frac{3}{{\sqrt {10} }}} \right\rangle \]
+          
+          <p>The directional derivative is then,</p>
+          
+            \[\begin{align*}{D_{\vec u}}f\left( {x,y,z} \right) & = \left( { - \frac{1}{{\sqrt {10} }}} \right)\left( {2xz - yz} \right) + \left( 0 \right)\left( {3{y^2}{z^2} - xz} \right) + \left( {\frac{3}{{\sqrt {10} }}} \right)\left( {{x^2} + 2{y^3}z - xy} \right)\\ &amp;  = \frac{1}{{\sqrt {10} }}\left( {3{x^2} + 6{y^3}z - 3xy - 2xz + yz} \right)\end{align*}\]
+      </div>
+    </div>
+  </div>
+
+    
+    <p>There is another form of the formula that we used to get the directional derivative that is a little nicer and somewhat more compact.  It is also a much more general formula that will encompass both of the formulas above.</p>
+    
+    <p>Let’s start with the second one and notice that we can write it as follows,</p>
+    
+      \[\begin{align*}{D_{\vec u}}f\left( {x,y,z} \right) & = {f_x}\left( {x,y,z} \right)a + {f_y}\left( {x,y,z} \right)b + {f_z}\left( {x,y,z} \right)c\\ &amp;  = \left\langle {{f_x},{f_y},{f_z}} \right\rangle \centerdot \left\langle {a,b,c} \right\rangle \end{align*}\]
+    
+    <p>In other words, we can write the directional derivative as a dot product and notice that the second vector is nothing more than the unit vector \(\vec u\) that gives the direction of change.  Also, if we had used the version for functions of two variables the third component wouldn’t be there, but other than that the formula would be the same.</p>
+    <a class="anchor" name="Gradient_Defn"></a>
+    <p>Now let’s give a name and notation to the first vector in the dot product since this vector will show up fairly regularly throughout this course (and in other courses).  The <strong>gradient of \(f\)</strong> or <strong>gradient vector of \(f\)</strong> is defined to be,</p>
+    
+    
+        \[\nabla f = \left\langle {{f_x},{f_y},{f_z}} \right\rangle \hspace{0.25in}{\mbox{or}}\hspace{0.5in}\nabla f = \left\langle {{f_x},{f_y}} \right\rangle \]
+    
+    <p>Or, if we want to use the standard basis vectors the gradient is,</p>
+    
+    
+        \[\nabla f = {f_x}\,\vec i + {f_y}\vec j + {f_z}\,\vec k\hspace{0.5in}{\mbox{or}}\hspace{0.5in}\nabla f = {f_x}\,\vec i + {f_y}\vec j\]
+    
+    <p>The definition is only shown for functions of two or three variables, however there is a natural extension to functions of any number of variables that we’d like.</p>
+    
+    <p>With the definition of the gradient we can now say that the directional derivative is given by,</p>
+    
+        \[{D_{\vec u}}f = \nabla f\centerdot \vec u\]
+    <p>where we will no longer show the variable and use this formula for any number of variables.  Note as well that we will sometimes use the following notation,</p>
+    
+    
+        \[{D_{\vec u}}f\left( {\vec x} \right) = \nabla f\centerdot \vec u\]
+    
+    <p>where \(\vec x = \left\langle {x,y,z} \right\rangle \) or \(\vec x = \left\langle {x,y} \right\rangle \) as needed.  This notation will be used when we want to note the variables in some way, but don’t really want to restrict ourselves to a particular number of variables.  In other words, \(\vec x\) will be used to represent as many variables as we need in the formula and we will most often use this notation when we are already using vectors or vector notation in the problem/formula.</p>
+    
+    <p>Let’s work a couple of examples using this formula of the directional derivative.</p>
+    <a class="anchor" name="PD_DirectDeriv_Ex2"></a>
+  <div class="example">
+    <span class="example-title">Example 2</span> Find each of the directional derivative.
+    <ol class="example_parts_list">
+      <li>\({D_{\vec u}}f\left( {\vec x} \right)\) for \(f\left( {x,y} \right) = x\cos \left( y \right)\) in the direction of \(\vec v = \left\langle {2,1} \right\rangle \).</li>
+      <li>\({D_{\vec u}}f\left( {\vec x} \right)\) for \(f\left( {x,y,z} \right) = \sin \left( {yz} \right) + \ln \left( {{x^2}} \right)\) at \(\left( {1,1,\pi } \right)\) in the direction of \(\vec v = \left\langle {1,1, - 1} \right\rangle \).</li>
+    </ol>
+    <span id="SHALink_S_Soln2" class="SH-Link SH-All">Show All Solutions</span>&nbsp;<span id="SHALink_H_Soln2" class="SH-Link SH-All">Hide All Solutions</span>
+    <div class="example-content">
+      <span class="soln-list-item soln-list-subitem">a</span> \({D_{\vec u}}f\left( {\vec x} \right)\) for \(f\left( {x,y} \right) = x\cos \left( y \right)\) in the direction of \(\vec v = \left\langle {2,1} \right\rangle \). <span id="SHLink_Soln2a" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln2a" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln2a" class="soln-content">
+        <p>Let’s first compute the gradient for this function.</p>
+          
+              \[\nabla f = \left\langle {\cos \left( y \right), - x\sin \left( y \right)} \right\rangle \]
+          <p>Also, as we saw earlier in this section the unit vector for this direction is,</p>
+          
+              \[\vec u = \left\langle {\frac{2}{{\sqrt 5 }},\frac{1}{{\sqrt 5 }}} \right\rangle \]
+          
+          <p>The directional derivative is then,</p>
+          
+            \[\begin{align*}{D_{\vec u}}f\left( {\vec x} \right) & = \left\langle {\cos \left( y \right), - x\sin \left( y \right)} \right\rangle \centerdot \left\langle {\frac{2}{{\sqrt 5 }},\frac{1}{{\sqrt 5 }}} \right\rangle \\ &amp;  = \frac{1}{{\sqrt 5 }}\left( {2\cos \left( y \right) - x\sin \left( y \right)} \right)\end{align*}\]
+      </div>
+
+      <br />
+      <span class="soln-list-item soln-list-subitem">b</span> \({D_{\vec u}}f\left( {\vec x} \right)\) for \(f\left( {x,y,z} \right) = \sin \left( {yz} \right) + \ln \left( {{x^2}} \right)\) at \(\left( {1,1,\pi } \right)\) in the direction of \(\vec v = \left\langle {1,1, - 1} \right\rangle \). <span id="SHLink_Soln2b" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln2b" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln2b" class="soln-content">
+        <p>In this case are asking for the directional derivative at a particular point.  To do this we will first compute the gradient, evaluate it at the point in question and then do the dot product.  So, let’s get the gradient.</p>
+          
+            \[\begin{align*}\nabla f\left( {x,y,z} \right) & = \left\langle {\frac{2}{x},z\cos \left( {yz} \right),y\cos \left( {yz} \right)} \right\rangle \\ &amp; \nabla f\left( {1,1,\pi } \right) = \left\langle {\frac{2}{1},\pi \cos \left( \pi  \right),\cos \left( \pi  \right)} \right\rangle  = \left\langle {2, - \pi , - 1} \right\rangle \end{align*}\]
+          
+          <p>Next, we need the unit vector for the direction,</p>
+          
+            \[\left\| {\vec v} \right\| = \sqrt 3 \hspace{0.5in}\vec u = \left\langle {\frac{1}{{\sqrt 3 }},\frac{1}{{\sqrt 3 }}, - \frac{1}{{\sqrt 3 }}} \right\rangle \]
+          
+          <p>Finally, the directional derivative at the point in question is,</p>
+          
+            \[\begin{align*}{D_{\vec u}}f\left( {1,1,\pi } \right) & = \left\langle {2, - \pi , - 1} \right\rangle \centerdot \left\langle {\frac{1}{{\sqrt 3 }},\frac{1}{{\sqrt 3 }}, - \frac{1}{{\sqrt 3 }}} \right\rangle \\ &amp;  = \frac{1}{{\sqrt 3 }}\left( {2 - \pi  + 1} \right)\\ &amp;  = \frac{{3 - \pi }}{{\sqrt 3 }}\end{align*}\]
+      </div>
+    </div>
+  </div>
+    
+    <p>Before proceeding let’s note that the first order partial derivatives that we were looking at in the majority of the section can be thought of as special cases of the directional derivatives.  For instance, \({f_x}\) can be thought of as the directional derivative of \(f\) in the direction of \(\vec u = \left\langle {1,0} \right\rangle \) or \(\vec u = \left\langle {1,0,0} \right\rangle \), depending on the number of variables that we’re working with.  The same can be done for \({f_y}\) and \({f_z}\)</p>
+    
+    <p>We will close out this section with a couple of nice facts about the gradient vector.  The first tells us how to determine the maximum rate of change of a function at a point and the direction that we need to move in order to achieve that maximum rate of change.</p>
+    <a name="MaxChange"></a>
+    <h4>Theorem</h4>
+  <div class="fact">
+    <p>The maximum value of \({D_{\vec u}}f\left( {\vec x} \right)\) (and hence then the maximum rate of change of the function \(f\left( {\vec x} \right)\)) is given by \(\left\| {\nabla f\left( {\vec x} \right)} \right\|\)  and will occur in the direction given by \(\nabla f\left( {\vec x} \right)\).</p>
+  </div>
+      
+    <h4>Proof</h4>
+  <div class="proof">
+    <p>This is a really simple proof.  First, if we start with the dot product form \({D_{\vec u}}f\left( {\vec x} \right)\) and use a nice <a href="../CalcII/DotProduct.html#Vectors_DotProd_DotAng">fact</a> about dot products as well as the fact that \(\vec u\) is a unit vector we get,</p>
+          <p>\[{D_{\vec u}}f = \nabla f\centerdot \vec u = \left\| {\nabla f} \right\|\,\,\left\| {\vec u} \right\|\cos \theta  = \left\| {\nabla f} \right\|\cos \theta \]
+          <p>where \(\theta \) is the angle between the gradient and \(\vec u\).</p>
+          
+          <p>Now the largest possible value of \(\cos \theta \) is 1 which occurs at \(\theta  = 0\).  Therefore the maximum value of \({D_{\vec u}}f\left( {\vec x} \right)\) is \(\left\| {\nabla f\left( {\vec x} \right)} \right\|\)  Also, the maximum value occurs when the angle between the gradient and \(\vec u\) is zero, or in other words when \(\vec u\) is pointing in the same direction as the gradient, \(\nabla f\left( {\vec x} \right)\).</p>
+  </div>
+    
+    <p>Let’s take a quick look at an example.</p>
+    <a class="anchor" name="PD_DirectDeriv_Ex3"></a>
+  <div class="example">
+    <span class="example-title">Example 3</span> Suppose that the height of a hill above sea level is given by \(z = 1000 - 0.01{x^2} - 0.02{y^2}\).  If you are at the point \(\left( {60,100} \right)\) in what direction is the elevation changing fastest?  What is the maximum rate of change of the elevation at this point?
+    <div class="example-content">
+      <span id="SHLink_Soln3" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln3" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln3" class="soln-content">
+        <p>First, you will hopefully recall from the <a href="QuadricSurfaces.html">Quadric Surfaces</a> section that this is an elliptic paraboloid that opens downward.  So even though most hills aren’t this symmetrical it will at least be vaguely hill shaped and so the question makes at least a little sense.</p>
+          
+          <p>Now on to the problem.  There are a couple of questions to answer here, but using the theorem makes answering them very simple.  We’ll first need the gradient vector.</p>
+          
+              \[\nabla f\left( {\vec x} \right) = \left\langle { - 0.02x, - 0.04y} \right\rangle \]
+          
+          <p>The maximum rate of change of the elevation will then occur in the direction of</p>
+          
+              \[\nabla f\left( {60,100} \right) = \left\langle { - 1.2, - 4} \right\rangle \]
+          
+          <p>The maximum rate of change of the elevation at this point is,</p>
+          
+          
+            \[\left\| {\nabla f\left( {60,100} \right)} \right\| = \sqrt {{{\left( { - 1.2} \right)}^2} + {{\left( 4 \right)}^2}}  = \sqrt {17.44}  = 4.176\]
+          
+          <p>Before leaving this example let’s note that we’re at the point \(\left( {60,100} \right)\) and the direction of greatest rate of change of the elevation at this point is given by the vector \(\left\langle { - 1.2, - 4} \right\rangle \).  Since both of the components are negative it looks like the direction of maximum rate of change points up the hill towards the center rather than away from the hill.</p>
+      </div>
+    </div>
+  </div>
+    
+    <p>The second fact about the gradient vector that we need to give in this section will be very convenient in some later sections.</p>
+    <a class="anchor" name="Grad_Fact"></a>
+    <h4>Fact</h4>
+  <div class="fact">
+    <p>The gradient vector \(\nabla f\left( {{x_0},{y_0}} \right)\) is orthogonal (or perpendicular) to the <a href="MultiVrbleFcns.html#LevelCurve">level curve</a> \(f\left( {x,y} \right) = k\) at the point \(\left( {{x_0},{y_0}} \right)\).  Likewise, the gradient vector \(\nabla f\left( {{x_0},{y_0},{z_0}} \right)\) is orthogonal to the level surface \(f\left( {x,y,z} \right) = k\) at the point \(\left( {{x_0},{y_0},{z_0}} \right)\).</p>
+  </div>
+    
+    <h4>Proof</h4>
+  <div class="proof">
+    <p>We’re going to do the proof for the \({\mathbb{R}^3}\)case.  The proof for the \({\mathbb{R}^2}\) case is identical.  We’ll also need some notation out of the way to make life easier for us let’s let \(S\) be the level surface given by \(f\left( {x,y,z} \right) = k\) and let \(P = \left( {{x_0},{y_0},{z_0}} \right)\).  Note as well that \(P\) will be on \(S\).</p>
+          
+          <p>Now, let \(C\) be any curve on \(S\) that contains \(P\).  Let \(\vec r\left( t \right) = \left\langle {x\left( t \right),y\left( t \right),z\left( t \right)} \right\rangle \) be the vector equation for \(C\) and suppose that \({t_0}\) be the value of \(t\) such that \(\vec r\left( {{t_0}} \right) = \left\langle {{x_0},{y_0},{z_0}} \right\rangle \).  In other words, \({t_0}\) be the value of \(t\) that gives \(P\).</p>
+          
+          <p>Because \(C\) lies on \(S\) we know that points on \(C\) must satisfy the equation for \(S\).  Or,</p>
+          <p>\[f\left( {x\left( t \right),y\left( t \right),z\left( t \right)} \right) = k\]
+          
+          <p>Next, let’s use the Chain Rule on this to get,</p>
+          <p>\[\frac{{\partial f}}{{\partial x}}\frac{{dx}}{{dt}} + \frac{{\partial f}}{{\partial y}}\frac{{dy}}{{dt}} + \frac{{\partial f}}{{\partial z}}\frac{{dz}}{{dt}} = 0\]
+          
+          <p>Notice that \(\nabla f = \left\langle {{f_x},{f_y},{f_z}} \right\rangle \) and \(\vec r'\left( t \right) = \left\langle {x'\left( t \right),y'\left( t \right),z'\left( t \right)} \right\rangle \) so this becomes,</p>
+          <p>\[\nabla f\,\centerdot \,\vec r'\left( t \right) = 0\]
+          
+          <p>At, \(t = {t_0}\) this is,</p>
+          <p>\[\nabla f\left( {{x_0},{y_0},{z_0}} \right)\,\centerdot \,\vec r'\left( {{t_0}} \right) = 0\]
+          
+          <p>This then tells us that the gradient vector at \(P\) , \(\nabla f\left( {{x_0},{y_0},{z_0}} \right)\), is orthogonal to the tangent vector, \(\vec r'\left( {{t_0}} \right)\), to any curve \(C\) that passes through \(P\) and on the surface \(S\) and so must also be orthogonal to the surface \(S\).</p>
+  </div>
+    
+    <p>As we will be seeing in later sections we are often going to be needing vectors that are orthogonal to a surface or curve and using this fact we will know that all we need to do is compute a gradient vector and we will get the orthogonal vector that we need.  We will see the first application of this in the next chapter.</p>
+    
+
+  
+
+
+      
+
+
+
+    </div>
+    <!-- End of content div -->
+
+
+    <div class="footer">
+      <div class="footer-links">
+        [<a href="http://tutorial.math.lamar.edu/Contact.aspx">Contact Me</a>]&nbsp;[<a href="../../MyStudents-2.html">My Students</a>]&nbsp;[<a href="http://tutorial.math.lamar.edu/Privacy.aspx">Privacy Statement</a>]&nbsp;[<a href="../../Help-2.html">Site Help &amp; FAQ</a>]&nbsp;[<a href="http://tutorial.math.lamar.edu/Terms.aspx">Terms of Use</a>]
+      </div>
+      <div class="footer-dates">
+        <div class="footer-copyright"><span id="lblCopyRight">&copy; 2003 - 2019 Paul Dawkins</span></div>
+        <div class="footer-spacer"></div>
+        <div class="footer-modified-date">Page Last Modified : <span id="lblModified">5/31/2018</span></div>
+      </div>
+      
+
+    </div>
+  </div>
+  <!-- End of page div...  -->
+</body>
+
+<!-- Mirrored from tutorial.math.lamar.edu/Classes/CalcIII/DirectionalDeriv.aspx by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 27 Feb 2019 06:15:36 GMT -->
+</html>

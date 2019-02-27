@@ -1,0 +1,1298 @@
+
+
+<!DOCTYPE html>
+
+<html>
+
+<!-- Mirrored from tutorial.math.lamar.edu/Classes/CalcI/Optimization.aspx by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 27 Feb 2019 06:15:35 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=yes" /><meta http-equiv="X-UA-Compatible" content="IE=edge" />  <!-- For best MathJax performance on IE  -->
+
+  <meta name="google-site-verification" content="uLoA31CJfOhIVMJWBjCmQL8xNMmmLybZU3LRKavy9WQ" /><title>
+	Calculus I - Optimization
+</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="../../../www.googletagmanager.com/gtag/js1872?id=UA-331594-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-331594-1');
+  </script>
+
+  <link type="text/css" href="../../css/jquery.mmenu.all.css" rel="stylesheet" /><link type="text/css" href="../../css/jquery.dropdown.css" rel="stylesheet" /><link href="../../FA/css/fontawesome-all.min.css" rel="stylesheet" /><link type="text/css" href="../../css/notes-all.css" rel="stylesheet" /><link type="text/css" href="../../css/notes-google.css" rel="stylesheet" /><link type="text/css" href="../../css/notes-mmenu.css" rel="stylesheet" /><link type="text/css" href="../../css/notes-dropdown.css" rel="stylesheet" />
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+     TeX: { equationNumbers: { autoNumber: "AMS" } }
+    });
+  </script>
+  <script type="text/javascript" async src="../../../cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax2ba6.js?config=TeX-AMS_CHTML-full"></script>
+  <script type="text/javascript" src="../../../code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="../../js/jquery.mmenu.all.js"></script>
+  <script type="text/javascript" src="../../js/jquery.dropdown.js"></script>
+  <script type="text/javascript" src="../../js/notes-all.js"></script>  
+
+  <script>
+    (function () {
+      var cx = '001004262401526223570:11yv6vpcqvy';
+      var gcse = document.createElement('script');
+      gcse.type = 'text/javascript';
+      gcse.async = true;
+      gcse.src = '../../../cse.google.com/cse07b6.html?cx=' + cx;
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(gcse, s);
+    })();
+  </script>
+
+<meta http-equiv="keywords" name="keywords" content="optimzation, optimization problems" /><meta http-equiv="description" name="description" content="In this section we will be determining the absolute minimum and/or maximum of a function that depends on two variables given some constraint, or relationship, that the two variables must always satisfy.  We will discuss several methods for determining the absolute minimum or maximum of the function.  Examples in this section tend to center around geometric objects such as squares, boxes, cylinders, etc." /></head>
+<body onload="init({Notes: 'NoteMobile;8/21/2018;true'})">
+
+  <div id="page">
+
+    <div class="header">
+      <div class="header-row">
+        <!--<a href="#menu"><span></span></a>-->
+        <div id="side-menu-icon" class="header-side-menu-icon"><a href="#menu"><span class="fas fa-bars fa-lg" aria-hidden="true" title="Main Menu - Change between topics, chapters and sections as well as a few extra pages."></span></a></div>
+        <span class="header-title"><a href="../../index.html" class="header-title-link">Paul's Online Notes</a></span>
+        <div class="header-spacer"></div>
+
+        <div id="content-top-menu" class="top-menu">
+          <button id="content-type-menu" class="top-menu-button" data-jq-dropdown="#jq-dropdown-type" title="View (Notes, Practice Problems or Assignment Problems, Show/Hide Solutions and/or Steps) Menu">
+            <span id="tab_top_menu_notes" class="top-menu-item-title">Notes</span> <span class="far fa-eye fa-lg" aria-hidden="true"></span>
+          </button>
+
+          <button id="quicknav-menu" class="top-menu-button" data-jq-dropdown="#jq-dropdown-quicknav" title="Quick Navigation (Previous/Next Sections and Problems and Full Problem List) Menu">
+            <span class="top-menu-item-title">Quick Nav</span> <span class="fas fa-exchange fa-lg" aria-hidden="true"></span>
+          </button>
+          
+          <button id="download-menu" class="top-menu-button" data-jq-dropdown="#jq-dropdown-download" title="Download pdf Menu">
+            <span class="top-menu-item-title">Download</span> <span class="far fa-download fa-lg" aria-hidden="true"></span>
+          </button>
+
+          <button id="print-menu" class="top-menu-button top-menu-button-icon-only" data-jq-dropdown="#jq-print-download" title="Print Menu">
+            <span class="far fa-print fa-lg" aria-hidden="true"></span>
+          </button>
+        </div>
+
+        <div id="header-google-search" class="header-search">
+          <gcse:search></gcse:search>
+        </div>
+        <div id="header-search-icon" title="Site Search" class="header-menu-icon"><span id="search-icon" class="fas fa-search" aria-hidden="true"></span></div>
+
+      </div>
+    </div>
+
+     <div id="jq-dropdown-type" class="jq-dropdown jq-dropdown-tip">
+      <ul class="jq-dropdown-menu">
+        
+        <li id="li_type_menu_goto" class="top-menu-nav-title">Go To</li>
+        <li id="li_type_menu_notes">
+          <span id="type_menu_notes_span" title="Viewing the Notes for the current topic." class="top-menu-current">Notes</span>
+          
+        </li>
+        <li id="li_type_menu_practice">
+          
+          
+          <a href="http://tutorial.math.lamar.edu/Problems/CalcI/Optimization.aspx" id="type_menu_practice_link" title="Go to Practice Problems for current topic.">Practice Problems</a>
+        </li>
+        <li id="li_type_menu_asgn">
+          
+          <a href="http://tutorial.math.lamar.edu/ProblemsNS/CalcI/Optimization.aspx" id="type_menu_asgn_link" title="Go to Assignment Problems for current topic.">Assignment Problems</a>
+        </li>
+        <li id="li_type_menu_sh" class="top-menu-nav-title">Show/Hide</li>
+        <li id="li_type_menu_show" title="Show any hidden solutions and/or steps that may be present on the page."><a href="javascript:SHPrintPage(1,0)" id="view_menu_show">Show all Solutions/Steps/<em>etc.</em></a></li>
+        <li id="li_type_menu_hide" title="Hide any visible solutions and/or steps that may be present on the page."><a href="javascript:SHPrintPage(0,0)" id="view_menu_hide">Hide all Solutions/Steps/<em>etc.</em></a></li>
+      </ul>
+    </div>
+
+    <div id="jq-dropdown-quicknav" class="jq-dropdown jq-dropdown-tip">
+      <ul class="jq-dropdown-menu">
+        <li id="li_nav_menu_sections" class="top-menu-nav-title">Sections</li>
+        <li id="li_nav_menu_prev_section"><a href="MeanValueTheorem.html" id="a_nav_menu_prev_section" class="top-menu-nav-link" title="Previous Section : The Mean Value Theorem"><span class="top-menu-prev fas fa-chevron-left"></span> The Mean Value Theorem</a></li>
+        <li id="li_nav_menu_next_section"><a href="MoreOptimization.html" id="a_nav_menu_next_section" class="top-menu-nav-link" title="Next Section : More Optimization Problems"><span class="top-menu-prev-hidden fas fa-chevron-left"></span> More Optimization Problems <span class="top-menu-next fas fa-chevron-right"></span></a></li>
+        <li id="li_nav_menu_chapters" class="top-menu-nav-title">Chapters</li>
+        <li id="li_nav_menu_prev_chapter"><a href="DerivativeIntro.html" id="a_nav_menu_prev_chapter" class="top-menu-nav-link" title="Previous Chapter : Derivatives"><span class="top-menu-prev fas fa-chevron-left"></span><span class="top-menu-prev fas fa-chevron-left"></span> Derivatives</a></li>
+        <li id="li_nav_menu_next_chapter"><a href="IntegralsIntro.html" id="a_nav_menu_next_chapter" class="top-menu-nav-link" title="Next Chapter : Integrals"><span class="top-menu-prev-hidden fas fa-chevron-left"></span><span class="top-menu-prev-hidden fas fa-chevron-left"></span> Integrals <span class="top-menu-next fas fa-chevron-right"></span><span class="top-menu-next fas fa-chevron-right"></span></a></li>
+        
+        
+        
+        
+        <li id="li_nav_menu_classes" class="top-menu-nav-title">Classes</li>
+        <li>
+          
+          <a href="../Alg/Alg.html" id="nav_menu_alg_link" title="Go To Algebra Notes">Algebra</a>
+        </li>
+        <li>
+          <span id="nav_menu_calci_span" title="Currently Viewing Calculus I Material" class="top-menu-current">Calculus I</span>
+          
+        </li>
+        <li>
+          
+          <a href="../CalcII/CalcII.html" id="nav_menu_calcii_link" title="Go To Calculus II Notes">Calculus II</a>
+        </li>
+        <li>
+          
+          <a href="../CalcIII/CalcIII.html" id="nav_menu_calciii_link" title="Go To Calculus III Notes">Calculus III</a>
+        </li>
+        <li>
+          
+          <a href="../DE/DE.html" id="nav_menu_de_link" title="Go To Differential Equations Notes">Differential Equations</a>
+        </li>
+        <li id="li_nav_menu_extras" class="top-menu-nav-title">Extras</li>
+        <li>
+          
+          <a href="../../Extras/AlgebraTrigReview/AlgebraTrig.html" id="nav_menu_algtrig_link" title="Go To Algebra &amp; Trig Review">Algebra &amp; Trig Review</a>
+        </li>
+        <li>
+          
+          <a href="../../Extras/CommonErrors/CommonMathErrors.html" id="nav_menu_commonerrors_link" title="Go To Common Math Errors">Common Math Errors</a>
+        </li>
+        <li>
+          
+          <a href="../../Extras/ComplexPrimer/ComplexNumbers.html" id="nav_menu_complexnumbers_link" title="Go To Complex Numbers Primer">Complex Number Primer</a>
+        </li>
+        <li>
+          
+          <a href="../../Extras/StudyMath/HowToStudyMath.html" id="nav_menu_studymath_link" title="Go To How To Study Math">How To Study Math</a>
+        </li>
+        <li>
+          
+          <a href="../../Extras/CheatSheets_Tables.html" id="nav_menu_cheattables_link" title="Go To List of Cheat Sheets and Tables">Cheat Sheets &amp; Tables</a>
+        </li>
+        <li id="li_nav_menu_misc" class="top-menu-nav-title">Misc</li>
+        <li><a href="http://tutorial.math.lamar.edu/contact.aspx" id="nav_menu_contact" title="Contact Me!">Contact Me</a></li>
+        <li><a href="../../mathjax.html" id="nav_menu_mathjax" title="Info on MathJax and MathJax Configuration Menu">MathJax Help and Configuration</a></li>
+        <li><a href="../../mystudents.html" id="nav_menu_students" title="Go here if you are currently taking a class from me!">My Students</a></li>
+      </ul>
+    </div>
+
+    <div id="jq-dropdown-download" class="jq-dropdown jq-dropdown-anchor-right jq-dropdown-tip">
+      <ul class="jq-dropdown-menu">
+        
+        <li id="li_download_menu_notes" class="top-menu-nav-title">Notes Downloads</li>
+        <li id="li_download_menu_notes_book"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=B,8,N" id="download_menu_notes_book" data-PDF="Download - Menu$Notes - Book$Calculus I$/Downloads/CalcI/Notes/Complete.pdf">Complete Book</a></li>
+        
+        <li id="li_download_menu_notes_chapter"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=C,28,N" id="download_menu_notes_chapter" data-PDF="Download - Menu$Notes - Chapter$Calculus I - Applications of Derivatives$/Downloads/CalcI/Notes/Derivatives_Apps.pdf">Current Chapter</a></li>
+        <li id="li_download_menu_notes_section"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=S,210,N" id="download_menu_notes_section" data-PDF="Download - Menu$Notes - Section$Calculus I - Optimization$/Downloads/CalcI/Notes/Optimization.pdf">Current Section</a></li>
+        <li id="li_download_menu_practice" class="top-menu-nav-title">Practice Problems Downloads</li>
+        
+        <li id="li_download_menu_practice_book"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=B,8,P" id="download_menu_practice_book" data-PDF="Download - Menu$Practice Problems - Book$Calculus I$/Downloads/CalcI/Practice Problems/Complete.pdf">Complete Book - Problems Only</a></li>
+        <li id="li_download_menu_solutions_book"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=B,8,S" id="download_menu_solutions_book" data-PDF="Download - Menu$Practice Problems Solutions - Book$Calculus I$/Downloads/CalcI/Practice Problems Solutions/Complete.pdf">Complete Book - Solutions</a></li>
+        <li id="li_download_menu_b_c" class="top-menu-divider"></li>
+        <li id="li_download_menu_practice_chapter"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=C,28,P" id="download_menu_practice_chapter" data-PDF="Download - Menu$Practice Problems - Chapter$Calculus I - Applications of Derivatives$/Downloads/CalcI/Practice Problems/Derivatives_Apps.pdf">Current Chapter - Problems Only</a></li>
+        <li id="li_download_menu_solutions_chapter"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=C,28,S" id="download_menu_solutions_chapter" data-PDF="Download - Menu$Practice Problems Solutions - Chapter$Calculus I - Applications of Derivatives$/Downloads/CalcI/Practice Problems Solutions/Derivatives_Apps.pdf">Current Chapter - Solutions</a></li>
+        <li id="li_download_menu_c_s" class="top-menu-divider"></li>
+        <li id="li_download_menu_practice_section"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=S,210,P" id="download_menu_practice_section" data-PDF="Download - Menu$Practice Problems - Section$Calculus I - Optimization$/Downloads/CalcI/Practice Problems/Optimization.pdf">Current Section - Problems Only</a></li>
+        <li id="li_download_menu_solutions_section"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=S,210,S" id="download_menu_solutions_section" data-PDF="Download - Menu$Practice Problems Solutions - Section$Calculus I - Optimization$/Downloads/CalcI/Practice Problems Solutions/Optimization.pdf">Current Section - Solutions</a></li>
+        <li id="li_download_menu_asgn" class="top-menu-nav-title">Assignment Problems Downloads</li>
+        
+        <li id="li_download_menu_asgn_book"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=B,8,A" id="download_menu_asgn_book" data-PDF="Download - Menu$Assignment Problems - Book$Calculus I$/Downloads/CalcI/Assignment Problems/Complete.pdf">Complete Book</a></li>
+        <li id="li_download_menu_asgn_chapter"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=C,28,A" id="download_menu_asgn_chapter" data-PDF="Download - Menu$Assignment Problems - Chapter$Calculus I - Applications of Derivatives$/Downloads/CalcI/Assignment Problems/Derivatives_Apps.pdf">Current Chapter</a></li>
+        <li id="li_download_menu_asgn_section"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=S,210,A" id="download_menu_asgn_section" data-PDF="Download - Menu$Assignment Problems - Section$Calculus I - Optimization$/Downloads/CalcI/Assignment Problems/Optimization.pdf">Current Section</a></li>
+        <li id="li_download_menu_other" class="top-menu-nav-title">Other Items</li>
+        <li id="li_download_menu_urls">
+          <a href="http://tutorial.math.lamar.edu/DownloadURLs.aspx?bi=8&amp;ci=28&amp;si=210" id="download_menu_urls">Get URL's for Download Items</a>
+        </li>
+      </ul>
+    </div>
+
+    <div id="jq-print-download" class="jq-dropdown jq-dropdown-anchor-right jq-dropdown-tip">
+      <ul class="jq-dropdown-menu">
+        <li id="li_print_menu_default"><a href="javascript:SHPrintPage()" id="print_menu_default">Print Page in Current Form (Default)</a></li>
+        <li id="li_print_menu_show"><a href="javascript:SHPrintPage(1,1)" id="print_menu_show">Show all Solutions/Steps and Print Page</a></li>
+        <li id="li_print_menu_hide"><a href="javascript:SHPrintPage(0,1)" id="print_menu_hide">Hide all Solutions/Steps and Print Page</a></li>
+      </ul>
+    </div>
+
+
+
+   
+
+    <nav id="menu" class="notes-nav">
+      <ul>
+        <li><a href="../../index.html" class="mm-link">Home</a></li>
+        <li><span>Classes</span></li>
+        <li><a href="../Alg/Alg.html" class="mm-link">Algebra</a>
+          <ul>
+            <li><a href="../Alg/Preliminaries.html" class="mm-link">Preliminaries</a>
+              <ul>
+                <li><a href="../Alg/IntegerExponents.html" class="mm-link">Integer Exponents</a></li>
+                <li><a href="../Alg/RationalExponents.html" class="mm-link">Rational Exponents</a></li>
+                <li><a href="../Alg/Radicals.html" class="mm-link">Radicals</a></li>
+                <li><a href="../Alg/Polynomials.html" class="mm-link">Polynomials</a></li>
+                <li><a href="../Alg/Factoring.html" class="mm-link">Factoring Polynomials</a></li>
+                <li><a href="../Alg/RationalExpressions.html" class="mm-link">Rational Expressions</a></li>
+                <li><a href="../Alg/ComplexNumbers.html" class="mm-link">Complex Numbers</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/Solving.html" class="mm-link">Solving Equations and Inequalities</a>
+              <ul>
+                <li><a href="../Alg/SolutionSets.html" class="mm-link">Solutions and Solution Sets</a></li>
+                <li><a href="../Alg/SolveLinearEqns.html" class="mm-link">Linear Equations</a></li>
+                <li><a href="../Alg/LinearApps.html" class="mm-link">Applications of Linear Equations</a></li>
+                <li><a href="../Alg/SolveMultiVariable.html" class="mm-link">Equations With More Than One Variable</a></li>
+                <li><a href="../Alg/SolveQuadraticEqnsI.html" class="mm-link">Quadratic Equations - Part I</a></li>
+                <li><a href="../Alg/SolveQuadraticEqnsII.html" class="mm-link">Quadratic Equations - Part II</a></li>
+                <li><a href="../Alg/SolveQuadraticEqnSummary.html" class="mm-link">Quadratic Equations : A Summary</a></li>
+                <li><a href="../Alg/QuadraticApps.html" class="mm-link">Applications of Quadratic Equations</a></li>
+                <li><a href="../Alg/ReducibleToQuadratic.html" class="mm-link">Equations Reducible to Quadratic in Form</a></li>
+                <li><a href="../Alg/SolveRadicalEqns.html" class="mm-link">Equations with Radicals</a></li>
+                <li><a href="../Alg/SolveLinearInequalities.html" class="mm-link">Linear Inequalities</a></li>
+                <li><a href="../Alg/SolvePolyInequalities.html" class="mm-link">Polynomial Inequalities</a></li>
+                <li><a href="../Alg/SolveRationalInequalities.html" class="mm-link">Rational Inequalities</a></li>
+                <li><a href="../Alg/SolveAbsValueEqns.html" class="mm-link">Absolute Value Equations</a></li>
+                <li><a href="../Alg/SolveAbsValueIneq.html" class="mm-link">Absolute Value Inequalities</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/Graphing_Functions.html" class="mm-link">Graphing and Functions</a>
+              <ul>
+                <li><a href="../Alg/Graphing.html" class="mm-link">Graphing</a></li>
+                <li><a href="../Alg/Lines.html" class="mm-link">Lines</a></li>
+                <li><a href="../Alg/Circles.html" class="mm-link">Circles</a></li>
+                <li><a href="../Alg/FunctionDefn.html" class="mm-link">The Definition of a Function</a></li>
+                <li><a href="../Alg/GraphFunctions.html" class="mm-link">Graphing Functions</a></li>
+                <li><a href="../Alg/CombineFunctions.html" class="mm-link">Combining Functions</a></li>
+                <li><a href="../Alg/InverseFunctions.html" class="mm-link">Inverse Functions</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/CommonGraphs.html" class="mm-link">Common Graphs</a>
+              <ul>
+                <li><a href="../Alg/Lines_Circles_PWF.html" class="mm-link">Lines, Circles and Piecewise Functions</a></li>
+                <li><a href="../Alg/Parabolas.html" class="mm-link">Parabolas</a></li>
+                <li><a href="../Alg/Ellipses.html" class="mm-link">Ellipses</a></li>
+                <li><a href="../Alg/Hyperbolas.html" class="mm-link">Hyperbolas</a></li>
+                <li><a href="../Alg/MiscFunctions.html" class="mm-link">Miscellaneous Functions</a></li>
+                <li><a href="../Alg/Transformations.html" class="mm-link">Transformations</a></li>
+                <li><a href="../Alg/Symmetry.html" class="mm-link">Symmetry</a></li>
+                <li><a href="../Alg/GraphRationalFcns.html" class="mm-link">Rational Functions</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/PolynomialFunctions.html" class="mm-link">Polynomial Functions</a>
+              <ul>
+                <li><a href="../Alg/DividingPolynomials.html" class="mm-link">Dividing Polynomials</a></li>
+                <li><a href="../Alg/ZeroesOfPolynomials.html" class="mm-link">Zeroes/Roots of Polynomials</a></li>
+                <li><a href="../Alg/GraphingPolynomials.html" class="mm-link">Graphing Polynomials</a></li>
+                <li><a href="../Alg/FindingZeroesOfPolynomials.html" class="mm-link">Finding Zeroes of Polynomials</a></li>
+                <li><a href="../Alg/PartialFractions.html" class="mm-link">Partial Fractions</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/ExpAndLog.html" class="mm-link">Exponential and Logarithm Functions</a>
+              <ul>
+                <li><a href="../Alg/ExpFunctions.html" class="mm-link">Exponential Functions</a></li>
+                <li><a href="../Alg/LogFunctions.html" class="mm-link">Logarithm Functions</a></li>
+                <li><a href="../Alg/SolveExpEqns.html" class="mm-link">Solving Exponential Equations</a></li>
+                <li><a href="../Alg/SolveLogEqns.html" class="mm-link">Solving Logarithm Equations</a></li>
+                <li><a href="../Alg/ExpLogApplications.html" class="mm-link">Applications</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/Systems.html" class="mm-link">Systems of Equations</a>
+              <ul>
+                <li><a href="../Alg/SystemsTwoVrble.html" class="mm-link">Linear Systems with Two Variables</a></li>
+                <li><a href="../Alg/SystemsThreeVrble.html" class="mm-link">Linear Systems with Three Variables</a></li>
+                <li><a href="../Alg/AugmentedMatrix.html" class="mm-link">Augmented Matrices</a></li>
+                <li><a href="../Alg/AugmentedMatrixII.html" class="mm-link">More on the Augmented Matrix</a></li>
+                <li><a href="../Alg/NonlinearSystems.html" class="mm-link">Nonlinear Systems</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="CalcI.html" class="mm-link">Calculus I</a>
+          <ul>
+            <li><a href="ReviewIntro.html" class="mm-link">Review</a>
+              <ul>
+                <li><a href="Functions.html" class="mm-link">Functions</a></li>
+                <li><a href="InverseFunctions.html" class="mm-link">Inverse Functions</a></li>
+                <li><a href="TrigFcns.html" class="mm-link">Trig Functions</a></li>
+                <li><a href="TrigEquations.html" class="mm-link">Solving Trig Equations</a></li>
+                <li><a href="TrigEquations_CalcI.html" class="mm-link">Trig Equations with Calculators, Part I</a></li>
+                <li><a href="TrigEquations_CalcII.html" class="mm-link">Trig Equations with Calculators, Part II</a></li>
+                <li><a href="ExpFunctions.html" class="mm-link">Exponential Functions</a></li>
+                <li><a href="LogFcns.html" class="mm-link">Logarithm Functions</a></li>
+                <li><a href="ExpLogEqns.html" class="mm-link">Exponential and Logarithm Equations</a></li>
+                <li><a href="CommonGraphs.html" class="mm-link">Common Graphs</a></li>
+              </ul>
+            </li>
+            <li><a href="limitsIntro.html" class="mm-link">Limits</a>
+              <ul>
+                <li><a href="Tangents_Rates.html" class="mm-link">Tangent Lines and Rates of Change</a></li>
+                <li><a href="TheLimit.html" class="mm-link">The Limit</a></li>
+                <li><a href="OneSidedLimits.html" class="mm-link">One-Sided Limits</a></li>
+                <li><a href="LimitsProperties.html" class="mm-link">Limit Properties</a></li>
+                <li><a href="ComputingLimits.html" class="mm-link">Computing Limits</a></li>
+                <li><a href="InfiniteLimits.html" class="mm-link">Infinite Limits</a></li>
+                <li><a href="LimitsAtInfinityI.html" class="mm-link">Limits At Infinity, Part I</a></li>
+                <li><a href="LimitsAtInfinityII.html" class="mm-link">Limits At Infinity, Part II</a></li>
+                <li><a href="Continuity.html" class="mm-link">Continuity</a></li>
+                <li><a href="DefnOfLimit.html" class="mm-link">The Definition of the Limit</a></li>
+              </ul>
+            </li>
+            <li><a href="DerivativeIntro.html" class="mm-link">Derivatives</a>
+              <ul>
+                <li><a href="DefnOfDerivative.html" class="mm-link">The Definition of the Derivative</a></li>
+                <li><a href="DerivativeInterp.html" class="mm-link">Interpretation of the Derivative</a></li>
+                <li><a href="DiffFormulas.html" class="mm-link">Differentiation Formulas</a></li>
+                <li><a href="ProductQuotientRule.html" class="mm-link">Product and Quotient Rule</a></li>
+                <li><a href="DiffTrigFcns.html" class="mm-link">Derivatives of Trig Functions</a></li>
+                <li><a href="DiffExpLogFcns.html" class="mm-link">Derivatives of Exponential and Logarithm Functions</a></li>
+                <li><a href="DiffInvTrigFcns.html" class="mm-link">Derivatives of Inverse Trig Functions</a></li>
+                <li><a href="DiffHyperFcns.html" class="mm-link">Derivatives of Hyperbolic Functions</a></li>
+                <li><a href="ChainRule.html" class="mm-link">Chain Rule</a></li>
+                <li><a href="ImplicitDIff.html" class="mm-link">Implicit Differentiation</a></li>
+                <li><a href="RelatedRates.html" class="mm-link">Related Rates</a></li>
+                <li><a href="HigherOrderDerivatives.html" class="mm-link">Higher Order Derivatives</a></li>
+                <li><a href="LogDiff.html" class="mm-link">Logarithmic Differentiation</a></li>
+              </ul>
+            </li>
+            <li><a href="DerivAppsIntro.html" class="mm-link">Applications of Derivatives</a>
+              <ul>
+                <li><a href="RateOfChange.html" class="mm-link">Rates of Change</a></li>
+                <li><a href="CriticalPoints.html" class="mm-link">Critical Points</a></li>
+                <li><a href="MinMaxValues.html" class="mm-link">Minimum and Maximum Values</a></li>
+                <li><a href="AbsExtrema.html" class="mm-link">Finding Absolute Extrema</a></li>
+                <li><a href="ShapeofGraphPtI.html" class="mm-link">The Shape of a Graph, Part I</a></li>
+                <li><a href="ShapeofGraphPtII.html" class="mm-link">The Shape of a Graph, Part II</a></li>
+                <li><a href="MeanValueTheorem.html" class="mm-link">The Mean Value Theorem</a></li>
+                <li><a href="Optimization.html" class="mm-link">Optimization</a></li>
+                <li><a href="MoreOptimization.html" class="mm-link">More Optimization Problems</a></li>
+                <li><a href="LHospitalsRule.html" class="mm-link">L'Hospital's Rule and Indeterminate Forms</a></li>
+                <li><a href="LinearApproximations.html" class="mm-link">Linear Approximations</a></li>
+                <li><a href="Differentials.html" class="mm-link">Differentials</a></li>
+                <li><a href="NewtonsMethod.html" class="mm-link">Newton's Method</a></li>
+                <li><a href="BusinessApps.html" class="mm-link">Business Applications</a></li>
+              </ul>
+            </li>
+            <li><a href="IntegralsIntro.html" class="mm-link">Integrals</a>
+              <ul>
+                <li><a href="IndefiniteIntegrals.html" class="mm-link">Indefinite Integrals</a></li>
+                <li><a href="ComputingIndefiniteIntegrals.html" class="mm-link">Computing Indefinite Integrals</a></li>
+                <li><a href="SubstitutionRuleIndefinite.html" class="mm-link">Substitution Rule for Indefinite Integrals</a></li>
+                <li><a href="SubstitutionRuleIndefinitePtII.html" class="mm-link">More Substitution Rule</a></li>
+                <li><a href="AreaProblem.html" class="mm-link">Area Problem</a></li>
+                <li><a href="DefnOfDefiniteIntegral.html" class="mm-link">Definition of the Definite Integral</a></li>
+                <li><a href="ComputingDefiniteIntegrals.html" class="mm-link">Computing Definite Integrals</a></li>
+                <li><a href="SubstitutionRuleDefinite.html" class="mm-link">Substitution Rule for Definite Integrals</a></li>
+              </ul>
+            </li>
+            <li><a href="IntAppsIntro.html" class="mm-link">Applications of Integrals</a>
+              <ul>
+                <li><a href="AvgFcnValue.html" class="mm-link">Average Function Value</a></li>
+                <li><a href="AreaBetweenCurves.html" class="mm-link">Area Between Curves</a></li>
+                <li><a href="VolumeWithRings.html" class="mm-link">Volumes of Solids of Revolution / Method of Rings</a></li>
+                <li><a href="VolumeWithCylinder.html" class="mm-link">Volumes of Solids of Revolution/Method of Cylinders</a></li>
+                <li><a href="MoreVolume.html" class="mm-link">More Volume Problems</a></li>
+                <li><a href="Work.html" class="mm-link">Work</a></li>
+              </ul>
+            </li>
+            <li><a href="ExtrasIntro.html" class="mm-link">Extras</a>
+              <ul>
+                <li><a href="LimitProofs.html" class="mm-link">Proof of Various Limit Properties</a></li>
+                <li><a href="DerivativeProofs.html" class="mm-link">Proof of Various Derivative Properties</a></li>
+                <li><a href="ProofTrigDeriv.html" class="mm-link">Proof of Trig Limits</a></li>
+                <li><a href="DerivativeAppsProofs.html" class="mm-link">Proofs of Derivative Applications Facts</a></li>
+                <li><a href="ProofIntProp.html" class="mm-link">Proof of Various Integral Properties </a></li>
+                <li><a href="Area_Volume_Formulas.html" class="mm-link">Area and Volume Formulas</a></li>
+                <li><a href="TypesOfInfinity.html" class="mm-link">Types of Infinity</a></li>
+                <li><a href="SummationNotation.html" class="mm-link">Summation Notation</a></li>
+                <li><a href="ConstantofIntegration.html" class="mm-link">Constant of Integration</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../CalcII/CalcII.html" class="mm-link">Calculus II</a>
+          <ul>
+            <li><a href="../CalcII/IntTechIntro.html" class="mm-link">Integration Techniques</a>
+              <ul>
+                <li><a href="../CalcII/IntegrationByParts.html" class="mm-link">Integration by Parts</a></li>
+                <li><a href="../CalcII/IntegralsWithTrig.html" class="mm-link">Integrals Involving Trig Functions</a></li>
+                <li><a href="../CalcII/TrigSubstitutions.html" class="mm-link">Trig Substitutions</a></li>
+                <li><a href="../CalcII/PartialFractions.html" class="mm-link">Partial Fractions</a></li>
+                <li><a href="../CalcII/IntegralsWithRoots.html" class="mm-link">Integrals Involving Roots</a></li>
+                <li><a href="../CalcII/IntegralsWithQuadratics.html" class="mm-link">Integrals Involving Quadratics</a></li>
+                <li><a href="../CalcII/IntegrationStrategy.html" class="mm-link">Integration Strategy</a></li>
+                <li><a href="../CalcII/ImproperIntegrals.html" class="mm-link">Improper Integrals</a></li>
+                <li><a href="../CalcII/ImproperIntegralsCompTest.html" class="mm-link">Comparison Test for Improper Integrals</a></li>
+                <li><a href="../CalcII/ApproximatingDefIntegrals.html" class="mm-link">Approximating Definite Integrals</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/IntAppsIntro.html" class="mm-link">Applications of Integrals</a>
+              <ul>
+                <li><a href="../CalcII/ArcLength.html" class="mm-link">Arc Length</a></li>
+                <li><a href="../CalcII/SurfaceArea.html" class="mm-link">Surface Area</a></li>
+                <li><a href="../CalcII/CenterOfMass.html" class="mm-link">Center of Mass</a></li>
+                <li><a href="../CalcII/HydrostaticPressure.html" class="mm-link">Hydrostatic Pressure</a></li>
+                <li><a href="../CalcII/Probability.html" class="mm-link">Probability</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/ParametricIntro.html" class="mm-link">Parametric Equations and Polar Coordinates</a>
+              <ul>
+                <li><a href="../CalcII/ParametricEqn.html" class="mm-link">Parametric Equations and Curves</a></li>
+                <li><a href="../CalcII/ParaTangent.html" class="mm-link">Tangents with Parametric Equations</a></li>
+                <li><a href="../CalcII/ParaArea.html" class="mm-link">Area with Parametric Equations</a></li>
+                <li><a href="../CalcII/ParaArcLength.html" class="mm-link">Arc Length with Parametric Equations</a></li>
+                <li><a href="../CalcII/ParaSurfaceArea.html" class="mm-link">Surface Area with Parametric Equations</a></li>
+                <li><a href="../CalcII/PolarCoordinates.html" class="mm-link">Polar Coordinates</a></li>
+                <li><a href="../CalcII/PolarTangents.html" class="mm-link">Tangents with Polar Coordinates</a></li>
+                <li><a href="../CalcII/PolarArea.html" class="mm-link">Area with Polar Coordinates</a></li>
+                <li><a href="../CalcII/PolarArcLength.html" class="mm-link">Arc Length with Polar Coordinates</a></li>
+                <li><a href="../CalcII/PolarSurfaceArea.html" class="mm-link">Surface Area with Polar Coordinates</a></li>
+                <li><a href="../CalcII/ArcLength_SurfaceArea.html" class="mm-link">Arc Length and Surface Area Revisited</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/SeriesIntro.html" class="mm-link">Series & Sequences</a>
+              <ul>
+                <li><a href="../CalcII/Sequences.html" class="mm-link">Sequences</a></li>
+                <li><a href="../CalcII/MoreSequences.html" class="mm-link">More on Sequences</a></li>
+                <li><a href="../CalcII/Series_Basics.html" class="mm-link">Series - The Basics</a></li>
+                <li><a href="../CalcII/ConvergenceOfSeries.html" class="mm-link">Convergence/Divergence of Series</a></li>
+                <li><a href="../CalcII/Series_Special.html" class="mm-link">Special Series</a></li>
+                <li><a href="../CalcII/IntegralTest.html" class="mm-link">Integral Test</a></li>
+                <li><a href="../CalcII/SeriesCompTest.html" class="mm-link">Comparison Test/Limit Comparison Test</a></li>
+                <li><a href="../CalcII/AlternatingSeries.html" class="mm-link">Alternating Series Test</a></li>
+                <li><a href="../CalcII/AbsoluteConvergence.html" class="mm-link">Absolute Convergence</a></li>
+                <li><a href="../CalcII/RatioTest.html" class="mm-link">Ratio Test</a></li>
+                <li><a href="../CalcII/RootTest.html" class="mm-link">Root Test</a></li>
+                <li><a href="../CalcII/SeriesStrategy.html" class="mm-link">Strategy for Series</a></li>
+                <li><a href="../CalcII/EstimatingSeries.html" class="mm-link">Estimating the Value of a Series</a></li>
+                <li><a href="../CalcII/PowerSeries.html" class="mm-link">Power Series</a></li>
+                <li><a href="../CalcII/PowerSeriesandFunctions.html" class="mm-link">Power Series and Functions</a></li>
+                <li><a href="../CalcII/TaylorSeries.html" class="mm-link">Taylor Series</a></li>
+                <li><a href="../CalcII/TaylorSeriesApps.html" class="mm-link">Applications of Series</a></li>
+                <li><a href="../CalcII/BinomialSeries.html" class="mm-link">Binomial Series</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/VectorsIntro.html" class="mm-link">Vectors</a>
+              <ul>
+                <li><a href="../CalcII/Vectors_Basics.html" class="mm-link">Vectors - The Basics</a></li>
+                <li><a href="../CalcII/VectorArithmetic.html" class="mm-link">Vector Arithmetic</a></li>
+                <li><a href="../CalcII/DotProduct.html" class="mm-link">Dot Product</a></li>
+                <li><a href="../CalcII/CrossProduct.html" class="mm-link">Cross Product</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/3DSpace.html" class="mm-link">3-Dimensional Space</a>
+              <ul>
+                <li><a href="../CalcII/3DCoords.html" class="mm-link">The 3-D Coordinate System</a></li>
+                <li><a href="../CalcII/EqnsOfLines.html" class="mm-link">Equations of Lines</a></li>
+                <li><a href="../CalcII/EqnsOfPlanes.html" class="mm-link">Equations of Planes</a></li>
+                <li><a href="../CalcII/QuadricSurfaces.html" class="mm-link">Quadric Surfaces</a></li>
+                <li><a href="../CalcII/MultiVrbleFcns.html" class="mm-link">Functions of Several Variables</a></li>
+                <li><a href="../CalcII/VectorFunctions.html" class="mm-link">Vector Functions</a></li>
+                <li><a href="../CalcII/VectorFcnsCalculus.html" class="mm-link">Calculus with Vector Functions</a></li>
+                <li><a href="../CalcII/TangentNormalVectors.html" class="mm-link">Tangent, Normal and Binormal Vectors</a></li>
+                <li><a href="../CalcII/VectorArcLength.html" class="mm-link">Arc Length with Vector Functions</a></li>
+                <li><a href="../CalcII/Curvature.html" class="mm-link">Curvature</a></li>
+                <li><a href="../CalcII/Velocity_Acceleration.html" class="mm-link">Velocity and Acceleration</a></li>
+                <li><a href="../CalcII/CylindricalCoords.html" class="mm-link">Cylindrical Coordinates</a></li>
+                <li><a href="../CalcII/SphericalCoords.html" class="mm-link">Spherical Coordinates</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../CalcIII/CalcIII.html" class="mm-link">Calculus III</a>
+          <ul>
+            <li><a href="../CalcIII/3DSpace.html" class="mm-link">3-Dimensional Space</a>
+              <ul>
+                <li><a href="../CalcIII/3DCoords.html" class="mm-link">The 3-D Coordinate System</a></li>
+                <li><a href="../CalcIII/EqnsOfLines.html" class="mm-link">Equations of Lines</a></li>
+                <li><a href="../CalcIII/EqnsOfPlanes.html" class="mm-link">Equations of Planes</a></li>
+                <li><a href="../CalcIII/QuadricSurfaces.html" class="mm-link">Quadric Surfaces</a></li>
+                <li><a href="../CalcIII/MultiVrbleFcns.html" class="mm-link">Functions of Several Variables</a></li>
+                <li><a href="../CalcIII/VectorFunctions.html" class="mm-link">Vector Functions</a></li>
+                <li><a href="../CalcIII/VectorFcnsCalculus.html" class="mm-link">Calculus with Vector Functions</a></li>
+                <li><a href="../CalcIII/TangentNormalVectors.html" class="mm-link">Tangent, Normal and Binormal Vectors</a></li>
+                <li><a href="../CalcIII/VectorArcLength.html" class="mm-link">Arc Length with Vector Functions</a></li>
+                <li><a href="../CalcIII/Curvature.html" class="mm-link">Curvature</a></li>
+                <li><a href="../CalcIII/Velocity_Acceleration.html" class="mm-link">Velocity and Acceleration</a></li>
+                <li><a href="../CalcIII/CylindricalCoords.html" class="mm-link">Cylindrical Coordinates</a></li>
+                <li><a href="../CalcIII/SphericalCoords.html" class="mm-link">Spherical Coordinates</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/PartialDerivsIntro.html" class="mm-link">Partial Derivatives</a>
+              <ul>
+                <li><a href="../CalcIII/Limits.html" class="mm-link">Limits</a></li>
+                <li><a href="../CalcIII/PartialDerivatives.html" class="mm-link">Partial Derivatives</a></li>
+                <li><a href="../CalcIII/PartialDerivInterp.html" class="mm-link">Interpretations of Partial Derivatives</a></li>
+                <li><a href="../CalcIII/HighOrderPartialDerivs.html" class="mm-link">Higher Order Partial Derivatives</a></li>
+                <li><a href="../CalcIII/Differentials.html" class="mm-link">Differentials</a></li>
+                <li><a href="../CalcIII/ChainRule.html" class="mm-link">Chain Rule</a></li>
+                <li><a href="../CalcIII/DirectionalDeriv.html" class="mm-link">Directional Derivatives</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/PartialDerivAppsIntro.html" class="mm-link">Applications of Partial Derivatives</a>
+              <ul>
+                <li><a href="../CalcIII/TangentPlanes.html" class="mm-link">Tangent Planes and Linear Approximations</a></li>
+                <li><a href="../CalcIII/GradientVectorTangentPlane.html" class="mm-link">Gradient Vector, Tangent Planes and Normal Lines</a></li>
+                <li><a href="../CalcIII/RelativeExtrema.html" class="mm-link">Relative Minimums and Maximums</a></li>
+                <li><a href="../CalcIII/AbsoluteExtrema.html" class="mm-link">Absolute Minimums and Maximums</a></li>
+                <li><a href="../CalcIII/LagrangeMultipliers.html" class="mm-link">Lagrange Multipliers</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/MultipleIntegralsIntro.html" class="mm-link">Multiple Integrals</a>
+              <ul>
+                <li><a href="../CalcIII/DoubleIntegrals.html" class="mm-link">Double Integrals</a></li>
+                <li><a href="../CalcIII/IteratedIntegrals.html" class="mm-link">Iterated Integrals</a></li>
+                <li><a href="../CalcIII/DIGeneralRegion.html" class="mm-link">Double Integrals over General Regions</a></li>
+                <li><a href="../CalcIII/DIPolarCoords.html" class="mm-link">Double Integrals in Polar Coordinates</a></li>
+                <li><a href="../CalcIII/TripleIntegrals.html" class="mm-link">Triple Integrals</a></li>
+                <li><a href="../CalcIII/TICylindricalCoords.html" class="mm-link">Triple Integrals in Cylindrical Coordinates</a></li>
+                <li><a href="../CalcIII/TISphericalCoords.html" class="mm-link">Triple Integrals in Spherical Coordinates</a></li>
+                <li><a href="../CalcIII/ChangeOfVariables.html" class="mm-link">Change of Variables</a></li>
+                <li><a href="../CalcIII/SurfaceArea.html" class="mm-link">Surface Area</a></li>
+                <li><a href="../CalcIII/Area_Volume.html" class="mm-link">Area and Volume Revisited</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/LineIntegralsIntro.html" class="mm-link">Line Integrals</a>
+              <ul>
+                <li><a href="../CalcIII/VectorFields.html" class="mm-link">Vector Fields</a></li>
+                <li><a href="../CalcIII/LineIntegralsPtI.html" class="mm-link">Line Integrals - Part I</a></li>
+                <li><a href="../CalcIII/LineIntegralsPtII.html" class="mm-link">Line Integrals - Part II</a></li>
+                <li><a href="../CalcIII/LineIntegralsVectorFields.html" class="mm-link">Line Integrals of Vector Fields</a></li>
+                <li><a href="../CalcIII/FundThmLineIntegrals.html" class="mm-link">Fundamental Theorem for Line Integrals</a></li>
+                <li><a href="../CalcIII/ConservativeVectorField.html" class="mm-link">Conservative Vector Fields</a></li>
+                <li><a href="../CalcIII/GreensTheorem.html" class="mm-link">Green's Theorem</a></li>
+                <li><a href="../CalcIII/CurlDivergence.html" class="mm-link">Curl and Divergence</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/SurfaceIntegralsIntro.html" class="mm-link">Surface Integrals</a>
+              <ul>
+                <li><a href="../CalcIII/ParametricSurfaces.html" class="mm-link">Parametric Surfaces</a></li>
+                <li><a href="../CalcIII/SurfaceIntegrals.html" class="mm-link">Surface Integrals</a></li>
+                <li><a href="../CalcIII/SurfIntVectorField.html" class="mm-link">Surface Integrals of Vector Fields</a></li>
+                <li><a href="../CalcIII/StokesTheorem.html" class="mm-link">Stokes' Theorem</a></li>
+                <li><a href="../CalcIII/DivergenceTheorem.html" class="mm-link">Divergence Theorem</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../DE/DE.html" class="mm-link">Differential Equations</a>
+          <ul>
+            <li><a href="../DE/IntroBasic.html" class="mm-link">Basic Concepts</a>
+              <ul>
+                <li><a href="../DE/Definitions.html" class="mm-link">Definitions</a></li>
+                <li><a href="../DE/DirectionFields.html" class="mm-link">Direction Fields</a></li>
+                <li><a href="../DE/FinalThoughts.html" class="mm-link">Final Thoughts</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/IntroFirstOrder.html" class="mm-link">First Order DE's</a>
+              <ul>
+                <li><a href="../DE/Linear.html" class="mm-link">Linear Equations</a></li>
+                <li><a href="../DE/Separable.html" class="mm-link">Separable Equations</a></li>
+                <li><a href="../DE/Exact.html" class="mm-link">Exact Equations</a></li>
+                <li><a href="../DE/Bernoulli.html" class="mm-link">Bernoulli Differential Equations</a></li>
+                <li><a href="../DE/Substitutions.html" class="mm-link">Substitutions</a></li>
+                <li><a href="../DE/IoV.html" class="mm-link">Intervals of Validity</a></li>
+                <li><a href="../DE/Modeling.html" class="mm-link">Modeling with First Order DE's</a></li>
+                <li><a href="../DE/EquilibriumSolutions.html" class="mm-link">Equilibrium Solutions</a></li>
+                <li><a href="../DE/EulersMethod.html" class="mm-link">Euler's Method</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/IntroSecondOrder.html" class="mm-link">Second Order DE's</a>
+              <ul>
+                <li><a href="../DE/SecondOrderConcepts.html" class="mm-link">Basic Concepts</a></li>
+                <li><a href="../DE/RealRoots.html" class="mm-link">Real & Distinct Roots</a></li>
+                <li><a href="../DE/ComplexRoots.html" class="mm-link">Complex Roots</a></li>
+                <li><a href="../DE/RepeatedRoots.html" class="mm-link">Repeated Roots</a></li>
+                <li><a href="../DE/ReductionofOrder.html" class="mm-link">Reduction of Order</a></li>
+                <li><a href="../DE/FundamentalSetsofSolutions.html" class="mm-link">Fundamental Sets of Solutions</a></li>
+                <li><a href="../DE/Wronskian.html" class="mm-link">More on the  Wronskian</a></li>
+                <li><a href="../DE/NonhomogeneousDE.html" class="mm-link">Nonhomogeneous Differential Equations</a></li>
+                <li><a href="../DE/UndeterminedCoefficients.html" class="mm-link">Undetermined Coefficients</a></li>
+                <li><a href="../DE/VariationofParameters.html" class="mm-link">Variation of Parameters</a></li>
+                <li><a href="../DE/Vibrations.html" class="mm-link">Mechanical Vibrations</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/LaplaceIntro.html" class="mm-link">Laplace Transforms</a>
+              <ul>
+                <li><a href="../DE/LaplaceDefinition.html" class="mm-link">The Definition</a></li>
+                <li><a href="../DE/LaplaceTransforms.html" class="mm-link">Laplace Transforms</a></li>
+                <li><a href="../DE/InverseTransforms.html" class="mm-link">Inverse Laplace Transforms</a></li>
+                <li><a href="../DE/StepFunctions.html" class="mm-link">Step Functions</a></li>
+                <li><a href="../DE/IVPWithLaplace.html" class="mm-link">Solving IVP's with Laplace Transforms</a></li>
+                <li><a href="../DE/IVPWithNonConstantCoefficient.html" class="mm-link">Nonconstant Coefficient IVP's</a></li>
+                <li><a href="../DE/IVPWithStepFunction.html" class="mm-link">IVP's With Step Functions</a></li>
+                <li><a href="../DE/DiracDeltaFunction.html" class="mm-link">Dirac Delta Function</a></li>
+                <li><a href="../DE/ConvolutionIntegrals.html" class="mm-link">Convolution Integrals</a></li>
+                <li><a href="../DE/Laplace_Table.html" class="mm-link">Table Of Laplace Transforms</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/SystemsIntro.html" class="mm-link">Systems of DE's</a>
+              <ul>
+                <li><a href="../DE/LA_Systems.html" class="mm-link">Review : Systems of Equations</a></li>
+                <li><a href="../DE/LA_Matrix.html" class="mm-link">Review : Matrices & Vectors</a></li>
+                <li><a href="../DE/LA_Eigen.html" class="mm-link">Review : Eigenvalues & Eigenvectors</a></li>
+                <li><a href="../DE/SystemsDE.html" class="mm-link">Systems of Differential Equations</a></li>
+                <li><a href="../DE/SolutionsToSystems.html" class="mm-link">Solutions to Systems</a></li>
+                <li><a href="../DE/PhasePlane.html" class="mm-link">Phase Plane</a></li>
+                <li><a href="../DE/RealEigenvalues.html" class="mm-link">Real Eigenvalues</a></li>
+                <li><a href="../DE/ComplexEigenvalues.html" class="mm-link">Complex Eigenvalues</a></li>
+                <li><a href="../DE/RepeatedEigenvalues.html" class="mm-link">Repeated Eigenvalues</a></li>
+                <li><a href="../DE/NonhomogeneousSystems.html" class="mm-link">Nonhomogeneous Systems</a></li>
+                <li><a href="../DE/SystemsLaplace.html" class="mm-link">Laplace Transforms</a></li>
+                <li><a href="../DE/SystemsModeling.html" class="mm-link">Modeling</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/SeriesIntro.html" class="mm-link">Series Solutions to DE's</a>
+              <ul>
+                <li><a href="../DE/PowerSeries.html" class="mm-link">Review : Power Series</a></li>
+                <li><a href="../DE/TaylorSeries.html" class="mm-link">Review : Taylor Series</a></li>
+                <li><a href="../DE/SeriesSolutions.html" class="mm-link">Series Solutions</a></li>
+                <li><a href="../DE/EulerEquations.html" class="mm-link">Euler Equations</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/IntroHigherOrder.html" class="mm-link">Higher Order Differential Equations</a>
+              <ul>
+                <li><a href="../DE/HOBasicConcepts.html" class="mm-link">Basic Concepts for <em>n</em><sup>th</sup> Order Linear Equations</a></li>
+                <li><a href="../DE/HOHomogeneousDE.html" class="mm-link">Linear Homogeneous Differential Equations</a></li>
+                <li><a href="../DE/HOUndeterminedCoeff.html" class="mm-link">Undetermined Coefficients</a></li>
+                <li><a href="../DE/HOVariationOfParam.html" class="mm-link">Variation of Parameters</a></li>
+                <li><a href="../DE/HOLaplaceTransforms.html" class="mm-link">Laplace Transforms</a></li>
+                <li><a href="../DE/HOSystems.html" class="mm-link">Systems of Differential Equations</a></li>
+                <li><a href="../DE/HOSeries.html" class="mm-link">Series Solutions</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/IntroBVP.html" class="mm-link">Boundary Value Problems &amp; Fourier Series</a>
+              <ul>
+                <li><a href="../DE/BoundaryValueProblem.html" class="mm-link">Boundary Value Problems</a></li>
+                <li><a href="../DE/BVPEvals.html" class="mm-link">Eigenvalues and Eigenfunctions</a></li>
+                <li><a href="../DE/PeriodicOrthogonal.html" class="mm-link">Periodic Functions &amp; Orthogonal Functions</a></li>
+                <li><a href="../DE/FourierSineSeries.html" class="mm-link">Fourier Sine Series</a></li>
+                <li><a href="../DE/FourierCosineSeries.html" class="mm-link">Fourier Cosine Series</a></li>
+                <li><a href="../DE/FourierSeries.html" class="mm-link">Fourier Series</a></li>
+                <li><a href="../DE/ConvergenceFourierSeries.html" class="mm-link">Convergence of Fourier Series</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/IntroPDE.html" class="mm-link">Partial Differential Equations </a>
+              <ul>
+                <li><a href="../DE/TheHeatEquation.html" class="mm-link">The Heat Equation</a></li>
+                <li><a href="../DE/TheWaveEquation.html" class="mm-link">The Wave Equation</a></li>
+                <li><a href="../DE/PDETerminology.html" class="mm-link">Terminology</a></li>
+                <li><a href="../DE/SeparationofVariables.html" class="mm-link">Separation of Variables</a></li>
+                <li><a href="../DE/SolvingHeatEquation.html" class="mm-link">Solving the Heat Equation</a></li>
+                <li><a href="../DE/HeatEqnNonZero.html" class="mm-link">Heat Equation with Non-Zero Temperature Boundaries</a></li>
+                <li><a href="../DE/LaplacesEqn.html" class="mm-link">Laplace's Equation</a></li>
+                <li><a href="../DE/VibratingString.html" class="mm-link">Vibrating String</a></li>
+                <li><a href="../DE/PDESummary.html" class="mm-link">Summary of Separation of Variables</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><span>Extras</span></li>
+        <li><a href="../../Extras/AlgebraTrigReview/AlgebraTrig.html" class="mm-link">Algebra &amp; Trig Review</a>
+          <ul>
+            <li><a href="../../Extras/AlgebraTrigReview/AlgebraIntro.html" class="mm-link">Algebra</a>
+              <ul>
+                <li><a href="../../Extras/AlgebraTrigReview/Exponents.html" class="mm-link">Exponents </a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/AbsoluteValue.html" class="mm-link">Absolute Value</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Radicals.html" class="mm-link">Radicals</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Rationalizing.html" class="mm-link">Rationalizing </a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Functions.html" class="mm-link">Functions </a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/MultPoly.html" class="mm-link">Multiplying Polynomials</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Factoring.html" class="mm-link">Factoring</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SimpRatExp.html" class="mm-link">Simplifying Rational Expressions</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Graphing.html" class="mm-link">Graphing and Common Graphs</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveEqnPtI.html" class="mm-link">Solving Equations, Part I</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveEqnPtII.html" class="mm-link">Solving Equations, Part II</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveSystems.html" class="mm-link">Solving Systems of Equations</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveIneq.html" class="mm-link">Solving Inequalities</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveAbsValue.html" class="mm-link">Absolute Value Equations and Inequalities</a></li>
+              </ul>
+            </li>
+            <li><a href="../../Extras/AlgebraTrigReview/TrigIntro.html" class="mm-link">Trigonometry</a>
+              <ul>
+                <li><a href="../../Extras/AlgebraTrigReview/TrigFunctions.html" class="mm-link">Trig Function Evaluation</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/TrigGraphs.html" class="mm-link">Graphs of Trig Functions</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/TrigFormulas.html" class="mm-link">Trig Formulas</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveTrigEqn.html" class="mm-link">Solving Trig Equations</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/InverseTrig.html" class="mm-link">Inverse Trig Functions</a></li>
+              </ul>
+            </li>
+            <li><a href="../../Extras/AlgebraTrigReview/ExpLogIntro.html" class="mm-link">Exponentials & Logarithms</a>
+              <ul>
+                <li><a href="../../Extras/AlgebraTrigReview/ExponentialFcns.html" class="mm-link">Basic Exponential Functions</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/LogarithmFcns.html" class="mm-link">Basic Logarithm Functions</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/LogProperties.html" class="mm-link">Logarithm Properties</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SimpLogs.html" class="mm-link">Simplifying Logarithms</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveExpEqn.html" class="mm-link">Solving Exponential Equations</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveLogEqn.html" class="mm-link">Solving Logarithm Equations</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../../Extras/CommonErrors/CommonMathErrors.html" class="mm-link">Common Math Errors</a>
+          <ul>
+            <li><a href="../../Extras/CommonErrors/GeneralErrors.html" class="mm-link">General Errors</a>
+            </li>
+            <li><a href="../../Extras/CommonErrors/AlgebraErrors.html" class="mm-link">Algebra Errors</a>
+            </li>
+            <li><a href="../../Extras/CommonErrors/TrigErrors.html" class="mm-link">Trig Errors</a>
+            </li>
+            <li><a href="../../Extras/CommonErrors/CommonErrors.html" class="mm-link">Common Errors</a>
+            </li>
+            <li><a href="../../Extras/CommonErrors/CalculusErrors.html" class="mm-link">Calculus Errors</a>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../../Extras/ComplexPrimer/ComplexNumbers.html" class="mm-link">Complex Number Primer</a>
+          <ul>
+            <li><a href="../../Extras/ComplexPrimer/Definition.html" class="mm-link">The Definition</a>
+            </li>
+            <li><a href="../../Extras/ComplexPrimer/Arithmetic.html" class="mm-link">Arithmetic</a>
+            </li>
+            <li><a href="../../Extras/ComplexPrimer/ConjugateModulus.html" class="mm-link">Conjugate and Modulus</a>
+            </li>
+            <li><a href="../../Extras/ComplexPrimer/Forms.html" class="mm-link">Polar and Exponential Forms</a>
+            </li>
+            <li><a href="../../Extras/ComplexPrimer/Roots.html" class="mm-link">Powers and Roots</a>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../../Extras/StudyMath/HowToStudyMath.html" class="mm-link">How To Study Math</a>
+          <ul>
+            <li><a href="../../Extras/StudyMath/GeneralTips.html" class="mm-link">General Tips</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/TakingNotes.html" class="mm-link">Taking Notes</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/GettingHelp.html" class="mm-link">Getting Help</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/Homework.html" class="mm-link">Doing Homework</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/ProblemSolving.html" class="mm-link">Problem Solving</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/StudyForExam.html" class="mm-link">Studying For an Exam</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/TakingExam.html" class="mm-link">Taking an Exam</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/Errors.html" class="mm-link">Learn From Your Errors</a>
+            </li>
+          </ul>
+        </li>
+
+        <li><span>Misc Links</span></li>
+        <li><a href="http://tutorial.math.lamar.edu/contact.aspx" class="mm-link">Contact Me</a></li>
+        <li><a href="../../links.html" class="mm-link">Links</a></li>
+        <li><a href="../../mathjax.html" class="mm-link">MathJax Help and Configuration</a></li>
+        <li><a href="../../mystudents.html" class="mm-link">My Students</a></li>
+        <li><a href="http://tutorial.math.lamar.edu/privacy.aspx" class="mm-link">Privacy Statement</a></li>
+        <li><a href="../../help.html" class="mm-link">Site Help & FAQ</a></li>
+        <li><a href="http://tutorial.math.lamar.edu/terms.aspx" class="mm-link">Terms of Use</a></li>
+      </ul>
+    </nav>
+
+
+
+    <div class="top-info-bar">
+      <span id="mobile-title" class="mobile-header-title header-title">Paul's Online Notes</span>
+      <br />
+      <span class="top-menu-breadcrumb">
+        <a href="../../index.html" id="breadcrumb_home_link" title="Go to Main Page">Home</a>
+        <span id="breadcrumb_h_b_sep_span">/ </span>
+        <a href="CalcI.html" id="breadcrumb_book_link" title="Go to Book Introduction">Calculus I</a>
+        
+        <span id="breadcrumb_b_c_sep_span">/ </span>
+        <a href="DerivAppsIntro.html" id="breadcrumb_chapter_link" title="Go to Chapter Introduction">Applications of Derivatives</a>
+        
+        <span id="breadcrumb_section_span"> / Optimization</span>
+      </span>
+
+    </div>
+
+    <div id="nav_links" class="top-nav-bar">
+      
+      <span id="nav_current_notes">Notes</span>
+      <a href="http://tutorial.math.lamar.edu/Problems/CalcI/Optimization.aspx" id="nav_links_practice" title="Go to Practice Problems for current topic.">Practice<span class="nav_desktop_extra"> Problems</span></a>
+      
+      <a href="http://tutorial.math.lamar.edu/ProblemsNS/CalcI/Optimization.aspx" id="nav_links_asgn" title="Go to Assignment Problems for current topic.">Assignment<span class="nav_desktop_extra">  Problems</span></a>
+      
+    </div>
+
+    <div class="header-divider"></div>
+
+    <div class="content">  
+      
+      
+      <span id="SHLink_NoteMobile" class="SH-Link content-note-link-mobile">Show Mobile Notice</span>
+      <span id="SHImg_NoteMobile" class="fas fa-caret-right SH-padding content-note-link-mobile" aria-hidden="true"></span>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+
+      <span id="SHALink_S_Note" class="SH-Link SH-Hide SH-Bracket">Show All Notes</span>&nbsp;<span id="SHALink_H_Note" class="SH-Link SH-Hide SH-Bracket">Hide All Notes</span>
+      
+      
+      <div id="SHObj_NoteMobile" class="content-note-container content-note-container-mobile">
+        <div class="content-note-header">Mobile Notice</div>
+        <div class="content-note">You appear to be on a device with a "narrow" screen width (<em>i.e.</em> you are probably on a mobile phone).  Due to the nature of the mathematics on this site it is best views in landscape mode.  If your device is not in landscape mode many of the equations will run off the side of your device (should be able to scroll to see them) and some of the menu items will be cut off due to the narrow screen width.</div>
+      </div>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+
+      
+
+
+  <form method="post" action="http://tutorial.math.lamar.edu/Classes/CalcI/Optimization.aspx" id="ctl00">
+<div class="aspNetHidden">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+</div>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="1536B2FC" />
+</div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </form>
+
+  <h3>Section 4-8 : Optimization</h3>
+
+    <p>In this section we are going to look at optimization problems.  In optimization problems we are looking for the largest value or the smallest value that a function can take.  We saw how to solve one kind of optimization problem in the <a href="AbsExtrema.html">Absolute Extrema</a> section where we found the largest and smallest value that a function would take on an interval.</p>
+    
+    <p>In this section we are going to look at another type of optimization problem.  Here we will be looking for the largest or smallest value of a function subject to some kind of constraint.  The constraint will be some condition (that can usually be described by some equation) that must absolutely, positively be true no matter what our solution is.  On occasion, the constraint will not be easily described by an equation, but in these problems it will be easy to deal with as we’ll see.</p>
+    
+    <p>This section is generally one of the more difficult for students taking a Calculus course.  One of the main reasons for this is that a subtle change of wording can completely change the problem.  There is also the problem of identifying the quantity that we’ll be optimizing and the quantity that is the constraint and writing down equations for each.</p>
+    
+    <p>The first step in all of these problems should be to very carefully read the problem.  Once you’ve done that the next step is to identify the quantity to be optimized and the constraint.</p>
+    
+    <p>In identifying the constraint remember that the constraint is the quantity that must be true regardless of the solution.  In almost every one of the problems we’ll be looking at here one quantity will be clearly indicated as having a fixed value and so must be the constraint.  Once you’ve got that identified the quantity to be optimized should be fairly simple to get.  It is however easy to confuse the two if you just skim the problem so make sure you carefully read the problem first!</p>
+    
+    <p>Let’s start the section off with a simple problem to illustrate the kinds of issues we will be dealing with here.</p>
+    <a class="anchor" name="DerivApps_Opt_Ex1"></a>
+
+  <div class="example">
+    <span class="example-title">Example 1</span> We need to enclose a rectangular field with a fence.  We have 500 feet of fencing material and a building is on one side of the field and so won’t need any fencing.  Determine the dimensions of the field that will enclose the largest area.
+    <div class="example-content">
+      <span id="SHLink_Soln1" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln1" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln1" class="soln-content">
+        <p>In all of these problems we will have two functions.  The first is the function that we are actually trying to optimize and the second will be the constraint.  Sketching the situation will often help us to arrive at these equations so let’s do that.</p>
+          
+            <div class="center-div"><img alt="This is a sketch of a rectangle.  The top is labeled “Building” the bottom is labeled “x” and the right side is labeled “y”." border="0" height="98" src="http://tutorial.math.lamar.edu/Classes/CalcI/Optimization_Files/image001.png" width="165" /></div>
+
+          <p>In this problem we want to maximize the area of a field and we know that will use 500 ft of fencing material.  So, the area will be the function we are trying to optimize and the amount of fencing is the constraint. The two equations for these are,</p>
+          
+          
+            \[\begin{align*}{\mbox{Maximize : }} & A = xy\\ {\mbox{Constraint : }} & 500 = x + 2y\end{align*}\]
+          
+          <p>Okay, we know how to find the largest or smallest value of a function provided it’s only got a single variable.  The area function (as well as the constraint) has two variables in it and so what we know about finding absolute extrema won’t work.  However, if we solve the constraint for one of the two variables we can substitute this into the area and we will then have a function of a single variable.</p>
+          
+          <p>So, let’s solve the constraint for \(x\).  Note that we could have just as easily solved for \(y\) but that would have led to fractions and so, in this case, solving for \(x\) will probably be best.</p>
+          
+              \[x = 500 - 2y\]
+          
+          <p>Substituting this into the area function gives a function of \(y\).</p>
+          
+              \[A\left( y \right) = \left( {500 - 2y} \right)y = 500y - 2{y^2}\]
+          
+          <p>Now we want to find the largest value this will have on the interval \(\left[ {0,250} \right]\).  The limits in this interval corresponds to taking \(y = 0\) (<em>i.e.</em> no sides to the fence) and \(y = 250\) (<em>i.e.</em> only two sides and no width, also if there are two sides each must be 250 ft to use the whole 500ft).</p>
+          
+          <p>Note that the endpoints of the interval won’t make any sense from a physical standpoint if we actually want to enclose some area because they would both give zero area.  They do, however, give us a set of limits on \(y\) and so the <a href="MinMaxValues.html#EVT">Extreme Value Theorem</a> tells us that we will have a maximum value of the area somewhere between the two endpoints.  Having these limits will also mean that we can use the process we discussed in the  <a href="AbsExtrema.html">Finding Absolute Extrema</a> 
+            section earlier in the chapter to find the maximum value of the area.</p>
+          
+          <p>So, recall that the maximum value of a continuous function (which we’ve got here) on a closed interval (which we also have here) will occur at critical points and/or end points.  As we’ve already pointed out the end points in this case will give zero area and so don’t make any sense.  That means our only option will be the critical points.</p>
+          
+          <p>So, let’s get the derivative and find the critical points.</p>
+          
+              \[A'\left( y \right) = 500 - 4y\]
+          
+          <p>Setting this equal to zero and solving gives a lone critical point of \(y = 125\).  Plugging this into the area gives an area of \(A\left( {125} \right) = 31250\,{\mbox{f}}{{\mbox{t}}^2}\).  So according to the method from Absolute Extrema section this must be the largest possible area, since the area at either endpoint is zero.</p>
+          
+          <p>Finally, let’s not forget to get the value of \(x\) and then we’ll have the dimensions since this is what the problem statement asked for.  We can get the \(x\) by plugging in our \(y\) into the constraint.</p>
+          
+              \[x = 500 - 2\left( {125} \right) = 250\]
+          
+          <p>The dimensions of the field that will give the largest area, subject to the fact that we used exactly 500 ft of fencing material, are 250 x 125.</p>
+          
+          <p>Don’t forget to actually read the problem and give the answer that was asked for.  These types of problems can take a fair amount of time/effort to solve and it’s not hard to sometimes forget what the problem was actually asking for.</p>
+      </div>
+    </div>
+  </div>
+    
+    <p>In the previous problem we used the method from the Finding Absolute Extrema section to find the maximum value of the function we wanted to optimize.  However, as we’ll see in later examples it will not always be easy to find endpoints.  Also, even if we can find the endpoints we will see that sometimes dealing with the endpoints may not be easy either.  Not only that, but this method requires that the function we’re optimizing be continuous on the interval we’re looking at, including the endpoints, and that may not always be the case.</p>
+
+    <a class="anchor" name="DerivApps_Opt_Verify"></a>
+    <p>So, before proceeding with any more examples let’s spend a little time discussing some methods for determining if our solution is in fact the absolute minimum/maximum value that we’re looking for.  In some examples all of these will work while in others one or more won’t be all that useful.  However, we will always need to use some method for making sure that our answer is in fact that optimal value that we’re after.</p>
+    
+    <p><strong><u>Method 1</u></strong> <strong>:</strong> Use the method used in <a href="AbsExtrema.html">Finding Absolute Extrema</a>.</p>
+    
+    <p>This is the method used in the first example above.  Recall that in order to use this method the interval of possible values of the independent variable in the function we are optimizing, let’s call it \(I\), must have finite endpoints.  Also, the function we’re optimizing (once it’s down to a single variable) must be continuous on \(I\), including the endpoints.  If these conditions are met then we know that the optimal value, either the maximum or minimum depending on the problem, will occur at either the endpoints of the range or at a critical point that is inside the range of possible solutions.</p>
+    
+    <p>There are two main issues that will often prevent this method from being used however.  First, not every problem will actually have a range of possible solutions that have finite endpoints at both ends.  We’ll see at least one example of this as we work through the remaining examples.  Also, many of the functions we’ll be optimizing will not be continuous once we reduce them down to a single variable and this will prevent us from using this method.</p>
+    
+    <p><strong><u>Method 2</u> :</strong> Use a variant of the  <a href="ShapeofGraphPtI.html#FDT">First Derivative Test</a>.</p>
+    
+    <p>In this method we also will need an interval of possible values of the independent variable in the function we are optimizing, \(I\).  However, in this case, unlike the previous method the endpoints do not need to be finite.  Also, we will need to require that the function be continuous on the interior of the interval \(I\) and we will only need the function to be continuous at the end points if the endpoint is finite and the function actually exists at the endpoint.  We’ll see several problems where the function we’re optimizing doesn’t actually exist at one of the endpoints. 
+      This will not prevent this method from being used.</p>
+    
+    <p>Let’s suppose that \(x = c\) is a critical point of the function we’re trying to optimize, \(f\left( x \right)\).  We already know from the First Derivative Test that if \(f'\left( x \right) &gt; 0\) immediately to the left of \(x = c\) (<em>i.e.</em> the function is increasing immediately to the left) and if \(f'\left( x \right) &lt; 0\) immediately to the right of \(x = c\)(<em>i.e.</em> the function is decreasing immediately to the right) then \(x = c\) will be a relative maximum for \(f\left( x \right)\).</p>
+    
+    <p>Now, this does not mean that the absolute maximum of \(f\left( x \right)\) will occur at \(x = c\).  However, suppose that we knew a little bit more information.  Suppose that in fact we knew that \(f'\left( x \right) &gt; 0\) for all \(x\) in \(I\) such that \(x &lt; c\).  Likewise, suppose that we knew that \(f'\left( x \right) &lt; 0\) for all \(x\) in \(I\) such that \(x &gt; c\).  In this case we know that to the left of \(x = c\), provided we stay in \(I\) of course, the function is always increasing and to the right of \(x = c\), again staying in \(I\), we are always decreasing.  In this case we can say that the absolute maximum of \(f\left( x \right)\) in \(I\) will occur at \(x = c\).</p>
+    
+    <p>Similarly, if we know that to the left of \(x = c\) the function is always decreasing and to the right of \(x = c\) the function is always increasing then the absolute minimum of \(f\left( x \right)\) in \(I\) will occur at \(x = c\).</p>
+    
+    <p>Before we give a summary of this method let’s discuss the continuity requirement a little.  Nowhere in the above discussion did the continuity requirement apparently come into play.  We require that the function we’re optimizing to be continuous in \(I\) to prevent the following situation.</p>
+    
+      <div class="center-div"><img alt="This is a graph with no domain/ranges give of a parabola with vertex in the 1st quadrant that opens downward.  The vertex is at x=c.  At some point, given as x=d to the left of the vertex the portion of the graph for x &lt; d is lifted up so the right end point of that bit of the graph is higher than the vertex." border="0" height="250" src="http://tutorial.math.lamar.edu/Classes/CalcI/Optimization_Files/image002.png" width="360" /></div>
+    
+      
+    <p>In this case, a relative maximum of the function clearly occurs at \(x = c\).  Also, the function is always decreasing to the right and is always increasing to the left.  However, because of the discontinuity at \(x = d\), we can clearly see that \(f\left( d \right) &gt; f\left( c \right)\) and so the absolute maximum of the function does not occur at \(x = c\).  Had the discontinuity at \(x = d\) not been there this would not have happened and the absolute maximum would have occurred at \(x = c\).</p>
+    
+    <p>Here is a summary of this method.</p>
+    
+    <h4>First Derivative Test for Absolute Extrema</h4>
+  <div class="fact">
+    <p>Let \(I\) be the interval of all possible values of \(x\) in \(f\left( x \right)\), the function we want to optimize, and further suppose that \(f\left( x \right)\) is continuous on \(I\) , except possibly at the endpoints.  Finally suppose that \(x = c\) is a critical point of \(f\left( x \right)\) and that \(c\) is in the interval \(I\).  If we restrict \(x\) to values from \(I\) (<em>i.e.</em> we only consider possible optimal values of the function) then,</p>
+          <ol class="general-list">
+            <li>If \(f'\left( x \right) &gt; 0\) for all \(x &lt; c\) and if \(f'\left( x \right) &lt; 0\) for all \(x &gt; c\) then \(f\left( c \right)\) will be the absolute maximum value of \(f\left( x \right)\) on the interval \(I\).<br /><br /></li>
+            <li>If \(f'\left( x \right) &lt; 0\) for all \(x &lt; c\) and if \(f'\left( x \right) &gt; 0\) for all \(x &gt; c\) then \(f\left( c \right)\) will be the absolute minimum value of \(f\left( x \right)\) on the interval \(I\).</li>
+          </ol>
+  </div>
+    
+    <p><strong><u>Method 3</u> :</strong> Use the second derivative.</p>
+    
+    <p>There are actually two ways to use the second derivative to help us identify the optimal value of a function and both use the <a href="ShapeofGraphPtII.html#SDT">Second Derivative Test</a> to one extent or another.</p>
+    
+    <p>The first way to use the second derivative doesn’t actually help us to identify the optimal value.  What it does do is allow us to potentially exclude values and knowing this can simplify our work somewhat and so is not a bad thing to do.</p>
+    
+    <p>Suppose that we are looking for the absolute maximum of a function and after finding the critical points we find that we have multiple critical points.  Let’s also suppose that we run all of them through the second derivative test and determine that some of them are in fact relative minimums of the function.  Since we are after the absolute maximum we know that a maximum (of any kind) can’t occur at relative minimums and so we immediately know that we can exclude these points from further consideration.  We could do a similar check if we were looking for the absolute minimum.  Doing this may not seem like all that great of a thing to do, but it can, on occasion, lead to a nice reduction in the amount of work that we need to do in later steps.</p>
+    
+    <p>The second way of using the second derivative to identify the optimal value of a function is in fact very similar to the second method above.  In fact, we will have the same requirements for this method as we did in that method.  We need an interval of possible values of the independent variable in function we are optimizing, call it \(I\) as before, and the endpoint(s) may or may not be finite.  We’ll also need to require that the function, \(f\left( x \right)\) be continuous everywhere in \(I\) except possibly at the endpoints as above.</p>
+    
+    <p>Now, suppose that \(x = c\) is a critical point and that \(f''\left( c \right) &gt; 0\).  The second derivative test tells us that \(x = c\) must be a relative minimum of the function.  Suppose however that we also knew that \(f''\left( x \right) &gt; 0\) for all \(x\) in \(I\).  In this case we would know that the function was concave up in all of \(I\) and that would in turn mean that the absolute minimum of \(f\left( x \right)\) in \(I\) would in fact have to be at \(x = c\).</p>
+    
+    <p>Likewise, if \(x = c\) is a critical point and  \(f''\left( x \right) &lt; 0\) for all \(x\) in \(I\) then we would know that the function was concave down in \(I\) and that the absolute maximum of  \(f\left( x \right)\) in \(I\) would have to be at \(x = c\).</p>
+    
+    <p>Here is a summary of this method.</p>
+    
+    <h4>Second Derivative Test for Absolute Extrema</h4>
+  <div class="fact">
+    <p>Let \(I\) be the interval of all possible values of \(x\) in \(f\left( x \right)\), the function we want to optimize, and suppose that \(f\left( x \right)\) is continuous on \(I\) , except possibly at the endpoints.  Finally suppose that \(x = c\) is a critical point of \(f\left( x \right)\) and that \(c\) is in the interval \(I\).  Then,</p>
+          <ol class="general-list">
+            <li>If \(f''\left( x \right) &gt; 0\) for all \(x\) in \(I\)  then \(f\left( c \right)\) will be the absolute minimum value of \(f\left( x \right)\) on the interval \(I\).<br /><br /></li>
+            <li>If \(f''\left( x \right) &lt; 0\) for all \(x\) in \(I\)  then \(f\left( c \right)\) will be the absolute maximum value of \(f\left( x \right)\) on the interval \(I\).</li>
+          </ol>
+  </div>
+    
+    <p>As we work examples over the next two sections we will use each of these methods as needed in the examples.  In some cases, the method we use will be the only method we could use, in others it will be the easiest method to use and in others it will simply be the method we chose to use for that example.  It is important to realize that we won’t be able to use each of the methods for every example.  With some examples one method will be easiest to use or may be the only method that can be used, however, each of the methods described above will be used at least a couple of times through out all of the examples.</p>
+    
+    <p>It is also important to be aware that some problems don’t allow any of the methods discussed above to be used exactly as outlined above.  We may need to modify one of them or use a combination of them to fully work the problem.  There is an example in the next section where none of the methods above work easily, although we do also present an alternative solution method in which we can use at least one of the methods discussed above.</p>
+    
+    <p>Next, the vast majority of the examples worked over the course of the next section will only have a single critical point.  Problems with more than one critical point are often difficult to know which critical point(s) give the optimal value.  There are a couple of examples in the next two sections with more than one critical point including one in the next section mentioned above in which none of the methods discussed above easily work.  In that example you can see some of the ideas you might need to do in order to find the optimal value.</p>
+    
+    <p>Finally, in all of the methods above we referenced an interval \(I\).  This was done to make the discussion a little easier.  However, in all of the examples over the next two sections we will never explicitly say “this is the interval \(I\)”.  Just remember that the interval \(I\) is just the largest interval of possible values of the independent variable in the function we are optimizing.</p>
+    
+    <p>Okay, let’s work some more examples.</p>
+    <a class="anchor" name="DerivApps_Opt_Ex2"></a>
+  <div class="example">
+    <span class="example-title">Example 2</span> We want to construct a box whose base length is 3 times the base width.  The material used to build the top and bottom cost $10/ft<sup>2</sup> and the material used to build the sides cost $6/ft<sup>2</sup>.  If the box must have a volume of 50ft<sup>3</sup> determine the dimensions that will minimize the cost to build the box.
+    <div class="example-content">
+      <span id="SHLink_Soln2" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln2" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln2" class="soln-content">
+        <p>First, a quick figure (probably not to scale…).</p>
+          
+            <div class="center-div"><img alt="A sketch of a box.  The height is labeled as “h”, the width (or depth) is labeled as “w” and the length is labeled as “l = 3w”." border="0" height="161" src="http://tutorial.math.lamar.edu/Classes/CalcI/Optimization_Files/image003.png" width="214" /></div>
+          
+            
+          <p>We want to minimize the cost of the materials subject to the constraint that the volume must be 50ft<sup>3</sup>.  Note as well that the cost for each side is just the area of that side times the appropriate cost.</p>
+          
+          <p>The two functions we’ll be working with here this time are,</p>
+          
+          
+            \[\begin{align*}{\mbox{Minimize : }} & C = 10\left( {2lw} \right) + 6\left( {2wh + 2lh} \right)\, = 60{w^2} + 48wh\\ {\mbox{Constraint :}}& 50 = lwh = 3{w^2}h\end{align*}\]
+          
+          <p>As with the first example, we will solve the constraint for one of the variables and plug this into the cost.  It will definitely be easier to solve the constraint for \(h\) so let’s do that.</p>
+          
+              \[h = \frac{{50}}{{3{w^2}}}\]
+          
+          <p>Plugging this into the cost gives,</p>
+          
+            \[C\left( w \right) = 60{w^2} + 48w\left( {\frac{{50}}{{3{w^2}}}} \right) = 60{w^2} + \frac{{800}}{w}\]
+          
+          <p>Now, let’s get the first and second (we’ll be needing this later…) derivatives,</p>
+          
+              \[C'\left( w \right) = 120w - 800{w^{ - 2}} = \frac{{120{w^3} - 800}}{{{w^2}}}\hspace{0.25in}\hspace{0.25in}C''\left( w \right) = 120 + 1600{w^{ - 3}}\]
+          
+          <p>Now we need the critical point(s) for the cost function.  First, notice that \(w = 0\) is not a critical point.  Clearly the derivative does not exist at \(w = 0\) but then neither does the function and remember that values of \(w\) will only be critical points if the function also exists at that point.  Note that there is also a physical reason to avoid \(w = 0\).  We are constructing a box and it would make no sense to have a zero width of the box.</p>
+          
+          <p>So it looks like the only critical point will come from determining where the numerator is zero.</p>
+          
+          
+              \[120{w^3} - 800 = 0\hspace{0.25in} \Rightarrow \hspace{0.25in}\,\,w = \sqrt[3]{{\frac{{800}}{{120}}}} = \sqrt[3]{{\frac{{20}}{3}}} = 1.8821\]
+          
+          <p>So, we’ve got a single critical point and we now have to verify that this is in fact the value that will give the absolute minimum cost.</p>
+          
+          <p>In this case we can’t use Method 1 from above.  First, the function is not continuous at one of the endpoints, \(w = 0\), of our interval of possible values, <em>i.e.</em> \(w &gt; 0\).  Secondly, there is no theoretical upper limit to the width that will give a box with volume of 50 ft<sup>3</sup>.  If \(w\) is very large then we would just need to make \(h\) very small.</p>
+          
+          <p>The second method listed above would work here, but that’s going to involve some calculations, not difficult calculations, but more work nonetheless.</p>
+          
+          <p>The third method however, will work quickly and simply here.  First, we know that whatever the value of \(w\) that we get it will have to be positive and we can see second derivative above that provided \(w &gt; 0\) we will have \(C''\left( w \right) &gt; 0\) and so in the interval of possible optimal values the cost function will always be concave up and so \(w = 1.8821\) must give the absolute minimum cost.</p>
+          
+          <p>All we need to do now is to find the remaining dimensions.</p>
+          
+          
+            \[\begin{align*}w & = 1.8821\\ l & = 3w = 3\left( {1.8821} \right) = 5.6463\\  h & = \frac{{50}}{{3{w^2}}} = \frac{{50}}{{3{{\left( {1.8821} \right)}^2}}} = 4.7050\end{align*}\]
+          
+          <p>Also, even though it was not asked for, the minimum cost is : \(C\left( {1.8821} \right) = \$ 637.60\).</p>
+      </div>
+    </div>
+  </div>
+
+    <a class="anchor" name="DerivApps_Opt_Ex3"></a>
+  <div class="example">
+    <span class="example-title">Example 3</span> We want to construct a box with a square base and we only have 10 m<sup>2</sup> of material to use in construction of the box.  Assuming that all the material is used in the construction process determine the maximum volume that the box can have.
+    <div class="example-content">
+      <span id="SHLink_Soln3" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln3" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln3" class="soln-content">
+        <p>This example is in many ways the exact opposite of the previous example.  In this case we want to optimize the volume and the constraint this time is the amount of material used.  We don’t have a cost here, but if you think about it the cost is nothing more than the amount of material used times a cost and so the amount of material and cost are pretty much tied together.  If you can do one you can do the other as well.  Note as well that the amount of material used is really just the surface area of the box.</p>
+          
+          <p>As always, let’s start off with a quick sketch of the box.</p>
+          
+            <div class="center-div"><img alt="A sketch of a box.  The height is labeled as “h”, the width (or depth) is labeled as “w” and the length is labeled as “l = w”." border="0" height="170" src="http://tutorial.math.lamar.edu/Classes/CalcI/Optimization_Files/image004.png" width="214" /></div>
+          
+          <p>Now, as mentioned above we want to maximize the volume and the amount of material is the constraint so here are the equations we’ll need.</p>
+
+          \[\begin{align*}{\mbox{Maximize : }} & V = lwh = {w^2}h\\ {\mbox{Constraint :}} & 10 = 2lw + 2wh + 2lh\, = 2{w^2} + 4wh\end{align*}\]
+          
+          <p>We’ll solve the constraint for \(h\) and plug this into the equation for the volume.</p>
+          
+            \[h = \frac{{10 - 2{w^2}}}{{4w}} = \frac{{5 - {w^2}}}{{2w}}\hspace{0.25in}\hspace{0.25in} \Rightarrow \hspace{0.25in}\,\,\,\,\,\,\,V\left( w \right) = {w^2}\left( {\frac{{5 - {w^2}}}{{2w}}} \right) = \frac{1}{2}\left( {5w - {w^3}} \right)\]
+          
+          <p>Here are the first and second derivatives of the volume function.</p>
+
+          \[V'\left( w \right) = {{1 \over 2}}\left( {5 - 3{w^2}} \right)\hspace{0.25in}\hspace{0.25in}\hspace{0.25in}V''\left( w \right) =  - 3w\]
+          
+          <p>Note as well here that provided \(w &gt; 0\), which from a physical standpoint we know must be true for the width of the box, then the volume function will be concave down and so if we get a single critical point then we know that it will have to be the value that gives the absolute maximum.</p>
+          
+          <p>Setting the first derivative equal to zero and solving gives us the two critical points,</p>
+
+          \[w =  \pm \,\sqrt {\frac{5}{3}}  =  \pm \,1.2910\]
+          
+          <p>In this case we can exclude the negative critical point since we are dealing with a length of a box and we know that these must be positive.  Do not however get into the habit of just excluding any negative critical point.  There are problems where negative critical points are perfectly valid possible solutions.</p>
+          
+          <p>Now, as noted above we got a single critical point, 1.2910, and so this must be the value that gives the maximum volume and since the maximum volume is all that was asked for in the problem statement the answer is then : \[V\left( {1.2910} \right) = 2.1517\,{{\mbox{m}}^3}\].</p>
+          
+          <p>Note that we could also have noted here that if \(0 &lt; w &lt; 1.2910\) then \(V'\left( w \right) &gt; 0\) (using a test point we have \(V'\left( 1 \right) = 1 &gt; 0\)) and likewise if \(w &gt; 1.2910\) then \(V'\left( w \right) &lt; 0\) (using a test point we have \(V'\left( 2 \right) =  - {\frac{7}{2}} &lt; 0\)) and so if we are to the left of the critical point the volume is always increasing and if we are to the right of the critical point the volume is always decreasing and so by the Method 2 above we can also see that the single critical point must give the absolute maximum of the volume.</p>
+          
+          <p>Finally, even though these weren’t asked for here are the dimension of the box that gives the maximum volume.</p>
+          
+            \[l = w = 1.2910\hspace{1.0in}h = \frac{{5 - {{1.2910}^2}}}{{2\left( {1.2910} \right)}} = 1.2910\]
+          
+          <p>So, it looks like in this case we actually have a perfect cube.</p>
+      </div>
+    </div>
+  </div>
+    
+    <p>In the last two examples we’ve seen that many of these optimization problems can be done in both directions so to speak.  In both examples we have essentially the same two equations: volume and surface area.  However, in Example 2 the volume was the constraint and the cost (which is directly related to the surface area) was the function we were trying to optimize.  In Example 3, on the other hand, we were trying to optimize the volume and the surface area was the constraint.</p>
+    
+    <p>It is important to not get so locked into one way of doing these problems that we can’t do it in the opposite direction as needed as well.  This is one of the more common mistakes that students make with these kinds of problems.  They see one problem and then try to make every other problem that seems to be the same conform to that one solution even if the problem needs to be worked differently.  Keep an open mind with these problems and make sure that you understand what is being optimized and what the constraint is before you jump into the solution.</p>
+    
+    <p>Also, as seen in the last example we used two different methods of verifying that we did get the optimal value.  Do not get too locked into one method of doing this verification that you forget about the other methods.</p>
+    
+    <p>Let’s work some another example that this time doesn’t involve a rectangle or box.</p>
+    <a class="anchor" name="DerivApps_Opt_Ex4"></a>
+  <div class="example">
+    <span class="example-title">Example 4</span> A manufacturer needs to make a cylindrical can that will hold 1.5 liters of liquid.  Determine the dimensions of the can that will minimize the amount of material used in its construction.
+    <div class="example-content">
+      <span id="SHLink_Soln4" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln4" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln4" class="soln-content">
+        <p>Before starting the solution let’s first address the fact that we are using liters for volume.  Because we want length measurements for the radius and height we’ll also need the volume to in terms of a length measurement.  We can easily do this using the fact that 1 Liter = 1000 cm<sup>3</sup>  and so we can convert 1.5 liters into 1500 cm<sup>3</sup>.  This will in turn give a radius and height in terms of centimeters.</p>
+          
+          <p>In this problem the constraint is the volume and we want to minimize the amount of material used.  This means that what we want to minimize is the surface area of the can and we’ll need to include both the walls of the can as well as the top and bottom “caps”.  Here is a quick sketch to get us started off.</p>
+          
+            <div class="center-div"><img alt="A sketch of a can.  The height is labeled as “h” and the radius is labeled as “r”." border="0" height="182" src="http://tutorial.math.lamar.edu/Classes/CalcI/Optimization_Files/image005.png" width="142" /></div>
+          
+          <p>We’ll need the surface area of this can and that will be the surface area of the walls of the can (which is really just a cylinder) and the area of the top and bottom caps (which are just disks, and don’t forget that there are two of them).</p>
+          
+          <p>Note that if you think of a cylinder of height \(h\) and radius \(r\) as just a bunch of disks/circles of radius \(r\) stacked on top of each other the equations for the surface area and volume are pretty simple to remember.  The volume is just the area of each of the disks times the height.  Similarly, the surface area of the walls of the cylinder is just the circumference of each circle times the height.  We also can’t forget to add in the area of the two caps, \(\pi {r^2}\), to the total surface area.</p>
+          
+          <p>So, the equation for the volume and surface area of the walls of a cylinder are then,</p>
+          
+            \[V = \left( {\pi {r^2}} \right)\left( h \right) = \pi {r^2}h\hspace{0.25in}\hspace{0.25in}\hspace{0.25in}A = \left( {2\pi r} \right)\left( h \right) = 2\pi rh\]
+          
+          <p>Adding the surface area of the caps of the cylinder to the surface area the equations that we’ll need for this problem are,</p>
+
+          \[\begin{align*}{\mbox{Minimize : }} & A = 2\pi rh + 2\pi {r^2}\\ {\mbox{Constraint :}} & 1500 = \pi {r^2}h\end{align*}\]
+          
+          <p>In this case it looks like our best option is to solve the constraint for \(h\) and plug this into the area function.</p>
+
+          \[h = \frac{{1500}}{{\pi {r^2}}}\hspace{0.25in} \Rightarrow \hspace{0.25in}A\left( r \right) = 2\pi r\left( {\frac{{1500}}{{\pi {r^2}}}} \right) + 2\pi {r^2} = 2\pi {r^2} + \frac{{3000}}{r}\]
+
+          <p>Notice that this formula will only make sense from a physical standpoint if \(r &gt; 0\) which is a good thing as it is not defined at \(r = 0\).</p>
+          
+          <p>Next, let’s get the first derivative.</p>
+
+          \[A'\left( r \right) = 4\pi r - \frac{{3000}}{{{r^2}}} = \frac{{4\pi {r^3} - 3000}}{{{r^2}}}\]
+          
+          <p>From this we can see that we have one critical points : \(r = \sqrt[3]{\frac{750}{\pi}} = 6.2035\)(where the derivative is zero).  Note that \(r = 0\) is not a critical point because the area function does not exist there, which makes sense from a physical standpoint as well given that we know that \(r\) must be positive in order to actually have a can.</p>
+          
+          <p>So, we only have a single critical point to deal with here and notice that 6.2035 is the only value for which the derivative will be zero and hence the only place (with \(r &gt; 0\) of course) that the derivative may change sign.  It’s not difficult, using test points, to check that if \(0 &lt; r &lt; 6.2035\) then \(A'\left( r \right) &lt; 0\) and likewise if \(r &gt; 6.2035\) then \(A'\left( r \right) &gt; 0\).  The variant of the First Derivative Test above then tells us that the absolute minimum value of the area (for \(r &gt; 0\))  must occur at
+            \[r = 6.2035\].</p>
+          
+          <p>All we need to do this is determine height of the can and we’ll be done.</p>
+
+          \[h = \frac{{1500}}{{\pi {{\left( {6.2035} \right)}^2}}} = 12.4070\]
+          
+          <p>Therefore, if the manufacturer makes the can with a radius of 6.2035 cm and a height of 12.4070 cm the least amount of material will be used to make the can.</p>
+      </div>
+    </div>
+  </div>
+    
+    <p>As an interesting side problem and extension to the above example you might want to show that for a given volume, \(L\), the minimum material will be used if \(h = 2r\) regardless of the volume of the can.</p>
+    
+    <p>In the examples to this point we’ve put in quite a bit of discussion in the solution.  In the remaining problems we won’t be putting in quite as much discussion and leave it to you to fill in any missing details.</p>
+
+    <a class="anchor" name="DerivApps_Opt_Ex5"></a>
+  <div class="example">
+    <span class="example-title">Example 5</span> We have a piece of cardboard that is 14 inches by 10 inches and we’re going to cut out the corners as shown below and fold up the sides to form a box, also shown below.  Determine the height of the box that will give a maximum volume.</p>
+          
+            <div class="center-div"><img border="0" height="173" src="http://tutorial.math.lamar.edu/Classes/CalcI/Optimization_Files/image006.gif" width="523" /></div>
+    <div class="example-content">
+      <span id="SHLink_Soln5" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln5" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln5" class="soln-content">
+        <p>Let’s let the height of the box be \(h\).  So, the width/length of the corners being cut out is also \(h\) and so the vertical side will have a “new” height of \(10 - 2h\) and the horizontal side will have a “new” width of \(14 - 2h\).  Here is a sketch with all this information put in,</p>
+          
+          
+            <div class="center-div"><img alt="This sketch has two pieces to it.  On the right is a box where the height is labeled as “h”, the width (or depth) is labeled as “10-2h” and the length is labeled as “14-2h”.  On the left is the rectangular piece of cardboard that was used to construct the box.  Interior to this rectangle is another rectangle that will become the bottom of the box.  In each order there are squares, with sides labeled as “h” that are indicated with dashed lines.  These are the squares that must be cut out of the rectangle in order to fold up the remaining pieces to become the sides of the box.  The middle portion of the left side of the rectangle (i.e. the portion between the two “cut out” squares) is labeled “10-2h”.  The middle portion of the bottom side of the rectangle (i.e. the portion between the two “cut out” squares) is labeled “14-2h”." border="0" height="156" src="http://tutorial.math.lamar.edu/Classes/CalcI/Optimization_Files/image007.png" width="524" /></div>
+          
+          <p>In this example, for the first time, we’ve run into a problem where the constraint doesn’t really have an equation.  The constraint is simply the size of the piece of cardboard and has already been factored into the figure above.  This will happen on occasion and so don’t get excited about it when it does.  This just means that we have one less equation to worry about. In this case we want to maximize the volume. Here is the volume, in terms of \(h\) and its first derivative.</p>
+          
+          \[V\left( h \right) = h\left( {14 - 2h} \right)\left( {10 - 2h} \right) = 140h - 48{h^2} + 4{h^3}\hspace{0.25in}\hspace{0.25in}V'\left( h \right) = 140 - 96h + 12{h^2}\]
+          
+          <p>Setting the first derivative equal to zero and solving gives the following two critical points,</p>
+
+          \[h = \frac{{12 \pm \sqrt {39} }}{3} = 1.9183,\,\,\,\,6.0817\]
+          
+          <p>We now have an apparent problem.  We have two critical points and we’ll need to determine which one is the value we need.  The fact that we have two critical points means that neither the first derivative test or the second derivative test can be used here as they both require a single critical point.  This isn’t a real problem however.  Go back to the figure at the start of the solution and notice that we can quite easily find limits on \(h\).  The smallest \(h\) can be is \(h = 0\) even though this doesn’t make much sense as we won’t get a box in this case.  Also, from the 10 inch side we can see that the largest \(h\) can be is \(h = 5\) although again, this doesn’t make much sense physically.</p>
+          
+          <p>So, knowing that whatever \(h\) is it must be in the range \(0 \le h \le 5\) we can see that the second critical point is outside this range and so the only critical point that we need to worry about is 1.9183.</p>
+          
+          <p>Finally, since the volume is defined and continuous on \(0 \le h \le 5\) all we need to do is plug in the critical points and endpoints into the volume to determine which gives the largest volume.  Here are those function evaluations.</p>
+          
+          
+            \[V\left( 0 \right) = 0\hspace{0.25in}\hspace{0.25in}V\left( {1.9183} \right) = 120.1644\hspace{0.25in}\hspace{0.25in}V\left( 5 \right) = 0\]
+          
+          <p>So, if we take \(h = 1.9183\) we get a maximum volume.</p>
+      </div>
+    </div>
+  </div>
+
+    <a class="anchor" name="DerivApps_Opt_Ex6"></a>
+  <div class="example">
+    <span class="example-title">Example 6</span> A printer need to make a poster that will have a total area of 200 in<sup>2</sup> and will have 1 inch margins on the sides, a 2 inch margin on the top and a 1.5 inch margin on the bottom as shown below.  What dimensions will give the largest printed area?</p>
+          
+            <div class="center-div"><img border="0" height="255" src="http://tutorial.math.lamar.edu/Classes/CalcI/Optimization_Files/image008.gif" width="179" /></div>
+    <div class="example-content">
+      <span id="SHLink_Soln6" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln6" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln6" class="soln-content">
+        <p>This problem is a little different from the previous problems.  Both the constraint and the function we are going to optimize are areas.  The constraint is that the overall area of the poster must be 200 in<sup>2</sup> while we want to optimize the printed area (<em>i.e.</em> the area of the poster with the margins taken out).</p>
+          
+          <p>Let’s define the height of the poster to be \(h\) and the width of the poster to be \(w\).  Here is a new sketch of the poster and we can see that once we’ve taken the margins into account the width of the printed area is \(w - 2\) and the height of the printer area is \(h - 3.5\).</p>
+          
+          
+            <div class="center-div"><img alt="This is a rectangle with another rectangle sketched inside it.  The inner rectangle represents the area that will actually be printed.  The height of the outer rectangle is labeled “h” and the width of outer rectangle is labeled “w”.  The distance between the right/left sides of the outer rectangle and inner rectangle are labeled “1 inch margin”.  The distance between the tops of the two rectangles is labeled “2 inch margin”.  The distance between the bottoms of the two rectangles is labeled “1.5 inch margin”.   The height of the inner rectangle is labeled “h-3.5” and the width of the inner rectangle is labeled “w-2”." border="0" height="255" src="http://tutorial.math.lamar.edu/Classes/CalcI/Optimization_Files/image009.png" width="179" /></div>
+
+          <p>Here are the equations that we’ll be working with.</p>
+          
+            \[\begin{align*}{\mbox{Maximize : }} & A = \left( {w - 2} \right)\left( {h - 3.5} \right)\\ {\mbox{Constraint :}} & 200 = wh\end{align*}\]
+          
+          <p>Solving the constraint for \(h\) and plugging into the equation for the printed area gives,</p>
+          
+            \[A\left( w \right) = \left( {w - 2} \right)\left( {\frac{{200}}{w} - 3.5} \right) = 207 - 3.5w - \frac{{400}}{w}\]
+
+          <p>The first and second derivatives are,</p>
+
+          \[A'\left( w \right) =  - 3.5 + \frac{{400}}{{{w^2}}} = \frac{{400 - 3.5{w^2}}}{{{w^2}}}\hspace{0.25in}\hspace{0.25in}A''\left( w \right) =  - \frac{{800}}{{{w^3}}}\]
+
+          <p>From the first derivative we have the following two critical points (\(w = 0\) is not a critical point because the area function does not exist there).</p>
+          
+          
+            \[w =  \pm \,\sqrt {\frac{400}{3.5}}  =  \pm \,10.6904\]
+          
+          <p>However, since we’re dealing with the dimensions of a piece of paper we know that we must have \(w &gt; 0\) and so only 10.6904 will make sense.</p>
+          
+          <p>Also notice that provided \(w &gt; 0\) the second derivative will always be negative and so in the range of possible optimal values of the width the area function is always concave down and so we know that the maximum printed area will be at \(w = 10.6904\,\,{\mbox{inches}}\).</p>
+          
+          <p>The height of the paper that gives the maximum printed area is then,</p>
+          
+            \[h = \frac{{200}}{{10.6904}} = 18.7084\,\,{\mbox{inches}}\]
+      </div>
+    </div>
+  </div>
+    
+    <p>We’ve worked quite a few examples to this point and we have quite a few more to work.  However, this section has gotten quite lengthy so let’s continue our examples in the next section.  This is being done mostly because these notes are also being presented on the web and this will help to keep the load times on the pages down somewhat.</p>
+  
+
+
+      
+
+
+
+    </div>
+    <!-- End of content div -->
+
+
+    <div class="footer">
+      <div class="footer-links">
+        [<a href="http://tutorial.math.lamar.edu/Contact.aspx">Contact Me</a>]&nbsp;[<a href="../../MyStudents-2.html">My Students</a>]&nbsp;[<a href="http://tutorial.math.lamar.edu/Privacy.aspx">Privacy Statement</a>]&nbsp;[<a href="../../Help-2.html">Site Help &amp; FAQ</a>]&nbsp;[<a href="http://tutorial.math.lamar.edu/Terms.aspx">Terms of Use</a>]
+      </div>
+      <div class="footer-dates">
+        <div class="footer-copyright"><span id="lblCopyRight">&copy; 2003 - 2019 Paul Dawkins</span></div>
+        <div class="footer-spacer"></div>
+        <div class="footer-modified-date">Page Last Modified : <span id="lblModified">5/30/2018</span></div>
+      </div>
+      
+
+    </div>
+  </div>
+  <!-- End of page div...  -->
+</body>
+
+<!-- Mirrored from tutorial.math.lamar.edu/Classes/CalcI/Optimization.aspx by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 27 Feb 2019 06:15:35 GMT -->
+</html>

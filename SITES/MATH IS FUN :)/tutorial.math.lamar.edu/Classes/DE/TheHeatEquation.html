@@ -1,0 +1,1106 @@
+
+
+<!DOCTYPE html>
+
+<html>
+
+<!-- Mirrored from tutorial.math.lamar.edu/Classes/DE/TheHeatEquation.aspx by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 27 Feb 2019 06:15:37 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=yes" /><meta http-equiv="X-UA-Compatible" content="IE=edge" />  <!-- For best MathJax performance on IE  -->
+
+  <meta name="google-site-verification" content="uLoA31CJfOhIVMJWBjCmQL8xNMmmLybZU3LRKavy9WQ" /><title>
+	Differential Equations - The Heat Equation
+</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="../../../www.googletagmanager.com/gtag/js1872?id=UA-331594-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-331594-1');
+  </script>
+
+  <link type="text/css" href="../../css/jquery.mmenu.all.css" rel="stylesheet" /><link type="text/css" href="../../css/jquery.dropdown.css" rel="stylesheet" /><link href="../../FA/css/fontawesome-all.min.css" rel="stylesheet" /><link type="text/css" href="../../css/notes-all.css" rel="stylesheet" /><link type="text/css" href="../../css/notes-google.css" rel="stylesheet" /><link type="text/css" href="../../css/notes-mmenu.css" rel="stylesheet" /><link type="text/css" href="../../css/notes-dropdown.css" rel="stylesheet" />
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+     TeX: { equationNumbers: { autoNumber: "AMS" } }
+    });
+  </script>
+  <script type="text/javascript" async src="../../../cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax2ba6.js?config=TeX-AMS_CHTML-full"></script>
+  <script type="text/javascript" src="../../../code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="../../js/jquery.mmenu.all.js"></script>
+  <script type="text/javascript" src="../../js/jquery.dropdown.js"></script>
+  <script type="text/javascript" src="../../js/notes-all.js"></script>  
+
+  <script>
+    (function () {
+      var cx = '001004262401526223570:11yv6vpcqvy';
+      var gcse = document.createElement('script');
+      gcse.type = 'text/javascript';
+      gcse.async = true;
+      gcse.src = '../../../cse.google.com/cse07b6.html?cx=' + cx;
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(gcse, s);
+    })();
+  </script>
+
+<meta http-equiv="keywords" name="keywords" content="heat equation" /><meta http-equiv="description" name="description" content="In this section we will do a partial derivation of the heat equation that can be solved to give the temperature in a one dimensional bar of length L.  In addition, we give several possible boundary conditions that can be used in this situation.  We also define the Laplacian in this section and give a version of the heat equation for two or three dimensional situations." /></head>
+<body onload="init({Notes: 'NoteMobile;8/21/2018;true'})">
+
+  <div id="page">
+
+    <div class="header">
+      <div class="header-row">
+        <!--<a href="#menu"><span></span></a>-->
+        <div id="side-menu-icon" class="header-side-menu-icon"><a href="#menu"><span class="fas fa-bars fa-lg" aria-hidden="true" title="Main Menu - Change between topics, chapters and sections as well as a few extra pages."></span></a></div>
+        <span class="header-title"><a href="../../index.html" class="header-title-link">Paul's Online Notes</a></span>
+        <div class="header-spacer"></div>
+
+        <div id="content-top-menu" class="top-menu">
+          <button id="content-type-menu" class="top-menu-button" data-jq-dropdown="#jq-dropdown-type" title="View (Notes, Practice Problems or Assignment Problems, Show/Hide Solutions and/or Steps) Menu">
+            <span id="tab_top_menu_notes" class="top-menu-item-title">Notes</span> <span class="far fa-eye fa-lg" aria-hidden="true"></span>
+          </button>
+
+          <button id="quicknav-menu" class="top-menu-button" data-jq-dropdown="#jq-dropdown-quicknav" title="Quick Navigation (Previous/Next Sections and Problems and Full Problem List) Menu">
+            <span class="top-menu-item-title">Quick Nav</span> <span class="fas fa-exchange fa-lg" aria-hidden="true"></span>
+          </button>
+          
+          <button id="download-menu" class="top-menu-button" data-jq-dropdown="#jq-dropdown-download" title="Download pdf Menu">
+            <span class="top-menu-item-title">Download</span> <span class="far fa-download fa-lg" aria-hidden="true"></span>
+          </button>
+
+          <button id="print-menu" class="top-menu-button top-menu-button-icon-only" data-jq-dropdown="#jq-print-download" title="Print Menu">
+            <span class="far fa-print fa-lg" aria-hidden="true"></span>
+          </button>
+        </div>
+
+        <div id="header-google-search" class="header-search">
+          <gcse:search></gcse:search>
+        </div>
+        <div id="header-search-icon" title="Site Search" class="header-menu-icon"><span id="search-icon" class="fas fa-search" aria-hidden="true"></span></div>
+
+      </div>
+    </div>
+
+     <div id="jq-dropdown-type" class="jq-dropdown jq-dropdown-tip">
+      <ul class="jq-dropdown-menu">
+        
+        <li id="li_type_menu_goto" class="top-menu-nav-title">Go To</li>
+        <li id="li_type_menu_notes">
+          <span id="type_menu_notes_span" title="Viewing the Notes for the current topic." class="top-menu-current">Notes</span>
+          
+        </li>
+        <li id="li_type_menu_practice">
+          <span id="type_menu_problem_span_de" class="top-menu-item-text">Practice and Assignment problems are not yet written.  As time permits I am working on them, however I don't have the amount of free time that I used to so it will take a while before anything shows up here.</span>
+          
+          
+        </li>
+        <li id="li_type_menu_asgn">
+          
+          
+        </li>
+        <li id="li_type_menu_sh" class="top-menu-nav-title">Show/Hide</li>
+        <li id="li_type_menu_show" title="Show any hidden solutions and/or steps that may be present on the page."><a href="javascript:SHPrintPage(1,0)" id="view_menu_show">Show all Solutions/Steps/<em>etc.</em></a></li>
+        <li id="li_type_menu_hide" title="Hide any visible solutions and/or steps that may be present on the page."><a href="javascript:SHPrintPage(0,0)" id="view_menu_hide">Hide all Solutions/Steps/<em>etc.</em></a></li>
+      </ul>
+    </div>
+
+    <div id="jq-dropdown-quicknav" class="jq-dropdown jq-dropdown-tip">
+      <ul class="jq-dropdown-menu">
+        <li id="li_nav_menu_sections" class="top-menu-nav-title">Sections</li>
+        <li id="li_nav_menu_prev_section"><a href="IntroPDE.html" id="a_nav_menu_prev_section" class="top-menu-nav-link" title="Previous Section : Partial Differential Equations Introduction"><span class="top-menu-prev fas fa-chevron-left"></span> Partial Differential Equations Introduction</a></li>
+        <li id="li_nav_menu_next_section"><a href="TheWaveEquation.html" id="a_nav_menu_next_section" class="top-menu-nav-link" title="Next Section : The Wave Equation"><span class="top-menu-prev-hidden fas fa-chevron-left"></span> The Wave Equation <span class="top-menu-next fas fa-chevron-right"></span></a></li>
+        <li id="li_nav_menu_chapters" class="top-menu-nav-title">Chapters</li>
+        <li id="li_nav_menu_prev_chapter"><a href="IntroBVP.html" id="a_nav_menu_prev_chapter" class="top-menu-nav-link" title="Previous Chapter : Boundary Value Problems &amp; Fourier Series"><span class="top-menu-prev fas fa-chevron-left"></span><span class="top-menu-prev fas fa-chevron-left"></span> Boundary Value Problems & Fourier Series</a></li>
+        
+        
+        
+        
+        
+        <li id="li_nav_menu_classes" class="top-menu-nav-title">Classes</li>
+        <li>
+          
+          <a href="../Alg/Alg.html" id="nav_menu_alg_link" title="Go To Algebra Notes">Algebra</a>
+        </li>
+        <li>
+          
+          <a href="../CalcI/CalcI.html" id="nav_menu_calci_link" title="Go To Calculus I Notes">Calculus I</a>
+        </li>
+        <li>
+          
+          <a href="../CalcII/CalcII.html" id="nav_menu_calcii_link" title="Go To Calculus II Notes">Calculus II</a>
+        </li>
+        <li>
+          
+          <a href="../CalcIII/CalcIII.html" id="nav_menu_calciii_link" title="Go To Calculus III Notes">Calculus III</a>
+        </li>
+        <li>
+          <span id="nav_menu_de_span" title="Currently Viewing Differential Equations Material" class="top-menu-current">Differential Equations</span>
+          
+        </li>
+        <li id="li_nav_menu_extras" class="top-menu-nav-title">Extras</li>
+        <li>
+          
+          <a href="../../Extras/AlgebraTrigReview/AlgebraTrig.html" id="nav_menu_algtrig_link" title="Go To Algebra &amp; Trig Review">Algebra &amp; Trig Review</a>
+        </li>
+        <li>
+          
+          <a href="../../Extras/CommonErrors/CommonMathErrors.html" id="nav_menu_commonerrors_link" title="Go To Common Math Errors">Common Math Errors</a>
+        </li>
+        <li>
+          
+          <a href="../../Extras/ComplexPrimer/ComplexNumbers.html" id="nav_menu_complexnumbers_link" title="Go To Complex Numbers Primer">Complex Number Primer</a>
+        </li>
+        <li>
+          
+          <a href="../../Extras/StudyMath/HowToStudyMath.html" id="nav_menu_studymath_link" title="Go To How To Study Math">How To Study Math</a>
+        </li>
+        <li>
+          
+          <a href="../../Extras/CheatSheets_Tables.html" id="nav_menu_cheattables_link" title="Go To List of Cheat Sheets and Tables">Cheat Sheets &amp; Tables</a>
+        </li>
+        <li id="li_nav_menu_misc" class="top-menu-nav-title">Misc</li>
+        <li><a href="http://tutorial.math.lamar.edu/contact.aspx" id="nav_menu_contact" title="Contact Me!">Contact Me</a></li>
+        <li><a href="../../mathjax.html" id="nav_menu_mathjax" title="Info on MathJax and MathJax Configuration Menu">MathJax Help and Configuration</a></li>
+        <li><a href="../../mystudents.html" id="nav_menu_students" title="Go here if you are currently taking a class from me!">My Students</a></li>
+      </ul>
+    </div>
+
+    <div id="jq-dropdown-download" class="jq-dropdown jq-dropdown-anchor-right jq-dropdown-tip">
+      <ul class="jq-dropdown-menu">
+        
+        <li id="li_download_menu_notes" class="top-menu-nav-title">Notes Downloads</li>
+        <li id="li_download_menu_notes_book"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=B,1,N" id="download_menu_notes_book" data-PDF="Download - Menu$Notes - Book$Differential Equations$/Downloads/DE/Notes/Complete.pdf">Complete Book</a></li>
+        
+        <li id="li_download_menu_notes_chapter"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=C,78,N" id="download_menu_notes_chapter" data-PDF="Download - Menu$Notes - Chapter$Differential Equations - Partial Differential Equations $/Downloads/DE/Notes/PDE.pdf">Current Chapter</a></li>
+        <li id="li_download_menu_notes_section"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=S,471,N" id="download_menu_notes_section" data-PDF="Download - Menu$Notes - Section$Differential Equations - The Heat Equation$/Downloads/DE/Notes/TheHeatEquation.pdf">Current Section</a></li>
+        <li id="li_download_menu_practice" class="top-menu-nav-title">Practice Problems Downloads</li>
+        <li id="li_download_menu_practice_de"><span class="top-menu-item-text">Problems not yet written.</span></li>
+        
+        
+        
+        
+        
+        
+        
+        
+        <li id="li_download_menu_asgn" class="top-menu-nav-title">Assignment Problems Downloads</li>
+        <li id="li_download_menu_asgn_de"><span class="top-menu-item-text">Problems not yet written.</span></li>
+        
+        
+        
+        <li id="li_download_menu_other" class="top-menu-nav-title">Other Items</li>
+        <li id="li_download_menu_urls">
+          <a href="http://tutorial.math.lamar.edu/DownloadURLs.aspx?bi=1&amp;ci=78&amp;si=471" id="download_menu_urls">Get URL's for Download Items</a>
+        </li>
+      </ul>
+    </div>
+
+    <div id="jq-print-download" class="jq-dropdown jq-dropdown-anchor-right jq-dropdown-tip">
+      <ul class="jq-dropdown-menu">
+        <li id="li_print_menu_default"><a href="javascript:SHPrintPage()" id="print_menu_default">Print Page in Current Form (Default)</a></li>
+        <li id="li_print_menu_show"><a href="javascript:SHPrintPage(1,1)" id="print_menu_show">Show all Solutions/Steps and Print Page</a></li>
+        <li id="li_print_menu_hide"><a href="javascript:SHPrintPage(0,1)" id="print_menu_hide">Hide all Solutions/Steps and Print Page</a></li>
+      </ul>
+    </div>
+
+
+
+   
+
+    <nav id="menu" class="notes-nav">
+      <ul>
+        <li><a href="../../index.html" class="mm-link">Home</a></li>
+        <li><span>Classes</span></li>
+        <li><a href="../Alg/Alg.html" class="mm-link">Algebra</a>
+          <ul>
+            <li><a href="../Alg/Preliminaries.html" class="mm-link">Preliminaries</a>
+              <ul>
+                <li><a href="../Alg/IntegerExponents.html" class="mm-link">Integer Exponents</a></li>
+                <li><a href="../Alg/RationalExponents.html" class="mm-link">Rational Exponents</a></li>
+                <li><a href="../Alg/Radicals.html" class="mm-link">Radicals</a></li>
+                <li><a href="../Alg/Polynomials.html" class="mm-link">Polynomials</a></li>
+                <li><a href="../Alg/Factoring.html" class="mm-link">Factoring Polynomials</a></li>
+                <li><a href="../Alg/RationalExpressions.html" class="mm-link">Rational Expressions</a></li>
+                <li><a href="../Alg/ComplexNumbers.html" class="mm-link">Complex Numbers</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/Solving.html" class="mm-link">Solving Equations and Inequalities</a>
+              <ul>
+                <li><a href="../Alg/SolutionSets.html" class="mm-link">Solutions and Solution Sets</a></li>
+                <li><a href="../Alg/SolveLinearEqns.html" class="mm-link">Linear Equations</a></li>
+                <li><a href="../Alg/LinearApps.html" class="mm-link">Applications of Linear Equations</a></li>
+                <li><a href="../Alg/SolveMultiVariable.html" class="mm-link">Equations With More Than One Variable</a></li>
+                <li><a href="../Alg/SolveQuadraticEqnsI.html" class="mm-link">Quadratic Equations - Part I</a></li>
+                <li><a href="../Alg/SolveQuadraticEqnsII.html" class="mm-link">Quadratic Equations - Part II</a></li>
+                <li><a href="../Alg/SolveQuadraticEqnSummary.html" class="mm-link">Quadratic Equations : A Summary</a></li>
+                <li><a href="../Alg/QuadraticApps.html" class="mm-link">Applications of Quadratic Equations</a></li>
+                <li><a href="../Alg/ReducibleToQuadratic.html" class="mm-link">Equations Reducible to Quadratic in Form</a></li>
+                <li><a href="../Alg/SolveRadicalEqns.html" class="mm-link">Equations with Radicals</a></li>
+                <li><a href="../Alg/SolveLinearInequalities.html" class="mm-link">Linear Inequalities</a></li>
+                <li><a href="../Alg/SolvePolyInequalities.html" class="mm-link">Polynomial Inequalities</a></li>
+                <li><a href="../Alg/SolveRationalInequalities.html" class="mm-link">Rational Inequalities</a></li>
+                <li><a href="../Alg/SolveAbsValueEqns.html" class="mm-link">Absolute Value Equations</a></li>
+                <li><a href="../Alg/SolveAbsValueIneq.html" class="mm-link">Absolute Value Inequalities</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/Graphing_Functions.html" class="mm-link">Graphing and Functions</a>
+              <ul>
+                <li><a href="../Alg/Graphing.html" class="mm-link">Graphing</a></li>
+                <li><a href="../Alg/Lines.html" class="mm-link">Lines</a></li>
+                <li><a href="../Alg/Circles.html" class="mm-link">Circles</a></li>
+                <li><a href="../Alg/FunctionDefn.html" class="mm-link">The Definition of a Function</a></li>
+                <li><a href="../Alg/GraphFunctions.html" class="mm-link">Graphing Functions</a></li>
+                <li><a href="../Alg/CombineFunctions.html" class="mm-link">Combining Functions</a></li>
+                <li><a href="../Alg/InverseFunctions.html" class="mm-link">Inverse Functions</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/CommonGraphs.html" class="mm-link">Common Graphs</a>
+              <ul>
+                <li><a href="../Alg/Lines_Circles_PWF.html" class="mm-link">Lines, Circles and Piecewise Functions</a></li>
+                <li><a href="../Alg/Parabolas.html" class="mm-link">Parabolas</a></li>
+                <li><a href="../Alg/Ellipses.html" class="mm-link">Ellipses</a></li>
+                <li><a href="../Alg/Hyperbolas.html" class="mm-link">Hyperbolas</a></li>
+                <li><a href="../Alg/MiscFunctions.html" class="mm-link">Miscellaneous Functions</a></li>
+                <li><a href="../Alg/Transformations.html" class="mm-link">Transformations</a></li>
+                <li><a href="../Alg/Symmetry.html" class="mm-link">Symmetry</a></li>
+                <li><a href="../Alg/GraphRationalFcns.html" class="mm-link">Rational Functions</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/PolynomialFunctions.html" class="mm-link">Polynomial Functions</a>
+              <ul>
+                <li><a href="../Alg/DividingPolynomials.html" class="mm-link">Dividing Polynomials</a></li>
+                <li><a href="../Alg/ZeroesOfPolynomials.html" class="mm-link">Zeroes/Roots of Polynomials</a></li>
+                <li><a href="../Alg/GraphingPolynomials.html" class="mm-link">Graphing Polynomials</a></li>
+                <li><a href="../Alg/FindingZeroesOfPolynomials.html" class="mm-link">Finding Zeroes of Polynomials</a></li>
+                <li><a href="../Alg/PartialFractions.html" class="mm-link">Partial Fractions</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/ExpAndLog.html" class="mm-link">Exponential and Logarithm Functions</a>
+              <ul>
+                <li><a href="../Alg/ExpFunctions.html" class="mm-link">Exponential Functions</a></li>
+                <li><a href="../Alg/LogFunctions.html" class="mm-link">Logarithm Functions</a></li>
+                <li><a href="../Alg/SolveExpEqns.html" class="mm-link">Solving Exponential Equations</a></li>
+                <li><a href="../Alg/SolveLogEqns.html" class="mm-link">Solving Logarithm Equations</a></li>
+                <li><a href="../Alg/ExpLogApplications.html" class="mm-link">Applications</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/Systems.html" class="mm-link">Systems of Equations</a>
+              <ul>
+                <li><a href="../Alg/SystemsTwoVrble.html" class="mm-link">Linear Systems with Two Variables</a></li>
+                <li><a href="../Alg/SystemsThreeVrble.html" class="mm-link">Linear Systems with Three Variables</a></li>
+                <li><a href="../Alg/AugmentedMatrix.html" class="mm-link">Augmented Matrices</a></li>
+                <li><a href="../Alg/AugmentedMatrixII.html" class="mm-link">More on the Augmented Matrix</a></li>
+                <li><a href="../Alg/NonlinearSystems.html" class="mm-link">Nonlinear Systems</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../CalcI/CalcI.html" class="mm-link">Calculus I</a>
+          <ul>
+            <li><a href="../CalcI/ReviewIntro.html" class="mm-link">Review</a>
+              <ul>
+                <li><a href="../CalcI/Functions.html" class="mm-link">Functions</a></li>
+                <li><a href="../CalcI/InverseFunctions.html" class="mm-link">Inverse Functions</a></li>
+                <li><a href="../CalcI/TrigFcns.html" class="mm-link">Trig Functions</a></li>
+                <li><a href="../CalcI/TrigEquations.html" class="mm-link">Solving Trig Equations</a></li>
+                <li><a href="../CalcI/TrigEquations_CalcI.html" class="mm-link">Trig Equations with Calculators, Part I</a></li>
+                <li><a href="../CalcI/TrigEquations_CalcII.html" class="mm-link">Trig Equations with Calculators, Part II</a></li>
+                <li><a href="../CalcI/ExpFunctions.html" class="mm-link">Exponential Functions</a></li>
+                <li><a href="../CalcI/LogFcns.html" class="mm-link">Logarithm Functions</a></li>
+                <li><a href="../CalcI/ExpLogEqns.html" class="mm-link">Exponential and Logarithm Equations</a></li>
+                <li><a href="../CalcI/CommonGraphs.html" class="mm-link">Common Graphs</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcI/limitsIntro.html" class="mm-link">Limits</a>
+              <ul>
+                <li><a href="../CalcI/Tangents_Rates.html" class="mm-link">Tangent Lines and Rates of Change</a></li>
+                <li><a href="../CalcI/TheLimit.html" class="mm-link">The Limit</a></li>
+                <li><a href="../CalcI/OneSidedLimits.html" class="mm-link">One-Sided Limits</a></li>
+                <li><a href="../CalcI/LimitsProperties.html" class="mm-link">Limit Properties</a></li>
+                <li><a href="../CalcI/ComputingLimits.html" class="mm-link">Computing Limits</a></li>
+                <li><a href="../CalcI/InfiniteLimits.html" class="mm-link">Infinite Limits</a></li>
+                <li><a href="../CalcI/LimitsAtInfinityI.html" class="mm-link">Limits At Infinity, Part I</a></li>
+                <li><a href="../CalcI/LimitsAtInfinityII.html" class="mm-link">Limits At Infinity, Part II</a></li>
+                <li><a href="../CalcI/Continuity.html" class="mm-link">Continuity</a></li>
+                <li><a href="../CalcI/DefnOfLimit.html" class="mm-link">The Definition of the Limit</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcI/DerivativeIntro.html" class="mm-link">Derivatives</a>
+              <ul>
+                <li><a href="../CalcI/DefnOfDerivative.html" class="mm-link">The Definition of the Derivative</a></li>
+                <li><a href="../CalcI/DerivativeInterp.html" class="mm-link">Interpretation of the Derivative</a></li>
+                <li><a href="../CalcI/DiffFormulas.html" class="mm-link">Differentiation Formulas</a></li>
+                <li><a href="../CalcI/ProductQuotientRule.html" class="mm-link">Product and Quotient Rule</a></li>
+                <li><a href="../CalcI/DiffTrigFcns.html" class="mm-link">Derivatives of Trig Functions</a></li>
+                <li><a href="../CalcI/DiffExpLogFcns.html" class="mm-link">Derivatives of Exponential and Logarithm Functions</a></li>
+                <li><a href="../CalcI/DiffInvTrigFcns.html" class="mm-link">Derivatives of Inverse Trig Functions</a></li>
+                <li><a href="../CalcI/DiffHyperFcns.html" class="mm-link">Derivatives of Hyperbolic Functions</a></li>
+                <li><a href="../CalcI/ChainRule.html" class="mm-link">Chain Rule</a></li>
+                <li><a href="../CalcI/ImplicitDIff.html" class="mm-link">Implicit Differentiation</a></li>
+                <li><a href="../CalcI/RelatedRates.html" class="mm-link">Related Rates</a></li>
+                <li><a href="../CalcI/HigherOrderDerivatives.html" class="mm-link">Higher Order Derivatives</a></li>
+                <li><a href="../CalcI/LogDiff.html" class="mm-link">Logarithmic Differentiation</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcI/DerivAppsIntro.html" class="mm-link">Applications of Derivatives</a>
+              <ul>
+                <li><a href="../CalcI/RateOfChange.html" class="mm-link">Rates of Change</a></li>
+                <li><a href="../CalcI/CriticalPoints.html" class="mm-link">Critical Points</a></li>
+                <li><a href="../CalcI/MinMaxValues.html" class="mm-link">Minimum and Maximum Values</a></li>
+                <li><a href="../CalcI/AbsExtrema.html" class="mm-link">Finding Absolute Extrema</a></li>
+                <li><a href="../CalcI/ShapeofGraphPtI.html" class="mm-link">The Shape of a Graph, Part I</a></li>
+                <li><a href="../CalcI/ShapeofGraphPtII.html" class="mm-link">The Shape of a Graph, Part II</a></li>
+                <li><a href="../CalcI/MeanValueTheorem.html" class="mm-link">The Mean Value Theorem</a></li>
+                <li><a href="../CalcI/Optimization.html" class="mm-link">Optimization</a></li>
+                <li><a href="../CalcI/MoreOptimization.html" class="mm-link">More Optimization Problems</a></li>
+                <li><a href="../CalcI/LHospitalsRule.html" class="mm-link">L'Hospital's Rule and Indeterminate Forms</a></li>
+                <li><a href="../CalcI/LinearApproximations.html" class="mm-link">Linear Approximations</a></li>
+                <li><a href="../CalcI/Differentials.html" class="mm-link">Differentials</a></li>
+                <li><a href="../CalcI/NewtonsMethod.html" class="mm-link">Newton's Method</a></li>
+                <li><a href="../CalcI/BusinessApps.html" class="mm-link">Business Applications</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcI/IntegralsIntro.html" class="mm-link">Integrals</a>
+              <ul>
+                <li><a href="../CalcI/IndefiniteIntegrals.html" class="mm-link">Indefinite Integrals</a></li>
+                <li><a href="../CalcI/ComputingIndefiniteIntegrals.html" class="mm-link">Computing Indefinite Integrals</a></li>
+                <li><a href="../CalcI/SubstitutionRuleIndefinite.html" class="mm-link">Substitution Rule for Indefinite Integrals</a></li>
+                <li><a href="../CalcI/SubstitutionRuleIndefinitePtII.html" class="mm-link">More Substitution Rule</a></li>
+                <li><a href="../CalcI/AreaProblem.html" class="mm-link">Area Problem</a></li>
+                <li><a href="../CalcI/DefnOfDefiniteIntegral.html" class="mm-link">Definition of the Definite Integral</a></li>
+                <li><a href="../CalcI/ComputingDefiniteIntegrals.html" class="mm-link">Computing Definite Integrals</a></li>
+                <li><a href="../CalcI/SubstitutionRuleDefinite.html" class="mm-link">Substitution Rule for Definite Integrals</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcI/IntAppsIntro.html" class="mm-link">Applications of Integrals</a>
+              <ul>
+                <li><a href="../CalcI/AvgFcnValue.html" class="mm-link">Average Function Value</a></li>
+                <li><a href="../CalcI/AreaBetweenCurves.html" class="mm-link">Area Between Curves</a></li>
+                <li><a href="../CalcI/VolumeWithRings.html" class="mm-link">Volumes of Solids of Revolution / Method of Rings</a></li>
+                <li><a href="../CalcI/VolumeWithCylinder.html" class="mm-link">Volumes of Solids of Revolution/Method of Cylinders</a></li>
+                <li><a href="../CalcI/MoreVolume.html" class="mm-link">More Volume Problems</a></li>
+                <li><a href="../CalcI/Work.html" class="mm-link">Work</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcI/ExtrasIntro.html" class="mm-link">Extras</a>
+              <ul>
+                <li><a href="../CalcI/LimitProofs.html" class="mm-link">Proof of Various Limit Properties</a></li>
+                <li><a href="../CalcI/DerivativeProofs.html" class="mm-link">Proof of Various Derivative Properties</a></li>
+                <li><a href="../CalcI/ProofTrigDeriv.html" class="mm-link">Proof of Trig Limits</a></li>
+                <li><a href="../CalcI/DerivativeAppsProofs.html" class="mm-link">Proofs of Derivative Applications Facts</a></li>
+                <li><a href="../CalcI/ProofIntProp.html" class="mm-link">Proof of Various Integral Properties </a></li>
+                <li><a href="../CalcI/Area_Volume_Formulas.html" class="mm-link">Area and Volume Formulas</a></li>
+                <li><a href="../CalcI/TypesOfInfinity.html" class="mm-link">Types of Infinity</a></li>
+                <li><a href="../CalcI/SummationNotation.html" class="mm-link">Summation Notation</a></li>
+                <li><a href="../CalcI/ConstantofIntegration.html" class="mm-link">Constant of Integration</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../CalcII/CalcII.html" class="mm-link">Calculus II</a>
+          <ul>
+            <li><a href="../CalcII/IntTechIntro.html" class="mm-link">Integration Techniques</a>
+              <ul>
+                <li><a href="../CalcII/IntegrationByParts.html" class="mm-link">Integration by Parts</a></li>
+                <li><a href="../CalcII/IntegralsWithTrig.html" class="mm-link">Integrals Involving Trig Functions</a></li>
+                <li><a href="../CalcII/TrigSubstitutions.html" class="mm-link">Trig Substitutions</a></li>
+                <li><a href="../CalcII/PartialFractions.html" class="mm-link">Partial Fractions</a></li>
+                <li><a href="../CalcII/IntegralsWithRoots.html" class="mm-link">Integrals Involving Roots</a></li>
+                <li><a href="../CalcII/IntegralsWithQuadratics.html" class="mm-link">Integrals Involving Quadratics</a></li>
+                <li><a href="../CalcII/IntegrationStrategy.html" class="mm-link">Integration Strategy</a></li>
+                <li><a href="../CalcII/ImproperIntegrals.html" class="mm-link">Improper Integrals</a></li>
+                <li><a href="../CalcII/ImproperIntegralsCompTest.html" class="mm-link">Comparison Test for Improper Integrals</a></li>
+                <li><a href="../CalcII/ApproximatingDefIntegrals.html" class="mm-link">Approximating Definite Integrals</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/IntAppsIntro.html" class="mm-link">Applications of Integrals</a>
+              <ul>
+                <li><a href="../CalcII/ArcLength.html" class="mm-link">Arc Length</a></li>
+                <li><a href="../CalcII/SurfaceArea.html" class="mm-link">Surface Area</a></li>
+                <li><a href="../CalcII/CenterOfMass.html" class="mm-link">Center of Mass</a></li>
+                <li><a href="../CalcII/HydrostaticPressure.html" class="mm-link">Hydrostatic Pressure</a></li>
+                <li><a href="../CalcII/Probability.html" class="mm-link">Probability</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/ParametricIntro.html" class="mm-link">Parametric Equations and Polar Coordinates</a>
+              <ul>
+                <li><a href="../CalcII/ParametricEqn.html" class="mm-link">Parametric Equations and Curves</a></li>
+                <li><a href="../CalcII/ParaTangent.html" class="mm-link">Tangents with Parametric Equations</a></li>
+                <li><a href="../CalcII/ParaArea.html" class="mm-link">Area with Parametric Equations</a></li>
+                <li><a href="../CalcII/ParaArcLength.html" class="mm-link">Arc Length with Parametric Equations</a></li>
+                <li><a href="../CalcII/ParaSurfaceArea.html" class="mm-link">Surface Area with Parametric Equations</a></li>
+                <li><a href="../CalcII/PolarCoordinates.html" class="mm-link">Polar Coordinates</a></li>
+                <li><a href="../CalcII/PolarTangents.html" class="mm-link">Tangents with Polar Coordinates</a></li>
+                <li><a href="../CalcII/PolarArea.html" class="mm-link">Area with Polar Coordinates</a></li>
+                <li><a href="../CalcII/PolarArcLength.html" class="mm-link">Arc Length with Polar Coordinates</a></li>
+                <li><a href="../CalcII/PolarSurfaceArea.html" class="mm-link">Surface Area with Polar Coordinates</a></li>
+                <li><a href="../CalcII/ArcLength_SurfaceArea.html" class="mm-link">Arc Length and Surface Area Revisited</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/SeriesIntro.html" class="mm-link">Series & Sequences</a>
+              <ul>
+                <li><a href="../CalcII/Sequences.html" class="mm-link">Sequences</a></li>
+                <li><a href="../CalcII/MoreSequences.html" class="mm-link">More on Sequences</a></li>
+                <li><a href="../CalcII/Series_Basics.html" class="mm-link">Series - The Basics</a></li>
+                <li><a href="../CalcII/ConvergenceOfSeries.html" class="mm-link">Convergence/Divergence of Series</a></li>
+                <li><a href="../CalcII/Series_Special.html" class="mm-link">Special Series</a></li>
+                <li><a href="../CalcII/IntegralTest.html" class="mm-link">Integral Test</a></li>
+                <li><a href="../CalcII/SeriesCompTest.html" class="mm-link">Comparison Test/Limit Comparison Test</a></li>
+                <li><a href="../CalcII/AlternatingSeries.html" class="mm-link">Alternating Series Test</a></li>
+                <li><a href="../CalcII/AbsoluteConvergence.html" class="mm-link">Absolute Convergence</a></li>
+                <li><a href="../CalcII/RatioTest.html" class="mm-link">Ratio Test</a></li>
+                <li><a href="../CalcII/RootTest.html" class="mm-link">Root Test</a></li>
+                <li><a href="../CalcII/SeriesStrategy.html" class="mm-link">Strategy for Series</a></li>
+                <li><a href="../CalcII/EstimatingSeries.html" class="mm-link">Estimating the Value of a Series</a></li>
+                <li><a href="../CalcII/PowerSeries.html" class="mm-link">Power Series</a></li>
+                <li><a href="../CalcII/PowerSeriesandFunctions.html" class="mm-link">Power Series and Functions</a></li>
+                <li><a href="../CalcII/TaylorSeries.html" class="mm-link">Taylor Series</a></li>
+                <li><a href="../CalcII/TaylorSeriesApps.html" class="mm-link">Applications of Series</a></li>
+                <li><a href="../CalcII/BinomialSeries.html" class="mm-link">Binomial Series</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/VectorsIntro.html" class="mm-link">Vectors</a>
+              <ul>
+                <li><a href="../CalcII/Vectors_Basics.html" class="mm-link">Vectors - The Basics</a></li>
+                <li><a href="../CalcII/VectorArithmetic.html" class="mm-link">Vector Arithmetic</a></li>
+                <li><a href="../CalcII/DotProduct.html" class="mm-link">Dot Product</a></li>
+                <li><a href="../CalcII/CrossProduct.html" class="mm-link">Cross Product</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/3DSpace.html" class="mm-link">3-Dimensional Space</a>
+              <ul>
+                <li><a href="../CalcII/3DCoords.html" class="mm-link">The 3-D Coordinate System</a></li>
+                <li><a href="../CalcII/EqnsOfLines.html" class="mm-link">Equations of Lines</a></li>
+                <li><a href="../CalcII/EqnsOfPlanes.html" class="mm-link">Equations of Planes</a></li>
+                <li><a href="../CalcII/QuadricSurfaces.html" class="mm-link">Quadric Surfaces</a></li>
+                <li><a href="../CalcII/MultiVrbleFcns.html" class="mm-link">Functions of Several Variables</a></li>
+                <li><a href="../CalcII/VectorFunctions.html" class="mm-link">Vector Functions</a></li>
+                <li><a href="../CalcII/VectorFcnsCalculus.html" class="mm-link">Calculus with Vector Functions</a></li>
+                <li><a href="../CalcII/TangentNormalVectors.html" class="mm-link">Tangent, Normal and Binormal Vectors</a></li>
+                <li><a href="../CalcII/VectorArcLength.html" class="mm-link">Arc Length with Vector Functions</a></li>
+                <li><a href="../CalcII/Curvature.html" class="mm-link">Curvature</a></li>
+                <li><a href="../CalcII/Velocity_Acceleration.html" class="mm-link">Velocity and Acceleration</a></li>
+                <li><a href="../CalcII/CylindricalCoords.html" class="mm-link">Cylindrical Coordinates</a></li>
+                <li><a href="../CalcII/SphericalCoords.html" class="mm-link">Spherical Coordinates</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../CalcIII/CalcIII.html" class="mm-link">Calculus III</a>
+          <ul>
+            <li><a href="../CalcIII/3DSpace.html" class="mm-link">3-Dimensional Space</a>
+              <ul>
+                <li><a href="../CalcIII/3DCoords.html" class="mm-link">The 3-D Coordinate System</a></li>
+                <li><a href="../CalcIII/EqnsOfLines.html" class="mm-link">Equations of Lines</a></li>
+                <li><a href="../CalcIII/EqnsOfPlanes.html" class="mm-link">Equations of Planes</a></li>
+                <li><a href="../CalcIII/QuadricSurfaces.html" class="mm-link">Quadric Surfaces</a></li>
+                <li><a href="../CalcIII/MultiVrbleFcns.html" class="mm-link">Functions of Several Variables</a></li>
+                <li><a href="../CalcIII/VectorFunctions.html" class="mm-link">Vector Functions</a></li>
+                <li><a href="../CalcIII/VectorFcnsCalculus.html" class="mm-link">Calculus with Vector Functions</a></li>
+                <li><a href="../CalcIII/TangentNormalVectors.html" class="mm-link">Tangent, Normal and Binormal Vectors</a></li>
+                <li><a href="../CalcIII/VectorArcLength.html" class="mm-link">Arc Length with Vector Functions</a></li>
+                <li><a href="../CalcIII/Curvature.html" class="mm-link">Curvature</a></li>
+                <li><a href="../CalcIII/Velocity_Acceleration.html" class="mm-link">Velocity and Acceleration</a></li>
+                <li><a href="../CalcIII/CylindricalCoords.html" class="mm-link">Cylindrical Coordinates</a></li>
+                <li><a href="../CalcIII/SphericalCoords.html" class="mm-link">Spherical Coordinates</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/PartialDerivsIntro.html" class="mm-link">Partial Derivatives</a>
+              <ul>
+                <li><a href="../CalcIII/Limits.html" class="mm-link">Limits</a></li>
+                <li><a href="../CalcIII/PartialDerivatives.html" class="mm-link">Partial Derivatives</a></li>
+                <li><a href="../CalcIII/PartialDerivInterp.html" class="mm-link">Interpretations of Partial Derivatives</a></li>
+                <li><a href="../CalcIII/HighOrderPartialDerivs.html" class="mm-link">Higher Order Partial Derivatives</a></li>
+                <li><a href="../CalcIII/Differentials.html" class="mm-link">Differentials</a></li>
+                <li><a href="../CalcIII/ChainRule.html" class="mm-link">Chain Rule</a></li>
+                <li><a href="../CalcIII/DirectionalDeriv.html" class="mm-link">Directional Derivatives</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/PartialDerivAppsIntro.html" class="mm-link">Applications of Partial Derivatives</a>
+              <ul>
+                <li><a href="../CalcIII/TangentPlanes.html" class="mm-link">Tangent Planes and Linear Approximations</a></li>
+                <li><a href="../CalcIII/GradientVectorTangentPlane.html" class="mm-link">Gradient Vector, Tangent Planes and Normal Lines</a></li>
+                <li><a href="../CalcIII/RelativeExtrema.html" class="mm-link">Relative Minimums and Maximums</a></li>
+                <li><a href="../CalcIII/AbsoluteExtrema.html" class="mm-link">Absolute Minimums and Maximums</a></li>
+                <li><a href="../CalcIII/LagrangeMultipliers.html" class="mm-link">Lagrange Multipliers</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/MultipleIntegralsIntro.html" class="mm-link">Multiple Integrals</a>
+              <ul>
+                <li><a href="../CalcIII/DoubleIntegrals.html" class="mm-link">Double Integrals</a></li>
+                <li><a href="../CalcIII/IteratedIntegrals.html" class="mm-link">Iterated Integrals</a></li>
+                <li><a href="../CalcIII/DIGeneralRegion.html" class="mm-link">Double Integrals over General Regions</a></li>
+                <li><a href="../CalcIII/DIPolarCoords.html" class="mm-link">Double Integrals in Polar Coordinates</a></li>
+                <li><a href="../CalcIII/TripleIntegrals.html" class="mm-link">Triple Integrals</a></li>
+                <li><a href="../CalcIII/TICylindricalCoords.html" class="mm-link">Triple Integrals in Cylindrical Coordinates</a></li>
+                <li><a href="../CalcIII/TISphericalCoords.html" class="mm-link">Triple Integrals in Spherical Coordinates</a></li>
+                <li><a href="../CalcIII/ChangeOfVariables.html" class="mm-link">Change of Variables</a></li>
+                <li><a href="../CalcIII/SurfaceArea.html" class="mm-link">Surface Area</a></li>
+                <li><a href="../CalcIII/Area_Volume.html" class="mm-link">Area and Volume Revisited</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/LineIntegralsIntro.html" class="mm-link">Line Integrals</a>
+              <ul>
+                <li><a href="../CalcIII/VectorFields.html" class="mm-link">Vector Fields</a></li>
+                <li><a href="../CalcIII/LineIntegralsPtI.html" class="mm-link">Line Integrals - Part I</a></li>
+                <li><a href="../CalcIII/LineIntegralsPtII.html" class="mm-link">Line Integrals - Part II</a></li>
+                <li><a href="../CalcIII/LineIntegralsVectorFields.html" class="mm-link">Line Integrals of Vector Fields</a></li>
+                <li><a href="../CalcIII/FundThmLineIntegrals.html" class="mm-link">Fundamental Theorem for Line Integrals</a></li>
+                <li><a href="../CalcIII/ConservativeVectorField.html" class="mm-link">Conservative Vector Fields</a></li>
+                <li><a href="../CalcIII/GreensTheorem.html" class="mm-link">Green's Theorem</a></li>
+                <li><a href="../CalcIII/CurlDivergence.html" class="mm-link">Curl and Divergence</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/SurfaceIntegralsIntro.html" class="mm-link">Surface Integrals</a>
+              <ul>
+                <li><a href="../CalcIII/ParametricSurfaces.html" class="mm-link">Parametric Surfaces</a></li>
+                <li><a href="../CalcIII/SurfaceIntegrals.html" class="mm-link">Surface Integrals</a></li>
+                <li><a href="../CalcIII/SurfIntVectorField.html" class="mm-link">Surface Integrals of Vector Fields</a></li>
+                <li><a href="../CalcIII/StokesTheorem.html" class="mm-link">Stokes' Theorem</a></li>
+                <li><a href="../CalcIII/DivergenceTheorem.html" class="mm-link">Divergence Theorem</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="DE.html" class="mm-link">Differential Equations</a>
+          <ul>
+            <li><a href="IntroBasic.html" class="mm-link">Basic Concepts</a>
+              <ul>
+                <li><a href="Definitions.html" class="mm-link">Definitions</a></li>
+                <li><a href="DirectionFields.html" class="mm-link">Direction Fields</a></li>
+                <li><a href="FinalThoughts.html" class="mm-link">Final Thoughts</a></li>
+              </ul>
+            </li>
+            <li><a href="IntroFirstOrder.html" class="mm-link">First Order DE's</a>
+              <ul>
+                <li><a href="Linear.html" class="mm-link">Linear Equations</a></li>
+                <li><a href="Separable.html" class="mm-link">Separable Equations</a></li>
+                <li><a href="Exact.html" class="mm-link">Exact Equations</a></li>
+                <li><a href="Bernoulli.html" class="mm-link">Bernoulli Differential Equations</a></li>
+                <li><a href="Substitutions.html" class="mm-link">Substitutions</a></li>
+                <li><a href="IoV.html" class="mm-link">Intervals of Validity</a></li>
+                <li><a href="Modeling.html" class="mm-link">Modeling with First Order DE's</a></li>
+                <li><a href="EquilibriumSolutions.html" class="mm-link">Equilibrium Solutions</a></li>
+                <li><a href="EulersMethod.html" class="mm-link">Euler's Method</a></li>
+              </ul>
+            </li>
+            <li><a href="IntroSecondOrder.html" class="mm-link">Second Order DE's</a>
+              <ul>
+                <li><a href="SecondOrderConcepts.html" class="mm-link">Basic Concepts</a></li>
+                <li><a href="RealRoots.html" class="mm-link">Real & Distinct Roots</a></li>
+                <li><a href="ComplexRoots.html" class="mm-link">Complex Roots</a></li>
+                <li><a href="RepeatedRoots.html" class="mm-link">Repeated Roots</a></li>
+                <li><a href="ReductionofOrder.html" class="mm-link">Reduction of Order</a></li>
+                <li><a href="FundamentalSetsofSolutions.html" class="mm-link">Fundamental Sets of Solutions</a></li>
+                <li><a href="Wronskian.html" class="mm-link">More on the  Wronskian</a></li>
+                <li><a href="NonhomogeneousDE.html" class="mm-link">Nonhomogeneous Differential Equations</a></li>
+                <li><a href="UndeterminedCoefficients.html" class="mm-link">Undetermined Coefficients</a></li>
+                <li><a href="VariationofParameters.html" class="mm-link">Variation of Parameters</a></li>
+                <li><a href="Vibrations.html" class="mm-link">Mechanical Vibrations</a></li>
+              </ul>
+            </li>
+            <li><a href="LaplaceIntro.html" class="mm-link">Laplace Transforms</a>
+              <ul>
+                <li><a href="LaplaceDefinition.html" class="mm-link">The Definition</a></li>
+                <li><a href="LaplaceTransforms.html" class="mm-link">Laplace Transforms</a></li>
+                <li><a href="InverseTransforms.html" class="mm-link">Inverse Laplace Transforms</a></li>
+                <li><a href="StepFunctions.html" class="mm-link">Step Functions</a></li>
+                <li><a href="IVPWithLaplace.html" class="mm-link">Solving IVP's with Laplace Transforms</a></li>
+                <li><a href="IVPWithNonConstantCoefficient.html" class="mm-link">Nonconstant Coefficient IVP's</a></li>
+                <li><a href="IVPWithStepFunction.html" class="mm-link">IVP's With Step Functions</a></li>
+                <li><a href="DiracDeltaFunction.html" class="mm-link">Dirac Delta Function</a></li>
+                <li><a href="ConvolutionIntegrals.html" class="mm-link">Convolution Integrals</a></li>
+                <li><a href="Laplace_Table.html" class="mm-link">Table Of Laplace Transforms</a></li>
+              </ul>
+            </li>
+            <li><a href="SystemsIntro.html" class="mm-link">Systems of DE's</a>
+              <ul>
+                <li><a href="LA_Systems.html" class="mm-link">Review : Systems of Equations</a></li>
+                <li><a href="LA_Matrix.html" class="mm-link">Review : Matrices & Vectors</a></li>
+                <li><a href="LA_Eigen.html" class="mm-link">Review : Eigenvalues & Eigenvectors</a></li>
+                <li><a href="SystemsDE.html" class="mm-link">Systems of Differential Equations</a></li>
+                <li><a href="SolutionsToSystems.html" class="mm-link">Solutions to Systems</a></li>
+                <li><a href="PhasePlane.html" class="mm-link">Phase Plane</a></li>
+                <li><a href="RealEigenvalues.html" class="mm-link">Real Eigenvalues</a></li>
+                <li><a href="ComplexEigenvalues.html" class="mm-link">Complex Eigenvalues</a></li>
+                <li><a href="RepeatedEigenvalues.html" class="mm-link">Repeated Eigenvalues</a></li>
+                <li><a href="NonhomogeneousSystems.html" class="mm-link">Nonhomogeneous Systems</a></li>
+                <li><a href="SystemsLaplace.html" class="mm-link">Laplace Transforms</a></li>
+                <li><a href="SystemsModeling.html" class="mm-link">Modeling</a></li>
+              </ul>
+            </li>
+            <li><a href="SeriesIntro.html" class="mm-link">Series Solutions to DE's</a>
+              <ul>
+                <li><a href="PowerSeries.html" class="mm-link">Review : Power Series</a></li>
+                <li><a href="TaylorSeries.html" class="mm-link">Review : Taylor Series</a></li>
+                <li><a href="SeriesSolutions.html" class="mm-link">Series Solutions</a></li>
+                <li><a href="EulerEquations.html" class="mm-link">Euler Equations</a></li>
+              </ul>
+            </li>
+            <li><a href="IntroHigherOrder.html" class="mm-link">Higher Order Differential Equations</a>
+              <ul>
+                <li><a href="HOBasicConcepts.html" class="mm-link">Basic Concepts for <em>n</em><sup>th</sup> Order Linear Equations</a></li>
+                <li><a href="HOHomogeneousDE.html" class="mm-link">Linear Homogeneous Differential Equations</a></li>
+                <li><a href="HOUndeterminedCoeff.html" class="mm-link">Undetermined Coefficients</a></li>
+                <li><a href="HOVariationOfParam.html" class="mm-link">Variation of Parameters</a></li>
+                <li><a href="HOLaplaceTransforms.html" class="mm-link">Laplace Transforms</a></li>
+                <li><a href="HOSystems.html" class="mm-link">Systems of Differential Equations</a></li>
+                <li><a href="HOSeries.html" class="mm-link">Series Solutions</a></li>
+              </ul>
+            </li>
+            <li><a href="IntroBVP.html" class="mm-link">Boundary Value Problems &amp; Fourier Series</a>
+              <ul>
+                <li><a href="BoundaryValueProblem.html" class="mm-link">Boundary Value Problems</a></li>
+                <li><a href="BVPEvals.html" class="mm-link">Eigenvalues and Eigenfunctions</a></li>
+                <li><a href="PeriodicOrthogonal.html" class="mm-link">Periodic Functions &amp; Orthogonal Functions</a></li>
+                <li><a href="FourierSineSeries.html" class="mm-link">Fourier Sine Series</a></li>
+                <li><a href="FourierCosineSeries.html" class="mm-link">Fourier Cosine Series</a></li>
+                <li><a href="FourierSeries.html" class="mm-link">Fourier Series</a></li>
+                <li><a href="ConvergenceFourierSeries.html" class="mm-link">Convergence of Fourier Series</a></li>
+              </ul>
+            </li>
+            <li><a href="IntroPDE.html" class="mm-link">Partial Differential Equations </a>
+              <ul>
+                <li><a href="TheHeatEquation.html" class="mm-link">The Heat Equation</a></li>
+                <li><a href="TheWaveEquation.html" class="mm-link">The Wave Equation</a></li>
+                <li><a href="PDETerminology.html" class="mm-link">Terminology</a></li>
+                <li><a href="SeparationofVariables.html" class="mm-link">Separation of Variables</a></li>
+                <li><a href="SolvingHeatEquation.html" class="mm-link">Solving the Heat Equation</a></li>
+                <li><a href="HeatEqnNonZero.html" class="mm-link">Heat Equation with Non-Zero Temperature Boundaries</a></li>
+                <li><a href="LaplacesEqn.html" class="mm-link">Laplace's Equation</a></li>
+                <li><a href="VibratingString.html" class="mm-link">Vibrating String</a></li>
+                <li><a href="PDESummary.html" class="mm-link">Summary of Separation of Variables</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><span>Extras</span></li>
+        <li><a href="../../Extras/AlgebraTrigReview/AlgebraTrig.html" class="mm-link">Algebra &amp; Trig Review</a>
+          <ul>
+            <li><a href="../../Extras/AlgebraTrigReview/AlgebraIntro.html" class="mm-link">Algebra</a>
+              <ul>
+                <li><a href="../../Extras/AlgebraTrigReview/Exponents.html" class="mm-link">Exponents </a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/AbsoluteValue.html" class="mm-link">Absolute Value</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Radicals.html" class="mm-link">Radicals</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Rationalizing.html" class="mm-link">Rationalizing </a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Functions.html" class="mm-link">Functions </a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/MultPoly.html" class="mm-link">Multiplying Polynomials</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Factoring.html" class="mm-link">Factoring</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SimpRatExp.html" class="mm-link">Simplifying Rational Expressions</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Graphing.html" class="mm-link">Graphing and Common Graphs</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveEqnPtI.html" class="mm-link">Solving Equations, Part I</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveEqnPtII.html" class="mm-link">Solving Equations, Part II</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveSystems.html" class="mm-link">Solving Systems of Equations</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveIneq.html" class="mm-link">Solving Inequalities</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveAbsValue.html" class="mm-link">Absolute Value Equations and Inequalities</a></li>
+              </ul>
+            </li>
+            <li><a href="../../Extras/AlgebraTrigReview/TrigIntro.html" class="mm-link">Trigonometry</a>
+              <ul>
+                <li><a href="../../Extras/AlgebraTrigReview/TrigFunctions.html" class="mm-link">Trig Function Evaluation</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/TrigGraphs.html" class="mm-link">Graphs of Trig Functions</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/TrigFormulas.html" class="mm-link">Trig Formulas</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveTrigEqn.html" class="mm-link">Solving Trig Equations</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/InverseTrig.html" class="mm-link">Inverse Trig Functions</a></li>
+              </ul>
+            </li>
+            <li><a href="../../Extras/AlgebraTrigReview/ExpLogIntro.html" class="mm-link">Exponentials & Logarithms</a>
+              <ul>
+                <li><a href="../../Extras/AlgebraTrigReview/ExponentialFcns.html" class="mm-link">Basic Exponential Functions</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/LogarithmFcns.html" class="mm-link">Basic Logarithm Functions</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/LogProperties.html" class="mm-link">Logarithm Properties</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SimpLogs.html" class="mm-link">Simplifying Logarithms</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveExpEqn.html" class="mm-link">Solving Exponential Equations</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveLogEqn.html" class="mm-link">Solving Logarithm Equations</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../../Extras/CommonErrors/CommonMathErrors.html" class="mm-link">Common Math Errors</a>
+          <ul>
+            <li><a href="../../Extras/CommonErrors/GeneralErrors.html" class="mm-link">General Errors</a>
+            </li>
+            <li><a href="../../Extras/CommonErrors/AlgebraErrors.html" class="mm-link">Algebra Errors</a>
+            </li>
+            <li><a href="../../Extras/CommonErrors/TrigErrors.html" class="mm-link">Trig Errors</a>
+            </li>
+            <li><a href="../../Extras/CommonErrors/CommonErrors.html" class="mm-link">Common Errors</a>
+            </li>
+            <li><a href="../../Extras/CommonErrors/CalculusErrors.html" class="mm-link">Calculus Errors</a>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../../Extras/ComplexPrimer/ComplexNumbers.html" class="mm-link">Complex Number Primer</a>
+          <ul>
+            <li><a href="../../Extras/ComplexPrimer/Definition.html" class="mm-link">The Definition</a>
+            </li>
+            <li><a href="../../Extras/ComplexPrimer/Arithmetic.html" class="mm-link">Arithmetic</a>
+            </li>
+            <li><a href="../../Extras/ComplexPrimer/ConjugateModulus.html" class="mm-link">Conjugate and Modulus</a>
+            </li>
+            <li><a href="../../Extras/ComplexPrimer/Forms.html" class="mm-link">Polar and Exponential Forms</a>
+            </li>
+            <li><a href="../../Extras/ComplexPrimer/Roots.html" class="mm-link">Powers and Roots</a>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../../Extras/StudyMath/HowToStudyMath.html" class="mm-link">How To Study Math</a>
+          <ul>
+            <li><a href="../../Extras/StudyMath/GeneralTips.html" class="mm-link">General Tips</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/TakingNotes.html" class="mm-link">Taking Notes</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/GettingHelp.html" class="mm-link">Getting Help</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/Homework.html" class="mm-link">Doing Homework</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/ProblemSolving.html" class="mm-link">Problem Solving</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/StudyForExam.html" class="mm-link">Studying For an Exam</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/TakingExam.html" class="mm-link">Taking an Exam</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/Errors.html" class="mm-link">Learn From Your Errors</a>
+            </li>
+          </ul>
+        </li>
+
+        <li><span>Misc Links</span></li>
+        <li><a href="http://tutorial.math.lamar.edu/contact.aspx" class="mm-link">Contact Me</a></li>
+        <li><a href="../../links.html" class="mm-link">Links</a></li>
+        <li><a href="../../mathjax.html" class="mm-link">MathJax Help and Configuration</a></li>
+        <li><a href="../../mystudents.html" class="mm-link">My Students</a></li>
+        <li><a href="http://tutorial.math.lamar.edu/privacy.aspx" class="mm-link">Privacy Statement</a></li>
+        <li><a href="../../help.html" class="mm-link">Site Help & FAQ</a></li>
+        <li><a href="http://tutorial.math.lamar.edu/terms.aspx" class="mm-link">Terms of Use</a></li>
+      </ul>
+    </nav>
+
+
+
+    <div class="top-info-bar">
+      <span id="mobile-title" class="mobile-header-title header-title">Paul's Online Notes</span>
+      <br />
+      <span class="top-menu-breadcrumb">
+        <a href="../../index.html" id="breadcrumb_home_link" title="Go to Main Page">Home</a>
+        <span id="breadcrumb_h_b_sep_span">/ </span>
+        <a href="DE.html" id="breadcrumb_book_link" title="Go to Book Introduction">Differential Equations</a>
+        
+        <span id="breadcrumb_b_c_sep_span">/ </span>
+        <a href="IntroPDE.html" id="breadcrumb_chapter_link" title="Go to Chapter Introduction">Partial Differential Equations </a>
+        
+        <span id="breadcrumb_section_span"> / The Heat Equation</span>
+      </span>
+
+    </div>
+
+    
+
+    <div class="header-divider"></div>
+
+    <div class="content">  
+      
+      
+      <span id="SHLink_NoteMobile" class="SH-Link content-note-link-mobile">Show Mobile Notice</span>
+      <span id="SHImg_NoteMobile" class="fas fa-caret-right SH-padding content-note-link-mobile" aria-hidden="true"></span>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+
+      <span id="SHALink_S_Note" class="SH-Link SH-Hide SH-Bracket">Show All Notes</span>&nbsp;<span id="SHALink_H_Note" class="SH-Link SH-Hide SH-Bracket">Hide All Notes</span>
+      
+      
+      <div id="SHObj_NoteMobile" class="content-note-container content-note-container-mobile">
+        <div class="content-note-header">Mobile Notice</div>
+        <div class="content-note">You appear to be on a device with a "narrow" screen width (<em>i.e.</em> you are probably on a mobile phone).  Due to the nature of the mathematics on this site it is best views in landscape mode.  If your device is not in landscape mode many of the equations will run off the side of your device (should be able to scroll to see them) and some of the menu items will be cut off due to the narrow screen width.</div>
+      </div>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+
+      
+
+
+  <form method="post" action="http://tutorial.math.lamar.edu/Classes/DE/TheHeatEquation.aspx" id="ctl00">
+<div class="aspNetHidden">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="HFwyZokAp7BekHb3r9Yzo8Nva+GFNIdd6E9nU305ZJ/YpFIijhHi4zJO03TbAPwsxtfKO9zK5EZQ0QzF2zuKGrprM4x5yA4i+RceLscrqLggfPJifK7I9lEp0M4qgs+u6gtjmm2ZZrn+/U0Sh5uwpjujvThrX/bRDixUiUFjOjrXWS2oPRmLY7Opld0NLCaj2Oh6t6vWcHM+uaYhaHGdZJvQeaMneX1s/Hx8eDMy60XwrqUcEWgH8JzRjOAha1YSbjU7mKGJIHdl+IiXtxEHU53UuGUwk4L8ts9DgNuLjvy+MYIvx/FZ8/VF5ZqGoOfy3CBsBJtVoh8NkzlkI3SrwqV6MEpM47EE94/W7PY7F2ZCVY0y7i7GJFfpqzdPrz+Qm5aGaMJom21V4M/pjxQRQWUSj8iO081a12UzL/KcPz4U3hdJxfk0p6fQF5fGfI0iG4l59EGhf93sUQsHdpKTrJtYlwqTpvD+D/viv1QqrNsWzJ71VPt4w8cXx9Fit32gvRUVHoj5oBECA/YHxP8DPSY6MkmKo5P0M+95gPqLduG/9lbtibx/VTB6/mFxfeaRaOBYIO/GXWvaxbyxu3FfqxatX7ZvENQgXTauVuL8ILHAAGSbryy0cwsxbEbZ7M56OX9PPg+LoQ1RrjbWfyunIWrjHpgKXwBQUqwesOrE8bBh1yVODHvlJVbFN+mGHWvxlvkythorxKfv548lfoJzqlES1nJOE8onRpT7v/bApeVuB7v97uT0ZTITuRCEvkviLkOos3mMRurT6kbOBpv1nQuqC8xl+pYRgnNnn148W1VU6Ih1sq/A29bY0tBdvngcDhFW+ntLId0O43yCsICF+RCXdgF6l7zHE6aHaPwFfsRbWu6brceaNNrSZ3K0/z7To8jCMiIvFtAaO6eWGGqcevr0Bj5oIhd8ogjHdLt7q+z5V6auMRb5BDW48WNiuIEKrswgf6ZPVnjgb4/2mNU8ghqt5VtEMPeSp+HfZ9rPQuVvZXUrxf0oZxuX6XiuVUBZNequTt1zkLGBbdsNbD8jGKw0pO1dq5tOMJvPH7mkaFpf8dGyfDjIUTSxAdBM0SHqaim3r6MqzFcZCXOgCnjaMdRG/xLdxLzRs/yG4QWT7I26fq12A0fEVEb11vCEzxjue5GmsatU/T7h89uSY1bBhpqvr/lk/wnWl8/G++eGUknDTmZostyL+eYxOEE7OYlEksKc5cLnDVpz+U4zum67FDw5NYH5wcmUmbPh+WqInPJG205Sq8OLqWg62yivU38YvFC+F6DWEtl2McPRYUVxcblunJBSSZ3ijv/LcFwfq4amxNo0y3aZnMB710zAiRRqxIGrpS3+0X0X+MtEZfMmtRhGBG16SPPt9YhvLnnnhxl1oD2Sgr6G3N055vLThnI4FU0S02XYaGAN7vg3npa6Krd9hB/mEOXUYosyy3RcZViklHPF3LpADrJB7pfdmnox+41E1LdibKv+I/WyFuH9Q2bSm7YdcvYyPJBHVUVlGRkiRijfHWqkZ3jN1gOAy4CqNK/cG1eISUxxRgRtGkPWHzJxmwf3EqMoJ/Jpa7HxiWtpupoh+fUPtZR/pFVGaILdQt0Iqu8lwhyM33RpDClql9+3iZOIqKWfUp7VxhSn5CeY+MwIWGxLwfMZg23uzS8F8umL4aLjLw4gxy2lxfKW5h24153vpat93xPxluz01LFPrQw6WEs2QuS/7crNmcw9xWemJg47Vj+KQc8l4Wp45dUHSvuH49V4YgBOPGTZUvpD138ikIUcOD5KVVQ/ujCJLKqZF5oD1zvO+iUr3SzBpHNXCBg7G/vl3PTudYEhkBQz1o1P2OyRyOpr32/hfQw9/CdAzDCLwIdaohpLdx3G2qLaXOksyIX1PcQNlKRnwJAx9RzIEu4Kihiy01/v6kIfu4AY0YRZ0i/4QDjnk6N0guKCZfDWGUDUy3Cawq0D3LSbRB0bXr+n1SxVTAiAXK2T6sfXkJXDmQCHZt5xgQ9NSvGSZGmfq/Rz8PiNv0nUjezg1hAb0S19spWzhGvqOOwIezp8NAeqKU+OwcB0+gcCmeXwEJsOhsZ9hqzbPyYtgvPohLjY9rmOOMFNLfhf3sH0EQvW14offJZUvLg1VjhKlpefZaOSfh10LlS758+kdnfzhrS8NcHWhickL0Jebtw77+QhJRGXFbMHcq6JtfImqNJpbCc5TfEZd/8HExzmWVyIpnNbLxlx6WMuQlf+iz9cloAV5Yo8r/l8CEiZUUw/q+71O1CWjC9P9Lj8iK/RjLSP1eDYHINBZFPVRgLeicNxWW4q3EA8qbvBKUOaiS273Ws252AkSicmF0bb6705cRGfrAIuLDde2OTMYllm87AKHRJl1O1wfqcC/da9jRyn436gQYuLgKdxygWYqILnd4ZDpzTsXhWCESMaYcbWSbWFwWgHySkUKihEsRHYjcOWCRScGdfoqOrmCVdB592nf7CA3cGgp+RuruGz8NBhAFK8xmPZAnDT0gqUqcGGLQRvwcIHbYkRuHAEXGXSjhc4FclA1rrRCr/a1aTIctgM+W84kF7RYw6FdKXJ6PatajpZ6WRKNQs15/uVLfWdQFhouTxe+UcEsKDgUa17JuqQRhmul8BA2noWYC1Ls0DmzNx8nUg625edpd3Uf9jwP9KFSdVjuV3izWIRke8Ng1HHH5LNvSWHgNDBdfWwn5XF83RNjJDQb3Vy/LKpw2Tu6JAoEscBA2rxC2UKQuJK7OhIOLK0hWLaCJNoTb/RzYQINQGTPEDh5yIoNYENFvcA7zzDiwy9fn9OTHme9Rw1SL1fY3oNrImutbkmVtlFvYSdcF9H1QVle+PAchK3ud4SKkZgCP00MTsqYoRdNdzNYSpNnnPD+BV4fAvg7rpfVdOh7TcidzCbAK64/L4+wuwXKOzvxY1pj4Z1gnqwHsv8GtCy+ASm5M9HV7Qf8gHTnGy5ionhXPiBHUxJFtJ8ZlYnRpn4ox8ydkzkYFVnESPBQcZprv+HgEWSDaB/j07mvwkDdYU6g3Hem67yxKyfrXSo+yKsDVjbH/CXCkVu98ImNimLUKDuwSJsyKGPsnt6somOWwnxuT8Rlj404wzOw4obXOxiM/VqAjo8VgHpP+zhpM7FXnl5qnZkGqjVH2vqfcGj0wILY0oTIMKs/Ij4rWeGajSLccegmh1Z8tZGNXXjeRQ11j6UnavtR5/NPv+wPzZbMHrc7L9T1Zu50W1rtagzoYsa6DXSU9DH166k8m7ax5uSku3EqKN2ftaUpHhvxWD7S+9eHZO/GuZhEx8uMmQ6+ILU6vCMljRjADvL7Zgh0/jGslXcAwuJPddZHnoXUTXuE9im/MswdnOCU43RQR9rmF1Vhu9utWMd8znat9pdUK78iz59DqBrN45R/3dVXvRy+qP1jRh1J63SrqjlohKSzB2ak/KFXzFsMfmYnCLdeAF7OXQi4Xoyo7NooEPi1YFebH4RYR+lHeqY8qwxfwqBUUpPrIEa17ob/ZEirISBRgpgL+z+LTw6aQrC3BAxG9KQXwydAETow46xNatf53SnFJE8ecSAA59idYngQagQWR2ORzWErfX5HK4u0oc4s5jOueHIgu3PnmrXM5J+f/+PlDaAxjK1PsqZEFpkwq3KU2kj0ooQDB1o6nTrFkGhskrwQPG1Q0eRyuPH1wV3Q6X/S3rMG4fp3tqCIYNUGYDIjGWUyFNohiKdYergohjfqTQnM+csOV/CJ0LxyYLTq7+ndkWsu0NCpoQPlHQMkHcsNwqE1WWdWpndL6cTPuyZ/6rd0zPgDksI0XzVuxhadC3lN4jFOZjhtAuAmumtqSp+J/DMm5/NY4x6v7VOYjQ98042wPFVuZPQ7kiDnGkQ0rgmXLoSoeeKTl8yhntxCtFU01E+mynaXVOS/J1UHlV1UHE2Pt6+zVVwm9PZn9h/ED2tCwj6G/K1cTgs3eE/KF247JKm0ewKqZ+b/SQc1k2XBP5k/0q9M2RptI60uIF6KY4yle+C4gV5iyAu0/ah1yIIuv5fQ0Q1WRoPczxvLM7bosFSHJdzW2zjqdauZczeYJ0Y6CoSjPG4gTXUaiiN2F0jeNADK/bzzGoTHuXC762CMlEiUG1XLMtw6z+dyWUc5eg+nCQ2eUvx+5w5atN92WvcZ4G0MXQVrZwFqFWI2sWCGCaTNsNFJ0sD4Y9L6R2tg36fdL1BNgq8zqxzDjdtW5wxivi7ARszX8lxe+lpMhhHa37qQdWEO1Bj4+iu4OS7CibOeEW5qi/kGKS1B6NB6pd4hgfK25QkbPAv1KrR4FWJw1LMKTpqQo8ZAMO429BnsxPhZwJONHLzyrGtTUIp4qx+DaiJtMMQEKkZG9urqXhYS1F8ZpOr3DLO9d3l7WUshuDIZgxGcfQ18bIIAj2pD8Kbveg4r9tfW/5R04/EzKlNmdwp5GW96S8wY1XzIEX4FJ90ec9M6F/g2a7fy30/cKzBrw7T2ISGmwFtTRO6/CIwJSnfHvbSaIXsXE9yxTejtjmSlJdLMouSknJ8jwRMQ3PXPz8Tx8yP6uoUIXW93d+eFLZlUgzDK1sMMXcis8EzMcY02m+QNRBRd7TwIFB7YjhjUGZWoVxzCzGP/wi1NiA8aaItx5wxgNdntVQtK24LQqrh16W5TyKKWVZ8ibH6qHO5TvSwB/onrXgo+2wL5m1R614rpFmQOs9GtwxV42dOSyrtl94N4LOG/E2GtwDzQMsDPQCE2MQ7+jfBJWOaWvYFLu5XrwGVU8tSJ0ql4KoZDljb4Aj3LvHa+y+vJl6m2PR9DcBrSgFYuhmVEMwDctNX24PIUwjhHa3pOyjrnYMCPMfAIlaZeLucQTNxz3DrOj8NI+HxQSKzJRmEabzaJ+k8On8W2ntkoEyvgiWNCoITDmqPiQq0hKrvkxuBtqtbGWBnrlmrJvnrgnWImoKT8U57UztfLqTG1mv3wL8YxIzfxMz29I7ZzgFdDCq4xLADHkujxDRg8ChiEMn5b9cfM+USXx2GhkeQIrYz3gwbORTZQy/lGYK1BAM=" />
+</div>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="D1538D68" />
+</div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </form>
+
+  <h3>Section 9-1 : The Heat Equation</h3>
+    
+    <p>Before we get into actually solving partial differential equations and before we even start discussing the method of separation of variables we want to spend a little bit of time talking about the two main partial differential equations that we’ll be solving later on in the chapter.  We’ll look at the first one in this section and the second one in the next section.</p>
+    
+    <p>The first partial differential equation that we’ll be looking at once we get started with solving will be the heat equation, which governs the temperature distribution in an object.  We are going to give several forms of the heat equation for reference purposes, but we will only be really solving one of them.</p>
+    
+    <p>We will start out by considering the temperature in a 1-D bar of length \(L\).  What this means is that we are going to assume that the bar starts off at \(x = 0\) and ends when we reach \(x = L\).  We are also going to so assume that at any location, \(x\) the temperature will be constant at every point in the cross section at that \(x\).  In other words, temperature will only vary in \(x\) and we can hence consider the bar to be a 1-D bar.  Note that with this assumption the actual shape of the cross section (<em>i.e.</em> circular, rectangular, <em>etc.</em>) doesn’t matter.</p>
+    
+    <p>Note that the 1-D assumption is actually not all that bad of an assumption as it might seem at first glance.  If we assume that the lateral surface of the bar is perfectly insulated (<em>i.e.</em> no heat can flow through the lateral surface) then the only way heat can enter or leave the bar as at either end.  This means that heat can only flow from left to right or right to left and thus creating a 1-D temperature distribution.</p>
+    
+    <p>The assumption of the lateral surfaces being perfectly insulated is of course impossible, but it is possible to put enough insulation on the lateral surfaces that there will be very little heat flow through them and so, at least for a time, we can consider the lateral surfaces to be perfectly insulated.</p>
+    
+    <p>Okay, let’s now get some definitions out of the way before we write down the first form of the heat equation.</p>
+    
+    
+      \[\begin{align*}&u\left( {x,t} \right) = {\mbox{Temperature at any point }}x{\mbox{ and any time }}t\\ &amp; c\left( x \right) = {\mbox{Specific Heat}}\\ &amp; \rho \left( x \right) = {\mbox{Mass Density}}\\ &amp; \varphi \left( {x,t} \right) = {\mbox{Heat Flux}}\\ &amp; Q\left( {x,t} \right) = {\mbox{Heat energy generated per unit volume per unit time}}\end{align*}\]
+    
+    <p>We should probably make a couple of comments about some of these quantities before proceeding.</p>
+    
+    <p>The specific heat, \(c\left( x \right) &gt; 0\), of a material is the amount of heat energy that it takes to raise one unit of mass of the material by one unit of temperature.  As indicated we are going to assume, at least initially, that the specific heat may not be uniform throughout the bar.  Note as well that in practice the specific heat depends upon the temperature.  However, this will generally only be an issue for large temperature differences (which in turn depends on the material the bar is made out of) and so we’re going to assume for the purposes of this discussion that the temperature differences are not large enough to affect our solution.</p>
+    
+    <p>The mass density, \(\rho \left( x \right)\), is the mass per unit volume of the material.  As with the specific heat we’re going to initially assume that the mass density may not be uniform throughout the bar.</p>
+    
+    <p>The heat flux, \(\varphi \left( {x,t} \right)\), is the amount of thermal energy that flows to the right per unit surface area per unit time.  The “flows to the right” bit simply tells us that if \(\varphi \left( {x,t} \right) &gt; 0\) for some \(x\) and \(t\) then the heat is flowing to the right at that point and time.  Likewise, if \(\varphi \left( {x,t} \right) &lt; 0\) then the heat will be flowing to the left at that point and time.</p>
+    
+    <p>The final quantity we defined above is \(Q\left( {x,t} \right)\) and this is used to represent any external sources or sinks (<em>i.e.</em> heat energy taken out of the system) of heat energy.  If \(Q\left( {x,t} \right) &gt; 0\) then heat energy is being added to the system at that location and time and if \(Q\left( {x,t} \right) &lt; 0\) then heat energy is being removed from the system at that location and time.</p>
+    
+    <p>With these quantities the heat equation is,</p>
+    
+    
+      \[\begin{equation}c\left( x \right)\rho \left( x \right)\frac{{\partial u}}{{\partial t}} =  - \frac{{\partial \varphi }}{{\partial x}} + Q\left( {x,t} \right)\label{eq:eq1}\end{equation}\] 
+    
+    <p>While this is a nice form of the heat equation it is not actually something we can solve.  In this form there are two unknown functions, \(u\) and \(\varphi \), and so we need to get rid of one of them.  With <strong>Fourier’s law</strong> we can easily remove the heat flux from this equation.</p>
+    
+    <p>Fourier’s law states that,</p>
+    
+        \[\varphi \left( {x,t} \right) =  - {K_0}\left( x \right)\frac{{\partial u}}{{\partial x}}\]
+    <p>where \({K_0}\left( x \right) &gt; 0\) is the <strong>thermal conductivity</strong> of the material and measures the ability of a given material to conduct heat.  The better a material can conduct heat the larger \({K_0}\left( x \right)\) will be.  As noted the thermal conductivity can vary with the location in the bar.  Also, much like the specific heat the thermal conductivity can vary with temperature, but we will assume that the total temperature change is not so great that this will be an issue and so we will assume for the purposes here that the thermal conductivity will not vary with temperature.</p>
+    
+    <p>Fourier’s law does a very good job of modeling what we know to be true about heat flow.  First, we know that if the temperature in a region is constant, <em>i.e.</em>\(\frac{{\partial u}}{{\partial x}} = 0\), then there is no heat flow.</p>
+    
+    <p>Next, we know that if there is a temperature difference in a region we know the heat will flow from the hot portion to the cold portion of the region.  For example, if it is hotter to the right then we know that the heat should flow to the left.  When it is hotter to the right then we also know that \(\frac{{\partial u}}{{\partial x}} &gt; 0\) (<em>i.e.</em> the temperature increases as we move to the right) and so we’ll have \(\varphi  &lt; 0\) and so the heat will flow to the left as it should.  Likewise, if \(\frac{{\partial u}}{{\partial x}} &lt; 0\) (<em>i.e.</em> it is hotter to the left) then we’ll have
+      \[\varphi  &gt; 0\] and heat will flow to the right as it should.</p>
+    
+    <p>Finally, the greater the temperature difference in a region (<em>i.e.</em> the larger \(\frac{{\partial u}}{{\partial x}}\) is) then the greater the heat flow.</p>
+    
+    <p>So, if we plug Fourier’s law into \(\eqref{eq:eq1}\), we get the following form of the heat equation,</p>
+    
+      \[\begin{equation}c\left( x \right)\rho \left( x \right)\frac{{\partial u}}{{\partial t}} = \frac{\partial }{{\partial x}}\left( {{K_0}\left( x \right)\frac{{\partial u}}{{\partial x}}} \right) + Q\left( {x,t} \right)\label{eq:eq2}\end{equation}\] 
+    
+    <p>Note that we factored the minus sign out of the derivative to cancel against the minus sign that was already there.  We cannot however, factor the thermal conductivity out of the derivative since it is a function of \(x\) and the derivative is with respect to \(x\).</p>
+    
+    <p>Solving \(\eqref{eq:eq2}\) is quite difficult due to the non uniform nature of the thermal properties and the mass density.  So, let’s now assume that these properties are all constant, <em>i.e.</em>,</p>
+    
+      \[c\left( x \right) = c\hspace{0.25in}\rho \left( x \right) = \rho \hspace{0.25in}{K_0}\left( x \right) = {K_0}\]
+    <p>where \(c\), \(\rho \) and \({K_0}\) are now all fixed quantities.  In this case we generally say that the material in the bar is <strong>uniform</strong>.  Under these assumptions the heat equation becomes,</p>
+    
+      \[\begin{equation}c\rho \frac{{\partial u}}{{\partial t}} = {K_0}\frac{{{\partial ^2}u}}{{\partial {x^2}}} + Q\left( {x,t} \right)\label{eq:eq3}\end{equation}\]  
+    
+    <p>For a final simplification to the heat equation let’s divide both sides by \(c\rho \) and define the <strong>thermal diffusivity</strong> to be,</p>
+    
+        \[k = \frac{{{K_0}}}{{c\rho }}\]
+    
+    <p><a class="anchor" name="PDE_HeatEqn_1D"></a>The heat equation is then,</p>
+    
+      \[\begin{equation}\frac{{\partial u}}{{\partial t}} = k\frac{{{\partial ^2}u}}{{\partial {x^2}}} + \frac{{Q\left( {x,t} \right)}}{{c\rho }}\label{eq:eq4}\end{equation}\] 
+    
+    <p>To most people this is what they mean when they talk about the heat equation and in fact it will be the equation that we’ll be solving.  Well, actually we’ll be solving \(\eqref{eq:eq4}\) with no external sources, <em>i.e.</em>\(Q\left( {x,t} \right) = 0\), but we’ll be considering this form when we start discussing separation of variables in a couple of sections.  We’ll only drop the sources term when we actually start solving the heat equation.</p>
+    
+    <p>Now that we’ve got the 1-D heat equation taken care of we need to move into the initial and boundary conditions we’ll also need in order to solve the problem.  If you go back to any of our solutions of ordinary differential equations that we’ve done in previous sections you can see that the number of conditions required always matched the highest order of the derivative in the equation.</p>
+    
+    <p>In partial differential equations the same idea holds except now we have to pay attention to the variable we’re differentiating with respect to as well.  So, for the heat equation we’ve got a first order time derivative and so we’ll need one initial condition and a second order spatial derivative and so we’ll need two boundary conditions.</p>
+    
+    <p>The initial condition that we’ll use here is,</p>
+    
+      \[u\left( {x,0} \right) = f\left( x \right)\]
+    <p>and we don’t really need to say much about it here other than to note that this just tells us what the initial temperature distribution in the bar is.</p>
+    
+    <p>The boundary conditions will tell us something about what the temperature and/or heat flow is doing at the boundaries of the bar.  There are four of them that are fairly common boundary conditions.</p>
+    
+    <p>The first type of boundary conditions that we can have would be the <strong>prescribed temperature</strong> boundary conditions, also called <strong>Dirichlet conditions</strong>.  The prescribed temperature boundary conditions are,</p>
+    
+      \[u\left( {0,t} \right) = {g_1}\left( t \right)\hspace{0.25in}\hspace{0.25in}\hspace{0.25in}u\left( {L,t} \right) = {g_2}\left( t \right)\]
+    
+    <p>The next type of boundary conditions are <strong>prescribed heat flux</strong>, also called <strong>Neumann conditions</strong>.  Using Fourier’s law these can be written as,</p>
+    
+      \[ - {K_0}\left( 0 \right)\frac{{\partial u}}{{\partial x}}\left( {0,t} \right) = {\varphi _1}\left( t \right)\hspace{0.25in}\hspace{0.25in}\hspace{0.25in} - {K_0}\left( L \right)\frac{{\partial u}}{{\partial x}}\left( {L,t} \right) = {\varphi _2}\left( t \right)\]
+    
+    <p><a class="anchor" name="PDE_HeatEqn_PerfectInsulated"></a>If either of the boundaries are <strong>perfectly insulated,</strong> <em>i.e.</em> there is no heat flow out of them then these boundary conditions reduce to,</p>
+    
+        \[\frac{{\partial u}}{{\partial x}}\left( {0,t} \right) = 0\hspace{0.25in}\hspace{0.25in}\hspace{0.25in}\frac{{\partial u}}{{\partial x}}\left( {L,t} \right) = 0\]
+    <p>and note that we will often just call these particular boundary conditions <strong>insulated</strong> boundaries and drop the “perfectly” part.</p>
+    
+    <p>The third type of boundary conditions use <strong>Newton’s law of cooling</strong> and are sometimes called <strong>Robins conditions</strong>.  These are usually used when the bar is in a moving fluid and note we can consider air to be a fluid for this purpose.</p>
+    
+    <p>Here are the equations for this kind of boundary condition.</p>
+    
+      \[ - {K_0}\left( 0 \right)\frac{{\partial u}}{{\partial x}}\left( {0,t} \right) =  - H\left[ {u\left( {0,t} \right) - {g_1}\left( t \right)} \right]\hspace{0.25in} - {K_0}\left( L \right)\frac{{\partial u}}{{\partial x}}\left( {L,t} \right) = H\left[ {u\left( {L,t} \right) - {g_2}\left( t \right)} \right]\]
+    <p>where \(H\) is a positive quantity that is experimentally determined and \({g_1}\left( t \right)\) and \({g_2}\left( t \right)\) give the temperature of the surrounding fluid at the respective boundaries.</p>
+    
+    <p>Note that the two conditions do vary slightly depending on which boundary we are at.  At \(x = 0\) we have a minus sign on the right side while we don’t at \(x = L\).  To see why this is let’s first assume that at \(x = 0\) we have \(u\left( {0,t} \right) &gt; {g_1}\left( t \right)\).  In other words, the bar is hotter than the surrounding fluid and so at \(x = 0\) the heat flow (as given by the left side of the equation) must be to the left, or negative since the heat will flow from the hotter bar into the cooler surrounding liquid.  If the heat flow is negative then we need to have a minus sign on the right side of 
+      the equation to make sure that it has the proper sign.</p>
+    
+    <p>If the bar is cooler than the surrounding fluid at \(x = 0\), <em>i.e.</em> \(u\left( {0,t} \right) &lt; {g_1}\left( t \right)\) we can make a similar argument to justify the minus sign.  We’ll leave it to you to verify this.</p>
+    
+    <p>If we now look at the other end, \(x = L\), and again assume that the bar is hotter than the surrounding fluid or, \(u\left( {L,t} \right) &gt; {g_2}\left( t \right)\).  In this case the heat flow must be to the right, or be positive, and so in this case we can’t have a minus sign.  Finally, we’ll again leave it to you to verify that we can’t have the minus sign at \(x = L\) is the bar is cooler than the surrounding fluid as well.</p>
+    
+    <p>Note that we are not actually going to be looking at any of these kinds of boundary conditions here.  These types of boundary conditions tend to lead to boundary value problems such as <a href="BVPEvals.html#BVPFourier_Eval_Ex5">Example 5</a> in the Eigenvalues and Eigenfunctions section of the previous chapter.  As we saw in that example it is often very difficult to get our hands on the eigenvalues and as we’ll eventually see we will need them.</p>
+    
+    <p>It is important to note at this point that we can also mix and match these boundary conditions so to speak.  There is nothing wrong with having a prescribed temperature at one boundary and a prescribed flux at the other boundary for example so don’t always expect the same boundary condition to show up at both ends.  This warning is more important that it might seem at this point because once we get into solving the heat equation we are going to have the same kind of condition on each end to simplify the problem somewhat.</p>
+    
+    <p>The final type of boundary conditions that we’ll need here are <strong>periodic </strong>boundary conditions.  Periodic boundary conditions are,</p>
+    
+      \[u\left( { - L,t} \right) = u\left( {L,t} \right)\hspace{0.25in}\hspace{0.25in}\frac{{\partial u}}{{\partial x}}\left( { - L,t} \right) = \frac{{\partial u}}{{\partial x}}\left( {L,t} \right)\]
+    
+    <p>Note that for these kinds of boundary conditions the left boundary tends to be \(x =  - L\) instead of \(x = 0\) as we were using in the previous types of boundary conditions.  The periodic boundary conditions will arise very naturally from a couple of particular geometries that we’ll be looking at down the road.</p>
+    
+    <p>We will now close out this section with a quick look at the 2-D and 3-D version of the heat equation.  However, before we jump into that we need to introduce a little bit of notation first.</p>
+    
+    <p>The <strong>del</strong> operator is defined to be,</p>
+    
+        \[\nabla  = \frac{\partial }{{\partial x}}\vec i + \frac{\partial }{{\partial y}}\vec j\hspace{0.25in}\hspace{0.25in}\hspace{0.25in}\nabla  = \frac{\partial }{{\partial x}}\vec i + \frac{\partial }{{\partial y}}\vec j + \frac{\partial }{{\partial k}}\vec k\]
+    <p>depending on whether we are in 2 or 3 dimensions.  Think of the del operator as a function that takes functions as arguments (instead of numbers as we’re used to).  Whatever function we “plug” into the operator gets put into the partial derivatives.</p>
+    
+    <p>So, for example in 3-D we would have,</p>
+    
+      \[\nabla f = \frac{{\partial f}}{{\partial x}}\vec i + \frac{{\partial f}}{{\partial y}}\vec j + \frac{{\partial f}}{{\partial k}}\vec k\]
+    <p>This of course is also the gradient of the function \(f\left( {x,y,z} \right)\).</p>
+    
+    <p>The del operator also allows us to quickly write down the divergence of a function.  So, again using 3-D as an example the divergence of \(f\left( {x,y,z} \right)\) can be written as the dot product of the del operator and the function.  Or,</p>
+    
+      \[\nabla \centerdot f = \frac{{\partial f}}{{\partial x}} + \frac{{\partial f}}{{\partial y}} + \frac{{\partial f}}{{\partial k}}\]
+    
+    <p>Finally, we will also see the following show up in our work,</p>
+    
+      \[\nabla \centerdot \left( {\nabla f} \right) = \frac{\partial }{{\partial x}}\left( {\frac{{\partial f}}{{\partial x}}} \right) + \frac{\partial }{{\partial y}}\left( {\frac{{\partial f}}{{\partial y}}} \right) + \frac{\partial }{{\partial z}}\left( {\frac{{\partial f}}{{\partial k}}} \right) = \frac{{{\partial ^2}f}}{{\partial {x^2}}} + \frac{{{\partial ^2}f}}{{\partial {y^2}}} + \frac{{{\partial ^2}f}}{{\partial {z^2}}}\]
+    
+    <p><a class="anchor" name="PDE_Laplacian"></a>This is usually denoted as,</p>
+    
+      \[{\nabla ^2}f = \frac{{{\partial ^2}f}}{{\partial {x^2}}} + \frac{{{\partial ^2}f}}{{\partial {y^2}}} + \frac{{{\partial ^2}f}}{{\partial {z^2}}}\]
+    <p>and is called the <strong>Laplacian</strong>.  The 2-D version of course simply doesn’t have the third term.</p>
+    
+    <p>Okay, we can now look into the 2-D and 3-D version of the heat equation and where ever the del operator and or Laplacian appears assume that it is the appropriate dimensional version.</p>
+    
+    <p>The higher dimensional version of \(\eqref{eq:eq1}\) is,</p>
+    
+        \[\begin{equation}c\rho \frac{{\partial u}}{{\partial t}} =  - \nabla \centerdot \,\varphi  + Q\label{eq:eq5}\end{equation}\]
+
+    <p>and note that the specific heat, \(c\), and mass density, \(\rho \), are may not be uniform and so may be functions of the spatial variables.  Likewise, the external sources term, \(Q\), may also be a function of both the spatial variables and time.</p>
+    
+    <p>Next, the higher dimensional version of Fourier’s law is,</p>
+    
+        \[\varphi  =  - {K_0}\nabla u\]
+    <p>where the thermal conductivity, \({K_0}\), is again assumed to be a function of the spatial variables.</p>
+    
+    <p>If we plug this into \(\eqref{eq:eq5}\) we get the heat equation for a non uniform bar (<em>i.e.</em> the thermal properties may be functions of the spatial variables) with external sources/sinks,</p>
+    
+      \[c\rho \frac{{\partial u}}{{\partial t}} = \nabla \centerdot \,\left( {{K_0}\nabla u} \right) + Q\]  <!--[if supportFields]>MACROBUTTON MTPlaceRef \* MERGEFORMAT  SEQ MTEqn \h \* MERGEFORMAT ( SEQ MTEqn \c \* Arabic \* MERGEFORMAT 6)<![endif]--><!--[if supportFields]><![endif]--></p>
+    
+    <p><a class="anchor" name="PDE_HeatEqn_nD"></a>If we now assume that the specific heat, mass density and thermal conductivity are constant (<em>i.e.</em> the bar is uniform) the heat equation becomes,</p>
+    
+        \[\begin{equation}\frac{{\partial u}}{{\partial t}} = k{\nabla ^2}u + \frac{Q}{{cp}}\label{eq:eq6}\end{equation}\]
+
+    <p>where we divided both sides by \(c\rho \) to get the thermal diffusivity, \(k\) in front of the Laplacian.</p>
+    
+    <p>The initial condition for the 2-D or 3-D heat equation is,</p>
+    
+        \[u\left( {x,y,t} \right) = f\left( {x,y} \right)\hspace{0.25in}\hspace{0.25in}{\mbox{or}}\hspace{0.25in}\hspace{0.25in}u\left( {x,y,z,t} \right) = f\left( {x,y,z} \right)\]
+    <p>depending upon the dimension we’re in.</p>
+    
+    <p>The prescribed temperature boundary condition becomes,</p>
+    
+        \[u\left( {x,y,t} \right) = T\left( {x,y,t} \right)\hspace{0.25in}\hspace{0.25in}{\mbox{or}}\hspace{0.25in}\hspace{0.25in}u\left( {x,y,z,t} \right) = T\left( {x,y,z,t} \right)\]
+    <p>where \(\left( {x,y} \right)\) or \(\left( {x,y,z} \right)\), depending upon the dimension we’re in, will range over the portion of the boundary in which we are prescribing the temperature.</p>
+    
+    <p>The prescribed heat flux condition becomes,</p>
+    
+        \[ - {K_0}\nabla u\,\centerdot \,\vec n = \varphi \left( t \right)\]
+    <p>where the left side is only being evaluated at points along the boundary and \(\vec n\) is the outward unit normal on the surface.</p>
+    
+    <p>Newton’s law of cooling will become,</p>
+    
+        \[ - {K_0}\nabla u\,\centerdot \,\vec n = H\left( {u - {u_B}} \right)\]
+    <p>where \(H\) is a positive quantity that is experimentally determine,  \({u_B}\) is the temperature of the fluid at the boundary and again it is assumed that this is only being evaluated at points along the boundary.</p>
+    
+    <p>We don’t have periodic boundary conditions here as they will only arise from specific 1‑D geometries.</p>
+    
+    <p>We should probably also acknowledge at this point that we’ll not actually be solving \(\eqref{eq:eq6}\) at any point, but we will be solving a special case of it in the <a href="LaplacesEqn.html">Laplace’s Equation</a> section.</p>
+    
+
+  
+
+
+      
+
+
+
+    </div>
+    <!-- End of content div -->
+
+
+    <div class="footer">
+      <div class="footer-links">
+        [<a href="http://tutorial.math.lamar.edu/Contact.aspx">Contact Me</a>]&nbsp;[<a href="../../MyStudents-2.html">My Students</a>]&nbsp;[<a href="http://tutorial.math.lamar.edu/Privacy.aspx">Privacy Statement</a>]&nbsp;[<a href="../../Help-2.html">Site Help &amp; FAQ</a>]&nbsp;[<a href="http://tutorial.math.lamar.edu/Terms.aspx">Terms of Use</a>]
+      </div>
+      <div class="footer-dates">
+        <div class="footer-copyright"><span id="lblCopyRight">&copy; 2003 - 2019 Paul Dawkins</span></div>
+        <div class="footer-spacer"></div>
+        <div class="footer-modified-date">Page Last Modified : <span id="lblModified">6/4/2018</span></div>
+      </div>
+      
+
+    </div>
+  </div>
+  <!-- End of page div...  -->
+</body>
+
+<!-- Mirrored from tutorial.math.lamar.edu/Classes/DE/TheHeatEquation.aspx by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 27 Feb 2019 06:15:37 GMT -->
+</html>

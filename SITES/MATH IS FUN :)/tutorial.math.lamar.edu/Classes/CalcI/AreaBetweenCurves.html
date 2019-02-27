@@ -1,0 +1,1160 @@
+
+
+<!DOCTYPE html>
+
+<html>
+
+<!-- Mirrored from tutorial.math.lamar.edu/Classes/CalcI/AreaBetweenCurves.aspx by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 27 Feb 2019 06:15:35 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=yes" /><meta http-equiv="X-UA-Compatible" content="IE=edge" />  <!-- For best MathJax performance on IE  -->
+
+  <meta name="google-site-verification" content="uLoA31CJfOhIVMJWBjCmQL8xNMmmLybZU3LRKavy9WQ" /><title>
+	Calculus I - Area Between Curves
+</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="../../../www.googletagmanager.com/gtag/js1872?id=UA-331594-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-331594-1');
+  </script>
+
+  <link type="text/css" href="../../css/jquery.mmenu.all.css" rel="stylesheet" /><link type="text/css" href="../../css/jquery.dropdown.css" rel="stylesheet" /><link href="../../FA/css/fontawesome-all.min.css" rel="stylesheet" /><link type="text/css" href="../../css/notes-all.css" rel="stylesheet" /><link type="text/css" href="../../css/notes-google.css" rel="stylesheet" /><link type="text/css" href="../../css/notes-mmenu.css" rel="stylesheet" /><link type="text/css" href="../../css/notes-dropdown.css" rel="stylesheet" />
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+     TeX: { equationNumbers: { autoNumber: "AMS" } }
+    });
+  </script>
+  <script type="text/javascript" async src="../../../cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax2ba6.js?config=TeX-AMS_CHTML-full"></script>
+  <script type="text/javascript" src="../../../code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="../../js/jquery.mmenu.all.js"></script>
+  <script type="text/javascript" src="../../js/jquery.dropdown.js"></script>
+  <script type="text/javascript" src="../../js/notes-all.js"></script>  
+
+  <script>
+    (function () {
+      var cx = '001004262401526223570:11yv6vpcqvy';
+      var gcse = document.createElement('script');
+      gcse.type = 'text/javascript';
+      gcse.async = true;
+      gcse.src = '../../../cse.google.com/cse07b6.html?cx=' + cx;
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(gcse, s);
+    })();
+  </script>
+
+<meta http-equiv="keywords" name="keywords" content="area between curves, area between two curves" /><meta http-equiv="description" name="description" content="In this section we’ll take a look at one of the main applications of definite integrals in this chapter.  We will determine the area of the region bounded by two curves." /></head>
+<body onload="init({Notes: 'NoteMobile;8/21/2018;true'})">
+
+  <div id="page">
+
+    <div class="header">
+      <div class="header-row">
+        <!--<a href="#menu"><span></span></a>-->
+        <div id="side-menu-icon" class="header-side-menu-icon"><a href="#menu"><span class="fas fa-bars fa-lg" aria-hidden="true" title="Main Menu - Change between topics, chapters and sections as well as a few extra pages."></span></a></div>
+        <span class="header-title"><a href="../../index.html" class="header-title-link">Paul's Online Notes</a></span>
+        <div class="header-spacer"></div>
+
+        <div id="content-top-menu" class="top-menu">
+          <button id="content-type-menu" class="top-menu-button" data-jq-dropdown="#jq-dropdown-type" title="View (Notes, Practice Problems or Assignment Problems, Show/Hide Solutions and/or Steps) Menu">
+            <span id="tab_top_menu_notes" class="top-menu-item-title">Notes</span> <span class="far fa-eye fa-lg" aria-hidden="true"></span>
+          </button>
+
+          <button id="quicknav-menu" class="top-menu-button" data-jq-dropdown="#jq-dropdown-quicknav" title="Quick Navigation (Previous/Next Sections and Problems and Full Problem List) Menu">
+            <span class="top-menu-item-title">Quick Nav</span> <span class="fas fa-exchange fa-lg" aria-hidden="true"></span>
+          </button>
+          
+          <button id="download-menu" class="top-menu-button" data-jq-dropdown="#jq-dropdown-download" title="Download pdf Menu">
+            <span class="top-menu-item-title">Download</span> <span class="far fa-download fa-lg" aria-hidden="true"></span>
+          </button>
+
+          <button id="print-menu" class="top-menu-button top-menu-button-icon-only" data-jq-dropdown="#jq-print-download" title="Print Menu">
+            <span class="far fa-print fa-lg" aria-hidden="true"></span>
+          </button>
+        </div>
+
+        <div id="header-google-search" class="header-search">
+          <gcse:search></gcse:search>
+        </div>
+        <div id="header-search-icon" title="Site Search" class="header-menu-icon"><span id="search-icon" class="fas fa-search" aria-hidden="true"></span></div>
+
+      </div>
+    </div>
+
+     <div id="jq-dropdown-type" class="jq-dropdown jq-dropdown-tip">
+      <ul class="jq-dropdown-menu">
+        
+        <li id="li_type_menu_goto" class="top-menu-nav-title">Go To</li>
+        <li id="li_type_menu_notes">
+          <span id="type_menu_notes_span" title="Viewing the Notes for the current topic." class="top-menu-current">Notes</span>
+          
+        </li>
+        <li id="li_type_menu_practice">
+          
+          
+          <a href="http://tutorial.math.lamar.edu/Problems/CalcI/AreaBetweenCurves.aspx" id="type_menu_practice_link" title="Go to Practice Problems for current topic.">Practice Problems</a>
+        </li>
+        <li id="li_type_menu_asgn">
+          
+          <a href="http://tutorial.math.lamar.edu/ProblemsNS/CalcI/AreaBetweenCurves.aspx" id="type_menu_asgn_link" title="Go to Assignment Problems for current topic.">Assignment Problems</a>
+        </li>
+        <li id="li_type_menu_sh" class="top-menu-nav-title">Show/Hide</li>
+        <li id="li_type_menu_show" title="Show any hidden solutions and/or steps that may be present on the page."><a href="javascript:SHPrintPage(1,0)" id="view_menu_show">Show all Solutions/Steps/<em>etc.</em></a></li>
+        <li id="li_type_menu_hide" title="Hide any visible solutions and/or steps that may be present on the page."><a href="javascript:SHPrintPage(0,0)" id="view_menu_hide">Hide all Solutions/Steps/<em>etc.</em></a></li>
+      </ul>
+    </div>
+
+    <div id="jq-dropdown-quicknav" class="jq-dropdown jq-dropdown-tip">
+      <ul class="jq-dropdown-menu">
+        <li id="li_nav_menu_sections" class="top-menu-nav-title">Sections</li>
+        <li id="li_nav_menu_prev_section"><a href="AvgFcnValue.html" id="a_nav_menu_prev_section" class="top-menu-nav-link" title="Previous Section : Average Function Value"><span class="top-menu-prev fas fa-chevron-left"></span> Average Function Value</a></li>
+        <li id="li_nav_menu_next_section"><a href="VolumeWithRings.html" id="a_nav_menu_next_section" class="top-menu-nav-link" title="Next Section : Volumes of Solids of Revolution / Method of Rings"><span class="top-menu-prev-hidden fas fa-chevron-left"></span> Volumes of Solids of Revolution / Method of Rings <span class="top-menu-next fas fa-chevron-right"></span></a></li>
+        <li id="li_nav_menu_chapters" class="top-menu-nav-title">Chapters</li>
+        <li id="li_nav_menu_prev_chapter"><a href="IntegralsIntro.html" id="a_nav_menu_prev_chapter" class="top-menu-nav-link" title="Previous Chapter : Integrals"><span class="top-menu-prev fas fa-chevron-left"></span><span class="top-menu-prev fas fa-chevron-left"></span> Integrals</a></li>
+        <li id="li_nav_menu_next_chapter"><a href="ExtrasIntro.html" id="a_nav_menu_next_chapter" class="top-menu-nav-link" title="Next Chapter : Extras"><span class="top-menu-prev-hidden fas fa-chevron-left"></span><span class="top-menu-prev-hidden fas fa-chevron-left"></span> Extras <span class="top-menu-next fas fa-chevron-right"></span><span class="top-menu-next fas fa-chevron-right"></span></a></li>
+        
+        
+        
+        
+        <li id="li_nav_menu_classes" class="top-menu-nav-title">Classes</li>
+        <li>
+          
+          <a href="../Alg/Alg.html" id="nav_menu_alg_link" title="Go To Algebra Notes">Algebra</a>
+        </li>
+        <li>
+          <span id="nav_menu_calci_span" title="Currently Viewing Calculus I Material" class="top-menu-current">Calculus I</span>
+          
+        </li>
+        <li>
+          
+          <a href="../CalcII/CalcII.html" id="nav_menu_calcii_link" title="Go To Calculus II Notes">Calculus II</a>
+        </li>
+        <li>
+          
+          <a href="../CalcIII/CalcIII.html" id="nav_menu_calciii_link" title="Go To Calculus III Notes">Calculus III</a>
+        </li>
+        <li>
+          
+          <a href="../DE/DE.html" id="nav_menu_de_link" title="Go To Differential Equations Notes">Differential Equations</a>
+        </li>
+        <li id="li_nav_menu_extras" class="top-menu-nav-title">Extras</li>
+        <li>
+          
+          <a href="../../Extras/AlgebraTrigReview/AlgebraTrig.html" id="nav_menu_algtrig_link" title="Go To Algebra &amp; Trig Review">Algebra &amp; Trig Review</a>
+        </li>
+        <li>
+          
+          <a href="../../Extras/CommonErrors/CommonMathErrors.html" id="nav_menu_commonerrors_link" title="Go To Common Math Errors">Common Math Errors</a>
+        </li>
+        <li>
+          
+          <a href="../../Extras/ComplexPrimer/ComplexNumbers.html" id="nav_menu_complexnumbers_link" title="Go To Complex Numbers Primer">Complex Number Primer</a>
+        </li>
+        <li>
+          
+          <a href="../../Extras/StudyMath/HowToStudyMath.html" id="nav_menu_studymath_link" title="Go To How To Study Math">How To Study Math</a>
+        </li>
+        <li>
+          
+          <a href="../../Extras/CheatSheets_Tables.html" id="nav_menu_cheattables_link" title="Go To List of Cheat Sheets and Tables">Cheat Sheets &amp; Tables</a>
+        </li>
+        <li id="li_nav_menu_misc" class="top-menu-nav-title">Misc</li>
+        <li><a href="http://tutorial.math.lamar.edu/contact.aspx" id="nav_menu_contact" title="Contact Me!">Contact Me</a></li>
+        <li><a href="../../mathjax.html" id="nav_menu_mathjax" title="Info on MathJax and MathJax Configuration Menu">MathJax Help and Configuration</a></li>
+        <li><a href="../../mystudents.html" id="nav_menu_students" title="Go here if you are currently taking a class from me!">My Students</a></li>
+      </ul>
+    </div>
+
+    <div id="jq-dropdown-download" class="jq-dropdown jq-dropdown-anchor-right jq-dropdown-tip">
+      <ul class="jq-dropdown-menu">
+        
+        <li id="li_download_menu_notes" class="top-menu-nav-title">Notes Downloads</li>
+        <li id="li_download_menu_notes_book"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=B,8,N" id="download_menu_notes_book" data-PDF="Download - Menu$Notes - Book$Calculus I$/Downloads/CalcI/Notes/Complete.pdf">Complete Book</a></li>
+        
+        <li id="li_download_menu_notes_chapter"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=C,30,N" id="download_menu_notes_chapter" data-PDF="Download - Menu$Notes - Chapter$Calculus I - Applications of Integrals$/Downloads/CalcI/Notes/Integral_Apps.pdf">Current Chapter</a></li>
+        <li id="li_download_menu_notes_section"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=S,225,N" id="download_menu_notes_section" data-PDF="Download - Menu$Notes - Section$Calculus I - Area Between Curves$/Downloads/CalcI/Notes/AreaBetweenCurves.pdf">Current Section</a></li>
+        <li id="li_download_menu_practice" class="top-menu-nav-title">Practice Problems Downloads</li>
+        
+        <li id="li_download_menu_practice_book"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=B,8,P" id="download_menu_practice_book" data-PDF="Download - Menu$Practice Problems - Book$Calculus I$/Downloads/CalcI/Practice Problems/Complete.pdf">Complete Book - Problems Only</a></li>
+        <li id="li_download_menu_solutions_book"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=B,8,S" id="download_menu_solutions_book" data-PDF="Download - Menu$Practice Problems Solutions - Book$Calculus I$/Downloads/CalcI/Practice Problems Solutions/Complete.pdf">Complete Book - Solutions</a></li>
+        <li id="li_download_menu_b_c" class="top-menu-divider"></li>
+        <li id="li_download_menu_practice_chapter"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=C,30,P" id="download_menu_practice_chapter" data-PDF="Download - Menu$Practice Problems - Chapter$Calculus I - Applications of Integrals$/Downloads/CalcI/Practice Problems/Integral_Apps.pdf">Current Chapter - Problems Only</a></li>
+        <li id="li_download_menu_solutions_chapter"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=C,30,S" id="download_menu_solutions_chapter" data-PDF="Download - Menu$Practice Problems Solutions - Chapter$Calculus I - Applications of Integrals$/Downloads/CalcI/Practice Problems Solutions/Integral_Apps.pdf">Current Chapter - Solutions</a></li>
+        <li id="li_download_menu_c_s" class="top-menu-divider"></li>
+        <li id="li_download_menu_practice_section"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=S,225,P" id="download_menu_practice_section" data-PDF="Download - Menu$Practice Problems - Section$Calculus I - Area Between Curves$/Downloads/CalcI/Practice Problems/AreaBetweenCurves.pdf">Current Section - Problems Only</a></li>
+        <li id="li_download_menu_solutions_section"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=S,225,S" id="download_menu_solutions_section" data-PDF="Download - Menu$Practice Problems Solutions - Section$Calculus I - Area Between Curves$/Downloads/CalcI/Practice Problems Solutions/AreaBetweenCurves.pdf">Current Section - Solutions</a></li>
+        <li id="li_download_menu_asgn" class="top-menu-nav-title">Assignment Problems Downloads</li>
+        
+        <li id="li_download_menu_asgn_book"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=B,8,A" id="download_menu_asgn_book" data-PDF="Download - Menu$Assignment Problems - Book$Calculus I$/Downloads/CalcI/Assignment Problems/Complete.pdf">Complete Book</a></li>
+        <li id="li_download_menu_asgn_chapter"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=C,30,A" id="download_menu_asgn_chapter" data-PDF="Download - Menu$Assignment Problems - Chapter$Calculus I - Applications of Integrals$/Downloads/CalcI/Assignment Problems/Integral_Apps.pdf">Current Chapter</a></li>
+        <li id="li_download_menu_asgn_section"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=S,225,A" id="download_menu_asgn_section" data-PDF="Download - Menu$Assignment Problems - Section$Calculus I - Area Between Curves$/Downloads/CalcI/Assignment Problems/AreaBetweenCurves.pdf">Current Section</a></li>
+        <li id="li_download_menu_other" class="top-menu-nav-title">Other Items</li>
+        <li id="li_download_menu_urls">
+          <a href="http://tutorial.math.lamar.edu/DownloadURLs.aspx?bi=8&amp;ci=30&amp;si=225" id="download_menu_urls">Get URL's for Download Items</a>
+        </li>
+      </ul>
+    </div>
+
+    <div id="jq-print-download" class="jq-dropdown jq-dropdown-anchor-right jq-dropdown-tip">
+      <ul class="jq-dropdown-menu">
+        <li id="li_print_menu_default"><a href="javascript:SHPrintPage()" id="print_menu_default">Print Page in Current Form (Default)</a></li>
+        <li id="li_print_menu_show"><a href="javascript:SHPrintPage(1,1)" id="print_menu_show">Show all Solutions/Steps and Print Page</a></li>
+        <li id="li_print_menu_hide"><a href="javascript:SHPrintPage(0,1)" id="print_menu_hide">Hide all Solutions/Steps and Print Page</a></li>
+      </ul>
+    </div>
+
+
+
+   
+
+    <nav id="menu" class="notes-nav">
+      <ul>
+        <li><a href="../../index.html" class="mm-link">Home</a></li>
+        <li><span>Classes</span></li>
+        <li><a href="../Alg/Alg.html" class="mm-link">Algebra</a>
+          <ul>
+            <li><a href="../Alg/Preliminaries.html" class="mm-link">Preliminaries</a>
+              <ul>
+                <li><a href="../Alg/IntegerExponents.html" class="mm-link">Integer Exponents</a></li>
+                <li><a href="../Alg/RationalExponents.html" class="mm-link">Rational Exponents</a></li>
+                <li><a href="../Alg/Radicals.html" class="mm-link">Radicals</a></li>
+                <li><a href="../Alg/Polynomials.html" class="mm-link">Polynomials</a></li>
+                <li><a href="../Alg/Factoring.html" class="mm-link">Factoring Polynomials</a></li>
+                <li><a href="../Alg/RationalExpressions.html" class="mm-link">Rational Expressions</a></li>
+                <li><a href="../Alg/ComplexNumbers.html" class="mm-link">Complex Numbers</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/Solving.html" class="mm-link">Solving Equations and Inequalities</a>
+              <ul>
+                <li><a href="../Alg/SolutionSets.html" class="mm-link">Solutions and Solution Sets</a></li>
+                <li><a href="../Alg/SolveLinearEqns.html" class="mm-link">Linear Equations</a></li>
+                <li><a href="../Alg/LinearApps.html" class="mm-link">Applications of Linear Equations</a></li>
+                <li><a href="../Alg/SolveMultiVariable.html" class="mm-link">Equations With More Than One Variable</a></li>
+                <li><a href="../Alg/SolveQuadraticEqnsI.html" class="mm-link">Quadratic Equations - Part I</a></li>
+                <li><a href="../Alg/SolveQuadraticEqnsII.html" class="mm-link">Quadratic Equations - Part II</a></li>
+                <li><a href="../Alg/SolveQuadraticEqnSummary.html" class="mm-link">Quadratic Equations : A Summary</a></li>
+                <li><a href="../Alg/QuadraticApps.html" class="mm-link">Applications of Quadratic Equations</a></li>
+                <li><a href="../Alg/ReducibleToQuadratic.html" class="mm-link">Equations Reducible to Quadratic in Form</a></li>
+                <li><a href="../Alg/SolveRadicalEqns.html" class="mm-link">Equations with Radicals</a></li>
+                <li><a href="../Alg/SolveLinearInequalities.html" class="mm-link">Linear Inequalities</a></li>
+                <li><a href="../Alg/SolvePolyInequalities.html" class="mm-link">Polynomial Inequalities</a></li>
+                <li><a href="../Alg/SolveRationalInequalities.html" class="mm-link">Rational Inequalities</a></li>
+                <li><a href="../Alg/SolveAbsValueEqns.html" class="mm-link">Absolute Value Equations</a></li>
+                <li><a href="../Alg/SolveAbsValueIneq.html" class="mm-link">Absolute Value Inequalities</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/Graphing_Functions.html" class="mm-link">Graphing and Functions</a>
+              <ul>
+                <li><a href="../Alg/Graphing.html" class="mm-link">Graphing</a></li>
+                <li><a href="../Alg/Lines.html" class="mm-link">Lines</a></li>
+                <li><a href="../Alg/Circles.html" class="mm-link">Circles</a></li>
+                <li><a href="../Alg/FunctionDefn.html" class="mm-link">The Definition of a Function</a></li>
+                <li><a href="../Alg/GraphFunctions.html" class="mm-link">Graphing Functions</a></li>
+                <li><a href="../Alg/CombineFunctions.html" class="mm-link">Combining Functions</a></li>
+                <li><a href="../Alg/InverseFunctions.html" class="mm-link">Inverse Functions</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/CommonGraphs.html" class="mm-link">Common Graphs</a>
+              <ul>
+                <li><a href="../Alg/Lines_Circles_PWF.html" class="mm-link">Lines, Circles and Piecewise Functions</a></li>
+                <li><a href="../Alg/Parabolas.html" class="mm-link">Parabolas</a></li>
+                <li><a href="../Alg/Ellipses.html" class="mm-link">Ellipses</a></li>
+                <li><a href="../Alg/Hyperbolas.html" class="mm-link">Hyperbolas</a></li>
+                <li><a href="../Alg/MiscFunctions.html" class="mm-link">Miscellaneous Functions</a></li>
+                <li><a href="../Alg/Transformations.html" class="mm-link">Transformations</a></li>
+                <li><a href="../Alg/Symmetry.html" class="mm-link">Symmetry</a></li>
+                <li><a href="../Alg/GraphRationalFcns.html" class="mm-link">Rational Functions</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/PolynomialFunctions.html" class="mm-link">Polynomial Functions</a>
+              <ul>
+                <li><a href="../Alg/DividingPolynomials.html" class="mm-link">Dividing Polynomials</a></li>
+                <li><a href="../Alg/ZeroesOfPolynomials.html" class="mm-link">Zeroes/Roots of Polynomials</a></li>
+                <li><a href="../Alg/GraphingPolynomials.html" class="mm-link">Graphing Polynomials</a></li>
+                <li><a href="../Alg/FindingZeroesOfPolynomials.html" class="mm-link">Finding Zeroes of Polynomials</a></li>
+                <li><a href="../Alg/PartialFractions.html" class="mm-link">Partial Fractions</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/ExpAndLog.html" class="mm-link">Exponential and Logarithm Functions</a>
+              <ul>
+                <li><a href="../Alg/ExpFunctions.html" class="mm-link">Exponential Functions</a></li>
+                <li><a href="../Alg/LogFunctions.html" class="mm-link">Logarithm Functions</a></li>
+                <li><a href="../Alg/SolveExpEqns.html" class="mm-link">Solving Exponential Equations</a></li>
+                <li><a href="../Alg/SolveLogEqns.html" class="mm-link">Solving Logarithm Equations</a></li>
+                <li><a href="../Alg/ExpLogApplications.html" class="mm-link">Applications</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/Systems.html" class="mm-link">Systems of Equations</a>
+              <ul>
+                <li><a href="../Alg/SystemsTwoVrble.html" class="mm-link">Linear Systems with Two Variables</a></li>
+                <li><a href="../Alg/SystemsThreeVrble.html" class="mm-link">Linear Systems with Three Variables</a></li>
+                <li><a href="../Alg/AugmentedMatrix.html" class="mm-link">Augmented Matrices</a></li>
+                <li><a href="../Alg/AugmentedMatrixII.html" class="mm-link">More on the Augmented Matrix</a></li>
+                <li><a href="../Alg/NonlinearSystems.html" class="mm-link">Nonlinear Systems</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="CalcI.html" class="mm-link">Calculus I</a>
+          <ul>
+            <li><a href="ReviewIntro.html" class="mm-link">Review</a>
+              <ul>
+                <li><a href="Functions.html" class="mm-link">Functions</a></li>
+                <li><a href="InverseFunctions.html" class="mm-link">Inverse Functions</a></li>
+                <li><a href="TrigFcns.html" class="mm-link">Trig Functions</a></li>
+                <li><a href="TrigEquations.html" class="mm-link">Solving Trig Equations</a></li>
+                <li><a href="TrigEquations_CalcI.html" class="mm-link">Trig Equations with Calculators, Part I</a></li>
+                <li><a href="TrigEquations_CalcII.html" class="mm-link">Trig Equations with Calculators, Part II</a></li>
+                <li><a href="ExpFunctions.html" class="mm-link">Exponential Functions</a></li>
+                <li><a href="LogFcns.html" class="mm-link">Logarithm Functions</a></li>
+                <li><a href="ExpLogEqns.html" class="mm-link">Exponential and Logarithm Equations</a></li>
+                <li><a href="CommonGraphs.html" class="mm-link">Common Graphs</a></li>
+              </ul>
+            </li>
+            <li><a href="limitsIntro.html" class="mm-link">Limits</a>
+              <ul>
+                <li><a href="Tangents_Rates.html" class="mm-link">Tangent Lines and Rates of Change</a></li>
+                <li><a href="TheLimit.html" class="mm-link">The Limit</a></li>
+                <li><a href="OneSidedLimits.html" class="mm-link">One-Sided Limits</a></li>
+                <li><a href="LimitsProperties.html" class="mm-link">Limit Properties</a></li>
+                <li><a href="ComputingLimits.html" class="mm-link">Computing Limits</a></li>
+                <li><a href="InfiniteLimits.html" class="mm-link">Infinite Limits</a></li>
+                <li><a href="LimitsAtInfinityI.html" class="mm-link">Limits At Infinity, Part I</a></li>
+                <li><a href="LimitsAtInfinityII.html" class="mm-link">Limits At Infinity, Part II</a></li>
+                <li><a href="Continuity.html" class="mm-link">Continuity</a></li>
+                <li><a href="DefnOfLimit.html" class="mm-link">The Definition of the Limit</a></li>
+              </ul>
+            </li>
+            <li><a href="DerivativeIntro.html" class="mm-link">Derivatives</a>
+              <ul>
+                <li><a href="DefnOfDerivative.html" class="mm-link">The Definition of the Derivative</a></li>
+                <li><a href="DerivativeInterp.html" class="mm-link">Interpretation of the Derivative</a></li>
+                <li><a href="DiffFormulas.html" class="mm-link">Differentiation Formulas</a></li>
+                <li><a href="ProductQuotientRule.html" class="mm-link">Product and Quotient Rule</a></li>
+                <li><a href="DiffTrigFcns.html" class="mm-link">Derivatives of Trig Functions</a></li>
+                <li><a href="DiffExpLogFcns.html" class="mm-link">Derivatives of Exponential and Logarithm Functions</a></li>
+                <li><a href="DiffInvTrigFcns.html" class="mm-link">Derivatives of Inverse Trig Functions</a></li>
+                <li><a href="DiffHyperFcns.html" class="mm-link">Derivatives of Hyperbolic Functions</a></li>
+                <li><a href="ChainRule.html" class="mm-link">Chain Rule</a></li>
+                <li><a href="ImplicitDIff.html" class="mm-link">Implicit Differentiation</a></li>
+                <li><a href="RelatedRates.html" class="mm-link">Related Rates</a></li>
+                <li><a href="HigherOrderDerivatives.html" class="mm-link">Higher Order Derivatives</a></li>
+                <li><a href="LogDiff.html" class="mm-link">Logarithmic Differentiation</a></li>
+              </ul>
+            </li>
+            <li><a href="DerivAppsIntro.html" class="mm-link">Applications of Derivatives</a>
+              <ul>
+                <li><a href="RateOfChange.html" class="mm-link">Rates of Change</a></li>
+                <li><a href="CriticalPoints.html" class="mm-link">Critical Points</a></li>
+                <li><a href="MinMaxValues.html" class="mm-link">Minimum and Maximum Values</a></li>
+                <li><a href="AbsExtrema.html" class="mm-link">Finding Absolute Extrema</a></li>
+                <li><a href="ShapeofGraphPtI.html" class="mm-link">The Shape of a Graph, Part I</a></li>
+                <li><a href="ShapeofGraphPtII.html" class="mm-link">The Shape of a Graph, Part II</a></li>
+                <li><a href="MeanValueTheorem.html" class="mm-link">The Mean Value Theorem</a></li>
+                <li><a href="Optimization.html" class="mm-link">Optimization</a></li>
+                <li><a href="MoreOptimization.html" class="mm-link">More Optimization Problems</a></li>
+                <li><a href="LHospitalsRule.html" class="mm-link">L'Hospital's Rule and Indeterminate Forms</a></li>
+                <li><a href="LinearApproximations.html" class="mm-link">Linear Approximations</a></li>
+                <li><a href="Differentials.html" class="mm-link">Differentials</a></li>
+                <li><a href="NewtonsMethod.html" class="mm-link">Newton's Method</a></li>
+                <li><a href="BusinessApps.html" class="mm-link">Business Applications</a></li>
+              </ul>
+            </li>
+            <li><a href="IntegralsIntro.html" class="mm-link">Integrals</a>
+              <ul>
+                <li><a href="IndefiniteIntegrals.html" class="mm-link">Indefinite Integrals</a></li>
+                <li><a href="ComputingIndefiniteIntegrals.html" class="mm-link">Computing Indefinite Integrals</a></li>
+                <li><a href="SubstitutionRuleIndefinite.html" class="mm-link">Substitution Rule for Indefinite Integrals</a></li>
+                <li><a href="SubstitutionRuleIndefinitePtII.html" class="mm-link">More Substitution Rule</a></li>
+                <li><a href="AreaProblem.html" class="mm-link">Area Problem</a></li>
+                <li><a href="DefnOfDefiniteIntegral.html" class="mm-link">Definition of the Definite Integral</a></li>
+                <li><a href="ComputingDefiniteIntegrals.html" class="mm-link">Computing Definite Integrals</a></li>
+                <li><a href="SubstitutionRuleDefinite.html" class="mm-link">Substitution Rule for Definite Integrals</a></li>
+              </ul>
+            </li>
+            <li><a href="IntAppsIntro.html" class="mm-link">Applications of Integrals</a>
+              <ul>
+                <li><a href="AvgFcnValue.html" class="mm-link">Average Function Value</a></li>
+                <li><a href="AreaBetweenCurves.html" class="mm-link">Area Between Curves</a></li>
+                <li><a href="VolumeWithRings.html" class="mm-link">Volumes of Solids of Revolution / Method of Rings</a></li>
+                <li><a href="VolumeWithCylinder.html" class="mm-link">Volumes of Solids of Revolution/Method of Cylinders</a></li>
+                <li><a href="MoreVolume.html" class="mm-link">More Volume Problems</a></li>
+                <li><a href="Work.html" class="mm-link">Work</a></li>
+              </ul>
+            </li>
+            <li><a href="ExtrasIntro.html" class="mm-link">Extras</a>
+              <ul>
+                <li><a href="LimitProofs.html" class="mm-link">Proof of Various Limit Properties</a></li>
+                <li><a href="DerivativeProofs.html" class="mm-link">Proof of Various Derivative Properties</a></li>
+                <li><a href="ProofTrigDeriv.html" class="mm-link">Proof of Trig Limits</a></li>
+                <li><a href="DerivativeAppsProofs.html" class="mm-link">Proofs of Derivative Applications Facts</a></li>
+                <li><a href="ProofIntProp.html" class="mm-link">Proof of Various Integral Properties </a></li>
+                <li><a href="Area_Volume_Formulas.html" class="mm-link">Area and Volume Formulas</a></li>
+                <li><a href="TypesOfInfinity.html" class="mm-link">Types of Infinity</a></li>
+                <li><a href="SummationNotation.html" class="mm-link">Summation Notation</a></li>
+                <li><a href="ConstantofIntegration.html" class="mm-link">Constant of Integration</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../CalcII/CalcII.html" class="mm-link">Calculus II</a>
+          <ul>
+            <li><a href="../CalcII/IntTechIntro.html" class="mm-link">Integration Techniques</a>
+              <ul>
+                <li><a href="../CalcII/IntegrationByParts.html" class="mm-link">Integration by Parts</a></li>
+                <li><a href="../CalcII/IntegralsWithTrig.html" class="mm-link">Integrals Involving Trig Functions</a></li>
+                <li><a href="../CalcII/TrigSubstitutions.html" class="mm-link">Trig Substitutions</a></li>
+                <li><a href="../CalcII/PartialFractions.html" class="mm-link">Partial Fractions</a></li>
+                <li><a href="../CalcII/IntegralsWithRoots.html" class="mm-link">Integrals Involving Roots</a></li>
+                <li><a href="../CalcII/IntegralsWithQuadratics.html" class="mm-link">Integrals Involving Quadratics</a></li>
+                <li><a href="../CalcII/IntegrationStrategy.html" class="mm-link">Integration Strategy</a></li>
+                <li><a href="../CalcII/ImproperIntegrals.html" class="mm-link">Improper Integrals</a></li>
+                <li><a href="../CalcII/ImproperIntegralsCompTest.html" class="mm-link">Comparison Test for Improper Integrals</a></li>
+                <li><a href="../CalcII/ApproximatingDefIntegrals.html" class="mm-link">Approximating Definite Integrals</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/IntAppsIntro.html" class="mm-link">Applications of Integrals</a>
+              <ul>
+                <li><a href="../CalcII/ArcLength.html" class="mm-link">Arc Length</a></li>
+                <li><a href="../CalcII/SurfaceArea.html" class="mm-link">Surface Area</a></li>
+                <li><a href="../CalcII/CenterOfMass.html" class="mm-link">Center of Mass</a></li>
+                <li><a href="../CalcII/HydrostaticPressure.html" class="mm-link">Hydrostatic Pressure</a></li>
+                <li><a href="../CalcII/Probability.html" class="mm-link">Probability</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/ParametricIntro.html" class="mm-link">Parametric Equations and Polar Coordinates</a>
+              <ul>
+                <li><a href="../CalcII/ParametricEqn.html" class="mm-link">Parametric Equations and Curves</a></li>
+                <li><a href="../CalcII/ParaTangent.html" class="mm-link">Tangents with Parametric Equations</a></li>
+                <li><a href="../CalcII/ParaArea.html" class="mm-link">Area with Parametric Equations</a></li>
+                <li><a href="../CalcII/ParaArcLength.html" class="mm-link">Arc Length with Parametric Equations</a></li>
+                <li><a href="../CalcII/ParaSurfaceArea.html" class="mm-link">Surface Area with Parametric Equations</a></li>
+                <li><a href="../CalcII/PolarCoordinates.html" class="mm-link">Polar Coordinates</a></li>
+                <li><a href="../CalcII/PolarTangents.html" class="mm-link">Tangents with Polar Coordinates</a></li>
+                <li><a href="../CalcII/PolarArea.html" class="mm-link">Area with Polar Coordinates</a></li>
+                <li><a href="../CalcII/PolarArcLength.html" class="mm-link">Arc Length with Polar Coordinates</a></li>
+                <li><a href="../CalcII/PolarSurfaceArea.html" class="mm-link">Surface Area with Polar Coordinates</a></li>
+                <li><a href="../CalcII/ArcLength_SurfaceArea.html" class="mm-link">Arc Length and Surface Area Revisited</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/SeriesIntro.html" class="mm-link">Series & Sequences</a>
+              <ul>
+                <li><a href="../CalcII/Sequences.html" class="mm-link">Sequences</a></li>
+                <li><a href="../CalcII/MoreSequences.html" class="mm-link">More on Sequences</a></li>
+                <li><a href="../CalcII/Series_Basics.html" class="mm-link">Series - The Basics</a></li>
+                <li><a href="../CalcII/ConvergenceOfSeries.html" class="mm-link">Convergence/Divergence of Series</a></li>
+                <li><a href="../CalcII/Series_Special.html" class="mm-link">Special Series</a></li>
+                <li><a href="../CalcII/IntegralTest.html" class="mm-link">Integral Test</a></li>
+                <li><a href="../CalcII/SeriesCompTest.html" class="mm-link">Comparison Test/Limit Comparison Test</a></li>
+                <li><a href="../CalcII/AlternatingSeries.html" class="mm-link">Alternating Series Test</a></li>
+                <li><a href="../CalcII/AbsoluteConvergence.html" class="mm-link">Absolute Convergence</a></li>
+                <li><a href="../CalcII/RatioTest.html" class="mm-link">Ratio Test</a></li>
+                <li><a href="../CalcII/RootTest.html" class="mm-link">Root Test</a></li>
+                <li><a href="../CalcII/SeriesStrategy.html" class="mm-link">Strategy for Series</a></li>
+                <li><a href="../CalcII/EstimatingSeries.html" class="mm-link">Estimating the Value of a Series</a></li>
+                <li><a href="../CalcII/PowerSeries.html" class="mm-link">Power Series</a></li>
+                <li><a href="../CalcII/PowerSeriesandFunctions.html" class="mm-link">Power Series and Functions</a></li>
+                <li><a href="../CalcII/TaylorSeries.html" class="mm-link">Taylor Series</a></li>
+                <li><a href="../CalcII/TaylorSeriesApps.html" class="mm-link">Applications of Series</a></li>
+                <li><a href="../CalcII/BinomialSeries.html" class="mm-link">Binomial Series</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/VectorsIntro.html" class="mm-link">Vectors</a>
+              <ul>
+                <li><a href="../CalcII/Vectors_Basics.html" class="mm-link">Vectors - The Basics</a></li>
+                <li><a href="../CalcII/VectorArithmetic.html" class="mm-link">Vector Arithmetic</a></li>
+                <li><a href="../CalcII/DotProduct.html" class="mm-link">Dot Product</a></li>
+                <li><a href="../CalcII/CrossProduct.html" class="mm-link">Cross Product</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/3DSpace.html" class="mm-link">3-Dimensional Space</a>
+              <ul>
+                <li><a href="../CalcII/3DCoords.html" class="mm-link">The 3-D Coordinate System</a></li>
+                <li><a href="../CalcII/EqnsOfLines.html" class="mm-link">Equations of Lines</a></li>
+                <li><a href="../CalcII/EqnsOfPlanes.html" class="mm-link">Equations of Planes</a></li>
+                <li><a href="../CalcII/QuadricSurfaces.html" class="mm-link">Quadric Surfaces</a></li>
+                <li><a href="../CalcII/MultiVrbleFcns.html" class="mm-link">Functions of Several Variables</a></li>
+                <li><a href="../CalcII/VectorFunctions.html" class="mm-link">Vector Functions</a></li>
+                <li><a href="../CalcII/VectorFcnsCalculus.html" class="mm-link">Calculus with Vector Functions</a></li>
+                <li><a href="../CalcII/TangentNormalVectors.html" class="mm-link">Tangent, Normal and Binormal Vectors</a></li>
+                <li><a href="../CalcII/VectorArcLength.html" class="mm-link">Arc Length with Vector Functions</a></li>
+                <li><a href="../CalcII/Curvature.html" class="mm-link">Curvature</a></li>
+                <li><a href="../CalcII/Velocity_Acceleration.html" class="mm-link">Velocity and Acceleration</a></li>
+                <li><a href="../CalcII/CylindricalCoords.html" class="mm-link">Cylindrical Coordinates</a></li>
+                <li><a href="../CalcII/SphericalCoords.html" class="mm-link">Spherical Coordinates</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../CalcIII/CalcIII.html" class="mm-link">Calculus III</a>
+          <ul>
+            <li><a href="../CalcIII/3DSpace.html" class="mm-link">3-Dimensional Space</a>
+              <ul>
+                <li><a href="../CalcIII/3DCoords.html" class="mm-link">The 3-D Coordinate System</a></li>
+                <li><a href="../CalcIII/EqnsOfLines.html" class="mm-link">Equations of Lines</a></li>
+                <li><a href="../CalcIII/EqnsOfPlanes.html" class="mm-link">Equations of Planes</a></li>
+                <li><a href="../CalcIII/QuadricSurfaces.html" class="mm-link">Quadric Surfaces</a></li>
+                <li><a href="../CalcIII/MultiVrbleFcns.html" class="mm-link">Functions of Several Variables</a></li>
+                <li><a href="../CalcIII/VectorFunctions.html" class="mm-link">Vector Functions</a></li>
+                <li><a href="../CalcIII/VectorFcnsCalculus.html" class="mm-link">Calculus with Vector Functions</a></li>
+                <li><a href="../CalcIII/TangentNormalVectors.html" class="mm-link">Tangent, Normal and Binormal Vectors</a></li>
+                <li><a href="../CalcIII/VectorArcLength.html" class="mm-link">Arc Length with Vector Functions</a></li>
+                <li><a href="../CalcIII/Curvature.html" class="mm-link">Curvature</a></li>
+                <li><a href="../CalcIII/Velocity_Acceleration.html" class="mm-link">Velocity and Acceleration</a></li>
+                <li><a href="../CalcIII/CylindricalCoords.html" class="mm-link">Cylindrical Coordinates</a></li>
+                <li><a href="../CalcIII/SphericalCoords.html" class="mm-link">Spherical Coordinates</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/PartialDerivsIntro.html" class="mm-link">Partial Derivatives</a>
+              <ul>
+                <li><a href="../CalcIII/Limits.html" class="mm-link">Limits</a></li>
+                <li><a href="../CalcIII/PartialDerivatives.html" class="mm-link">Partial Derivatives</a></li>
+                <li><a href="../CalcIII/PartialDerivInterp.html" class="mm-link">Interpretations of Partial Derivatives</a></li>
+                <li><a href="../CalcIII/HighOrderPartialDerivs.html" class="mm-link">Higher Order Partial Derivatives</a></li>
+                <li><a href="../CalcIII/Differentials.html" class="mm-link">Differentials</a></li>
+                <li><a href="../CalcIII/ChainRule.html" class="mm-link">Chain Rule</a></li>
+                <li><a href="../CalcIII/DirectionalDeriv.html" class="mm-link">Directional Derivatives</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/PartialDerivAppsIntro.html" class="mm-link">Applications of Partial Derivatives</a>
+              <ul>
+                <li><a href="../CalcIII/TangentPlanes.html" class="mm-link">Tangent Planes and Linear Approximations</a></li>
+                <li><a href="../CalcIII/GradientVectorTangentPlane.html" class="mm-link">Gradient Vector, Tangent Planes and Normal Lines</a></li>
+                <li><a href="../CalcIII/RelativeExtrema.html" class="mm-link">Relative Minimums and Maximums</a></li>
+                <li><a href="../CalcIII/AbsoluteExtrema.html" class="mm-link">Absolute Minimums and Maximums</a></li>
+                <li><a href="../CalcIII/LagrangeMultipliers.html" class="mm-link">Lagrange Multipliers</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/MultipleIntegralsIntro.html" class="mm-link">Multiple Integrals</a>
+              <ul>
+                <li><a href="../CalcIII/DoubleIntegrals.html" class="mm-link">Double Integrals</a></li>
+                <li><a href="../CalcIII/IteratedIntegrals.html" class="mm-link">Iterated Integrals</a></li>
+                <li><a href="../CalcIII/DIGeneralRegion.html" class="mm-link">Double Integrals over General Regions</a></li>
+                <li><a href="../CalcIII/DIPolarCoords.html" class="mm-link">Double Integrals in Polar Coordinates</a></li>
+                <li><a href="../CalcIII/TripleIntegrals.html" class="mm-link">Triple Integrals</a></li>
+                <li><a href="../CalcIII/TICylindricalCoords.html" class="mm-link">Triple Integrals in Cylindrical Coordinates</a></li>
+                <li><a href="../CalcIII/TISphericalCoords.html" class="mm-link">Triple Integrals in Spherical Coordinates</a></li>
+                <li><a href="../CalcIII/ChangeOfVariables.html" class="mm-link">Change of Variables</a></li>
+                <li><a href="../CalcIII/SurfaceArea.html" class="mm-link">Surface Area</a></li>
+                <li><a href="../CalcIII/Area_Volume.html" class="mm-link">Area and Volume Revisited</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/LineIntegralsIntro.html" class="mm-link">Line Integrals</a>
+              <ul>
+                <li><a href="../CalcIII/VectorFields.html" class="mm-link">Vector Fields</a></li>
+                <li><a href="../CalcIII/LineIntegralsPtI.html" class="mm-link">Line Integrals - Part I</a></li>
+                <li><a href="../CalcIII/LineIntegralsPtII.html" class="mm-link">Line Integrals - Part II</a></li>
+                <li><a href="../CalcIII/LineIntegralsVectorFields.html" class="mm-link">Line Integrals of Vector Fields</a></li>
+                <li><a href="../CalcIII/FundThmLineIntegrals.html" class="mm-link">Fundamental Theorem for Line Integrals</a></li>
+                <li><a href="../CalcIII/ConservativeVectorField.html" class="mm-link">Conservative Vector Fields</a></li>
+                <li><a href="../CalcIII/GreensTheorem.html" class="mm-link">Green's Theorem</a></li>
+                <li><a href="../CalcIII/CurlDivergence.html" class="mm-link">Curl and Divergence</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/SurfaceIntegralsIntro.html" class="mm-link">Surface Integrals</a>
+              <ul>
+                <li><a href="../CalcIII/ParametricSurfaces.html" class="mm-link">Parametric Surfaces</a></li>
+                <li><a href="../CalcIII/SurfaceIntegrals.html" class="mm-link">Surface Integrals</a></li>
+                <li><a href="../CalcIII/SurfIntVectorField.html" class="mm-link">Surface Integrals of Vector Fields</a></li>
+                <li><a href="../CalcIII/StokesTheorem.html" class="mm-link">Stokes' Theorem</a></li>
+                <li><a href="../CalcIII/DivergenceTheorem.html" class="mm-link">Divergence Theorem</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../DE/DE.html" class="mm-link">Differential Equations</a>
+          <ul>
+            <li><a href="../DE/IntroBasic.html" class="mm-link">Basic Concepts</a>
+              <ul>
+                <li><a href="../DE/Definitions.html" class="mm-link">Definitions</a></li>
+                <li><a href="../DE/DirectionFields.html" class="mm-link">Direction Fields</a></li>
+                <li><a href="../DE/FinalThoughts.html" class="mm-link">Final Thoughts</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/IntroFirstOrder.html" class="mm-link">First Order DE's</a>
+              <ul>
+                <li><a href="../DE/Linear.html" class="mm-link">Linear Equations</a></li>
+                <li><a href="../DE/Separable.html" class="mm-link">Separable Equations</a></li>
+                <li><a href="../DE/Exact.html" class="mm-link">Exact Equations</a></li>
+                <li><a href="../DE/Bernoulli.html" class="mm-link">Bernoulli Differential Equations</a></li>
+                <li><a href="../DE/Substitutions.html" class="mm-link">Substitutions</a></li>
+                <li><a href="../DE/IoV.html" class="mm-link">Intervals of Validity</a></li>
+                <li><a href="../DE/Modeling.html" class="mm-link">Modeling with First Order DE's</a></li>
+                <li><a href="../DE/EquilibriumSolutions.html" class="mm-link">Equilibrium Solutions</a></li>
+                <li><a href="../DE/EulersMethod.html" class="mm-link">Euler's Method</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/IntroSecondOrder.html" class="mm-link">Second Order DE's</a>
+              <ul>
+                <li><a href="../DE/SecondOrderConcepts.html" class="mm-link">Basic Concepts</a></li>
+                <li><a href="../DE/RealRoots.html" class="mm-link">Real & Distinct Roots</a></li>
+                <li><a href="../DE/ComplexRoots.html" class="mm-link">Complex Roots</a></li>
+                <li><a href="../DE/RepeatedRoots.html" class="mm-link">Repeated Roots</a></li>
+                <li><a href="../DE/ReductionofOrder.html" class="mm-link">Reduction of Order</a></li>
+                <li><a href="../DE/FundamentalSetsofSolutions.html" class="mm-link">Fundamental Sets of Solutions</a></li>
+                <li><a href="../DE/Wronskian.html" class="mm-link">More on the  Wronskian</a></li>
+                <li><a href="../DE/NonhomogeneousDE.html" class="mm-link">Nonhomogeneous Differential Equations</a></li>
+                <li><a href="../DE/UndeterminedCoefficients.html" class="mm-link">Undetermined Coefficients</a></li>
+                <li><a href="../DE/VariationofParameters.html" class="mm-link">Variation of Parameters</a></li>
+                <li><a href="../DE/Vibrations.html" class="mm-link">Mechanical Vibrations</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/LaplaceIntro.html" class="mm-link">Laplace Transforms</a>
+              <ul>
+                <li><a href="../DE/LaplaceDefinition.html" class="mm-link">The Definition</a></li>
+                <li><a href="../DE/LaplaceTransforms.html" class="mm-link">Laplace Transforms</a></li>
+                <li><a href="../DE/InverseTransforms.html" class="mm-link">Inverse Laplace Transforms</a></li>
+                <li><a href="../DE/StepFunctions.html" class="mm-link">Step Functions</a></li>
+                <li><a href="../DE/IVPWithLaplace.html" class="mm-link">Solving IVP's with Laplace Transforms</a></li>
+                <li><a href="../DE/IVPWithNonConstantCoefficient.html" class="mm-link">Nonconstant Coefficient IVP's</a></li>
+                <li><a href="../DE/IVPWithStepFunction.html" class="mm-link">IVP's With Step Functions</a></li>
+                <li><a href="../DE/DiracDeltaFunction.html" class="mm-link">Dirac Delta Function</a></li>
+                <li><a href="../DE/ConvolutionIntegrals.html" class="mm-link">Convolution Integrals</a></li>
+                <li><a href="../DE/Laplace_Table.html" class="mm-link">Table Of Laplace Transforms</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/SystemsIntro.html" class="mm-link">Systems of DE's</a>
+              <ul>
+                <li><a href="../DE/LA_Systems.html" class="mm-link">Review : Systems of Equations</a></li>
+                <li><a href="../DE/LA_Matrix.html" class="mm-link">Review : Matrices & Vectors</a></li>
+                <li><a href="../DE/LA_Eigen.html" class="mm-link">Review : Eigenvalues & Eigenvectors</a></li>
+                <li><a href="../DE/SystemsDE.html" class="mm-link">Systems of Differential Equations</a></li>
+                <li><a href="../DE/SolutionsToSystems.html" class="mm-link">Solutions to Systems</a></li>
+                <li><a href="../DE/PhasePlane.html" class="mm-link">Phase Plane</a></li>
+                <li><a href="../DE/RealEigenvalues.html" class="mm-link">Real Eigenvalues</a></li>
+                <li><a href="../DE/ComplexEigenvalues.html" class="mm-link">Complex Eigenvalues</a></li>
+                <li><a href="../DE/RepeatedEigenvalues.html" class="mm-link">Repeated Eigenvalues</a></li>
+                <li><a href="../DE/NonhomogeneousSystems.html" class="mm-link">Nonhomogeneous Systems</a></li>
+                <li><a href="../DE/SystemsLaplace.html" class="mm-link">Laplace Transforms</a></li>
+                <li><a href="../DE/SystemsModeling.html" class="mm-link">Modeling</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/SeriesIntro.html" class="mm-link">Series Solutions to DE's</a>
+              <ul>
+                <li><a href="../DE/PowerSeries.html" class="mm-link">Review : Power Series</a></li>
+                <li><a href="../DE/TaylorSeries.html" class="mm-link">Review : Taylor Series</a></li>
+                <li><a href="../DE/SeriesSolutions.html" class="mm-link">Series Solutions</a></li>
+                <li><a href="../DE/EulerEquations.html" class="mm-link">Euler Equations</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/IntroHigherOrder.html" class="mm-link">Higher Order Differential Equations</a>
+              <ul>
+                <li><a href="../DE/HOBasicConcepts.html" class="mm-link">Basic Concepts for <em>n</em><sup>th</sup> Order Linear Equations</a></li>
+                <li><a href="../DE/HOHomogeneousDE.html" class="mm-link">Linear Homogeneous Differential Equations</a></li>
+                <li><a href="../DE/HOUndeterminedCoeff.html" class="mm-link">Undetermined Coefficients</a></li>
+                <li><a href="../DE/HOVariationOfParam.html" class="mm-link">Variation of Parameters</a></li>
+                <li><a href="../DE/HOLaplaceTransforms.html" class="mm-link">Laplace Transforms</a></li>
+                <li><a href="../DE/HOSystems.html" class="mm-link">Systems of Differential Equations</a></li>
+                <li><a href="../DE/HOSeries.html" class="mm-link">Series Solutions</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/IntroBVP.html" class="mm-link">Boundary Value Problems &amp; Fourier Series</a>
+              <ul>
+                <li><a href="../DE/BoundaryValueProblem.html" class="mm-link">Boundary Value Problems</a></li>
+                <li><a href="../DE/BVPEvals.html" class="mm-link">Eigenvalues and Eigenfunctions</a></li>
+                <li><a href="../DE/PeriodicOrthogonal.html" class="mm-link">Periodic Functions &amp; Orthogonal Functions</a></li>
+                <li><a href="../DE/FourierSineSeries.html" class="mm-link">Fourier Sine Series</a></li>
+                <li><a href="../DE/FourierCosineSeries.html" class="mm-link">Fourier Cosine Series</a></li>
+                <li><a href="../DE/FourierSeries.html" class="mm-link">Fourier Series</a></li>
+                <li><a href="../DE/ConvergenceFourierSeries.html" class="mm-link">Convergence of Fourier Series</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/IntroPDE.html" class="mm-link">Partial Differential Equations </a>
+              <ul>
+                <li><a href="../DE/TheHeatEquation.html" class="mm-link">The Heat Equation</a></li>
+                <li><a href="../DE/TheWaveEquation.html" class="mm-link">The Wave Equation</a></li>
+                <li><a href="../DE/PDETerminology.html" class="mm-link">Terminology</a></li>
+                <li><a href="../DE/SeparationofVariables.html" class="mm-link">Separation of Variables</a></li>
+                <li><a href="../DE/SolvingHeatEquation.html" class="mm-link">Solving the Heat Equation</a></li>
+                <li><a href="../DE/HeatEqnNonZero.html" class="mm-link">Heat Equation with Non-Zero Temperature Boundaries</a></li>
+                <li><a href="../DE/LaplacesEqn.html" class="mm-link">Laplace's Equation</a></li>
+                <li><a href="../DE/VibratingString.html" class="mm-link">Vibrating String</a></li>
+                <li><a href="../DE/PDESummary.html" class="mm-link">Summary of Separation of Variables</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><span>Extras</span></li>
+        <li><a href="../../Extras/AlgebraTrigReview/AlgebraTrig.html" class="mm-link">Algebra &amp; Trig Review</a>
+          <ul>
+            <li><a href="../../Extras/AlgebraTrigReview/AlgebraIntro.html" class="mm-link">Algebra</a>
+              <ul>
+                <li><a href="../../Extras/AlgebraTrigReview/Exponents.html" class="mm-link">Exponents </a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/AbsoluteValue.html" class="mm-link">Absolute Value</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Radicals.html" class="mm-link">Radicals</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Rationalizing.html" class="mm-link">Rationalizing </a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Functions.html" class="mm-link">Functions </a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/MultPoly.html" class="mm-link">Multiplying Polynomials</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Factoring.html" class="mm-link">Factoring</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SimpRatExp.html" class="mm-link">Simplifying Rational Expressions</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Graphing.html" class="mm-link">Graphing and Common Graphs</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveEqnPtI.html" class="mm-link">Solving Equations, Part I</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveEqnPtII.html" class="mm-link">Solving Equations, Part II</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveSystems.html" class="mm-link">Solving Systems of Equations</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveIneq.html" class="mm-link">Solving Inequalities</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveAbsValue.html" class="mm-link">Absolute Value Equations and Inequalities</a></li>
+              </ul>
+            </li>
+            <li><a href="../../Extras/AlgebraTrigReview/TrigIntro.html" class="mm-link">Trigonometry</a>
+              <ul>
+                <li><a href="../../Extras/AlgebraTrigReview/TrigFunctions.html" class="mm-link">Trig Function Evaluation</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/TrigGraphs.html" class="mm-link">Graphs of Trig Functions</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/TrigFormulas.html" class="mm-link">Trig Formulas</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveTrigEqn.html" class="mm-link">Solving Trig Equations</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/InverseTrig.html" class="mm-link">Inverse Trig Functions</a></li>
+              </ul>
+            </li>
+            <li><a href="../../Extras/AlgebraTrigReview/ExpLogIntro.html" class="mm-link">Exponentials & Logarithms</a>
+              <ul>
+                <li><a href="../../Extras/AlgebraTrigReview/ExponentialFcns.html" class="mm-link">Basic Exponential Functions</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/LogarithmFcns.html" class="mm-link">Basic Logarithm Functions</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/LogProperties.html" class="mm-link">Logarithm Properties</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SimpLogs.html" class="mm-link">Simplifying Logarithms</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveExpEqn.html" class="mm-link">Solving Exponential Equations</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveLogEqn.html" class="mm-link">Solving Logarithm Equations</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../../Extras/CommonErrors/CommonMathErrors.html" class="mm-link">Common Math Errors</a>
+          <ul>
+            <li><a href="../../Extras/CommonErrors/GeneralErrors.html" class="mm-link">General Errors</a>
+            </li>
+            <li><a href="../../Extras/CommonErrors/AlgebraErrors.html" class="mm-link">Algebra Errors</a>
+            </li>
+            <li><a href="../../Extras/CommonErrors/TrigErrors.html" class="mm-link">Trig Errors</a>
+            </li>
+            <li><a href="../../Extras/CommonErrors/CommonErrors.html" class="mm-link">Common Errors</a>
+            </li>
+            <li><a href="../../Extras/CommonErrors/CalculusErrors.html" class="mm-link">Calculus Errors</a>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../../Extras/ComplexPrimer/ComplexNumbers.html" class="mm-link">Complex Number Primer</a>
+          <ul>
+            <li><a href="../../Extras/ComplexPrimer/Definition.html" class="mm-link">The Definition</a>
+            </li>
+            <li><a href="../../Extras/ComplexPrimer/Arithmetic.html" class="mm-link">Arithmetic</a>
+            </li>
+            <li><a href="../../Extras/ComplexPrimer/ConjugateModulus.html" class="mm-link">Conjugate and Modulus</a>
+            </li>
+            <li><a href="../../Extras/ComplexPrimer/Forms.html" class="mm-link">Polar and Exponential Forms</a>
+            </li>
+            <li><a href="../../Extras/ComplexPrimer/Roots.html" class="mm-link">Powers and Roots</a>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../../Extras/StudyMath/HowToStudyMath.html" class="mm-link">How To Study Math</a>
+          <ul>
+            <li><a href="../../Extras/StudyMath/GeneralTips.html" class="mm-link">General Tips</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/TakingNotes.html" class="mm-link">Taking Notes</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/GettingHelp.html" class="mm-link">Getting Help</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/Homework.html" class="mm-link">Doing Homework</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/ProblemSolving.html" class="mm-link">Problem Solving</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/StudyForExam.html" class="mm-link">Studying For an Exam</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/TakingExam.html" class="mm-link">Taking an Exam</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/Errors.html" class="mm-link">Learn From Your Errors</a>
+            </li>
+          </ul>
+        </li>
+
+        <li><span>Misc Links</span></li>
+        <li><a href="http://tutorial.math.lamar.edu/contact.aspx" class="mm-link">Contact Me</a></li>
+        <li><a href="../../links.html" class="mm-link">Links</a></li>
+        <li><a href="../../mathjax.html" class="mm-link">MathJax Help and Configuration</a></li>
+        <li><a href="../../mystudents.html" class="mm-link">My Students</a></li>
+        <li><a href="http://tutorial.math.lamar.edu/privacy.aspx" class="mm-link">Privacy Statement</a></li>
+        <li><a href="../../help.html" class="mm-link">Site Help & FAQ</a></li>
+        <li><a href="http://tutorial.math.lamar.edu/terms.aspx" class="mm-link">Terms of Use</a></li>
+      </ul>
+    </nav>
+
+
+
+    <div class="top-info-bar">
+      <span id="mobile-title" class="mobile-header-title header-title">Paul's Online Notes</span>
+      <br />
+      <span class="top-menu-breadcrumb">
+        <a href="../../index.html" id="breadcrumb_home_link" title="Go to Main Page">Home</a>
+        <span id="breadcrumb_h_b_sep_span">/ </span>
+        <a href="CalcI.html" id="breadcrumb_book_link" title="Go to Book Introduction">Calculus I</a>
+        
+        <span id="breadcrumb_b_c_sep_span">/ </span>
+        <a href="IntAppsIntro.html" id="breadcrumb_chapter_link" title="Go to Chapter Introduction">Applications of Integrals</a>
+        
+        <span id="breadcrumb_section_span"> / Area Between Curves</span>
+      </span>
+
+    </div>
+
+    <div id="nav_links" class="top-nav-bar">
+      
+      <span id="nav_current_notes">Notes</span>
+      <a href="http://tutorial.math.lamar.edu/Problems/CalcI/AreaBetweenCurves.aspx" id="nav_links_practice" title="Go to Practice Problems for current topic.">Practice<span class="nav_desktop_extra"> Problems</span></a>
+      
+      <a href="http://tutorial.math.lamar.edu/ProblemsNS/CalcI/AreaBetweenCurves.aspx" id="nav_links_asgn" title="Go to Assignment Problems for current topic.">Assignment<span class="nav_desktop_extra">  Problems</span></a>
+      
+    </div>
+
+    <div class="header-divider"></div>
+
+    <div class="content">  
+      
+      
+      <span id="SHLink_NoteMobile" class="SH-Link content-note-link-mobile">Show Mobile Notice</span>
+      <span id="SHImg_NoteMobile" class="fas fa-caret-right SH-padding content-note-link-mobile" aria-hidden="true"></span>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+
+      <span id="SHALink_S_Note" class="SH-Link SH-Hide SH-Bracket">Show All Notes</span>&nbsp;<span id="SHALink_H_Note" class="SH-Link SH-Hide SH-Bracket">Hide All Notes</span>
+      
+      
+      <div id="SHObj_NoteMobile" class="content-note-container content-note-container-mobile">
+        <div class="content-note-header">Mobile Notice</div>
+        <div class="content-note">You appear to be on a device with a "narrow" screen width (<em>i.e.</em> you are probably on a mobile phone).  Due to the nature of the mathematics on this site it is best views in landscape mode.  If your device is not in landscape mode many of the equations will run off the side of your device (should be able to scroll to see them) and some of the menu items will be cut off due to the narrow screen width.</div>
+      </div>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+
+      
+
+
+  <form method="post" action="http://tutorial.math.lamar.edu/Classes/CalcI/AreaBetweenCurves.aspx" id="ctl00">
+<div class="aspNetHidden">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+</div>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="A32F50D7" />
+</div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </form>
+
+  <h3>Section 6-2 : Area Between Curves</h3>
+    
+    <p>In this section we are going to look at finding the area between two curves.  There are actually two cases that we are going to be looking at.</p>
+    
+    <p>In the first case we want to determine the area between \(y = f\left( x \right)\) and \(y = g\left( x \right)\) on the interval \(\left[ {a,b} \right]\).  We are also going to assume that \(f\left( x \right) \ge g\left( x \right)\).  Take a look at the following sketch to get an idea of what we’re initially going to look at.</p>
+    
+      <div class="center-div"><img alt="This is the graph of two unknown functions on the domain a&lt;x&lt;b that are mostly in the 1st quadrant.  The graph of f(x) is always over the graph of g(x) and the graph of g(x) dips briefly into the 4th quadrant just to make the point that the quadrant we are in does not matter.
+
+The area between the two functions has been shaded in." height="234" src="http://tutorial.math.lamar.edu/Classes/CalcI/AreaBetweenCurves_Files/image001.gif" width="360" /></div>
+    
+    <p>In the <a href="Area_Volume_Formulas.html">Area and Volume Formulas</a> section of the Extras chapter we derived the following formula for the area in this case.</p>
+    
+        \[\begin{equation}A = \int_{{\,a}}^{{\,b}}{{f\left( x \right) - g\left( x \right)\,dx}}\label{eq:eq1}\end{equation}\]
+
+    <p>The second case is almost identical to the first case.  Here we are going to determine the area between \(x = f\left( y \right)\) and \(x = g\left( y \right)\) on the interval \(\left[ {c,d} \right]\) with \(f\left( y \right) \ge g\left( y \right)\).</p>
+    
+      <div class="center-div"><img alt="This graph is similar to the first graph.  The only difference is that the functions are in the form f(y) and g(y) where f(y) is always “larger”, i.e. to the right of g(y).  The area between them has been shaded in." border="0" height="290" src="http://tutorial.math.lamar.edu/Classes/CalcI/AreaBetweenCurves_Files/image002.gif" width="290" /></div>
+    
+    <p>In this case the formula is,</p>
+    
+        \[\begin{equation}A = \int_{{\,c}}^{{\,d}}{{f\left( y \right) - g\left( y \right)\,dy}}\label{eq:eq2}\end{equation}\]
+    
+    <p>Now \(\eqref{eq:eq1}\) and \(\eqref{eq:eq2}\) are perfectly serviceable formulas, however, it is sometimes easy to forget that these always require the first function to be the larger of the two functions.  So, instead of these formulas we will instead use the following “word” formulas to make sure that we remember that the area is always the “larger” function minus the “smaller” function.</p>
+    
+    <p>In the first case we will use,</p>
+  <div class="fact">
+    \[\begin{equation}A = \int_{{\,a}}^{{\,b}}{{\left( \begin{array}{c}{\mbox{upper}}\\ {\mbox{function}}\end{array} \right) - \left( \begin{array}{c}{\mbox{lower}}\\ {\mbox{function}}\end{array} \right)\,dx}},\hspace{0.5in}a \le x \le b\label{eq:eq3}\end{equation}\]
+
+  </div>
+    
+    <p>In the second case we will use,</p>
+  <div class="fact">
+    \[\begin{equation}A = \int_{{\,c}}^{{\,d}}{{\left( \begin{array}{c}{\mbox{right}}\\ {\mbox{function}}\end{array} \right) - \left( \begin{array}{c}{\mbox{left}}\\  {\mbox{function}}\end{array} \right)\,dy}},\hspace{0.5in}c \le y \le d \label{eq:eq4}\end{equation}\]
+  </div>
+    
+    <p>Using these formulas will always force us to think about what is going on with each problem and to make sure that we’ve got the correct order of functions when we go to use the formula.</p>
+    
+    <p>Let’s work an example.</p>
+    <a class="anchor" name="IntApps_Area_Ex1"></a>
+  <div class="example">
+    <span class="example-title">Example 1</span> Determine the area of the region enclosed by \(y = {x^2}\) and \(y = \sqrt x \).
+    <div class="example-content">
+      <span id="SHLink_Soln1" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln1" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln1" class="soln-content">
+        <p>First of all, just what do we mean by “area enclosed by”.  This means that the region we’re interested in must have one of the two curves on every boundary of the region.  So, here is a graph of the two functions with the enclosed region shaded.</p>
+          
+            <div class="center-div"><img alt="The graph of $y=\sqrt{x}$ and $y=x^{2}$ on the domain 0&lt;x&lt;1.2.  In the domain 0&lt;x&lt;1 the graph of $\sqrt{x}$ is larger than the graph of $x^{2}$ and this region is shaded in.  In the domain x&gt;1 the graph of $x^{2}$ is larger than the graph of $\sqrt{x}$." border="0" height="241" src="http://tutorial.math.lamar.edu/Classes/CalcI/AreaBetweenCurves_Files/image003.gif" width="360" /></div>
+
+          <p>Note that we don’t take any part of the region to the right of the intersection point of these two graphs.  In this region there is no boundary on the right side and so is not part of the enclosed area.  Remember that one of the given functions must be on the each boundary of the enclosed region.</p>
+          
+          <p>Also, from this graph it’s clear that the upper function will be dependent on the range of \(x\)’s that we use.  Because of this you should always sketch of a graph of the region.  Without a sketch it’s often easy to mistake which of the two functions is the larger.  In this case most would probably say that \(y = {x^2}\) is the upper function and they would be right for the vast majority of the \(x\)’s.  However, in this case it is the lower of the two functions.</p>
+          
+          <p>The limits of integration for this will be the intersection points of the two curves.  In this case it’s pretty easy to see that they will intersect at \(x = 0\) and \(x = 1\) so these are the limits of integration.</p>
+          
+          <p>So, the integral that we’ll need to compute to find the area is,</p>
+          
+              \[\begin{align*}A & = \int_{{\,a}}^{{\,b}}{{\left( \begin{array}{c}{\mbox{upper}}\\ {\mbox{function}}\end{array} \right) - \left( \begin{array}{c}{\mbox{lower}}\\ {\mbox{function}}\end{array}\right)\,dx}}\\ &amp;  = \int_{{\,0}}^{{\,1}}{{\sqrt x  - {x^2}\,dx}}\\ &amp;  = \left. {\left( {\frac{2}{3}{x^{\frac{3}{2}}} - \frac{1}{3}{x^3}} \right)} \right|_0^1\\ &amp;  = \frac{1}{3}\end{align*}\]
+      </div>
+    </div>
+  </div>
+    
+    <p>Before moving on to the next example, there are a couple of important things to note.</p>
+    
+    <p>First, in almost all of these problems a graph is pretty much required.  Often the bounding region, which will give the limits of integration, is difficult to determine without a graph.</p>
+    
+    <p>Also, it can often be difficult to determine which of the functions is the upper function and which is the lower function without a graph.  This is especially true in cases like the last example where the answer to that question actually depended upon the range of \(x\)’s that we were using.</p>
+    
+    <p>Finally, unlike the area under a curve that we looked at in the previous chapter the area between two curves will always be positive.  If we get a negative number or zero we can be sure that we’ve made a mistake somewhere and will need to go back and find it.</p>
+    
+    <p>Note as well that sometimes instead of saying region enclosed by we will say region bounded by.  They mean the same thing.</p>
+    
+    <p>Let’s work some more examples.</p>
+    <a class="anchor" name="IntApps_Area_Ex2"></a>
+  <div class="example">
+    <span class="example-title">Example 2</span> Determine the area of the region bounded by \(y = x{{\bf{e}}^{ - {x^2}}}\), \(y = x + 1\), \(x = 2\), and the \(y\)-axis.
+    <div class="example-content">
+      <span id="SHLink_Soln2" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln2" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln2" class="soln-content">
+        <p>In this case the last two pieces of information, \(x = 2\) and the \(y\)-axis, tell us the right and left boundaries of the region.  Also, recall that the \(y\)-axis is given by the line \(x = 0\).  Here is the graph with the enclosed region shaded in.</p>
+          
+            <div class="center-div"><img alt="The graph of $y=x+1$ and $y=x{{\mathbf{e}}^{-{{x}^{2}}}}$ on the domain 0&lt;x&lt;2.  The two graphs never intersect on this domain and the graph of $y=x+1$ is always larger than $y=x{{\mathbf{e}}^{-{{x}^{2}}}}$.  The area between the two graphs has been shaded in." border="0" height="246" src="http://tutorial.math.lamar.edu/Classes/CalcI/AreaBetweenCurves_Files/image004.gif" width="410" /></div>
+          
+          <p>Here, unlike the first example, the two curves don’t meet.  Instead we rely on two vertical lines to bound the left and right sides of the region as we noted above</p>
+          
+          <p>Here is the integral that will give the area.</p>
+          
+              \[\begin{align*}A & = \int_{{\,a}}^{{\,b}}{{\left( \begin{array}{c}{\mbox{upper}}\\ {\mbox{function}}\end{array} \right) - \left( \begin{array}{c}{\mbox{lower}}\\ {\mbox{function}}\end{array} \right)\,dx}}\\ &amp;  = \int_{{\,0}}^{{\,2}}{{x + 1 - x{{\bf{e}}^{ - {x^2}}}\,dx}}\\ &amp;  = \left. {\left( {\frac{1}{2}{x^2} + x + \frac{1}{2}{{\bf{e}}^{ - {x^2}}}} \right)} \right|_0^2\\ &amp;  = \frac{7}{2} + \frac{{{{\bf{e}}^{ - 4}}}}{2} = 3.5092\end{align*}\]
+      </div>
+    </div>
+  </div>
+
+    <a class="anchor" name="IntApps_Area_Ex3"></a>
+  <div class="example">
+    <span class="example-title">Example 3</span> Determine the area of the region bounded by \(y = 2{x^2} + 10\)and \(y = 4x + 16\).
+    <div class="example-content">
+      <span id="SHLink_Soln3" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln3" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln3" class="soln-content">
+        <p>In this case the intersection points (which we’ll need eventually) are not going to be easily identified from the graph so let’s go ahead and get them now.  Note that for most of these problems you’ll not be able to accurately identify the intersection points from the graph and so you’ll need to be able to determine them by hand.  In this case we can get the intersection points by setting the two equations equal.</p>
+          
+            \[\begin{align*}2{x^2} + 10 & = 4x + 16\\ 2{x^2} - 4x - 6 & = 0\\ 2\left( {x + 1} \right)\left( {x - 3} \right) & = 0\end{align*}\]
+          
+          <p>So, it looks like the two curves will intersect at \(x =  - 1\) and \(x = 3\).  If we need them we can get the \(y\) values corresponding to each of these by plugging the values back into either of the equations.  We’ll leave it to you to verify that the coordinates of the two intersection points on the graph are \(\left( { - 1,12} \right)\)  and \(\left( {3,28} \right)\).</p>
+          
+          <p>Note as well that if you aren’t good at graphing knowing the intersection points can help in at least getting the graph started.  Here is a graph of the region.</p>
+          
+            <div class="center-div"><img alt="The graph of $y=4x+16$ and $y=2{{x}^{2}}+10$ on the domain -1&lt;x&lt;3.  The two graphs only intersect at the endpoints of the domain and in this domain the line is always larger than the parabola.  The area between the two graphs has been shaded in." border="0" height="252" src="http://tutorial.math.lamar.edu/Classes/CalcI/AreaBetweenCurves_Files/image005.gif" width="360" /></div>
+          
+          <p>With the graph we can now identify the upper and lower function and so we can now find the enclosed area.</p>
+          
+              \[\begin{align*}A &= \int_{{\,a}}^{{\,b}}{{\left( \begin{array}{c}{\mbox{upper}}\\ {\mbox{function}}\end{array} \right) - \left( \begin{array}{c}{\mbox{lower}}\\ {\mbox{function}}\end{array} \right)\,dx}}\\ &amp;  = \int_{{\, - 1}}^{{\,3}}{{4x + 16 - \left( {2{x^2} + 10} \right)\,dx}}\\ &amp;  = \int_{{\, - 1}}^{{\,3}}{{ - 2{x^2} + 4x + 6\,dx}}\\ &amp;  = \left. {\left( { - \frac{2}{3}{x^3} + 2{x^2} + 6x} \right)} \right|_{ - 1}^3\\ &amp;  = \frac{{64}}{3}\end{align*}\]
+      </div>
+    </div>
+  </div>
+    
+    <p>Be careful with parenthesis in these problems.  One of the more common mistakes students make with these problems is to neglect parenthesis on the second term.</p>
+    <a class="anchor" name="IntApps_Area_Ex4"></a>
+  <div class="example">
+    <span class="example-title">Example 4</span> Determine the area of the region bounded by \(y = 2{x^2} + 10\), \(y = 4x + 16\), \(x =  - 2\) and \(x = 5\).
+    <div class="example-content">
+      <span id="SHLink_Soln4" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln4" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln4" class="soln-content">
+        <p>So, the functions used in this problem are identical to the functions from the first problem.  The difference is that we’ve extended the bounded region out from the intersection points.  Since these are the same functions we used in the previous example we won’t bother finding the intersection points again.</p>
+          
+          <p>Here is a graph of this region.</p>
+          
+            <div class="center-div"><img alt="The graph of $y=4x+16$ and $y=2{{x}^{2}}+10$ on the domain -2&lt;x&lt;5.  The two graphs intersect at x=-1 and x=3.  In the domain -1&lt;x&lt;3 the line is larger than the parabola while in the domains -2&lt;x&lt;-1 and 3&lt;x&lt;5 the parabola is larger than the line.  The area between the two graphs has been shaded in." border="0" height="250" src="http://tutorial.math.lamar.edu/Classes/CalcI/AreaBetweenCurves_Files/image006.gif" width="360" /></div>
+          
+          <p>Okay, we have a small problem here.  Our formula requires that one function always be the upper function and the other function always be the lower function and we clearly do not have that here.  However, this actually isn’t the problem that it might at first appear to be.  There are three regions in which one function is always the upper function and the other is always the lower function.  So, all that we need to do is find the area of each of the three regions, which we can do, and then add them all up.</p>
+          
+          <p>Here is the area.</p>
+          
+            \[\begin{align*}A & = \int_{{\, - 2}}^{{\, - 1}}{{2{x^2} + 10 - \left( {4x + 16} \right)\,dx}} + \int_{{\, - 1}}^{{\,3}}{{4x + 16 - \left( {2{x^2} + 10} \right)\,dx}} + \int_{{\,3}}^{{\,5}}{{2{x^2} + 10 - \left( {4x + 16} \right)\,dx}}\\ &amp;  = \int_{{\, - 2}}^{{\, - 1}}{{2{x^2} - 4x - 6\,dx}} + \int_{{\, - 1}}^{{\,3}}{{ - 2{x^2} + 4x + 6\,dx}} + \int_{{\,3}}^{{\,5}}{{2{x^2} - 4x - 6\,dx}}\\ &amp;  = \left. {\left( {\frac{2}{3}{x^3} - 2{x^2} - 6x} \right)} \right|_{ - 2}^{ - 1} + \left. {\left( { - \frac{2}{3}{x^3} + 2{x^2} + 6x} \right)} \right|_{ - 1}^3 + \left. {\left( {\frac{2}{3}{x^3} - 2{x^2} - 6x} \right)} \right|_3^5\\ &amp;  = \frac{{14}}{3} + \frac{{64}}{3} + \frac{{64}}{3}\\ &amp;  = \frac{{142}}{3}\end{align*}\]
+      </div>
+    </div>
+  </div>
+
+    <a class="anchor" name="IntApps_Area_Ex5"></a>
+  <div class="example">
+    <span class="example-title">Example 5</span> Determine the area of the region enclosed by \(y = \sin x\), \(y = \cos x\), \(x = \frac{\pi }{2}\), and the \(y\)-axis.
+    <div class="example-content">
+      <span id="SHLink_Soln5" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln5" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln5" class="soln-content">
+        <p>First let’s get a graph of the region.</p>
+          
+            <div class="center-div"><img alt="The graph of $y=\cos(x)$ and $y=\sin(x)$ on the domain 0&lt;x&lt;$\frac{\pi}{2}$.  The two graphs intersect at $x=\frac{\pi}{4}$.  In the domain 0&lt;x&lt;$\frac{\pi}{4}$ the cosine is larger than sine and in the domain $\frac{\pi}{4}$&lt;x&lt;\frac{\pi}{2}$  sine is larger than cosine. The area between the two graphs has been shaded in." border="0" height="254" src="http://tutorial.math.lamar.edu/Classes/CalcI/AreaBetweenCurves_Files/image007.gif" width="400" /></div>
+          
+          <p>So, we have another situation where we will need to do two integrals to get the area.  The intersection point will be where</p>
+          
+              \[\sin x = \cos x\]
+          <p>in the interval.  We’ll leave it to you to verify that this will be \(x = \frac{\pi }{4}\).  The area is then,</p>
+          
+            \[\begin{align*}A & = \int_{{\,0}}^{{\,\frac{\pi }{4}}}{{\cos x - \sin x\,dx}} + \int_{{\,{\pi }/{4}\;}}^{{\,{\pi }/{2}\;}}{{\sin x - \cos x\,dx}}\\ &amp;  = \left. {\left( {\sin x + \cos x} \right)} \right|_0^{\frac{\pi }{4}} + \left. {\left( { - \cos x - \sin x} \right)} \right|_{{\pi }/{4}\;}^{{\pi }/{2}\;}\\ &amp;  = \sqrt 2  - 1 + \left( {\sqrt 2  - 1} \right)\\ &amp;  = 2\sqrt 2  - 2 = 0.828427\end{align*}\]
+      </div>
+    </div>
+  </div>
+    
+    <p>We will need to be careful with this next example.</p>
+    <a class="anchor" name="IntApps_Area_Ex6"></a>
+  <div class="example">
+    <span class="example-title">Example 6</span> Determine the area of the region enclosed by \(x = \frac{1}{2}{y^2} - 3\) and \(y = x - 1\).
+    <div class="example-content">
+      <span id="SHLink_Soln6" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln6" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln6" class="soln-content">
+        <p>Don’t let the first equation get you upset.  We will have to deal with these kinds of equations occasionally so we’ll need to get used to dealing with them.</p>
+          
+          <p>As always, it will help if we have the intersection points for the two curves.  In this case we’ll get the intersection points by solving the second equation for \(x\) and then setting them equal.  Here is that work,</p>
+          
+            \[\begin{align*}y + 1 & = \frac{1}{2}{y^2} - 3\\ 2y + 2 & = {y^2} - 6\\ 0 & = {y^2} - 2y - 8\\ 0 & = \left( {y - 4} \right)\left( {y + 2} \right)\end{align*}\]
+
+          <p>So, it looks like the two curves will intersect at \(y =  - 2\) and \(y = 4\) or if we need the full coordinates they will be : \(\left( { - 1, - 2} \right)\) and \(\left( {5,4} \right)\).</p>
+          
+          <p>Here is a sketch of the two curves.</p>
+          
+            <div class="center-div"><img alt="The graph of $x=y+1$ and $x=\frac{1}{2}{{y}^{2}}-3$ on the domain -4&lt;y&lt;4.5.  The two graphs intersect at y=-2 and y=4.  In the domain -2&lt;y&lt;4 the graph of the line is larger (i.e. to the right) than the graph of the parabola. This is the region we are interested in for this problem." border="0" height="305" src="http://tutorial.math.lamar.edu/Classes/CalcI/AreaBetweenCurves_Files/image008.gif" width="300" /></div>
+          
+          <p>Now, we will have a serious problem at this point if we aren’t careful.  To this point we’ve been using an upper function and a lower function.  To do that here notice that there are actually two portions of the region that will have different lower functions.  In the range \(\left[ { - 3, - 1} \right]\) the parabola is actually both the upper and the lower function.</p>
+          
+          <p>To use the formula that we’ve been using to this point we need to solve the parabola for \(y\).  This gives,</p>
+          
+              \[y =  \pm \sqrt {2x + 6} \]
+          <p>where the “+” gives the upper portion of the parabola and the “-” gives the lower portion.</p>
+          
+          <p>Here is a sketch of the complete area with each region shaded that we’d need if we were going to use the first formula.</p>
+          
+            <div class="center-div"><img alt="The graph of $x=y+1$ and $x=\frac{1}{2}{{y}^{2}}-3$ on the domain -4&lt;y&lt;4.5.  The two graphs intersect at y=-2 and y=4.  Unlike the first graph in this example the graphs are done assuming they are functions of x.  So, the line is graphed as $y=x-1$ and the top of the parabola is graphed as $y=\sqrt{2x+6}$ and the bottom of the parabola is graphed as $y=-\sqrt{2x+6}$.  The area between the curves is shaded but is shaded based on the functions being functions of x instead of functions of y.  So, in the range -3&lt;x&lt;-1 we get one shading because the top/bottom of the graph are the top/bottom “branches” of the parabola.  In the range -1&lt;x&lt;5 we get a different shading because the top graph is the top “branch” of the parabola and the bottom graph is the line." border="0" height="307" src="http://tutorial.math.lamar.edu/Classes/CalcI/AreaBetweenCurves_Files/image009.gif" width="298" /></div>
+          
+          <p>The integrals for the area would then be,</p>
+          
+            \[\begin{align*}A & = \int_{{\, - 3}}^{{\, - 1}}{{\sqrt {2x + 6}  - \left( { - \sqrt {2x + 6} } \right)\,dx}} + \int_{{\, - 1}}^{{\,5}}{{\sqrt {2x + 6}  - \left( {x - 1} \right)\,dx}}\\ &amp;  = \int_{{\, - 3}}^{{\, - 1}}{{2\sqrt {2x + 6} \,dx}} + \int_{{\, - 1}}^{{\,5}}{{\sqrt {2x + 6}  - x + 1\,dx}}\\ &amp;  = \int_{{\, - 3}}^{{\, - 1}}{{2\sqrt {2x + 6} \,dx}} + \int_{{\, - 1}}^{{\,5}}{{\sqrt {2x + 6} \,dx}} + \int_{{\, - 1}}^{{\,5}}{{ - x + 1\,dx}}\\ &amp;  = \left. {\frac{2}{3}{u^{\frac{3}{2}}}} \right|_0^4 + \left. {\frac{1}{3}{u^{\frac{3}{2}}}} \right|_4^{16} + \left. {\left( { - \frac{1}{2}{x^2} + x} \right)} \right|_{ - 1}^5\\ &amp;  = 18\end{align*}\]
+          
+          <p>While these integrals aren’t terribly difficult they are more difficult than they need to be.</p>
+          
+          <p>Recall that there is another formula for determining the area.  It is,</p>
+          
+            \[A = \int_{{\,c}}^{{\,d}}{{\left( \begin{array}{c}{\mbox{right}}\\ {\mbox{function}}\end{array} \right) - \left( \begin{array}{c}{\mbox{left}}\\ {\mbox{function}}\end{array} \right)\,dy}},\hspace{0.5in}c \le y \le d\]
+
+          <p>and in our case we do have one function that is always on the left and the other is always on the right.  So, in this case this is definitely the way to go.  Note that we will need to rewrite the equation of the line since it will need to be in the form \(x = f\left( y \right)\) but that is easy enough to do.  Here is the graph for using this formula.</p>
+          
+            <div class="center-div"><img alt="The graph of $x=y+1$ and $x=\frac{1}{2}{{y}^{2}}-3$ on the domain -4&lt;y&lt;4.5.  The two graphs intersect at y=-2 and y=4.  In this graph the area between the two graphs are shaded given that the functions are functions of y.  In this case the line is always on the right and the parabola is always on the left." border="0" height="305" src="http://tutorial.math.lamar.edu/Classes/CalcI/AreaBetweenCurves_Files/image010.gif" width="300" /></div>
+          
+          <p>The area is,</p>
+          
+              \[\begin{align*}A & = \int_{{\,c}}^{{\,d}}{{\left( \begin{array}{c}{\mbox{right}}\\ {\mbox{function}}\end{array} \right) - \left( \begin{array}{\mbox{left}}\\ {\mbox{function}}\end{array} \right)\,dy}}\\ &amp;  = \int_{{\, - 2}}^{{\,4}}{{\left( {y + 1} \right) - \left( {\frac{1}{2}{y^2} - 3} \right)\,dy}}\\ &amp;  = \int_{{\, - 2}}^{{\,4}}{{ - \frac{1}{2}{y^2} + y + 4\,dy}}\\ &amp;  = \left. {\left( { - \frac{1}{6}{y^3} + \frac{1}{2}{y^2} + 4y} \right)} \right|_{ - 2}^4\\ &amp;  = 18\end{align*}\]
+          
+          <p>This is the same that we got using the first formula and this was definitely easier than the first method.</p>
+      </div>
+    </div>
+  </div>
+    
+    <p>So, in this last example we’ve seen a case where we could use either formula to find the area.  However, the second was definitely easier.</p>
+    
+    <p>Students often come into a calculus class with the idea that the only easy way to work with functions is to use them in the form \(y = f\left( x \right)\).  However, as we’ve seen in this previous example there are definitely times when it will be easier to work with functions in the form \(x = f\left( y \right)\).  In fact, there are going to be occasions when this will be the only way in which a problem can be worked so make sure that you can deal with functions in this form.</p>
+    
+    <p>Let’s take a look at one more example to make sure we can deal with functions in this form.</p>
+    <a class="anchor" name="IntApps_Area_Ex7"></a>
+  <div class="example">
+    <span class="example-title">Example 7</span> Determine the area of the region bounded by \(x =  - {y^2} + 10\) and \(x = {\left( {y - 2} \right)^2}\).
+    <div class="example-content">
+      <span id="SHLink_Soln7" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln7" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln7" class="soln-content">
+        <p>First, we will need intersection points.</p>
+          
+            \[\begin{align*} - {y^2} + 10 & = {\left( {y - 2} \right)^2}\\ - {y^2} + 10 & = {y^2} - 4y + 4\\ 0 & = 2{y^2} - 4y - 6\\ 0 & = 2\left( {y + 1} \right)\left( {y - 3} \right)\end{align*}\]
+          
+          <p>The intersection points are \(y =  - 1\) and \(y = 3\).  Here is a sketch of the region.</p>
+          
+            <div class="center-div"><img alt="The graph of $x=-{{y}^{2}}+10$ and $x={{\left( y-2 \right)}^{2}}$ on the domain -2&lt;y&lt;4.  The two graphs intersect at y=-1 and y=3 and the region we are interested in is in the domain -1&lt;y&lt;3.  The parabola given by  $x=-{{y}^{2}}+10$ is always on the right of the region and the parabola given by $x={{\left( y-2 \right)}^{2}}$ is always on the left of the region." border="0" height="305" src="http://tutorial.math.lamar.edu/Classes/CalcI/AreaBetweenCurves_Files/image011.gif" width="300" /></div>
+          <p>This is definitely a region where the second area formula will be easier.  If we used the first formula there would be three different regions that we’d have to look at.</p>
+          
+          <p>The area in this case is,</p>
+          
+              \[\begin{align*}A & = \int_{{\,c}}^{{\,d}}{{\left( \begin{array}{c}{\mbox{right}}\\ {\mbox{function}}\end{array} \right) - \left( \begin{array}{c}{\mbox{left}}\\ {\mbox{function}}\end{array} \right)\,dy}}\\ &amp;  = \int_{{\, - 1}}^{{\,3}}{{ - {y^2} + 10 - {{\left( {y - 2} \right)}^2}\,dy}}\\ &amp;  = \int_{{\, - 1}}^{{\,3}}{{ - 2{y^2} + 4y + 6\,dy}}\\ &amp;  = \left. {\left( { - \frac{2}{3}{y^3} + 2{y^2} + 6y} \right)} \right|_{ - 1}^3 = \frac{{64}}{3}\end{align*}\]
+      </div>
+    </div>
+  </div>
+
+
+  
+
+
+      
+
+
+
+    </div>
+    <!-- End of content div -->
+
+
+    <div class="footer">
+      <div class="footer-links">
+        [<a href="http://tutorial.math.lamar.edu/Contact.aspx">Contact Me</a>]&nbsp;[<a href="../../MyStudents-2.html">My Students</a>]&nbsp;[<a href="http://tutorial.math.lamar.edu/Privacy.aspx">Privacy Statement</a>]&nbsp;[<a href="../../Help-2.html">Site Help &amp; FAQ</a>]&nbsp;[<a href="http://tutorial.math.lamar.edu/Terms.aspx">Terms of Use</a>]
+      </div>
+      <div class="footer-dates">
+        <div class="footer-copyright"><span id="lblCopyRight">&copy; 2003 - 2019 Paul Dawkins</span></div>
+        <div class="footer-spacer"></div>
+        <div class="footer-modified-date">Page Last Modified : <span id="lblModified">5/30/2018</span></div>
+      </div>
+      
+
+    </div>
+  </div>
+  <!-- End of page div...  -->
+</body>
+
+<!-- Mirrored from tutorial.math.lamar.edu/Classes/CalcI/AreaBetweenCurves.aspx by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 27 Feb 2019 06:15:35 GMT -->
+</html>

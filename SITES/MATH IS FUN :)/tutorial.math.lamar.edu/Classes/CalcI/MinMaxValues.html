@@ -1,0 +1,1151 @@
+
+
+<!DOCTYPE html>
+
+<html>
+
+<!-- Mirrored from tutorial.math.lamar.edu/Classes/CalcI/MinMaxValues.aspx by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 27 Feb 2019 06:15:35 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=yes" /><meta http-equiv="X-UA-Compatible" content="IE=edge" />  <!-- For best MathJax performance on IE  -->
+
+  <meta name="google-site-verification" content="uLoA31CJfOhIVMJWBjCmQL8xNMmmLybZU3LRKavy9WQ" /><title>
+	Calculus I - Minimum and Maximum Values
+</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="../../../www.googletagmanager.com/gtag/js1872?id=UA-331594-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-331594-1');
+  </script>
+
+  <link type="text/css" href="../../css/jquery.mmenu.all.css" rel="stylesheet" /><link type="text/css" href="../../css/jquery.dropdown.css" rel="stylesheet" /><link href="../../FA/css/fontawesome-all.min.css" rel="stylesheet" /><link type="text/css" href="../../css/notes-all.css" rel="stylesheet" /><link type="text/css" href="../../css/notes-google.css" rel="stylesheet" /><link type="text/css" href="../../css/notes-mmenu.css" rel="stylesheet" /><link type="text/css" href="../../css/notes-dropdown.css" rel="stylesheet" />
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+     TeX: { equationNumbers: { autoNumber: "AMS" } }
+    });
+  </script>
+  <script type="text/javascript" async src="../../../cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax2ba6.js?config=TeX-AMS_CHTML-full"></script>
+  <script type="text/javascript" src="../../../code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="../../js/jquery.mmenu.all.js"></script>
+  <script type="text/javascript" src="../../js/jquery.dropdown.js"></script>
+  <script type="text/javascript" src="../../js/notes-all.js"></script>  
+
+  <script>
+    (function () {
+      var cx = '001004262401526223570:11yv6vpcqvy';
+      var gcse = document.createElement('script');
+      gcse.type = 'text/javascript';
+      gcse.async = true;
+      gcse.src = '../../../cse.google.com/cse07b6.html?cx=' + cx;
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(gcse, s);
+    })();
+  </script>
+
+<meta http-equiv="keywords" name="keywords" content="relative extrema, absolute extrema, relative minimum, relative maximum, absolute minimum, absolute maximum, local minimum, local maximum, global maximum, global minimum, local extream, global extrema" /><meta http-equiv="description" name="description" content="In this section we define absolute (or global) minimum and maximum values of a function and relative (or local) minimum and maximum values of a function.  It is important to understand the difference between the two types of minimum/maximum (collectively called extrema) values for many of the applications in this chapter and so we use a variety of examples to help with this.  We also give the Extreme Value Theorem and Fermat&#39;s Theorem, both of which are very important in the many of the applications we&#39;ll see in this chapter." /></head>
+<body onload="init({Notes: 'NoteMobile;8/21/2018;true'})">
+
+  <div id="page">
+
+    <div class="header">
+      <div class="header-row">
+        <!--<a href="#menu"><span></span></a>-->
+        <div id="side-menu-icon" class="header-side-menu-icon"><a href="#menu"><span class="fas fa-bars fa-lg" aria-hidden="true" title="Main Menu - Change between topics, chapters and sections as well as a few extra pages."></span></a></div>
+        <span class="header-title"><a href="../../index.html" class="header-title-link">Paul's Online Notes</a></span>
+        <div class="header-spacer"></div>
+
+        <div id="content-top-menu" class="top-menu">
+          <button id="content-type-menu" class="top-menu-button" data-jq-dropdown="#jq-dropdown-type" title="View (Notes, Practice Problems or Assignment Problems, Show/Hide Solutions and/or Steps) Menu">
+            <span id="tab_top_menu_notes" class="top-menu-item-title">Notes</span> <span class="far fa-eye fa-lg" aria-hidden="true"></span>
+          </button>
+
+          <button id="quicknav-menu" class="top-menu-button" data-jq-dropdown="#jq-dropdown-quicknav" title="Quick Navigation (Previous/Next Sections and Problems and Full Problem List) Menu">
+            <span class="top-menu-item-title">Quick Nav</span> <span class="fas fa-exchange fa-lg" aria-hidden="true"></span>
+          </button>
+          
+          <button id="download-menu" class="top-menu-button" data-jq-dropdown="#jq-dropdown-download" title="Download pdf Menu">
+            <span class="top-menu-item-title">Download</span> <span class="far fa-download fa-lg" aria-hidden="true"></span>
+          </button>
+
+          <button id="print-menu" class="top-menu-button top-menu-button-icon-only" data-jq-dropdown="#jq-print-download" title="Print Menu">
+            <span class="far fa-print fa-lg" aria-hidden="true"></span>
+          </button>
+        </div>
+
+        <div id="header-google-search" class="header-search">
+          <gcse:search></gcse:search>
+        </div>
+        <div id="header-search-icon" title="Site Search" class="header-menu-icon"><span id="search-icon" class="fas fa-search" aria-hidden="true"></span></div>
+
+      </div>
+    </div>
+
+     <div id="jq-dropdown-type" class="jq-dropdown jq-dropdown-tip">
+      <ul class="jq-dropdown-menu">
+        
+        <li id="li_type_menu_goto" class="top-menu-nav-title">Go To</li>
+        <li id="li_type_menu_notes">
+          <span id="type_menu_notes_span" title="Viewing the Notes for the current topic." class="top-menu-current">Notes</span>
+          
+        </li>
+        <li id="li_type_menu_practice">
+          
+          
+          <a href="http://tutorial.math.lamar.edu/Problems/CalcI/MinMaxValues.aspx" id="type_menu_practice_link" title="Go to Practice Problems for current topic.">Practice Problems</a>
+        </li>
+        <li id="li_type_menu_asgn">
+          
+          <a href="http://tutorial.math.lamar.edu/ProblemsNS/CalcI/MinMaxValues.aspx" id="type_menu_asgn_link" title="Go to Assignment Problems for current topic.">Assignment Problems</a>
+        </li>
+        <li id="li_type_menu_sh" class="top-menu-nav-title">Show/Hide</li>
+        <li id="li_type_menu_show" title="Show any hidden solutions and/or steps that may be present on the page."><a href="javascript:SHPrintPage(1,0)" id="view_menu_show">Show all Solutions/Steps/<em>etc.</em></a></li>
+        <li id="li_type_menu_hide" title="Hide any visible solutions and/or steps that may be present on the page."><a href="javascript:SHPrintPage(0,0)" id="view_menu_hide">Hide all Solutions/Steps/<em>etc.</em></a></li>
+      </ul>
+    </div>
+
+    <div id="jq-dropdown-quicknav" class="jq-dropdown jq-dropdown-tip">
+      <ul class="jq-dropdown-menu">
+        <li id="li_nav_menu_sections" class="top-menu-nav-title">Sections</li>
+        <li id="li_nav_menu_prev_section"><a href="CriticalPoints.html" id="a_nav_menu_prev_section" class="top-menu-nav-link" title="Previous Section : Critical Points"><span class="top-menu-prev fas fa-chevron-left"></span> Critical Points</a></li>
+        <li id="li_nav_menu_next_section"><a href="AbsExtrema.html" id="a_nav_menu_next_section" class="top-menu-nav-link" title="Next Section : Finding Absolute Extrema"><span class="top-menu-prev-hidden fas fa-chevron-left"></span> Finding Absolute Extrema <span class="top-menu-next fas fa-chevron-right"></span></a></li>
+        <li id="li_nav_menu_chapters" class="top-menu-nav-title">Chapters</li>
+        <li id="li_nav_menu_prev_chapter"><a href="DerivativeIntro.html" id="a_nav_menu_prev_chapter" class="top-menu-nav-link" title="Previous Chapter : Derivatives"><span class="top-menu-prev fas fa-chevron-left"></span><span class="top-menu-prev fas fa-chevron-left"></span> Derivatives</a></li>
+        <li id="li_nav_menu_next_chapter"><a href="IntegralsIntro.html" id="a_nav_menu_next_chapter" class="top-menu-nav-link" title="Next Chapter : Integrals"><span class="top-menu-prev-hidden fas fa-chevron-left"></span><span class="top-menu-prev-hidden fas fa-chevron-left"></span> Integrals <span class="top-menu-next fas fa-chevron-right"></span><span class="top-menu-next fas fa-chevron-right"></span></a></li>
+        
+        
+        
+        
+        <li id="li_nav_menu_classes" class="top-menu-nav-title">Classes</li>
+        <li>
+          
+          <a href="../Alg/Alg.html" id="nav_menu_alg_link" title="Go To Algebra Notes">Algebra</a>
+        </li>
+        <li>
+          <span id="nav_menu_calci_span" title="Currently Viewing Calculus I Material" class="top-menu-current">Calculus I</span>
+          
+        </li>
+        <li>
+          
+          <a href="../CalcII/CalcII.html" id="nav_menu_calcii_link" title="Go To Calculus II Notes">Calculus II</a>
+        </li>
+        <li>
+          
+          <a href="../CalcIII/CalcIII.html" id="nav_menu_calciii_link" title="Go To Calculus III Notes">Calculus III</a>
+        </li>
+        <li>
+          
+          <a href="../DE/DE.html" id="nav_menu_de_link" title="Go To Differential Equations Notes">Differential Equations</a>
+        </li>
+        <li id="li_nav_menu_extras" class="top-menu-nav-title">Extras</li>
+        <li>
+          
+          <a href="../../Extras/AlgebraTrigReview/AlgebraTrig.html" id="nav_menu_algtrig_link" title="Go To Algebra &amp; Trig Review">Algebra &amp; Trig Review</a>
+        </li>
+        <li>
+          
+          <a href="../../Extras/CommonErrors/CommonMathErrors.html" id="nav_menu_commonerrors_link" title="Go To Common Math Errors">Common Math Errors</a>
+        </li>
+        <li>
+          
+          <a href="../../Extras/ComplexPrimer/ComplexNumbers.html" id="nav_menu_complexnumbers_link" title="Go To Complex Numbers Primer">Complex Number Primer</a>
+        </li>
+        <li>
+          
+          <a href="../../Extras/StudyMath/HowToStudyMath.html" id="nav_menu_studymath_link" title="Go To How To Study Math">How To Study Math</a>
+        </li>
+        <li>
+          
+          <a href="../../Extras/CheatSheets_Tables.html" id="nav_menu_cheattables_link" title="Go To List of Cheat Sheets and Tables">Cheat Sheets &amp; Tables</a>
+        </li>
+        <li id="li_nav_menu_misc" class="top-menu-nav-title">Misc</li>
+        <li><a href="http://tutorial.math.lamar.edu/contact.aspx" id="nav_menu_contact" title="Contact Me!">Contact Me</a></li>
+        <li><a href="../../mathjax.html" id="nav_menu_mathjax" title="Info on MathJax and MathJax Configuration Menu">MathJax Help and Configuration</a></li>
+        <li><a href="../../mystudents.html" id="nav_menu_students" title="Go here if you are currently taking a class from me!">My Students</a></li>
+      </ul>
+    </div>
+
+    <div id="jq-dropdown-download" class="jq-dropdown jq-dropdown-anchor-right jq-dropdown-tip">
+      <ul class="jq-dropdown-menu">
+        
+        <li id="li_download_menu_notes" class="top-menu-nav-title">Notes Downloads</li>
+        <li id="li_download_menu_notes_book"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=B,8,N" id="download_menu_notes_book" data-PDF="Download - Menu$Notes - Book$Calculus I$/Downloads/CalcI/Notes/Complete.pdf">Complete Book</a></li>
+        
+        <li id="li_download_menu_notes_chapter"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=C,28,N" id="download_menu_notes_chapter" data-PDF="Download - Menu$Notes - Chapter$Calculus I - Applications of Derivatives$/Downloads/CalcI/Notes/Derivatives_Apps.pdf">Current Chapter</a></li>
+        <li id="li_download_menu_notes_section"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=S,205,N" id="download_menu_notes_section" data-PDF="Download - Menu$Notes - Section$Calculus I - Minimum and Maximum Values$/Downloads/CalcI/Notes/MinMaxValues.pdf">Current Section</a></li>
+        <li id="li_download_menu_practice" class="top-menu-nav-title">Practice Problems Downloads</li>
+        
+        <li id="li_download_menu_practice_book"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=B,8,P" id="download_menu_practice_book" data-PDF="Download - Menu$Practice Problems - Book$Calculus I$/Downloads/CalcI/Practice Problems/Complete.pdf">Complete Book - Problems Only</a></li>
+        <li id="li_download_menu_solutions_book"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=B,8,S" id="download_menu_solutions_book" data-PDF="Download - Menu$Practice Problems Solutions - Book$Calculus I$/Downloads/CalcI/Practice Problems Solutions/Complete.pdf">Complete Book - Solutions</a></li>
+        <li id="li_download_menu_b_c" class="top-menu-divider"></li>
+        <li id="li_download_menu_practice_chapter"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=C,28,P" id="download_menu_practice_chapter" data-PDF="Download - Menu$Practice Problems - Chapter$Calculus I - Applications of Derivatives$/Downloads/CalcI/Practice Problems/Derivatives_Apps.pdf">Current Chapter - Problems Only</a></li>
+        <li id="li_download_menu_solutions_chapter"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=C,28,S" id="download_menu_solutions_chapter" data-PDF="Download - Menu$Practice Problems Solutions - Chapter$Calculus I - Applications of Derivatives$/Downloads/CalcI/Practice Problems Solutions/Derivatives_Apps.pdf">Current Chapter - Solutions</a></li>
+        <li id="li_download_menu_c_s" class="top-menu-divider"></li>
+        <li id="li_download_menu_practice_section"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=S,205,P" id="download_menu_practice_section" data-PDF="Download - Menu$Practice Problems - Section$Calculus I - Minimum and Maximum Values$/Downloads/CalcI/Practice Problems/MinMaxValues.pdf">Current Section - Problems Only</a></li>
+        <li id="li_download_menu_solutions_section"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=S,205,S" id="download_menu_solutions_section" data-PDF="Download - Menu$Practice Problems Solutions - Section$Calculus I - Minimum and Maximum Values$/Downloads/CalcI/Practice Problems Solutions/MinMaxValues.pdf">Current Section - Solutions</a></li>
+        <li id="li_download_menu_asgn" class="top-menu-nav-title">Assignment Problems Downloads</li>
+        
+        <li id="li_download_menu_asgn_book"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=B,8,A" id="download_menu_asgn_book" data-PDF="Download - Menu$Assignment Problems - Book$Calculus I$/Downloads/CalcI/Assignment Problems/Complete.pdf">Complete Book</a></li>
+        <li id="li_download_menu_asgn_chapter"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=C,28,A" id="download_menu_asgn_chapter" data-PDF="Download - Menu$Assignment Problems - Chapter$Calculus I - Applications of Derivatives$/Downloads/CalcI/Assignment Problems/Derivatives_Apps.pdf">Current Chapter</a></li>
+        <li id="li_download_menu_asgn_section"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=S,205,A" id="download_menu_asgn_section" data-PDF="Download - Menu$Assignment Problems - Section$Calculus I - Minimum and Maximum Values$/Downloads/CalcI/Assignment Problems/MinMaxValues.pdf">Current Section</a></li>
+        <li id="li_download_menu_other" class="top-menu-nav-title">Other Items</li>
+        <li id="li_download_menu_urls">
+          <a href="http://tutorial.math.lamar.edu/DownloadURLs.aspx?bi=8&amp;ci=28&amp;si=205" id="download_menu_urls">Get URL's for Download Items</a>
+        </li>
+      </ul>
+    </div>
+
+    <div id="jq-print-download" class="jq-dropdown jq-dropdown-anchor-right jq-dropdown-tip">
+      <ul class="jq-dropdown-menu">
+        <li id="li_print_menu_default"><a href="javascript:SHPrintPage()" id="print_menu_default">Print Page in Current Form (Default)</a></li>
+        <li id="li_print_menu_show"><a href="javascript:SHPrintPage(1,1)" id="print_menu_show">Show all Solutions/Steps and Print Page</a></li>
+        <li id="li_print_menu_hide"><a href="javascript:SHPrintPage(0,1)" id="print_menu_hide">Hide all Solutions/Steps and Print Page</a></li>
+      </ul>
+    </div>
+
+
+
+   
+
+    <nav id="menu" class="notes-nav">
+      <ul>
+        <li><a href="../../index.html" class="mm-link">Home</a></li>
+        <li><span>Classes</span></li>
+        <li><a href="../Alg/Alg.html" class="mm-link">Algebra</a>
+          <ul>
+            <li><a href="../Alg/Preliminaries.html" class="mm-link">Preliminaries</a>
+              <ul>
+                <li><a href="../Alg/IntegerExponents.html" class="mm-link">Integer Exponents</a></li>
+                <li><a href="../Alg/RationalExponents.html" class="mm-link">Rational Exponents</a></li>
+                <li><a href="../Alg/Radicals.html" class="mm-link">Radicals</a></li>
+                <li><a href="../Alg/Polynomials.html" class="mm-link">Polynomials</a></li>
+                <li><a href="../Alg/Factoring.html" class="mm-link">Factoring Polynomials</a></li>
+                <li><a href="../Alg/RationalExpressions.html" class="mm-link">Rational Expressions</a></li>
+                <li><a href="../Alg/ComplexNumbers.html" class="mm-link">Complex Numbers</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/Solving.html" class="mm-link">Solving Equations and Inequalities</a>
+              <ul>
+                <li><a href="../Alg/SolutionSets.html" class="mm-link">Solutions and Solution Sets</a></li>
+                <li><a href="../Alg/SolveLinearEqns.html" class="mm-link">Linear Equations</a></li>
+                <li><a href="../Alg/LinearApps.html" class="mm-link">Applications of Linear Equations</a></li>
+                <li><a href="../Alg/SolveMultiVariable.html" class="mm-link">Equations With More Than One Variable</a></li>
+                <li><a href="../Alg/SolveQuadraticEqnsI.html" class="mm-link">Quadratic Equations - Part I</a></li>
+                <li><a href="../Alg/SolveQuadraticEqnsII.html" class="mm-link">Quadratic Equations - Part II</a></li>
+                <li><a href="../Alg/SolveQuadraticEqnSummary.html" class="mm-link">Quadratic Equations : A Summary</a></li>
+                <li><a href="../Alg/QuadraticApps.html" class="mm-link">Applications of Quadratic Equations</a></li>
+                <li><a href="../Alg/ReducibleToQuadratic.html" class="mm-link">Equations Reducible to Quadratic in Form</a></li>
+                <li><a href="../Alg/SolveRadicalEqns.html" class="mm-link">Equations with Radicals</a></li>
+                <li><a href="../Alg/SolveLinearInequalities.html" class="mm-link">Linear Inequalities</a></li>
+                <li><a href="../Alg/SolvePolyInequalities.html" class="mm-link">Polynomial Inequalities</a></li>
+                <li><a href="../Alg/SolveRationalInequalities.html" class="mm-link">Rational Inequalities</a></li>
+                <li><a href="../Alg/SolveAbsValueEqns.html" class="mm-link">Absolute Value Equations</a></li>
+                <li><a href="../Alg/SolveAbsValueIneq.html" class="mm-link">Absolute Value Inequalities</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/Graphing_Functions.html" class="mm-link">Graphing and Functions</a>
+              <ul>
+                <li><a href="../Alg/Graphing.html" class="mm-link">Graphing</a></li>
+                <li><a href="../Alg/Lines.html" class="mm-link">Lines</a></li>
+                <li><a href="../Alg/Circles.html" class="mm-link">Circles</a></li>
+                <li><a href="../Alg/FunctionDefn.html" class="mm-link">The Definition of a Function</a></li>
+                <li><a href="../Alg/GraphFunctions.html" class="mm-link">Graphing Functions</a></li>
+                <li><a href="../Alg/CombineFunctions.html" class="mm-link">Combining Functions</a></li>
+                <li><a href="../Alg/InverseFunctions.html" class="mm-link">Inverse Functions</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/CommonGraphs.html" class="mm-link">Common Graphs</a>
+              <ul>
+                <li><a href="../Alg/Lines_Circles_PWF.html" class="mm-link">Lines, Circles and Piecewise Functions</a></li>
+                <li><a href="../Alg/Parabolas.html" class="mm-link">Parabolas</a></li>
+                <li><a href="../Alg/Ellipses.html" class="mm-link">Ellipses</a></li>
+                <li><a href="../Alg/Hyperbolas.html" class="mm-link">Hyperbolas</a></li>
+                <li><a href="../Alg/MiscFunctions.html" class="mm-link">Miscellaneous Functions</a></li>
+                <li><a href="../Alg/Transformations.html" class="mm-link">Transformations</a></li>
+                <li><a href="../Alg/Symmetry.html" class="mm-link">Symmetry</a></li>
+                <li><a href="../Alg/GraphRationalFcns.html" class="mm-link">Rational Functions</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/PolynomialFunctions.html" class="mm-link">Polynomial Functions</a>
+              <ul>
+                <li><a href="../Alg/DividingPolynomials.html" class="mm-link">Dividing Polynomials</a></li>
+                <li><a href="../Alg/ZeroesOfPolynomials.html" class="mm-link">Zeroes/Roots of Polynomials</a></li>
+                <li><a href="../Alg/GraphingPolynomials.html" class="mm-link">Graphing Polynomials</a></li>
+                <li><a href="../Alg/FindingZeroesOfPolynomials.html" class="mm-link">Finding Zeroes of Polynomials</a></li>
+                <li><a href="../Alg/PartialFractions.html" class="mm-link">Partial Fractions</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/ExpAndLog.html" class="mm-link">Exponential and Logarithm Functions</a>
+              <ul>
+                <li><a href="../Alg/ExpFunctions.html" class="mm-link">Exponential Functions</a></li>
+                <li><a href="../Alg/LogFunctions.html" class="mm-link">Logarithm Functions</a></li>
+                <li><a href="../Alg/SolveExpEqns.html" class="mm-link">Solving Exponential Equations</a></li>
+                <li><a href="../Alg/SolveLogEqns.html" class="mm-link">Solving Logarithm Equations</a></li>
+                <li><a href="../Alg/ExpLogApplications.html" class="mm-link">Applications</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/Systems.html" class="mm-link">Systems of Equations</a>
+              <ul>
+                <li><a href="../Alg/SystemsTwoVrble.html" class="mm-link">Linear Systems with Two Variables</a></li>
+                <li><a href="../Alg/SystemsThreeVrble.html" class="mm-link">Linear Systems with Three Variables</a></li>
+                <li><a href="../Alg/AugmentedMatrix.html" class="mm-link">Augmented Matrices</a></li>
+                <li><a href="../Alg/AugmentedMatrixII.html" class="mm-link">More on the Augmented Matrix</a></li>
+                <li><a href="../Alg/NonlinearSystems.html" class="mm-link">Nonlinear Systems</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="CalcI.html" class="mm-link">Calculus I</a>
+          <ul>
+            <li><a href="ReviewIntro.html" class="mm-link">Review</a>
+              <ul>
+                <li><a href="Functions.html" class="mm-link">Functions</a></li>
+                <li><a href="InverseFunctions.html" class="mm-link">Inverse Functions</a></li>
+                <li><a href="TrigFcns.html" class="mm-link">Trig Functions</a></li>
+                <li><a href="TrigEquations.html" class="mm-link">Solving Trig Equations</a></li>
+                <li><a href="TrigEquations_CalcI.html" class="mm-link">Trig Equations with Calculators, Part I</a></li>
+                <li><a href="TrigEquations_CalcII.html" class="mm-link">Trig Equations with Calculators, Part II</a></li>
+                <li><a href="ExpFunctions.html" class="mm-link">Exponential Functions</a></li>
+                <li><a href="LogFcns.html" class="mm-link">Logarithm Functions</a></li>
+                <li><a href="ExpLogEqns.html" class="mm-link">Exponential and Logarithm Equations</a></li>
+                <li><a href="CommonGraphs.html" class="mm-link">Common Graphs</a></li>
+              </ul>
+            </li>
+            <li><a href="limitsIntro.html" class="mm-link">Limits</a>
+              <ul>
+                <li><a href="Tangents_Rates.html" class="mm-link">Tangent Lines and Rates of Change</a></li>
+                <li><a href="TheLimit.html" class="mm-link">The Limit</a></li>
+                <li><a href="OneSidedLimits.html" class="mm-link">One-Sided Limits</a></li>
+                <li><a href="LimitsProperties.html" class="mm-link">Limit Properties</a></li>
+                <li><a href="ComputingLimits.html" class="mm-link">Computing Limits</a></li>
+                <li><a href="InfiniteLimits.html" class="mm-link">Infinite Limits</a></li>
+                <li><a href="LimitsAtInfinityI.html" class="mm-link">Limits At Infinity, Part I</a></li>
+                <li><a href="LimitsAtInfinityII.html" class="mm-link">Limits At Infinity, Part II</a></li>
+                <li><a href="Continuity.html" class="mm-link">Continuity</a></li>
+                <li><a href="DefnOfLimit.html" class="mm-link">The Definition of the Limit</a></li>
+              </ul>
+            </li>
+            <li><a href="DerivativeIntro.html" class="mm-link">Derivatives</a>
+              <ul>
+                <li><a href="DefnOfDerivative.html" class="mm-link">The Definition of the Derivative</a></li>
+                <li><a href="DerivativeInterp.html" class="mm-link">Interpretation of the Derivative</a></li>
+                <li><a href="DiffFormulas.html" class="mm-link">Differentiation Formulas</a></li>
+                <li><a href="ProductQuotientRule.html" class="mm-link">Product and Quotient Rule</a></li>
+                <li><a href="DiffTrigFcns.html" class="mm-link">Derivatives of Trig Functions</a></li>
+                <li><a href="DiffExpLogFcns.html" class="mm-link">Derivatives of Exponential and Logarithm Functions</a></li>
+                <li><a href="DiffInvTrigFcns.html" class="mm-link">Derivatives of Inverse Trig Functions</a></li>
+                <li><a href="DiffHyperFcns.html" class="mm-link">Derivatives of Hyperbolic Functions</a></li>
+                <li><a href="ChainRule.html" class="mm-link">Chain Rule</a></li>
+                <li><a href="ImplicitDIff.html" class="mm-link">Implicit Differentiation</a></li>
+                <li><a href="RelatedRates.html" class="mm-link">Related Rates</a></li>
+                <li><a href="HigherOrderDerivatives.html" class="mm-link">Higher Order Derivatives</a></li>
+                <li><a href="LogDiff.html" class="mm-link">Logarithmic Differentiation</a></li>
+              </ul>
+            </li>
+            <li><a href="DerivAppsIntro.html" class="mm-link">Applications of Derivatives</a>
+              <ul>
+                <li><a href="RateOfChange.html" class="mm-link">Rates of Change</a></li>
+                <li><a href="CriticalPoints.html" class="mm-link">Critical Points</a></li>
+                <li><a href="MinMaxValues.html" class="mm-link">Minimum and Maximum Values</a></li>
+                <li><a href="AbsExtrema.html" class="mm-link">Finding Absolute Extrema</a></li>
+                <li><a href="ShapeofGraphPtI.html" class="mm-link">The Shape of a Graph, Part I</a></li>
+                <li><a href="ShapeofGraphPtII.html" class="mm-link">The Shape of a Graph, Part II</a></li>
+                <li><a href="MeanValueTheorem.html" class="mm-link">The Mean Value Theorem</a></li>
+                <li><a href="Optimization.html" class="mm-link">Optimization</a></li>
+                <li><a href="MoreOptimization.html" class="mm-link">More Optimization Problems</a></li>
+                <li><a href="LHospitalsRule.html" class="mm-link">L'Hospital's Rule and Indeterminate Forms</a></li>
+                <li><a href="LinearApproximations.html" class="mm-link">Linear Approximations</a></li>
+                <li><a href="Differentials.html" class="mm-link">Differentials</a></li>
+                <li><a href="NewtonsMethod.html" class="mm-link">Newton's Method</a></li>
+                <li><a href="BusinessApps.html" class="mm-link">Business Applications</a></li>
+              </ul>
+            </li>
+            <li><a href="IntegralsIntro.html" class="mm-link">Integrals</a>
+              <ul>
+                <li><a href="IndefiniteIntegrals.html" class="mm-link">Indefinite Integrals</a></li>
+                <li><a href="ComputingIndefiniteIntegrals.html" class="mm-link">Computing Indefinite Integrals</a></li>
+                <li><a href="SubstitutionRuleIndefinite.html" class="mm-link">Substitution Rule for Indefinite Integrals</a></li>
+                <li><a href="SubstitutionRuleIndefinitePtII.html" class="mm-link">More Substitution Rule</a></li>
+                <li><a href="AreaProblem.html" class="mm-link">Area Problem</a></li>
+                <li><a href="DefnOfDefiniteIntegral.html" class="mm-link">Definition of the Definite Integral</a></li>
+                <li><a href="ComputingDefiniteIntegrals.html" class="mm-link">Computing Definite Integrals</a></li>
+                <li><a href="SubstitutionRuleDefinite.html" class="mm-link">Substitution Rule for Definite Integrals</a></li>
+              </ul>
+            </li>
+            <li><a href="IntAppsIntro.html" class="mm-link">Applications of Integrals</a>
+              <ul>
+                <li><a href="AvgFcnValue.html" class="mm-link">Average Function Value</a></li>
+                <li><a href="AreaBetweenCurves.html" class="mm-link">Area Between Curves</a></li>
+                <li><a href="VolumeWithRings.html" class="mm-link">Volumes of Solids of Revolution / Method of Rings</a></li>
+                <li><a href="VolumeWithCylinder.html" class="mm-link">Volumes of Solids of Revolution/Method of Cylinders</a></li>
+                <li><a href="MoreVolume.html" class="mm-link">More Volume Problems</a></li>
+                <li><a href="Work.html" class="mm-link">Work</a></li>
+              </ul>
+            </li>
+            <li><a href="ExtrasIntro.html" class="mm-link">Extras</a>
+              <ul>
+                <li><a href="LimitProofs.html" class="mm-link">Proof of Various Limit Properties</a></li>
+                <li><a href="DerivativeProofs.html" class="mm-link">Proof of Various Derivative Properties</a></li>
+                <li><a href="ProofTrigDeriv.html" class="mm-link">Proof of Trig Limits</a></li>
+                <li><a href="DerivativeAppsProofs.html" class="mm-link">Proofs of Derivative Applications Facts</a></li>
+                <li><a href="ProofIntProp.html" class="mm-link">Proof of Various Integral Properties </a></li>
+                <li><a href="Area_Volume_Formulas.html" class="mm-link">Area and Volume Formulas</a></li>
+                <li><a href="TypesOfInfinity.html" class="mm-link">Types of Infinity</a></li>
+                <li><a href="SummationNotation.html" class="mm-link">Summation Notation</a></li>
+                <li><a href="ConstantofIntegration.html" class="mm-link">Constant of Integration</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../CalcII/CalcII.html" class="mm-link">Calculus II</a>
+          <ul>
+            <li><a href="../CalcII/IntTechIntro.html" class="mm-link">Integration Techniques</a>
+              <ul>
+                <li><a href="../CalcII/IntegrationByParts.html" class="mm-link">Integration by Parts</a></li>
+                <li><a href="../CalcII/IntegralsWithTrig.html" class="mm-link">Integrals Involving Trig Functions</a></li>
+                <li><a href="../CalcII/TrigSubstitutions.html" class="mm-link">Trig Substitutions</a></li>
+                <li><a href="../CalcII/PartialFractions.html" class="mm-link">Partial Fractions</a></li>
+                <li><a href="../CalcII/IntegralsWithRoots.html" class="mm-link">Integrals Involving Roots</a></li>
+                <li><a href="../CalcII/IntegralsWithQuadratics.html" class="mm-link">Integrals Involving Quadratics</a></li>
+                <li><a href="../CalcII/IntegrationStrategy.html" class="mm-link">Integration Strategy</a></li>
+                <li><a href="../CalcII/ImproperIntegrals.html" class="mm-link">Improper Integrals</a></li>
+                <li><a href="../CalcII/ImproperIntegralsCompTest.html" class="mm-link">Comparison Test for Improper Integrals</a></li>
+                <li><a href="../CalcII/ApproximatingDefIntegrals.html" class="mm-link">Approximating Definite Integrals</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/IntAppsIntro.html" class="mm-link">Applications of Integrals</a>
+              <ul>
+                <li><a href="../CalcII/ArcLength.html" class="mm-link">Arc Length</a></li>
+                <li><a href="../CalcII/SurfaceArea.html" class="mm-link">Surface Area</a></li>
+                <li><a href="../CalcII/CenterOfMass.html" class="mm-link">Center of Mass</a></li>
+                <li><a href="../CalcII/HydrostaticPressure.html" class="mm-link">Hydrostatic Pressure</a></li>
+                <li><a href="../CalcII/Probability.html" class="mm-link">Probability</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/ParametricIntro.html" class="mm-link">Parametric Equations and Polar Coordinates</a>
+              <ul>
+                <li><a href="../CalcII/ParametricEqn.html" class="mm-link">Parametric Equations and Curves</a></li>
+                <li><a href="../CalcII/ParaTangent.html" class="mm-link">Tangents with Parametric Equations</a></li>
+                <li><a href="../CalcII/ParaArea.html" class="mm-link">Area with Parametric Equations</a></li>
+                <li><a href="../CalcII/ParaArcLength.html" class="mm-link">Arc Length with Parametric Equations</a></li>
+                <li><a href="../CalcII/ParaSurfaceArea.html" class="mm-link">Surface Area with Parametric Equations</a></li>
+                <li><a href="../CalcII/PolarCoordinates.html" class="mm-link">Polar Coordinates</a></li>
+                <li><a href="../CalcII/PolarTangents.html" class="mm-link">Tangents with Polar Coordinates</a></li>
+                <li><a href="../CalcII/PolarArea.html" class="mm-link">Area with Polar Coordinates</a></li>
+                <li><a href="../CalcII/PolarArcLength.html" class="mm-link">Arc Length with Polar Coordinates</a></li>
+                <li><a href="../CalcII/PolarSurfaceArea.html" class="mm-link">Surface Area with Polar Coordinates</a></li>
+                <li><a href="../CalcII/ArcLength_SurfaceArea.html" class="mm-link">Arc Length and Surface Area Revisited</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/SeriesIntro.html" class="mm-link">Series & Sequences</a>
+              <ul>
+                <li><a href="../CalcII/Sequences.html" class="mm-link">Sequences</a></li>
+                <li><a href="../CalcII/MoreSequences.html" class="mm-link">More on Sequences</a></li>
+                <li><a href="../CalcII/Series_Basics.html" class="mm-link">Series - The Basics</a></li>
+                <li><a href="../CalcII/ConvergenceOfSeries.html" class="mm-link">Convergence/Divergence of Series</a></li>
+                <li><a href="../CalcII/Series_Special.html" class="mm-link">Special Series</a></li>
+                <li><a href="../CalcII/IntegralTest.html" class="mm-link">Integral Test</a></li>
+                <li><a href="../CalcII/SeriesCompTest.html" class="mm-link">Comparison Test/Limit Comparison Test</a></li>
+                <li><a href="../CalcII/AlternatingSeries.html" class="mm-link">Alternating Series Test</a></li>
+                <li><a href="../CalcII/AbsoluteConvergence.html" class="mm-link">Absolute Convergence</a></li>
+                <li><a href="../CalcII/RatioTest.html" class="mm-link">Ratio Test</a></li>
+                <li><a href="../CalcII/RootTest.html" class="mm-link">Root Test</a></li>
+                <li><a href="../CalcII/SeriesStrategy.html" class="mm-link">Strategy for Series</a></li>
+                <li><a href="../CalcII/EstimatingSeries.html" class="mm-link">Estimating the Value of a Series</a></li>
+                <li><a href="../CalcII/PowerSeries.html" class="mm-link">Power Series</a></li>
+                <li><a href="../CalcII/PowerSeriesandFunctions.html" class="mm-link">Power Series and Functions</a></li>
+                <li><a href="../CalcII/TaylorSeries.html" class="mm-link">Taylor Series</a></li>
+                <li><a href="../CalcII/TaylorSeriesApps.html" class="mm-link">Applications of Series</a></li>
+                <li><a href="../CalcII/BinomialSeries.html" class="mm-link">Binomial Series</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/VectorsIntro.html" class="mm-link">Vectors</a>
+              <ul>
+                <li><a href="../CalcII/Vectors_Basics.html" class="mm-link">Vectors - The Basics</a></li>
+                <li><a href="../CalcII/VectorArithmetic.html" class="mm-link">Vector Arithmetic</a></li>
+                <li><a href="../CalcII/DotProduct.html" class="mm-link">Dot Product</a></li>
+                <li><a href="../CalcII/CrossProduct.html" class="mm-link">Cross Product</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/3DSpace.html" class="mm-link">3-Dimensional Space</a>
+              <ul>
+                <li><a href="../CalcII/3DCoords.html" class="mm-link">The 3-D Coordinate System</a></li>
+                <li><a href="../CalcII/EqnsOfLines.html" class="mm-link">Equations of Lines</a></li>
+                <li><a href="../CalcII/EqnsOfPlanes.html" class="mm-link">Equations of Planes</a></li>
+                <li><a href="../CalcII/QuadricSurfaces.html" class="mm-link">Quadric Surfaces</a></li>
+                <li><a href="../CalcII/MultiVrbleFcns.html" class="mm-link">Functions of Several Variables</a></li>
+                <li><a href="../CalcII/VectorFunctions.html" class="mm-link">Vector Functions</a></li>
+                <li><a href="../CalcII/VectorFcnsCalculus.html" class="mm-link">Calculus with Vector Functions</a></li>
+                <li><a href="../CalcII/TangentNormalVectors.html" class="mm-link">Tangent, Normal and Binormal Vectors</a></li>
+                <li><a href="../CalcII/VectorArcLength.html" class="mm-link">Arc Length with Vector Functions</a></li>
+                <li><a href="../CalcII/Curvature.html" class="mm-link">Curvature</a></li>
+                <li><a href="../CalcII/Velocity_Acceleration.html" class="mm-link">Velocity and Acceleration</a></li>
+                <li><a href="../CalcII/CylindricalCoords.html" class="mm-link">Cylindrical Coordinates</a></li>
+                <li><a href="../CalcII/SphericalCoords.html" class="mm-link">Spherical Coordinates</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../CalcIII/CalcIII.html" class="mm-link">Calculus III</a>
+          <ul>
+            <li><a href="../CalcIII/3DSpace.html" class="mm-link">3-Dimensional Space</a>
+              <ul>
+                <li><a href="../CalcIII/3DCoords.html" class="mm-link">The 3-D Coordinate System</a></li>
+                <li><a href="../CalcIII/EqnsOfLines.html" class="mm-link">Equations of Lines</a></li>
+                <li><a href="../CalcIII/EqnsOfPlanes.html" class="mm-link">Equations of Planes</a></li>
+                <li><a href="../CalcIII/QuadricSurfaces.html" class="mm-link">Quadric Surfaces</a></li>
+                <li><a href="../CalcIII/MultiVrbleFcns.html" class="mm-link">Functions of Several Variables</a></li>
+                <li><a href="../CalcIII/VectorFunctions.html" class="mm-link">Vector Functions</a></li>
+                <li><a href="../CalcIII/VectorFcnsCalculus.html" class="mm-link">Calculus with Vector Functions</a></li>
+                <li><a href="../CalcIII/TangentNormalVectors.html" class="mm-link">Tangent, Normal and Binormal Vectors</a></li>
+                <li><a href="../CalcIII/VectorArcLength.html" class="mm-link">Arc Length with Vector Functions</a></li>
+                <li><a href="../CalcIII/Curvature.html" class="mm-link">Curvature</a></li>
+                <li><a href="../CalcIII/Velocity_Acceleration.html" class="mm-link">Velocity and Acceleration</a></li>
+                <li><a href="../CalcIII/CylindricalCoords.html" class="mm-link">Cylindrical Coordinates</a></li>
+                <li><a href="../CalcIII/SphericalCoords.html" class="mm-link">Spherical Coordinates</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/PartialDerivsIntro.html" class="mm-link">Partial Derivatives</a>
+              <ul>
+                <li><a href="../CalcIII/Limits.html" class="mm-link">Limits</a></li>
+                <li><a href="../CalcIII/PartialDerivatives.html" class="mm-link">Partial Derivatives</a></li>
+                <li><a href="../CalcIII/PartialDerivInterp.html" class="mm-link">Interpretations of Partial Derivatives</a></li>
+                <li><a href="../CalcIII/HighOrderPartialDerivs.html" class="mm-link">Higher Order Partial Derivatives</a></li>
+                <li><a href="../CalcIII/Differentials.html" class="mm-link">Differentials</a></li>
+                <li><a href="../CalcIII/ChainRule.html" class="mm-link">Chain Rule</a></li>
+                <li><a href="../CalcIII/DirectionalDeriv.html" class="mm-link">Directional Derivatives</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/PartialDerivAppsIntro.html" class="mm-link">Applications of Partial Derivatives</a>
+              <ul>
+                <li><a href="../CalcIII/TangentPlanes.html" class="mm-link">Tangent Planes and Linear Approximations</a></li>
+                <li><a href="../CalcIII/GradientVectorTangentPlane.html" class="mm-link">Gradient Vector, Tangent Planes and Normal Lines</a></li>
+                <li><a href="../CalcIII/RelativeExtrema.html" class="mm-link">Relative Minimums and Maximums</a></li>
+                <li><a href="../CalcIII/AbsoluteExtrema.html" class="mm-link">Absolute Minimums and Maximums</a></li>
+                <li><a href="../CalcIII/LagrangeMultipliers.html" class="mm-link">Lagrange Multipliers</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/MultipleIntegralsIntro.html" class="mm-link">Multiple Integrals</a>
+              <ul>
+                <li><a href="../CalcIII/DoubleIntegrals.html" class="mm-link">Double Integrals</a></li>
+                <li><a href="../CalcIII/IteratedIntegrals.html" class="mm-link">Iterated Integrals</a></li>
+                <li><a href="../CalcIII/DIGeneralRegion.html" class="mm-link">Double Integrals over General Regions</a></li>
+                <li><a href="../CalcIII/DIPolarCoords.html" class="mm-link">Double Integrals in Polar Coordinates</a></li>
+                <li><a href="../CalcIII/TripleIntegrals.html" class="mm-link">Triple Integrals</a></li>
+                <li><a href="../CalcIII/TICylindricalCoords.html" class="mm-link">Triple Integrals in Cylindrical Coordinates</a></li>
+                <li><a href="../CalcIII/TISphericalCoords.html" class="mm-link">Triple Integrals in Spherical Coordinates</a></li>
+                <li><a href="../CalcIII/ChangeOfVariables.html" class="mm-link">Change of Variables</a></li>
+                <li><a href="../CalcIII/SurfaceArea.html" class="mm-link">Surface Area</a></li>
+                <li><a href="../CalcIII/Area_Volume.html" class="mm-link">Area and Volume Revisited</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/LineIntegralsIntro.html" class="mm-link">Line Integrals</a>
+              <ul>
+                <li><a href="../CalcIII/VectorFields.html" class="mm-link">Vector Fields</a></li>
+                <li><a href="../CalcIII/LineIntegralsPtI.html" class="mm-link">Line Integrals - Part I</a></li>
+                <li><a href="../CalcIII/LineIntegralsPtII.html" class="mm-link">Line Integrals - Part II</a></li>
+                <li><a href="../CalcIII/LineIntegralsVectorFields.html" class="mm-link">Line Integrals of Vector Fields</a></li>
+                <li><a href="../CalcIII/FundThmLineIntegrals.html" class="mm-link">Fundamental Theorem for Line Integrals</a></li>
+                <li><a href="../CalcIII/ConservativeVectorField.html" class="mm-link">Conservative Vector Fields</a></li>
+                <li><a href="../CalcIII/GreensTheorem.html" class="mm-link">Green's Theorem</a></li>
+                <li><a href="../CalcIII/CurlDivergence.html" class="mm-link">Curl and Divergence</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/SurfaceIntegralsIntro.html" class="mm-link">Surface Integrals</a>
+              <ul>
+                <li><a href="../CalcIII/ParametricSurfaces.html" class="mm-link">Parametric Surfaces</a></li>
+                <li><a href="../CalcIII/SurfaceIntegrals.html" class="mm-link">Surface Integrals</a></li>
+                <li><a href="../CalcIII/SurfIntVectorField.html" class="mm-link">Surface Integrals of Vector Fields</a></li>
+                <li><a href="../CalcIII/StokesTheorem.html" class="mm-link">Stokes' Theorem</a></li>
+                <li><a href="../CalcIII/DivergenceTheorem.html" class="mm-link">Divergence Theorem</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../DE/DE.html" class="mm-link">Differential Equations</a>
+          <ul>
+            <li><a href="../DE/IntroBasic.html" class="mm-link">Basic Concepts</a>
+              <ul>
+                <li><a href="../DE/Definitions.html" class="mm-link">Definitions</a></li>
+                <li><a href="../DE/DirectionFields.html" class="mm-link">Direction Fields</a></li>
+                <li><a href="../DE/FinalThoughts.html" class="mm-link">Final Thoughts</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/IntroFirstOrder.html" class="mm-link">First Order DE's</a>
+              <ul>
+                <li><a href="../DE/Linear.html" class="mm-link">Linear Equations</a></li>
+                <li><a href="../DE/Separable.html" class="mm-link">Separable Equations</a></li>
+                <li><a href="../DE/Exact.html" class="mm-link">Exact Equations</a></li>
+                <li><a href="../DE/Bernoulli.html" class="mm-link">Bernoulli Differential Equations</a></li>
+                <li><a href="../DE/Substitutions.html" class="mm-link">Substitutions</a></li>
+                <li><a href="../DE/IoV.html" class="mm-link">Intervals of Validity</a></li>
+                <li><a href="../DE/Modeling.html" class="mm-link">Modeling with First Order DE's</a></li>
+                <li><a href="../DE/EquilibriumSolutions.html" class="mm-link">Equilibrium Solutions</a></li>
+                <li><a href="../DE/EulersMethod.html" class="mm-link">Euler's Method</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/IntroSecondOrder.html" class="mm-link">Second Order DE's</a>
+              <ul>
+                <li><a href="../DE/SecondOrderConcepts.html" class="mm-link">Basic Concepts</a></li>
+                <li><a href="../DE/RealRoots.html" class="mm-link">Real & Distinct Roots</a></li>
+                <li><a href="../DE/ComplexRoots.html" class="mm-link">Complex Roots</a></li>
+                <li><a href="../DE/RepeatedRoots.html" class="mm-link">Repeated Roots</a></li>
+                <li><a href="../DE/ReductionofOrder.html" class="mm-link">Reduction of Order</a></li>
+                <li><a href="../DE/FundamentalSetsofSolutions.html" class="mm-link">Fundamental Sets of Solutions</a></li>
+                <li><a href="../DE/Wronskian.html" class="mm-link">More on the  Wronskian</a></li>
+                <li><a href="../DE/NonhomogeneousDE.html" class="mm-link">Nonhomogeneous Differential Equations</a></li>
+                <li><a href="../DE/UndeterminedCoefficients.html" class="mm-link">Undetermined Coefficients</a></li>
+                <li><a href="../DE/VariationofParameters.html" class="mm-link">Variation of Parameters</a></li>
+                <li><a href="../DE/Vibrations.html" class="mm-link">Mechanical Vibrations</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/LaplaceIntro.html" class="mm-link">Laplace Transforms</a>
+              <ul>
+                <li><a href="../DE/LaplaceDefinition.html" class="mm-link">The Definition</a></li>
+                <li><a href="../DE/LaplaceTransforms.html" class="mm-link">Laplace Transforms</a></li>
+                <li><a href="../DE/InverseTransforms.html" class="mm-link">Inverse Laplace Transforms</a></li>
+                <li><a href="../DE/StepFunctions.html" class="mm-link">Step Functions</a></li>
+                <li><a href="../DE/IVPWithLaplace.html" class="mm-link">Solving IVP's with Laplace Transforms</a></li>
+                <li><a href="../DE/IVPWithNonConstantCoefficient.html" class="mm-link">Nonconstant Coefficient IVP's</a></li>
+                <li><a href="../DE/IVPWithStepFunction.html" class="mm-link">IVP's With Step Functions</a></li>
+                <li><a href="../DE/DiracDeltaFunction.html" class="mm-link">Dirac Delta Function</a></li>
+                <li><a href="../DE/ConvolutionIntegrals.html" class="mm-link">Convolution Integrals</a></li>
+                <li><a href="../DE/Laplace_Table.html" class="mm-link">Table Of Laplace Transforms</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/SystemsIntro.html" class="mm-link">Systems of DE's</a>
+              <ul>
+                <li><a href="../DE/LA_Systems.html" class="mm-link">Review : Systems of Equations</a></li>
+                <li><a href="../DE/LA_Matrix.html" class="mm-link">Review : Matrices & Vectors</a></li>
+                <li><a href="../DE/LA_Eigen.html" class="mm-link">Review : Eigenvalues & Eigenvectors</a></li>
+                <li><a href="../DE/SystemsDE.html" class="mm-link">Systems of Differential Equations</a></li>
+                <li><a href="../DE/SolutionsToSystems.html" class="mm-link">Solutions to Systems</a></li>
+                <li><a href="../DE/PhasePlane.html" class="mm-link">Phase Plane</a></li>
+                <li><a href="../DE/RealEigenvalues.html" class="mm-link">Real Eigenvalues</a></li>
+                <li><a href="../DE/ComplexEigenvalues.html" class="mm-link">Complex Eigenvalues</a></li>
+                <li><a href="../DE/RepeatedEigenvalues.html" class="mm-link">Repeated Eigenvalues</a></li>
+                <li><a href="../DE/NonhomogeneousSystems.html" class="mm-link">Nonhomogeneous Systems</a></li>
+                <li><a href="../DE/SystemsLaplace.html" class="mm-link">Laplace Transforms</a></li>
+                <li><a href="../DE/SystemsModeling.html" class="mm-link">Modeling</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/SeriesIntro.html" class="mm-link">Series Solutions to DE's</a>
+              <ul>
+                <li><a href="../DE/PowerSeries.html" class="mm-link">Review : Power Series</a></li>
+                <li><a href="../DE/TaylorSeries.html" class="mm-link">Review : Taylor Series</a></li>
+                <li><a href="../DE/SeriesSolutions.html" class="mm-link">Series Solutions</a></li>
+                <li><a href="../DE/EulerEquations.html" class="mm-link">Euler Equations</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/IntroHigherOrder.html" class="mm-link">Higher Order Differential Equations</a>
+              <ul>
+                <li><a href="../DE/HOBasicConcepts.html" class="mm-link">Basic Concepts for <em>n</em><sup>th</sup> Order Linear Equations</a></li>
+                <li><a href="../DE/HOHomogeneousDE.html" class="mm-link">Linear Homogeneous Differential Equations</a></li>
+                <li><a href="../DE/HOUndeterminedCoeff.html" class="mm-link">Undetermined Coefficients</a></li>
+                <li><a href="../DE/HOVariationOfParam.html" class="mm-link">Variation of Parameters</a></li>
+                <li><a href="../DE/HOLaplaceTransforms.html" class="mm-link">Laplace Transforms</a></li>
+                <li><a href="../DE/HOSystems.html" class="mm-link">Systems of Differential Equations</a></li>
+                <li><a href="../DE/HOSeries.html" class="mm-link">Series Solutions</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/IntroBVP.html" class="mm-link">Boundary Value Problems &amp; Fourier Series</a>
+              <ul>
+                <li><a href="../DE/BoundaryValueProblem.html" class="mm-link">Boundary Value Problems</a></li>
+                <li><a href="../DE/BVPEvals.html" class="mm-link">Eigenvalues and Eigenfunctions</a></li>
+                <li><a href="../DE/PeriodicOrthogonal.html" class="mm-link">Periodic Functions &amp; Orthogonal Functions</a></li>
+                <li><a href="../DE/FourierSineSeries.html" class="mm-link">Fourier Sine Series</a></li>
+                <li><a href="../DE/FourierCosineSeries.html" class="mm-link">Fourier Cosine Series</a></li>
+                <li><a href="../DE/FourierSeries.html" class="mm-link">Fourier Series</a></li>
+                <li><a href="../DE/ConvergenceFourierSeries.html" class="mm-link">Convergence of Fourier Series</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/IntroPDE.html" class="mm-link">Partial Differential Equations </a>
+              <ul>
+                <li><a href="../DE/TheHeatEquation.html" class="mm-link">The Heat Equation</a></li>
+                <li><a href="../DE/TheWaveEquation.html" class="mm-link">The Wave Equation</a></li>
+                <li><a href="../DE/PDETerminology.html" class="mm-link">Terminology</a></li>
+                <li><a href="../DE/SeparationofVariables.html" class="mm-link">Separation of Variables</a></li>
+                <li><a href="../DE/SolvingHeatEquation.html" class="mm-link">Solving the Heat Equation</a></li>
+                <li><a href="../DE/HeatEqnNonZero.html" class="mm-link">Heat Equation with Non-Zero Temperature Boundaries</a></li>
+                <li><a href="../DE/LaplacesEqn.html" class="mm-link">Laplace's Equation</a></li>
+                <li><a href="../DE/VibratingString.html" class="mm-link">Vibrating String</a></li>
+                <li><a href="../DE/PDESummary.html" class="mm-link">Summary of Separation of Variables</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><span>Extras</span></li>
+        <li><a href="../../Extras/AlgebraTrigReview/AlgebraTrig.html" class="mm-link">Algebra &amp; Trig Review</a>
+          <ul>
+            <li><a href="../../Extras/AlgebraTrigReview/AlgebraIntro.html" class="mm-link">Algebra</a>
+              <ul>
+                <li><a href="../../Extras/AlgebraTrigReview/Exponents.html" class="mm-link">Exponents </a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/AbsoluteValue.html" class="mm-link">Absolute Value</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Radicals.html" class="mm-link">Radicals</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Rationalizing.html" class="mm-link">Rationalizing </a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Functions.html" class="mm-link">Functions </a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/MultPoly.html" class="mm-link">Multiplying Polynomials</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Factoring.html" class="mm-link">Factoring</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SimpRatExp.html" class="mm-link">Simplifying Rational Expressions</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Graphing.html" class="mm-link">Graphing and Common Graphs</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveEqnPtI.html" class="mm-link">Solving Equations, Part I</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveEqnPtII.html" class="mm-link">Solving Equations, Part II</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveSystems.html" class="mm-link">Solving Systems of Equations</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveIneq.html" class="mm-link">Solving Inequalities</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveAbsValue.html" class="mm-link">Absolute Value Equations and Inequalities</a></li>
+              </ul>
+            </li>
+            <li><a href="../../Extras/AlgebraTrigReview/TrigIntro.html" class="mm-link">Trigonometry</a>
+              <ul>
+                <li><a href="../../Extras/AlgebraTrigReview/TrigFunctions.html" class="mm-link">Trig Function Evaluation</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/TrigGraphs.html" class="mm-link">Graphs of Trig Functions</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/TrigFormulas.html" class="mm-link">Trig Formulas</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveTrigEqn.html" class="mm-link">Solving Trig Equations</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/InverseTrig.html" class="mm-link">Inverse Trig Functions</a></li>
+              </ul>
+            </li>
+            <li><a href="../../Extras/AlgebraTrigReview/ExpLogIntro.html" class="mm-link">Exponentials & Logarithms</a>
+              <ul>
+                <li><a href="../../Extras/AlgebraTrigReview/ExponentialFcns.html" class="mm-link">Basic Exponential Functions</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/LogarithmFcns.html" class="mm-link">Basic Logarithm Functions</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/LogProperties.html" class="mm-link">Logarithm Properties</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SimpLogs.html" class="mm-link">Simplifying Logarithms</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveExpEqn.html" class="mm-link">Solving Exponential Equations</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveLogEqn.html" class="mm-link">Solving Logarithm Equations</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../../Extras/CommonErrors/CommonMathErrors.html" class="mm-link">Common Math Errors</a>
+          <ul>
+            <li><a href="../../Extras/CommonErrors/GeneralErrors.html" class="mm-link">General Errors</a>
+            </li>
+            <li><a href="../../Extras/CommonErrors/AlgebraErrors.html" class="mm-link">Algebra Errors</a>
+            </li>
+            <li><a href="../../Extras/CommonErrors/TrigErrors.html" class="mm-link">Trig Errors</a>
+            </li>
+            <li><a href="../../Extras/CommonErrors/CommonErrors.html" class="mm-link">Common Errors</a>
+            </li>
+            <li><a href="../../Extras/CommonErrors/CalculusErrors.html" class="mm-link">Calculus Errors</a>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../../Extras/ComplexPrimer/ComplexNumbers.html" class="mm-link">Complex Number Primer</a>
+          <ul>
+            <li><a href="../../Extras/ComplexPrimer/Definition.html" class="mm-link">The Definition</a>
+            </li>
+            <li><a href="../../Extras/ComplexPrimer/Arithmetic.html" class="mm-link">Arithmetic</a>
+            </li>
+            <li><a href="../../Extras/ComplexPrimer/ConjugateModulus.html" class="mm-link">Conjugate and Modulus</a>
+            </li>
+            <li><a href="../../Extras/ComplexPrimer/Forms.html" class="mm-link">Polar and Exponential Forms</a>
+            </li>
+            <li><a href="../../Extras/ComplexPrimer/Roots.html" class="mm-link">Powers and Roots</a>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../../Extras/StudyMath/HowToStudyMath.html" class="mm-link">How To Study Math</a>
+          <ul>
+            <li><a href="../../Extras/StudyMath/GeneralTips.html" class="mm-link">General Tips</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/TakingNotes.html" class="mm-link">Taking Notes</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/GettingHelp.html" class="mm-link">Getting Help</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/Homework.html" class="mm-link">Doing Homework</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/ProblemSolving.html" class="mm-link">Problem Solving</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/StudyForExam.html" class="mm-link">Studying For an Exam</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/TakingExam.html" class="mm-link">Taking an Exam</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/Errors.html" class="mm-link">Learn From Your Errors</a>
+            </li>
+          </ul>
+        </li>
+
+        <li><span>Misc Links</span></li>
+        <li><a href="http://tutorial.math.lamar.edu/contact.aspx" class="mm-link">Contact Me</a></li>
+        <li><a href="../../links.html" class="mm-link">Links</a></li>
+        <li><a href="../../mathjax.html" class="mm-link">MathJax Help and Configuration</a></li>
+        <li><a href="../../mystudents.html" class="mm-link">My Students</a></li>
+        <li><a href="http://tutorial.math.lamar.edu/privacy.aspx" class="mm-link">Privacy Statement</a></li>
+        <li><a href="../../help.html" class="mm-link">Site Help & FAQ</a></li>
+        <li><a href="http://tutorial.math.lamar.edu/terms.aspx" class="mm-link">Terms of Use</a></li>
+      </ul>
+    </nav>
+
+
+
+    <div class="top-info-bar">
+      <span id="mobile-title" class="mobile-header-title header-title">Paul's Online Notes</span>
+      <br />
+      <span class="top-menu-breadcrumb">
+        <a href="../../index.html" id="breadcrumb_home_link" title="Go to Main Page">Home</a>
+        <span id="breadcrumb_h_b_sep_span">/ </span>
+        <a href="CalcI.html" id="breadcrumb_book_link" title="Go to Book Introduction">Calculus I</a>
+        
+        <span id="breadcrumb_b_c_sep_span">/ </span>
+        <a href="DerivAppsIntro.html" id="breadcrumb_chapter_link" title="Go to Chapter Introduction">Applications of Derivatives</a>
+        
+        <span id="breadcrumb_section_span"> / Minimum and Maximum Values</span>
+      </span>
+
+    </div>
+
+    <div id="nav_links" class="top-nav-bar">
+      
+      <span id="nav_current_notes">Notes</span>
+      <a href="http://tutorial.math.lamar.edu/Problems/CalcI/MinMaxValues.aspx" id="nav_links_practice" title="Go to Practice Problems for current topic.">Practice<span class="nav_desktop_extra"> Problems</span></a>
+      
+      <a href="http://tutorial.math.lamar.edu/ProblemsNS/CalcI/MinMaxValues.aspx" id="nav_links_asgn" title="Go to Assignment Problems for current topic.">Assignment<span class="nav_desktop_extra">  Problems</span></a>
+      
+    </div>
+
+    <div class="header-divider"></div>
+
+    <div class="content">  
+      
+      
+      <span id="SHLink_NoteMobile" class="SH-Link content-note-link-mobile">Show Mobile Notice</span>
+      <span id="SHImg_NoteMobile" class="fas fa-caret-right SH-padding content-note-link-mobile" aria-hidden="true"></span>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+
+      <span id="SHALink_S_Note" class="SH-Link SH-Hide SH-Bracket">Show All Notes</span>&nbsp;<span id="SHALink_H_Note" class="SH-Link SH-Hide SH-Bracket">Hide All Notes</span>
+      
+      
+      <div id="SHObj_NoteMobile" class="content-note-container content-note-container-mobile">
+        <div class="content-note-header">Mobile Notice</div>
+        <div class="content-note">You appear to be on a device with a "narrow" screen width (<em>i.e.</em> you are probably on a mobile phone).  Due to the nature of the mathematics on this site it is best views in landscape mode.  If your device is not in landscape mode many of the equations will run off the side of your device (should be able to scroll to see them) and some of the menu items will be cut off due to the narrow screen width.</div>
+      </div>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+
+      
+
+
+  <form method="post" action="http://tutorial.math.lamar.edu/Classes/CalcI/MinMaxValues.aspx" id="ctl00">
+<div class="aspNetHidden">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+</div>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="9360A557" />
+</div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </form>
+
+  <h3>Section 4-3 : Minimum and Maximum Values</h3>
+
+    <p>Many of our applications in this chapter will revolve around minimum and maximum values of a function.  While we can all visualize the minimum and maximum values of a function we want to be a little more specific in our work here.  In particular, we want to differentiate between two types of minimum or maximum values.  The following definition gives the types of minimums and/or maximums values that we’ll be looking at.</p>
+    
+    <h4>Definition</h4>
+    <div class="definition">
+      <ol class="general-list">
+        <li>We say that \(f\left( x \right)\) has an <strong>absolute (or global) maximum</strong> at \(x = c\) if\(f\left( x \right) \le f\left( c \right)\) for every \(x\) in the domain we are working on.<br /><br /></li>
+        <li>We say that \(f\left( x \right)\) has a <strong>relative (or local) maximum</strong> at \(x = c\) if \(f\left( x \right) \le f\left( c \right)\) for every \(x\) in some open interval around \(x = c\).<br /><br /></li>
+        <li>We say that \(f\left( x \right)\) has an <strong>absolute (or global) minimum</strong> at \(x = c\) if \(f\left( x \right) \ge f\left( c \right)\) for every \(x\) in the domain we are working on.<br /><br /></li>
+        <li>We say that \(f\left( x \right)\) has a <strong>relative (or local) minimum</strong> at \(x = c\) if\(f\left( x \right) \ge f\left( c \right)\) for every \(x\) in some open interval around \(x = c\).</li>
+      </ol>
+    </div>
+    
+    <p>Note that when we say an “open interval around\(x = c\)” we mean that we can find some interval \(\left( {a,b} \right)\), not including the endpoints, such that \(a &lt; c &lt; b\).  Or, in other words, \(c\) will be contained somewhere inside the interval and will not be either of the endpoints.</p>
+    
+    <p>Also, we will collectively call the minimum and maximum points of a function the <strong>extrema</strong> of the function.  So, relative extrema will refer to the relative minimums and maximums while absolute extrema refer to the absolute minimums and maximums.</p>
+    
+    <p>Now, let’s talk a little bit about the subtle difference between the absolute and relative in the definition above.</p>
+    
+    <p>We will have an absolute maximum (or minimum) at \(x = c\) provided \(f\left( c \right)\) is the largest (or smallest) value that the function will ever take on the domain that we are working on.  Also, when we say the “domain we are working on” this simply means the range of \(x\)’s that we have chosen to work with for a given problem.  There may be other values of \(x\) that we can actually plug into the function but have excluded them for some reason.</p>
+    
+    <p>A relative maximum or minimum is slightly different.  All that’s required for a point to be a relative maximum or minimum is for that point to be a maximum or minimum in some interval of \(x\)’s around \(x = c\).  There may be larger or smaller values of the function at some other place, but relative to \(x = c\), or local to \(x = c\),  \(f\left( c \right)\) is larger or smaller than all the other function values that are near it.</p>
+    
+    <p>Note as well that in order for a point to be a relative extrema we must be able to look at function values on both sides of \(x = c\) to see if it really is a maximum or minimum at that point.  This means that relative extrema do not occur at the end points of a domain.  They can only occur interior to the domain.</p>
+    
+    <p>There is actually some debate on the preceding point.  Some folks do feel that relative extrema can occur on the end points of a domain.  However, in this class we will be using the definition that says that they can’t occur at the end points of a domain.  This will be discussed in a little more detail at the end of the section once we have a relevant fact taken care of.</p>
+    
+    <p>It’s usually easier to get a feel for the definitions by taking a quick look at a graph.</p>
+    
+      <div class="center-div"><img alt="This is a sketch of some unknown function.  The left most point is in the third quadrant and marked as “a” is the lowest point on the graph.  From here the graph increases up into the third quadrant to a point label as “b” and marked as “Rel. Max.”  At this point the graph reaches a peak but is not the highest point on the graph.  The graph now decreases back into the third quadrant to a point labeled as “c” and marked as “Rel. Min.”.  At this point the graph reaches a valley but is not the lowest point on the graph.  The graph now increases up into the first quadrant to a point labeled as “d” and marked as “Abs. &amp; Rel. Max.”.  At this point the graph reaches a peak and is the highest point on the graph.  The graph then decreases into the fourth quadrant and ends as a point labeled as “e”." height="240" src="http://tutorial.math.lamar.edu/Classes/CalcI/MinMaxValues_Files/image001.png" width="365" /></div>
+
+    <p>For the function shown in this graph we have relative maximums at \(x = b\) and \(x = d\).  Both of these points are relative maximums since they are interior to the domain shown and are the largest point on the graph in some interval around the point.  We also have a relative minimum at \(x = c\) since this point is interior to the domain and is the lowest point on the graph in an interval around it.  The far-right end point, \(x = e\), will not be a relative minimum since it is an end point.</p>
+    
+    <p>The function will have an absolute maximum at \(x = d\) and an absolute minimum at \(x = a\).  These two points are the largest and smallest that the function will ever be.  We can also notice that the absolute extrema for a function will occur at either the endpoints of the domain or at relative extrema.  We will use this idea in later sections so it’s more important than it might seem at the present time.</p>
+    
+    <p>Let’s take a quick look at some examples to make sure that we have the definitions of absolute extrema and relative extrema straight.</p>
+    <a class="anchor" name="DerivApps_MM_Ex1"></a>
+  <div class="example">
+    <span class="example-title">Example 1</span> Identify the absolute extrema and relative extrema for the following function.
+          
+            \[f\left( x \right) = {x^2}\hspace{0.25in}{\mbox{on}}\hspace{0.25in}\left[ { - 1,2} \right]\]
+    <div class="example-content">
+      <span id="SHLink_Soln1" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln1" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln1" class="soln-content">
+        <p>Since this function is easy enough to graph let’s do that.  However, we only want the graph on the interval \(\left[ { - 1,2} \right]\).  Here is the graph,</p>
+          
+            <div class="center-div"><img alt="Graph of $f\left( x \right)={{x}^{2}}$ on the domain $-1 \le x \le 2$ with dots at the (-1,1) and (2,4) to indicate that the graph does not extend past these two points." height="200" src="http://tutorial.math.lamar.edu/Classes/CalcI/MinMaxValues_Files/image002.png" width="200" /></div>
+          <p>Note that we used dots at the end of the graph to remind us that the graph ends at these points.</p>
+          
+          <p>We can now identify the extrema from the graph.  It looks like we’ve got a relative and absolute minimum of zero at \(x = 0\) and an absolute maximum of four at \(x = 2\).  Note that \(x =  - 1\) is not a relative maximum since it is at the end point of the interval.</p>
+          
+          <p>This function doesn’t have any relative maximums.</p>
+      </div>
+    </div>
+  </div>
+    
+    <p>As we saw in the previous example functions do not have to have relative extrema.  It is completely possible for a function to not have a relative maximum and/or a relative minimum.</p>
+    <a class="anchor" name="DerivApps_MM_Ex2"></a>
+  <div class="example">
+    <span class="example-title">Example 2</span> Identify the absolute extrema and relative extrema for the following function.
+          
+            \[f\left( x \right) = {x^2}\hspace{0.25in}{\mbox{on}}\hspace{0.25in}\left[ { - 2,2} \right]\]
+    <div class="example-content">
+      <span id="SHLink_Soln2" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln2" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln2" class="soln-content">
+        <p>Here is the graph for this function.</p>
+          
+            <div class="center-div"><img alt="Graph of $f\left( x \right)={{x}^{2}}$ on the domain $-2 \le x \le 2$ with dots at the (-2,4) and (2,4) to indicate that the graph does not extend past these two points." height="200" src="http://tutorial.math.lamar.edu/Classes/CalcI/MinMaxValues_Files/image003.png" width="200" /></div>
+          <p>In this case we still have a relative and absolute minimum of zero at \(x = 0\).  We also still have an absolute maximum of four.  However, unlike the first example this will occur at two points, \(x =  - 2\) and \(x = 2\).</p>
+          
+          <p>Again, the function doesn’t have any relative maximums.</p>
+      </div>
+    </div>
+  </div>
+    
+    <p>As this example has shown there can only be a single absolute maximum or absolute minimum value, but they can occur at more than one place in the domain.</p>
+    <a class="anchor" name="DerivApps_MM_Ex3"></a>
+  <div class="example">
+    <span class="example-title">Example 3</span> Identify the absolute extrema and relative extrema for the following function.
+          
+              \[f\left( x \right) = {x^2}\]
+    <div class="example-content">
+      <span id="SHLink_Soln3" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln3" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln3" class="soln-content">
+        <p>In this case we’ve given no domain and so the assumption is that we will take the largest possible domain.  For this function that means all the real numbers.  Here is the graph.</p>
+          
+            <div class="center-div"><img alt="Graph of $f\left( x \right)={{x}^{2}}$ with no domain specified and arrows at the ends pointing upwards to indicate the graph continues." height="200" src="http://tutorial.math.lamar.edu/Classes/CalcI/MinMaxValues_Files/image004.png" width="200" /></div>
+            
+          <p>In this case the graph doesn’t stop increasing at either end and so there are no maximums of any kind for this function.  No matter which point we pick on the graph there will be points both larger and smaller than it on either side so we can’t have any maximums (of any kind, relative or absolute) in a graph.</p>
+          
+          <p>We still have a relative and absolute minimum value of zero at \(x = 0\).</p>
+      </div>
+    </div>
+  </div>
+    
+    <p>So, some graphs can have minimums but not maximums.  Likewise, a graph could have maximums but not minimums.</p>
+    <a class="anchor" name="DerivApps_MM_Ex4"></a>
+  <div class="example">
+    <span class="example-title">Example 4</span> Identify the absolute extrema and relative extrema for the following function.
+          
+            \[f\left( x \right) = {x^3}\hspace{0.25in}{\mbox{on}}\hspace{0.25in}\left[ { - 2,2} \right]\]
+    <div class="example-content">
+      <span id="SHLink_Soln4" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln4" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln4" class="soln-content">
+        <p>Here is the graph for this function.</p>
+          
+            <div class="center-div"><img alt="Graph of $f\left( x \right)={{x}^{3}}$ on the domain $-2 \le x \le 2$ with dots at the (-2,-8) and (2,8) to indicate that the graph does not extend past these two points." height="200" src="http://tutorial.math.lamar.edu/Classes/CalcI/MinMaxValues_Files/image005.png" width="200" /></div>
+            
+          <p>This function has an absolute maximum of eight at \(x = 2\) and an absolute minimum of negative eight at \(x =  - 2\).  This function has no relative extrema.</p>
+      </div>
+    </div>
+  </div>
+    
+    <p>So, a function doesn’t have to have relative extrema as this example has shown.</p>
+    <a class="anchor" name="DerivApps_MM_Ex5"></a>
+  <div class="example">
+    <span class="example-title">Example 5</span> Identify the absolute extrema and relative extrema for the following function.
+          
+              \[f\left( x \right) = {x^3}\]
+    <div class="example-content">
+      <span id="SHLink_Soln5" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln5" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln5" class="soln-content">
+        <p>Again, we aren’t restricting the domain this time so here’s the graph.</p>
+          
+            <div class="center-div"><img alt="Graph of $f\left( x \right)={{x}^{3}}$ with no domain specified and arrows at the ends to indicate the graph continues." height="200" src="http://tutorial.math.lamar.edu/Classes/CalcI/MinMaxValues_Files/image006.png" width="200" /></div>
+
+          <p>In this case the function has no relative extrema and no absolute extrema.</p>
+      </div>
+    </div>
+  </div>
+    
+    <p>As we’ve seen in the previous example functions don’t have to have any kind of extrema, relative or absolute.</p>
+    <a class="anchor" name="DerivApps_MM_Ex6"></a>
+  <div class="example">
+    <span class="example-title">Example 6</span> Identify the absolute extrema and relative extrema for the following function.
+          
+              \[f\left( x \right) = \cos \left( x \right)\]
+    <div class="example-content">
+      <span id="SHLink_Soln6" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln6" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln6" class="soln-content">
+        <p>We’ve not restricted the domain for this function.  Here is the graph.</p>
+          
+            <div class="center-div"><img alt="Graph of $f\left( x \right)=\cos \left( x \right)$  on the domain $\left[ -3\pi ,3\pi  \right]$  and arrows at the ends to indicate the graph continues." height="168" src="http://tutorial.math.lamar.edu/Classes/CalcI/MinMaxValues_Files/image007.png" width="250" /></div>
+
+          <p>Cosine has extrema (relative and absolute) that occur at many points.  Cosine has both relative and absolute maximums of 1 at</p>
+          
+              \[x =  \ldots  - 4\pi ,\, - 2\pi ,\,\,0,\,\,2\pi ,\,\,4\pi , \ldots \]
+          <p>Cosine also has both relative and absolute minimums of -1 at</p>
+          
+              \[x =  \ldots  - 3\pi ,\, - \pi ,\,\,\pi ,\,\,3\pi , \ldots \]
+      </div>
+    </div>
+  </div>
+    
+    <p>As this example has shown a graph can in fact have extrema occurring at a large number (infinite in this case) of points.</p>
+    
+    <p>We’ve now worked quite a few examples and we can use these examples to see a nice fact about absolute extrema.  First let’s notice that all the functions above were <a href="Continuity.html">continuous</a> functions.  Next notice that every time we restricted the domain to a closed interval (<em>i.e.</em> the interval contains its end points) we got absolute maximums and absolute minimums.  Finally, in only one of the three examples in which we did not restrict the domain did we get both an absolute maximum and an absolute minimum.</p>
+    
+    <p>These observations lead us the following theorem.</p>
+
+    <a class="anchor" name="EVT"></a>
+    <h4>Extreme Value Theorem</h4>
+  <div class="fact">
+    <p>Suppose that \(f\left( x \right)\) is continuous on the interval \(\left[ {a,b} \right]\) then there are two numbers \(a \le c,d \le b\) so that \(f\left( c \right)\) is an absolute maximum for the function and \(f\left( d \right)\) is an absolute minimum for the function.</p>
+  </div>
+    
+    <p>So, if we have a continuous function on an interval \(\left[ {a,b} \right]\) then we are guaranteed to have both an absolute maximum and an absolute minimum for the function somewhere in the interval.  The theorem doesn’t tell us where they will occur or if they will occur more than once, but at least it tells us that they do exist somewhere.  Sometimes, all that we need to know is that they do exist.</p>
+    
+    <p>This theorem doesn’t say anything about absolute extrema if we aren’t working on an interval.  We saw examples of functions above that had both absolute extrema, one absolute extrema, and no absolute extrema when we didn’t restrict ourselves down to an interval.</p>
+    
+    <p>The requirement that a function be continuous is also required in order for us to use the theorem.  Consider the case of</p>
+    
+      \[f\left( x \right) = \frac{1}{{{x^2}}}\hspace{0.25in}{\mbox{on}}\hspace{0.25in}[ - 1,1]\]
+    <p>Here’s the graph.</p>
+    
+      <div class="center-div"><img alt="Graph of $f\left( x \right)=\frac{1}{{{x}^{2}}}$  on the domain $-1 \le x \le 1$ with dots at the (-1,1) and (1,1) to indicate that the graph does not extend past these two points.  There is also a gap as the graph approaches the y-axis to indicate that the graph will continue to move up the y-axis as it approaches." border="0" height="200" src="http://tutorial.math.lamar.edu/Classes/CalcI/MinMaxValues_Files/image008.png" width="200" /></div>
+    
+    <p>This function is not continuous at \(x = 0\) as we move in towards zero the function is approaching infinity.  So, the function does not have an absolute maximum.  Note that it does have an absolute minimum however.  In fact the absolute minimum occurs twice at both \(x =  - 1\) and \(x = 1\).</p>
+    
+    <p>If we changed the interval a little to say,</p>
+    
+      \[f\left( x \right) = \frac{1}{{{x^2}}}\hspace{0.25in}{\mbox{on}}\hspace{0.25in}\left[ {\frac{1}{2},1} \right]\]
+    <p>the function would now have both absolute extrema.  We may only run into problems if the interval contains the point of discontinuity.  If it doesn’t then the theorem will hold.</p>
+    
+    <p>We should also point out that just because a function is not continuous at a point that doesn’t mean that it won’t have both absolute extrema in an interval that contains that point.  Below is the graph of a function that is not continuous at a point in the given interval and yet has both absolute extrema.</p>
+    
+      <div class="center-div"><img alt="This is the graph of some unknown function.  The left most point is in the third quadrant and labeled “a”.  The graph increases to a peak (but not the highest point on the graph) in the second quadrant and then decreases into the third quadrant, passing through the y-axis into the fourth quadrant to a point labeled “c” that is the lowest point on the graph that is marked as the “Abs. Min.”.  At this point the graph jumps up to a higher point that is still in the fourth quadrant and still at the same x value.  The graph increases into the first quadrant to a peak (not highest point), decreases back into the fourth quadrant to a valley (not lowest point) and finally increases back into the first quadrant to the right most point that is labeled as “b” that is the highest point on the graph and marked as the “Abs. Max.”." border="0" height="235" src="http://tutorial.math.lamar.edu/Classes/CalcI/MinMaxValues_Files/image009.png" width="360" /></div>
+    
+    <p>This graph is not continuous at \(x = c\), yet it does have both an absolute maximum (\(x = b\)) and an absolute minimum (\(x = c\)).  Also note that, in this case one of the absolute extrema occurred at the point of discontinuity, but it doesn’t need to.  The absolute minimum could just have easily been at the other end point or at some other point interior to the region.  The point here is that this graph is not continuous and yet does have both absolute extrema</p>
+    
+    <p>The point of all this is that we need to be careful to only use the Extreme Value Theorem when the conditions of the theorem are met and not misinterpret the results if the conditions aren’t met.</p>
+    
+    <p>In order to use the Extreme Value Theorem we must have an interval that includes its endpoints, often called a closed interval, and the function must be continuous on that interval.  If we don’t have a closed interval and/or the function isn’t continuous on the interval then the function may or may not have absolute extrema.</p>
+    
+    <p>We need to discuss one final topic in this section before moving on to the first major application of the derivative that we’re going to be looking at in this chapter.</p>
+
+    <a class="anchor" name="FT"></a>
+    <h4>Fermat’s Theorem</h4>
+  <div class="fact">
+    <p>If \(f\left( x \right)\) has a relative extrema at \(x = c\) and \(f'\left( c \right)\) exists then \(x = c\) is a critical point of \(f\left( x \right)\).  In fact, it will be a critical point such that \(f'\left( c \right) = 0\).</p>
+  </div>
+    
+    <p>To see the proof of this theorem see the <a href="DerivativeAppsProofs.html#Extras_DerAppPf_Fermat">Proofs From Derivative Applications</a> section of the Extras chapter.</p>
+    
+    <p>Also note that we can say that \(f'\left( c \right) = 0\) because we are also assuming that \(f'\left( c \right)\) exists.</p>
+    
+    <p>This theorem tells us that there is a nice relationship between relative extrema and critical points.  In fact, it will allow us to get a list of all possible relative extrema.  Since a relative extrema must be a critical point the list of all critical points will give us a list of all possible relative extrema.</p>
+    
+    <p>Consider the case of \(f\left( x \right) = {x^2}\).  We saw that this function had a relative minimum at \(x = 0\) in several earlier examples.  So according to Fermat’s theorem \(x = 0\) should be a critical point.  The derivative of the function is,</p>
+    
+        \[f'\left( x \right) = 2x\]
+    <p>Sure enough \(x = 0\) is a critical point.</p>
+    
+    <p>Be careful not to misuse this theorem.  It doesn’t say that a critical point will be a relative extrema.  To see this, consider the following case.</p>
+    
+        \[f\left( x \right) = {x^3}\hspace{0.25in}\hspace{0.25in}f'\left( x \right) = 3{x^2}\]
+    
+    <p>Clearly \(x = 0\) is a critical point.  However, we saw in an earlier example this function has no relative extrema of any kind.  So, critical points do not have to be relative extrema.</p>
+    
+    <p>Also note that this theorem says nothing about absolute extrema.  An absolute extrema may or may not be a critical point.</p>
+    
+    <p>Before we leave this section we need to discuss a couple of issues.</p>
+    
+    <p>First, Fermat’s Theorem only works for critical points in which \(f'\left( c \right) = 0\).  This does not, however, mean that relative extrema won’t occur at critical points where the derivative does not exist.  To see this consider \(f\left( x \right) = \left| x \right|\).  This function clearly has a relative minimum at \(x = 0\) and yet in a previous <a href="DefnOfDerivative.html#Deriv_Defn_Ex4">section</a> we showed in an example that \(f\left( 0 \right)\) does not exist.</p>
+    
+    <p>What this all means is that if we want to locate relative extrema all we really need to do is look at the critical points as those are the places where relative extrema may exist.</p>
+    
+    <p>Finally, recall that at that start of the section we stated that relative extrema will not exist at endpoints of the interval we are looking at.  The reason for this is that if we allowed relative extrema to occur there it may well (and in fact most of the time) violate Fermat’s Theorem.  There is no reason to expect end points of intervals to be critical points of any kind.  Therefore, we do not allow relative extrema to exist at the endpoints of intervals.</p>
+    <p>
+
+      
+
+
+
+    </div>
+    <!-- End of content div -->
+
+
+    <div class="footer">
+      <div class="footer-links">
+        [<a href="http://tutorial.math.lamar.edu/Contact.aspx">Contact Me</a>]&nbsp;[<a href="../../MyStudents-2.html">My Students</a>]&nbsp;[<a href="http://tutorial.math.lamar.edu/Privacy.aspx">Privacy Statement</a>]&nbsp;[<a href="../../Help-2.html">Site Help &amp; FAQ</a>]&nbsp;[<a href="http://tutorial.math.lamar.edu/Terms.aspx">Terms of Use</a>]
+      </div>
+      <div class="footer-dates">
+        <div class="footer-copyright"><span id="lblCopyRight">&copy; 2003 - 2019 Paul Dawkins</span></div>
+        <div class="footer-spacer"></div>
+        <div class="footer-modified-date">Page Last Modified : <span id="lblModified">5/30/2018</span></div>
+      </div>
+      
+
+    </div>
+  </div>
+  <!-- End of page div...  -->
+</body>
+
+<!-- Mirrored from tutorial.math.lamar.edu/Classes/CalcI/MinMaxValues.aspx by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 27 Feb 2019 06:15:35 GMT -->
+</html>

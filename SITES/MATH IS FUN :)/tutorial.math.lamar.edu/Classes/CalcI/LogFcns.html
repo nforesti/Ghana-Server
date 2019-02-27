@@ -1,0 +1,1179 @@
+
+
+<!DOCTYPE html>
+
+<html>
+
+<!-- Mirrored from tutorial.math.lamar.edu/Classes/CalcI/LogFcns.aspx by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 27 Feb 2019 06:15:34 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=yes" /><meta http-equiv="X-UA-Compatible" content="IE=edge" />  <!-- For best MathJax performance on IE  -->
+
+  <meta name="google-site-verification" content="uLoA31CJfOhIVMJWBjCmQL8xNMmmLybZU3LRKavy9WQ" /><title>
+	Calculus I - Logarithm Functions
+</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="../../../www.googletagmanager.com/gtag/js1872?id=UA-331594-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-331594-1');
+  </script>
+
+  <link type="text/css" href="../../css/jquery.mmenu.all.css" rel="stylesheet" /><link type="text/css" href="../../css/jquery.dropdown.css" rel="stylesheet" /><link href="../../FA/css/fontawesome-all.min.css" rel="stylesheet" /><link type="text/css" href="../../css/notes-all.css" rel="stylesheet" /><link type="text/css" href="../../css/notes-google.css" rel="stylesheet" /><link type="text/css" href="../../css/notes-mmenu.css" rel="stylesheet" /><link type="text/css" href="../../css/notes-dropdown.css" rel="stylesheet" />
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+     TeX: { equationNumbers: { autoNumber: "AMS" } }
+    });
+  </script>
+  <script type="text/javascript" async src="../../../cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax2ba6.js?config=TeX-AMS_CHTML-full"></script>
+  <script type="text/javascript" src="../../../code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="../../js/jquery.mmenu.all.js"></script>
+  <script type="text/javascript" src="../../js/jquery.dropdown.js"></script>
+  <script type="text/javascript" src="../../js/notes-all.js"></script>  
+
+  <script>
+    (function () {
+      var cx = '001004262401526223570:11yv6vpcqvy';
+      var gcse = document.createElement('script');
+      gcse.type = 'text/javascript';
+      gcse.async = true;
+      gcse.src = '../../../cse.google.com/cse07b6.html?cx=' + cx;
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(gcse, s);
+    })();
+  </script>
+
+<meta http-equiv="keywords" name="keywords" content="logarithm function, evaluate logarithsm, evaluate logs, natural logarithm, natural log" /><meta http-equiv="description" name="description" content="In this section we will discuss logarithm functions, evaluation of logarithms and their properties.  We will discuss many of the basic manipulations of logarithms that commonly occur in Calculus (and higher) classes.  Included is a discussion of the natural (ln(x)) and common logarithm (log(x)) as well as the change of base formula." /></head>
+<body onload="init({Notes: 'NoteMobile;8/21/2018;true'})">
+
+  <div id="page">
+
+    <div class="header">
+      <div class="header-row">
+        <!--<a href="#menu"><span></span></a>-->
+        <div id="side-menu-icon" class="header-side-menu-icon"><a href="#menu"><span class="fas fa-bars fa-lg" aria-hidden="true" title="Main Menu - Change between topics, chapters and sections as well as a few extra pages."></span></a></div>
+        <span class="header-title"><a href="../../index.html" class="header-title-link">Paul's Online Notes</a></span>
+        <div class="header-spacer"></div>
+
+        <div id="content-top-menu" class="top-menu">
+          <button id="content-type-menu" class="top-menu-button" data-jq-dropdown="#jq-dropdown-type" title="View (Notes, Practice Problems or Assignment Problems, Show/Hide Solutions and/or Steps) Menu">
+            <span id="tab_top_menu_notes" class="top-menu-item-title">Notes</span> <span class="far fa-eye fa-lg" aria-hidden="true"></span>
+          </button>
+
+          <button id="quicknav-menu" class="top-menu-button" data-jq-dropdown="#jq-dropdown-quicknav" title="Quick Navigation (Previous/Next Sections and Problems and Full Problem List) Menu">
+            <span class="top-menu-item-title">Quick Nav</span> <span class="fas fa-exchange fa-lg" aria-hidden="true"></span>
+          </button>
+          
+          <button id="download-menu" class="top-menu-button" data-jq-dropdown="#jq-dropdown-download" title="Download pdf Menu">
+            <span class="top-menu-item-title">Download</span> <span class="far fa-download fa-lg" aria-hidden="true"></span>
+          </button>
+
+          <button id="print-menu" class="top-menu-button top-menu-button-icon-only" data-jq-dropdown="#jq-print-download" title="Print Menu">
+            <span class="far fa-print fa-lg" aria-hidden="true"></span>
+          </button>
+        </div>
+
+        <div id="header-google-search" class="header-search">
+          <gcse:search></gcse:search>
+        </div>
+        <div id="header-search-icon" title="Site Search" class="header-menu-icon"><span id="search-icon" class="fas fa-search" aria-hidden="true"></span></div>
+
+      </div>
+    </div>
+
+     <div id="jq-dropdown-type" class="jq-dropdown jq-dropdown-tip">
+      <ul class="jq-dropdown-menu">
+        
+        <li id="li_type_menu_goto" class="top-menu-nav-title">Go To</li>
+        <li id="li_type_menu_notes">
+          <span id="type_menu_notes_span" title="Viewing the Notes for the current topic." class="top-menu-current">Notes</span>
+          
+        </li>
+        <li id="li_type_menu_practice">
+          
+          
+          <a href="http://tutorial.math.lamar.edu/Problems/CalcI/LogFcns.aspx" id="type_menu_practice_link" title="Go to Practice Problems for current topic.">Practice Problems</a>
+        </li>
+        <li id="li_type_menu_asgn">
+          
+          <a href="http://tutorial.math.lamar.edu/ProblemsNS/CalcI/LogFcns.aspx" id="type_menu_asgn_link" title="Go to Assignment Problems for current topic.">Assignment Problems</a>
+        </li>
+        <li id="li_type_menu_sh" class="top-menu-nav-title">Show/Hide</li>
+        <li id="li_type_menu_show" title="Show any hidden solutions and/or steps that may be present on the page."><a href="javascript:SHPrintPage(1,0)" id="view_menu_show">Show all Solutions/Steps/<em>etc.</em></a></li>
+        <li id="li_type_menu_hide" title="Hide any visible solutions and/or steps that may be present on the page."><a href="javascript:SHPrintPage(0,0)" id="view_menu_hide">Hide all Solutions/Steps/<em>etc.</em></a></li>
+      </ul>
+    </div>
+
+    <div id="jq-dropdown-quicknav" class="jq-dropdown jq-dropdown-tip">
+      <ul class="jq-dropdown-menu">
+        <li id="li_nav_menu_sections" class="top-menu-nav-title">Sections</li>
+        <li id="li_nav_menu_prev_section"><a href="ExpFunctions.html" id="a_nav_menu_prev_section" class="top-menu-nav-link" title="Previous Section : Exponential Functions"><span class="top-menu-prev fas fa-chevron-left"></span> Exponential Functions</a></li>
+        <li id="li_nav_menu_next_section"><a href="ExpLogEqns.html" id="a_nav_menu_next_section" class="top-menu-nav-link" title="Next Section : Exponential and Logarithm Equations"><span class="top-menu-prev-hidden fas fa-chevron-left"></span> Exponential and Logarithm Equations <span class="top-menu-next fas fa-chevron-right"></span></a></li>
+        <li id="li_nav_menu_chapters" class="top-menu-nav-title">Chapters</li>
+        
+        <li id="li_nav_menu_next_chapter"><a href="limitsIntro.html" id="a_nav_menu_next_chapter" class="top-menu-nav-link" title="Next Chapter : Limits">Limits <span class="top-menu-next fas fa-chevron-right"></span><span class="top-menu-next fas fa-chevron-right"></span></a></li>
+        
+        
+        
+        
+        <li id="li_nav_menu_classes" class="top-menu-nav-title">Classes</li>
+        <li>
+          
+          <a href="../Alg/Alg.html" id="nav_menu_alg_link" title="Go To Algebra Notes">Algebra</a>
+        </li>
+        <li>
+          <span id="nav_menu_calci_span" title="Currently Viewing Calculus I Material" class="top-menu-current">Calculus I</span>
+          
+        </li>
+        <li>
+          
+          <a href="../CalcII/CalcII.html" id="nav_menu_calcii_link" title="Go To Calculus II Notes">Calculus II</a>
+        </li>
+        <li>
+          
+          <a href="../CalcIII/CalcIII.html" id="nav_menu_calciii_link" title="Go To Calculus III Notes">Calculus III</a>
+        </li>
+        <li>
+          
+          <a href="../DE/DE.html" id="nav_menu_de_link" title="Go To Differential Equations Notes">Differential Equations</a>
+        </li>
+        <li id="li_nav_menu_extras" class="top-menu-nav-title">Extras</li>
+        <li>
+          
+          <a href="../../Extras/AlgebraTrigReview/AlgebraTrig.html" id="nav_menu_algtrig_link" title="Go To Algebra &amp; Trig Review">Algebra &amp; Trig Review</a>
+        </li>
+        <li>
+          
+          <a href="../../Extras/CommonErrors/CommonMathErrors.html" id="nav_menu_commonerrors_link" title="Go To Common Math Errors">Common Math Errors</a>
+        </li>
+        <li>
+          
+          <a href="../../Extras/ComplexPrimer/ComplexNumbers.html" id="nav_menu_complexnumbers_link" title="Go To Complex Numbers Primer">Complex Number Primer</a>
+        </li>
+        <li>
+          
+          <a href="../../Extras/StudyMath/HowToStudyMath.html" id="nav_menu_studymath_link" title="Go To How To Study Math">How To Study Math</a>
+        </li>
+        <li>
+          
+          <a href="../../Extras/CheatSheets_Tables.html" id="nav_menu_cheattables_link" title="Go To List of Cheat Sheets and Tables">Cheat Sheets &amp; Tables</a>
+        </li>
+        <li id="li_nav_menu_misc" class="top-menu-nav-title">Misc</li>
+        <li><a href="http://tutorial.math.lamar.edu/contact.aspx" id="nav_menu_contact" title="Contact Me!">Contact Me</a></li>
+        <li><a href="../../mathjax.html" id="nav_menu_mathjax" title="Info on MathJax and MathJax Configuration Menu">MathJax Help and Configuration</a></li>
+        <li><a href="../../mystudents.html" id="nav_menu_students" title="Go here if you are currently taking a class from me!">My Students</a></li>
+      </ul>
+    </div>
+
+    <div id="jq-dropdown-download" class="jq-dropdown jq-dropdown-anchor-right jq-dropdown-tip">
+      <ul class="jq-dropdown-menu">
+        
+        <li id="li_download_menu_notes" class="top-menu-nav-title">Notes Downloads</li>
+        <li id="li_download_menu_notes_book"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=B,8,N" id="download_menu_notes_book" data-PDF="Download - Menu$Notes - Book$Calculus I$/Downloads/CalcI/Notes/Complete.pdf">Complete Book</a></li>
+        
+        <li id="li_download_menu_notes_chapter"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=C,49,N" id="download_menu_notes_chapter" data-PDF="Download - Menu$Notes - Chapter$Calculus I - Review$/Downloads/CalcI/Notes/Review.pdf">Current Chapter</a></li>
+        <li id="li_download_menu_notes_section"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=S,279,N" id="download_menu_notes_section" data-PDF="Download - Menu$Notes - Section$Calculus I - Logarithm Functions$/Downloads/CalcI/Notes/LogFcns.pdf">Current Section</a></li>
+        <li id="li_download_menu_practice" class="top-menu-nav-title">Practice Problems Downloads</li>
+        
+        <li id="li_download_menu_practice_book"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=B,8,P" id="download_menu_practice_book" data-PDF="Download - Menu$Practice Problems - Book$Calculus I$/Downloads/CalcI/Practice Problems/Complete.pdf">Complete Book - Problems Only</a></li>
+        <li id="li_download_menu_solutions_book"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=B,8,S" id="download_menu_solutions_book" data-PDF="Download - Menu$Practice Problems Solutions - Book$Calculus I$/Downloads/CalcI/Practice Problems Solutions/Complete.pdf">Complete Book - Solutions</a></li>
+        <li id="li_download_menu_b_c" class="top-menu-divider"></li>
+        <li id="li_download_menu_practice_chapter"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=C,49,P" id="download_menu_practice_chapter" data-PDF="Download - Menu$Practice Problems - Chapter$Calculus I - Review$/Downloads/CalcI/Practice Problems/Review.pdf">Current Chapter - Problems Only</a></li>
+        <li id="li_download_menu_solutions_chapter"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=C,49,S" id="download_menu_solutions_chapter" data-PDF="Download - Menu$Practice Problems Solutions - Chapter$Calculus I - Review$/Downloads/CalcI/Practice Problems Solutions/Review.pdf">Current Chapter - Solutions</a></li>
+        <li id="li_download_menu_c_s" class="top-menu-divider"></li>
+        <li id="li_download_menu_practice_section"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=S,279,P" id="download_menu_practice_section" data-PDF="Download - Menu$Practice Problems - Section$Calculus I - Logarithm Functions$/Downloads/CalcI/Practice Problems/LogFcns.pdf">Current Section - Problems Only</a></li>
+        <li id="li_download_menu_solutions_section"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=S,279,S" id="download_menu_solutions_section" data-PDF="Download - Menu$Practice Problems Solutions - Section$Calculus I - Logarithm Functions$/Downloads/CalcI/Practice Problems Solutions/LogFcns.pdf">Current Section - Solutions</a></li>
+        <li id="li_download_menu_asgn" class="top-menu-nav-title">Assignment Problems Downloads</li>
+        
+        <li id="li_download_menu_asgn_book"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=B,8,A" id="download_menu_asgn_book" data-PDF="Download - Menu$Assignment Problems - Book$Calculus I$/Downloads/CalcI/Assignment Problems/Complete.pdf">Complete Book</a></li>
+        <li id="li_download_menu_asgn_chapter"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=C,49,A" id="download_menu_asgn_chapter" data-PDF="Download - Menu$Assignment Problems - Chapter$Calculus I - Review$/Downloads/CalcI/Assignment Problems/Review.pdf">Current Chapter</a></li>
+        <li id="li_download_menu_asgn_section"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=S,279,A" id="download_menu_asgn_section" data-PDF="Download - Menu$Assignment Problems - Section$Calculus I - Logarithm Functions$/Downloads/CalcI/Assignment Problems/LogFcns.pdf">Current Section</a></li>
+        <li id="li_download_menu_other" class="top-menu-nav-title">Other Items</li>
+        <li id="li_download_menu_urls">
+          <a href="http://tutorial.math.lamar.edu/DownloadURLs.aspx?bi=8&amp;ci=49&amp;si=279" id="download_menu_urls">Get URL's for Download Items</a>
+        </li>
+      </ul>
+    </div>
+
+    <div id="jq-print-download" class="jq-dropdown jq-dropdown-anchor-right jq-dropdown-tip">
+      <ul class="jq-dropdown-menu">
+        <li id="li_print_menu_default"><a href="javascript:SHPrintPage()" id="print_menu_default">Print Page in Current Form (Default)</a></li>
+        <li id="li_print_menu_show"><a href="javascript:SHPrintPage(1,1)" id="print_menu_show">Show all Solutions/Steps and Print Page</a></li>
+        <li id="li_print_menu_hide"><a href="javascript:SHPrintPage(0,1)" id="print_menu_hide">Hide all Solutions/Steps and Print Page</a></li>
+      </ul>
+    </div>
+
+
+
+   
+
+    <nav id="menu" class="notes-nav">
+      <ul>
+        <li><a href="../../index.html" class="mm-link">Home</a></li>
+        <li><span>Classes</span></li>
+        <li><a href="../Alg/Alg.html" class="mm-link">Algebra</a>
+          <ul>
+            <li><a href="../Alg/Preliminaries.html" class="mm-link">Preliminaries</a>
+              <ul>
+                <li><a href="../Alg/IntegerExponents.html" class="mm-link">Integer Exponents</a></li>
+                <li><a href="../Alg/RationalExponents.html" class="mm-link">Rational Exponents</a></li>
+                <li><a href="../Alg/Radicals.html" class="mm-link">Radicals</a></li>
+                <li><a href="../Alg/Polynomials.html" class="mm-link">Polynomials</a></li>
+                <li><a href="../Alg/Factoring.html" class="mm-link">Factoring Polynomials</a></li>
+                <li><a href="../Alg/RationalExpressions.html" class="mm-link">Rational Expressions</a></li>
+                <li><a href="../Alg/ComplexNumbers.html" class="mm-link">Complex Numbers</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/Solving.html" class="mm-link">Solving Equations and Inequalities</a>
+              <ul>
+                <li><a href="../Alg/SolutionSets.html" class="mm-link">Solutions and Solution Sets</a></li>
+                <li><a href="../Alg/SolveLinearEqns.html" class="mm-link">Linear Equations</a></li>
+                <li><a href="../Alg/LinearApps.html" class="mm-link">Applications of Linear Equations</a></li>
+                <li><a href="../Alg/SolveMultiVariable.html" class="mm-link">Equations With More Than One Variable</a></li>
+                <li><a href="../Alg/SolveQuadraticEqnsI.html" class="mm-link">Quadratic Equations - Part I</a></li>
+                <li><a href="../Alg/SolveQuadraticEqnsII.html" class="mm-link">Quadratic Equations - Part II</a></li>
+                <li><a href="../Alg/SolveQuadraticEqnSummary.html" class="mm-link">Quadratic Equations : A Summary</a></li>
+                <li><a href="../Alg/QuadraticApps.html" class="mm-link">Applications of Quadratic Equations</a></li>
+                <li><a href="../Alg/ReducibleToQuadratic.html" class="mm-link">Equations Reducible to Quadratic in Form</a></li>
+                <li><a href="../Alg/SolveRadicalEqns.html" class="mm-link">Equations with Radicals</a></li>
+                <li><a href="../Alg/SolveLinearInequalities.html" class="mm-link">Linear Inequalities</a></li>
+                <li><a href="../Alg/SolvePolyInequalities.html" class="mm-link">Polynomial Inequalities</a></li>
+                <li><a href="../Alg/SolveRationalInequalities.html" class="mm-link">Rational Inequalities</a></li>
+                <li><a href="../Alg/SolveAbsValueEqns.html" class="mm-link">Absolute Value Equations</a></li>
+                <li><a href="../Alg/SolveAbsValueIneq.html" class="mm-link">Absolute Value Inequalities</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/Graphing_Functions.html" class="mm-link">Graphing and Functions</a>
+              <ul>
+                <li><a href="../Alg/Graphing.html" class="mm-link">Graphing</a></li>
+                <li><a href="../Alg/Lines.html" class="mm-link">Lines</a></li>
+                <li><a href="../Alg/Circles.html" class="mm-link">Circles</a></li>
+                <li><a href="../Alg/FunctionDefn.html" class="mm-link">The Definition of a Function</a></li>
+                <li><a href="../Alg/GraphFunctions.html" class="mm-link">Graphing Functions</a></li>
+                <li><a href="../Alg/CombineFunctions.html" class="mm-link">Combining Functions</a></li>
+                <li><a href="../Alg/InverseFunctions.html" class="mm-link">Inverse Functions</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/CommonGraphs.html" class="mm-link">Common Graphs</a>
+              <ul>
+                <li><a href="../Alg/Lines_Circles_PWF.html" class="mm-link">Lines, Circles and Piecewise Functions</a></li>
+                <li><a href="../Alg/Parabolas.html" class="mm-link">Parabolas</a></li>
+                <li><a href="../Alg/Ellipses.html" class="mm-link">Ellipses</a></li>
+                <li><a href="../Alg/Hyperbolas.html" class="mm-link">Hyperbolas</a></li>
+                <li><a href="../Alg/MiscFunctions.html" class="mm-link">Miscellaneous Functions</a></li>
+                <li><a href="../Alg/Transformations.html" class="mm-link">Transformations</a></li>
+                <li><a href="../Alg/Symmetry.html" class="mm-link">Symmetry</a></li>
+                <li><a href="../Alg/GraphRationalFcns.html" class="mm-link">Rational Functions</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/PolynomialFunctions.html" class="mm-link">Polynomial Functions</a>
+              <ul>
+                <li><a href="../Alg/DividingPolynomials.html" class="mm-link">Dividing Polynomials</a></li>
+                <li><a href="../Alg/ZeroesOfPolynomials.html" class="mm-link">Zeroes/Roots of Polynomials</a></li>
+                <li><a href="../Alg/GraphingPolynomials.html" class="mm-link">Graphing Polynomials</a></li>
+                <li><a href="../Alg/FindingZeroesOfPolynomials.html" class="mm-link">Finding Zeroes of Polynomials</a></li>
+                <li><a href="../Alg/PartialFractions.html" class="mm-link">Partial Fractions</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/ExpAndLog.html" class="mm-link">Exponential and Logarithm Functions</a>
+              <ul>
+                <li><a href="../Alg/ExpFunctions.html" class="mm-link">Exponential Functions</a></li>
+                <li><a href="../Alg/LogFunctions.html" class="mm-link">Logarithm Functions</a></li>
+                <li><a href="../Alg/SolveExpEqns.html" class="mm-link">Solving Exponential Equations</a></li>
+                <li><a href="../Alg/SolveLogEqns.html" class="mm-link">Solving Logarithm Equations</a></li>
+                <li><a href="../Alg/ExpLogApplications.html" class="mm-link">Applications</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/Systems.html" class="mm-link">Systems of Equations</a>
+              <ul>
+                <li><a href="../Alg/SystemsTwoVrble.html" class="mm-link">Linear Systems with Two Variables</a></li>
+                <li><a href="../Alg/SystemsThreeVrble.html" class="mm-link">Linear Systems with Three Variables</a></li>
+                <li><a href="../Alg/AugmentedMatrix.html" class="mm-link">Augmented Matrices</a></li>
+                <li><a href="../Alg/AugmentedMatrixII.html" class="mm-link">More on the Augmented Matrix</a></li>
+                <li><a href="../Alg/NonlinearSystems.html" class="mm-link">Nonlinear Systems</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="CalcI.html" class="mm-link">Calculus I</a>
+          <ul>
+            <li><a href="ReviewIntro.html" class="mm-link">Review</a>
+              <ul>
+                <li><a href="Functions.html" class="mm-link">Functions</a></li>
+                <li><a href="InverseFunctions.html" class="mm-link">Inverse Functions</a></li>
+                <li><a href="TrigFcns.html" class="mm-link">Trig Functions</a></li>
+                <li><a href="TrigEquations.html" class="mm-link">Solving Trig Equations</a></li>
+                <li><a href="TrigEquations_CalcI.html" class="mm-link">Trig Equations with Calculators, Part I</a></li>
+                <li><a href="TrigEquations_CalcII.html" class="mm-link">Trig Equations with Calculators, Part II</a></li>
+                <li><a href="ExpFunctions.html" class="mm-link">Exponential Functions</a></li>
+                <li><a href="LogFcns.html" class="mm-link">Logarithm Functions</a></li>
+                <li><a href="ExpLogEqns.html" class="mm-link">Exponential and Logarithm Equations</a></li>
+                <li><a href="CommonGraphs.html" class="mm-link">Common Graphs</a></li>
+              </ul>
+            </li>
+            <li><a href="limitsIntro.html" class="mm-link">Limits</a>
+              <ul>
+                <li><a href="Tangents_Rates.html" class="mm-link">Tangent Lines and Rates of Change</a></li>
+                <li><a href="TheLimit.html" class="mm-link">The Limit</a></li>
+                <li><a href="OneSidedLimits.html" class="mm-link">One-Sided Limits</a></li>
+                <li><a href="LimitsProperties.html" class="mm-link">Limit Properties</a></li>
+                <li><a href="ComputingLimits.html" class="mm-link">Computing Limits</a></li>
+                <li><a href="InfiniteLimits.html" class="mm-link">Infinite Limits</a></li>
+                <li><a href="LimitsAtInfinityI.html" class="mm-link">Limits At Infinity, Part I</a></li>
+                <li><a href="LimitsAtInfinityII.html" class="mm-link">Limits At Infinity, Part II</a></li>
+                <li><a href="Continuity.html" class="mm-link">Continuity</a></li>
+                <li><a href="DefnOfLimit.html" class="mm-link">The Definition of the Limit</a></li>
+              </ul>
+            </li>
+            <li><a href="DerivativeIntro.html" class="mm-link">Derivatives</a>
+              <ul>
+                <li><a href="DefnOfDerivative.html" class="mm-link">The Definition of the Derivative</a></li>
+                <li><a href="DerivativeInterp.html" class="mm-link">Interpretation of the Derivative</a></li>
+                <li><a href="DiffFormulas.html" class="mm-link">Differentiation Formulas</a></li>
+                <li><a href="ProductQuotientRule.html" class="mm-link">Product and Quotient Rule</a></li>
+                <li><a href="DiffTrigFcns.html" class="mm-link">Derivatives of Trig Functions</a></li>
+                <li><a href="DiffExpLogFcns.html" class="mm-link">Derivatives of Exponential and Logarithm Functions</a></li>
+                <li><a href="DiffInvTrigFcns.html" class="mm-link">Derivatives of Inverse Trig Functions</a></li>
+                <li><a href="DiffHyperFcns.html" class="mm-link">Derivatives of Hyperbolic Functions</a></li>
+                <li><a href="ChainRule.html" class="mm-link">Chain Rule</a></li>
+                <li><a href="ImplicitDIff.html" class="mm-link">Implicit Differentiation</a></li>
+                <li><a href="RelatedRates.html" class="mm-link">Related Rates</a></li>
+                <li><a href="HigherOrderDerivatives.html" class="mm-link">Higher Order Derivatives</a></li>
+                <li><a href="LogDiff.html" class="mm-link">Logarithmic Differentiation</a></li>
+              </ul>
+            </li>
+            <li><a href="DerivAppsIntro.html" class="mm-link">Applications of Derivatives</a>
+              <ul>
+                <li><a href="RateOfChange.html" class="mm-link">Rates of Change</a></li>
+                <li><a href="CriticalPoints.html" class="mm-link">Critical Points</a></li>
+                <li><a href="MinMaxValues.html" class="mm-link">Minimum and Maximum Values</a></li>
+                <li><a href="AbsExtrema.html" class="mm-link">Finding Absolute Extrema</a></li>
+                <li><a href="ShapeofGraphPtI.html" class="mm-link">The Shape of a Graph, Part I</a></li>
+                <li><a href="ShapeofGraphPtII.html" class="mm-link">The Shape of a Graph, Part II</a></li>
+                <li><a href="MeanValueTheorem.html" class="mm-link">The Mean Value Theorem</a></li>
+                <li><a href="Optimization.html" class="mm-link">Optimization</a></li>
+                <li><a href="MoreOptimization.html" class="mm-link">More Optimization Problems</a></li>
+                <li><a href="LHospitalsRule.html" class="mm-link">L'Hospital's Rule and Indeterminate Forms</a></li>
+                <li><a href="LinearApproximations.html" class="mm-link">Linear Approximations</a></li>
+                <li><a href="Differentials.html" class="mm-link">Differentials</a></li>
+                <li><a href="NewtonsMethod.html" class="mm-link">Newton's Method</a></li>
+                <li><a href="BusinessApps.html" class="mm-link">Business Applications</a></li>
+              </ul>
+            </li>
+            <li><a href="IntegralsIntro.html" class="mm-link">Integrals</a>
+              <ul>
+                <li><a href="IndefiniteIntegrals.html" class="mm-link">Indefinite Integrals</a></li>
+                <li><a href="ComputingIndefiniteIntegrals.html" class="mm-link">Computing Indefinite Integrals</a></li>
+                <li><a href="SubstitutionRuleIndefinite.html" class="mm-link">Substitution Rule for Indefinite Integrals</a></li>
+                <li><a href="SubstitutionRuleIndefinitePtII.html" class="mm-link">More Substitution Rule</a></li>
+                <li><a href="AreaProblem.html" class="mm-link">Area Problem</a></li>
+                <li><a href="DefnOfDefiniteIntegral.html" class="mm-link">Definition of the Definite Integral</a></li>
+                <li><a href="ComputingDefiniteIntegrals.html" class="mm-link">Computing Definite Integrals</a></li>
+                <li><a href="SubstitutionRuleDefinite.html" class="mm-link">Substitution Rule for Definite Integrals</a></li>
+              </ul>
+            </li>
+            <li><a href="IntAppsIntro.html" class="mm-link">Applications of Integrals</a>
+              <ul>
+                <li><a href="AvgFcnValue.html" class="mm-link">Average Function Value</a></li>
+                <li><a href="AreaBetweenCurves.html" class="mm-link">Area Between Curves</a></li>
+                <li><a href="VolumeWithRings.html" class="mm-link">Volumes of Solids of Revolution / Method of Rings</a></li>
+                <li><a href="VolumeWithCylinder.html" class="mm-link">Volumes of Solids of Revolution/Method of Cylinders</a></li>
+                <li><a href="MoreVolume.html" class="mm-link">More Volume Problems</a></li>
+                <li><a href="Work.html" class="mm-link">Work</a></li>
+              </ul>
+            </li>
+            <li><a href="ExtrasIntro.html" class="mm-link">Extras</a>
+              <ul>
+                <li><a href="LimitProofs.html" class="mm-link">Proof of Various Limit Properties</a></li>
+                <li><a href="DerivativeProofs.html" class="mm-link">Proof of Various Derivative Properties</a></li>
+                <li><a href="ProofTrigDeriv.html" class="mm-link">Proof of Trig Limits</a></li>
+                <li><a href="DerivativeAppsProofs.html" class="mm-link">Proofs of Derivative Applications Facts</a></li>
+                <li><a href="ProofIntProp.html" class="mm-link">Proof of Various Integral Properties </a></li>
+                <li><a href="Area_Volume_Formulas.html" class="mm-link">Area and Volume Formulas</a></li>
+                <li><a href="TypesOfInfinity.html" class="mm-link">Types of Infinity</a></li>
+                <li><a href="SummationNotation.html" class="mm-link">Summation Notation</a></li>
+                <li><a href="ConstantofIntegration.html" class="mm-link">Constant of Integration</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../CalcII/CalcII.html" class="mm-link">Calculus II</a>
+          <ul>
+            <li><a href="../CalcII/IntTechIntro.html" class="mm-link">Integration Techniques</a>
+              <ul>
+                <li><a href="../CalcII/IntegrationByParts.html" class="mm-link">Integration by Parts</a></li>
+                <li><a href="../CalcII/IntegralsWithTrig.html" class="mm-link">Integrals Involving Trig Functions</a></li>
+                <li><a href="../CalcII/TrigSubstitutions.html" class="mm-link">Trig Substitutions</a></li>
+                <li><a href="../CalcII/PartialFractions.html" class="mm-link">Partial Fractions</a></li>
+                <li><a href="../CalcII/IntegralsWithRoots.html" class="mm-link">Integrals Involving Roots</a></li>
+                <li><a href="../CalcII/IntegralsWithQuadratics.html" class="mm-link">Integrals Involving Quadratics</a></li>
+                <li><a href="../CalcII/IntegrationStrategy.html" class="mm-link">Integration Strategy</a></li>
+                <li><a href="../CalcII/ImproperIntegrals.html" class="mm-link">Improper Integrals</a></li>
+                <li><a href="../CalcII/ImproperIntegralsCompTest.html" class="mm-link">Comparison Test for Improper Integrals</a></li>
+                <li><a href="../CalcII/ApproximatingDefIntegrals.html" class="mm-link">Approximating Definite Integrals</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/IntAppsIntro.html" class="mm-link">Applications of Integrals</a>
+              <ul>
+                <li><a href="../CalcII/ArcLength.html" class="mm-link">Arc Length</a></li>
+                <li><a href="../CalcII/SurfaceArea.html" class="mm-link">Surface Area</a></li>
+                <li><a href="../CalcII/CenterOfMass.html" class="mm-link">Center of Mass</a></li>
+                <li><a href="../CalcII/HydrostaticPressure.html" class="mm-link">Hydrostatic Pressure</a></li>
+                <li><a href="../CalcII/Probability.html" class="mm-link">Probability</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/ParametricIntro.html" class="mm-link">Parametric Equations and Polar Coordinates</a>
+              <ul>
+                <li><a href="../CalcII/ParametricEqn.html" class="mm-link">Parametric Equations and Curves</a></li>
+                <li><a href="../CalcII/ParaTangent.html" class="mm-link">Tangents with Parametric Equations</a></li>
+                <li><a href="../CalcII/ParaArea.html" class="mm-link">Area with Parametric Equations</a></li>
+                <li><a href="../CalcII/ParaArcLength.html" class="mm-link">Arc Length with Parametric Equations</a></li>
+                <li><a href="../CalcII/ParaSurfaceArea.html" class="mm-link">Surface Area with Parametric Equations</a></li>
+                <li><a href="../CalcII/PolarCoordinates.html" class="mm-link">Polar Coordinates</a></li>
+                <li><a href="../CalcII/PolarTangents.html" class="mm-link">Tangents with Polar Coordinates</a></li>
+                <li><a href="../CalcII/PolarArea.html" class="mm-link">Area with Polar Coordinates</a></li>
+                <li><a href="../CalcII/PolarArcLength.html" class="mm-link">Arc Length with Polar Coordinates</a></li>
+                <li><a href="../CalcII/PolarSurfaceArea.html" class="mm-link">Surface Area with Polar Coordinates</a></li>
+                <li><a href="../CalcII/ArcLength_SurfaceArea.html" class="mm-link">Arc Length and Surface Area Revisited</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/SeriesIntro.html" class="mm-link">Series & Sequences</a>
+              <ul>
+                <li><a href="../CalcII/Sequences.html" class="mm-link">Sequences</a></li>
+                <li><a href="../CalcII/MoreSequences.html" class="mm-link">More on Sequences</a></li>
+                <li><a href="../CalcII/Series_Basics.html" class="mm-link">Series - The Basics</a></li>
+                <li><a href="../CalcII/ConvergenceOfSeries.html" class="mm-link">Convergence/Divergence of Series</a></li>
+                <li><a href="../CalcII/Series_Special.html" class="mm-link">Special Series</a></li>
+                <li><a href="../CalcII/IntegralTest.html" class="mm-link">Integral Test</a></li>
+                <li><a href="../CalcII/SeriesCompTest.html" class="mm-link">Comparison Test/Limit Comparison Test</a></li>
+                <li><a href="../CalcII/AlternatingSeries.html" class="mm-link">Alternating Series Test</a></li>
+                <li><a href="../CalcII/AbsoluteConvergence.html" class="mm-link">Absolute Convergence</a></li>
+                <li><a href="../CalcII/RatioTest.html" class="mm-link">Ratio Test</a></li>
+                <li><a href="../CalcII/RootTest.html" class="mm-link">Root Test</a></li>
+                <li><a href="../CalcII/SeriesStrategy.html" class="mm-link">Strategy for Series</a></li>
+                <li><a href="../CalcII/EstimatingSeries.html" class="mm-link">Estimating the Value of a Series</a></li>
+                <li><a href="../CalcII/PowerSeries.html" class="mm-link">Power Series</a></li>
+                <li><a href="../CalcII/PowerSeriesandFunctions.html" class="mm-link">Power Series and Functions</a></li>
+                <li><a href="../CalcII/TaylorSeries.html" class="mm-link">Taylor Series</a></li>
+                <li><a href="../CalcII/TaylorSeriesApps.html" class="mm-link">Applications of Series</a></li>
+                <li><a href="../CalcII/BinomialSeries.html" class="mm-link">Binomial Series</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/VectorsIntro.html" class="mm-link">Vectors</a>
+              <ul>
+                <li><a href="../CalcII/Vectors_Basics.html" class="mm-link">Vectors - The Basics</a></li>
+                <li><a href="../CalcII/VectorArithmetic.html" class="mm-link">Vector Arithmetic</a></li>
+                <li><a href="../CalcII/DotProduct.html" class="mm-link">Dot Product</a></li>
+                <li><a href="../CalcII/CrossProduct.html" class="mm-link">Cross Product</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/3DSpace.html" class="mm-link">3-Dimensional Space</a>
+              <ul>
+                <li><a href="../CalcII/3DCoords.html" class="mm-link">The 3-D Coordinate System</a></li>
+                <li><a href="../CalcII/EqnsOfLines.html" class="mm-link">Equations of Lines</a></li>
+                <li><a href="../CalcII/EqnsOfPlanes.html" class="mm-link">Equations of Planes</a></li>
+                <li><a href="../CalcII/QuadricSurfaces.html" class="mm-link">Quadric Surfaces</a></li>
+                <li><a href="../CalcII/MultiVrbleFcns.html" class="mm-link">Functions of Several Variables</a></li>
+                <li><a href="../CalcII/VectorFunctions.html" class="mm-link">Vector Functions</a></li>
+                <li><a href="../CalcII/VectorFcnsCalculus.html" class="mm-link">Calculus with Vector Functions</a></li>
+                <li><a href="../CalcII/TangentNormalVectors.html" class="mm-link">Tangent, Normal and Binormal Vectors</a></li>
+                <li><a href="../CalcII/VectorArcLength.html" class="mm-link">Arc Length with Vector Functions</a></li>
+                <li><a href="../CalcII/Curvature.html" class="mm-link">Curvature</a></li>
+                <li><a href="../CalcII/Velocity_Acceleration.html" class="mm-link">Velocity and Acceleration</a></li>
+                <li><a href="../CalcII/CylindricalCoords.html" class="mm-link">Cylindrical Coordinates</a></li>
+                <li><a href="../CalcII/SphericalCoords.html" class="mm-link">Spherical Coordinates</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../CalcIII/CalcIII.html" class="mm-link">Calculus III</a>
+          <ul>
+            <li><a href="../CalcIII/3DSpace.html" class="mm-link">3-Dimensional Space</a>
+              <ul>
+                <li><a href="../CalcIII/3DCoords.html" class="mm-link">The 3-D Coordinate System</a></li>
+                <li><a href="../CalcIII/EqnsOfLines.html" class="mm-link">Equations of Lines</a></li>
+                <li><a href="../CalcIII/EqnsOfPlanes.html" class="mm-link">Equations of Planes</a></li>
+                <li><a href="../CalcIII/QuadricSurfaces.html" class="mm-link">Quadric Surfaces</a></li>
+                <li><a href="../CalcIII/MultiVrbleFcns.html" class="mm-link">Functions of Several Variables</a></li>
+                <li><a href="../CalcIII/VectorFunctions.html" class="mm-link">Vector Functions</a></li>
+                <li><a href="../CalcIII/VectorFcnsCalculus.html" class="mm-link">Calculus with Vector Functions</a></li>
+                <li><a href="../CalcIII/TangentNormalVectors.html" class="mm-link">Tangent, Normal and Binormal Vectors</a></li>
+                <li><a href="../CalcIII/VectorArcLength.html" class="mm-link">Arc Length with Vector Functions</a></li>
+                <li><a href="../CalcIII/Curvature.html" class="mm-link">Curvature</a></li>
+                <li><a href="../CalcIII/Velocity_Acceleration.html" class="mm-link">Velocity and Acceleration</a></li>
+                <li><a href="../CalcIII/CylindricalCoords.html" class="mm-link">Cylindrical Coordinates</a></li>
+                <li><a href="../CalcIII/SphericalCoords.html" class="mm-link">Spherical Coordinates</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/PartialDerivsIntro.html" class="mm-link">Partial Derivatives</a>
+              <ul>
+                <li><a href="../CalcIII/Limits.html" class="mm-link">Limits</a></li>
+                <li><a href="../CalcIII/PartialDerivatives.html" class="mm-link">Partial Derivatives</a></li>
+                <li><a href="../CalcIII/PartialDerivInterp.html" class="mm-link">Interpretations of Partial Derivatives</a></li>
+                <li><a href="../CalcIII/HighOrderPartialDerivs.html" class="mm-link">Higher Order Partial Derivatives</a></li>
+                <li><a href="../CalcIII/Differentials.html" class="mm-link">Differentials</a></li>
+                <li><a href="../CalcIII/ChainRule.html" class="mm-link">Chain Rule</a></li>
+                <li><a href="../CalcIII/DirectionalDeriv.html" class="mm-link">Directional Derivatives</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/PartialDerivAppsIntro.html" class="mm-link">Applications of Partial Derivatives</a>
+              <ul>
+                <li><a href="../CalcIII/TangentPlanes.html" class="mm-link">Tangent Planes and Linear Approximations</a></li>
+                <li><a href="../CalcIII/GradientVectorTangentPlane.html" class="mm-link">Gradient Vector, Tangent Planes and Normal Lines</a></li>
+                <li><a href="../CalcIII/RelativeExtrema.html" class="mm-link">Relative Minimums and Maximums</a></li>
+                <li><a href="../CalcIII/AbsoluteExtrema.html" class="mm-link">Absolute Minimums and Maximums</a></li>
+                <li><a href="../CalcIII/LagrangeMultipliers.html" class="mm-link">Lagrange Multipliers</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/MultipleIntegralsIntro.html" class="mm-link">Multiple Integrals</a>
+              <ul>
+                <li><a href="../CalcIII/DoubleIntegrals.html" class="mm-link">Double Integrals</a></li>
+                <li><a href="../CalcIII/IteratedIntegrals.html" class="mm-link">Iterated Integrals</a></li>
+                <li><a href="../CalcIII/DIGeneralRegion.html" class="mm-link">Double Integrals over General Regions</a></li>
+                <li><a href="../CalcIII/DIPolarCoords.html" class="mm-link">Double Integrals in Polar Coordinates</a></li>
+                <li><a href="../CalcIII/TripleIntegrals.html" class="mm-link">Triple Integrals</a></li>
+                <li><a href="../CalcIII/TICylindricalCoords.html" class="mm-link">Triple Integrals in Cylindrical Coordinates</a></li>
+                <li><a href="../CalcIII/TISphericalCoords.html" class="mm-link">Triple Integrals in Spherical Coordinates</a></li>
+                <li><a href="../CalcIII/ChangeOfVariables.html" class="mm-link">Change of Variables</a></li>
+                <li><a href="../CalcIII/SurfaceArea.html" class="mm-link">Surface Area</a></li>
+                <li><a href="../CalcIII/Area_Volume.html" class="mm-link">Area and Volume Revisited</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/LineIntegralsIntro.html" class="mm-link">Line Integrals</a>
+              <ul>
+                <li><a href="../CalcIII/VectorFields.html" class="mm-link">Vector Fields</a></li>
+                <li><a href="../CalcIII/LineIntegralsPtI.html" class="mm-link">Line Integrals - Part I</a></li>
+                <li><a href="../CalcIII/LineIntegralsPtII.html" class="mm-link">Line Integrals - Part II</a></li>
+                <li><a href="../CalcIII/LineIntegralsVectorFields.html" class="mm-link">Line Integrals of Vector Fields</a></li>
+                <li><a href="../CalcIII/FundThmLineIntegrals.html" class="mm-link">Fundamental Theorem for Line Integrals</a></li>
+                <li><a href="../CalcIII/ConservativeVectorField.html" class="mm-link">Conservative Vector Fields</a></li>
+                <li><a href="../CalcIII/GreensTheorem.html" class="mm-link">Green's Theorem</a></li>
+                <li><a href="../CalcIII/CurlDivergence.html" class="mm-link">Curl and Divergence</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/SurfaceIntegralsIntro.html" class="mm-link">Surface Integrals</a>
+              <ul>
+                <li><a href="../CalcIII/ParametricSurfaces.html" class="mm-link">Parametric Surfaces</a></li>
+                <li><a href="../CalcIII/SurfaceIntegrals.html" class="mm-link">Surface Integrals</a></li>
+                <li><a href="../CalcIII/SurfIntVectorField.html" class="mm-link">Surface Integrals of Vector Fields</a></li>
+                <li><a href="../CalcIII/StokesTheorem.html" class="mm-link">Stokes' Theorem</a></li>
+                <li><a href="../CalcIII/DivergenceTheorem.html" class="mm-link">Divergence Theorem</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../DE/DE.html" class="mm-link">Differential Equations</a>
+          <ul>
+            <li><a href="../DE/IntroBasic.html" class="mm-link">Basic Concepts</a>
+              <ul>
+                <li><a href="../DE/Definitions.html" class="mm-link">Definitions</a></li>
+                <li><a href="../DE/DirectionFields.html" class="mm-link">Direction Fields</a></li>
+                <li><a href="../DE/FinalThoughts.html" class="mm-link">Final Thoughts</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/IntroFirstOrder.html" class="mm-link">First Order DE's</a>
+              <ul>
+                <li><a href="../DE/Linear.html" class="mm-link">Linear Equations</a></li>
+                <li><a href="../DE/Separable.html" class="mm-link">Separable Equations</a></li>
+                <li><a href="../DE/Exact.html" class="mm-link">Exact Equations</a></li>
+                <li><a href="../DE/Bernoulli.html" class="mm-link">Bernoulli Differential Equations</a></li>
+                <li><a href="../DE/Substitutions.html" class="mm-link">Substitutions</a></li>
+                <li><a href="../DE/IoV.html" class="mm-link">Intervals of Validity</a></li>
+                <li><a href="../DE/Modeling.html" class="mm-link">Modeling with First Order DE's</a></li>
+                <li><a href="../DE/EquilibriumSolutions.html" class="mm-link">Equilibrium Solutions</a></li>
+                <li><a href="../DE/EulersMethod.html" class="mm-link">Euler's Method</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/IntroSecondOrder.html" class="mm-link">Second Order DE's</a>
+              <ul>
+                <li><a href="../DE/SecondOrderConcepts.html" class="mm-link">Basic Concepts</a></li>
+                <li><a href="../DE/RealRoots.html" class="mm-link">Real & Distinct Roots</a></li>
+                <li><a href="../DE/ComplexRoots.html" class="mm-link">Complex Roots</a></li>
+                <li><a href="../DE/RepeatedRoots.html" class="mm-link">Repeated Roots</a></li>
+                <li><a href="../DE/ReductionofOrder.html" class="mm-link">Reduction of Order</a></li>
+                <li><a href="../DE/FundamentalSetsofSolutions.html" class="mm-link">Fundamental Sets of Solutions</a></li>
+                <li><a href="../DE/Wronskian.html" class="mm-link">More on the  Wronskian</a></li>
+                <li><a href="../DE/NonhomogeneousDE.html" class="mm-link">Nonhomogeneous Differential Equations</a></li>
+                <li><a href="../DE/UndeterminedCoefficients.html" class="mm-link">Undetermined Coefficients</a></li>
+                <li><a href="../DE/VariationofParameters.html" class="mm-link">Variation of Parameters</a></li>
+                <li><a href="../DE/Vibrations.html" class="mm-link">Mechanical Vibrations</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/LaplaceIntro.html" class="mm-link">Laplace Transforms</a>
+              <ul>
+                <li><a href="../DE/LaplaceDefinition.html" class="mm-link">The Definition</a></li>
+                <li><a href="../DE/LaplaceTransforms.html" class="mm-link">Laplace Transforms</a></li>
+                <li><a href="../DE/InverseTransforms.html" class="mm-link">Inverse Laplace Transforms</a></li>
+                <li><a href="../DE/StepFunctions.html" class="mm-link">Step Functions</a></li>
+                <li><a href="../DE/IVPWithLaplace.html" class="mm-link">Solving IVP's with Laplace Transforms</a></li>
+                <li><a href="../DE/IVPWithNonConstantCoefficient.html" class="mm-link">Nonconstant Coefficient IVP's</a></li>
+                <li><a href="../DE/IVPWithStepFunction.html" class="mm-link">IVP's With Step Functions</a></li>
+                <li><a href="../DE/DiracDeltaFunction.html" class="mm-link">Dirac Delta Function</a></li>
+                <li><a href="../DE/ConvolutionIntegrals.html" class="mm-link">Convolution Integrals</a></li>
+                <li><a href="../DE/Laplace_Table.html" class="mm-link">Table Of Laplace Transforms</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/SystemsIntro.html" class="mm-link">Systems of DE's</a>
+              <ul>
+                <li><a href="../DE/LA_Systems.html" class="mm-link">Review : Systems of Equations</a></li>
+                <li><a href="../DE/LA_Matrix.html" class="mm-link">Review : Matrices & Vectors</a></li>
+                <li><a href="../DE/LA_Eigen.html" class="mm-link">Review : Eigenvalues & Eigenvectors</a></li>
+                <li><a href="../DE/SystemsDE.html" class="mm-link">Systems of Differential Equations</a></li>
+                <li><a href="../DE/SolutionsToSystems.html" class="mm-link">Solutions to Systems</a></li>
+                <li><a href="../DE/PhasePlane.html" class="mm-link">Phase Plane</a></li>
+                <li><a href="../DE/RealEigenvalues.html" class="mm-link">Real Eigenvalues</a></li>
+                <li><a href="../DE/ComplexEigenvalues.html" class="mm-link">Complex Eigenvalues</a></li>
+                <li><a href="../DE/RepeatedEigenvalues.html" class="mm-link">Repeated Eigenvalues</a></li>
+                <li><a href="../DE/NonhomogeneousSystems.html" class="mm-link">Nonhomogeneous Systems</a></li>
+                <li><a href="../DE/SystemsLaplace.html" class="mm-link">Laplace Transforms</a></li>
+                <li><a href="../DE/SystemsModeling.html" class="mm-link">Modeling</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/SeriesIntro.html" class="mm-link">Series Solutions to DE's</a>
+              <ul>
+                <li><a href="../DE/PowerSeries.html" class="mm-link">Review : Power Series</a></li>
+                <li><a href="../DE/TaylorSeries.html" class="mm-link">Review : Taylor Series</a></li>
+                <li><a href="../DE/SeriesSolutions.html" class="mm-link">Series Solutions</a></li>
+                <li><a href="../DE/EulerEquations.html" class="mm-link">Euler Equations</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/IntroHigherOrder.html" class="mm-link">Higher Order Differential Equations</a>
+              <ul>
+                <li><a href="../DE/HOBasicConcepts.html" class="mm-link">Basic Concepts for <em>n</em><sup>th</sup> Order Linear Equations</a></li>
+                <li><a href="../DE/HOHomogeneousDE.html" class="mm-link">Linear Homogeneous Differential Equations</a></li>
+                <li><a href="../DE/HOUndeterminedCoeff.html" class="mm-link">Undetermined Coefficients</a></li>
+                <li><a href="../DE/HOVariationOfParam.html" class="mm-link">Variation of Parameters</a></li>
+                <li><a href="../DE/HOLaplaceTransforms.html" class="mm-link">Laplace Transforms</a></li>
+                <li><a href="../DE/HOSystems.html" class="mm-link">Systems of Differential Equations</a></li>
+                <li><a href="../DE/HOSeries.html" class="mm-link">Series Solutions</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/IntroBVP.html" class="mm-link">Boundary Value Problems &amp; Fourier Series</a>
+              <ul>
+                <li><a href="../DE/BoundaryValueProblem.html" class="mm-link">Boundary Value Problems</a></li>
+                <li><a href="../DE/BVPEvals.html" class="mm-link">Eigenvalues and Eigenfunctions</a></li>
+                <li><a href="../DE/PeriodicOrthogonal.html" class="mm-link">Periodic Functions &amp; Orthogonal Functions</a></li>
+                <li><a href="../DE/FourierSineSeries.html" class="mm-link">Fourier Sine Series</a></li>
+                <li><a href="../DE/FourierCosineSeries.html" class="mm-link">Fourier Cosine Series</a></li>
+                <li><a href="../DE/FourierSeries.html" class="mm-link">Fourier Series</a></li>
+                <li><a href="../DE/ConvergenceFourierSeries.html" class="mm-link">Convergence of Fourier Series</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/IntroPDE.html" class="mm-link">Partial Differential Equations </a>
+              <ul>
+                <li><a href="../DE/TheHeatEquation.html" class="mm-link">The Heat Equation</a></li>
+                <li><a href="../DE/TheWaveEquation.html" class="mm-link">The Wave Equation</a></li>
+                <li><a href="../DE/PDETerminology.html" class="mm-link">Terminology</a></li>
+                <li><a href="../DE/SeparationofVariables.html" class="mm-link">Separation of Variables</a></li>
+                <li><a href="../DE/SolvingHeatEquation.html" class="mm-link">Solving the Heat Equation</a></li>
+                <li><a href="../DE/HeatEqnNonZero.html" class="mm-link">Heat Equation with Non-Zero Temperature Boundaries</a></li>
+                <li><a href="../DE/LaplacesEqn.html" class="mm-link">Laplace's Equation</a></li>
+                <li><a href="../DE/VibratingString.html" class="mm-link">Vibrating String</a></li>
+                <li><a href="../DE/PDESummary.html" class="mm-link">Summary of Separation of Variables</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><span>Extras</span></li>
+        <li><a href="../../Extras/AlgebraTrigReview/AlgebraTrig.html" class="mm-link">Algebra &amp; Trig Review</a>
+          <ul>
+            <li><a href="../../Extras/AlgebraTrigReview/AlgebraIntro.html" class="mm-link">Algebra</a>
+              <ul>
+                <li><a href="../../Extras/AlgebraTrigReview/Exponents.html" class="mm-link">Exponents </a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/AbsoluteValue.html" class="mm-link">Absolute Value</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Radicals.html" class="mm-link">Radicals</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Rationalizing.html" class="mm-link">Rationalizing </a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Functions.html" class="mm-link">Functions </a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/MultPoly.html" class="mm-link">Multiplying Polynomials</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Factoring.html" class="mm-link">Factoring</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SimpRatExp.html" class="mm-link">Simplifying Rational Expressions</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Graphing.html" class="mm-link">Graphing and Common Graphs</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveEqnPtI.html" class="mm-link">Solving Equations, Part I</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveEqnPtII.html" class="mm-link">Solving Equations, Part II</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveSystems.html" class="mm-link">Solving Systems of Equations</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveIneq.html" class="mm-link">Solving Inequalities</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveAbsValue.html" class="mm-link">Absolute Value Equations and Inequalities</a></li>
+              </ul>
+            </li>
+            <li><a href="../../Extras/AlgebraTrigReview/TrigIntro.html" class="mm-link">Trigonometry</a>
+              <ul>
+                <li><a href="../../Extras/AlgebraTrigReview/TrigFunctions.html" class="mm-link">Trig Function Evaluation</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/TrigGraphs.html" class="mm-link">Graphs of Trig Functions</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/TrigFormulas.html" class="mm-link">Trig Formulas</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveTrigEqn.html" class="mm-link">Solving Trig Equations</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/InverseTrig.html" class="mm-link">Inverse Trig Functions</a></li>
+              </ul>
+            </li>
+            <li><a href="../../Extras/AlgebraTrigReview/ExpLogIntro.html" class="mm-link">Exponentials & Logarithms</a>
+              <ul>
+                <li><a href="../../Extras/AlgebraTrigReview/ExponentialFcns.html" class="mm-link">Basic Exponential Functions</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/LogarithmFcns.html" class="mm-link">Basic Logarithm Functions</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/LogProperties.html" class="mm-link">Logarithm Properties</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SimpLogs.html" class="mm-link">Simplifying Logarithms</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveExpEqn.html" class="mm-link">Solving Exponential Equations</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveLogEqn.html" class="mm-link">Solving Logarithm Equations</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../../Extras/CommonErrors/CommonMathErrors.html" class="mm-link">Common Math Errors</a>
+          <ul>
+            <li><a href="../../Extras/CommonErrors/GeneralErrors.html" class="mm-link">General Errors</a>
+            </li>
+            <li><a href="../../Extras/CommonErrors/AlgebraErrors.html" class="mm-link">Algebra Errors</a>
+            </li>
+            <li><a href="../../Extras/CommonErrors/TrigErrors.html" class="mm-link">Trig Errors</a>
+            </li>
+            <li><a href="../../Extras/CommonErrors/CommonErrors.html" class="mm-link">Common Errors</a>
+            </li>
+            <li><a href="../../Extras/CommonErrors/CalculusErrors.html" class="mm-link">Calculus Errors</a>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../../Extras/ComplexPrimer/ComplexNumbers.html" class="mm-link">Complex Number Primer</a>
+          <ul>
+            <li><a href="../../Extras/ComplexPrimer/Definition.html" class="mm-link">The Definition</a>
+            </li>
+            <li><a href="../../Extras/ComplexPrimer/Arithmetic.html" class="mm-link">Arithmetic</a>
+            </li>
+            <li><a href="../../Extras/ComplexPrimer/ConjugateModulus.html" class="mm-link">Conjugate and Modulus</a>
+            </li>
+            <li><a href="../../Extras/ComplexPrimer/Forms.html" class="mm-link">Polar and Exponential Forms</a>
+            </li>
+            <li><a href="../../Extras/ComplexPrimer/Roots.html" class="mm-link">Powers and Roots</a>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../../Extras/StudyMath/HowToStudyMath.html" class="mm-link">How To Study Math</a>
+          <ul>
+            <li><a href="../../Extras/StudyMath/GeneralTips.html" class="mm-link">General Tips</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/TakingNotes.html" class="mm-link">Taking Notes</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/GettingHelp.html" class="mm-link">Getting Help</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/Homework.html" class="mm-link">Doing Homework</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/ProblemSolving.html" class="mm-link">Problem Solving</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/StudyForExam.html" class="mm-link">Studying For an Exam</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/TakingExam.html" class="mm-link">Taking an Exam</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/Errors.html" class="mm-link">Learn From Your Errors</a>
+            </li>
+          </ul>
+        </li>
+
+        <li><span>Misc Links</span></li>
+        <li><a href="http://tutorial.math.lamar.edu/contact.aspx" class="mm-link">Contact Me</a></li>
+        <li><a href="../../links.html" class="mm-link">Links</a></li>
+        <li><a href="../../mathjax.html" class="mm-link">MathJax Help and Configuration</a></li>
+        <li><a href="../../mystudents.html" class="mm-link">My Students</a></li>
+        <li><a href="http://tutorial.math.lamar.edu/privacy.aspx" class="mm-link">Privacy Statement</a></li>
+        <li><a href="../../help.html" class="mm-link">Site Help & FAQ</a></li>
+        <li><a href="http://tutorial.math.lamar.edu/terms.aspx" class="mm-link">Terms of Use</a></li>
+      </ul>
+    </nav>
+
+
+
+    <div class="top-info-bar">
+      <span id="mobile-title" class="mobile-header-title header-title">Paul's Online Notes</span>
+      <br />
+      <span class="top-menu-breadcrumb">
+        <a href="../../index.html" id="breadcrumb_home_link" title="Go to Main Page">Home</a>
+        <span id="breadcrumb_h_b_sep_span">/ </span>
+        <a href="CalcI.html" id="breadcrumb_book_link" title="Go to Book Introduction">Calculus I</a>
+        
+        <span id="breadcrumb_b_c_sep_span">/ </span>
+        <a href="ReviewIntro.html" id="breadcrumb_chapter_link" title="Go to Chapter Introduction">Review</a>
+        
+        <span id="breadcrumb_section_span"> / Logarithm Functions</span>
+      </span>
+
+    </div>
+
+    <div id="nav_links" class="top-nav-bar">
+      
+      <span id="nav_current_notes">Notes</span>
+      <a href="http://tutorial.math.lamar.edu/Problems/CalcI/LogFcns.aspx" id="nav_links_practice" title="Go to Practice Problems for current topic.">Practice<span class="nav_desktop_extra"> Problems</span></a>
+      
+      <a href="http://tutorial.math.lamar.edu/ProblemsNS/CalcI/LogFcns.aspx" id="nav_links_asgn" title="Go to Assignment Problems for current topic.">Assignment<span class="nav_desktop_extra">  Problems</span></a>
+      
+    </div>
+
+    <div class="header-divider"></div>
+
+    <div class="content">  
+      
+      
+      <span id="SHLink_NoteMobile" class="SH-Link content-note-link-mobile">Show Mobile Notice</span>
+      <span id="SHImg_NoteMobile" class="fas fa-caret-right SH-padding content-note-link-mobile" aria-hidden="true"></span>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+
+      <span id="SHALink_S_Note" class="SH-Link SH-Hide SH-Bracket">Show All Notes</span>&nbsp;<span id="SHALink_H_Note" class="SH-Link SH-Hide SH-Bracket">Hide All Notes</span>
+      
+      
+      <div id="SHObj_NoteMobile" class="content-note-container content-note-container-mobile">
+        <div class="content-note-header">Mobile Notice</div>
+        <div class="content-note">You appear to be on a device with a "narrow" screen width (<em>i.e.</em> you are probably on a mobile phone).  Due to the nature of the mathematics on this site it is best views in landscape mode.  If your device is not in landscape mode many of the equations will run off the side of your device (should be able to scroll to see them) and some of the menu items will be cut off due to the narrow screen width.</div>
+      </div>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+
+      
+
+
+  <form method="post" action="http://tutorial.math.lamar.edu/Classes/CalcI/LogFcns.aspx" id="ctl00">
+<div class="aspNetHidden">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+</div>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="E4208999" />
+</div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </form>
+
+  <h3>Section 1-8 : Logarithm Functions</h3>
+
+  <p>In this section we’ll take a look at a function that is related to the exponential functions we looked at in the last section.  We will look at logarithms in this section.  Logarithms are one of the functions that students fear the most.  The main reason for this seems to be that they simply have never really had to work with them.  Once they start working with them, students come to realize that they aren’t as bad as they first thought.</p>
+    
+  <p>We’ll start with \(b &gt; 0\), \(b \ne 1\) just as we did in the last section.  Then we have</p>
+    
+  \[y = {\log _b}x\hspace{0.5in}{\mbox{is equivalent to }}\hspace{0.5in}x = {b^y}\]
+
+  <p>The first is called logarithmic form and the second is called the exponential form.  Remembering this equivalence is the key to evaluating logarithms.  The number, \(b\), is called the base.</p>
+
+  <p>Let's do some quick evaluations.</p>
+  
+  <a class="anchor" name="Ex1_Start"></a>
+  <div class="example">
+    <span class="example-title">Example 1</span> Without a calculator give the exact value of each of the following logarithms. 
+    <ol class="example_parts_list">
+      <li>\({\log _2}16\)</li>
+      <li>\({\log _4}16\)</li>
+      <li>\({\log _5}625\)</li>
+      <li>\({\log _9}\frac{1}{{531441}}\)</li>
+      <li>\({\log _{\frac{1}{6}}}36\)</li>
+      <li>\({\log _{\frac{3}{2}}}\frac{{27}}{8}\)</li>
+    </ol>
+    <span id="SHALink_S_Soln1" class="SH-Link SH-All">Show All Solutions</span>&nbsp;<span id="SHALink_H_Soln1" class="SH-Link SH-All">Hide All Solutions</span>
+    <div class="example-content">
+      
+      <p>To quickly evaluate logarithms the easiest thing to do is to convert the logarithm to exponential form.  So, let’s take a look at the first one.</p>
+
+      <span class="soln-list-item soln-list-subitem">a</span> \({\log _2}16\) <span id="SHLink_Soln1a" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln1a" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln1a" class="soln-content">
+        <p>First, let’s convert to exponential form.</p>
+          
+        \[{\log _2}16 = ?\hspace{0.5in}{\mbox{is equivalent to }}\hspace{0.5in}{2^?} = 16\]
+
+        <p>So, we’re really asking 2 raised to what gives 16.  Since 2 raised to 4 is 16 we get,</p>
+          
+        \[{\log _2}16 = 4\hspace{0.5in}{\rm{because}}\hspace{0.5in}{2^4} = 16\]
+          
+        <p>We’ll not do the remaining parts in quite this detail, but they were all work in this way.</p>
+      </div>
+
+      <br />
+      <span class="soln-list-item soln-list-subitem">b</span> \({\log _4}16\) <span id="SHLink_Soln1b" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln1b" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln1b" class="soln-content">
+        \[{\log _4}16 = 2\hspace{0.5in}{\rm{because}}\hspace{0.5in}{4^2} = 16\]
+          
+        <p>Note the difference between the first and second logarithm!  The base is important!  It can completely change the answer.</p>
+      </div>
+
+      <br />
+      <span class="soln-list-item soln-list-subitem">c</span> \({\log _5}625\) <span id="SHLink_Soln1c" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln1c" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln1c" class="soln-content">
+        \[{\log _5}625 = 4\hspace{0.5in}{\rm{because}}\hspace{0.5in}{5^4} = 625\]
+      </div>
+
+      <br />
+      <span class="soln-list-item soln-list-subitem">d</span> \({\log _9}\frac{1}{{531441}}\) <span id="SHLink_Soln1d" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln1d" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln1d" class="soln-content">
+        \[{\log _9}\frac{1}{{531441}} =  - 6\hspace{0.25in}{\rm{because}}\hspace{0.5in}{9^{ - 6}} = \frac{1}{{{9^6}}} = \frac{1}{{531441}}\]
+      </div>
+
+      <br />
+      <span class="soln-list-item soln-list-subitem">e</span> \({\log _{\frac{1}{6}}}36\) <span id="SHLink_Soln1e" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln1e" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln1e" class="soln-content">
+        \[{\log _{\frac{1}{6}}}36 =  - 2\hspace{0.5in}{\rm{because}}\hspace{0.5in}{\left( {\frac{1}{6}} \right)^{ - 2}} = {6^2} = 36\]
+      </div>
+
+      <br />
+      <span class="soln-list-item soln-list-subitem">r</span> \({\log _{\frac{3}{2}}}\frac{{27}}{8}\) <span id="SHLink_Soln1f" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln1f" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln1f" class="soln-content">
+        \[{\log _{\frac{3}{2}}}\frac{{27}}{8} = 3\hspace{0.5in}{\rm{because}}\hspace{0.5in}{\left( {\frac{3}{2}} \right)^3} = \frac{{27}}{8}\]
+      </div>
+    </div>
+  </div>
+
+  <p>There are a couple of special logarithms that arise in many places.  These are,</p>
+    
+  \[\begin{align*}\ln x & = {\log _{\bf{e}}}x\hspace{0.5in}{\mbox{This log is called the natural logarithm}}\\ \log x & = {\log _{10}}x\hspace{0.5in}{\mbox{This log is called the common logarithm}}\end{align*}\]
+
+  <p>In the natural logarithm the base <strong>e</strong> is the same number as in the natural exponential logarithm that we saw in the last <a href="ExpFunctions.html#Exp_Defn">section</a>.  Here is a sketch of both of these logarithms.</p>
+    
+  <div class="center-div"><img alt="Graph of \(\ln \left( x \right)\) and \(\log \left( x \right)\).  Both are increasing functions that intersect at (1,0) with \(\ln \left( x \right)\) below the graph of \(\log \left( x \right)\) to the left of (1,0) and above the graph of \(\log \left( x \right)\) to the right of (1,0)." height="231" src="http://tutorial.math.lamar.edu/Classes/CalcI/LogFcns_Files/image001.png" width="390" /></div>
+    
+  <p>From this graph we can get a couple of very nice properties about the natural logarithm that we will use many times in this and later Calculus courses.</p>
+    
+  \[\begin{array}{l}\ln x \to \infty {\mbox{ as }}x \to \infty \\ \ln x \to  - \infty {\mbox{ as }}x \to 0,\,\,x &gt; 0\end{array}\]
+    
+  <p>Let’s take a look at a couple of more logarithm evaluations.  Some of which deal with the natural or common logarithm and some of which don’t.</p>
+  
+  <a class="anchor" name="Rev_Log_Ex2"></a>
+
+  <div class="example">
+    <span class="example-title">Example 2</span> Without a calculator give the exact value of each of the following logarithms.
+    <ol class="example_parts_list">
+      <li>\(\ln \sqrt[3]{{\bf{e}}}\)</li>
+      <li>\(\log 1000\)</li>
+      <li>\({\log _{16}}16\)</li>
+      <li>\({\log _{23}}1\)</li>
+      <li>\({\log _2}\sqrt[7]{{32}}\)</li>
+    </ol>
+    <span id="SHALink_S_Soln2" class="SH-Link SH-All">Show All Solutions</span>&nbsp;<span id="SHALink_H_Soln2" class="SH-Link SH-All">Hide All Solutions</span>
+    <div class="example-content">
+
+      <p>These work exactly the same as previous example so we won’t put in too many details.</p>
+
+      <span class="soln-list-item soln-list-subitem">a</span> \(\ln \sqrt[3]{{\bf{e}}}\) <span id="SHLink_Soln2a" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln2a" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln2a" class="soln-content">
+        \[\ln \sqrt[3]{{\bf{e}}} = \frac{1}{3}\hspace{0.5in}{\rm{because}}\hspace{0.5in}{{\bf{e}}^{\frac{1}{3}}} = \sqrt[3]{{\bf{e}}}\]
+      </div>
+
+      <br />
+      <span class="soln-list-item soln-list-subitem">b</span> \(\log 1000\) <span id="SHLink_Soln2b" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln2b" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln2b" class="soln-content">
+        \[\log 1000 = 3\hspace{0.5in}{\rm{because}}\hspace{0.5in}{10^3} = 1000\]
+      </div>
+
+      <br />
+      <span class="soln-list-item soln-list-subitem">c</span> \({\log _{16}}16\) <span id="SHLink_Soln2c" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln2c" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln2c" class="soln-content">
+        \[{\log _{16}}16 = 1\hspace{0.5in}{\rm{because}}\hspace{0.5in}{16^1} = 16\]
+      </div>
+
+      <br />
+      <span class="soln-list-item soln-list-subitem">d</span> \({\log _{23}}1\) <span id="SHLink_Soln2d" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln2d" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln2d" class="soln-content">
+        \[{\log _{23}}1 = 0\hspace{0.5in}{\rm{because}}\hspace{0.5in}{23^0} = 1\]
+      </div>
+
+      <br />
+      <span class="soln-list-item soln-list-subitem">e</span> \({\log _2}\sqrt[7]{{32}}\) <span id="SHLink_Soln2e" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln2e" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln2e" class="soln-content">
+        \[{\log _2}\sqrt[7]{{32}} = \frac{5}{7}\hspace{0.5in}{\rm{because}}\hspace{0.5in}\sqrt[7]{{32}} = {32^{\frac{1}{7}}} = {\left( {{2^5}} \right)^{\frac{1}{7}}} = {2^{\frac{5}{7}}}\]
+      </div>
+    </div>
+  </div>
+
+  <p>This last set of examples leads us to some of the basic properties of logarithms.</p>
+    
+  <a class="anchor" name="Log_Prop"></a>
+
+  <h4>Properties</h4>
+  <div class="property">
+    <ol class="general-list">
+      <li>The domain of the logarithm function is \(\left( {0,\infty } \right)\).  In other words, we can only plug positive numbers into a logarithm!  We can’t plug in zero or a negative number.</li>
+      <li>The range of the logarithm function is \(\left( { - \infty ,\infty } \right)\).</li>
+      <li>\({\log _b}b = 1\)</li>
+      <li>\({\log _b}1 = 0\)</li>
+      <li>\({\log _b}{b^x} = x\)</li>
+      <li>\({b^{{{\log }_b}x}} = x\)</li>
+    </ol>
+  </div>
+    
+  <a class="anchor" name="Exp_Log_Inv"></a>
+
+  <p>The last two properties will be especially useful in the next <a href="ExpLogEqns.html">section</a>.  Notice as well that these last two properties tell us that,</p>
+    
+  \[f\left( x \right) = {b^x}\hspace{0.5in}{\rm{and  }}\hspace{0.5in}g\left( x \right) = {\log _b}x\]
+    
+  <p>are<a href="InverseFunctions.html"> inverses</a> of each other.</p>
+    
+  <p>Here are some more properties that are useful in the manipulation of logarithms.</p>
+    
+  <a class="anchor" name="More_Log_Prop"></a>
+
+  <h4>More Properties</h4>
+  <div class="property">
+    <ol class="general-list" start="7">
+      <li>\({\log _b}xy = {\log _b}x + {\log _b}y\)</li>
+      <li>\(\displaystyle {\log _b}\left( {\frac{x}{y}} \right) = {\log _b}x - {\log _b}y\)</li>
+      <li>\({\log _b}\left( {{x^r}} \right) = r{\log _b}x\)</li>
+    </ol>
+  </div>
+
+  <p>Note that there is no equivalent property to the first two for sums and differences.  In other words,</p>
+    
+  \[\begin{align*}{\log _b}\left( {x + y} \right) & \ne {\log _b}x + {\log _b}y\\ {\log _b}\left( {x - y} \right) & \ne {\log _b}x - {\log _b}y\end{align*}\]
+
+  <a class="anchor" name="Rev_Log_Ex3"></a>
+
+  <div class="example">
+    <span class="example-title">Example 3</span> Write each of the following in terms of simpler logarithms.
+    <ol class="example_parts_list">
+      <li>\(\ln {x^3}{y^4}{z^5}\)</li>
+      <li>\(\displaystyle {\log _3}\left( {\frac{{9{x^4}}}{{\sqrt y }}} \right)\)</li>
+      <li>\(\displaystyle \log \left( {\frac{{{x^2} + {y^2}}}{{{{\left( {x - y} \right)}^3}}}} \right)\)</li>
+    </ol>
+    <span id="SHALink_S_Soln3" class="SH-Link SH-All">Show All Solutions</span>&nbsp;<span id="SHALink_H_Soln3" class="SH-Link SH-All">Hide All Solutions</span>
+    <div class="example-content">
+      
+      <p>What the instructions really mean here is to use as many of the properties of logarithms as we can to simplify things down as much as we can.</p>
+
+      <span class="soln-list-item soln-list-subitem">a</span> \(\ln {x^3}{y^4}{z^5}\) <span id="SHLink_Soln3a" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln3a" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln3a" class="soln-content">
+        <p>Property 7 above can be extended to products of more than two functions.  Once we’ve used Property 7 we can then use Property 9.</p>
+          
+            \[\begin{align*}\ln {x^3}{y^4}{z^5} & = \ln {x^3} + \ln {y^4} + \ln {z^5}\\ & = 3\ln x + 4\ln y + 5\ln z\end{align*}\]
+      </div>
+
+      <br />
+      <span class="soln-list-item soln-list-subitem">b</span> \(\displaystyle {\log _3}\left( {\frac{{9{x^4}}}{{\sqrt y }}} \right)\) <span id="SHLink_Soln3b" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln3b" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln3b" class="soln-content">
+        <p>When using property 8 above make sure that the logarithm that you subtract is the one that contains the denominator as its argument.  Also, note that that we’ll be converting the root to fractional exponents in the first step.</p>
+          
+        \[\begin{align*}{\log _3}\left( {\frac{{9{x^4}}}{{\sqrt y }}} \right) & = {\log _3}9{x^4} - {\log _3}{y^{\frac{1}{2}}}\\ & = {\log _3}9 + {\log _3}{x^4} - {\log _3}{y^{\frac{1}{2}}}\\ & = 2 + 4{\log _3}x - \frac{1}{2}{\log _3}y\end{align*}\]
+      </div>
+
+      <br />
+      <span class="soln-list-item soln-list-subitem">c</span> \(\displaystyle \log \left( {\frac{{{x^2} + {y^2}}}{{{{\left( {x - y} \right)}^3}}}} \right)\) <span id="SHLink_Soln3c" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln3c" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln3c" class="soln-content">
+        <p>The point to this problem is mostly the correct use of property 9 above.</p>
+          
+        \[\begin{align*}\log \left( {\frac{{{x^2} + {y^2}}}{{{{\left( {x - y} \right)}^3}}}} \right) & = \log \left( {{x^2} + {y^2}} \right) - \log {\left( {x - y} \right)^3}\\ & = \log \left( {{x^2} + {y^2}} \right) - 3\log \left( {x - y} \right)\end{align*}\]
+          
+        <p>You can use Property 9 on the second term because the WHOLE term was raised to the 3, but in the first logarithm, only the individual terms were squared and not the term as a whole so the 2’s must stay where they are!</p>
+      </div>
+    </div>
+  </div>
+
+  <a class="anchor" name="Rev_Log_Change_Base"></a>
+  <p>The last topic that we need to look at in this section is the <strong>change of base</strong> formula for logarithms.  The change of base formula is,</p>
+    
+      \[{\log _b}x = \frac{{{{\log }_a}x}}{{{{\log }_a}b}}\]
+
+    
+    <p>This is the most general change of base formula and will convert from base \(b\) to base \(a\).  However, the usual reason for using the change of base formula is to compute the value of a logarithm that is in a base that you can’t easily deal with.  Using the change of base formula means that you can write the logarithm in terms of a logarithm that you can deal with.  The two most common change of base formulas are</p>
+    
+      \[{\log _b}x = \frac{{\ln x}}{{\ln b}}\hspace{0.5in}{\rm{and}}\hspace{0.5in}{\rm{lo}}{{\rm{g}}_{\rm{b}}}x = \frac{{\log x}}{{\log b}}\]
+
+    <p>In fact, often you will see one or the other listed as THE change of base formula!</p>
+    
+    <p>In the first part of this section we computed the value of a few logarithms, but we could do these without the change of base formula because all the arguments could be written in terms of the base to a power.  For instance,</p>
+    
+      \[{\log _7}49 = 2\hspace{0.5in}{\rm{because}}\hspace{0.5in}{7^2} = 49\]
+
+    
+    <p>However, this only works because 49 can be written as a power of 7!  We would need the change of base formula to compute \({\log _7}50\).</p>
+    
+    
+      \[{\log _7}50 = \frac{{\ln 50}}{{\ln 7}} = \frac{{3.91202300543}}{{1.94591014906}} = 2.0103821378\]
+
+    
+    <p>OR</p>
+    
+      \[{\log _7}50 = \frac{{\log 50}}{{\log 7}} = \frac{{1.69897000434}}{{0.845098040014}} = 2.0103821378\]
+
+    
+    <p>So, it doesn’t matter which we use, we will get the same answer regardless of the logarithm that we use in the change of base formula.</p>
+    
+    <p>Note as well that we could use the change of base formula on \({\log _7}49\) if we wanted to as well.</p>
+    
+      \[{\log _7}49 = \frac{{\ln 49}}{{\ln 7}} = \frac{{3.89182029811}}{{1.94591014906}} = 2\]
+
+    
+    <p>This is a lot of work however, and is probably not the best way to deal with this.</p>
+    
+    <p>So, in this section we saw how logarithms work and took a look at some of the properties of logarithms.  We will run into logarithms on occasion so make sure that you can deal with them when we do run into them.</p>
+  
+
+
+      
+
+
+
+    </div>
+    <!-- End of content div -->
+
+
+    <div class="footer">
+      <div class="footer-links">
+        [<a href="http://tutorial.math.lamar.edu/Contact.aspx">Contact Me</a>]&nbsp;[<a href="../../MyStudents-2.html">My Students</a>]&nbsp;[<a href="http://tutorial.math.lamar.edu/Privacy.aspx">Privacy Statement</a>]&nbsp;[<a href="../../Help-2.html">Site Help &amp; FAQ</a>]&nbsp;[<a href="http://tutorial.math.lamar.edu/Terms.aspx">Terms of Use</a>]
+      </div>
+      <div class="footer-dates">
+        <div class="footer-copyright"><span id="lblCopyRight">&copy; 2003 - 2019 Paul Dawkins</span></div>
+        <div class="footer-spacer"></div>
+        <div class="footer-modified-date">Page Last Modified : <span id="lblModified">2/26/2019</span></div>
+      </div>
+      
+
+    </div>
+  </div>
+  <!-- End of page div...  -->
+</body>
+
+<!-- Mirrored from tutorial.math.lamar.edu/Classes/CalcI/LogFcns.aspx by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 27 Feb 2019 06:15:34 GMT -->
+</html>

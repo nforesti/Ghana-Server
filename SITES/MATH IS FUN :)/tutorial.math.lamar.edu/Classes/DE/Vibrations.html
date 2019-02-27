@@ -1,0 +1,1549 @@
+
+
+<!DOCTYPE html>
+
+<html>
+
+<!-- Mirrored from tutorial.math.lamar.edu/Classes/DE/Vibrations.aspx by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 27 Feb 2019 06:15:36 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=yes" /><meta http-equiv="X-UA-Compatible" content="IE=edge" />  <!-- For best MathJax performance on IE  -->
+
+  <meta name="google-site-verification" content="uLoA31CJfOhIVMJWBjCmQL8xNMmmLybZU3LRKavy9WQ" /><title>
+	Differential Equations - Mechanical Vibrations
+</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="../../../www.googletagmanager.com/gtag/js1872?id=UA-331594-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-331594-1');
+  </script>
+
+  <link type="text/css" href="../../css/jquery.mmenu.all.css" rel="stylesheet" /><link type="text/css" href="../../css/jquery.dropdown.css" rel="stylesheet" /><link href="../../FA/css/fontawesome-all.min.css" rel="stylesheet" /><link type="text/css" href="../../css/notes-all.css" rel="stylesheet" /><link type="text/css" href="../../css/notes-google.css" rel="stylesheet" /><link type="text/css" href="../../css/notes-mmenu.css" rel="stylesheet" /><link type="text/css" href="../../css/notes-dropdown.css" rel="stylesheet" />
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+     TeX: { equationNumbers: { autoNumber: "AMS" } }
+    });
+  </script>
+  <script type="text/javascript" async src="../../../cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax2ba6.js?config=TeX-AMS_CHTML-full"></script>
+  <script type="text/javascript" src="../../../code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="../../js/jquery.mmenu.all.js"></script>
+  <script type="text/javascript" src="../../js/jquery.dropdown.js"></script>
+  <script type="text/javascript" src="../../js/notes-all.js"></script>  
+
+  <script>
+    (function () {
+      var cx = '001004262401526223570:11yv6vpcqvy';
+      var gcse = document.createElement('script');
+      gcse.type = 'text/javascript';
+      gcse.async = true;
+      gcse.src = '../../../cse.google.com/cse07b6.html?cx=' + cx;
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(gcse, s);
+    })();
+  </script>
+
+<meta http-equiv="keywords" name="keywords" content="vibrations, mechanical vibrations, undamped vibrations, damped vibrations, free vibrations, unforced vibrations, forced vibrations, critical damping, under damping, over damping" /><meta http-equiv="description" name="description" content="In this section we will examine mechanical vibrations.  In particular we will model an object connected to a spring and moving up and down.  We also allow for the introduction of a damper to the system and for general external forces to act on the object.  Note as well that while we example mechanical vibrations in this section a simple change of notation (and corresponding change in what the quantities represent) can move this into almost any other engineering field." /></head>
+<body onload="init({Notes: 'NoteMobile;8/21/2018;true'})">
+
+  <div id="page">
+
+    <div class="header">
+      <div class="header-row">
+        <!--<a href="#menu"><span></span></a>-->
+        <div id="side-menu-icon" class="header-side-menu-icon"><a href="#menu"><span class="fas fa-bars fa-lg" aria-hidden="true" title="Main Menu - Change between topics, chapters and sections as well as a few extra pages."></span></a></div>
+        <span class="header-title"><a href="../../index.html" class="header-title-link">Paul's Online Notes</a></span>
+        <div class="header-spacer"></div>
+
+        <div id="content-top-menu" class="top-menu">
+          <button id="content-type-menu" class="top-menu-button" data-jq-dropdown="#jq-dropdown-type" title="View (Notes, Practice Problems or Assignment Problems, Show/Hide Solutions and/or Steps) Menu">
+            <span id="tab_top_menu_notes" class="top-menu-item-title">Notes</span> <span class="far fa-eye fa-lg" aria-hidden="true"></span>
+          </button>
+
+          <button id="quicknav-menu" class="top-menu-button" data-jq-dropdown="#jq-dropdown-quicknav" title="Quick Navigation (Previous/Next Sections and Problems and Full Problem List) Menu">
+            <span class="top-menu-item-title">Quick Nav</span> <span class="fas fa-exchange fa-lg" aria-hidden="true"></span>
+          </button>
+          
+          <button id="download-menu" class="top-menu-button" data-jq-dropdown="#jq-dropdown-download" title="Download pdf Menu">
+            <span class="top-menu-item-title">Download</span> <span class="far fa-download fa-lg" aria-hidden="true"></span>
+          </button>
+
+          <button id="print-menu" class="top-menu-button top-menu-button-icon-only" data-jq-dropdown="#jq-print-download" title="Print Menu">
+            <span class="far fa-print fa-lg" aria-hidden="true"></span>
+          </button>
+        </div>
+
+        <div id="header-google-search" class="header-search">
+          <gcse:search></gcse:search>
+        </div>
+        <div id="header-search-icon" title="Site Search" class="header-menu-icon"><span id="search-icon" class="fas fa-search" aria-hidden="true"></span></div>
+
+      </div>
+    </div>
+
+     <div id="jq-dropdown-type" class="jq-dropdown jq-dropdown-tip">
+      <ul class="jq-dropdown-menu">
+        
+        <li id="li_type_menu_goto" class="top-menu-nav-title">Go To</li>
+        <li id="li_type_menu_notes">
+          <span id="type_menu_notes_span" title="Viewing the Notes for the current topic." class="top-menu-current">Notes</span>
+          
+        </li>
+        <li id="li_type_menu_practice">
+          <span id="type_menu_problem_span_de" class="top-menu-item-text">Practice and Assignment problems are not yet written.  As time permits I am working on them, however I don't have the amount of free time that I used to so it will take a while before anything shows up here.</span>
+          
+          
+        </li>
+        <li id="li_type_menu_asgn">
+          
+          
+        </li>
+        <li id="li_type_menu_sh" class="top-menu-nav-title">Show/Hide</li>
+        <li id="li_type_menu_show" title="Show any hidden solutions and/or steps that may be present on the page."><a href="javascript:SHPrintPage(1,0)" id="view_menu_show">Show all Solutions/Steps/<em>etc.</em></a></li>
+        <li id="li_type_menu_hide" title="Hide any visible solutions and/or steps that may be present on the page."><a href="javascript:SHPrintPage(0,0)" id="view_menu_hide">Hide all Solutions/Steps/<em>etc.</em></a></li>
+      </ul>
+    </div>
+
+    <div id="jq-dropdown-quicknav" class="jq-dropdown jq-dropdown-tip">
+      <ul class="jq-dropdown-menu">
+        <li id="li_nav_menu_sections" class="top-menu-nav-title">Sections</li>
+        <li id="li_nav_menu_prev_section"><a href="VariationofParameters.html" id="a_nav_menu_prev_section" class="top-menu-nav-link" title="Previous Section : Variation of Parameters"><span class="top-menu-prev fas fa-chevron-left"></span> Variation of Parameters</a></li>
+        <li id="li_nav_menu_next_section"><a href="LaplaceIntro.html" id="a_nav_menu_next_section" class="top-menu-nav-link" title="Next Section : Laplace Transforms Introduction"><span class="top-menu-prev-hidden fas fa-chevron-left"></span> Laplace Transforms Introduction <span class="top-menu-next fas fa-chevron-right"></span></a></li>
+        <li id="li_nav_menu_chapters" class="top-menu-nav-title">Chapters</li>
+        <li id="li_nav_menu_prev_chapter"><a href="IntroFirstOrder.html" id="a_nav_menu_prev_chapter" class="top-menu-nav-link" title="Previous Chapter : First Order DE&#39;s"><span class="top-menu-prev fas fa-chevron-left"></span><span class="top-menu-prev fas fa-chevron-left"></span> First Order DE's</a></li>
+        <li id="li_nav_menu_next_chapter"><a href="LaplaceIntro.html" id="a_nav_menu_next_chapter" class="top-menu-nav-link" title="Next Chapter : Laplace Transforms"><span class="top-menu-prev-hidden fas fa-chevron-left"></span><span class="top-menu-prev-hidden fas fa-chevron-left"></span> Laplace Transforms <span class="top-menu-next fas fa-chevron-right"></span><span class="top-menu-next fas fa-chevron-right"></span></a></li>
+        
+        
+        
+        
+        <li id="li_nav_menu_classes" class="top-menu-nav-title">Classes</li>
+        <li>
+          
+          <a href="../Alg/Alg.html" id="nav_menu_alg_link" title="Go To Algebra Notes">Algebra</a>
+        </li>
+        <li>
+          
+          <a href="../CalcI/CalcI.html" id="nav_menu_calci_link" title="Go To Calculus I Notes">Calculus I</a>
+        </li>
+        <li>
+          
+          <a href="../CalcII/CalcII.html" id="nav_menu_calcii_link" title="Go To Calculus II Notes">Calculus II</a>
+        </li>
+        <li>
+          
+          <a href="../CalcIII/CalcIII.html" id="nav_menu_calciii_link" title="Go To Calculus III Notes">Calculus III</a>
+        </li>
+        <li>
+          <span id="nav_menu_de_span" title="Currently Viewing Differential Equations Material" class="top-menu-current">Differential Equations</span>
+          
+        </li>
+        <li id="li_nav_menu_extras" class="top-menu-nav-title">Extras</li>
+        <li>
+          
+          <a href="../../Extras/AlgebraTrigReview/AlgebraTrig.html" id="nav_menu_algtrig_link" title="Go To Algebra &amp; Trig Review">Algebra &amp; Trig Review</a>
+        </li>
+        <li>
+          
+          <a href="../../Extras/CommonErrors/CommonMathErrors.html" id="nav_menu_commonerrors_link" title="Go To Common Math Errors">Common Math Errors</a>
+        </li>
+        <li>
+          
+          <a href="../../Extras/ComplexPrimer/ComplexNumbers.html" id="nav_menu_complexnumbers_link" title="Go To Complex Numbers Primer">Complex Number Primer</a>
+        </li>
+        <li>
+          
+          <a href="../../Extras/StudyMath/HowToStudyMath.html" id="nav_menu_studymath_link" title="Go To How To Study Math">How To Study Math</a>
+        </li>
+        <li>
+          
+          <a href="../../Extras/CheatSheets_Tables.html" id="nav_menu_cheattables_link" title="Go To List of Cheat Sheets and Tables">Cheat Sheets &amp; Tables</a>
+        </li>
+        <li id="li_nav_menu_misc" class="top-menu-nav-title">Misc</li>
+        <li><a href="http://tutorial.math.lamar.edu/contact.aspx" id="nav_menu_contact" title="Contact Me!">Contact Me</a></li>
+        <li><a href="../../mathjax.html" id="nav_menu_mathjax" title="Info on MathJax and MathJax Configuration Menu">MathJax Help and Configuration</a></li>
+        <li><a href="../../mystudents.html" id="nav_menu_students" title="Go here if you are currently taking a class from me!">My Students</a></li>
+      </ul>
+    </div>
+
+    <div id="jq-dropdown-download" class="jq-dropdown jq-dropdown-anchor-right jq-dropdown-tip">
+      <ul class="jq-dropdown-menu">
+        
+        <li id="li_download_menu_notes" class="top-menu-nav-title">Notes Downloads</li>
+        <li id="li_download_menu_notes_book"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=B,1,N" id="download_menu_notes_book" data-PDF="Download - Menu$Notes - Book$Differential Equations$/Downloads/DE/Notes/Complete.pdf">Complete Book</a></li>
+        
+        <li id="li_download_menu_notes_chapter"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=C,18,N" id="download_menu_notes_chapter" data-PDF="Download - Menu$Notes - Chapter$Differential Equations - Second Order DE&#39;s$/Downloads/DE/Notes/Second_Order.pdf">Current Chapter</a></li>
+        <li id="li_download_menu_notes_section"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=S,132,N" id="download_menu_notes_section" data-PDF="Download - Menu$Notes - Section$Differential Equations - Mechanical Vibrations$/Downloads/DE/Notes/Vibrations.pdf">Current Section</a></li>
+        <li id="li_download_menu_practice" class="top-menu-nav-title">Practice Problems Downloads</li>
+        <li id="li_download_menu_practice_de"><span class="top-menu-item-text">Problems not yet written.</span></li>
+        
+        
+        
+        
+        
+        
+        
+        
+        <li id="li_download_menu_asgn" class="top-menu-nav-title">Assignment Problems Downloads</li>
+        <li id="li_download_menu_asgn_de"><span class="top-menu-item-text">Problems not yet written.</span></li>
+        
+        
+        
+        <li id="li_download_menu_other" class="top-menu-nav-title">Other Items</li>
+        <li id="li_download_menu_urls">
+          <a href="http://tutorial.math.lamar.edu/DownloadURLs.aspx?bi=1&amp;ci=18&amp;si=132" id="download_menu_urls">Get URL's for Download Items</a>
+        </li>
+      </ul>
+    </div>
+
+    <div id="jq-print-download" class="jq-dropdown jq-dropdown-anchor-right jq-dropdown-tip">
+      <ul class="jq-dropdown-menu">
+        <li id="li_print_menu_default"><a href="javascript:SHPrintPage()" id="print_menu_default">Print Page in Current Form (Default)</a></li>
+        <li id="li_print_menu_show"><a href="javascript:SHPrintPage(1,1)" id="print_menu_show">Show all Solutions/Steps and Print Page</a></li>
+        <li id="li_print_menu_hide"><a href="javascript:SHPrintPage(0,1)" id="print_menu_hide">Hide all Solutions/Steps and Print Page</a></li>
+      </ul>
+    </div>
+
+
+
+   
+
+    <nav id="menu" class="notes-nav">
+      <ul>
+        <li><a href="../../index.html" class="mm-link">Home</a></li>
+        <li><span>Classes</span></li>
+        <li><a href="../Alg/Alg.html" class="mm-link">Algebra</a>
+          <ul>
+            <li><a href="../Alg/Preliminaries.html" class="mm-link">Preliminaries</a>
+              <ul>
+                <li><a href="../Alg/IntegerExponents.html" class="mm-link">Integer Exponents</a></li>
+                <li><a href="../Alg/RationalExponents.html" class="mm-link">Rational Exponents</a></li>
+                <li><a href="../Alg/Radicals.html" class="mm-link">Radicals</a></li>
+                <li><a href="../Alg/Polynomials.html" class="mm-link">Polynomials</a></li>
+                <li><a href="../Alg/Factoring.html" class="mm-link">Factoring Polynomials</a></li>
+                <li><a href="../Alg/RationalExpressions.html" class="mm-link">Rational Expressions</a></li>
+                <li><a href="../Alg/ComplexNumbers.html" class="mm-link">Complex Numbers</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/Solving.html" class="mm-link">Solving Equations and Inequalities</a>
+              <ul>
+                <li><a href="../Alg/SolutionSets.html" class="mm-link">Solutions and Solution Sets</a></li>
+                <li><a href="../Alg/SolveLinearEqns.html" class="mm-link">Linear Equations</a></li>
+                <li><a href="../Alg/LinearApps.html" class="mm-link">Applications of Linear Equations</a></li>
+                <li><a href="../Alg/SolveMultiVariable.html" class="mm-link">Equations With More Than One Variable</a></li>
+                <li><a href="../Alg/SolveQuadraticEqnsI.html" class="mm-link">Quadratic Equations - Part I</a></li>
+                <li><a href="../Alg/SolveQuadraticEqnsII.html" class="mm-link">Quadratic Equations - Part II</a></li>
+                <li><a href="../Alg/SolveQuadraticEqnSummary.html" class="mm-link">Quadratic Equations : A Summary</a></li>
+                <li><a href="../Alg/QuadraticApps.html" class="mm-link">Applications of Quadratic Equations</a></li>
+                <li><a href="../Alg/ReducibleToQuadratic.html" class="mm-link">Equations Reducible to Quadratic in Form</a></li>
+                <li><a href="../Alg/SolveRadicalEqns.html" class="mm-link">Equations with Radicals</a></li>
+                <li><a href="../Alg/SolveLinearInequalities.html" class="mm-link">Linear Inequalities</a></li>
+                <li><a href="../Alg/SolvePolyInequalities.html" class="mm-link">Polynomial Inequalities</a></li>
+                <li><a href="../Alg/SolveRationalInequalities.html" class="mm-link">Rational Inequalities</a></li>
+                <li><a href="../Alg/SolveAbsValueEqns.html" class="mm-link">Absolute Value Equations</a></li>
+                <li><a href="../Alg/SolveAbsValueIneq.html" class="mm-link">Absolute Value Inequalities</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/Graphing_Functions.html" class="mm-link">Graphing and Functions</a>
+              <ul>
+                <li><a href="../Alg/Graphing.html" class="mm-link">Graphing</a></li>
+                <li><a href="../Alg/Lines.html" class="mm-link">Lines</a></li>
+                <li><a href="../Alg/Circles.html" class="mm-link">Circles</a></li>
+                <li><a href="../Alg/FunctionDefn.html" class="mm-link">The Definition of a Function</a></li>
+                <li><a href="../Alg/GraphFunctions.html" class="mm-link">Graphing Functions</a></li>
+                <li><a href="../Alg/CombineFunctions.html" class="mm-link">Combining Functions</a></li>
+                <li><a href="../Alg/InverseFunctions.html" class="mm-link">Inverse Functions</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/CommonGraphs.html" class="mm-link">Common Graphs</a>
+              <ul>
+                <li><a href="../Alg/Lines_Circles_PWF.html" class="mm-link">Lines, Circles and Piecewise Functions</a></li>
+                <li><a href="../Alg/Parabolas.html" class="mm-link">Parabolas</a></li>
+                <li><a href="../Alg/Ellipses.html" class="mm-link">Ellipses</a></li>
+                <li><a href="../Alg/Hyperbolas.html" class="mm-link">Hyperbolas</a></li>
+                <li><a href="../Alg/MiscFunctions.html" class="mm-link">Miscellaneous Functions</a></li>
+                <li><a href="../Alg/Transformations.html" class="mm-link">Transformations</a></li>
+                <li><a href="../Alg/Symmetry.html" class="mm-link">Symmetry</a></li>
+                <li><a href="../Alg/GraphRationalFcns.html" class="mm-link">Rational Functions</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/PolynomialFunctions.html" class="mm-link">Polynomial Functions</a>
+              <ul>
+                <li><a href="../Alg/DividingPolynomials.html" class="mm-link">Dividing Polynomials</a></li>
+                <li><a href="../Alg/ZeroesOfPolynomials.html" class="mm-link">Zeroes/Roots of Polynomials</a></li>
+                <li><a href="../Alg/GraphingPolynomials.html" class="mm-link">Graphing Polynomials</a></li>
+                <li><a href="../Alg/FindingZeroesOfPolynomials.html" class="mm-link">Finding Zeroes of Polynomials</a></li>
+                <li><a href="../Alg/PartialFractions.html" class="mm-link">Partial Fractions</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/ExpAndLog.html" class="mm-link">Exponential and Logarithm Functions</a>
+              <ul>
+                <li><a href="../Alg/ExpFunctions.html" class="mm-link">Exponential Functions</a></li>
+                <li><a href="../Alg/LogFunctions.html" class="mm-link">Logarithm Functions</a></li>
+                <li><a href="../Alg/SolveExpEqns.html" class="mm-link">Solving Exponential Equations</a></li>
+                <li><a href="../Alg/SolveLogEqns.html" class="mm-link">Solving Logarithm Equations</a></li>
+                <li><a href="../Alg/ExpLogApplications.html" class="mm-link">Applications</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/Systems.html" class="mm-link">Systems of Equations</a>
+              <ul>
+                <li><a href="../Alg/SystemsTwoVrble.html" class="mm-link">Linear Systems with Two Variables</a></li>
+                <li><a href="../Alg/SystemsThreeVrble.html" class="mm-link">Linear Systems with Three Variables</a></li>
+                <li><a href="../Alg/AugmentedMatrix.html" class="mm-link">Augmented Matrices</a></li>
+                <li><a href="../Alg/AugmentedMatrixII.html" class="mm-link">More on the Augmented Matrix</a></li>
+                <li><a href="../Alg/NonlinearSystems.html" class="mm-link">Nonlinear Systems</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../CalcI/CalcI.html" class="mm-link">Calculus I</a>
+          <ul>
+            <li><a href="../CalcI/ReviewIntro.html" class="mm-link">Review</a>
+              <ul>
+                <li><a href="../CalcI/Functions.html" class="mm-link">Functions</a></li>
+                <li><a href="../CalcI/InverseFunctions.html" class="mm-link">Inverse Functions</a></li>
+                <li><a href="../CalcI/TrigFcns.html" class="mm-link">Trig Functions</a></li>
+                <li><a href="../CalcI/TrigEquations.html" class="mm-link">Solving Trig Equations</a></li>
+                <li><a href="../CalcI/TrigEquations_CalcI.html" class="mm-link">Trig Equations with Calculators, Part I</a></li>
+                <li><a href="../CalcI/TrigEquations_CalcII.html" class="mm-link">Trig Equations with Calculators, Part II</a></li>
+                <li><a href="../CalcI/ExpFunctions.html" class="mm-link">Exponential Functions</a></li>
+                <li><a href="../CalcI/LogFcns.html" class="mm-link">Logarithm Functions</a></li>
+                <li><a href="../CalcI/ExpLogEqns.html" class="mm-link">Exponential and Logarithm Equations</a></li>
+                <li><a href="../CalcI/CommonGraphs.html" class="mm-link">Common Graphs</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcI/limitsIntro.html" class="mm-link">Limits</a>
+              <ul>
+                <li><a href="../CalcI/Tangents_Rates.html" class="mm-link">Tangent Lines and Rates of Change</a></li>
+                <li><a href="../CalcI/TheLimit.html" class="mm-link">The Limit</a></li>
+                <li><a href="../CalcI/OneSidedLimits.html" class="mm-link">One-Sided Limits</a></li>
+                <li><a href="../CalcI/LimitsProperties.html" class="mm-link">Limit Properties</a></li>
+                <li><a href="../CalcI/ComputingLimits.html" class="mm-link">Computing Limits</a></li>
+                <li><a href="../CalcI/InfiniteLimits.html" class="mm-link">Infinite Limits</a></li>
+                <li><a href="../CalcI/LimitsAtInfinityI.html" class="mm-link">Limits At Infinity, Part I</a></li>
+                <li><a href="../CalcI/LimitsAtInfinityII.html" class="mm-link">Limits At Infinity, Part II</a></li>
+                <li><a href="../CalcI/Continuity.html" class="mm-link">Continuity</a></li>
+                <li><a href="../CalcI/DefnOfLimit.html" class="mm-link">The Definition of the Limit</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcI/DerivativeIntro.html" class="mm-link">Derivatives</a>
+              <ul>
+                <li><a href="../CalcI/DefnOfDerivative.html" class="mm-link">The Definition of the Derivative</a></li>
+                <li><a href="../CalcI/DerivativeInterp.html" class="mm-link">Interpretation of the Derivative</a></li>
+                <li><a href="../CalcI/DiffFormulas.html" class="mm-link">Differentiation Formulas</a></li>
+                <li><a href="../CalcI/ProductQuotientRule.html" class="mm-link">Product and Quotient Rule</a></li>
+                <li><a href="../CalcI/DiffTrigFcns.html" class="mm-link">Derivatives of Trig Functions</a></li>
+                <li><a href="../CalcI/DiffExpLogFcns.html" class="mm-link">Derivatives of Exponential and Logarithm Functions</a></li>
+                <li><a href="../CalcI/DiffInvTrigFcns.html" class="mm-link">Derivatives of Inverse Trig Functions</a></li>
+                <li><a href="../CalcI/DiffHyperFcns.html" class="mm-link">Derivatives of Hyperbolic Functions</a></li>
+                <li><a href="../CalcI/ChainRule.html" class="mm-link">Chain Rule</a></li>
+                <li><a href="../CalcI/ImplicitDIff.html" class="mm-link">Implicit Differentiation</a></li>
+                <li><a href="../CalcI/RelatedRates.html" class="mm-link">Related Rates</a></li>
+                <li><a href="../CalcI/HigherOrderDerivatives.html" class="mm-link">Higher Order Derivatives</a></li>
+                <li><a href="../CalcI/LogDiff.html" class="mm-link">Logarithmic Differentiation</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcI/DerivAppsIntro.html" class="mm-link">Applications of Derivatives</a>
+              <ul>
+                <li><a href="../CalcI/RateOfChange.html" class="mm-link">Rates of Change</a></li>
+                <li><a href="../CalcI/CriticalPoints.html" class="mm-link">Critical Points</a></li>
+                <li><a href="../CalcI/MinMaxValues.html" class="mm-link">Minimum and Maximum Values</a></li>
+                <li><a href="../CalcI/AbsExtrema.html" class="mm-link">Finding Absolute Extrema</a></li>
+                <li><a href="../CalcI/ShapeofGraphPtI.html" class="mm-link">The Shape of a Graph, Part I</a></li>
+                <li><a href="../CalcI/ShapeofGraphPtII.html" class="mm-link">The Shape of a Graph, Part II</a></li>
+                <li><a href="../CalcI/MeanValueTheorem.html" class="mm-link">The Mean Value Theorem</a></li>
+                <li><a href="../CalcI/Optimization.html" class="mm-link">Optimization</a></li>
+                <li><a href="../CalcI/MoreOptimization.html" class="mm-link">More Optimization Problems</a></li>
+                <li><a href="../CalcI/LHospitalsRule.html" class="mm-link">L'Hospital's Rule and Indeterminate Forms</a></li>
+                <li><a href="../CalcI/LinearApproximations.html" class="mm-link">Linear Approximations</a></li>
+                <li><a href="../CalcI/Differentials.html" class="mm-link">Differentials</a></li>
+                <li><a href="../CalcI/NewtonsMethod.html" class="mm-link">Newton's Method</a></li>
+                <li><a href="../CalcI/BusinessApps.html" class="mm-link">Business Applications</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcI/IntegralsIntro.html" class="mm-link">Integrals</a>
+              <ul>
+                <li><a href="../CalcI/IndefiniteIntegrals.html" class="mm-link">Indefinite Integrals</a></li>
+                <li><a href="../CalcI/ComputingIndefiniteIntegrals.html" class="mm-link">Computing Indefinite Integrals</a></li>
+                <li><a href="../CalcI/SubstitutionRuleIndefinite.html" class="mm-link">Substitution Rule for Indefinite Integrals</a></li>
+                <li><a href="../CalcI/SubstitutionRuleIndefinitePtII.html" class="mm-link">More Substitution Rule</a></li>
+                <li><a href="../CalcI/AreaProblem.html" class="mm-link">Area Problem</a></li>
+                <li><a href="../CalcI/DefnOfDefiniteIntegral.html" class="mm-link">Definition of the Definite Integral</a></li>
+                <li><a href="../CalcI/ComputingDefiniteIntegrals.html" class="mm-link">Computing Definite Integrals</a></li>
+                <li><a href="../CalcI/SubstitutionRuleDefinite.html" class="mm-link">Substitution Rule for Definite Integrals</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcI/IntAppsIntro.html" class="mm-link">Applications of Integrals</a>
+              <ul>
+                <li><a href="../CalcI/AvgFcnValue.html" class="mm-link">Average Function Value</a></li>
+                <li><a href="../CalcI/AreaBetweenCurves.html" class="mm-link">Area Between Curves</a></li>
+                <li><a href="../CalcI/VolumeWithRings.html" class="mm-link">Volumes of Solids of Revolution / Method of Rings</a></li>
+                <li><a href="../CalcI/VolumeWithCylinder.html" class="mm-link">Volumes of Solids of Revolution/Method of Cylinders</a></li>
+                <li><a href="../CalcI/MoreVolume.html" class="mm-link">More Volume Problems</a></li>
+                <li><a href="../CalcI/Work.html" class="mm-link">Work</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcI/ExtrasIntro.html" class="mm-link">Extras</a>
+              <ul>
+                <li><a href="../CalcI/LimitProofs.html" class="mm-link">Proof of Various Limit Properties</a></li>
+                <li><a href="../CalcI/DerivativeProofs.html" class="mm-link">Proof of Various Derivative Properties</a></li>
+                <li><a href="../CalcI/ProofTrigDeriv.html" class="mm-link">Proof of Trig Limits</a></li>
+                <li><a href="../CalcI/DerivativeAppsProofs.html" class="mm-link">Proofs of Derivative Applications Facts</a></li>
+                <li><a href="../CalcI/ProofIntProp.html" class="mm-link">Proof of Various Integral Properties </a></li>
+                <li><a href="../CalcI/Area_Volume_Formulas.html" class="mm-link">Area and Volume Formulas</a></li>
+                <li><a href="../CalcI/TypesOfInfinity.html" class="mm-link">Types of Infinity</a></li>
+                <li><a href="../CalcI/SummationNotation.html" class="mm-link">Summation Notation</a></li>
+                <li><a href="../CalcI/ConstantofIntegration.html" class="mm-link">Constant of Integration</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../CalcII/CalcII.html" class="mm-link">Calculus II</a>
+          <ul>
+            <li><a href="../CalcII/IntTechIntro.html" class="mm-link">Integration Techniques</a>
+              <ul>
+                <li><a href="../CalcII/IntegrationByParts.html" class="mm-link">Integration by Parts</a></li>
+                <li><a href="../CalcII/IntegralsWithTrig.html" class="mm-link">Integrals Involving Trig Functions</a></li>
+                <li><a href="../CalcII/TrigSubstitutions.html" class="mm-link">Trig Substitutions</a></li>
+                <li><a href="../CalcII/PartialFractions.html" class="mm-link">Partial Fractions</a></li>
+                <li><a href="../CalcII/IntegralsWithRoots.html" class="mm-link">Integrals Involving Roots</a></li>
+                <li><a href="../CalcII/IntegralsWithQuadratics.html" class="mm-link">Integrals Involving Quadratics</a></li>
+                <li><a href="../CalcII/IntegrationStrategy.html" class="mm-link">Integration Strategy</a></li>
+                <li><a href="../CalcII/ImproperIntegrals.html" class="mm-link">Improper Integrals</a></li>
+                <li><a href="../CalcII/ImproperIntegralsCompTest.html" class="mm-link">Comparison Test for Improper Integrals</a></li>
+                <li><a href="../CalcII/ApproximatingDefIntegrals.html" class="mm-link">Approximating Definite Integrals</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/IntAppsIntro.html" class="mm-link">Applications of Integrals</a>
+              <ul>
+                <li><a href="../CalcII/ArcLength.html" class="mm-link">Arc Length</a></li>
+                <li><a href="../CalcII/SurfaceArea.html" class="mm-link">Surface Area</a></li>
+                <li><a href="../CalcII/CenterOfMass.html" class="mm-link">Center of Mass</a></li>
+                <li><a href="../CalcII/HydrostaticPressure.html" class="mm-link">Hydrostatic Pressure</a></li>
+                <li><a href="../CalcII/Probability.html" class="mm-link">Probability</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/ParametricIntro.html" class="mm-link">Parametric Equations and Polar Coordinates</a>
+              <ul>
+                <li><a href="../CalcII/ParametricEqn.html" class="mm-link">Parametric Equations and Curves</a></li>
+                <li><a href="../CalcII/ParaTangent.html" class="mm-link">Tangents with Parametric Equations</a></li>
+                <li><a href="../CalcII/ParaArea.html" class="mm-link">Area with Parametric Equations</a></li>
+                <li><a href="../CalcII/ParaArcLength.html" class="mm-link">Arc Length with Parametric Equations</a></li>
+                <li><a href="../CalcII/ParaSurfaceArea.html" class="mm-link">Surface Area with Parametric Equations</a></li>
+                <li><a href="../CalcII/PolarCoordinates.html" class="mm-link">Polar Coordinates</a></li>
+                <li><a href="../CalcII/PolarTangents.html" class="mm-link">Tangents with Polar Coordinates</a></li>
+                <li><a href="../CalcII/PolarArea.html" class="mm-link">Area with Polar Coordinates</a></li>
+                <li><a href="../CalcII/PolarArcLength.html" class="mm-link">Arc Length with Polar Coordinates</a></li>
+                <li><a href="../CalcII/PolarSurfaceArea.html" class="mm-link">Surface Area with Polar Coordinates</a></li>
+                <li><a href="../CalcII/ArcLength_SurfaceArea.html" class="mm-link">Arc Length and Surface Area Revisited</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/SeriesIntro.html" class="mm-link">Series & Sequences</a>
+              <ul>
+                <li><a href="../CalcII/Sequences.html" class="mm-link">Sequences</a></li>
+                <li><a href="../CalcII/MoreSequences.html" class="mm-link">More on Sequences</a></li>
+                <li><a href="../CalcII/Series_Basics.html" class="mm-link">Series - The Basics</a></li>
+                <li><a href="../CalcII/ConvergenceOfSeries.html" class="mm-link">Convergence/Divergence of Series</a></li>
+                <li><a href="../CalcII/Series_Special.html" class="mm-link">Special Series</a></li>
+                <li><a href="../CalcII/IntegralTest.html" class="mm-link">Integral Test</a></li>
+                <li><a href="../CalcII/SeriesCompTest.html" class="mm-link">Comparison Test/Limit Comparison Test</a></li>
+                <li><a href="../CalcII/AlternatingSeries.html" class="mm-link">Alternating Series Test</a></li>
+                <li><a href="../CalcII/AbsoluteConvergence.html" class="mm-link">Absolute Convergence</a></li>
+                <li><a href="../CalcII/RatioTest.html" class="mm-link">Ratio Test</a></li>
+                <li><a href="../CalcII/RootTest.html" class="mm-link">Root Test</a></li>
+                <li><a href="../CalcII/SeriesStrategy.html" class="mm-link">Strategy for Series</a></li>
+                <li><a href="../CalcII/EstimatingSeries.html" class="mm-link">Estimating the Value of a Series</a></li>
+                <li><a href="../CalcII/PowerSeries.html" class="mm-link">Power Series</a></li>
+                <li><a href="../CalcII/PowerSeriesandFunctions.html" class="mm-link">Power Series and Functions</a></li>
+                <li><a href="../CalcII/TaylorSeries.html" class="mm-link">Taylor Series</a></li>
+                <li><a href="../CalcII/TaylorSeriesApps.html" class="mm-link">Applications of Series</a></li>
+                <li><a href="../CalcII/BinomialSeries.html" class="mm-link">Binomial Series</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/VectorsIntro.html" class="mm-link">Vectors</a>
+              <ul>
+                <li><a href="../CalcII/Vectors_Basics.html" class="mm-link">Vectors - The Basics</a></li>
+                <li><a href="../CalcII/VectorArithmetic.html" class="mm-link">Vector Arithmetic</a></li>
+                <li><a href="../CalcII/DotProduct.html" class="mm-link">Dot Product</a></li>
+                <li><a href="../CalcII/CrossProduct.html" class="mm-link">Cross Product</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/3DSpace.html" class="mm-link">3-Dimensional Space</a>
+              <ul>
+                <li><a href="../CalcII/3DCoords.html" class="mm-link">The 3-D Coordinate System</a></li>
+                <li><a href="../CalcII/EqnsOfLines.html" class="mm-link">Equations of Lines</a></li>
+                <li><a href="../CalcII/EqnsOfPlanes.html" class="mm-link">Equations of Planes</a></li>
+                <li><a href="../CalcII/QuadricSurfaces.html" class="mm-link">Quadric Surfaces</a></li>
+                <li><a href="../CalcII/MultiVrbleFcns.html" class="mm-link">Functions of Several Variables</a></li>
+                <li><a href="../CalcII/VectorFunctions.html" class="mm-link">Vector Functions</a></li>
+                <li><a href="../CalcII/VectorFcnsCalculus.html" class="mm-link">Calculus with Vector Functions</a></li>
+                <li><a href="../CalcII/TangentNormalVectors.html" class="mm-link">Tangent, Normal and Binormal Vectors</a></li>
+                <li><a href="../CalcII/VectorArcLength.html" class="mm-link">Arc Length with Vector Functions</a></li>
+                <li><a href="../CalcII/Curvature.html" class="mm-link">Curvature</a></li>
+                <li><a href="../CalcII/Velocity_Acceleration.html" class="mm-link">Velocity and Acceleration</a></li>
+                <li><a href="../CalcII/CylindricalCoords.html" class="mm-link">Cylindrical Coordinates</a></li>
+                <li><a href="../CalcII/SphericalCoords.html" class="mm-link">Spherical Coordinates</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../CalcIII/CalcIII.html" class="mm-link">Calculus III</a>
+          <ul>
+            <li><a href="../CalcIII/3DSpace.html" class="mm-link">3-Dimensional Space</a>
+              <ul>
+                <li><a href="../CalcIII/3DCoords.html" class="mm-link">The 3-D Coordinate System</a></li>
+                <li><a href="../CalcIII/EqnsOfLines.html" class="mm-link">Equations of Lines</a></li>
+                <li><a href="../CalcIII/EqnsOfPlanes.html" class="mm-link">Equations of Planes</a></li>
+                <li><a href="../CalcIII/QuadricSurfaces.html" class="mm-link">Quadric Surfaces</a></li>
+                <li><a href="../CalcIII/MultiVrbleFcns.html" class="mm-link">Functions of Several Variables</a></li>
+                <li><a href="../CalcIII/VectorFunctions.html" class="mm-link">Vector Functions</a></li>
+                <li><a href="../CalcIII/VectorFcnsCalculus.html" class="mm-link">Calculus with Vector Functions</a></li>
+                <li><a href="../CalcIII/TangentNormalVectors.html" class="mm-link">Tangent, Normal and Binormal Vectors</a></li>
+                <li><a href="../CalcIII/VectorArcLength.html" class="mm-link">Arc Length with Vector Functions</a></li>
+                <li><a href="../CalcIII/Curvature.html" class="mm-link">Curvature</a></li>
+                <li><a href="../CalcIII/Velocity_Acceleration.html" class="mm-link">Velocity and Acceleration</a></li>
+                <li><a href="../CalcIII/CylindricalCoords.html" class="mm-link">Cylindrical Coordinates</a></li>
+                <li><a href="../CalcIII/SphericalCoords.html" class="mm-link">Spherical Coordinates</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/PartialDerivsIntro.html" class="mm-link">Partial Derivatives</a>
+              <ul>
+                <li><a href="../CalcIII/Limits.html" class="mm-link">Limits</a></li>
+                <li><a href="../CalcIII/PartialDerivatives.html" class="mm-link">Partial Derivatives</a></li>
+                <li><a href="../CalcIII/PartialDerivInterp.html" class="mm-link">Interpretations of Partial Derivatives</a></li>
+                <li><a href="../CalcIII/HighOrderPartialDerivs.html" class="mm-link">Higher Order Partial Derivatives</a></li>
+                <li><a href="../CalcIII/Differentials.html" class="mm-link">Differentials</a></li>
+                <li><a href="../CalcIII/ChainRule.html" class="mm-link">Chain Rule</a></li>
+                <li><a href="../CalcIII/DirectionalDeriv.html" class="mm-link">Directional Derivatives</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/PartialDerivAppsIntro.html" class="mm-link">Applications of Partial Derivatives</a>
+              <ul>
+                <li><a href="../CalcIII/TangentPlanes.html" class="mm-link">Tangent Planes and Linear Approximations</a></li>
+                <li><a href="../CalcIII/GradientVectorTangentPlane.html" class="mm-link">Gradient Vector, Tangent Planes and Normal Lines</a></li>
+                <li><a href="../CalcIII/RelativeExtrema.html" class="mm-link">Relative Minimums and Maximums</a></li>
+                <li><a href="../CalcIII/AbsoluteExtrema.html" class="mm-link">Absolute Minimums and Maximums</a></li>
+                <li><a href="../CalcIII/LagrangeMultipliers.html" class="mm-link">Lagrange Multipliers</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/MultipleIntegralsIntro.html" class="mm-link">Multiple Integrals</a>
+              <ul>
+                <li><a href="../CalcIII/DoubleIntegrals.html" class="mm-link">Double Integrals</a></li>
+                <li><a href="../CalcIII/IteratedIntegrals.html" class="mm-link">Iterated Integrals</a></li>
+                <li><a href="../CalcIII/DIGeneralRegion.html" class="mm-link">Double Integrals over General Regions</a></li>
+                <li><a href="../CalcIII/DIPolarCoords.html" class="mm-link">Double Integrals in Polar Coordinates</a></li>
+                <li><a href="../CalcIII/TripleIntegrals.html" class="mm-link">Triple Integrals</a></li>
+                <li><a href="../CalcIII/TICylindricalCoords.html" class="mm-link">Triple Integrals in Cylindrical Coordinates</a></li>
+                <li><a href="../CalcIII/TISphericalCoords.html" class="mm-link">Triple Integrals in Spherical Coordinates</a></li>
+                <li><a href="../CalcIII/ChangeOfVariables.html" class="mm-link">Change of Variables</a></li>
+                <li><a href="../CalcIII/SurfaceArea.html" class="mm-link">Surface Area</a></li>
+                <li><a href="../CalcIII/Area_Volume.html" class="mm-link">Area and Volume Revisited</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/LineIntegralsIntro.html" class="mm-link">Line Integrals</a>
+              <ul>
+                <li><a href="../CalcIII/VectorFields.html" class="mm-link">Vector Fields</a></li>
+                <li><a href="../CalcIII/LineIntegralsPtI.html" class="mm-link">Line Integrals - Part I</a></li>
+                <li><a href="../CalcIII/LineIntegralsPtII.html" class="mm-link">Line Integrals - Part II</a></li>
+                <li><a href="../CalcIII/LineIntegralsVectorFields.html" class="mm-link">Line Integrals of Vector Fields</a></li>
+                <li><a href="../CalcIII/FundThmLineIntegrals.html" class="mm-link">Fundamental Theorem for Line Integrals</a></li>
+                <li><a href="../CalcIII/ConservativeVectorField.html" class="mm-link">Conservative Vector Fields</a></li>
+                <li><a href="../CalcIII/GreensTheorem.html" class="mm-link">Green's Theorem</a></li>
+                <li><a href="../CalcIII/CurlDivergence.html" class="mm-link">Curl and Divergence</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/SurfaceIntegralsIntro.html" class="mm-link">Surface Integrals</a>
+              <ul>
+                <li><a href="../CalcIII/ParametricSurfaces.html" class="mm-link">Parametric Surfaces</a></li>
+                <li><a href="../CalcIII/SurfaceIntegrals.html" class="mm-link">Surface Integrals</a></li>
+                <li><a href="../CalcIII/SurfIntVectorField.html" class="mm-link">Surface Integrals of Vector Fields</a></li>
+                <li><a href="../CalcIII/StokesTheorem.html" class="mm-link">Stokes' Theorem</a></li>
+                <li><a href="../CalcIII/DivergenceTheorem.html" class="mm-link">Divergence Theorem</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="DE.html" class="mm-link">Differential Equations</a>
+          <ul>
+            <li><a href="IntroBasic.html" class="mm-link">Basic Concepts</a>
+              <ul>
+                <li><a href="Definitions.html" class="mm-link">Definitions</a></li>
+                <li><a href="DirectionFields.html" class="mm-link">Direction Fields</a></li>
+                <li><a href="FinalThoughts.html" class="mm-link">Final Thoughts</a></li>
+              </ul>
+            </li>
+            <li><a href="IntroFirstOrder.html" class="mm-link">First Order DE's</a>
+              <ul>
+                <li><a href="Linear.html" class="mm-link">Linear Equations</a></li>
+                <li><a href="Separable.html" class="mm-link">Separable Equations</a></li>
+                <li><a href="Exact.html" class="mm-link">Exact Equations</a></li>
+                <li><a href="Bernoulli.html" class="mm-link">Bernoulli Differential Equations</a></li>
+                <li><a href="Substitutions.html" class="mm-link">Substitutions</a></li>
+                <li><a href="IoV.html" class="mm-link">Intervals of Validity</a></li>
+                <li><a href="Modeling.html" class="mm-link">Modeling with First Order DE's</a></li>
+                <li><a href="EquilibriumSolutions.html" class="mm-link">Equilibrium Solutions</a></li>
+                <li><a href="EulersMethod.html" class="mm-link">Euler's Method</a></li>
+              </ul>
+            </li>
+            <li><a href="IntroSecondOrder.html" class="mm-link">Second Order DE's</a>
+              <ul>
+                <li><a href="SecondOrderConcepts.html" class="mm-link">Basic Concepts</a></li>
+                <li><a href="RealRoots.html" class="mm-link">Real & Distinct Roots</a></li>
+                <li><a href="ComplexRoots.html" class="mm-link">Complex Roots</a></li>
+                <li><a href="RepeatedRoots.html" class="mm-link">Repeated Roots</a></li>
+                <li><a href="ReductionofOrder.html" class="mm-link">Reduction of Order</a></li>
+                <li><a href="FundamentalSetsofSolutions.html" class="mm-link">Fundamental Sets of Solutions</a></li>
+                <li><a href="Wronskian.html" class="mm-link">More on the  Wronskian</a></li>
+                <li><a href="NonhomogeneousDE.html" class="mm-link">Nonhomogeneous Differential Equations</a></li>
+                <li><a href="UndeterminedCoefficients.html" class="mm-link">Undetermined Coefficients</a></li>
+                <li><a href="VariationofParameters.html" class="mm-link">Variation of Parameters</a></li>
+                <li><a href="Vibrations.html" class="mm-link">Mechanical Vibrations</a></li>
+              </ul>
+            </li>
+            <li><a href="LaplaceIntro.html" class="mm-link">Laplace Transforms</a>
+              <ul>
+                <li><a href="LaplaceDefinition.html" class="mm-link">The Definition</a></li>
+                <li><a href="LaplaceTransforms.html" class="mm-link">Laplace Transforms</a></li>
+                <li><a href="InverseTransforms.html" class="mm-link">Inverse Laplace Transforms</a></li>
+                <li><a href="StepFunctions.html" class="mm-link">Step Functions</a></li>
+                <li><a href="IVPWithLaplace.html" class="mm-link">Solving IVP's with Laplace Transforms</a></li>
+                <li><a href="IVPWithNonConstantCoefficient.html" class="mm-link">Nonconstant Coefficient IVP's</a></li>
+                <li><a href="IVPWithStepFunction.html" class="mm-link">IVP's With Step Functions</a></li>
+                <li><a href="DiracDeltaFunction.html" class="mm-link">Dirac Delta Function</a></li>
+                <li><a href="ConvolutionIntegrals.html" class="mm-link">Convolution Integrals</a></li>
+                <li><a href="Laplace_Table.html" class="mm-link">Table Of Laplace Transforms</a></li>
+              </ul>
+            </li>
+            <li><a href="SystemsIntro.html" class="mm-link">Systems of DE's</a>
+              <ul>
+                <li><a href="LA_Systems.html" class="mm-link">Review : Systems of Equations</a></li>
+                <li><a href="LA_Matrix.html" class="mm-link">Review : Matrices & Vectors</a></li>
+                <li><a href="LA_Eigen.html" class="mm-link">Review : Eigenvalues & Eigenvectors</a></li>
+                <li><a href="SystemsDE.html" class="mm-link">Systems of Differential Equations</a></li>
+                <li><a href="SolutionsToSystems.html" class="mm-link">Solutions to Systems</a></li>
+                <li><a href="PhasePlane.html" class="mm-link">Phase Plane</a></li>
+                <li><a href="RealEigenvalues.html" class="mm-link">Real Eigenvalues</a></li>
+                <li><a href="ComplexEigenvalues.html" class="mm-link">Complex Eigenvalues</a></li>
+                <li><a href="RepeatedEigenvalues.html" class="mm-link">Repeated Eigenvalues</a></li>
+                <li><a href="NonhomogeneousSystems.html" class="mm-link">Nonhomogeneous Systems</a></li>
+                <li><a href="SystemsLaplace.html" class="mm-link">Laplace Transforms</a></li>
+                <li><a href="SystemsModeling.html" class="mm-link">Modeling</a></li>
+              </ul>
+            </li>
+            <li><a href="SeriesIntro.html" class="mm-link">Series Solutions to DE's</a>
+              <ul>
+                <li><a href="PowerSeries.html" class="mm-link">Review : Power Series</a></li>
+                <li><a href="TaylorSeries.html" class="mm-link">Review : Taylor Series</a></li>
+                <li><a href="SeriesSolutions.html" class="mm-link">Series Solutions</a></li>
+                <li><a href="EulerEquations.html" class="mm-link">Euler Equations</a></li>
+              </ul>
+            </li>
+            <li><a href="IntroHigherOrder.html" class="mm-link">Higher Order Differential Equations</a>
+              <ul>
+                <li><a href="HOBasicConcepts.html" class="mm-link">Basic Concepts for <em>n</em><sup>th</sup> Order Linear Equations</a></li>
+                <li><a href="HOHomogeneousDE.html" class="mm-link">Linear Homogeneous Differential Equations</a></li>
+                <li><a href="HOUndeterminedCoeff.html" class="mm-link">Undetermined Coefficients</a></li>
+                <li><a href="HOVariationOfParam.html" class="mm-link">Variation of Parameters</a></li>
+                <li><a href="HOLaplaceTransforms.html" class="mm-link">Laplace Transforms</a></li>
+                <li><a href="HOSystems.html" class="mm-link">Systems of Differential Equations</a></li>
+                <li><a href="HOSeries.html" class="mm-link">Series Solutions</a></li>
+              </ul>
+            </li>
+            <li><a href="IntroBVP.html" class="mm-link">Boundary Value Problems &amp; Fourier Series</a>
+              <ul>
+                <li><a href="BoundaryValueProblem.html" class="mm-link">Boundary Value Problems</a></li>
+                <li><a href="BVPEvals.html" class="mm-link">Eigenvalues and Eigenfunctions</a></li>
+                <li><a href="PeriodicOrthogonal.html" class="mm-link">Periodic Functions &amp; Orthogonal Functions</a></li>
+                <li><a href="FourierSineSeries.html" class="mm-link">Fourier Sine Series</a></li>
+                <li><a href="FourierCosineSeries.html" class="mm-link">Fourier Cosine Series</a></li>
+                <li><a href="FourierSeries.html" class="mm-link">Fourier Series</a></li>
+                <li><a href="ConvergenceFourierSeries.html" class="mm-link">Convergence of Fourier Series</a></li>
+              </ul>
+            </li>
+            <li><a href="IntroPDE.html" class="mm-link">Partial Differential Equations </a>
+              <ul>
+                <li><a href="TheHeatEquation.html" class="mm-link">The Heat Equation</a></li>
+                <li><a href="TheWaveEquation.html" class="mm-link">The Wave Equation</a></li>
+                <li><a href="PDETerminology.html" class="mm-link">Terminology</a></li>
+                <li><a href="SeparationofVariables.html" class="mm-link">Separation of Variables</a></li>
+                <li><a href="SolvingHeatEquation.html" class="mm-link">Solving the Heat Equation</a></li>
+                <li><a href="HeatEqnNonZero.html" class="mm-link">Heat Equation with Non-Zero Temperature Boundaries</a></li>
+                <li><a href="LaplacesEqn.html" class="mm-link">Laplace's Equation</a></li>
+                <li><a href="VibratingString.html" class="mm-link">Vibrating String</a></li>
+                <li><a href="PDESummary.html" class="mm-link">Summary of Separation of Variables</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><span>Extras</span></li>
+        <li><a href="../../Extras/AlgebraTrigReview/AlgebraTrig.html" class="mm-link">Algebra &amp; Trig Review</a>
+          <ul>
+            <li><a href="../../Extras/AlgebraTrigReview/AlgebraIntro.html" class="mm-link">Algebra</a>
+              <ul>
+                <li><a href="../../Extras/AlgebraTrigReview/Exponents.html" class="mm-link">Exponents </a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/AbsoluteValue.html" class="mm-link">Absolute Value</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Radicals.html" class="mm-link">Radicals</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Rationalizing.html" class="mm-link">Rationalizing </a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Functions.html" class="mm-link">Functions </a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/MultPoly.html" class="mm-link">Multiplying Polynomials</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Factoring.html" class="mm-link">Factoring</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SimpRatExp.html" class="mm-link">Simplifying Rational Expressions</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Graphing.html" class="mm-link">Graphing and Common Graphs</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveEqnPtI.html" class="mm-link">Solving Equations, Part I</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveEqnPtII.html" class="mm-link">Solving Equations, Part II</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveSystems.html" class="mm-link">Solving Systems of Equations</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveIneq.html" class="mm-link">Solving Inequalities</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveAbsValue.html" class="mm-link">Absolute Value Equations and Inequalities</a></li>
+              </ul>
+            </li>
+            <li><a href="../../Extras/AlgebraTrigReview/TrigIntro.html" class="mm-link">Trigonometry</a>
+              <ul>
+                <li><a href="../../Extras/AlgebraTrigReview/TrigFunctions.html" class="mm-link">Trig Function Evaluation</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/TrigGraphs.html" class="mm-link">Graphs of Trig Functions</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/TrigFormulas.html" class="mm-link">Trig Formulas</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveTrigEqn.html" class="mm-link">Solving Trig Equations</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/InverseTrig.html" class="mm-link">Inverse Trig Functions</a></li>
+              </ul>
+            </li>
+            <li><a href="../../Extras/AlgebraTrigReview/ExpLogIntro.html" class="mm-link">Exponentials & Logarithms</a>
+              <ul>
+                <li><a href="../../Extras/AlgebraTrigReview/ExponentialFcns.html" class="mm-link">Basic Exponential Functions</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/LogarithmFcns.html" class="mm-link">Basic Logarithm Functions</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/LogProperties.html" class="mm-link">Logarithm Properties</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SimpLogs.html" class="mm-link">Simplifying Logarithms</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveExpEqn.html" class="mm-link">Solving Exponential Equations</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveLogEqn.html" class="mm-link">Solving Logarithm Equations</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../../Extras/CommonErrors/CommonMathErrors.html" class="mm-link">Common Math Errors</a>
+          <ul>
+            <li><a href="../../Extras/CommonErrors/GeneralErrors.html" class="mm-link">General Errors</a>
+            </li>
+            <li><a href="../../Extras/CommonErrors/AlgebraErrors.html" class="mm-link">Algebra Errors</a>
+            </li>
+            <li><a href="../../Extras/CommonErrors/TrigErrors.html" class="mm-link">Trig Errors</a>
+            </li>
+            <li><a href="../../Extras/CommonErrors/CommonErrors.html" class="mm-link">Common Errors</a>
+            </li>
+            <li><a href="../../Extras/CommonErrors/CalculusErrors.html" class="mm-link">Calculus Errors</a>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../../Extras/ComplexPrimer/ComplexNumbers.html" class="mm-link">Complex Number Primer</a>
+          <ul>
+            <li><a href="../../Extras/ComplexPrimer/Definition.html" class="mm-link">The Definition</a>
+            </li>
+            <li><a href="../../Extras/ComplexPrimer/Arithmetic.html" class="mm-link">Arithmetic</a>
+            </li>
+            <li><a href="../../Extras/ComplexPrimer/ConjugateModulus.html" class="mm-link">Conjugate and Modulus</a>
+            </li>
+            <li><a href="../../Extras/ComplexPrimer/Forms.html" class="mm-link">Polar and Exponential Forms</a>
+            </li>
+            <li><a href="../../Extras/ComplexPrimer/Roots.html" class="mm-link">Powers and Roots</a>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../../Extras/StudyMath/HowToStudyMath.html" class="mm-link">How To Study Math</a>
+          <ul>
+            <li><a href="../../Extras/StudyMath/GeneralTips.html" class="mm-link">General Tips</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/TakingNotes.html" class="mm-link">Taking Notes</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/GettingHelp.html" class="mm-link">Getting Help</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/Homework.html" class="mm-link">Doing Homework</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/ProblemSolving.html" class="mm-link">Problem Solving</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/StudyForExam.html" class="mm-link">Studying For an Exam</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/TakingExam.html" class="mm-link">Taking an Exam</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/Errors.html" class="mm-link">Learn From Your Errors</a>
+            </li>
+          </ul>
+        </li>
+
+        <li><span>Misc Links</span></li>
+        <li><a href="http://tutorial.math.lamar.edu/contact.aspx" class="mm-link">Contact Me</a></li>
+        <li><a href="../../links.html" class="mm-link">Links</a></li>
+        <li><a href="../../mathjax.html" class="mm-link">MathJax Help and Configuration</a></li>
+        <li><a href="../../mystudents.html" class="mm-link">My Students</a></li>
+        <li><a href="http://tutorial.math.lamar.edu/privacy.aspx" class="mm-link">Privacy Statement</a></li>
+        <li><a href="../../help.html" class="mm-link">Site Help & FAQ</a></li>
+        <li><a href="http://tutorial.math.lamar.edu/terms.aspx" class="mm-link">Terms of Use</a></li>
+      </ul>
+    </nav>
+
+
+
+    <div class="top-info-bar">
+      <span id="mobile-title" class="mobile-header-title header-title">Paul's Online Notes</span>
+      <br />
+      <span class="top-menu-breadcrumb">
+        <a href="../../index.html" id="breadcrumb_home_link" title="Go to Main Page">Home</a>
+        <span id="breadcrumb_h_b_sep_span">/ </span>
+        <a href="DE.html" id="breadcrumb_book_link" title="Go to Book Introduction">Differential Equations</a>
+        
+        <span id="breadcrumb_b_c_sep_span">/ </span>
+        <a href="IntroSecondOrder.html" id="breadcrumb_chapter_link" title="Go to Chapter Introduction">Second Order DE&#39;s</a>
+        
+        <span id="breadcrumb_section_span"> / Mechanical Vibrations</span>
+      </span>
+
+    </div>
+
+    
+
+    <div class="header-divider"></div>
+
+    <div class="content">  
+      
+      
+      <span id="SHLink_NoteMobile" class="SH-Link content-note-link-mobile">Show Mobile Notice</span>
+      <span id="SHImg_NoteMobile" class="fas fa-caret-right SH-padding content-note-link-mobile" aria-hidden="true"></span>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+
+      <span id="SHALink_S_Note" class="SH-Link SH-Hide SH-Bracket">Show All Notes</span>&nbsp;<span id="SHALink_H_Note" class="SH-Link SH-Hide SH-Bracket">Hide All Notes</span>
+      
+      
+      <div id="SHObj_NoteMobile" class="content-note-container content-note-container-mobile">
+        <div class="content-note-header">Mobile Notice</div>
+        <div class="content-note">You appear to be on a device with a "narrow" screen width (<em>i.e.</em> you are probably on a mobile phone).  Due to the nature of the mathematics on this site it is best views in landscape mode.  If your device is not in landscape mode many of the equations will run off the side of your device (should be able to scroll to see them) and some of the menu items will be cut off due to the narrow screen width.</div>
+      </div>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+
+      
+
+
+  <form method="post" action="http://tutorial.math.lamar.edu/Classes/DE/Vibrations.aspx" id="ctl00">
+<div class="aspNetHidden">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/9MM5jjDtKqsXvC/qbMTqrKPaxEnXk8cWvgbEke8GeOCHzjS/1d/7OAMiXIbgh4DhUHHcgNHi8X+hJnXRn3CrBAzYFETj8nwNXcttOGzSUR5ny+17S3qvVnWqlhAgGBgBJL2tPxTPPqUNP99aiOzuM+oj9rx4ZohKtzd1DvuSlhUc5WfLJ6N2iBHjTm/pjAwF9S2j4X2E1p60E4QxjFfqJT2ajnSeAiIc0HdbqQer2vMiU+n9119SZvrg9YegxYg7aKJy65NXZ0PNWohmp3kUFdRD0IjQ8Y7xJzjA39D21ZQWB04DcNNSBfgUX+IF3h09zQ82yPRJklTDiQ5GiYpaQJ9HWahxoqcqcNlODUUWoLaK3IDRxY35g7eQnsTrwbENnSUgHvQ8+z3hPADjcQx7rs4Pj59l9i24zDInkDjWN81w6gGQCJYiyO6N4LGHCg7NhRVB3zSXEUq7J9mL7RsK7zda1rpi1cfm+VnvfzOyWTDKLKUQ2DePzS27Hab7iMELqY/UhUifE6M+RhofO+gTNt/iOrFGuxLtf3uvnJ/w8xtrRWSRNtIEPZuKN5I3a4X3CEcRhd1LvxED54kZoecESmHwU9ac7ZzyT8iUYGzg21drEpw3TcTjIRTB4YksK33ossHeKlFqoJAREbdrxdMa7cE/+MbTkxgE9HOd5uR+uqZ56wk4R0/Qiv9WasxVIJwghusPeeignqDTDRgdcOHz4NDaSlHx3JoHuj1KU3nX0XPmpbbhbSMHh8LwbvQPUa8wYksUMsGOJ7flj3N6/9nWBEU9Ll78ozEGzDf98xrq3fgnJEKhO1OhSe5vjazEKV7LxUEF+SjN+PAiTCBbeC6Xm/+SrNlpCLdLZgiycnNC8gFPHLckPQNooZR2LX688kboTcSMZc9qI2JsBQfa2Rb81u8zOmilDjZfDWOLLt+xCob4W8WWvDSuQwTiaEqHV+9FWoMvHsZ0bhF/OybrF4iXYkUQA01cwM37WvI6H7qQfi4U+0wgJwboUZxYUmLQqUPUcUsxbCGVKh2CUT2q/Hqp1pvt4xBmyckgqQCBJp2j2aq92pH2i3bZQi/W9/6Mc/4qll++DtOK2ePYIsL48VFEEGes0suQUcRqEyJqi+nMtkV2O1aLRrpzGcQUbLUz5K6Cfu6K7NPbB6RtXc3ukpwPL7VIYLsxKvoAIg5x1yfgKrXDwmYRt3CQLa1W8dENm43sxXEq0WqOGpdsKPmDL/TDCGdmTUzULyf4NefzpiSbIQJ2uB1Q4yCBiGTNAmD05n3d6hnZXZ/Stj2GujOF5LNs1cDLi5peDweXD5Z3/lxmru3oQI+33eO62J48Gyjn/BCe8FhTC/Fcy38yoW2cItrZvJ2RK2RhQFL3ju7Ws2A5wcgbSlM7IK9YeyTqqgOoorhAgR+3cpnHAcj8GEyheqxWWvp0BFfQtgmwm22UthIDqKS83DQKdKt8Bie6PPzxM+2XIEUabqmFPxCSWlb59r3D5NG4dM2IVz8iWnNp4PFNklVX6vhQ+pCxlP2+djaF0q8zZYpxjDc84sqEAecZ4T8OTnqUyF4DNR8VbzpxYpU0KSMyyeeKe9+hHi9Hh9QL9rqDfxzVndF99vwAXL74lkKKp2rVW4rh/OXZuT5XaQswMdPUpIHC9yeiInIhV1Ili1gs86UZ/W3Iot/X9U2g0HDXdMPs2rsD86Dr3kRd2wjD84hkW3h4m78krKdcIzA1aE4VygiMEAjcwN0cPL2NONZAw/nB17J9z90PbmNMnGIbhdwPRVaRKDIWgXc7JXgScPXB29y/G2FNSzwaKf4yQ2gAMv/mIzdgBkonbLoxvLiX5588JsTzUxAhAGn4fsNV/JElIf4j5VlBSZfF9OD/PIDth655+Ct2HA/OZKchIVldZR7ikLJiZGFuxkrtNji8Vs44hxsVDxduoqGjciaVOY+XKyJer88vmVlihVJxyHjNSBeIs5yDK4mWunuiK/l4KhEfs2oOUr7S+H12JEEuyAtMyGwm7845fNqQ8LCI0C3AA2o/63oC6Sz/Q52EzssMSnE4cUM6mFd4sh0pht8lMbINvoj4rjRiXuZtUpp9PfaUUCdp4GGVFGed8wGWzVCPaOBPcha5pJc6PGk6CpFE1M+2/FQ2dYocHl1LywwWDuvK8E4CfIhVhjOc7f2iIifIed7gozJswX5sL97U/3pCbEPCKtAanQxzTSTwzUwph5Q1wqGV4ZrJS6T0VA9FNhhixJuHCDWMvulG1a3WYyIgV+hgY3SzWFWad0GBA5NUzjhyHnrtuc1s4Md2sRdJ4sUE4fssd/VFF4R57mIeC0/pz+Q7yR5NCPXmOGmByjdhrXDDuSAdFjx4fZaQStDG4Odv33jUARfzrnYqZrtHHAQFlaq/Kcr5tYeKgHkDGUzYMoyiudk98yvycUh5ZBmRbv+dQgKG7IJ0wqVIlZxx+sm7xj58i+zmjiWxz53S0V6ud9GBEGWIhhDeYanhHPHIQSthafr+CXzbqlJIFiiQkl+V0t0l7Y3CGiVrozqofGcTPyx0fuNHefsV2DbjCp9Qq8HSXGGSdY5PuoBf85j/OuAZTZp86aQ/xphlVrISkPq1Y2WJfXaGJfseU7+1uENp1seZ23mqL09s7apyX36+vJWzRCADflplHtF+eYHaXiAJznyBH4z6DiPrnyers8aVg92ynM94BGwa+/RnSGE8i0ikHqdTBWO2FX5l81nILTiqr7IJD1I0rpi2offNqrpcwkuwCGRJbrb0gncCvf2RxRavRlaDi3MshWhqqRuNOsju23ADNrfuMLSD9397pdZvgvnU+fmFEGzM3dhq++avGhVVhmdmUNqTGiVxC7FEZWgk/ccqQjGlSg2+z4+NxJO3Surve1tK56q66ZLkVbEFxcsJcXcEIPhikgNEvAqg9W9nLv4JqS6J+eldavzGUn56iXPYnhG+IHJr3RfDMvf0X+7xhRJnN3HRDnGF5j5qicPj+Z6b9TFcPRVrqJVQvaAPrO0aF8S5O61PFOUimDjqSJIUqzsHwgr6kO9H4edXyZBcP5y1c2LoK/v7kIFvW2+U6lGoudrIvcn3HZGpL55DgQE657/uJS1890Ah9O+Dxu1ahRySrprnSZ4HuZdQvWY1mlxb3ryb8nvWXUynx5CkFfc0/ezadiPrjciUrDdTtNUTp+eKACgbY3qM1K6jKnO3vcDwBC9kUx7elpQADXALzwltHDHIWhRFffqr16hRYqwXqy71Yz26xOEgNMuSPvNtvUfPYStElL61y68tBigpw/+sdDODdwN6ijJf62dbsTnuD5kYVuoptZJqUN1fV5IIam982i35pwdmAMFpmSMYuapwnJAV0R9X/nePerDIJTKVsmm5zjYwNiKdcU07f7prSybinDUFIRniTL1gctSUUPXdV/i9Y+rnDM1tYDslnKDyZXgtbnS69WgAxrAeJKUcE/a2l9M5QRv6VyYv/euVo87KNsnB0fI50Nap/1BQwII4a/DrjwmgfmUFDy0VoBsS9j2akgp6rSepqEG3COpIFYPGW+OrhGN25CA3HR6RsbP0steFL0tw4WQE0YwDifFgjtoJQxfZs59vZyKiPQrHQwH/0kVPf5FCoa/z0jnDGvVwDd2s873l7w7XKYFuNcsHe8dLB9Ue7V8F/dNBnN+d3aCr41OozP3OcgVQ10AYxfQKulCPPRdVVFzNTALriz89dT4W3AfAPNqCZ8V7op4bzSHgr9aNVw7bKo8iPGhKHy0gYZZv3pfMhNnadpT+/I84zBZ+92BC+Z7wS8u6mLxC+c4L5gaN/7S5hlT1FqzxEBwAxeklO9JzfJ0Zh210fY/yo4PfQmZ7TSg84n8lFalnodLDUS/xfQ6oo7ISrvF/iJm5ECjScZTlmmCta4pvR5pxqtEdm/JKcncG+QoZXw2RBjurL11p6MNEKwp44xi5yMr2CX8PZzUGm9H968SnJUckq3jt6SedHDNSOy0KUhfHZPuw4A/8OxmXTV9uVM8ETWbFgTT1MvWlXxuIhX3IMylsNMl5n7qcMK/eBog21VC+0miHgPmfl7nYYvKp/fSotblw6VhdVAuWZqvWYzVegr1PflPZjSE5MtOewvMmyfrLBGlWt8ItPKr2IR0dJ/bDD31ZG3CjwjRR0sNqQpNOf41kKuXKe/0CslN5+1PcFA+9NbGjSz1Dsq4uB9PxUdXDaN5HGrlrgjXXMb7WDo+ybg1S2GISpw0YhAgduvo1xDqQaWFO2Ichp/p/czomVNNmGHmEj3koBhlQP2zyn/b9bo1AVmlIPAZYOHYDfRdPI0giVkYUfHCbWCSTf9Kt1x6Y5smENKqs+rhhtqnyyy+f3RWcBLadHdUjCaZfSKAgp/hc/yGgVfccuCZUpix2J6e0TSrNwh3YNfRPu1T+fJiMI9mfL+VoAlRgoh0aWmbbuUv2DgU3KwxLhS1vH4SIUd+7U4F9AQYG7u2UcV3E20QBlo75YzegiskMlZgVEvuhg6vFMUwuBC9snyLo3SHkXhQDyFsR5MT6JGAsTuK7muX2wEmbk5PDzYkjZyQGDIN27UPfh5IMQyXDvRTszBimvfw7UTEYLtUXJoAu8tKT3pLHtY5aDqb3vDHrTp8bsSw2djU52EPAd+Wf7GkSMYJlxK9Djsv3S25NwdVGYP+sXRk8uYFyaynpX42vokxAE+HwFvhZNxgSRxmqpfvPKyg9IB+XHL8fIxtVQk/9F3m0YxGkFAQtUjWghvMNyMWrp2EV7cbE4g5Vp7oVSIVFSBChqeOHnMt0fHhX47kHd9HoeTGZ5M1Vs1UviI0NtvwoCv/y2JWw6SqweUOmE5dyKfoaNMxtqHyzT2lXRHyhhCJYUyU1rzsOVv3cpkVSEX2gB/tTg18AccZJoxhvsxLzylGPn8FO/f85OBF979R4AD0xrcsLzQ9xHvGURCpsCRWjQ4V/x60Mxjga3GMce1brOjlegDxZCiprFqZWR3at9ML7ReD+siv3r746USgPHoKG3RM3AE5BGWeE3C7VOUNC215lyHSY8Z9pWQxr7ZEYywOVcMZop4ygjS3qywwDjLBfzerfb0Imuk7BILfFl1QWcHu8Qq4c/sOEPOenfvt25w+GU5iSqyZOb8rjXviZUtITGe1oZlI6sZIpYbiFTCWAgcxCd/ktIUmDqfBItrochPHXsCEZUUQ5Se2gSrWeV+L24o+5Y0OVFvsqb7fdL3F0Mk29N7dSEkV64KpzB03iaxpacXQiRjA/ER43jTYqsshSWTZhgCq1K1+1IbKsatr5Cvj9RBfS1RyLBzoeDWm9j8PoexqFNu/lbwIEn0E7GBPXhYGitpwAO/OMb4EvlInlGGsH5vaDtANjy+WaGY=" />
+</div>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="894797FB" />
+</div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </form>
+
+  <h3>Section 3-11 : Mechanical Vibrations</h3>
+    
+    <p>It’s now time to take a look at an application of second order differential equations.  We’re going to take a look at mechanical vibrations.  In particular we are going to look at a mass that is hanging from a spring.</p>
+    
+    <p>Vibrations can occur in pretty much all branches of engineering and so what we’re going to be doing here can be easily adapted to other situations, usually with just a change in notation.</p>
+    
+    <p>Let’s get the situation setup.  We are going to start with a spring of length \(l\), called the natural length, and we’re going to hook an object with mass \(m\) up to it.  When the object is attached to the spring the spring will stretch a length of \(L\).  We will call the equilibrium position the position of the center of gravity for the object as it hangs on the spring with no movement.</p>
+    
+    <p>Below is sketch of the spring with and without the object attached to it.</p>
+    
+     <div class="center-div"><img alt="There are two sketches in this image.  On the left is a (bad) sketch of a spring that is hanging from a horizontal bar/line.  The spring has no object attached to it and is shown to have a length of “l”.  On the right is the same spring only this one has a object with mass m attacked to it.  With the object attached to it the spring will be stretched a distance of “L”.  From the mass a small horizontal line (to the right of the mass) is labeled “u=0”.  There is a downward pointing arrow that originates from this small line that is labeled “Positive Direction”." height="317" src="http://tutorial.math.lamar.edu/Classes/DE/Vibrations_Files/image001.png" width="398" /></div>
+    
+    <p>As denoted in the sketch we are going to assume that all forces, velocities, and displacements in the downward direction will be positive.  All forces, velocities, and displacements in the upward direction will be negative.</p>
+    
+    <p>Also, as shown in the sketch above, we will measure all displacement of the mass from its equilibrium position.  Therefore, the \(u = 0\) position will correspond to the center of gravity for the mass as it hangs on the spring and is at rest (<em>i.e.</em> no movement).</p>
+    
+    <p>Now, we need to develop a differential equation that will give the displacement of the object at any time \(t\).  First, recall Newton’s Second Law of Motion.</p>
+    
+        \[ma = F\]
+    <p>In this case we will use the second derivative of the displacement, \(u\), for the acceleration and so Newton<’s Second Law becomes,</p>
+    
+        \[mu'' = F\left( {t,u,u'} \right)\]
+    
+    <p>We now need to determine all the forces that will act upon the object.  There are four forces that we will assume act upon the object.  Two that will always act on the object and two that may or may not act upon the object.</p>
+    
+    <p>Here is a list of the forces that will act upon the object.</p>
+    
+    <ol class="general-list">
+      <li><strong>Gravity, \(F_{g}\)</strong>
+
+    <p>The force due to gravity will always act upon the object of course.  This force is</p>
+    
+        \[{F_g} = mg\]
+      </li>
+      <li><strong>Spring, \(F_{s}\)</strong>
+    
+    <p>We are going to assume that Hooke’s Law will govern the force that the spring exerts on the object.  This force will always be present as well and is</p>
+    
+        \[{F_s} =  - k\left( {L + u} \right)\]
+    
+    <p>Hooke’s Law tells us that the force exerted by a spring will be the spring constant, \(k &gt; 0\), times the displacement of the spring from its natural length.  For our set up the displacement from the spring’s natural length is \(L + u\) and the minus sign is in there to make sure that the force always has the correct direction.</p>
+    
+    <p>Let’s make sure that this force does what we expect it to.  If the object is at rest in its equilibrium position the displacement is \(L\) and the force is simply \(F_{s} = –kL\) which will act in the upward position as it should since the spring has been stretched from its natural length.</p>
+    
+    <p>If the spring has been stretched further down from the equilibrium position then \(L + u\) will be positive and \(F_{s}\) will be negative acting to pull the object back up as it should be.</p>
+    
+    <p>Next, if the object has been moved up past its equilibrium point, but not yet to its natural length then \(u\) will be negative, but still less than \(L\) and so \(L + u\) will be positive and once again \(F_{s}\) will be negative acting to pull the object up.</p>
+    
+    <p>Finally, if the object has been moved upwards so that the spring is now compressed, then \(u\) will be negative and greater than \(L\).  Therefore, \(L + u\) will be negative and now \(F_{s}\) will be positive acting to push the object down.</p>
+    
+    <p>So, it looks like this force will act as we expect that it should.</p>
+    
+    </li>
+    
+      <li><strong>Damping, \(F_{d}\)</strong>
+
+    <p>The next force that we need to consider is damping.  This force may or may not be present for any given problem.</p>
+    
+    <p>Dampers work to counteract any movement.  There are several ways to define a damping force.  The one that we’ll use is the following.</p>
+    
+        \[{F_d} =  - \gamma \,u'\]
+    <p>where, \(\gamma  &gt; 0\) is the damping coefficient.  Let’s think for a minute about how this force will act.  If the object is moving downward, then the velocity (\(u'\)) will be positive and so \(F_{d}\) will be negative and acting to pull the object back up.  Likewise, if the object is moving upward, the velocity (\(u'\)) will be negative and so \(F_{d}\) will be positive and acting to push the object back down.</p>
+    
+    <p>In other words, the damping force as we’ve defined it will always act to counter the current motion of the object and so will act to damp out any motion in the object.</p>
+    </li>
+
+      <li><strong>External Forces, \(F(t)\)</strong>
+
+    <p>This is the catch all force.  If there are any other forces that we decide we want to act on our object we lump them in here and call it good.  We typically call \(F(t)\) the forcing function.</p>
+
+        </li>
+    </ol>
+    
+    <p>Putting all of these together gives us the following for Newton’s Second Law.</p>
+    
+        \[mu'' = mg - k\left( {L + u} \right) - \gamma u' + F\left( t \right)\]
+    
+    <p>Or, upon rewriting, we get,</p>
+    
+        \[mu'' + \gamma u' + ku = mg - kL + F\left( t \right)\]
+    
+    <p>Now, when the object is at rest in its equilibrium position there are exactly two forces acting on the object, the force due to gravity and the force due to the spring.  Also, since the object is at rest (<em>i.e.</em> not moving) these two forces must be canceling each other out.  This means that we must have,</p>
+    
+        \[\begin{equation}mg = kL\label{eq:eq1}\end{equation}\]
+    
+    <p>Using this in Newton’s Second Law gives us the final version of the differential equation that we’ll work with.</p>
+    
+        \[\begin{equation}mu'' + \gamma u' + ku = F\left( t \right)\label{eq:eq2}\end{equation}\]
+    
+    <p>Along with this differential equation we will have the following initial conditions.</p>
+    
+    
+      \[\begin{equation}\begin{aligned}u\left( 0 \right) & = {u_0}\hspace{0.25in}{\mbox{Initial displacement from the equilibrium position}}{\mbox{.}}\\ u'\left( 0 \right) & = {{u'}_0}\hspace{0.25in}{\mbox{Initial velocity}}{\mbox{.}}\end{aligned}\label{eq:eq3}\end{equation}\]
+    
+    <p>Note that we’ll also be using \(\eqref{eq:eq1}\) to determine the spring constant, \(k\).</p>
+    
+    <p>Okay.  Let’s start looking at some specific cases.</p>
+    
+    <h4>Free, Undamped Vibrations</h4>
+    <p>This is the simplest case that we can consider.  Free or unforced vibrations means that \(F(t) = 0\) and undamped vibrations means that \(\gamma  = 0\).  In this case the differential equation becomes,</p>
+    
+        \[mu'' + ku = 0\]
+    
+    <p>This is easy enough to solve in general.  The characteristic equation has the roots,</p>
+    
+        \[r =  \pm \,\,i\,\sqrt {\frac{k}{m}} \]
+    
+    <p>This is usually reduced to,</p>
+    
+        \[r =  \pm \,{\omega _0}\,i\]
+    <p>where,</p>
+    
+        \[\omega {_0} = \sqrt {\frac{k}{m}} \]
+    <p>and \({\omega _0}\) is called the natural frequency.  Recall as well that \(m &gt; 0\) and \(k &gt; 0\) and so we can guarantee that this quantity will not be complex. The solution in this case is then</p>
+    
+      \[\begin{equation} u\left( t \right) = {c_1}\cos \left( {{\omega _0}\,t} \right) + {c_2}\sin \left( {{\omega _0}\,t} \right)\label{eq:eq4}\end{equation}\]
+    
+    <p>We can write \(\eqref{eq:eq4}\) in the following form,</p>
+    
+        \[\begin{equation}u\left( t \right) = R\cos \left( {{\omega _0}t - \delta } \right)\label{eq:eq5}\end{equation}\]
+
+    <p>where \(R\) is the amplitude of the displacement and \(\delta \) is the phase shift or phase angle of the displacement.</p>
+    
+    <p>When the displacement is in the form of \(\eqref{eq:eq5}\) it is usually easier to work with.  However, it’s easier to find the constants in \(\eqref{eq:eq4}\) from the initial conditions than it is to find the amplitude and phase shift in \(\eqref{eq:eq5}\) from the initial conditions.  So, in order to get the equation into the form in \(\eqref{eq:eq5}\) we will first put the equation in the form in \(\eqref{eq:eq4}\), find the constants, \(c_{1}\) and \(c_{2}\) and then convert this into the form in \(\eqref{eq:eq5}\).</p>
+    
+    <p>So, assuming that we have \(c_{1}\) and \(c_{2}\) how do we determine \(R\) and \(\delta \)?  Let’s start with \(\eqref{eq:eq5}\) and use a trig identity to write it as</p>
+    
+      \[\begin{equation}u\left( t \right) = R\cos \left( \delta  \right)\cos \left( {{\omega _0}t} \right) + R\sin \left( \delta  \right)\sin \left( {{\omega _0}t} \right)\label{eq:eq6}\end{equation}\]
+    
+    <p>Now, \(R\) and \(\delta \) are constants and so if we compare \(\eqref{eq:eq6}\) to \(\eqref{eq:eq4}\) we can see that</p>
+    
+      \[{c_1} = R\cos \delta \hspace{0.25in}{c_2} = R\sin \delta \]
+    
+    <p>We can find \(R\) in the following way.</p>
+    
+        \[c_1^2 + c_2^2 = {R^2}{\cos ^2}\delta  + {R^2}{\sin ^2}\delta  = {R^2}\]
+    
+    <p>Taking the square root of both sides and assuming that \(R\) is positive will give</p>
+    
+        \[\begin{equation}R = \sqrt {c_1^2 + c_2^2} \label{eq:eq7}\end{equation}\]
+    
+    <p>Finding \(\delta \) is just as easy.  We’ll start with</p>
+    
+        \[\frac{{{c_2}}}{{{c_1}}} = \frac{{R\sin \delta }}{{R\cos \delta }} = \tan \delta \]
+    
+    <p>Taking the inverse tangent of both sides gives,</p>
+    
+        \[\begin{equation}\delta  = {\tan ^{ - 1}}\left( {\frac{{{c_2}}}{{{c_1}}}} \right)\label{eq:eq8}\end{equation}\]
+    
+    <p>Before we work any examples let’s talk a little bit about units of mass and the Imperial vs. metric system differences.</p>
+    
+    <p>Recall that the weight of the object is given by</p>
+    
+        \[W = mg\]
+    <p>where \(m\) is the mass of the object and \(g\) is the gravitational acceleration.  For the examples in this problem we’ll be using the following values for \(g\).</p>
+    
+      \[\begin{align*}&{\mbox{Imperial : }}g = 32\,\,ft/{s^2}\\ &amp; {\mbox{Metric : }}g = 9.8\,\,m/{s^2}\end{align*}\]
+    
+    <p>This is not the standard 32.2 ft/s<sup>2</sup> or 9.81 m/s<sup>2</sup>, but using these will make some of the numbers come out a little nicer.</p>
+    
+    <p>In the metric system the mass of objects is given in kilograms (<em>kg</em>) and there is nothing for us to do.  However, in the British system we tend to be given the weight of an object in pounds (yes, pounds are the units of weight not mass…) and so we’ll need to compute the mass for these problems.</p>
+    
+    <p>At this point we should probably work an example of all this to see how this stuff works.</p>
+    <a class="anchor" name="Second_Vibrations_Ex1"></a>
+      <div class="example">
+    <span class="example-title">Example 1</span> A 16 lb object stretches a spring \(\frac{8}{9}\) ft by itself.  There is no damping and no external forces acting on the system.  The spring is initially displaced 6 inches upwards from its equilibrium position and given an initial velocity of 1 ft/sec downward.  Find the displacement at any time \(t\), \(u(t)\).
+    <div class="example-content">
+      <span id="SHLink_Soln1" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln1" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln1" class="soln-content">
+        <p>We first need to set up the IVP for the problem.  This requires us to get our hands on \(m\) and \(k\).</p>
+          
+          <p>This is the Imperial system so we’ll need to compute the mass.</p>
+          
+              \[m = \frac{W}{g} = \frac{{16}}{{32}} = \frac{1}{2}\]
+          
+          <p>Now, let’s get \(k\).  We can use the fact that \(mg = kL\) to find \(k\).  Don’t forget that we’ll need all of our length units the same.  We’ll use feet for the unit of measurement for this problem.</p>
+          
+              \[k = \frac{{mg}}{L} = \frac{{16}}{{{}^{8}/{}_{9}}} = 18\]
+          
+          <p>We can now set up the IVP.</p>
+          
+              \[\frac{1}{2}u'' + 18u = 0\hspace{0.25in}u\left( 0 \right) =  - \frac{1}{2}\hspace{0.25in}u'\left( 0 \right) = 1\]
+          
+          <p>For the initial conditions recall that upward displacement/motion is negative while downward displacement/motion is positive.  Also, since we decided to do everything in feet we had to convert the initial displacement to feet.</p>
+          
+          <p>Now, to solve this we can either go through the characteristic equation or we can just jump straight to the formula that we derived above.  We’ll do it that way.  First, we need the natural frequency,</p>
+          
+              \[{\omega _0} = \sqrt {\frac{{18}}{{{}^{1}/{}_{2}}}}  = \sqrt {36}  = 6\]
+          
+          <p>The general solution, along with its derivative, is then,</p>
+          
+            \[\begin{align*}u\left( t \right) & = {c_1}\cos \left( {6t} \right) + {c_2}\sin \left( {6t} \right)\\ u'\left( t \right) & =  - 6{c_1}\sin \left( {6t} \right) + 6{c_2}\cos \left( {6t} \right)\end{align*}\]
+          
+          <p>Applying the initial conditions gives</p>
+          
+              \[\begin{align*} - \frac{1}{2} = u\left( 0 \right) & = {c_1}\hspace{0.25in}{c_1} =  - \frac{1}{2}\\ 1 = u'\left( 0 \right) & = 6{c_2}\cos \left( {6t} \right)\hspace{0.25in}{c_2} = \frac{1}{6}\end{align*}\]
+          
+          <p>The displacement at any time \(t\) is then</p>
+          
+            \[u\left( t \right) =  - \frac{1}{2}\cos \left( {6t} \right) + \frac{1}{6}\sin \left( {6t} \right)\]
+          
+          
+          <p>Now, let’s convert this to a single cosine.  First let’s get the amplitude, \(R\).</p>
+          
+            \[R = \sqrt {{{\left( { - \frac{1}{2}} \right)}^2} + {{\left( {\frac{1}{6}} \right)}^2}}  = \frac{{\sqrt {10} }}{6} = 0.52705\]
+          
+          <p>You can use either the exact value here or a decimal approximation.  Often the decimal approximation will be easier.</p>
+          
+          <p>Now let’s get the phase shift.</p>
+          
+            \[\delta  = {\tan ^{ - 1}}\left( {\frac{{{}^{1}/{}_{6}}}{{ - {}^{1}/{}_{2}}}} \right) =  - 0.32175\]
+          
+          <p>We need to be careful with this part.  The phase angle found above is in Quadrant IV, but there is also an angle in Quadrant II that would work as well.  We get this second angle by adding \(\pi \) onto the first angle.  So, we actually have two angles.  They are</p>
+          
+            \[\begin{align*}{\delta _1} & =  - 0.32175\\ {\delta _2} & = {\delta _1} + \pi  = 2.81984\end{align*}\]
+          
+          <p>We need to decide which of these phase shifts is correct, because only one will be correct.  To do this recall that</p>
+          
+            \[\begin{align*}{c_1} & = R\cos \delta \\ {c_2} & = R\sin \delta \end{align*}\]
+          
+          <p>Now, since we are assuming that \(R\) is positive this means that the sign of \(\cos \delta \) will be the same as the sign of \(c_{1}\) and the sign of \(\sin \delta \) will be the same as the sign of \(c_{2}\).  So, for this particular case we must have \(\cos \delta  &lt; 0\) and \(\sin \delta  &gt; 0\).  This means that the phase shift must be in Quadrant II and so the second angle is the one that we need.</p>
+          
+          <p>So, after all of this the displacement at any time \(t\) is.</p>
+          
+              \[u\left( t \right) = 0.52705\cos \left( {6t - 2.81984} \right)\]
+          
+          <p>Here is a sketch of the displacement for the first 5 seconds.</p>
+          
+          
+            <div class="center-div"><img alt="A graph with domain $0 \le t \le 5$ and range $-0.5 \le u \le 0.5$.  The graph starts at approximately (0,-0.5) and is an oscillation with an amplitude of 0.52705 and a wavelength of approximately 1." height="216" src="http://tutorial.math.lamar.edu/Classes/DE/Vibrations_Files/image002.png" width="360" /></div>
+      </div>
+    </div>
+  </div>
+    
+    <p>Now, let’s take a look at a slightly more realistic situation.  No vibration will go on forever.  So, let’s add in a damper and see what happens now.</p>
+    
+    
+    <h4>Free, Damped Vibrations</h4>
+    <p>We are still going to assume that there will be no external forces acting on the system, with the exception of damping of course.  In this case the differential equation will be.</p>
+    
+        \[mu'' + \gamma u' + ku = 0\]
+    <p>where \(m\), \(\delta \), and \(k\) are all positive constants.  Upon solving for the roots of the characteristic equation we get the following.</p>
+    
+        \[{r_{1,2}} = \frac{{ - \gamma  \pm \sqrt {{\gamma ^2} - 4mk} }}{{2m}}\]
+    
+    <p>We will have three cases here.</p>
+    
+    <ol>
+      <li>\({\gamma ^2} - 4mk = 0\)<br />
+    <p>In this case we will get a double root out of the characteristic equation and the displacement at any time \(t\) will be.</p>
+    
+      \[u\left( t \right) = {c_1}{{\bf{e}}^{ - \frac{{\gamma \,t}}{{2\,m}}}} + {c_2}t{{\bf{e}}^{ - \frac{{\gamma \,t}}{{2\,m}}}}\]
+    
+    <p>Notice that as \(t \to \infty \) the displacement will approach zero and so the damping in this case will do what it’s supposed to do.</p>
+    <p></p>
+    <p>This case is called <strong>critical damping</strong> and will happen when the damping coefficient is,</p>
+    
+      \[\begin{align*}{\gamma ^2} - 4mk & = 0\\ {\gamma ^2} & = 4mk\\ \gamma  & = 2\sqrt {mk}  = {\gamma _{CR}}\end{align*}\]
+    
+    <p>The value of the damping coefficient that gives critical damping is called the critical damping coefficient and denoted by \({\gamma _{CR}}\).</p>
+      </li>
+      <li>\({\gamma ^2} - 4mk &gt; 0\)<br />
+    <p>In this case let’s rewrite the roots a little.</p>
+    
+      \[\begin{align*}{r_{1,2}} & = \frac{{ - \gamma  \pm \sqrt {{\gamma ^2} - 4mk} }}{{2m}}\\ &amp;  = \frac{{ - \gamma  \pm \gamma \sqrt {1 - \frac{{4mk}}{{{\gamma ^2}}}} }}{{2m}}\\ &amp;  =  - \frac{\gamma }{{2m}}\left( {1 \pm \sqrt {1 - \frac{{4mk}}{{{\gamma ^2}}}} } \right)\end{align*}\]
+    
+    <p>Also notice that from our initial assumption that we have,</p>
+    
+      \[\begin{align*}{\gamma ^2} & &gt; 4mk\\  1 & &gt; \frac{{4mk}}{{{\gamma ^2}}}\end{align*}\]
+    
+    <p>Using this we can see that the fraction under the square root above is less than one.  Then if the quantity under the square root is less than one, this means that the square root of this quantity is also going to be less than one.  In other words,</p>
+    
+        \[\sqrt {1 - \frac{{4mk}}{{{\gamma ^2}}}}  &lt; 1\]
+    
+    <p>Why is this important?  Well, the quantity in the parenthesis is now one plus/minus a number that is less than one.  This means that the quantity in the parenthesis is guaranteed to be positive and so the two roots in this case are guaranteed to be negative.  Therefore, the displacement at any time \(t\) is,</p>
+    
+        \[u\left( t \right) = {c_1}{{\bf{e}}^{{r_1}t}} + {c_2}{{\bf{e}}^{{r_2}t}}\]
+    <p>and will approach zero as \(t \to \infty \).  So, once again the damper does what it is supposed to do.</p>
+    
+    <p>This case will occur when</p>
+    
+      \[\begin{align*}{\gamma ^2} & &gt; 4mk\\  \gamma  & &gt; 2\sqrt {mk} \\ \gamma & &gt; {\gamma _{CR}}\end{align*}\]
+    <p>and is called <strong>over damping.</strong></p>
+
+      </li>
+      <li>\({\gamma ^2} - 4mk &lt; 0\)<br />
+    <p>In this case we will get complex roots out of the characteristic equation.</p>
+    
+      \[{r_{1,2}} = \frac{{ - \gamma }}{{2m}} \pm \frac{{\sqrt {{\gamma ^2} - 4mk} }}{{2m}} = \lambda  \pm \mu \,i\]
+    <p>where the real part is guaranteed to be negative and so the displacement is</p>
+    
+      \[\begin{align*}u\left( t \right) & = {c_1}{{\bf{e}}^{\lambda t}}\cos \left( {\mu t} \right) + {c_2}{{\bf{e}}^{\lambda t}}\sin \left( {\mu t} \right)\\ &amp;  = {{\bf{e}}^{\lambda t}}\left( {{c_1}\cos \left( {\mu t} \right) + {c_2}\sin \left( {\mu t} \right)} \right)\\ &amp;  = R{{\bf{e}}^{\lambda t}}\cos \left( {\mu t - \delta } \right)\end{align*}\]
+    
+    <p>Notice that we reduced the sine and cosine down to a single cosine in this case as we did in the undamped case.  Also, since \(\lambda  &lt; 0\) the displacement will approach zero as \(t \to \infty \) and the damper will also work as it’s supposed to in this case.</p>
+    
+    <p>We will get this case will occur when</p>
+    
+      \[\begin{align*}{\gamma ^2} & &lt; 4mk\\ \gamma & &lt; 2\sqrt {mk} \\ \gamma & &lt; {\gamma _{CR}}\end{align*}\]
+    <p>and is called <strong>under damping.</strong></p>
+
+      </li>
+    </ol>
+    
+    <p>Let’s take a look at a couple of examples here with damping.</p>
+    <a class="anchor" name="Second_Vibrations_Ex2"></a>
+  <div class="example">
+    <span class="example-title">Example 2</span> Take the spring and mass system from the first example and attach a damper to it that will exert a force of 12 lbs when the velocity is 2 ft/s.  Find the displacement at any time \(t\), \(u(t)\).
+    <div class="example-content">
+      <span id="SHLink_Soln2" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln2" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln2" class="soln-content">
+        <p>The mass and spring constant were already found in the first example so we won’t do the work here.  We do need to find the damping coefficient however.  To do this we will use the formula for the damping force given above with one modification.  The original damping force formula is,</p>
+          
+              \[{F_d} =  - \gamma u'\]
+          
+          <p>However, remember that the force and the velocity are always acting in opposite directions.  So, if the velocity is upward (<em>i.e.</em> negative) the force will be downward (<em>i.e.</em> positive) and so the minus in the formula will cancel against the minus in the velocity.  Likewise, if the velocity is downward (<em>i.e.</em> positive) the force will be upwards (<em>i.e.</em> negative) and in this case the minus sign in the formula will cancel against the minus in the force.  In other words, we can drop the minus sign in the formula and use</p>
+          
+              \[{F_d} = \gamma u'\]
+          <p>and then just ignore any signs for the force and velocity.</p>
+          
+          <p>Doing this gives us the following for the damping coefficient</p>
+          
+            \[12 = \gamma \left( 2 \right)\hspace{0.25in} \Rightarrow \hspace{0.25in}\gamma  = 6\]
+          
+          <p>The IVP for this example is then,</p>
+          
+              \[\frac{1}{2}u'' + 6u' + 18u = 0\hspace{0.25in}u\left( 0 \right) =  - \frac{1}{2}\hspace{0.25in}u'\left( 0 \right) = 1\]
+          
+          <p>Before solving let’s check to see what kind of damping we’ve got.  To do this all we need is the critical damping coefficient.</p>
+          
+            \[{\gamma _{CR}} = 2\sqrt {km}  = 2\sqrt {\left( {18} \right)\left( {\frac{1}{2}} \right)}  = 2\sqrt 9  = 6\]
+          
+          <p>So, it looks like we’ve got critical damping.  Note that this means that when we go to solve the differential equation we should get a double root.</p>
+          
+          <p>Speaking of solving, let’s do that.  I’ll leave the details to you to check that the displacement at any time \(t\) is.</p>
+          
+              \[u\left( t \right) =  - \frac{1}{2}{{\bf{e}}^{ - 6t}} - 2t{{\bf{e}}^{ - 6t}}\]
+          
+          <p>Here is a sketch of the displacement during the first 3 seconds.</p>
+          
+            <div class="center-div"><img alt="A graph with domain $0 \le t \le 3$ and range $-0.5 \le u \le 0$.  The graph starts at approximately (0,-0.5) and increases fairly rapidly until approximately (0.5, 0.1) and then bends to the right and quickly flattening out as it approaches the t-axis (without ever crossing the t-axis)." height="216" src="http://tutorial.math.lamar.edu/Classes/DE/Vibrations_Files/image003.png" width="360" /></div>
+      </div>
+    </div>
+  </div>
+
+    
+    <p>Notice that the “vibration” in the system is not really a true vibration as we tend to think of them.  In the critical damping case there isn’t going to be a real oscillation about the equilibrium point that we tend to associate with vibrations.  The damping in this system is strong enough to force the “vibration” to die out before it ever really gets a chance to do much in the way of oscillation.</p>
+    <a class="anchor" name="Second_Vibrations_Ex3"></a>
+  <div class="example">
+    <span class="example-title">Example 3</span> Take the spring and mass system from the first example and this time let’s attach a damper to it that will exert a force of 17 lbs when the velocity is 2 ft/s.  Find the displacement at any time \(t\), \(u(t)\).
+    <div class="example-content">
+      <span id="SHLink_Soln3" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln3" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln3" class="soln-content">
+        <p>So, the only difference between this example and the previous example is damping force.  So, let’s find the damping coefficient</p>
+          
+            \[17 = \gamma \left( 2 \right)\hspace{0.25in} \Rightarrow \hspace{0.25in}\gamma  = \frac{{17}}{2} = 8.5 &gt; {\gamma _{CR}}\]
+          
+          <p>So, it looks like we’ve got over damping this time around so we should expect to get two real distinct roots from the characteristic equation and they should both be negative.  The IVP for this example is,</p>
+          
+            \[\frac{1}{2}u'' + \frac{{17}}{2}u' + 18u = 0\hspace{0.25in}u\left( 0 \right) =  - \frac{1}{2}\hspace{0.25in}u'\left( 0 \right) = 1\]
+          
+          <p>This one’s a little messier than the previous example so we’ll do a couple of the steps, leaving it to you to fill in the blanks.  The roots of the characteristic equation are</p>
+          
+              \[{r_{1,2}} = \frac{{ - 17 \pm \sqrt {145} }}{2} =  - 2.4792,\,\, - 14.5208\]
+          
+          <p>In this case it will be easier to just convert to decimals and go that route.  Note that, as predicted we got two real, distinct and negative roots.  The general and actual solution for this example are then,</p>
+          
+            \[\begin{align*}u\left( t \right) & = {c_1}{{\bf{e}}^{ - 2.4792\,\,t}} + {c_2}{{\bf{e}}^{ - 14.5208\,\,t}}\\ u\left( t \right) & =  - 0.5198{{\bf{e}}^{ - 2.4792\,\,t}} + 0.0199{{\bf{e}}^{ - 14.5208\,\,t}}\end{align*}\]
+          
+          <p>Here’s a sketch of the displacement for this example.</p>
+          
+            <div class="center-div"><img alt="A graph with domain $0 \le t \le 3$ and range $-0.5 \le u \le 0$.  The graph starts at approximately (0,-0.5) and increases fairly rapidly until approximately (0.8, 0.15) and then bends to the right and quickly flattening out as it approaches the t-axis (without ever crossing the t-axis).  Note that this graph does not rise as fast as the previous graph nor does it flatten out as quickly as the previous graph." height="216" src="http://tutorial.math.lamar.edu/Classes/DE/Vibrations_Files/image004.png" width="360" /></div>
+      </div>
+    </div>
+  </div>
+    
+    <p>Notice an interesting thing here about the displacement here.  Even though we are “over” damped in this case, it actually takes longer for the vibration to die out than in the critical damping case.  Sometimes this happens, although it will not always be the case that over damping will allow the vibration to continue longer than the critical damping case.</p>
+    
+    <p>Also notice that, as with the critical damping case, we don’t get a vibration in the sense that we usually think of them.  Again, the damping is strong enough to force the vibration do die out quick enough so that we don’t see much, if any, of the oscillation that we typically associate with vibrations.</p>
+    
+    <p>Let’s take a look at one more example before moving on the next type of vibrations.</p>
+    <a class="anchor" name="Second_Vibrations_Ex4"></a>
+  <div class="example">
+    <span class="example-title">Example 4</span> Take the spring and mass system from the first example and for this example let’s attach a damper to it that will exert a force of 5 lbs when the velocity is 2 ft/s.  Find the displacement at any time \(t\), \(u(t)\).
+    <div class="example-content">
+      <span id="SHLink_Soln4" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln4" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln4" class="soln-content">
+        <p>So, let’s get the damping coefficient.</p>
+          
+            \[5 = \gamma \left( 2 \right)\hspace{0.25in} \Rightarrow \hspace{0.25in}\gamma  = \frac{5}{2} = 2.5 &lt; {\gamma _{CR}}\]
+          
+          <p>So, it’s under damping this time.  That shouldn’t be too surprising given the first two examples. The IVP for this example is,</p>
+          
+            \[\frac{1}{2}u'' + \frac{5}{2}u' + 18u = 0\hspace{0.25in}u\left( 0 \right) =  - \frac{1}{2}\hspace{0.25in}u'\left( 0 \right) = 1\]
+          
+          <p>In this case the roots of the characteristic equation are</p>
+          
+              \[{r_{1,2}} = \frac{{ - 5 \pm \sqrt {119} \,i}}{2}\]
+          
+          <p>They are complex as we expected to get since we are in the under damped case.  The general solution and actual solution are</p>
+          
+            \[\begin{align*}u\left( t \right) & = {{\bf{e}}^{ - \frac{{5t}}{2}}}\left( {{c_1}\cos \left( {\frac{{\sqrt {119} }}{2}t} \right) + {c_2}\sin \left( {\frac{{\sqrt {119} }}{2}t} \right)} \right)\\ u\left( t \right) & = {{\bf{e}}^{ - \frac{{5t}}{2}}}\left( { - 0.5\cos \left( {\frac{{\sqrt {119} }}{2}t} \right) - 0.04583\sin \left( {\frac{{\sqrt {119} }}{2}t} \right)} \right)\end{align*}\]
+          
+          <p>Let’s convert this to a single cosine as we did in the undamped case.</p>
+          
+            \[\begin{align*}R & = \sqrt {{{\left( { - 0.5} \right)}^2} + {{\left( { - 0.04583} \right)}^2}}  = 0.502096\\ {\delta _1} & = {\tan ^{ - 1}}\left( {\frac{{ - 0.04583}}{{ - 0.5}}} \right) = 0.09051\hspace{0.25in}{\mbox{OR}}\hspace{0.25in}{\delta _2} = {\delta _1} + \pi  = 3.2321\end{align*}\]
+          
+          <p>As with the undamped case we can use the coefficients of the cosine and the sine to determine which phase shift that we should use.  The coefficient of the cosine (\(c_{1}\)) is negative and so \(\cos \delta \) must also be negative.  Likewise, the coefficient of the sine (\(c_{2}\)) is also negative and so \(\sin \delta \) must also be negative.  This means that \(\delta \) must be in the Quadrant III and so the second angle is the one that we want.</p>
+          
+          <p>The displacement is then</p>
+          
+            \[u\left( t \right) = 0.502096{{\bf{e}}^{ - \frac{{5t}}{2}}}\cos \left( {\frac{{\sqrt {119} }}{2}t - 3.2321} \right)\]
+          
+          <p>Here is a sketch of this displacement.</p>
+          
+            <div class="center-div"><img alt="A graph with domain $0 \le t \le 3$ and range $-0.5 \le u \le 0.25$.  The graph starts at approximately (0,-0.5) and increases fairly rapidly to a peak at approximately (0.5, 0.15) then decreases to a valley at approximately (1,-0.05) and then increases up to become almost flat on the t-axis.  In other words, this is an oscillation with a decaying amplitude and the amplitude decays so quickly that there is only one peak and one valley clearly visible on the graph." height="216" src="http://tutorial.math.lamar.edu/Classes/DE/Vibrations_Files/image005.png" width="360" /></div>
+      </div>
+    </div>
+  </div>
+    
+    <p>In this case we finally got what we usually consider to be a true vibration.  In fact, that is the point of critical damping.  As we increase the damping coefficient, the critical damping coefficient will be the first one in which a true oscillation in the displacement will not occur.  For all values of the damping coefficient larger than this (<em>i.e.</em> over damping) we will also not see a true oscillation in the displacement.</p>
+    
+    <p>From a physical standpoint critical (and over) damping is usually preferred to under damping.  Think of the shock absorbers in your car.  When you hit a bump you don’t want to spend the next few minutes bouncing up and down while the vibration set up by the bump die out.  You would like there to be as little movement as possible.  In other words, you will want to set up the shock absorbers in your car so get at the least critical damping so that you can avoid the oscillations that will arise from an under damped case.</p>
+    
+    <p>It’s now time to look at systems in which we allow other external forces to act on the object in the system.</p>
+    
+    <h4>Undamped, Forced Vibrations</h4>
+    <p>We will first take a look at the undamped case.  The differential equation in this case is</p>
+    
+        \[mu'' + ku = F\left( t \right)\]
+    
+    <p>This is just a nonhomogeneous differential equation and we know how to solve these.  The general solution will be</p>
+    
+        \[u\left( t \right) = {u_c}\left( t \right) + {U_P}\left( t \right)\]
+    <p>where the complementary solution is the solution to the free, undamped vibration case.  To get the particular solution we can use either undetermined coefficients or variation of parameters depending on which we find easier for a given forcing function.</p>
+    
+    <p>There is a particular type of forcing function that we should take a look at since it leads to some interesting results.  Let’s suppose that the forcing function is a simple periodic function of the form</p>
+    
+        \[F\left( t \right) = {F_0}\cos \left( {\omega \,t} \right)\hspace{0.25in}{\mbox{OR}}\hspace{0.25in}F\left( t \right) = {F_0}\sin \left( {\omega \,t} \right)\]
+    
+    <p>For the purposes of this discussion we’ll use the first one.  Using this, the IVP becomes,</p>
+    
+        \[mu'' + ku = {F_0}\cos \left( {\omega \,t} \right)\]
+    
+    <p>The complementary solution, as pointed out above, is just</p>
+    
+      \[{u_c}\left( t \right) = {c_1}\cos \left( {{\omega _0}t} \right) + {c_2}\sin \left( {{\omega _0}t} \right)\]
+    <p>where \({\omega _0}\) is the natural frequency.</p>
+    
+    <p>We will need to be careful in finding a particular solution.  The reason for this will be clear if we use undetermined coefficients.  With undetermined coefficients our guess for the form of the particular solution would be,</p>
+    
+      \[{U_P}\left( t \right) = A\cos \left( {\omega \,t} \right) + B\sin \left( {\omega \,t} \right)\]
+    
+    <p>Now, this guess will be problems if \({\omega _0} = \omega \).  If this were to happen the guess for the particular solution is exactly the complementary solution and so we’d need to add in a \(t\).  Of course, if we don’t have \({\omega _0} = \omega \) then there will be nothing wrong with the guess.</p>
+    
+    <p>So, we will need to look at this in two cases.</p>
+    
+    <ol class="general-list">
+      <li>\({\omega _0} \ne \omega \) <br />
+
+    <p>In this case our initial guess is okay since it won’t be the complementary solution.  Upon differentiating the guess and plugging it into the differential equation and simplifying we get,</p>
+    
+      \[\left( { - m{\omega ^2}A + kA} \right)\cos \left( {wt} \right) + \left( { - m{\omega ^2}B + kB} \right)\sin \left( {wt} \right) = {F_0}\cos \left( {wt} \right)\]
+    
+    <p>Setting coefficients equal gives us,</p>
+    
+      \[\begin{align*} & \cos \left( {\omega \,t} \right)\,: & \left( { - m{\omega ^2} + k} \right)A  & = {F_0} & \Rightarrow \hspace{0.25in}A & = \frac{{{F_0}}}{{k - m{\omega ^2}}}\\ &amp; \sin \left( {\omega \,t} \right)\,: & \left( { - m{\omega ^2} + k} \right)B & = 0 & \Rightarrow \hspace{0.25in}B & = 0\end{align*}\]
+    
+    <p>The particular solution is then</p>
+    
+      \[\begin{align*}{U_P}\left( t \right) & = \frac{{{F_0}}}{{k - m{\omega ^2}}}\cos \left( {\omega t} \right)\\ &amp;  = \frac{{{F_0}}}{{m\left( {\frac{k}{m} - {\omega ^2}} \right)}}\cos \left( {\omega t} \right)\\ &amp;  = \frac{{{F_0}}}{{m\left( {\omega _0^2 - {\omega ^2}} \right)}}\cos \left( {\omega t} \right)\end{align*}\]
+    
+    <p>Note that we rearranged things a little.  Depending on the form that you’d like the displacement to be in we can have either of the following.</p>
+    
+      \[\begin{align*}u\left( t \right) & = {c_1}\cos \left( {{\omega _0}t} \right) + {c_2}\sin \left( {{\omega _0}t} \right) + \frac{{{F_0}}}{{m\left( {\omega _0^2 - {\omega ^2}} \right)}}\cos \left( {\omega t} \right)\\ u\left( t \right) & = R\cos \left( {{\omega _0}t - \delta } \right) + \frac{{{F_0}}}{{m\left( {\omega _0^2 - {\omega ^2}} \right)}}\cos \left( {\omega t} \right)\end{align*}\]
+    
+    <p>If we used the sine form of the forcing function we could get a similar formula.</p>
+    </li>
+   
+      <li class="MsoNormal">\({\omega _0} = \omega \)<br />
+
+    <p>In this case we will need to add in a \(t\) to the guess for the particular solution.</p>
+    
+      \[{U_P}\left( t \right) = At\cos \left( {{\omega _0}t} \right) + Bt\sin \left( {{\omega _0}t} \right)\]
+    
+    <p>Note that we went ahead and acknowledge that \({\omega _0} = \omega \) in our guess.  Acknowledging this will help with some simplification that we’ll need to do later on.  Differentiating our guess, plugging it into the differential equation and simplifying gives us the following.</p>
+    
+      \[\begin{align*}& \left( { - m\omega _0^2 + k} \right)At\cos \left( {wt} \right) + \left( { - m\omega _0^2 + k} \right)Bt\sin \left( {wt} \right) + \\ &amp; \hspace{1.5in}2m{\omega _0}B\cos \left( {\omega t} \right) - 2m{\omega _0}A\sin \left( {wt} \right) = {F_0}\cos \left( {wt} \right)\end{align*}\]
+    
+    <p>Before setting coefficients equal, let’s remember the definition of the natural frequency and note that</p>
+    
+      \[ - m\omega _0^2 + k =  - m{\left( {\sqrt {\frac{k}{m}} } \right)^2} + k =  - m\left( {\frac{k}{m}} \right) + k = 0\]
+    
+    <p>So, the first two terms actually drop out (which is a very good thing…) and this gives us,</p>
+    
+      \[2m{\omega _0}B\cos \left( {\omega t} \right) - 2m{\omega _0}A\sin \left( {wt} \right) = {F_0}\cos \left( {wt} \right)\]
+    
+    <p>Now let’s set coefficient equal.</p>
+    
+      \[\begin{align*} & \cos \left( {\omega t} \right)\,: & 2m{\omega _0}B & = {F_0} & \Rightarrow \hspace{0.25in}B & = \frac{{{F_0}}}{{2m{\omega _0}}}\\ &amp; \sin \left( {\omega t} \right)\,: & 2m{\omega _0}A & = 0 &  \Rightarrow \hspace{0.25in}A & = 0\end{align*}\]
+    
+    <p>In this case the particular will be,</p>
+    
+      \[{U_P}\left( t \right) = \frac{{{F_0}}}{{2m{\omega _0}}}t\sin \left( {{\omega _0}t} \right)\]
+    
+    <p>The displacement for this case is then</p>
+    
+      \[\begin{align*}u\left( t \right) & = {c_1}\cos \left( {{\omega _0}t} \right) + {c_2}\sin \left( {{\omega _0}t} \right) + \frac{{{F_0}}}{{2m{\omega _0}}}t\sin \left( {{\omega _0}t} \right)\\ u\left( t \right) & = R\cos \left( {{\omega _0}t - \delta } \right) + \frac{{{F_0}}}{{2m{\omega _0}}}t\sin \left( {{\omega _0}t} \right)\end{align*}\]
+    <p>depending on the form that you prefer for the displacement.</p>
+
+      </li>
+      </ol>
+    
+    <p>So, what was the point of the two cases here?  Well in the first case, \({\omega _0} \ne \omega \) our displacement function consists of two cosines and is nice and well behaved for all time.</p>
+    
+    <p>In contrast, the second case, \({\omega _0} = \omega \)  will have some serious issues at \(t\) increases.  The addition of the \(t\) in the particular solution will mean that we are going to see an oscillation that grows in amplitude as \(t\) increases.  This case is called <strong>resonance</strong> and we would generally like to avoid this at all costs.</p>
+    
+    <p>In this case resonance arose by assuming that the forcing function was,</p>
+    
+        \[F\left( t \right) = {F_0}\cos \left( {{\omega _0}\,t} \right)\]
+    
+    <p>We would also have the possibility of resonance if we assumed a forcing function of the form.</p>
+    
+        \[F\left( t \right) = {F_0}\sin \left( {{\omega _0}\,t} \right)\]
+    
+    <p>We should also take care to not assume that a forcing function will be in one of these two forms.  Forcing functions can come in a wide variety of forms.  If we do run into a forcing function different from the one that used here you will have to go through undetermined coefficients or variation of parameters to determine the particular solution.</p>
+    <a class="anchor" name="Second_Vibrations_Ex5"></a>
+  <div class="example">
+    <span class="example-title">Example 5</span> A 3 kg object is attached to spring and will stretch the spring 392 mm by itself.  There is no damping in the system and a forcing function of the form
+          
+              \[F\left( t \right) = 10\cos \left( {\omega \,t} \right)\]
+
+    <p>is attached to the object and the system will experience resonance.  If the object is initially displaced 20 cm downward from its equilibrium position and given a velocity of 10 cm/sec upward find the displacement at any time \(t\).</p>
+    <div class="example-content">
+      <span id="SHLink_Soln5" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln5" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln5" class="soln-content">
+        <p>Since we are in the metric system we won’t need to find mass as it’s been given to us.  Also, for all calculations we’ll be converting all lengths over to meters.</p>
+          
+          <p>The first thing we need to do is find \(k\).</p>
+          
+              \[k = \frac{{mg}}{L} = \frac{{\left( 3 \right)\left( {9.8} \right)}}{{0.392}} = 75\]
+          
+          <p>Now, we are told that the system experiences resonance so let’s go ahead and get the natural frequency so we can completely set up the IVP.</p>
+          
+              \[{\omega _0} = \sqrt {\frac{k}{m}}  = \sqrt {\frac{{75}}{3}}  = 5\]
+          
+          <p>The IVP for this is then</p>
+          
+              \[3u'' + 75u = 10\cos \left( {5t} \right)\hspace{0.25in}u\left( 0 \right) = 0.2\hspace{0.25in}u'\left( 0 \right) =  - 0.1\]
+          
+          <p>Solution wise there isn’t a whole lot to do here.  The complementary solution is the free undamped solution which is easy to get and for the particular solution we can just use the formula that we derived above.</p>
+          
+          <p>The general solution is then,</p>
+          
+            \[\begin{align*}u\left( t \right) & = {c_1}\cos \left( {5t} \right) + {c_2}\sin \left( {5t} \right) + \frac{{10}}{{2\left( 3 \right)\left( 5 \right)}}t\sin \left( {5t} \right)\\  u\left( t \right) & = {c_1}\cos \left( {5t} \right) + {c_2}\sin \left( {5t} \right) + \frac{1}{3}t\sin \left( {5t} \right)\end{align*}\]
+          
+          <p>Applying the initial conditions gives the displacement at any time \(t\).  We’ll leave the details to you to check.</p>
+          
+            \[u\left( t \right) = \frac{1}{5}\cos \left( {5t} \right) - \frac{1}{{50}}\sin \left( {5t} \right) + \frac{1}{3}t\sin \left( {5t} \right)\]
+          
+          <p>The last thing that we’ll do is combine the first two terms into a single cosine.</p>
+          
+            \[\begin{align*}R & = \sqrt {{{\left( {\frac{1}{5}} \right)}^2} + {{\left( { - \frac{1}{{50}}} \right)}^2}}  = 0.200998\\ {\delta _1} & = {\tan ^{ - 1}}\left( {\frac{{ - {}^{1}/{}_{{50}}}}{{{}^{1}/{}_{5}}}} \right) =  - 0.099669\hspace{0.25in}{\delta _2} = {\delta _1} + \pi  = 3.041924\end{align*}\]
+          
+          <p>In this case the coefficient of the cosine is positive and the coefficient of the sine is negative.  This forces \(\cos \delta \) to be positive and \(\sin \delta \) to be negative.  This means that the phase shift needs to be in Quadrant IV and so the first one is the correct phase shift this time.</p>
+          
+          <p>The displacement then becomes,</p>
+          
+            \[u\left( t \right) = 0.200998\cos \left( {5t + 0.099669} \right) + \frac{1}{3}t\sin \left( {5t} \right)\]
+          <p>Here is a sketch of the displacement for this example.</p>
+          
+            <div class="center-div"><img alt="A graph with domain $0 \le t \le 5$ and range $-1.5 \le u \le 1.5$.  The graph starts at approximately (0,0.2) and is an oscillation with an increasing amplitude.  Peaks occur at approximately t=1.5, 2.8 and 4.  Valleys occur at approximately t=0.9, 2.2, 3.4 and 4.6.  The amplitude of the first peak is approximately 0.5 while the amplitude of the last peak is approximately 1.5.  The amplitude of the first valley is approximately -0.4 while the amplitude of the last valley is approximately -1.5." height="224" src="http://tutorial.math.lamar.edu/Classes/DE/Vibrations_Files/image006.png" width="360" /></div>
+      </div>
+    </div>
+  </div>
+
+    <p>It’s now time to look at the final vibration case.</p>
+    
+    <p><strong>Forced, Damped Vibrations</strong></p>
+    <p>This is the full blown case where we consider every last possible force that can act upon the system.  The differential equation for this case is,</p>
+    
+        \[mu'' + \gamma u' + ku = F\left( t \right)\]
+    <p>The displacement function this time will be,</p>
+    
+        \[u\left( t \right) = {u_c}\left( t \right) + {U_P}\left( t \right)\]
+    <p>where the complementary solution will be the solution to the free, damped case and the particular solution will be found using undetermined coefficients or variation of parameter, whichever is most convenient to use.</p>
+    
+    <p>There are a couple of things to note here about this case.  First, from our work back in the free, damped case we know that the complementary solution will approach zero as \(t\) increases.  Because of this the complementary solution is often called the <strong>transient solution</strong> in this case.</p>
+    
+    <p>Also, because of this behavior the displacement will start to look more and more like the particular solution as \(t\) increases and so the particular solution is often called the <strong>steady state solution</strong> or <strong>forced response</strong>.</p>
+    
+    <p>Let’s work one final example before leaving this section.  As with the previous examples, we’re going to leave most of the details out for you to check.</p>
+    <a class="anchor" name="Second_Vibrations_Ex6"></a>
+  <div class="example">
+    <span class="example-title">Example 6</span> Take the system from the last example and add in a damper that will exert a force of 45 Newtons when then velocity is 50 cm/sec.
+    <div class="example-content">
+      <span id="SHLink_Soln6" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln6" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln6" class="soln-content">
+        <p>So, all we need to do is compute the damping coefficient for this problem then pull everything else down from the previous problem.  The damping coefficient is</p>
+          
+            \[\begin{align*}{F_d} & = \gamma u'\\ 45 & = \gamma \left( {0.5} \right)\\  \gamma & = 90\end{align*}\]
+          <p>The IVP for this problem is.</p>
+          
+            \[3u'' + 90u' + 75u = 10\cos \left( {5t} \right)\hspace{0.25in}u\left( 0 \right) = 0.2\hspace{0.25in}u'\left( 0 \right) =  - 0.1\]
+          
+          <p>The complementary solution for this example is</p>
+          
+            \[\begin{align*}{u_c}\left( t \right) & = {c_1}{{\bf{e}}^{\left( { - 15 + 10\sqrt 2 } \right)t}} + {c_2}{{\bf{e}}^{\left( { - 15 - 10\sqrt 2 } \right)t}}\\ {u_c}\left( t \right) & = {c_1}{{\bf{e}}^{ - 0.8579t}} + {c_2}{{\bf{e}}^{ - 29.1421t}}\end{align*}\]
+          
+          <p>For the particular solution we the form will be,</p>
+          
+              \[{U_P}\left( t \right) = A\cos \left( {5t} \right) + B\sin \left( {5t} \right)\]
+          
+          <p>Plugging this into the differential equation and simplifying gives us,</p>
+          
+              \[450B\cos \left( {5t} \right) - 450A\sin \left( {5t} \right) = 10\cos \left( {5t} \right)\]
+          
+          <p>Setting coefficient equal gives,</p>
+          
+              \[{U_P}\left( t \right) = \frac{1}{{45}}\sin \left( {5t} \right)\]
+          <p>The general solution is then</p>
+          
+            \[u\left( t \right) = {c_1}{{\bf{e}}^{ - 0.8579t}} + {c_2}{{\bf{e}}^{ - 29.1421t}} + \frac{1}{{45}}\sin \left( {5t} \right)\]
+          
+          <p>Applying the initial condition gives</p>
+          
+            \[u\left( t \right) = 0.1986{{\bf{e}}^{ - 0.8579t}} + 0.001398{{\bf{e}}^{ - 29.1421t}} + \frac{1}{{45}}\sin \left( {5t} \right)\]
+          
+          <p>Here is a sketch of the displacement for this example.</p>
+          
+            <div class="center-div"><img alt="A graph with domain $0 \le t \le 8$ and range $-0.05 \le u \le 0.2$.  The graph starts at approximately (0,0.5) and decreases fairly rapidly between 0&lt;t&lt;2 and as it decreases there is a small oscillation in the graph with a valley at approximately t=1 and a peak at approximately t=1.5.  Between 2&lt;t&lt;4 the graph continues to decrease somewhat while the oscillation becomes more pronounced to the point where it is almost starting to look like the graph of a sine or cosine curve just slightly raised higher than one might expect.  By time the graph reaches approximately t=4 it has settled down into the graph of a sine or cosine function with amplitude of approximately 0.2 and a wavelength of approximately 1.5." height="216" src="http://tutorial.math.lamar.edu/Classes/DE/Vibrations_Files/image007.png" width="360" /></div>
+      </div>
+    </div>
+  </div>
+  
+
+
+      
+
+
+
+    </div>
+    <!-- End of content div -->
+
+
+    <div class="footer">
+      <div class="footer-links">
+        [<a href="http://tutorial.math.lamar.edu/Contact.aspx">Contact Me</a>]&nbsp;[<a href="../../MyStudents-2.html">My Students</a>]&nbsp;[<a href="http://tutorial.math.lamar.edu/Privacy.aspx">Privacy Statement</a>]&nbsp;[<a href="../../Help-2.html">Site Help &amp; FAQ</a>]&nbsp;[<a href="http://tutorial.math.lamar.edu/Terms.aspx">Terms of Use</a>]
+      </div>
+      <div class="footer-dates">
+        <div class="footer-copyright"><span id="lblCopyRight">&copy; 2003 - 2019 Paul Dawkins</span></div>
+        <div class="footer-spacer"></div>
+        <div class="footer-modified-date">Page Last Modified : <span id="lblModified">6/3/2018</span></div>
+      </div>
+      
+
+    </div>
+  </div>
+  <!-- End of page div...  -->
+</body>
+
+<!-- Mirrored from tutorial.math.lamar.edu/Classes/DE/Vibrations.aspx by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 27 Feb 2019 06:15:36 GMT -->
+</html>

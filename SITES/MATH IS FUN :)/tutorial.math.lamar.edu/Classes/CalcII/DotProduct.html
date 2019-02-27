@@ -1,0 +1,1188 @@
+
+
+<!DOCTYPE html>
+
+<html>
+
+<!-- Mirrored from tutorial.math.lamar.edu/Classes/CalcII/DotProduct.aspx by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 27 Feb 2019 06:15:35 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=yes" /><meta http-equiv="X-UA-Compatible" content="IE=edge" />  <!-- For best MathJax performance on IE  -->
+
+  <meta name="google-site-verification" content="uLoA31CJfOhIVMJWBjCmQL8xNMmmLybZU3LRKavy9WQ" /><title>
+	Calculus II - Dot Product
+</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="../../../www.googletagmanager.com/gtag/js1872?id=UA-331594-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-331594-1');
+  </script>
+
+  <link type="text/css" href="../../css/jquery.mmenu.all.css" rel="stylesheet" /><link type="text/css" href="../../css/jquery.dropdown.css" rel="stylesheet" /><link href="../../FA/css/fontawesome-all.min.css" rel="stylesheet" /><link type="text/css" href="../../css/notes-all.css" rel="stylesheet" /><link type="text/css" href="../../css/notes-google.css" rel="stylesheet" /><link type="text/css" href="../../css/notes-mmenu.css" rel="stylesheet" /><link type="text/css" href="../../css/notes-dropdown.css" rel="stylesheet" />
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+     TeX: { equationNumbers: { autoNumber: "AMS" } }
+    });
+  </script>
+  <script type="text/javascript" async src="../../../cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax2ba6.js?config=TeX-AMS_CHTML-full"></script>
+  <script type="text/javascript" src="../../../code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="../../js/jquery.mmenu.all.js"></script>
+  <script type="text/javascript" src="../../js/jquery.dropdown.js"></script>
+  <script type="text/javascript" src="../../js/notes-all.js"></script>  
+
+  <script>
+    (function () {
+      var cx = '001004262401526223570:11yv6vpcqvy';
+      var gcse = document.createElement('script');
+      gcse.type = 'text/javascript';
+      gcse.async = true;
+      gcse.src = '../../../cse.google.com/cse07b6.html?cx=' + cx;
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(gcse, s);
+    })();
+  </script>
+
+<meta http-equiv="description" name="description" content="In this section we will define the dot product of two vectors.  We give some of the basic properties of dot products and define orthogonal vectors and show how to use the dot product to determine if two vectors are orthogonal.  We also discuss finding vector projections and direction cosines in this section." /></head>
+<body onload="init({Notes: 'NoteMobile;8/21/2018;true'})">
+
+  <div id="page">
+
+    <div class="header">
+      <div class="header-row">
+        <!--<a href="#menu"><span></span></a>-->
+        <div id="side-menu-icon" class="header-side-menu-icon"><a href="#menu"><span class="fas fa-bars fa-lg" aria-hidden="true" title="Main Menu - Change between topics, chapters and sections as well as a few extra pages."></span></a></div>
+        <span class="header-title"><a href="../../index.html" class="header-title-link">Paul's Online Notes</a></span>
+        <div class="header-spacer"></div>
+
+        <div id="content-top-menu" class="top-menu">
+          <button id="content-type-menu" class="top-menu-button" data-jq-dropdown="#jq-dropdown-type" title="View (Notes, Practice Problems or Assignment Problems, Show/Hide Solutions and/or Steps) Menu">
+            <span id="tab_top_menu_notes" class="top-menu-item-title">Notes</span> <span class="far fa-eye fa-lg" aria-hidden="true"></span>
+          </button>
+
+          <button id="quicknav-menu" class="top-menu-button" data-jq-dropdown="#jq-dropdown-quicknav" title="Quick Navigation (Previous/Next Sections and Problems and Full Problem List) Menu">
+            <span class="top-menu-item-title">Quick Nav</span> <span class="fas fa-exchange fa-lg" aria-hidden="true"></span>
+          </button>
+          
+          <button id="download-menu" class="top-menu-button" data-jq-dropdown="#jq-dropdown-download" title="Download pdf Menu">
+            <span class="top-menu-item-title">Download</span> <span class="far fa-download fa-lg" aria-hidden="true"></span>
+          </button>
+
+          <button id="print-menu" class="top-menu-button top-menu-button-icon-only" data-jq-dropdown="#jq-print-download" title="Print Menu">
+            <span class="far fa-print fa-lg" aria-hidden="true"></span>
+          </button>
+        </div>
+
+        <div id="header-google-search" class="header-search">
+          <gcse:search></gcse:search>
+        </div>
+        <div id="header-search-icon" title="Site Search" class="header-menu-icon"><span id="search-icon" class="fas fa-search" aria-hidden="true"></span></div>
+
+      </div>
+    </div>
+
+     <div id="jq-dropdown-type" class="jq-dropdown jq-dropdown-tip">
+      <ul class="jq-dropdown-menu">
+        
+        <li id="li_type_menu_goto" class="top-menu-nav-title">Go To</li>
+        <li id="li_type_menu_notes">
+          <span id="type_menu_notes_span" title="Viewing the Notes for the current topic." class="top-menu-current">Notes</span>
+          
+        </li>
+        <li id="li_type_menu_practice">
+          
+          
+          <a href="http://tutorial.math.lamar.edu/Problems/CalcII/DotProduct.aspx" id="type_menu_practice_link" title="Go to Practice Problems for current topic.">Practice Problems</a>
+        </li>
+        <li id="li_type_menu_asgn">
+          
+          <a href="http://tutorial.math.lamar.edu/ProblemsNS/CalcII/DotProduct.aspx" id="type_menu_asgn_link" title="Go to Assignment Problems for current topic.">Assignment Problems</a>
+        </li>
+        <li id="li_type_menu_sh" class="top-menu-nav-title">Show/Hide</li>
+        <li id="li_type_menu_show" title="Show any hidden solutions and/or steps that may be present on the page."><a href="javascript:SHPrintPage(1,0)" id="view_menu_show">Show all Solutions/Steps/<em>etc.</em></a></li>
+        <li id="li_type_menu_hide" title="Hide any visible solutions and/or steps that may be present on the page."><a href="javascript:SHPrintPage(0,0)" id="view_menu_hide">Hide all Solutions/Steps/<em>etc.</em></a></li>
+      </ul>
+    </div>
+
+    <div id="jq-dropdown-quicknav" class="jq-dropdown jq-dropdown-tip">
+      <ul class="jq-dropdown-menu">
+        <li id="li_nav_menu_sections" class="top-menu-nav-title">Sections</li>
+        <li id="li_nav_menu_prev_section"><a href="VectorArithmetic.html" id="a_nav_menu_prev_section" class="top-menu-nav-link" title="Previous Section : Vector Arithmetic"><span class="top-menu-prev fas fa-chevron-left"></span> Vector Arithmetic</a></li>
+        <li id="li_nav_menu_next_section"><a href="CrossProduct.html" id="a_nav_menu_next_section" class="top-menu-nav-link" title="Next Section : Cross Product"><span class="top-menu-prev-hidden fas fa-chevron-left"></span> Cross Product <span class="top-menu-next fas fa-chevron-right"></span></a></li>
+        <li id="li_nav_menu_chapters" class="top-menu-nav-title">Chapters</li>
+        <li id="li_nav_menu_prev_chapter"><a href="SeriesIntro.html" id="a_nav_menu_prev_chapter" class="top-menu-nav-link" title="Previous Chapter : Series &amp; Sequences"><span class="top-menu-prev fas fa-chevron-left"></span><span class="top-menu-prev fas fa-chevron-left"></span> Series & Sequences</a></li>
+        <li id="li_nav_menu_next_chapter"><a href="3DSpace.html" id="a_nav_menu_next_chapter" class="top-menu-nav-link" title="Next Chapter : 3-Dimensional Space"><span class="top-menu-prev-hidden fas fa-chevron-left"></span><span class="top-menu-prev-hidden fas fa-chevron-left"></span> 3-Dimensional Space <span class="top-menu-next fas fa-chevron-right"></span><span class="top-menu-next fas fa-chevron-right"></span></a></li>
+        
+        
+        
+        
+        <li id="li_nav_menu_classes" class="top-menu-nav-title">Classes</li>
+        <li>
+          
+          <a href="../Alg/Alg.html" id="nav_menu_alg_link" title="Go To Algebra Notes">Algebra</a>
+        </li>
+        <li>
+          
+          <a href="../CalcI/CalcI.html" id="nav_menu_calci_link" title="Go To Calculus I Notes">Calculus I</a>
+        </li>
+        <li>
+          <span id="nav_menu_calcii_span" title="Currently Viewing Calculus II Material" class="top-menu-current">Calculus II</span>
+          
+        </li>
+        <li>
+          
+          <a href="../CalcIII/CalcIII.html" id="nav_menu_calciii_link" title="Go To Calculus III Notes">Calculus III</a>
+        </li>
+        <li>
+          
+          <a href="../DE/DE.html" id="nav_menu_de_link" title="Go To Differential Equations Notes">Differential Equations</a>
+        </li>
+        <li id="li_nav_menu_extras" class="top-menu-nav-title">Extras</li>
+        <li>
+          
+          <a href="../../Extras/AlgebraTrigReview/AlgebraTrig.html" id="nav_menu_algtrig_link" title="Go To Algebra &amp; Trig Review">Algebra &amp; Trig Review</a>
+        </li>
+        <li>
+          
+          <a href="../../Extras/CommonErrors/CommonMathErrors.html" id="nav_menu_commonerrors_link" title="Go To Common Math Errors">Common Math Errors</a>
+        </li>
+        <li>
+          
+          <a href="../../Extras/ComplexPrimer/ComplexNumbers.html" id="nav_menu_complexnumbers_link" title="Go To Complex Numbers Primer">Complex Number Primer</a>
+        </li>
+        <li>
+          
+          <a href="../../Extras/StudyMath/HowToStudyMath.html" id="nav_menu_studymath_link" title="Go To How To Study Math">How To Study Math</a>
+        </li>
+        <li>
+          
+          <a href="../../Extras/CheatSheets_Tables.html" id="nav_menu_cheattables_link" title="Go To List of Cheat Sheets and Tables">Cheat Sheets &amp; Tables</a>
+        </li>
+        <li id="li_nav_menu_misc" class="top-menu-nav-title">Misc</li>
+        <li><a href="http://tutorial.math.lamar.edu/contact.aspx" id="nav_menu_contact" title="Contact Me!">Contact Me</a></li>
+        <li><a href="../../mathjax.html" id="nav_menu_mathjax" title="Info on MathJax and MathJax Configuration Menu">MathJax Help and Configuration</a></li>
+        <li><a href="../../mystudents.html" id="nav_menu_students" title="Go here if you are currently taking a class from me!">My Students</a></li>
+      </ul>
+    </div>
+
+    <div id="jq-dropdown-download" class="jq-dropdown jq-dropdown-anchor-right jq-dropdown-tip">
+      <ul class="jq-dropdown-menu">
+        
+        <li id="li_download_menu_notes" class="top-menu-nav-title">Notes Downloads</li>
+        <li id="li_download_menu_notes_book"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=B,2,N" id="download_menu_notes_book" data-PDF="Download - Menu$Notes - Book$Calculus II$/Downloads/CalcII/Notes/Complete.pdf">Complete Book</a></li>
+        
+        <li id="li_download_menu_notes_chapter"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=C,24,N" id="download_menu_notes_chapter" data-PDF="Download - Menu$Notes - Chapter$Calculus II - Vectors$/Downloads/CalcII/Notes/Vectors.pdf">Current Chapter</a></li>
+        <li id="li_download_menu_notes_section"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=S,169,N" id="download_menu_notes_section" data-PDF="Download - Menu$Notes - Section$Calculus II - Dot Product$/Downloads/CalcII/Notes/DotProduct.pdf">Current Section</a></li>
+        <li id="li_download_menu_practice" class="top-menu-nav-title">Practice Problems Downloads</li>
+        
+        <li id="li_download_menu_practice_book"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=B,2,P" id="download_menu_practice_book" data-PDF="Download - Menu$Practice Problems - Book$Calculus II$/Downloads/CalcII/Practice Problems/Complete.pdf">Complete Book - Problems Only</a></li>
+        <li id="li_download_menu_solutions_book"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=B,2,S" id="download_menu_solutions_book" data-PDF="Download - Menu$Practice Problems Solutions - Book$Calculus II$/Downloads/CalcII/Practice Problems Solutions/Complete.pdf">Complete Book - Solutions</a></li>
+        <li id="li_download_menu_b_c" class="top-menu-divider"></li>
+        <li id="li_download_menu_practice_chapter"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=C,24,P" id="download_menu_practice_chapter" data-PDF="Download - Menu$Practice Problems - Chapter$Calculus II - Vectors$/Downloads/CalcII/Practice Problems/Vectors.pdf">Current Chapter - Problems Only</a></li>
+        <li id="li_download_menu_solutions_chapter"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=C,24,S" id="download_menu_solutions_chapter" data-PDF="Download - Menu$Practice Problems Solutions - Chapter$Calculus II - Vectors$/Downloads/CalcII/Practice Problems Solutions/Vectors.pdf">Current Chapter - Solutions</a></li>
+        <li id="li_download_menu_c_s" class="top-menu-divider"></li>
+        <li id="li_download_menu_practice_section"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=S,169,P" id="download_menu_practice_section" data-PDF="Download - Menu$Practice Problems - Section$Calculus II - Dot Product$/Downloads/CalcII/Practice Problems/DotProduct.pdf">Current Section - Problems Only</a></li>
+        <li id="li_download_menu_solutions_section"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=S,169,S" id="download_menu_solutions_section" data-PDF="Download - Menu$Practice Problems Solutions - Section$Calculus II - Dot Product$/Downloads/CalcII/Practice Problems Solutions/DotProduct.pdf">Current Section - Solutions</a></li>
+        <li id="li_download_menu_asgn" class="top-menu-nav-title">Assignment Problems Downloads</li>
+        
+        <li id="li_download_menu_asgn_book"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=B,2,A" id="download_menu_asgn_book" data-PDF="Download - Menu$Assignment Problems - Book$Calculus II$/Downloads/CalcII/Assignment Problems/Complete.pdf">Complete Book</a></li>
+        <li id="li_download_menu_asgn_chapter"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=C,24,A" id="download_menu_asgn_chapter" data-PDF="Download - Menu$Assignment Problems - Chapter$Calculus II - Vectors$/Downloads/CalcII/Assignment Problems/Vectors.pdf">Current Chapter</a></li>
+        <li id="li_download_menu_asgn_section"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=S,169,A" id="download_menu_asgn_section" data-PDF="Download - Menu$Assignment Problems - Section$Calculus II - Dot Product$/Downloads/CalcII/Assignment Problems/DotProduct.pdf">Current Section</a></li>
+        <li id="li_download_menu_other" class="top-menu-nav-title">Other Items</li>
+        <li id="li_download_menu_urls">
+          <a href="http://tutorial.math.lamar.edu/DownloadURLs.aspx?bi=2&amp;ci=24&amp;si=169" id="download_menu_urls">Get URL's for Download Items</a>
+        </li>
+      </ul>
+    </div>
+
+    <div id="jq-print-download" class="jq-dropdown jq-dropdown-anchor-right jq-dropdown-tip">
+      <ul class="jq-dropdown-menu">
+        <li id="li_print_menu_default"><a href="javascript:SHPrintPage()" id="print_menu_default">Print Page in Current Form (Default)</a></li>
+        <li id="li_print_menu_show"><a href="javascript:SHPrintPage(1,1)" id="print_menu_show">Show all Solutions/Steps and Print Page</a></li>
+        <li id="li_print_menu_hide"><a href="javascript:SHPrintPage(0,1)" id="print_menu_hide">Hide all Solutions/Steps and Print Page</a></li>
+      </ul>
+    </div>
+
+
+
+   
+
+    <nav id="menu" class="notes-nav">
+      <ul>
+        <li><a href="../../index.html" class="mm-link">Home</a></li>
+        <li><span>Classes</span></li>
+        <li><a href="../Alg/Alg.html" class="mm-link">Algebra</a>
+          <ul>
+            <li><a href="../Alg/Preliminaries.html" class="mm-link">Preliminaries</a>
+              <ul>
+                <li><a href="../Alg/IntegerExponents.html" class="mm-link">Integer Exponents</a></li>
+                <li><a href="../Alg/RationalExponents.html" class="mm-link">Rational Exponents</a></li>
+                <li><a href="../Alg/Radicals.html" class="mm-link">Radicals</a></li>
+                <li><a href="../Alg/Polynomials.html" class="mm-link">Polynomials</a></li>
+                <li><a href="../Alg/Factoring.html" class="mm-link">Factoring Polynomials</a></li>
+                <li><a href="../Alg/RationalExpressions.html" class="mm-link">Rational Expressions</a></li>
+                <li><a href="../Alg/ComplexNumbers.html" class="mm-link">Complex Numbers</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/Solving.html" class="mm-link">Solving Equations and Inequalities</a>
+              <ul>
+                <li><a href="../Alg/SolutionSets.html" class="mm-link">Solutions and Solution Sets</a></li>
+                <li><a href="../Alg/SolveLinearEqns.html" class="mm-link">Linear Equations</a></li>
+                <li><a href="../Alg/LinearApps.html" class="mm-link">Applications of Linear Equations</a></li>
+                <li><a href="../Alg/SolveMultiVariable.html" class="mm-link">Equations With More Than One Variable</a></li>
+                <li><a href="../Alg/SolveQuadraticEqnsI.html" class="mm-link">Quadratic Equations - Part I</a></li>
+                <li><a href="../Alg/SolveQuadraticEqnsII.html" class="mm-link">Quadratic Equations - Part II</a></li>
+                <li><a href="../Alg/SolveQuadraticEqnSummary.html" class="mm-link">Quadratic Equations : A Summary</a></li>
+                <li><a href="../Alg/QuadraticApps.html" class="mm-link">Applications of Quadratic Equations</a></li>
+                <li><a href="../Alg/ReducibleToQuadratic.html" class="mm-link">Equations Reducible to Quadratic in Form</a></li>
+                <li><a href="../Alg/SolveRadicalEqns.html" class="mm-link">Equations with Radicals</a></li>
+                <li><a href="../Alg/SolveLinearInequalities.html" class="mm-link">Linear Inequalities</a></li>
+                <li><a href="../Alg/SolvePolyInequalities.html" class="mm-link">Polynomial Inequalities</a></li>
+                <li><a href="../Alg/SolveRationalInequalities.html" class="mm-link">Rational Inequalities</a></li>
+                <li><a href="../Alg/SolveAbsValueEqns.html" class="mm-link">Absolute Value Equations</a></li>
+                <li><a href="../Alg/SolveAbsValueIneq.html" class="mm-link">Absolute Value Inequalities</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/Graphing_Functions.html" class="mm-link">Graphing and Functions</a>
+              <ul>
+                <li><a href="../Alg/Graphing.html" class="mm-link">Graphing</a></li>
+                <li><a href="../Alg/Lines.html" class="mm-link">Lines</a></li>
+                <li><a href="../Alg/Circles.html" class="mm-link">Circles</a></li>
+                <li><a href="../Alg/FunctionDefn.html" class="mm-link">The Definition of a Function</a></li>
+                <li><a href="../Alg/GraphFunctions.html" class="mm-link">Graphing Functions</a></li>
+                <li><a href="../Alg/CombineFunctions.html" class="mm-link">Combining Functions</a></li>
+                <li><a href="../Alg/InverseFunctions.html" class="mm-link">Inverse Functions</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/CommonGraphs.html" class="mm-link">Common Graphs</a>
+              <ul>
+                <li><a href="../Alg/Lines_Circles_PWF.html" class="mm-link">Lines, Circles and Piecewise Functions</a></li>
+                <li><a href="../Alg/Parabolas.html" class="mm-link">Parabolas</a></li>
+                <li><a href="../Alg/Ellipses.html" class="mm-link">Ellipses</a></li>
+                <li><a href="../Alg/Hyperbolas.html" class="mm-link">Hyperbolas</a></li>
+                <li><a href="../Alg/MiscFunctions.html" class="mm-link">Miscellaneous Functions</a></li>
+                <li><a href="../Alg/Transformations.html" class="mm-link">Transformations</a></li>
+                <li><a href="../Alg/Symmetry.html" class="mm-link">Symmetry</a></li>
+                <li><a href="../Alg/GraphRationalFcns.html" class="mm-link">Rational Functions</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/PolynomialFunctions.html" class="mm-link">Polynomial Functions</a>
+              <ul>
+                <li><a href="../Alg/DividingPolynomials.html" class="mm-link">Dividing Polynomials</a></li>
+                <li><a href="../Alg/ZeroesOfPolynomials.html" class="mm-link">Zeroes/Roots of Polynomials</a></li>
+                <li><a href="../Alg/GraphingPolynomials.html" class="mm-link">Graphing Polynomials</a></li>
+                <li><a href="../Alg/FindingZeroesOfPolynomials.html" class="mm-link">Finding Zeroes of Polynomials</a></li>
+                <li><a href="../Alg/PartialFractions.html" class="mm-link">Partial Fractions</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/ExpAndLog.html" class="mm-link">Exponential and Logarithm Functions</a>
+              <ul>
+                <li><a href="../Alg/ExpFunctions.html" class="mm-link">Exponential Functions</a></li>
+                <li><a href="../Alg/LogFunctions.html" class="mm-link">Logarithm Functions</a></li>
+                <li><a href="../Alg/SolveExpEqns.html" class="mm-link">Solving Exponential Equations</a></li>
+                <li><a href="../Alg/SolveLogEqns.html" class="mm-link">Solving Logarithm Equations</a></li>
+                <li><a href="../Alg/ExpLogApplications.html" class="mm-link">Applications</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/Systems.html" class="mm-link">Systems of Equations</a>
+              <ul>
+                <li><a href="../Alg/SystemsTwoVrble.html" class="mm-link">Linear Systems with Two Variables</a></li>
+                <li><a href="../Alg/SystemsThreeVrble.html" class="mm-link">Linear Systems with Three Variables</a></li>
+                <li><a href="../Alg/AugmentedMatrix.html" class="mm-link">Augmented Matrices</a></li>
+                <li><a href="../Alg/AugmentedMatrixII.html" class="mm-link">More on the Augmented Matrix</a></li>
+                <li><a href="../Alg/NonlinearSystems.html" class="mm-link">Nonlinear Systems</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../CalcI/CalcI.html" class="mm-link">Calculus I</a>
+          <ul>
+            <li><a href="../CalcI/ReviewIntro.html" class="mm-link">Review</a>
+              <ul>
+                <li><a href="../CalcI/Functions.html" class="mm-link">Functions</a></li>
+                <li><a href="../CalcI/InverseFunctions.html" class="mm-link">Inverse Functions</a></li>
+                <li><a href="../CalcI/TrigFcns.html" class="mm-link">Trig Functions</a></li>
+                <li><a href="../CalcI/TrigEquations.html" class="mm-link">Solving Trig Equations</a></li>
+                <li><a href="../CalcI/TrigEquations_CalcI.html" class="mm-link">Trig Equations with Calculators, Part I</a></li>
+                <li><a href="../CalcI/TrigEquations_CalcII.html" class="mm-link">Trig Equations with Calculators, Part II</a></li>
+                <li><a href="../CalcI/ExpFunctions.html" class="mm-link">Exponential Functions</a></li>
+                <li><a href="../CalcI/LogFcns.html" class="mm-link">Logarithm Functions</a></li>
+                <li><a href="../CalcI/ExpLogEqns.html" class="mm-link">Exponential and Logarithm Equations</a></li>
+                <li><a href="../CalcI/CommonGraphs.html" class="mm-link">Common Graphs</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcI/limitsIntro.html" class="mm-link">Limits</a>
+              <ul>
+                <li><a href="../CalcI/Tangents_Rates.html" class="mm-link">Tangent Lines and Rates of Change</a></li>
+                <li><a href="../CalcI/TheLimit.html" class="mm-link">The Limit</a></li>
+                <li><a href="../CalcI/OneSidedLimits.html" class="mm-link">One-Sided Limits</a></li>
+                <li><a href="../CalcI/LimitsProperties.html" class="mm-link">Limit Properties</a></li>
+                <li><a href="../CalcI/ComputingLimits.html" class="mm-link">Computing Limits</a></li>
+                <li><a href="../CalcI/InfiniteLimits.html" class="mm-link">Infinite Limits</a></li>
+                <li><a href="../CalcI/LimitsAtInfinityI.html" class="mm-link">Limits At Infinity, Part I</a></li>
+                <li><a href="../CalcI/LimitsAtInfinityII.html" class="mm-link">Limits At Infinity, Part II</a></li>
+                <li><a href="../CalcI/Continuity.html" class="mm-link">Continuity</a></li>
+                <li><a href="../CalcI/DefnOfLimit.html" class="mm-link">The Definition of the Limit</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcI/DerivativeIntro.html" class="mm-link">Derivatives</a>
+              <ul>
+                <li><a href="../CalcI/DefnOfDerivative.html" class="mm-link">The Definition of the Derivative</a></li>
+                <li><a href="../CalcI/DerivativeInterp.html" class="mm-link">Interpretation of the Derivative</a></li>
+                <li><a href="../CalcI/DiffFormulas.html" class="mm-link">Differentiation Formulas</a></li>
+                <li><a href="../CalcI/ProductQuotientRule.html" class="mm-link">Product and Quotient Rule</a></li>
+                <li><a href="../CalcI/DiffTrigFcns.html" class="mm-link">Derivatives of Trig Functions</a></li>
+                <li><a href="../CalcI/DiffExpLogFcns.html" class="mm-link">Derivatives of Exponential and Logarithm Functions</a></li>
+                <li><a href="../CalcI/DiffInvTrigFcns.html" class="mm-link">Derivatives of Inverse Trig Functions</a></li>
+                <li><a href="../CalcI/DiffHyperFcns.html" class="mm-link">Derivatives of Hyperbolic Functions</a></li>
+                <li><a href="../CalcI/ChainRule.html" class="mm-link">Chain Rule</a></li>
+                <li><a href="../CalcI/ImplicitDIff.html" class="mm-link">Implicit Differentiation</a></li>
+                <li><a href="../CalcI/RelatedRates.html" class="mm-link">Related Rates</a></li>
+                <li><a href="../CalcI/HigherOrderDerivatives.html" class="mm-link">Higher Order Derivatives</a></li>
+                <li><a href="../CalcI/LogDiff.html" class="mm-link">Logarithmic Differentiation</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcI/DerivAppsIntro.html" class="mm-link">Applications of Derivatives</a>
+              <ul>
+                <li><a href="../CalcI/RateOfChange.html" class="mm-link">Rates of Change</a></li>
+                <li><a href="../CalcI/CriticalPoints.html" class="mm-link">Critical Points</a></li>
+                <li><a href="../CalcI/MinMaxValues.html" class="mm-link">Minimum and Maximum Values</a></li>
+                <li><a href="../CalcI/AbsExtrema.html" class="mm-link">Finding Absolute Extrema</a></li>
+                <li><a href="../CalcI/ShapeofGraphPtI.html" class="mm-link">The Shape of a Graph, Part I</a></li>
+                <li><a href="../CalcI/ShapeofGraphPtII.html" class="mm-link">The Shape of a Graph, Part II</a></li>
+                <li><a href="../CalcI/MeanValueTheorem.html" class="mm-link">The Mean Value Theorem</a></li>
+                <li><a href="../CalcI/Optimization.html" class="mm-link">Optimization</a></li>
+                <li><a href="../CalcI/MoreOptimization.html" class="mm-link">More Optimization Problems</a></li>
+                <li><a href="../CalcI/LHospitalsRule.html" class="mm-link">L'Hospital's Rule and Indeterminate Forms</a></li>
+                <li><a href="../CalcI/LinearApproximations.html" class="mm-link">Linear Approximations</a></li>
+                <li><a href="../CalcI/Differentials.html" class="mm-link">Differentials</a></li>
+                <li><a href="../CalcI/NewtonsMethod.html" class="mm-link">Newton's Method</a></li>
+                <li><a href="../CalcI/BusinessApps.html" class="mm-link">Business Applications</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcI/IntegralsIntro.html" class="mm-link">Integrals</a>
+              <ul>
+                <li><a href="../CalcI/IndefiniteIntegrals.html" class="mm-link">Indefinite Integrals</a></li>
+                <li><a href="../CalcI/ComputingIndefiniteIntegrals.html" class="mm-link">Computing Indefinite Integrals</a></li>
+                <li><a href="../CalcI/SubstitutionRuleIndefinite.html" class="mm-link">Substitution Rule for Indefinite Integrals</a></li>
+                <li><a href="../CalcI/SubstitutionRuleIndefinitePtII.html" class="mm-link">More Substitution Rule</a></li>
+                <li><a href="../CalcI/AreaProblem.html" class="mm-link">Area Problem</a></li>
+                <li><a href="../CalcI/DefnOfDefiniteIntegral.html" class="mm-link">Definition of the Definite Integral</a></li>
+                <li><a href="../CalcI/ComputingDefiniteIntegrals.html" class="mm-link">Computing Definite Integrals</a></li>
+                <li><a href="../CalcI/SubstitutionRuleDefinite.html" class="mm-link">Substitution Rule for Definite Integrals</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcI/IntAppsIntro.html" class="mm-link">Applications of Integrals</a>
+              <ul>
+                <li><a href="../CalcI/AvgFcnValue.html" class="mm-link">Average Function Value</a></li>
+                <li><a href="../CalcI/AreaBetweenCurves.html" class="mm-link">Area Between Curves</a></li>
+                <li><a href="../CalcI/VolumeWithRings.html" class="mm-link">Volumes of Solids of Revolution / Method of Rings</a></li>
+                <li><a href="../CalcI/VolumeWithCylinder.html" class="mm-link">Volumes of Solids of Revolution/Method of Cylinders</a></li>
+                <li><a href="../CalcI/MoreVolume.html" class="mm-link">More Volume Problems</a></li>
+                <li><a href="../CalcI/Work.html" class="mm-link">Work</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcI/ExtrasIntro.html" class="mm-link">Extras</a>
+              <ul>
+                <li><a href="../CalcI/LimitProofs.html" class="mm-link">Proof of Various Limit Properties</a></li>
+                <li><a href="../CalcI/DerivativeProofs.html" class="mm-link">Proof of Various Derivative Properties</a></li>
+                <li><a href="../CalcI/ProofTrigDeriv.html" class="mm-link">Proof of Trig Limits</a></li>
+                <li><a href="../CalcI/DerivativeAppsProofs.html" class="mm-link">Proofs of Derivative Applications Facts</a></li>
+                <li><a href="../CalcI/ProofIntProp.html" class="mm-link">Proof of Various Integral Properties </a></li>
+                <li><a href="../CalcI/Area_Volume_Formulas.html" class="mm-link">Area and Volume Formulas</a></li>
+                <li><a href="../CalcI/TypesOfInfinity.html" class="mm-link">Types of Infinity</a></li>
+                <li><a href="../CalcI/SummationNotation.html" class="mm-link">Summation Notation</a></li>
+                <li><a href="../CalcI/ConstantofIntegration.html" class="mm-link">Constant of Integration</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="CalcII.html" class="mm-link">Calculus II</a>
+          <ul>
+            <li><a href="IntTechIntro.html" class="mm-link">Integration Techniques</a>
+              <ul>
+                <li><a href="IntegrationByParts.html" class="mm-link">Integration by Parts</a></li>
+                <li><a href="IntegralsWithTrig.html" class="mm-link">Integrals Involving Trig Functions</a></li>
+                <li><a href="TrigSubstitutions.html" class="mm-link">Trig Substitutions</a></li>
+                <li><a href="PartialFractions.html" class="mm-link">Partial Fractions</a></li>
+                <li><a href="IntegralsWithRoots.html" class="mm-link">Integrals Involving Roots</a></li>
+                <li><a href="IntegralsWithQuadratics.html" class="mm-link">Integrals Involving Quadratics</a></li>
+                <li><a href="IntegrationStrategy.html" class="mm-link">Integration Strategy</a></li>
+                <li><a href="ImproperIntegrals.html" class="mm-link">Improper Integrals</a></li>
+                <li><a href="ImproperIntegralsCompTest.html" class="mm-link">Comparison Test for Improper Integrals</a></li>
+                <li><a href="ApproximatingDefIntegrals.html" class="mm-link">Approximating Definite Integrals</a></li>
+              </ul>
+            </li>
+            <li><a href="IntAppsIntro.html" class="mm-link">Applications of Integrals</a>
+              <ul>
+                <li><a href="ArcLength.html" class="mm-link">Arc Length</a></li>
+                <li><a href="SurfaceArea.html" class="mm-link">Surface Area</a></li>
+                <li><a href="CenterOfMass.html" class="mm-link">Center of Mass</a></li>
+                <li><a href="HydrostaticPressure.html" class="mm-link">Hydrostatic Pressure</a></li>
+                <li><a href="Probability.html" class="mm-link">Probability</a></li>
+              </ul>
+            </li>
+            <li><a href="ParametricIntro.html" class="mm-link">Parametric Equations and Polar Coordinates</a>
+              <ul>
+                <li><a href="ParametricEqn.html" class="mm-link">Parametric Equations and Curves</a></li>
+                <li><a href="ParaTangent.html" class="mm-link">Tangents with Parametric Equations</a></li>
+                <li><a href="ParaArea.html" class="mm-link">Area with Parametric Equations</a></li>
+                <li><a href="ParaArcLength.html" class="mm-link">Arc Length with Parametric Equations</a></li>
+                <li><a href="ParaSurfaceArea.html" class="mm-link">Surface Area with Parametric Equations</a></li>
+                <li><a href="PolarCoordinates.html" class="mm-link">Polar Coordinates</a></li>
+                <li><a href="PolarTangents.html" class="mm-link">Tangents with Polar Coordinates</a></li>
+                <li><a href="PolarArea.html" class="mm-link">Area with Polar Coordinates</a></li>
+                <li><a href="PolarArcLength.html" class="mm-link">Arc Length with Polar Coordinates</a></li>
+                <li><a href="PolarSurfaceArea.html" class="mm-link">Surface Area with Polar Coordinates</a></li>
+                <li><a href="ArcLength_SurfaceArea.html" class="mm-link">Arc Length and Surface Area Revisited</a></li>
+              </ul>
+            </li>
+            <li><a href="SeriesIntro.html" class="mm-link">Series & Sequences</a>
+              <ul>
+                <li><a href="Sequences.html" class="mm-link">Sequences</a></li>
+                <li><a href="MoreSequences.html" class="mm-link">More on Sequences</a></li>
+                <li><a href="Series_Basics.html" class="mm-link">Series - The Basics</a></li>
+                <li><a href="ConvergenceOfSeries.html" class="mm-link">Convergence/Divergence of Series</a></li>
+                <li><a href="Series_Special.html" class="mm-link">Special Series</a></li>
+                <li><a href="IntegralTest.html" class="mm-link">Integral Test</a></li>
+                <li><a href="SeriesCompTest.html" class="mm-link">Comparison Test/Limit Comparison Test</a></li>
+                <li><a href="AlternatingSeries.html" class="mm-link">Alternating Series Test</a></li>
+                <li><a href="AbsoluteConvergence.html" class="mm-link">Absolute Convergence</a></li>
+                <li><a href="RatioTest.html" class="mm-link">Ratio Test</a></li>
+                <li><a href="RootTest.html" class="mm-link">Root Test</a></li>
+                <li><a href="SeriesStrategy.html" class="mm-link">Strategy for Series</a></li>
+                <li><a href="EstimatingSeries.html" class="mm-link">Estimating the Value of a Series</a></li>
+                <li><a href="PowerSeries.html" class="mm-link">Power Series</a></li>
+                <li><a href="PowerSeriesandFunctions.html" class="mm-link">Power Series and Functions</a></li>
+                <li><a href="TaylorSeries.html" class="mm-link">Taylor Series</a></li>
+                <li><a href="TaylorSeriesApps.html" class="mm-link">Applications of Series</a></li>
+                <li><a href="BinomialSeries.html" class="mm-link">Binomial Series</a></li>
+              </ul>
+            </li>
+            <li><a href="VectorsIntro.html" class="mm-link">Vectors</a>
+              <ul>
+                <li><a href="Vectors_Basics.html" class="mm-link">Vectors - The Basics</a></li>
+                <li><a href="VectorArithmetic.html" class="mm-link">Vector Arithmetic</a></li>
+                <li><a href="DotProduct.html" class="mm-link">Dot Product</a></li>
+                <li><a href="CrossProduct.html" class="mm-link">Cross Product</a></li>
+              </ul>
+            </li>
+            <li><a href="3DSpace.html" class="mm-link">3-Dimensional Space</a>
+              <ul>
+                <li><a href="3DCoords.html" class="mm-link">The 3-D Coordinate System</a></li>
+                <li><a href="EqnsOfLines.html" class="mm-link">Equations of Lines</a></li>
+                <li><a href="EqnsOfPlanes.html" class="mm-link">Equations of Planes</a></li>
+                <li><a href="QuadricSurfaces.html" class="mm-link">Quadric Surfaces</a></li>
+                <li><a href="MultiVrbleFcns.html" class="mm-link">Functions of Several Variables</a></li>
+                <li><a href="VectorFunctions.html" class="mm-link">Vector Functions</a></li>
+                <li><a href="VectorFcnsCalculus.html" class="mm-link">Calculus with Vector Functions</a></li>
+                <li><a href="TangentNormalVectors.html" class="mm-link">Tangent, Normal and Binormal Vectors</a></li>
+                <li><a href="VectorArcLength.html" class="mm-link">Arc Length with Vector Functions</a></li>
+                <li><a href="Curvature.html" class="mm-link">Curvature</a></li>
+                <li><a href="Velocity_Acceleration.html" class="mm-link">Velocity and Acceleration</a></li>
+                <li><a href="CylindricalCoords.html" class="mm-link">Cylindrical Coordinates</a></li>
+                <li><a href="SphericalCoords.html" class="mm-link">Spherical Coordinates</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../CalcIII/CalcIII.html" class="mm-link">Calculus III</a>
+          <ul>
+            <li><a href="../CalcIII/3DSpace.html" class="mm-link">3-Dimensional Space</a>
+              <ul>
+                <li><a href="../CalcIII/3DCoords.html" class="mm-link">The 3-D Coordinate System</a></li>
+                <li><a href="../CalcIII/EqnsOfLines.html" class="mm-link">Equations of Lines</a></li>
+                <li><a href="../CalcIII/EqnsOfPlanes.html" class="mm-link">Equations of Planes</a></li>
+                <li><a href="../CalcIII/QuadricSurfaces.html" class="mm-link">Quadric Surfaces</a></li>
+                <li><a href="../CalcIII/MultiVrbleFcns.html" class="mm-link">Functions of Several Variables</a></li>
+                <li><a href="../CalcIII/VectorFunctions.html" class="mm-link">Vector Functions</a></li>
+                <li><a href="../CalcIII/VectorFcnsCalculus.html" class="mm-link">Calculus with Vector Functions</a></li>
+                <li><a href="../CalcIII/TangentNormalVectors.html" class="mm-link">Tangent, Normal and Binormal Vectors</a></li>
+                <li><a href="../CalcIII/VectorArcLength.html" class="mm-link">Arc Length with Vector Functions</a></li>
+                <li><a href="../CalcIII/Curvature.html" class="mm-link">Curvature</a></li>
+                <li><a href="../CalcIII/Velocity_Acceleration.html" class="mm-link">Velocity and Acceleration</a></li>
+                <li><a href="../CalcIII/CylindricalCoords.html" class="mm-link">Cylindrical Coordinates</a></li>
+                <li><a href="../CalcIII/SphericalCoords.html" class="mm-link">Spherical Coordinates</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/PartialDerivsIntro.html" class="mm-link">Partial Derivatives</a>
+              <ul>
+                <li><a href="../CalcIII/Limits.html" class="mm-link">Limits</a></li>
+                <li><a href="../CalcIII/PartialDerivatives.html" class="mm-link">Partial Derivatives</a></li>
+                <li><a href="../CalcIII/PartialDerivInterp.html" class="mm-link">Interpretations of Partial Derivatives</a></li>
+                <li><a href="../CalcIII/HighOrderPartialDerivs.html" class="mm-link">Higher Order Partial Derivatives</a></li>
+                <li><a href="../CalcIII/Differentials.html" class="mm-link">Differentials</a></li>
+                <li><a href="../CalcIII/ChainRule.html" class="mm-link">Chain Rule</a></li>
+                <li><a href="../CalcIII/DirectionalDeriv.html" class="mm-link">Directional Derivatives</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/PartialDerivAppsIntro.html" class="mm-link">Applications of Partial Derivatives</a>
+              <ul>
+                <li><a href="../CalcIII/TangentPlanes.html" class="mm-link">Tangent Planes and Linear Approximations</a></li>
+                <li><a href="../CalcIII/GradientVectorTangentPlane.html" class="mm-link">Gradient Vector, Tangent Planes and Normal Lines</a></li>
+                <li><a href="../CalcIII/RelativeExtrema.html" class="mm-link">Relative Minimums and Maximums</a></li>
+                <li><a href="../CalcIII/AbsoluteExtrema.html" class="mm-link">Absolute Minimums and Maximums</a></li>
+                <li><a href="../CalcIII/LagrangeMultipliers.html" class="mm-link">Lagrange Multipliers</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/MultipleIntegralsIntro.html" class="mm-link">Multiple Integrals</a>
+              <ul>
+                <li><a href="../CalcIII/DoubleIntegrals.html" class="mm-link">Double Integrals</a></li>
+                <li><a href="../CalcIII/IteratedIntegrals.html" class="mm-link">Iterated Integrals</a></li>
+                <li><a href="../CalcIII/DIGeneralRegion.html" class="mm-link">Double Integrals over General Regions</a></li>
+                <li><a href="../CalcIII/DIPolarCoords.html" class="mm-link">Double Integrals in Polar Coordinates</a></li>
+                <li><a href="../CalcIII/TripleIntegrals.html" class="mm-link">Triple Integrals</a></li>
+                <li><a href="../CalcIII/TICylindricalCoords.html" class="mm-link">Triple Integrals in Cylindrical Coordinates</a></li>
+                <li><a href="../CalcIII/TISphericalCoords.html" class="mm-link">Triple Integrals in Spherical Coordinates</a></li>
+                <li><a href="../CalcIII/ChangeOfVariables.html" class="mm-link">Change of Variables</a></li>
+                <li><a href="../CalcIII/SurfaceArea.html" class="mm-link">Surface Area</a></li>
+                <li><a href="../CalcIII/Area_Volume.html" class="mm-link">Area and Volume Revisited</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/LineIntegralsIntro.html" class="mm-link">Line Integrals</a>
+              <ul>
+                <li><a href="../CalcIII/VectorFields.html" class="mm-link">Vector Fields</a></li>
+                <li><a href="../CalcIII/LineIntegralsPtI.html" class="mm-link">Line Integrals - Part I</a></li>
+                <li><a href="../CalcIII/LineIntegralsPtII.html" class="mm-link">Line Integrals - Part II</a></li>
+                <li><a href="../CalcIII/LineIntegralsVectorFields.html" class="mm-link">Line Integrals of Vector Fields</a></li>
+                <li><a href="../CalcIII/FundThmLineIntegrals.html" class="mm-link">Fundamental Theorem for Line Integrals</a></li>
+                <li><a href="../CalcIII/ConservativeVectorField.html" class="mm-link">Conservative Vector Fields</a></li>
+                <li><a href="../CalcIII/GreensTheorem.html" class="mm-link">Green's Theorem</a></li>
+                <li><a href="../CalcIII/CurlDivergence.html" class="mm-link">Curl and Divergence</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/SurfaceIntegralsIntro.html" class="mm-link">Surface Integrals</a>
+              <ul>
+                <li><a href="../CalcIII/ParametricSurfaces.html" class="mm-link">Parametric Surfaces</a></li>
+                <li><a href="../CalcIII/SurfaceIntegrals.html" class="mm-link">Surface Integrals</a></li>
+                <li><a href="../CalcIII/SurfIntVectorField.html" class="mm-link">Surface Integrals of Vector Fields</a></li>
+                <li><a href="../CalcIII/StokesTheorem.html" class="mm-link">Stokes' Theorem</a></li>
+                <li><a href="../CalcIII/DivergenceTheorem.html" class="mm-link">Divergence Theorem</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../DE/DE.html" class="mm-link">Differential Equations</a>
+          <ul>
+            <li><a href="../DE/IntroBasic.html" class="mm-link">Basic Concepts</a>
+              <ul>
+                <li><a href="../DE/Definitions.html" class="mm-link">Definitions</a></li>
+                <li><a href="../DE/DirectionFields.html" class="mm-link">Direction Fields</a></li>
+                <li><a href="../DE/FinalThoughts.html" class="mm-link">Final Thoughts</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/IntroFirstOrder.html" class="mm-link">First Order DE's</a>
+              <ul>
+                <li><a href="../DE/Linear.html" class="mm-link">Linear Equations</a></li>
+                <li><a href="../DE/Separable.html" class="mm-link">Separable Equations</a></li>
+                <li><a href="../DE/Exact.html" class="mm-link">Exact Equations</a></li>
+                <li><a href="../DE/Bernoulli.html" class="mm-link">Bernoulli Differential Equations</a></li>
+                <li><a href="../DE/Substitutions.html" class="mm-link">Substitutions</a></li>
+                <li><a href="../DE/IoV.html" class="mm-link">Intervals of Validity</a></li>
+                <li><a href="../DE/Modeling.html" class="mm-link">Modeling with First Order DE's</a></li>
+                <li><a href="../DE/EquilibriumSolutions.html" class="mm-link">Equilibrium Solutions</a></li>
+                <li><a href="../DE/EulersMethod.html" class="mm-link">Euler's Method</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/IntroSecondOrder.html" class="mm-link">Second Order DE's</a>
+              <ul>
+                <li><a href="../DE/SecondOrderConcepts.html" class="mm-link">Basic Concepts</a></li>
+                <li><a href="../DE/RealRoots.html" class="mm-link">Real & Distinct Roots</a></li>
+                <li><a href="../DE/ComplexRoots.html" class="mm-link">Complex Roots</a></li>
+                <li><a href="../DE/RepeatedRoots.html" class="mm-link">Repeated Roots</a></li>
+                <li><a href="../DE/ReductionofOrder.html" class="mm-link">Reduction of Order</a></li>
+                <li><a href="../DE/FundamentalSetsofSolutions.html" class="mm-link">Fundamental Sets of Solutions</a></li>
+                <li><a href="../DE/Wronskian.html" class="mm-link">More on the  Wronskian</a></li>
+                <li><a href="../DE/NonhomogeneousDE.html" class="mm-link">Nonhomogeneous Differential Equations</a></li>
+                <li><a href="../DE/UndeterminedCoefficients.html" class="mm-link">Undetermined Coefficients</a></li>
+                <li><a href="../DE/VariationofParameters.html" class="mm-link">Variation of Parameters</a></li>
+                <li><a href="../DE/Vibrations.html" class="mm-link">Mechanical Vibrations</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/LaplaceIntro.html" class="mm-link">Laplace Transforms</a>
+              <ul>
+                <li><a href="../DE/LaplaceDefinition.html" class="mm-link">The Definition</a></li>
+                <li><a href="../DE/LaplaceTransforms.html" class="mm-link">Laplace Transforms</a></li>
+                <li><a href="../DE/InverseTransforms.html" class="mm-link">Inverse Laplace Transforms</a></li>
+                <li><a href="../DE/StepFunctions.html" class="mm-link">Step Functions</a></li>
+                <li><a href="../DE/IVPWithLaplace.html" class="mm-link">Solving IVP's with Laplace Transforms</a></li>
+                <li><a href="../DE/IVPWithNonConstantCoefficient.html" class="mm-link">Nonconstant Coefficient IVP's</a></li>
+                <li><a href="../DE/IVPWithStepFunction.html" class="mm-link">IVP's With Step Functions</a></li>
+                <li><a href="../DE/DiracDeltaFunction.html" class="mm-link">Dirac Delta Function</a></li>
+                <li><a href="../DE/ConvolutionIntegrals.html" class="mm-link">Convolution Integrals</a></li>
+                <li><a href="../DE/Laplace_Table.html" class="mm-link">Table Of Laplace Transforms</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/SystemsIntro.html" class="mm-link">Systems of DE's</a>
+              <ul>
+                <li><a href="../DE/LA_Systems.html" class="mm-link">Review : Systems of Equations</a></li>
+                <li><a href="../DE/LA_Matrix.html" class="mm-link">Review : Matrices & Vectors</a></li>
+                <li><a href="../DE/LA_Eigen.html" class="mm-link">Review : Eigenvalues & Eigenvectors</a></li>
+                <li><a href="../DE/SystemsDE.html" class="mm-link">Systems of Differential Equations</a></li>
+                <li><a href="../DE/SolutionsToSystems.html" class="mm-link">Solutions to Systems</a></li>
+                <li><a href="../DE/PhasePlane.html" class="mm-link">Phase Plane</a></li>
+                <li><a href="../DE/RealEigenvalues.html" class="mm-link">Real Eigenvalues</a></li>
+                <li><a href="../DE/ComplexEigenvalues.html" class="mm-link">Complex Eigenvalues</a></li>
+                <li><a href="../DE/RepeatedEigenvalues.html" class="mm-link">Repeated Eigenvalues</a></li>
+                <li><a href="../DE/NonhomogeneousSystems.html" class="mm-link">Nonhomogeneous Systems</a></li>
+                <li><a href="../DE/SystemsLaplace.html" class="mm-link">Laplace Transforms</a></li>
+                <li><a href="../DE/SystemsModeling.html" class="mm-link">Modeling</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/SeriesIntro.html" class="mm-link">Series Solutions to DE's</a>
+              <ul>
+                <li><a href="../DE/PowerSeries.html" class="mm-link">Review : Power Series</a></li>
+                <li><a href="../DE/TaylorSeries.html" class="mm-link">Review : Taylor Series</a></li>
+                <li><a href="../DE/SeriesSolutions.html" class="mm-link">Series Solutions</a></li>
+                <li><a href="../DE/EulerEquations.html" class="mm-link">Euler Equations</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/IntroHigherOrder.html" class="mm-link">Higher Order Differential Equations</a>
+              <ul>
+                <li><a href="../DE/HOBasicConcepts.html" class="mm-link">Basic Concepts for <em>n</em><sup>th</sup> Order Linear Equations</a></li>
+                <li><a href="../DE/HOHomogeneousDE.html" class="mm-link">Linear Homogeneous Differential Equations</a></li>
+                <li><a href="../DE/HOUndeterminedCoeff.html" class="mm-link">Undetermined Coefficients</a></li>
+                <li><a href="../DE/HOVariationOfParam.html" class="mm-link">Variation of Parameters</a></li>
+                <li><a href="../DE/HOLaplaceTransforms.html" class="mm-link">Laplace Transforms</a></li>
+                <li><a href="../DE/HOSystems.html" class="mm-link">Systems of Differential Equations</a></li>
+                <li><a href="../DE/HOSeries.html" class="mm-link">Series Solutions</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/IntroBVP.html" class="mm-link">Boundary Value Problems &amp; Fourier Series</a>
+              <ul>
+                <li><a href="../DE/BoundaryValueProblem.html" class="mm-link">Boundary Value Problems</a></li>
+                <li><a href="../DE/BVPEvals.html" class="mm-link">Eigenvalues and Eigenfunctions</a></li>
+                <li><a href="../DE/PeriodicOrthogonal.html" class="mm-link">Periodic Functions &amp; Orthogonal Functions</a></li>
+                <li><a href="../DE/FourierSineSeries.html" class="mm-link">Fourier Sine Series</a></li>
+                <li><a href="../DE/FourierCosineSeries.html" class="mm-link">Fourier Cosine Series</a></li>
+                <li><a href="../DE/FourierSeries.html" class="mm-link">Fourier Series</a></li>
+                <li><a href="../DE/ConvergenceFourierSeries.html" class="mm-link">Convergence of Fourier Series</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/IntroPDE.html" class="mm-link">Partial Differential Equations </a>
+              <ul>
+                <li><a href="../DE/TheHeatEquation.html" class="mm-link">The Heat Equation</a></li>
+                <li><a href="../DE/TheWaveEquation.html" class="mm-link">The Wave Equation</a></li>
+                <li><a href="../DE/PDETerminology.html" class="mm-link">Terminology</a></li>
+                <li><a href="../DE/SeparationofVariables.html" class="mm-link">Separation of Variables</a></li>
+                <li><a href="../DE/SolvingHeatEquation.html" class="mm-link">Solving the Heat Equation</a></li>
+                <li><a href="../DE/HeatEqnNonZero.html" class="mm-link">Heat Equation with Non-Zero Temperature Boundaries</a></li>
+                <li><a href="../DE/LaplacesEqn.html" class="mm-link">Laplace's Equation</a></li>
+                <li><a href="../DE/VibratingString.html" class="mm-link">Vibrating String</a></li>
+                <li><a href="../DE/PDESummary.html" class="mm-link">Summary of Separation of Variables</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><span>Extras</span></li>
+        <li><a href="../../Extras/AlgebraTrigReview/AlgebraTrig.html" class="mm-link">Algebra &amp; Trig Review</a>
+          <ul>
+            <li><a href="../../Extras/AlgebraTrigReview/AlgebraIntro.html" class="mm-link">Algebra</a>
+              <ul>
+                <li><a href="../../Extras/AlgebraTrigReview/Exponents.html" class="mm-link">Exponents </a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/AbsoluteValue.html" class="mm-link">Absolute Value</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Radicals.html" class="mm-link">Radicals</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Rationalizing.html" class="mm-link">Rationalizing </a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Functions.html" class="mm-link">Functions </a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/MultPoly.html" class="mm-link">Multiplying Polynomials</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Factoring.html" class="mm-link">Factoring</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SimpRatExp.html" class="mm-link">Simplifying Rational Expressions</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Graphing.html" class="mm-link">Graphing and Common Graphs</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveEqnPtI.html" class="mm-link">Solving Equations, Part I</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveEqnPtII.html" class="mm-link">Solving Equations, Part II</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveSystems.html" class="mm-link">Solving Systems of Equations</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveIneq.html" class="mm-link">Solving Inequalities</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveAbsValue.html" class="mm-link">Absolute Value Equations and Inequalities</a></li>
+              </ul>
+            </li>
+            <li><a href="../../Extras/AlgebraTrigReview/TrigIntro.html" class="mm-link">Trigonometry</a>
+              <ul>
+                <li><a href="../../Extras/AlgebraTrigReview/TrigFunctions.html" class="mm-link">Trig Function Evaluation</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/TrigGraphs.html" class="mm-link">Graphs of Trig Functions</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/TrigFormulas.html" class="mm-link">Trig Formulas</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveTrigEqn.html" class="mm-link">Solving Trig Equations</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/InverseTrig.html" class="mm-link">Inverse Trig Functions</a></li>
+              </ul>
+            </li>
+            <li><a href="../../Extras/AlgebraTrigReview/ExpLogIntro.html" class="mm-link">Exponentials & Logarithms</a>
+              <ul>
+                <li><a href="../../Extras/AlgebraTrigReview/ExponentialFcns.html" class="mm-link">Basic Exponential Functions</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/LogarithmFcns.html" class="mm-link">Basic Logarithm Functions</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/LogProperties.html" class="mm-link">Logarithm Properties</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SimpLogs.html" class="mm-link">Simplifying Logarithms</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveExpEqn.html" class="mm-link">Solving Exponential Equations</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveLogEqn.html" class="mm-link">Solving Logarithm Equations</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../../Extras/CommonErrors/CommonMathErrors.html" class="mm-link">Common Math Errors</a>
+          <ul>
+            <li><a href="../../Extras/CommonErrors/GeneralErrors.html" class="mm-link">General Errors</a>
+            </li>
+            <li><a href="../../Extras/CommonErrors/AlgebraErrors.html" class="mm-link">Algebra Errors</a>
+            </li>
+            <li><a href="../../Extras/CommonErrors/TrigErrors.html" class="mm-link">Trig Errors</a>
+            </li>
+            <li><a href="../../Extras/CommonErrors/CommonErrors.html" class="mm-link">Common Errors</a>
+            </li>
+            <li><a href="../../Extras/CommonErrors/CalculusErrors.html" class="mm-link">Calculus Errors</a>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../../Extras/ComplexPrimer/ComplexNumbers.html" class="mm-link">Complex Number Primer</a>
+          <ul>
+            <li><a href="../../Extras/ComplexPrimer/Definition.html" class="mm-link">The Definition</a>
+            </li>
+            <li><a href="../../Extras/ComplexPrimer/Arithmetic.html" class="mm-link">Arithmetic</a>
+            </li>
+            <li><a href="../../Extras/ComplexPrimer/ConjugateModulus.html" class="mm-link">Conjugate and Modulus</a>
+            </li>
+            <li><a href="../../Extras/ComplexPrimer/Forms.html" class="mm-link">Polar and Exponential Forms</a>
+            </li>
+            <li><a href="../../Extras/ComplexPrimer/Roots.html" class="mm-link">Powers and Roots</a>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../../Extras/StudyMath/HowToStudyMath.html" class="mm-link">How To Study Math</a>
+          <ul>
+            <li><a href="../../Extras/StudyMath/GeneralTips.html" class="mm-link">General Tips</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/TakingNotes.html" class="mm-link">Taking Notes</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/GettingHelp.html" class="mm-link">Getting Help</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/Homework.html" class="mm-link">Doing Homework</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/ProblemSolving.html" class="mm-link">Problem Solving</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/StudyForExam.html" class="mm-link">Studying For an Exam</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/TakingExam.html" class="mm-link">Taking an Exam</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/Errors.html" class="mm-link">Learn From Your Errors</a>
+            </li>
+          </ul>
+        </li>
+
+        <li><span>Misc Links</span></li>
+        <li><a href="http://tutorial.math.lamar.edu/contact.aspx" class="mm-link">Contact Me</a></li>
+        <li><a href="../../links.html" class="mm-link">Links</a></li>
+        <li><a href="../../mathjax.html" class="mm-link">MathJax Help and Configuration</a></li>
+        <li><a href="../../mystudents.html" class="mm-link">My Students</a></li>
+        <li><a href="http://tutorial.math.lamar.edu/privacy.aspx" class="mm-link">Privacy Statement</a></li>
+        <li><a href="../../help.html" class="mm-link">Site Help & FAQ</a></li>
+        <li><a href="http://tutorial.math.lamar.edu/terms.aspx" class="mm-link">Terms of Use</a></li>
+      </ul>
+    </nav>
+
+
+
+    <div class="top-info-bar">
+      <span id="mobile-title" class="mobile-header-title header-title">Paul's Online Notes</span>
+      <br />
+      <span class="top-menu-breadcrumb">
+        <a href="../../index.html" id="breadcrumb_home_link" title="Go to Main Page">Home</a>
+        <span id="breadcrumb_h_b_sep_span">/ </span>
+        <a href="CalcII.html" id="breadcrumb_book_link" title="Go to Book Introduction">Calculus II</a>
+        
+        <span id="breadcrumb_b_c_sep_span">/ </span>
+        <a href="VectorsIntro.html" id="breadcrumb_chapter_link" title="Go to Chapter Introduction">Vectors</a>
+        
+        <span id="breadcrumb_section_span"> / Dot Product</span>
+      </span>
+
+    </div>
+
+    <div id="nav_links" class="top-nav-bar">
+      
+      <span id="nav_current_notes">Notes</span>
+      <a href="http://tutorial.math.lamar.edu/Problems/CalcII/DotProduct.aspx" id="nav_links_practice" title="Go to Practice Problems for current topic.">Practice<span class="nav_desktop_extra"> Problems</span></a>
+      
+      <a href="http://tutorial.math.lamar.edu/ProblemsNS/CalcII/DotProduct.aspx" id="nav_links_asgn" title="Go to Assignment Problems for current topic.">Assignment<span class="nav_desktop_extra">  Problems</span></a>
+      
+    </div>
+
+    <div class="header-divider"></div>
+
+    <div class="content">  
+      
+      
+      <span id="SHLink_NoteMobile" class="SH-Link content-note-link-mobile">Show Mobile Notice</span>
+      <span id="SHImg_NoteMobile" class="fas fa-caret-right SH-padding content-note-link-mobile" aria-hidden="true"></span>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+
+      <span id="SHALink_S_Note" class="SH-Link SH-Hide SH-Bracket">Show All Notes</span>&nbsp;<span id="SHALink_H_Note" class="SH-Link SH-Hide SH-Bracket">Hide All Notes</span>
+      
+      
+      <div id="SHObj_NoteMobile" class="content-note-container content-note-container-mobile">
+        <div class="content-note-header">Mobile Notice</div>
+        <div class="content-note">You appear to be on a device with a "narrow" screen width (<em>i.e.</em> you are probably on a mobile phone).  Due to the nature of the mathematics on this site it is best views in landscape mode.  If your device is not in landscape mode many of the equations will run off the side of your device (should be able to scroll to see them) and some of the menu items will be cut off due to the narrow screen width.</div>
+      </div>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+
+      
+
+
+  <form method="post" action="http://tutorial.math.lamar.edu/Classes/CalcII/DotProduct.aspx" id="ctl00">
+<div class="aspNetHidden">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+</div>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="C4501587" />
+</div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </form>
+
+  <h3>Section 5-3 : Dot Product</h3>
+
+     
+     <p>The next topic for discussion is that of the dot product.  Let’s jump right into the definition of the dot product.  Given the two vectors \(\vec a = \left\langle {{a_1},{a_2},{a_3}} \right\rangle \) and \(\vec b = \left\langle {{b_1},{b_2},{b_3}} \right\rangle \) the dot product is,</p>
+  
+  <div class="fact">
+    \[\begin{equation}\vec a\centerdot \vec b = {a_1}{b_1} + {a_2}{b_2} + {a_3}{b_3}\label{eq:eq1}\end{equation}\]
+  </div>
+     
+     <p>Sometimes the dot product is called the <strong>scalar product</strong>.  The dot product is also an example of an <a href="http://mathworld.wolfram.com/InnerProduct.html">inner product</a> and so on occasion you may hear it called an inner product.</p>
+     <a class="anchor" name="Vectors_DotProd_Ex1"></a>
+<div class="example">
+    <span class="example-title">Example 1</span> Compute the dot product for each of the following.
+    <ol class="example_parts_list">
+      <li>\(\vec v = 5\vec i - 8\vec j,\,\,\vec w = \vec i + 2\vec j\)</li>
+      <li>\(\vec a = \left\langle {0,3, - 7} \right\rangle ,\,\,\vec b = \left\langle {2,3,1} \right\rangle \)</li>
+    </ol>
+     <div class="example-content">
+       <span id="SHLink_Soln1" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln1" class="fas fa-caret-right" aria-hidden="true"></span>
+       <div id="SHObj_Soln1" class="soln-content">
+         <p>Not much to do with these other than use the formula.</p>
+
+         <p><span class="soln-list-item">a</span> \(\vec v\centerdot \vec w = 5 - 16 =  - 11\)</p>
+         <p><span class="soln-list-item">b</span> \(\vec a\centerdot \vec b = 0 + 9 - 7 = 2\)</p>
+       </div>
+     </div>
+  </div>
+     
+     <p>Here are some properties of the dot product.</p>
+     
+     <h4>Properties</h4>
+  <div class="fact">
+    \[\begin{align*}& \vec u\centerdot \left( {\vec v + \vec w} \right) = \vec u\centerdot \vec v + \vec u\centerdot \vec w & \hspace{0.75in} & \left( {c\vec v} \right)\centerdot \vec w = \vec v\centerdot \left( {c\vec w} \right) = c\left( {\vec v\centerdot \vec w} \right)\\ & \vec v\centerdot \vec w = \vec w\centerdot \vec v& \hspace{0.75in} & \vec v\centerdot \vec 0 = 0\\ & \vec v\centerdot \vec v  = {\left\| {\vec v} \right\|^2} & \hspace{0.75in} & {\mbox{If }}\vec v\centerdot \vec v = 0\,\,\,{\mbox{then}}\,\,\,\vec v = \vec 0\end{align*}\]
+  </div>
+     
+     <p>The proofs of these properties are mostly “computational” proofs and so we’re only going to do a couple of them and leave the rest to you to prove.</p>
+     
+     <h4>Proof  of \(\vec u\centerdot \left( {\vec v + \vec w} \right) = \vec u\centerdot \vec v + \vec u\centerdot \vec w\)</h4>
+  <div class="proof">
+    <p>We’ll start with the three vectors, \(\vec u = \left\langle {{u_1},{u_2}, \ldots ,{u_n}} \right\rangle \), \(\vec v = \left\langle {{v_1},{v_2}, \ldots ,{v_n}} \right\rangle \) and \(\vec w = \left\langle {{w_1},{w_2}, \ldots ,{w_n}} \right\rangle \) and yes we did mean for these to each have \(n\) components.  The theorem works for general vectors so we may as well do the proof for general vectors.</p>
+           
+           <p>Now, as noted above this is pretty much just a “computational” proof.  What that means is that we’ll compute the left side and then do some basic arithmetic on the result to show that we can make the left side look like the right side.  Here is the work.</p>
+
+           \[\begin{align*}\vec u\centerdot \left( {\vec v + \vec w} \right) & = \left\langle {{u_1},{u_2}, \ldots ,{u_n}} \right\rangle \centerdot \left( {\left\langle {{v_1},{v_2}, \ldots ,{v_n}} \right\rangle  + \left\langle {{w_1},{w_2}, \ldots ,{w_n}} \right\rangle } \right)\\ &amp;  = \left\langle {{u_1},{u_2}, \ldots ,{u_n}} \right\rangle \centerdot \left\langle {{v_1} + {w_1},{v_2} + {w_2}, \ldots ,{v_n} + {w_n}} \right\rangle \\ &amp;  =  {{u_1}\left( {{v_1} + {w_1}} \right),{u_2}\left( {{v_2} + {w_2}} \right), \ldots ,{u_n}\left( {{v_n} + {w_n}} \right)}  \\ &amp;  =  {{u_1}{v_1} + {u_1}{w_1},{u_2}{v_2} + {u_2}{w_2}, \ldots ,{u_n}{v_n} + {u_n}{w_n}}  \\ &amp;  = \left( {{u_1}{v_1},{u_2}{v_2}, \ldots 
+             ,{u_n}{v_n}} \right)  + \left( {{u_1}{w_1},{u_2}{w_2}, \ldots ,{u_n}{w_n}} \right) \\ &amp;  = \left\langle {{u_1},{u_2}, \ldots ,{u_n}} \right\rangle \centerdot \left\langle {{v_1},{v_2}, \ldots ,{v_n}} \right\rangle  + \left\langle {{u_1},{u_2}, \ldots ,{u_n}} \right\rangle \centerdot \left\langle {{w_1},{w_2}, \ldots ,{w_n}} \right\rangle \\ &amp;  = \vec u\centerdot \vec v + \vec u\centerdot \vec w\end{align*}\]
+  </div>
+     
+     <h4>Proof  of : If  \(\vec v\centerdot \vec v = 0\) then \(\vec v = \vec 0\)</h4>
+  <div class="proof">
+    <p>This is a pretty simple proof.  Let’s start with \(\vec v = \left\langle {{v_1},{v_2}, \ldots ,{v_n}} \right\rangle \) and compute the dot product.</p>
+
+           \[\begin{align*}\vec v\centerdot \vec v & = \left\langle {{v_1},{v_2}, \ldots ,{v_n}} \right\rangle \centerdot \left\langle {{v_1},{v_2}, \ldots ,{v_n}} \right\rangle \\ &amp;  = v_1^2 + v_2^2 +  \cdots  + v_n^2\\ &amp;  = 0\end{align*}\]
+           
+           <p>Now, since we know \(v_i^2 \ge 0\) for all \(i\) then the only way for this sum to be zero is to in fact have \(v_i^2 = 0\).  This in turn however means that we must have \({v_i} = 0\) and so we must have had \(\vec v = \vec 0\).</p>
+  </div>
+     
+     <p>There is also a nice geometric interpretation to the dot product.  First suppose that \(\theta\) is the angle between \(\vec a\) and \(\vec b\) such that \(0 \le \theta  \le \pi \) as shown in the image below.</p>
+     
+     
+       <div class="center-div"><img alt="This has two vectors in the 1st quadrant starting at the origin.  The vector $\vec{a}$ has a fairly shallow slope to it.  The vector $\vec{b}$ has a fairly steep slope to it.  The angle between the two vectors is labeled as $\theta$." border="0" height="235" src="http://tutorial.math.lamar.edu/Classes/CalcII/DotProduct_Files/image001.png" width="230" /></div>
+     
+     <p>We can then have the following theorem.</p>
+     
+     
+     <a class="anchor" name="Vectors_DotProd_DotAng"></a>
+     <h4>Theorem</h4>
+  <div class="fact">
+    \[\begin{equation}\vec a\centerdot \vec b = \left\| {\vec a} \right\|\,\,\left\| {\vec b} \right\|\cos \theta \label{eq:eq2} \end{equation}\]
+  </div>
+
+     
+     <h4>Proof</h4>
+  <div class="proof">
+    <p>Let’s give a modified version of the sketch above.</p>
+           
+             <div class="center-div"><img alt="This has three vectors in the 1st quadrant.  The vector a is $\vec{a}$ has a fairly shallow slope to it.  The vector $\vec{b}$ has a fairly steep slope to it.  The vectors $\vec{a}$ and $\vec{b}$ start at the same place.  There is a third vector labeled $\vec{a}$-$\vec{b}$ that starts where $\vec{b}$ ends and ends where $\vec{a}$ ends. The angle between the two vectors is labeled as $\theta$.  The point where $\vec{a}$ and $\vec{b}$ start is labeled “O”.  The point where $\vec{a}$ ends is labeled “A” and the point where $\vec{b}$ ends is labeled “B”." border="0" height="240" src="http://tutorial.math.lamar.edu/Classes/CalcII/DotProduct_Files/image002.png" width="240" /></div>
+           
+           <p>The three vectors above form the triangle <em>AOB</em> and note that the length of each side is nothing more than the magnitude of the vector forming that side.</p>
+           
+           <p>The Law of Cosines tells us that,</p>
+           \[{\left\| {\vec a - \vec b} \right\|^2} = {\left\| {\vec a} \right\|^2} + {\left\| {\vec b} \right\|^2} - 2\left\| {\vec a} \right\|\,\,\left\| {\vec b} \right\|\cos \theta \]
+           
+           
+           <p>Also using the properties of dot products we can write the left side as,</p>
+
+           \[\begin{align*}{\left\| {\vec a - \vec b} \right\|^2} & = \left( {\vec a - \vec b} \right)\centerdot \left( {\vec a - \vec b} \right)\\ &amp;  = \vec a\centerdot \vec a - \vec a\centerdot \vec b - \vec b\centerdot \vec a + \vec b\centerdot \vec b\\ &amp;  = {\left\| {\vec a} \right\|^2} - 2\vec a\centerdot \vec b + {\left\| {\vec b} \right\|^2}\end{align*}\]
+
+           <p>Our original equation is then,</p>
+
+           \[\begin{align*}{\left\| {\vec a - \vec b} \right\|^2} & = {\left\| {\vec a} \right\|^2} + {\left\| {\vec b} \right\|^2} - 2\left\| {\vec a} \right\|\,\,\left\| {\vec b} \right\|\cos \theta \\ {\left\| {\vec a} \right\|^2} - 2\vec a\centerdot \vec b + {\left\| {\vec b} \right\|^2} & = {\left\| {\vec a} \right\|^2} + {\left\| {\vec b} \right\|^2} - 2\left\| {\vec a} \right\|\,\,\left\| {\vec b} \right\|\cos \theta \\ - 2\vec a\centerdot \vec b & =  - 2\left\| {\vec a} \right\|\,\,\left\| {\vec b} \right\|\cos \theta \\ \vec a\centerdot \vec b & = \left\| {\vec a} \right\|\,\,\left\| {\vec b} \right\|\cos \theta \end{align*}\]
+  </div>
+     
+     <p>The formula from this theorem is often used not to compute a dot product but instead to find the angle between two vectors.  Note as well that while the sketch of the two vectors in the proof is for two dimensional vectors the theorem is valid for vectors of any dimension (as long as they have the same dimension of course).</p>
+     
+     <p>Let’s see an example of this.</p>
+     <a class="anchor" name="Vectors_DotProd_Ex2"></a>
+  <div class="example">
+    <span class="example-title">Example 2</span> Determine the angle between \(\vec a = \left\langle {3, - 4, - 1} \right\rangle \) and \(\vec b = \left\langle {0,5,2} \right\rangle \).
+    <div class="example-content">
+      <span id="SHLink_Soln2" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln2" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln2" class="soln-content">
+        <p>We will need the dot product as well as the magnitudes of each vector.</p>
+           
+             \[\vec a\centerdot \vec b =  - 22\hspace{0.25in}\hspace{0.25in}\left\| {\vec a} \right\| = \sqrt {26} \hspace{0.25in}\hspace{0.25in}\left\| {\vec b} \right\| = \sqrt {29} \]
+           <p>The angle is then,</p>
+           
+             \[\begin{align*}\cos \theta  & = \frac{{\vec a\centerdot \vec b}}{{\left\| {\vec a} \right\|\,\,\left\| {\vec b} \right\|}} = \frac{{ - 22}}{{\sqrt {26} \sqrt {29} }} =  - 0.8011927\\ &amp; \\ \theta  & = {\cos ^{ - 1}}\left( { - 0.8011927} \right) = 2.5{\mbox{ radians }} = 143.24 {\mbox{ degrees}}\end{align*}\]
+      </div>
+    </div>
+  </div>
+     
+     <p>The dot product gives us a very nice method for determining if two vectors are perpendicular and it will give another method for determining when two vectors are parallel.  Note as well that often we will use the term <strong>orthogonal</strong> in place of perpendicular.</p>
+     <a class="anchor" name="OrthogFact"></a>
+
+     <p>Now, if two vectors are orthogonal then we know that the angle between them is 90 degrees.  From \(\eqref{eq:eq2}\) this tells us that if two vectors are orthogonal then,</p>
+     
+         \[\vec a\centerdot \vec b = 0\]
+     
+     <p>Likewise, if two vectors are parallel then the angle between them is either 0 degrees (pointing in the same direction) or 180 degrees (pointing in the opposite direction).  Once again using \(\eqref{eq:eq2}\) this would mean that one of the following would have to be true.</p>
+     
+     
+       \[\vec a\centerdot \vec b = \left\| {\vec a} \right\|\,\,\left\| {\vec b} \right\|\,\,\left( {\theta  = 0^\circ } \right)\hspace{0.25in}{\mbox{OR}}\hspace{0.25in}\vec a\centerdot \vec b =  - \left\| {\vec a} \right\|\,\,\left\| {\vec b} \right\|\,\,\left( {\theta  = 180^\circ } \right)\]
+     
+     
+     
+     <a class="anchor" name="Vectors_DotProd_Ex3"></a>
+  <div class="example">
+    <span class="example-title">Example 3</span> Determine if the following vectors are parallel, orthogonal, or neither.
+    <ol class="example_parts_list">
+      <li>\(\vec a = \left\langle {6, - 2, - 1} \right\rangle ,\,\,\vec b = \left\langle {2,5,2} \right\rangle \)</li>
+      <li>\(\displaystyle \vec u = 2\vec i - \vec j,\,\,\vec v =  - \frac{1}{2}\vec i + \frac{1}{4}\vec j\)</li>
+    </ol>
+    <span id="SHALink_S_Soln3" class="SH-Link SH-All">Show All Solutions</span>&nbsp;<span id="SHALink_H_Soln3" class="SH-Link SH-All">Hide All Solutions</span>
+    <div class="example-content">
+      <span class="soln-list-item soln-list-subitem">a</span> \(\vec a = \left\langle {6, - 2, - 1} \right\rangle ,\,\,\vec b = \left\langle {2,5,2} \right\rangle \) <span id="SHLink_Soln3a" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln3a" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln3a" class="soln-content">
+        <p>First get the dot product to see if they are orthogonal.</p>
+           
+               \[\vec a\centerdot \vec b = 12 - 10 - 2 = 0\]
+           <p>The two vectors are orthogonal.</p>
+      </div>
+
+      <br />
+      <span class="soln-list-item soln-list-subitem">b</span> \(\displaystyle \vec u = 2\vec i - \vec j,\,\,\vec v =  - \frac{1}{2}\vec i + \frac{1}{4}\vec j\) <span id="SHLink_Soln3b" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln3b" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln3b" class="soln-content">
+        <p>Again, let’s get the dot product first.</p>
+           
+               \[\vec u\centerdot \vec v =  - 1 - \frac{1}{4} =  - \frac{5}{4}\]
+           <p>So, they aren’t orthogonal.  Let’s get the magnitudes and see if they are parallel.</p>
+           
+             \[\left\| {\vec u} \right\| = \sqrt 5 \hspace{0.25in}\left\| {\vec v} \right\| = \sqrt {\frac{5}{{16}}}  = \frac{{\sqrt 5 }}{4}\]
+           
+           <p>Now, notice that,</p>
+           
+             \[\vec u\centerdot \vec v =  - \frac{5}{4} =  - \sqrt 5 \left( {\frac{{\sqrt 5 }}{4}} \right) =  - \left\| {\vec u} \right\|\,\,\left\| {\vec v} \right\|\]
+           <p>So, the two vectors are parallel.</p>
+      </div>
+    </div>
+  </div>
+     
+     <p>There are several nice applications of the dot product as well that we should look at.</p>
+     
+     <h4>Projections</h4>
+     <p>The best way to understand projections is to see a couple of sketches.  So, given two vectors \(\vec a\) and \(\vec b\) we want to determine the projection of \(\vec b\) onto \(\vec a\).  The projection is denoted by \({{\mathop{\rm proj}\nolimits} _{\vec a}}\vec b\).  Here are a couple of sketches illustrating the projection.</p>
+     
+       <div class="center-div"><img alt="There are two vectors starting at the same place.  The vector a is $\vec{a}$ has a fairly shallow slope to it.  The vector $\vec{b}$ has a fairly steep slope to it.  The angle between the two vectors is less than $\frac{\pi}{2}$.  A dashed line is dropped down from the end point of $\vec{b}$ until it intersects $\vec{a}$ at a right angle.  A 3rd vector start where the first two start and ends where this dashed line intersects $\vec{a}$ it is labeled $proj{_{{\vec{a}}}}\vec{b}$ ." border="0" height="225" src="http://tutorial.math.lamar.edu/Classes/CalcII/DotProduct_Files/image003.png" width="225" /> <span class="width-100"></span> <img alt="There are two vectors starting at the same place.  The vector a is $\vec{a}$ has a fairly shallow slope to it.  The vector $\vec{b}$ has a fairly steep slope to it.  The angle between the two vectors is greater than $\frac{\pi}{2}$. A dashed line is extended in the opposite direction as $\vec{a}$ so it will “under” the vector $\vec{b}$.  Another dashed line is dropped down from the end point of $\vec{b}$ until it intersects the extension of $\vec{a}$.  A 3rd vector start where the first two start and ends where this dashed line intersects the extension of $\vec{a}$ it is labeled $proj{_{{\vec{a}}}}\vec{b}$." border="0" height="190" src="http://tutorial.math.lamar.edu/Classes/CalcII/DotProduct_Files/image004.png" width="300" /></div>
+     
+     <p>So, to get the projection of \(\vec b\) onto \(\vec a\) we drop straight down from the end of \(\vec b\)until we hit (and form a right angle) with the line that is parallel to \(\vec a\).  The projection is then the vector that is parallel to \(\vec a\), starts at the same point both of the original vectors started at and ends where the dashed line hits the line parallel to \(\vec a\).</p>
+     
+     <p>There is a nice formula for finding the projection of \(\vec b\) onto \(\vec a\).  Here it is,</p>
+     
+  <div class="fact">
+    \[{{\mathop{\rm proj}\nolimits} _{\vec a}}\vec b = \frac{{\vec a\centerdot \vec b}}{{{{\left\| {\vec a} \right\|}^2}}}\vec a\]
+  </div>
+     
+     <p>Note that we also need to be very careful with notation here. The projection of \(\vec a\) onto \(\vec b\)is given by</p>
+     
+       \[{{\mathop{\rm proj}\nolimits} _{\vec b}}\vec a = \frac{{\vec a\centerdot \vec b}}{{{{\left\| {\vec b} \right\|}^2}}}\vec b\]
+     <p>We can see that this will be a totally different vector.  This vector is parallel to \(\vec b\), while \({{\mathop{\rm proj}\nolimits} _{\vec a}}\vec b\) is parallel to \(\vec a\).  So, be careful with notation and make sure you are finding the correct projection.</p>
+     
+     <p>Here’s an example.</p>
+     <a class="anchor" name="Vectors_DotProd_Ex4"></a>
+  <div class="example">
+    <span class="example-title">Example 4</span> Determine the projection of \(\vec b = \left\langle {2,1, - 1} \right\rangle \) onto \(\vec a = \left\langle {1,0, - 2} \right\rangle \).
+    <div class="example-content">
+      <span id="SHLink_Soln4" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln4" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln4" class="soln-content">
+        <p>We need the dot product and the magnitude of \(\vec a\).</p>
+           
+             \[\vec a\centerdot \vec b = 4\hspace{0.25in}\hspace{0.25in}{\left\| {\vec a} \right\|^2} = 5\]
+           
+           <p>The projection is then,</p>
+           
+             \[\begin{align*}{{\mathop{\rm proj}\nolimits} _{\vec a}}\vec b & = \frac{{\vec a\centerdot \vec b}}{{{{\left\| {\vec a} \right\|}^2}}}\vec a\\ &amp;  = \frac{4}{5}\left\langle {1,0, - 2} \right\rangle \\ &amp;  = \left\langle {\frac{4}{5},0, - \frac{8}{5}} \right\rangle \end{align*}\]
+      </div>
+    </div>
+  </div>
+     
+     <p>For comparison purposes let’s do it the other way around as well.</p>
+
+     <a class="anchor" name="Vectors_DotProd_Ex5"></a>
+  <div class="example">
+    <span class="example-title">Example 5</span> Determine the projection of \(\vec a = \left\langle {1,0, - 2} \right\rangle \) onto\(\vec b = \left\langle {2,1, - 1} \right\rangle \).
+    <div class="example-content">
+      <span id="SHLink_Soln5" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln5" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln5" class="soln-content">
+        <p>We need the dot product and the magnitude of \(\vec b\).<strong></strong></p>
+           
+             \[\vec a\centerdot \vec b = 4\hspace{0.25in}\hspace{0.25in}{\left\| {\vec b} \right\|^2} = 6\]
+           
+           <p>The projection is then,</p>
+           
+             \[\begin{align*}{{\mathop{\rm proj}\nolimits} _{\vec b}}\vec a & = \frac{{\vec a\centerdot \vec b}}{{{{\left\| {\vec b} \right\|}^2}}}\vec b\\ &amp;  = \frac{4}{6}\left\langle {2,1, - 1} \right\rangle \\ &amp;  = \left\langle {\frac{4}{3},\frac{2}{3}, - \frac{2}{3}} \right\rangle \end{align*}\]
+      </div>
+    </div>
+  </div>
+     
+     <p>As we can see from the previous two examples the two projections are different so be careful.</p>
+     
+     <h4>Direction Cosines</h4>
+     <p>This application of the dot product requires that we be in three dimensional space unlike all the other applications we’ve looked at to this point.</p>
+     
+     <p>Let’s start with a vector, \(\vec a\), in three dimensional space.  This vector will form angles with the \(x\)-axis (<em>a </em>), the \(y\)-axis (<em>b </em>), and the \(z\)-axis (<em>g </em>).  These angles are called <strong>direction angles</strong> and the cosines of these angles are called <strong>direction cosines</strong>.</p>
+     
+     <p>Here is a sketch of a vector and the direction angles.</p>
+     
+       <div class="center-div"><img alt="This graph has a standard 3D coordinate system.  The positive z-axis is straight up, the positive x-axis moves off to the left and slightly downward and positive y-axis move off the right and slightly downward.  A vector starting at the origin and point upwards and to the right is also shown.  The angle the vector makes with the positive x-axis is labeled $\alpha$.  The angle the vector makes with the positive y-axis is labeled $\beta$.  The angle the vector makes with the positive z-axis is labeled $\gamma$." border="0" height="295" src="http://tutorial.math.lamar.edu/Classes/CalcII/DotProduct_Files/image005.png" width="275" /></div>
+     
+     <p>The formulas for the direction cosines are,</p>
+     
+  <div class="fact">
+    \[\cos \alpha  = \frac{{\vec a\centerdot \vec i}}{{\left\| {\vec a} \right\|}} = \frac{{{a_1}}}{{\left\| {\vec a} \right\|}}\hspace{0.25in}\,\,\,\,\,\cos \beta  = \frac{{\vec a\centerdot \vec j}}{{\left\| {\vec a} \right\|}} = \frac{{{a_2}}}{{\left\| {\vec a} \right\|}}\hspace{0.25in}\hspace{0.25in}\cos \gamma  = \frac{{\vec a\centerdot \vec k}}{{\left\| {\vec a} \right\|}} = \frac{{{a_3}}}{{\left\| {\vec a} \right\|}}\]
+           <p>where \(\vec i\), \(\vec j\) and \(\vec k\) are the standard basis vectors.</p>
+  </div>
+
+     <p>Let’s verify the first dot product above.  We’ll leave the rest to you to verify.</p>
+     
+       \[\vec a\centerdot \,\vec i = \left\langle {{a_1},{a_2},{a_3}} \right\rangle \centerdot \left\langle {1,0,0} \right\rangle  = {a_1}\]
+     
+     <p>Here are a couple of nice facts about the direction cosines.</p>
+     
+  <div class="fact">
+    <ol  class="general-list">
+             <li>The vector \(\vec u = \left\langle {\cos \alpha ,\cos \beta ,\cos \gamma } \right\rangle \) is a unit vector. <br /><br /></li>
+             <li>\({\cos ^2}\alpha  + {\cos ^2}\beta  + {\cos ^2}\gamma  = 1\)<br /><br /></li>
+             <li>\(\vec a = \left\| {\vec a} \right\|\left\langle {\cos \alpha ,\cos \beta ,\cos \gamma } \right\rangle \)</li>
+           </ol>
+  </div>
+     
+     <p>Let’s do a quick example involving direction cosines.</p>
+     <a class="anchor" name="Vectors_DotProd_Ex6"></a>
+  <div class="example">
+    <span class="example-title">Example 6</span> Determine the direction cosines and direction angles for \(\vec a = \left\langle {2,1, - 4} \right\rangle \).
+    <div class="example-content">
+      <span id="SHLink_Soln6" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln6" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln6" class="soln-content">
+        <p>We will need the magnitude of the vector.</p>
+           
+               \[\left\| {\vec a} \right\| = \sqrt {4 + 1 + 16}  = \sqrt {21} \]
+           <p>The direction cosines and angles are then,</p>
+           
+             \[\begin{align*}\cos \alpha  & = \frac{2}{{\sqrt {21} }}\hspace{0.25in}\hspace{0.25in}\alpha  = 1.119{\mbox{ radians}} = 64.123{\mbox{ degrees}}\\ \cos \beta  & = \frac{1}{{\sqrt {21} }}\hspace{0.25in}\hspace{0.25in}\beta  = 1.351{\mbox{ radians}} = 77.396{\mbox{ degrees}}\\ \cos \gamma & = \frac{{ - 4}}{{\sqrt {21} }}\hspace{0.25in}\hspace{0.25in}\gamma  = 2.632{\mbox{ radians}} = 150.794{\mbox{ degrees}}\end{align*}\]
+      </div>
+    </div>
+  </div>
+
+  
+
+
+      
+
+
+
+    </div>
+    <!-- End of content div -->
+
+
+    <div class="footer">
+      <div class="footer-links">
+        [<a href="http://tutorial.math.lamar.edu/Contact.aspx">Contact Me</a>]&nbsp;[<a href="../../MyStudents-2.html">My Students</a>]&nbsp;[<a href="http://tutorial.math.lamar.edu/Privacy.aspx">Privacy Statement</a>]&nbsp;[<a href="../../Help-2.html">Site Help &amp; FAQ</a>]&nbsp;[<a href="http://tutorial.math.lamar.edu/Terms.aspx">Terms of Use</a>]
+      </div>
+      <div class="footer-dates">
+        <div class="footer-copyright"><span id="lblCopyRight">&copy; 2003 - 2019 Paul Dawkins</span></div>
+        <div class="footer-spacer"></div>
+        <div class="footer-modified-date">Page Last Modified : <span id="lblModified">8/22/2018</span></div>
+      </div>
+      
+
+    </div>
+  </div>
+  <!-- End of page div...  -->
+</body>
+
+<!-- Mirrored from tutorial.math.lamar.edu/Classes/CalcII/DotProduct.aspx by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 27 Feb 2019 06:15:35 GMT -->
+</html>

@@ -7,20 +7,101 @@ const urlExists = require('url-exists');
 
 const download = require('./download');
 
+app.set('view engine', 'pug')
+
 app.use( bodyParser.json() ); 
 app.use(bodyParser.urlencoded({ extended: true })); 
-
-app.get('/downloadPage', function(req, res){
-  res.sendFile(__dirname + '/html/downloadPage.html');
-});
-
-app.get('/downloadPage.css', function(req, res) {
-  res.sendFile(__dirname + '/css/downloadPage.css');
-})
 
 http.listen(3000, function(){
   console.log('listening on *:3000');
 });
+
+/** Serving pages */
+app.get('/', function(req, res){
+  res.sendFile(__dirname + '/html/downloadPage.html');
+});
+
+app.get('/gradepage', function(req, res) {
+  res.sendFile(__dirname + '/html/gradepage.html');
+})
+
+/** Serving CSS */
+app.get('/css/*', function(req, res) {
+  res.sendFile(__dirname + req.url);
+})
+
+/** Serving JS */
+app.get('/axios', function(req, res) {
+  res.sendFile(__dirname + "/JS_Libraries/axios.js");
+})
+
+/** Serving downloaded sites */
+app.get('/list/*', function(req, res) {
+  fs.readFile("JSON/files.json", (err, data) => {
+    if ( err ) {
+      console.error("ERROR ACCESSING FILES (JSON/files.json):"+ err)
+      res.send("ERROR ACCESSING FILES (JSON/files.json):"+ err);
+      return;
+    }
+
+    let grade = req.query.grade.substring(6);
+
+    switch(grade) {
+      case '1':
+        grade = "First";
+        break;
+      case '2':
+        grade = "Second";
+        break;
+      case '3':
+        grade = "Third";
+        break;
+      case '4':
+        grade = "Fourth";
+        break;
+      case '5':
+        grade = "Fifth";
+        break;
+      case '6':
+        grade = "Sixth";
+        break;
+    }
+
+    let math = [];
+    let reading = [];
+    let science = [];
+
+    let siteList = JSON.parse(data);
+
+    Object.keys(siteList).forEach((key) => {
+      if ( (siteList[key].grades).includes(req.query.grade) ) {
+        if ( siteList[key].subjects.includes("math") ) {
+          math.push(key);
+        }
+        else if ( siteList[key].subjects.includes("reading") ) {
+          reading.push(key);
+        }
+        else if ( siteList[key].subjects.includes("science") ) {
+          science.push(key);
+        }
+      }
+    })
+
+    res.render('displayPage', { 
+      title: grade + " Grade Links",
+      math: math,
+      reading: reading,
+      science: science
+    })
+  })
+})
+
+app.get('/SITES/*', function(req, res) {
+  res.sendFile(__dirname + req.url.replace( /%20/g, ' '));
+})
+
+
+//------------------------------- HANDLES QUERIES ----------------------------//
 
 /** 
  * HANDLES DOWNLOAD REQUESTS 

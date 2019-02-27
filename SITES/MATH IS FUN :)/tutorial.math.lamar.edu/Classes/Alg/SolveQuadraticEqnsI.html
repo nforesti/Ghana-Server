@@ -1,0 +1,1219 @@
+
+
+<!DOCTYPE html>
+
+<html>
+
+<!-- Mirrored from tutorial.math.lamar.edu/Classes/Alg/SolveQuadraticEqnsI.aspx by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 27 Feb 2019 06:15:34 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=yes" /><meta http-equiv="X-UA-Compatible" content="IE=edge" />  <!-- For best MathJax performance on IE  -->
+
+  <meta name="google-site-verification" content="uLoA31CJfOhIVMJWBjCmQL8xNMmmLybZU3LRKavy9WQ" /><title>
+	Algebra - Quadratic Equations - Part I
+</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="../../../www.googletagmanager.com/gtag/js1872?id=UA-331594-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-331594-1');
+  </script>
+
+  <link type="text/css" href="../../css/jquery.mmenu.all.css" rel="stylesheet" /><link type="text/css" href="../../css/jquery.dropdown.css" rel="stylesheet" /><link href="../../FA/css/fontawesome-all.min.css" rel="stylesheet" /><link type="text/css" href="../../css/notes-all.css" rel="stylesheet" /><link type="text/css" href="../../css/notes-google.css" rel="stylesheet" /><link type="text/css" href="../../css/notes-mmenu.css" rel="stylesheet" /><link type="text/css" href="../../css/notes-dropdown.css" rel="stylesheet" />
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+     TeX: { equationNumbers: { autoNumber: "AMS" } }
+    });
+  </script>
+  <script type="text/javascript" async src="../../../cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax2ba6.js?config=TeX-AMS_CHTML-full"></script>
+  <script type="text/javascript" src="../../../code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="../../js/jquery.mmenu.all.js"></script>
+  <script type="text/javascript" src="../../js/jquery.dropdown.js"></script>
+  <script type="text/javascript" src="../../js/notes-all.js"></script>  
+
+  <script>
+    (function () {
+      var cx = '001004262401526223570:11yv6vpcqvy';
+      var gcse = document.createElement('script');
+      gcse.type = 'text/javascript';
+      gcse.async = true;
+      gcse.src = '../../../cse.google.com/cse07b6.html?cx=' + cx;
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(gcse, s);
+    })();
+  </script>
+
+<meta http-equiv="keywords" name="keywords" content="quadratic equation, solve quadratic equation, solving quadratic equations, factoring, square root property, square root principle, completing the square, quadratic formula" /><meta http-equiv="description" name="description" content="In this section we will start looking at solving quadratic equations.  Specifically, we will concentrate on solving quadratic equations by factoring and the square root property in this section." /></head>
+<body onload="init({Notes: 'NoteMobile;8/21/2018;true'})">
+
+  <div id="page">
+
+    <div class="header">
+      <div class="header-row">
+        <!--<a href="#menu"><span></span></a>-->
+        <div id="side-menu-icon" class="header-side-menu-icon"><a href="#menu"><span class="fas fa-bars fa-lg" aria-hidden="true" title="Main Menu - Change between topics, chapters and sections as well as a few extra pages."></span></a></div>
+        <span class="header-title"><a href="../../index.html" class="header-title-link">Paul's Online Notes</a></span>
+        <div class="header-spacer"></div>
+
+        <div id="content-top-menu" class="top-menu">
+          <button id="content-type-menu" class="top-menu-button" data-jq-dropdown="#jq-dropdown-type" title="View (Notes, Practice Problems or Assignment Problems, Show/Hide Solutions and/or Steps) Menu">
+            <span id="tab_top_menu_notes" class="top-menu-item-title">Notes</span> <span class="far fa-eye fa-lg" aria-hidden="true"></span>
+          </button>
+
+          <button id="quicknav-menu" class="top-menu-button" data-jq-dropdown="#jq-dropdown-quicknav" title="Quick Navigation (Previous/Next Sections and Problems and Full Problem List) Menu">
+            <span class="top-menu-item-title">Quick Nav</span> <span class="fas fa-exchange fa-lg" aria-hidden="true"></span>
+          </button>
+          
+          <button id="download-menu" class="top-menu-button" data-jq-dropdown="#jq-dropdown-download" title="Download pdf Menu">
+            <span class="top-menu-item-title">Download</span> <span class="far fa-download fa-lg" aria-hidden="true"></span>
+          </button>
+
+          <button id="print-menu" class="top-menu-button top-menu-button-icon-only" data-jq-dropdown="#jq-print-download" title="Print Menu">
+            <span class="far fa-print fa-lg" aria-hidden="true"></span>
+          </button>
+        </div>
+
+        <div id="header-google-search" class="header-search">
+          <gcse:search></gcse:search>
+        </div>
+        <div id="header-search-icon" title="Site Search" class="header-menu-icon"><span id="search-icon" class="fas fa-search" aria-hidden="true"></span></div>
+
+      </div>
+    </div>
+
+     <div id="jq-dropdown-type" class="jq-dropdown jq-dropdown-tip">
+      <ul class="jq-dropdown-menu">
+        
+        <li id="li_type_menu_goto" class="top-menu-nav-title">Go To</li>
+        <li id="li_type_menu_notes">
+          <span id="type_menu_notes_span" title="Viewing the Notes for the current topic." class="top-menu-current">Notes</span>
+          
+        </li>
+        <li id="li_type_menu_practice">
+          
+          
+          <a href="http://tutorial.math.lamar.edu/Problems/Alg/SolveQuadraticEqnsI.aspx" id="type_menu_practice_link" title="Go to Practice Problems for current topic.">Practice Problems</a>
+        </li>
+        <li id="li_type_menu_asgn">
+          
+          <a href="http://tutorial.math.lamar.edu/ProblemsNS/Alg/SolveQuadraticEqnsI.aspx" id="type_menu_asgn_link" title="Go to Assignment Problems for current topic.">Assignment Problems</a>
+        </li>
+        <li id="li_type_menu_sh" class="top-menu-nav-title">Show/Hide</li>
+        <li id="li_type_menu_show" title="Show any hidden solutions and/or steps that may be present on the page."><a href="javascript:SHPrintPage(1,0)" id="view_menu_show">Show all Solutions/Steps/<em>etc.</em></a></li>
+        <li id="li_type_menu_hide" title="Hide any visible solutions and/or steps that may be present on the page."><a href="javascript:SHPrintPage(0,0)" id="view_menu_hide">Hide all Solutions/Steps/<em>etc.</em></a></li>
+      </ul>
+    </div>
+
+    <div id="jq-dropdown-quicknav" class="jq-dropdown jq-dropdown-tip">
+      <ul class="jq-dropdown-menu">
+        <li id="li_nav_menu_sections" class="top-menu-nav-title">Sections</li>
+        <li id="li_nav_menu_prev_section"><a href="SolveMultiVariable.html" id="a_nav_menu_prev_section" class="top-menu-nav-link" title="Previous Section : Equations With More Than One Variable"><span class="top-menu-prev fas fa-chevron-left"></span> Equations With More Than One Variable</a></li>
+        <li id="li_nav_menu_next_section"><a href="SolveQuadraticEqnsII.html" id="a_nav_menu_next_section" class="top-menu-nav-link" title="Next Section : Quadratic Equations - Part II"><span class="top-menu-prev-hidden fas fa-chevron-left"></span> Quadratic Equations - Part II <span class="top-menu-next fas fa-chevron-right"></span></a></li>
+        <li id="li_nav_menu_chapters" class="top-menu-nav-title">Chapters</li>
+        <li id="li_nav_menu_prev_chapter"><a href="Preliminaries.html" id="a_nav_menu_prev_chapter" class="top-menu-nav-link" title="Previous Chapter : Preliminaries"><span class="top-menu-prev fas fa-chevron-left"></span><span class="top-menu-prev fas fa-chevron-left"></span> Preliminaries</a></li>
+        <li id="li_nav_menu_next_chapter"><a href="Graphing_Functions.html" id="a_nav_menu_next_chapter" class="top-menu-nav-link" title="Next Chapter : Graphing and Functions"><span class="top-menu-prev-hidden fas fa-chevron-left"></span><span class="top-menu-prev-hidden fas fa-chevron-left"></span> Graphing and Functions <span class="top-menu-next fas fa-chevron-right"></span><span class="top-menu-next fas fa-chevron-right"></span></a></li>
+        
+        
+        
+        
+        <li id="li_nav_menu_classes" class="top-menu-nav-title">Classes</li>
+        <li>
+          <span id="nav_menu_alg_span" title="Currently Viewing Algebra Material" class="top-menu-current">Algebra</span>
+          
+        </li>
+        <li>
+          
+          <a href="../CalcI/CalcI.html" id="nav_menu_calci_link" title="Go To Calculus I Notes">Calculus I</a>
+        </li>
+        <li>
+          
+          <a href="../CalcII/CalcII.html" id="nav_menu_calcii_link" title="Go To Calculus II Notes">Calculus II</a>
+        </li>
+        <li>
+          
+          <a href="../CalcIII/CalcIII.html" id="nav_menu_calciii_link" title="Go To Calculus III Notes">Calculus III</a>
+        </li>
+        <li>
+          
+          <a href="../DE/DE.html" id="nav_menu_de_link" title="Go To Differential Equations Notes">Differential Equations</a>
+        </li>
+        <li id="li_nav_menu_extras" class="top-menu-nav-title">Extras</li>
+        <li>
+          
+          <a href="../../Extras/AlgebraTrigReview/AlgebraTrig.html" id="nav_menu_algtrig_link" title="Go To Algebra &amp; Trig Review">Algebra &amp; Trig Review</a>
+        </li>
+        <li>
+          
+          <a href="../../Extras/CommonErrors/CommonMathErrors.html" id="nav_menu_commonerrors_link" title="Go To Common Math Errors">Common Math Errors</a>
+        </li>
+        <li>
+          
+          <a href="../../Extras/ComplexPrimer/ComplexNumbers.html" id="nav_menu_complexnumbers_link" title="Go To Complex Numbers Primer">Complex Number Primer</a>
+        </li>
+        <li>
+          
+          <a href="../../Extras/StudyMath/HowToStudyMath.html" id="nav_menu_studymath_link" title="Go To How To Study Math">How To Study Math</a>
+        </li>
+        <li>
+          
+          <a href="../../Extras/CheatSheets_Tables.html" id="nav_menu_cheattables_link" title="Go To List of Cheat Sheets and Tables">Cheat Sheets &amp; Tables</a>
+        </li>
+        <li id="li_nav_menu_misc" class="top-menu-nav-title">Misc</li>
+        <li><a href="http://tutorial.math.lamar.edu/contact.aspx" id="nav_menu_contact" title="Contact Me!">Contact Me</a></li>
+        <li><a href="../../mathjax.html" id="nav_menu_mathjax" title="Info on MathJax and MathJax Configuration Menu">MathJax Help and Configuration</a></li>
+        <li><a href="../../mystudents.html" id="nav_menu_students" title="Go here if you are currently taking a class from me!">My Students</a></li>
+      </ul>
+    </div>
+
+    <div id="jq-dropdown-download" class="jq-dropdown jq-dropdown-anchor-right jq-dropdown-tip">
+      <ul class="jq-dropdown-menu">
+        
+        <li id="li_download_menu_notes" class="top-menu-nav-title">Notes Downloads</li>
+        <li id="li_download_menu_notes_book"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=B,9,N" id="download_menu_notes_book" data-PDF="Download - Menu$Notes - Book$Algebra$/Downloads/Alg/Notes/Complete.pdf">Complete Book</a></li>
+        
+        <li id="li_download_menu_notes_chapter"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=C,51,N" id="download_menu_notes_chapter" data-PDF="Download - Menu$Notes - Chapter$Algebra - Solving Equations and Inequalities$/Downloads/Alg/Notes/Solving.pdf">Current Chapter</a></li>
+        <li id="li_download_menu_notes_section"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=S,314,N" id="download_menu_notes_section" data-PDF="Download - Menu$Notes - Section$Algebra - Quadratic Equations - Part I$/Downloads/Alg/Notes/SolveQuadraticEqnI.pdf">Current Section</a></li>
+        <li id="li_download_menu_practice" class="top-menu-nav-title">Practice Problems Downloads</li>
+        
+        <li id="li_download_menu_practice_book"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=B,9,P" id="download_menu_practice_book" data-PDF="Download - Menu$Practice Problems - Book$Algebra$/Downloads/Alg/Practice Problems/Complete.pdf">Complete Book - Problems Only</a></li>
+        <li id="li_download_menu_solutions_book"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=B,9,S" id="download_menu_solutions_book" data-PDF="Download - Menu$Practice Problems Solutions - Book$Algebra$/Downloads/Alg/Practice Problems Solutions/Complete.pdf">Complete Book - Solutions</a></li>
+        <li id="li_download_menu_b_c" class="top-menu-divider"></li>
+        <li id="li_download_menu_practice_chapter"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=C,51,P" id="download_menu_practice_chapter" data-PDF="Download - Menu$Practice Problems - Chapter$Algebra - Solving Equations and Inequalities$/Downloads/Alg/Practice Problems/Solving.pdf">Current Chapter - Problems Only</a></li>
+        <li id="li_download_menu_solutions_chapter"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=C,51,S" id="download_menu_solutions_chapter" data-PDF="Download - Menu$Practice Problems Solutions - Chapter$Algebra - Solving Equations and Inequalities$/Downloads/Alg/Practice Problems Solutions/Solving.pdf">Current Chapter - Solutions</a></li>
+        <li id="li_download_menu_c_s" class="top-menu-divider"></li>
+        <li id="li_download_menu_practice_section"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=S,314,P" id="download_menu_practice_section" data-PDF="Download - Menu$Practice Problems - Section$Algebra - Quadratic Equations - Part I$/Downloads/Alg/Practice Problems/SolveQuadraticEqnI.pdf">Current Section - Problems Only</a></li>
+        <li id="li_download_menu_solutions_section"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=S,314,S" id="download_menu_solutions_section" data-PDF="Download - Menu$Practice Problems Solutions - Section$Algebra - Quadratic Equations - Part I$/Downloads/Alg/Practice Problems Solutions/SolveQuadraticEqnI.pdf">Current Section - Solutions</a></li>
+        <li id="li_download_menu_asgn" class="top-menu-nav-title">Assignment Problems Downloads</li>
+        
+        <li id="li_download_menu_asgn_book"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=B,9,A" id="download_menu_asgn_book" data-PDF="Download - Menu$Assignment Problems - Book$Algebra$/Downloads/Alg/Assignment Problems/Complete.pdf">Complete Book</a></li>
+        <li id="li_download_menu_asgn_chapter"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=C,51,A" id="download_menu_asgn_chapter" data-PDF="Download - Menu$Assignment Problems - Chapter$Algebra - Solving Equations and Inequalities$/Downloads/Alg/Assignment Problems/Solving.pdf">Current Chapter</a></li>
+        <li id="li_download_menu_asgn_section"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=S,314,A" id="download_menu_asgn_section" data-PDF="Download - Menu$Assignment Problems - Section$Algebra - Quadratic Equations - Part I$/Downloads/Alg/Assignment Problems/SolveQuadraticEqnI.pdf">Current Section</a></li>
+        <li id="li_download_menu_other" class="top-menu-nav-title">Other Items</li>
+        <li id="li_download_menu_urls">
+          <a href="http://tutorial.math.lamar.edu/DownloadURLs.aspx?bi=9&amp;ci=51&amp;si=314" id="download_menu_urls">Get URL's for Download Items</a>
+        </li>
+      </ul>
+    </div>
+
+    <div id="jq-print-download" class="jq-dropdown jq-dropdown-anchor-right jq-dropdown-tip">
+      <ul class="jq-dropdown-menu">
+        <li id="li_print_menu_default"><a href="javascript:SHPrintPage()" id="print_menu_default">Print Page in Current Form (Default)</a></li>
+        <li id="li_print_menu_show"><a href="javascript:SHPrintPage(1,1)" id="print_menu_show">Show all Solutions/Steps and Print Page</a></li>
+        <li id="li_print_menu_hide"><a href="javascript:SHPrintPage(0,1)" id="print_menu_hide">Hide all Solutions/Steps and Print Page</a></li>
+      </ul>
+    </div>
+
+
+
+   
+
+    <nav id="menu" class="notes-nav">
+      <ul>
+        <li><a href="../../index.html" class="mm-link">Home</a></li>
+        <li><span>Classes</span></li>
+        <li><a href="Alg.html" class="mm-link">Algebra</a>
+          <ul>
+            <li><a href="Preliminaries.html" class="mm-link">Preliminaries</a>
+              <ul>
+                <li><a href="IntegerExponents.html" class="mm-link">Integer Exponents</a></li>
+                <li><a href="RationalExponents.html" class="mm-link">Rational Exponents</a></li>
+                <li><a href="Radicals.html" class="mm-link">Radicals</a></li>
+                <li><a href="Polynomials.html" class="mm-link">Polynomials</a></li>
+                <li><a href="Factoring.html" class="mm-link">Factoring Polynomials</a></li>
+                <li><a href="RationalExpressions.html" class="mm-link">Rational Expressions</a></li>
+                <li><a href="ComplexNumbers.html" class="mm-link">Complex Numbers</a></li>
+              </ul>
+            </li>
+            <li><a href="Solving.html" class="mm-link">Solving Equations and Inequalities</a>
+              <ul>
+                <li><a href="SolutionSets.html" class="mm-link">Solutions and Solution Sets</a></li>
+                <li><a href="SolveLinearEqns.html" class="mm-link">Linear Equations</a></li>
+                <li><a href="LinearApps.html" class="mm-link">Applications of Linear Equations</a></li>
+                <li><a href="SolveMultiVariable.html" class="mm-link">Equations With More Than One Variable</a></li>
+                <li><a href="SolveQuadraticEqnsI.html" class="mm-link">Quadratic Equations - Part I</a></li>
+                <li><a href="SolveQuadraticEqnsII.html" class="mm-link">Quadratic Equations - Part II</a></li>
+                <li><a href="SolveQuadraticEqnSummary.html" class="mm-link">Quadratic Equations : A Summary</a></li>
+                <li><a href="QuadraticApps.html" class="mm-link">Applications of Quadratic Equations</a></li>
+                <li><a href="ReducibleToQuadratic.html" class="mm-link">Equations Reducible to Quadratic in Form</a></li>
+                <li><a href="SolveRadicalEqns.html" class="mm-link">Equations with Radicals</a></li>
+                <li><a href="SolveLinearInequalities.html" class="mm-link">Linear Inequalities</a></li>
+                <li><a href="SolvePolyInequalities.html" class="mm-link">Polynomial Inequalities</a></li>
+                <li><a href="SolveRationalInequalities.html" class="mm-link">Rational Inequalities</a></li>
+                <li><a href="SolveAbsValueEqns.html" class="mm-link">Absolute Value Equations</a></li>
+                <li><a href="SolveAbsValueIneq.html" class="mm-link">Absolute Value Inequalities</a></li>
+              </ul>
+            </li>
+            <li><a href="Graphing_Functions.html" class="mm-link">Graphing and Functions</a>
+              <ul>
+                <li><a href="Graphing.html" class="mm-link">Graphing</a></li>
+                <li><a href="Lines.html" class="mm-link">Lines</a></li>
+                <li><a href="Circles.html" class="mm-link">Circles</a></li>
+                <li><a href="FunctionDefn.html" class="mm-link">The Definition of a Function</a></li>
+                <li><a href="GraphFunctions.html" class="mm-link">Graphing Functions</a></li>
+                <li><a href="CombineFunctions.html" class="mm-link">Combining Functions</a></li>
+                <li><a href="InverseFunctions.html" class="mm-link">Inverse Functions</a></li>
+              </ul>
+            </li>
+            <li><a href="CommonGraphs.html" class="mm-link">Common Graphs</a>
+              <ul>
+                <li><a href="Lines_Circles_PWF.html" class="mm-link">Lines, Circles and Piecewise Functions</a></li>
+                <li><a href="Parabolas.html" class="mm-link">Parabolas</a></li>
+                <li><a href="Ellipses.html" class="mm-link">Ellipses</a></li>
+                <li><a href="Hyperbolas.html" class="mm-link">Hyperbolas</a></li>
+                <li><a href="MiscFunctions.html" class="mm-link">Miscellaneous Functions</a></li>
+                <li><a href="Transformations.html" class="mm-link">Transformations</a></li>
+                <li><a href="Symmetry.html" class="mm-link">Symmetry</a></li>
+                <li><a href="GraphRationalFcns.html" class="mm-link">Rational Functions</a></li>
+              </ul>
+            </li>
+            <li><a href="PolynomialFunctions.html" class="mm-link">Polynomial Functions</a>
+              <ul>
+                <li><a href="DividingPolynomials.html" class="mm-link">Dividing Polynomials</a></li>
+                <li><a href="ZeroesOfPolynomials.html" class="mm-link">Zeroes/Roots of Polynomials</a></li>
+                <li><a href="GraphingPolynomials.html" class="mm-link">Graphing Polynomials</a></li>
+                <li><a href="FindingZeroesOfPolynomials.html" class="mm-link">Finding Zeroes of Polynomials</a></li>
+                <li><a href="PartialFractions.html" class="mm-link">Partial Fractions</a></li>
+              </ul>
+            </li>
+            <li><a href="ExpAndLog.html" class="mm-link">Exponential and Logarithm Functions</a>
+              <ul>
+                <li><a href="ExpFunctions.html" class="mm-link">Exponential Functions</a></li>
+                <li><a href="LogFunctions.html" class="mm-link">Logarithm Functions</a></li>
+                <li><a href="SolveExpEqns.html" class="mm-link">Solving Exponential Equations</a></li>
+                <li><a href="SolveLogEqns.html" class="mm-link">Solving Logarithm Equations</a></li>
+                <li><a href="ExpLogApplications.html" class="mm-link">Applications</a></li>
+              </ul>
+            </li>
+            <li><a href="Systems.html" class="mm-link">Systems of Equations</a>
+              <ul>
+                <li><a href="SystemsTwoVrble.html" class="mm-link">Linear Systems with Two Variables</a></li>
+                <li><a href="SystemsThreeVrble.html" class="mm-link">Linear Systems with Three Variables</a></li>
+                <li><a href="AugmentedMatrix.html" class="mm-link">Augmented Matrices</a></li>
+                <li><a href="AugmentedMatrixII.html" class="mm-link">More on the Augmented Matrix</a></li>
+                <li><a href="NonlinearSystems.html" class="mm-link">Nonlinear Systems</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../CalcI/CalcI.html" class="mm-link">Calculus I</a>
+          <ul>
+            <li><a href="../CalcI/ReviewIntro.html" class="mm-link">Review</a>
+              <ul>
+                <li><a href="../CalcI/Functions.html" class="mm-link">Functions</a></li>
+                <li><a href="../CalcI/InverseFunctions.html" class="mm-link">Inverse Functions</a></li>
+                <li><a href="../CalcI/TrigFcns.html" class="mm-link">Trig Functions</a></li>
+                <li><a href="../CalcI/TrigEquations.html" class="mm-link">Solving Trig Equations</a></li>
+                <li><a href="../CalcI/TrigEquations_CalcI.html" class="mm-link">Trig Equations with Calculators, Part I</a></li>
+                <li><a href="../CalcI/TrigEquations_CalcII.html" class="mm-link">Trig Equations with Calculators, Part II</a></li>
+                <li><a href="../CalcI/ExpFunctions.html" class="mm-link">Exponential Functions</a></li>
+                <li><a href="../CalcI/LogFcns.html" class="mm-link">Logarithm Functions</a></li>
+                <li><a href="../CalcI/ExpLogEqns.html" class="mm-link">Exponential and Logarithm Equations</a></li>
+                <li><a href="../CalcI/CommonGraphs.html" class="mm-link">Common Graphs</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcI/limitsIntro.html" class="mm-link">Limits</a>
+              <ul>
+                <li><a href="../CalcI/Tangents_Rates.html" class="mm-link">Tangent Lines and Rates of Change</a></li>
+                <li><a href="../CalcI/TheLimit.html" class="mm-link">The Limit</a></li>
+                <li><a href="../CalcI/OneSidedLimits.html" class="mm-link">One-Sided Limits</a></li>
+                <li><a href="../CalcI/LimitsProperties.html" class="mm-link">Limit Properties</a></li>
+                <li><a href="../CalcI/ComputingLimits.html" class="mm-link">Computing Limits</a></li>
+                <li><a href="../CalcI/InfiniteLimits.html" class="mm-link">Infinite Limits</a></li>
+                <li><a href="../CalcI/LimitsAtInfinityI.html" class="mm-link">Limits At Infinity, Part I</a></li>
+                <li><a href="../CalcI/LimitsAtInfinityII.html" class="mm-link">Limits At Infinity, Part II</a></li>
+                <li><a href="../CalcI/Continuity.html" class="mm-link">Continuity</a></li>
+                <li><a href="../CalcI/DefnOfLimit.html" class="mm-link">The Definition of the Limit</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcI/DerivativeIntro.html" class="mm-link">Derivatives</a>
+              <ul>
+                <li><a href="../CalcI/DefnOfDerivative.html" class="mm-link">The Definition of the Derivative</a></li>
+                <li><a href="../CalcI/DerivativeInterp.html" class="mm-link">Interpretation of the Derivative</a></li>
+                <li><a href="../CalcI/DiffFormulas.html" class="mm-link">Differentiation Formulas</a></li>
+                <li><a href="../CalcI/ProductQuotientRule.html" class="mm-link">Product and Quotient Rule</a></li>
+                <li><a href="../CalcI/DiffTrigFcns.html" class="mm-link">Derivatives of Trig Functions</a></li>
+                <li><a href="../CalcI/DiffExpLogFcns.html" class="mm-link">Derivatives of Exponential and Logarithm Functions</a></li>
+                <li><a href="../CalcI/DiffInvTrigFcns.html" class="mm-link">Derivatives of Inverse Trig Functions</a></li>
+                <li><a href="../CalcI/DiffHyperFcns.html" class="mm-link">Derivatives of Hyperbolic Functions</a></li>
+                <li><a href="../CalcI/ChainRule.html" class="mm-link">Chain Rule</a></li>
+                <li><a href="../CalcI/ImplicitDIff.html" class="mm-link">Implicit Differentiation</a></li>
+                <li><a href="../CalcI/RelatedRates.html" class="mm-link">Related Rates</a></li>
+                <li><a href="../CalcI/HigherOrderDerivatives.html" class="mm-link">Higher Order Derivatives</a></li>
+                <li><a href="../CalcI/LogDiff.html" class="mm-link">Logarithmic Differentiation</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcI/DerivAppsIntro.html" class="mm-link">Applications of Derivatives</a>
+              <ul>
+                <li><a href="../CalcI/RateOfChange.html" class="mm-link">Rates of Change</a></li>
+                <li><a href="../CalcI/CriticalPoints.html" class="mm-link">Critical Points</a></li>
+                <li><a href="../CalcI/MinMaxValues.html" class="mm-link">Minimum and Maximum Values</a></li>
+                <li><a href="../CalcI/AbsExtrema.html" class="mm-link">Finding Absolute Extrema</a></li>
+                <li><a href="../CalcI/ShapeofGraphPtI.html" class="mm-link">The Shape of a Graph, Part I</a></li>
+                <li><a href="../CalcI/ShapeofGraphPtII.html" class="mm-link">The Shape of a Graph, Part II</a></li>
+                <li><a href="../CalcI/MeanValueTheorem.html" class="mm-link">The Mean Value Theorem</a></li>
+                <li><a href="../CalcI/Optimization.html" class="mm-link">Optimization</a></li>
+                <li><a href="../CalcI/MoreOptimization.html" class="mm-link">More Optimization Problems</a></li>
+                <li><a href="../CalcI/LHospitalsRule.html" class="mm-link">L'Hospital's Rule and Indeterminate Forms</a></li>
+                <li><a href="../CalcI/LinearApproximations.html" class="mm-link">Linear Approximations</a></li>
+                <li><a href="../CalcI/Differentials.html" class="mm-link">Differentials</a></li>
+                <li><a href="../CalcI/NewtonsMethod.html" class="mm-link">Newton's Method</a></li>
+                <li><a href="../CalcI/BusinessApps.html" class="mm-link">Business Applications</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcI/IntegralsIntro.html" class="mm-link">Integrals</a>
+              <ul>
+                <li><a href="../CalcI/IndefiniteIntegrals.html" class="mm-link">Indefinite Integrals</a></li>
+                <li><a href="../CalcI/ComputingIndefiniteIntegrals.html" class="mm-link">Computing Indefinite Integrals</a></li>
+                <li><a href="../CalcI/SubstitutionRuleIndefinite.html" class="mm-link">Substitution Rule for Indefinite Integrals</a></li>
+                <li><a href="../CalcI/SubstitutionRuleIndefinitePtII.html" class="mm-link">More Substitution Rule</a></li>
+                <li><a href="../CalcI/AreaProblem.html" class="mm-link">Area Problem</a></li>
+                <li><a href="../CalcI/DefnOfDefiniteIntegral.html" class="mm-link">Definition of the Definite Integral</a></li>
+                <li><a href="../CalcI/ComputingDefiniteIntegrals.html" class="mm-link">Computing Definite Integrals</a></li>
+                <li><a href="../CalcI/SubstitutionRuleDefinite.html" class="mm-link">Substitution Rule for Definite Integrals</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcI/IntAppsIntro.html" class="mm-link">Applications of Integrals</a>
+              <ul>
+                <li><a href="../CalcI/AvgFcnValue.html" class="mm-link">Average Function Value</a></li>
+                <li><a href="../CalcI/AreaBetweenCurves.html" class="mm-link">Area Between Curves</a></li>
+                <li><a href="../CalcI/VolumeWithRings.html" class="mm-link">Volumes of Solids of Revolution / Method of Rings</a></li>
+                <li><a href="../CalcI/VolumeWithCylinder.html" class="mm-link">Volumes of Solids of Revolution/Method of Cylinders</a></li>
+                <li><a href="../CalcI/MoreVolume.html" class="mm-link">More Volume Problems</a></li>
+                <li><a href="../CalcI/Work.html" class="mm-link">Work</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcI/ExtrasIntro.html" class="mm-link">Extras</a>
+              <ul>
+                <li><a href="../CalcI/LimitProofs.html" class="mm-link">Proof of Various Limit Properties</a></li>
+                <li><a href="../CalcI/DerivativeProofs.html" class="mm-link">Proof of Various Derivative Properties</a></li>
+                <li><a href="../CalcI/ProofTrigDeriv.html" class="mm-link">Proof of Trig Limits</a></li>
+                <li><a href="../CalcI/DerivativeAppsProofs.html" class="mm-link">Proofs of Derivative Applications Facts</a></li>
+                <li><a href="../CalcI/ProofIntProp.html" class="mm-link">Proof of Various Integral Properties </a></li>
+                <li><a href="../CalcI/Area_Volume_Formulas.html" class="mm-link">Area and Volume Formulas</a></li>
+                <li><a href="../CalcI/TypesOfInfinity.html" class="mm-link">Types of Infinity</a></li>
+                <li><a href="../CalcI/SummationNotation.html" class="mm-link">Summation Notation</a></li>
+                <li><a href="../CalcI/ConstantofIntegration.html" class="mm-link">Constant of Integration</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../CalcII/CalcII.html" class="mm-link">Calculus II</a>
+          <ul>
+            <li><a href="../CalcII/IntTechIntro.html" class="mm-link">Integration Techniques</a>
+              <ul>
+                <li><a href="../CalcII/IntegrationByParts.html" class="mm-link">Integration by Parts</a></li>
+                <li><a href="../CalcII/IntegralsWithTrig.html" class="mm-link">Integrals Involving Trig Functions</a></li>
+                <li><a href="../CalcII/TrigSubstitutions.html" class="mm-link">Trig Substitutions</a></li>
+                <li><a href="../CalcII/PartialFractions.html" class="mm-link">Partial Fractions</a></li>
+                <li><a href="../CalcII/IntegralsWithRoots.html" class="mm-link">Integrals Involving Roots</a></li>
+                <li><a href="../CalcII/IntegralsWithQuadratics.html" class="mm-link">Integrals Involving Quadratics</a></li>
+                <li><a href="../CalcII/IntegrationStrategy.html" class="mm-link">Integration Strategy</a></li>
+                <li><a href="../CalcII/ImproperIntegrals.html" class="mm-link">Improper Integrals</a></li>
+                <li><a href="../CalcII/ImproperIntegralsCompTest.html" class="mm-link">Comparison Test for Improper Integrals</a></li>
+                <li><a href="../CalcII/ApproximatingDefIntegrals.html" class="mm-link">Approximating Definite Integrals</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/IntAppsIntro.html" class="mm-link">Applications of Integrals</a>
+              <ul>
+                <li><a href="../CalcII/ArcLength.html" class="mm-link">Arc Length</a></li>
+                <li><a href="../CalcII/SurfaceArea.html" class="mm-link">Surface Area</a></li>
+                <li><a href="../CalcII/CenterOfMass.html" class="mm-link">Center of Mass</a></li>
+                <li><a href="../CalcII/HydrostaticPressure.html" class="mm-link">Hydrostatic Pressure</a></li>
+                <li><a href="../CalcII/Probability.html" class="mm-link">Probability</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/ParametricIntro.html" class="mm-link">Parametric Equations and Polar Coordinates</a>
+              <ul>
+                <li><a href="../CalcII/ParametricEqn.html" class="mm-link">Parametric Equations and Curves</a></li>
+                <li><a href="../CalcII/ParaTangent.html" class="mm-link">Tangents with Parametric Equations</a></li>
+                <li><a href="../CalcII/ParaArea.html" class="mm-link">Area with Parametric Equations</a></li>
+                <li><a href="../CalcII/ParaArcLength.html" class="mm-link">Arc Length with Parametric Equations</a></li>
+                <li><a href="../CalcII/ParaSurfaceArea.html" class="mm-link">Surface Area with Parametric Equations</a></li>
+                <li><a href="../CalcII/PolarCoordinates.html" class="mm-link">Polar Coordinates</a></li>
+                <li><a href="../CalcII/PolarTangents.html" class="mm-link">Tangents with Polar Coordinates</a></li>
+                <li><a href="../CalcII/PolarArea.html" class="mm-link">Area with Polar Coordinates</a></li>
+                <li><a href="../CalcII/PolarArcLength.html" class="mm-link">Arc Length with Polar Coordinates</a></li>
+                <li><a href="../CalcII/PolarSurfaceArea.html" class="mm-link">Surface Area with Polar Coordinates</a></li>
+                <li><a href="../CalcII/ArcLength_SurfaceArea.html" class="mm-link">Arc Length and Surface Area Revisited</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/SeriesIntro.html" class="mm-link">Series & Sequences</a>
+              <ul>
+                <li><a href="../CalcII/Sequences.html" class="mm-link">Sequences</a></li>
+                <li><a href="../CalcII/MoreSequences.html" class="mm-link">More on Sequences</a></li>
+                <li><a href="../CalcII/Series_Basics.html" class="mm-link">Series - The Basics</a></li>
+                <li><a href="../CalcII/ConvergenceOfSeries.html" class="mm-link">Convergence/Divergence of Series</a></li>
+                <li><a href="../CalcII/Series_Special.html" class="mm-link">Special Series</a></li>
+                <li><a href="../CalcII/IntegralTest.html" class="mm-link">Integral Test</a></li>
+                <li><a href="../CalcII/SeriesCompTest.html" class="mm-link">Comparison Test/Limit Comparison Test</a></li>
+                <li><a href="../CalcII/AlternatingSeries.html" class="mm-link">Alternating Series Test</a></li>
+                <li><a href="../CalcII/AbsoluteConvergence.html" class="mm-link">Absolute Convergence</a></li>
+                <li><a href="../CalcII/RatioTest.html" class="mm-link">Ratio Test</a></li>
+                <li><a href="../CalcII/RootTest.html" class="mm-link">Root Test</a></li>
+                <li><a href="../CalcII/SeriesStrategy.html" class="mm-link">Strategy for Series</a></li>
+                <li><a href="../CalcII/EstimatingSeries.html" class="mm-link">Estimating the Value of a Series</a></li>
+                <li><a href="../CalcII/PowerSeries.html" class="mm-link">Power Series</a></li>
+                <li><a href="../CalcII/PowerSeriesandFunctions.html" class="mm-link">Power Series and Functions</a></li>
+                <li><a href="../CalcII/TaylorSeries.html" class="mm-link">Taylor Series</a></li>
+                <li><a href="../CalcII/TaylorSeriesApps.html" class="mm-link">Applications of Series</a></li>
+                <li><a href="../CalcII/BinomialSeries.html" class="mm-link">Binomial Series</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/VectorsIntro.html" class="mm-link">Vectors</a>
+              <ul>
+                <li><a href="../CalcII/Vectors_Basics.html" class="mm-link">Vectors - The Basics</a></li>
+                <li><a href="../CalcII/VectorArithmetic.html" class="mm-link">Vector Arithmetic</a></li>
+                <li><a href="../CalcII/DotProduct.html" class="mm-link">Dot Product</a></li>
+                <li><a href="../CalcII/CrossProduct.html" class="mm-link">Cross Product</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/3DSpace.html" class="mm-link">3-Dimensional Space</a>
+              <ul>
+                <li><a href="../CalcII/3DCoords.html" class="mm-link">The 3-D Coordinate System</a></li>
+                <li><a href="../CalcII/EqnsOfLines.html" class="mm-link">Equations of Lines</a></li>
+                <li><a href="../CalcII/EqnsOfPlanes.html" class="mm-link">Equations of Planes</a></li>
+                <li><a href="../CalcII/QuadricSurfaces.html" class="mm-link">Quadric Surfaces</a></li>
+                <li><a href="../CalcII/MultiVrbleFcns.html" class="mm-link">Functions of Several Variables</a></li>
+                <li><a href="../CalcII/VectorFunctions.html" class="mm-link">Vector Functions</a></li>
+                <li><a href="../CalcII/VectorFcnsCalculus.html" class="mm-link">Calculus with Vector Functions</a></li>
+                <li><a href="../CalcII/TangentNormalVectors.html" class="mm-link">Tangent, Normal and Binormal Vectors</a></li>
+                <li><a href="../CalcII/VectorArcLength.html" class="mm-link">Arc Length with Vector Functions</a></li>
+                <li><a href="../CalcII/Curvature.html" class="mm-link">Curvature</a></li>
+                <li><a href="../CalcII/Velocity_Acceleration.html" class="mm-link">Velocity and Acceleration</a></li>
+                <li><a href="../CalcII/CylindricalCoords.html" class="mm-link">Cylindrical Coordinates</a></li>
+                <li><a href="../CalcII/SphericalCoords.html" class="mm-link">Spherical Coordinates</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../CalcIII/CalcIII.html" class="mm-link">Calculus III</a>
+          <ul>
+            <li><a href="../CalcIII/3DSpace.html" class="mm-link">3-Dimensional Space</a>
+              <ul>
+                <li><a href="../CalcIII/3DCoords.html" class="mm-link">The 3-D Coordinate System</a></li>
+                <li><a href="../CalcIII/EqnsOfLines.html" class="mm-link">Equations of Lines</a></li>
+                <li><a href="../CalcIII/EqnsOfPlanes.html" class="mm-link">Equations of Planes</a></li>
+                <li><a href="../CalcIII/QuadricSurfaces.html" class="mm-link">Quadric Surfaces</a></li>
+                <li><a href="../CalcIII/MultiVrbleFcns.html" class="mm-link">Functions of Several Variables</a></li>
+                <li><a href="../CalcIII/VectorFunctions.html" class="mm-link">Vector Functions</a></li>
+                <li><a href="../CalcIII/VectorFcnsCalculus.html" class="mm-link">Calculus with Vector Functions</a></li>
+                <li><a href="../CalcIII/TangentNormalVectors.html" class="mm-link">Tangent, Normal and Binormal Vectors</a></li>
+                <li><a href="../CalcIII/VectorArcLength.html" class="mm-link">Arc Length with Vector Functions</a></li>
+                <li><a href="../CalcIII/Curvature.html" class="mm-link">Curvature</a></li>
+                <li><a href="../CalcIII/Velocity_Acceleration.html" class="mm-link">Velocity and Acceleration</a></li>
+                <li><a href="../CalcIII/CylindricalCoords.html" class="mm-link">Cylindrical Coordinates</a></li>
+                <li><a href="../CalcIII/SphericalCoords.html" class="mm-link">Spherical Coordinates</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/PartialDerivsIntro.html" class="mm-link">Partial Derivatives</a>
+              <ul>
+                <li><a href="../CalcIII/Limits.html" class="mm-link">Limits</a></li>
+                <li><a href="../CalcIII/PartialDerivatives.html" class="mm-link">Partial Derivatives</a></li>
+                <li><a href="../CalcIII/PartialDerivInterp.html" class="mm-link">Interpretations of Partial Derivatives</a></li>
+                <li><a href="../CalcIII/HighOrderPartialDerivs.html" class="mm-link">Higher Order Partial Derivatives</a></li>
+                <li><a href="../CalcIII/Differentials.html" class="mm-link">Differentials</a></li>
+                <li><a href="../CalcIII/ChainRule.html" class="mm-link">Chain Rule</a></li>
+                <li><a href="../CalcIII/DirectionalDeriv.html" class="mm-link">Directional Derivatives</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/PartialDerivAppsIntro.html" class="mm-link">Applications of Partial Derivatives</a>
+              <ul>
+                <li><a href="../CalcIII/TangentPlanes.html" class="mm-link">Tangent Planes and Linear Approximations</a></li>
+                <li><a href="../CalcIII/GradientVectorTangentPlane.html" class="mm-link">Gradient Vector, Tangent Planes and Normal Lines</a></li>
+                <li><a href="../CalcIII/RelativeExtrema.html" class="mm-link">Relative Minimums and Maximums</a></li>
+                <li><a href="../CalcIII/AbsoluteExtrema.html" class="mm-link">Absolute Minimums and Maximums</a></li>
+                <li><a href="../CalcIII/LagrangeMultipliers.html" class="mm-link">Lagrange Multipliers</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/MultipleIntegralsIntro.html" class="mm-link">Multiple Integrals</a>
+              <ul>
+                <li><a href="../CalcIII/DoubleIntegrals.html" class="mm-link">Double Integrals</a></li>
+                <li><a href="../CalcIII/IteratedIntegrals.html" class="mm-link">Iterated Integrals</a></li>
+                <li><a href="../CalcIII/DIGeneralRegion.html" class="mm-link">Double Integrals over General Regions</a></li>
+                <li><a href="../CalcIII/DIPolarCoords.html" class="mm-link">Double Integrals in Polar Coordinates</a></li>
+                <li><a href="../CalcIII/TripleIntegrals.html" class="mm-link">Triple Integrals</a></li>
+                <li><a href="../CalcIII/TICylindricalCoords.html" class="mm-link">Triple Integrals in Cylindrical Coordinates</a></li>
+                <li><a href="../CalcIII/TISphericalCoords.html" class="mm-link">Triple Integrals in Spherical Coordinates</a></li>
+                <li><a href="../CalcIII/ChangeOfVariables.html" class="mm-link">Change of Variables</a></li>
+                <li><a href="../CalcIII/SurfaceArea.html" class="mm-link">Surface Area</a></li>
+                <li><a href="../CalcIII/Area_Volume.html" class="mm-link">Area and Volume Revisited</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/LineIntegralsIntro.html" class="mm-link">Line Integrals</a>
+              <ul>
+                <li><a href="../CalcIII/VectorFields.html" class="mm-link">Vector Fields</a></li>
+                <li><a href="../CalcIII/LineIntegralsPtI.html" class="mm-link">Line Integrals - Part I</a></li>
+                <li><a href="../CalcIII/LineIntegralsPtII.html" class="mm-link">Line Integrals - Part II</a></li>
+                <li><a href="../CalcIII/LineIntegralsVectorFields.html" class="mm-link">Line Integrals of Vector Fields</a></li>
+                <li><a href="../CalcIII/FundThmLineIntegrals.html" class="mm-link">Fundamental Theorem for Line Integrals</a></li>
+                <li><a href="../CalcIII/ConservativeVectorField.html" class="mm-link">Conservative Vector Fields</a></li>
+                <li><a href="../CalcIII/GreensTheorem.html" class="mm-link">Green's Theorem</a></li>
+                <li><a href="../CalcIII/CurlDivergence.html" class="mm-link">Curl and Divergence</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/SurfaceIntegralsIntro.html" class="mm-link">Surface Integrals</a>
+              <ul>
+                <li><a href="../CalcIII/ParametricSurfaces.html" class="mm-link">Parametric Surfaces</a></li>
+                <li><a href="../CalcIII/SurfaceIntegrals.html" class="mm-link">Surface Integrals</a></li>
+                <li><a href="../CalcIII/SurfIntVectorField.html" class="mm-link">Surface Integrals of Vector Fields</a></li>
+                <li><a href="../CalcIII/StokesTheorem.html" class="mm-link">Stokes' Theorem</a></li>
+                <li><a href="../CalcIII/DivergenceTheorem.html" class="mm-link">Divergence Theorem</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../DE/DE.html" class="mm-link">Differential Equations</a>
+          <ul>
+            <li><a href="../DE/IntroBasic.html" class="mm-link">Basic Concepts</a>
+              <ul>
+                <li><a href="../DE/Definitions.html" class="mm-link">Definitions</a></li>
+                <li><a href="../DE/DirectionFields.html" class="mm-link">Direction Fields</a></li>
+                <li><a href="../DE/FinalThoughts.html" class="mm-link">Final Thoughts</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/IntroFirstOrder.html" class="mm-link">First Order DE's</a>
+              <ul>
+                <li><a href="../DE/Linear.html" class="mm-link">Linear Equations</a></li>
+                <li><a href="../DE/Separable.html" class="mm-link">Separable Equations</a></li>
+                <li><a href="../DE/Exact.html" class="mm-link">Exact Equations</a></li>
+                <li><a href="../DE/Bernoulli.html" class="mm-link">Bernoulli Differential Equations</a></li>
+                <li><a href="../DE/Substitutions.html" class="mm-link">Substitutions</a></li>
+                <li><a href="../DE/IoV.html" class="mm-link">Intervals of Validity</a></li>
+                <li><a href="../DE/Modeling.html" class="mm-link">Modeling with First Order DE's</a></li>
+                <li><a href="../DE/EquilibriumSolutions.html" class="mm-link">Equilibrium Solutions</a></li>
+                <li><a href="../DE/EulersMethod.html" class="mm-link">Euler's Method</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/IntroSecondOrder.html" class="mm-link">Second Order DE's</a>
+              <ul>
+                <li><a href="../DE/SecondOrderConcepts.html" class="mm-link">Basic Concepts</a></li>
+                <li><a href="../DE/RealRoots.html" class="mm-link">Real & Distinct Roots</a></li>
+                <li><a href="../DE/ComplexRoots.html" class="mm-link">Complex Roots</a></li>
+                <li><a href="../DE/RepeatedRoots.html" class="mm-link">Repeated Roots</a></li>
+                <li><a href="../DE/ReductionofOrder.html" class="mm-link">Reduction of Order</a></li>
+                <li><a href="../DE/FundamentalSetsofSolutions.html" class="mm-link">Fundamental Sets of Solutions</a></li>
+                <li><a href="../DE/Wronskian.html" class="mm-link">More on the  Wronskian</a></li>
+                <li><a href="../DE/NonhomogeneousDE.html" class="mm-link">Nonhomogeneous Differential Equations</a></li>
+                <li><a href="../DE/UndeterminedCoefficients.html" class="mm-link">Undetermined Coefficients</a></li>
+                <li><a href="../DE/VariationofParameters.html" class="mm-link">Variation of Parameters</a></li>
+                <li><a href="../DE/Vibrations.html" class="mm-link">Mechanical Vibrations</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/LaplaceIntro.html" class="mm-link">Laplace Transforms</a>
+              <ul>
+                <li><a href="../DE/LaplaceDefinition.html" class="mm-link">The Definition</a></li>
+                <li><a href="../DE/LaplaceTransforms.html" class="mm-link">Laplace Transforms</a></li>
+                <li><a href="../DE/InverseTransforms.html" class="mm-link">Inverse Laplace Transforms</a></li>
+                <li><a href="../DE/StepFunctions.html" class="mm-link">Step Functions</a></li>
+                <li><a href="../DE/IVPWithLaplace.html" class="mm-link">Solving IVP's with Laplace Transforms</a></li>
+                <li><a href="../DE/IVPWithNonConstantCoefficient.html" class="mm-link">Nonconstant Coefficient IVP's</a></li>
+                <li><a href="../DE/IVPWithStepFunction.html" class="mm-link">IVP's With Step Functions</a></li>
+                <li><a href="../DE/DiracDeltaFunction.html" class="mm-link">Dirac Delta Function</a></li>
+                <li><a href="../DE/ConvolutionIntegrals.html" class="mm-link">Convolution Integrals</a></li>
+                <li><a href="../DE/Laplace_Table.html" class="mm-link">Table Of Laplace Transforms</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/SystemsIntro.html" class="mm-link">Systems of DE's</a>
+              <ul>
+                <li><a href="../DE/LA_Systems.html" class="mm-link">Review : Systems of Equations</a></li>
+                <li><a href="../DE/LA_Matrix.html" class="mm-link">Review : Matrices & Vectors</a></li>
+                <li><a href="../DE/LA_Eigen.html" class="mm-link">Review : Eigenvalues & Eigenvectors</a></li>
+                <li><a href="../DE/SystemsDE.html" class="mm-link">Systems of Differential Equations</a></li>
+                <li><a href="../DE/SolutionsToSystems.html" class="mm-link">Solutions to Systems</a></li>
+                <li><a href="../DE/PhasePlane.html" class="mm-link">Phase Plane</a></li>
+                <li><a href="../DE/RealEigenvalues.html" class="mm-link">Real Eigenvalues</a></li>
+                <li><a href="../DE/ComplexEigenvalues.html" class="mm-link">Complex Eigenvalues</a></li>
+                <li><a href="../DE/RepeatedEigenvalues.html" class="mm-link">Repeated Eigenvalues</a></li>
+                <li><a href="../DE/NonhomogeneousSystems.html" class="mm-link">Nonhomogeneous Systems</a></li>
+                <li><a href="../DE/SystemsLaplace.html" class="mm-link">Laplace Transforms</a></li>
+                <li><a href="../DE/SystemsModeling.html" class="mm-link">Modeling</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/SeriesIntro.html" class="mm-link">Series Solutions to DE's</a>
+              <ul>
+                <li><a href="../DE/PowerSeries.html" class="mm-link">Review : Power Series</a></li>
+                <li><a href="../DE/TaylorSeries.html" class="mm-link">Review : Taylor Series</a></li>
+                <li><a href="../DE/SeriesSolutions.html" class="mm-link">Series Solutions</a></li>
+                <li><a href="../DE/EulerEquations.html" class="mm-link">Euler Equations</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/IntroHigherOrder.html" class="mm-link">Higher Order Differential Equations</a>
+              <ul>
+                <li><a href="../DE/HOBasicConcepts.html" class="mm-link">Basic Concepts for <em>n</em><sup>th</sup> Order Linear Equations</a></li>
+                <li><a href="../DE/HOHomogeneousDE.html" class="mm-link">Linear Homogeneous Differential Equations</a></li>
+                <li><a href="../DE/HOUndeterminedCoeff.html" class="mm-link">Undetermined Coefficients</a></li>
+                <li><a href="../DE/HOVariationOfParam.html" class="mm-link">Variation of Parameters</a></li>
+                <li><a href="../DE/HOLaplaceTransforms.html" class="mm-link">Laplace Transforms</a></li>
+                <li><a href="../DE/HOSystems.html" class="mm-link">Systems of Differential Equations</a></li>
+                <li><a href="../DE/HOSeries.html" class="mm-link">Series Solutions</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/IntroBVP.html" class="mm-link">Boundary Value Problems &amp; Fourier Series</a>
+              <ul>
+                <li><a href="../DE/BoundaryValueProblem.html" class="mm-link">Boundary Value Problems</a></li>
+                <li><a href="../DE/BVPEvals.html" class="mm-link">Eigenvalues and Eigenfunctions</a></li>
+                <li><a href="../DE/PeriodicOrthogonal.html" class="mm-link">Periodic Functions &amp; Orthogonal Functions</a></li>
+                <li><a href="../DE/FourierSineSeries.html" class="mm-link">Fourier Sine Series</a></li>
+                <li><a href="../DE/FourierCosineSeries.html" class="mm-link">Fourier Cosine Series</a></li>
+                <li><a href="../DE/FourierSeries.html" class="mm-link">Fourier Series</a></li>
+                <li><a href="../DE/ConvergenceFourierSeries.html" class="mm-link">Convergence of Fourier Series</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/IntroPDE.html" class="mm-link">Partial Differential Equations </a>
+              <ul>
+                <li><a href="../DE/TheHeatEquation.html" class="mm-link">The Heat Equation</a></li>
+                <li><a href="../DE/TheWaveEquation.html" class="mm-link">The Wave Equation</a></li>
+                <li><a href="../DE/PDETerminology.html" class="mm-link">Terminology</a></li>
+                <li><a href="../DE/SeparationofVariables.html" class="mm-link">Separation of Variables</a></li>
+                <li><a href="../DE/SolvingHeatEquation.html" class="mm-link">Solving the Heat Equation</a></li>
+                <li><a href="../DE/HeatEqnNonZero.html" class="mm-link">Heat Equation with Non-Zero Temperature Boundaries</a></li>
+                <li><a href="../DE/LaplacesEqn.html" class="mm-link">Laplace's Equation</a></li>
+                <li><a href="../DE/VibratingString.html" class="mm-link">Vibrating String</a></li>
+                <li><a href="../DE/PDESummary.html" class="mm-link">Summary of Separation of Variables</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><span>Extras</span></li>
+        <li><a href="../../Extras/AlgebraTrigReview/AlgebraTrig.html" class="mm-link">Algebra &amp; Trig Review</a>
+          <ul>
+            <li><a href="../../Extras/AlgebraTrigReview/AlgebraIntro.html" class="mm-link">Algebra</a>
+              <ul>
+                <li><a href="../../Extras/AlgebraTrigReview/Exponents.html" class="mm-link">Exponents </a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/AbsoluteValue.html" class="mm-link">Absolute Value</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Radicals.html" class="mm-link">Radicals</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Rationalizing.html" class="mm-link">Rationalizing </a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Functions.html" class="mm-link">Functions </a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/MultPoly.html" class="mm-link">Multiplying Polynomials</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Factoring.html" class="mm-link">Factoring</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SimpRatExp.html" class="mm-link">Simplifying Rational Expressions</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Graphing.html" class="mm-link">Graphing and Common Graphs</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveEqnPtI.html" class="mm-link">Solving Equations, Part I</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveEqnPtII.html" class="mm-link">Solving Equations, Part II</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveSystems.html" class="mm-link">Solving Systems of Equations</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveIneq.html" class="mm-link">Solving Inequalities</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveAbsValue.html" class="mm-link">Absolute Value Equations and Inequalities</a></li>
+              </ul>
+            </li>
+            <li><a href="../../Extras/AlgebraTrigReview/TrigIntro.html" class="mm-link">Trigonometry</a>
+              <ul>
+                <li><a href="../../Extras/AlgebraTrigReview/TrigFunctions.html" class="mm-link">Trig Function Evaluation</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/TrigGraphs.html" class="mm-link">Graphs of Trig Functions</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/TrigFormulas.html" class="mm-link">Trig Formulas</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveTrigEqn.html" class="mm-link">Solving Trig Equations</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/InverseTrig.html" class="mm-link">Inverse Trig Functions</a></li>
+              </ul>
+            </li>
+            <li><a href="../../Extras/AlgebraTrigReview/ExpLogIntro.html" class="mm-link">Exponentials & Logarithms</a>
+              <ul>
+                <li><a href="../../Extras/AlgebraTrigReview/ExponentialFcns.html" class="mm-link">Basic Exponential Functions</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/LogarithmFcns.html" class="mm-link">Basic Logarithm Functions</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/LogProperties.html" class="mm-link">Logarithm Properties</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SimpLogs.html" class="mm-link">Simplifying Logarithms</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveExpEqn.html" class="mm-link">Solving Exponential Equations</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveLogEqn.html" class="mm-link">Solving Logarithm Equations</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../../Extras/CommonErrors/CommonMathErrors.html" class="mm-link">Common Math Errors</a>
+          <ul>
+            <li><a href="../../Extras/CommonErrors/GeneralErrors.html" class="mm-link">General Errors</a>
+            </li>
+            <li><a href="../../Extras/CommonErrors/AlgebraErrors.html" class="mm-link">Algebra Errors</a>
+            </li>
+            <li><a href="../../Extras/CommonErrors/TrigErrors.html" class="mm-link">Trig Errors</a>
+            </li>
+            <li><a href="../../Extras/CommonErrors/CommonErrors.html" class="mm-link">Common Errors</a>
+            </li>
+            <li><a href="../../Extras/CommonErrors/CalculusErrors.html" class="mm-link">Calculus Errors</a>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../../Extras/ComplexPrimer/ComplexNumbers.html" class="mm-link">Complex Number Primer</a>
+          <ul>
+            <li><a href="../../Extras/ComplexPrimer/Definition.html" class="mm-link">The Definition</a>
+            </li>
+            <li><a href="../../Extras/ComplexPrimer/Arithmetic.html" class="mm-link">Arithmetic</a>
+            </li>
+            <li><a href="../../Extras/ComplexPrimer/ConjugateModulus.html" class="mm-link">Conjugate and Modulus</a>
+            </li>
+            <li><a href="../../Extras/ComplexPrimer/Forms.html" class="mm-link">Polar and Exponential Forms</a>
+            </li>
+            <li><a href="../../Extras/ComplexPrimer/Roots.html" class="mm-link">Powers and Roots</a>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../../Extras/StudyMath/HowToStudyMath.html" class="mm-link">How To Study Math</a>
+          <ul>
+            <li><a href="../../Extras/StudyMath/GeneralTips.html" class="mm-link">General Tips</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/TakingNotes.html" class="mm-link">Taking Notes</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/GettingHelp.html" class="mm-link">Getting Help</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/Homework.html" class="mm-link">Doing Homework</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/ProblemSolving.html" class="mm-link">Problem Solving</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/StudyForExam.html" class="mm-link">Studying For an Exam</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/TakingExam.html" class="mm-link">Taking an Exam</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/Errors.html" class="mm-link">Learn From Your Errors</a>
+            </li>
+          </ul>
+        </li>
+
+        <li><span>Misc Links</span></li>
+        <li><a href="http://tutorial.math.lamar.edu/contact.aspx" class="mm-link">Contact Me</a></li>
+        <li><a href="../../links.html" class="mm-link">Links</a></li>
+        <li><a href="../../mathjax.html" class="mm-link">MathJax Help and Configuration</a></li>
+        <li><a href="../../mystudents.html" class="mm-link">My Students</a></li>
+        <li><a href="http://tutorial.math.lamar.edu/privacy.aspx" class="mm-link">Privacy Statement</a></li>
+        <li><a href="../../help.html" class="mm-link">Site Help & FAQ</a></li>
+        <li><a href="http://tutorial.math.lamar.edu/terms.aspx" class="mm-link">Terms of Use</a></li>
+      </ul>
+    </nav>
+
+
+
+    <div class="top-info-bar">
+      <span id="mobile-title" class="mobile-header-title header-title">Paul's Online Notes</span>
+      <br />
+      <span class="top-menu-breadcrumb">
+        <a href="../../index.html" id="breadcrumb_home_link" title="Go to Main Page">Home</a>
+        <span id="breadcrumb_h_b_sep_span">/ </span>
+        <a href="Alg.html" id="breadcrumb_book_link" title="Go to Book Introduction">Algebra</a>
+        
+        <span id="breadcrumb_b_c_sep_span">/ </span>
+        <a href="Solving.html" id="breadcrumb_chapter_link" title="Go to Chapter Introduction">Solving Equations and Inequalities</a>
+        
+        <span id="breadcrumb_section_span"> / Quadratic Equations - Part I</span>
+      </span>
+
+    </div>
+
+    <div id="nav_links" class="top-nav-bar">
+      
+      <span id="nav_current_notes">Notes</span>
+      <a href="http://tutorial.math.lamar.edu/Problems/Alg/SolveQuadraticEqnsI.aspx" id="nav_links_practice" title="Go to Practice Problems for current topic.">Practice<span class="nav_desktop_extra"> Problems</span></a>
+      
+      <a href="http://tutorial.math.lamar.edu/ProblemsNS/Alg/SolveQuadraticEqnsI.aspx" id="nav_links_asgn" title="Go to Assignment Problems for current topic.">Assignment<span class="nav_desktop_extra">  Problems</span></a>
+      
+    </div>
+
+    <div class="header-divider"></div>
+
+    <div class="content">  
+      
+      
+      <span id="SHLink_NoteMobile" class="SH-Link content-note-link-mobile">Show Mobile Notice</span>
+      <span id="SHImg_NoteMobile" class="fas fa-caret-right SH-padding content-note-link-mobile" aria-hidden="true"></span>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+
+      <span id="SHALink_S_Note" class="SH-Link SH-Hide SH-Bracket">Show All Notes</span>&nbsp;<span id="SHALink_H_Note" class="SH-Link SH-Hide SH-Bracket">Hide All Notes</span>
+      
+      
+      <div id="SHObj_NoteMobile" class="content-note-container content-note-container-mobile">
+        <div class="content-note-header">Mobile Notice</div>
+        <div class="content-note">You appear to be on a device with a "narrow" screen width (<em>i.e.</em> you are probably on a mobile phone).  Due to the nature of the mathematics on this site it is best views in landscape mode.  If your device is not in landscape mode many of the equations will run off the side of your device (should be able to scroll to see them) and some of the menu items will be cut off due to the narrow screen width.</div>
+      </div>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+
+      
+
+
+  <form method="post" action="http://tutorial.math.lamar.edu/Classes/Alg/SolveQuadraticEqnsI.aspx" id="ctl00">
+<div class="aspNetHidden">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+</div>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="9E7DA2BE" />
+</div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </form>
+
+  <h3>Section 2-5 : Quadratic Equations - Part I</h3>
+    
+    <p>Before proceeding with this section we should note that the topic of solving quadratic equations will be covered in two sections.  This is done for the benefit of those viewing the material on the web.  This is a long topic and to keep page load times down to a minimum the material was split into two sections.</p>
+    
+    <p>So, we are now going to solve quadratic equations.  First, the <strong>standard form</strong> of a quadratic equation is</p>
+    
+      \[a{x^2} + bx + c = 0\hspace{0.25in}a \ne 0\]
+    
+    <p>The only requirement here is that we have an \({x^2}\) in the equation.  We guarantee that this term will be present in the equation by requiring \(a \ne 0\).  Note however, that it is okay if \(b\) and/or \(c\) are zero.</p>
+    
+    <p>There are many ways to solve quadratic equations.  We will look at four of them over the course of the next two sections.  The first two methods won’t always work yet are probably a little simpler to use when they work.  This section will cover these two methods.  The last two methods will always work, but often require a little more work or attention to get correct.  We will cover these methods in the next section.</p>
+    
+    <p>So, let’s get started.</p>
+    <p></p>
+    <p><strong>Solving by Factoring</strong></p>
+    <p>As the heading suggests we will be solving quadratic equations here by factoring them.  To do this we will need the following fact.</p>
+    
+    
+        \[{\mbox{If  }}ab = 0{\mbox{  then  either  }}a = 0{\mbox{  and/or  }}b = 0\]
+    
+    <p>This fact is called the <strong>zero factor property</strong> or <strong>zero factor principle</strong>.  All the fact says is that if a product of two terms is zero then at least one of the terms had to be zero to start off with.</p>
+    
+    <p>Notice that this fact will ONLY work if the product is equal to zero.  Consider the following product.</p>
+    
+        \[ab = 6\]
+    <p>In this case there is no reason to believe that either \(a\) or \(b\) will be 6.  We could have \(a = 2\) and \(b = 3\) for instance.  So, do not misuse this fact!</p>
+    
+    <p>To solve a quadratic equation by factoring we first must move all the terms over to one side of the equation.  Doing this serves two purposes.  First, it puts the quadratics into a form that can be factored.  Secondly, and probably more importantly, in order to use the zero factor property we MUST have a zero on one side of the equation.  If we don’t have a zero on one side of the equation we won’t be able to use the zero factor property.</p>
+    
+    <p>Let’s take a look at a couple of examples.  Note that it is assumed that you can do the factoring at this point and so we won’t be giving any details on the factoring.  If you need a review of factoring you should go back and take a look at the <a href="Factoring.html">Factoring</a> section of the previous chapter.</p>
+    
+    <a class="anchor" name="Solve_QuadI_Ex1"></a>
+  <div class="example">
+    <span class="example-title">Example 1</span> Solve each of the following equations by factoring.
+    <ol class="example_parts_list">
+      <li>\({x^2} - x = 12\)</li>
+      <li>\({x^2} + 40 =  - 14x\)</li>
+      <li>\({y^2} + 12y + 36 = 0\)</li>
+      <li>\(4{m^2} - 1 = 0\)</li>
+      <li>\(3{x^2} = 2x + 8\)</li>
+      <li>\(10{z^2} + 19z + 6 = 0\)</li>
+      <li>\(5{x^2} = 2x\)</li>
+    </ol>
+    <span id="SHALink_S_Soln1" class="SH-Link SH-All">Show All Solutions</span>&nbsp;<span id="SHALink_H_Soln1" class="SH-Link SH-All">Hide All Solutions</span>
+    <div class="example-content">
+      <span id="SHLink_DSoln1" class="SH-Link soln-title">Show Discussion</span> <span id="SHImg_DSoln1" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_DSoln1" class="soln-content">
+        <p>Now, as noted earlier, we won’t be putting any detail into the factoring process, so make sure that you can do the factoring here.</p>
+      </div>
+      
+      <br />
+      <span class="soln-list-item soln-list-subitem">a</span> \({x^2} - x = 12\) <span id="SHLink_Soln1a" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln1a" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln1a" class="soln-content">
+        <p>First, get everything on side of the equation and then factor.</p>
+          
+            \[\begin{align*}{x^2} - x - 12 & = 0\\ \left( {x - 4} \right)\left( {x + 3} \right) & = 0\end{align*}\]
+          <p>Now at this point we’ve got a product of two terms that is equal to zero.  This means that at least one of the following must be true.</p>
+          
+          
+            \[\begin{align*}x - 4 & = 0 & \hspace{0.25in}{\mbox{OR}}\hspace{0.25in} & & x + 3 & = 0\\ x & = 4&\hspace{0.25in}{\mbox{OR}}\hspace{0.25in} & & x & =  - 3\end{align*}\]
+          
+          <p>Note that each of these is a linear equation that is easy enough to solve.  What this tell us is that we have two solutions to the equation, \(x = 4\) and \(x =  - 3\).  As with linear equations we can always check our solutions by plugging the solution back into the equation.  We will check \(x =  - 3\) and leave the other to you to check.</p>
+          
+            \[\begin{align*}{\left( { - 3} \right)^2} - \left( { - 3} \right) & \mathop  = \limits^? 12\\ 9 + 3 & \mathop  = \limits^? 12\\ 12 & = 12\,\,\,\,{\mbox{OK}}\end{align*}\]
+          
+          <p>So, this was in fact a solution.</p>
+      </div>
+
+      <br />
+      <span class="soln-list-item soln-list-subitem">b</span> \({x^2} + 40 =  - 14x\) <span id="SHLink_Soln1b" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln1b" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln1b" class="soln-content">
+        <p>As with the first one we first get everything on side of the equal sign and then factor.</p>
+          
+            \[\begin{align*}{x^2} + 40 + 14x & = 0\\ \left( {x + 4} \right)\left( {x + 10} \right) & = 0\end{align*}\]
+
+          <p>Now, we once again have a product of two terms that equals zero so we know that one or both of them have to be zero.  So, technically we need to set each one equal to zero and solve.  However, this is usually easy enough to do in our heads and so from now on we will be doing this solving in our head.</p>
+          
+          <p>The solutions to this equation are,</p>
+          
+              \[x =  - 4\hspace{0.25in}{\mbox{AND}}\hspace{0.25in}x =  - 10\]
+          <p>To save space we won’t be checking any more of the solutions here, but you should do so to make sure we didn’t make any mistakes.</p>
+      </div>
+
+      <br />
+      <span class="soln-list-item soln-list-subitem">c</span> \({y^2} + 12y + 36 = 0\) <span id="SHLink_Soln1c" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln1c" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln1c" class="soln-content">
+        <p>In this case we already have zero on one side and so we don’t need to do any manipulation to the equation all that we need to do is factor.  Also, don’t get excited about the fact that we now have \(y\)’s in the equation.  We won’t always be dealing with \(x\)’s so don’t expect to always see them.</p>
+          
+          <p>So, let’s factor this equation.</p>
+          
+            \[\begin{align*}{y^2} + 12y + 36 & = 0\\ {\left( {y + 6} \right)^2} & = 0\\ \left( {y + 6} \right)\left( {y + 6} \right) & = 0\end{align*}\]
+          
+          <p>In this case we’ve got a perfect square.  We broke up the square to denote that we really do have an application of the zero factor property.  However, we usually don’t do that.  We usually will go straight to the answer from the squared part.</p>
+          
+          <p>The solution to the equation in this case is,</p>
+          
+            \[y =  - 6\]
+          <p>We only have a single value here as opposed to the two solutions we’ve been getting to this point.  We will often call this solution a <strong>double root</strong> or say that it has <strong>multiplicity of 2</strong> because it came from a term that was squared.</p>
+      </div>
+
+      <br />
+      <span class="soln-list-item soln-list-subitem">d</span> \(4{m^2} - 1 = 0\) <span id="SHLink_Soln1d" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln1d" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln1d" class="soln-content">
+        <p>As always let’s first factor the equation.</p>
+          
+            \[\begin{align*}4{m^2} - 1 & = 0\\ \left( {2m - 1} \right)\left( {2m + 1} \right) & = 0\end{align*}\]
+          <p>Now apply the zero factor property.  The zero factor property tells us that,</p>
+          
+              \[\begin{align*}2m - 1  & = 0 & \hspace{0.25in}{\mbox{OR}}\hspace{0.25in} & & 2m + 1 & = 0\\ 2m & = 1 & \hspace{0.25in}{\mbox{OR}}\hspace{0.25in} & & m & =  - 1\\  m & = \frac{1}{2} & \hspace{0.25in}{\mbox{OR}}\hspace{0.25in} & & m & =  - \frac{1}{2}\end{align*}\]
+          <p>Again, we will typically solve these in our head, but we needed to do at least one in complete detail.  So, we have two solutions to the equation.</p>
+          
+            \[m = \frac{1}{2}\hspace{0.25in}{\mbox{AND}}\hspace{0.25in}m =  - \frac{1}{2}\]
+      </div>
+
+      <br />
+      <span class="soln-list-item soln-list-subitem">e</span> \(3{x^2} = 2x + 8\) <span id="SHLink_Soln1e" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln1e" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln1e" class="soln-content">
+        <p>Now that we’ve done quite a few of these, we won’t be putting in as much detail for the next two problems.  Here is the work for this equation.</p>
+          
+            \[\begin{align*}3{x^2} - 2x - 8 & = 0\\ \left( {3x + 4} \right)\left( {x - 2} \right) & = 0\hspace{0.25in} \Rightarrow \hspace{0.25in}x =  - \frac{4}{3}\,\,\,\,\,{\mbox{and}}\,\,\,\,\,x = 2\end{align*}\]
+      </div>
+      
+      <br />
+      <span class="soln-list-item soln-list-subitem">f</span> \(10{z^2} + 19z + 6 = 0\) <span id="SHLink_Soln1f" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln1f" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln1f" class="soln-content">
+        <p>Again, factor and use the zero factor property for this one.</p>
+          
+            \[\begin{align*}10{z^2} + 19z + 6 & = 0\\ \left( {5z + 2} \right)\left( {2z + 3} \right) & = 0\hspace{0.25in} \Rightarrow \hspace{0.25in} z =  - \frac{2}{5}\,\,\,\,\,{\mbox{and  }}z =  - \frac{3}{2}\end{align*}\]
+      </div>
+      
+      <br />
+      <span class="soln-list-item soln-list-subitem">g</span> \(5{x^2} = 2x\) <span id="SHLink_Soln1g" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln1g" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln1g" class="soln-content">
+        <p>This one always seems to cause trouble for students even though it’s really not too bad.</p>
+          
+          <p>First off.  DO NOT CANCEL AN \(x\) FROM BOTH SIDES!!!!  Do you get the idea that might be bad?  It is.  If you cancel an \(x\) from both sides, you WILL miss a solution so don’t do it.  Remember we are solving by factoring here so let’s first get everything on one side of the equal sign.</p>
+          
+              \[5{x^2} - 2x = 0\]
+          
+          <p>Now, notice that all we can do for factoring is to factor an \(x\) out of everything.  Doing this gives,</p>
+          
+              \[x\left( {5x - 2} \right) = 0\]
+          
+          <p>From the first factor we get that \(x = 0\) and from the second we get that \(x = \frac{2}{5}\).  These are the two solutions to this equation.  Note that is we’d canceled an \(x\) in the first step we would NOT have gotten \(x = 0\) as an answer!</p>
+      </div>
+    </div>
+  </div>
+    
+    <p>Let’s work another type of problem here.  We saw some of these back in the <a href="SolveLinearEqns.html">Solving Linear Equations</a> section and since they can also occur with quadratic equations we should go ahead and work on to make sure that we can do them here as well.</p>
+    
+    
+    <a class="anchor" name="Solve_QuadI_Ex2"></a>
+  <div class="example">
+    <span class="example-title">Example 2</span> Solve each of the following equations.
+    <ol class="example_parts_list">
+      <li>\(\displaystyle \frac{1}{{x + 1}} = 1 - \frac{5}{{2x - 4}}\)</li>
+      <li>\(\displaystyle x + 3 + \frac{3}{{x - 1}} = \frac{{4 - x}}{{x - 1}}\)</li>
+    </ol>
+    <span id="SHALink_S_Soln2" class="SH-Link SH-All">Show All Solutions</span>&nbsp;<span id="SHALink_H_Soln2" class="SH-Link SH-All">Hide All Solutions</span>
+    <div class="example-content">
+      <span id="SHLink_DSoln2" class="SH-Link soln-title">Show Discussion</span> <span id="SHImg_DSoln2" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_DSoln2" class="soln-content">
+        <p>Okay, just like with the linear equations the first thing that we’re going to need to do here is to clear the denominators out by multiplying by the LCD.  Recall that we will also need to note value(s) of \(x\) that will give division by zero so that we can make sure that these aren’t included in the solution.</p>
+      </div>
+      
+      <br />
+      <span class="soln-list-item soln-list-subitem">a</span> \(\displaystyle \frac{1}{{x + 1}} = 1 - \frac{5}{{2x - 4}}\) <span id="SHLink_Soln2a" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln2a" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln2a" class="soln-content">
+        <p>The LCD for this problem is \(\left( {x + 1} \right)\left( {2x - 4} \right)\) and we will need to avoid \(x =  - 1\) and \(x = 2\) to make sure we don’t get division by zero.  Here is the work for this equation.</p>
+          
+            \[\begin{align*}\left( {x + 1} \right)\left( {2x - 4} \right)\left( {\frac{1}{{x + 1}}} \right) & = \left( {x + 1} \right)\left( {2x - 4} \right)\left( {1 - \frac{5}{{2x - 4}}} \right)\\ 2x - 4 & = \left( {x + 1} \right)\left( {2x - 4} \right) - 5\left( {x + 1} \right)\\ 2x - 4 & = 2{x^2} - 2x - 4 - 5x - 5\\  0 & = 2{x^2} - 9x - 5\\ 0 & = \left( {2x + 1} \right)\left( {x - 5} \right)\end{align*}\]
+          <p>So, it looks like the two solutions to this equation are,</p>
+          
+              \[x =  - \frac{1}{2}\,\,\,\,\,\,\,{\mbox{and  }}x = 5\]
+          <p>Notice as well that neither of these are the values of \(x\) that we needed to avoid and so both are solutions.</p>
+      </div>
+
+      <br />
+      <span class="soln-list-item soln-list-subitem">b</span> \(\displaystyle x + 3 + \frac{3}{{x - 1}} = \frac{{4 - x}}{{x - 1}}\) <span id="SHLink_Soln2b" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln2b" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln2b" class="soln-content">
+        <p>In this case the LCD is \(x - 1\) and we will need to avoid \(x = 1\) so we don’t get division by zero.  Here is the work for this problem.</p>
+          
+            \[\begin{align*}\left( {x - 1} \right)\left( {x + 3 + \frac{3}{{x - 1}}} \right) & = \left( {\frac{{4 - x}}{{x - 1}}} \right)\left( {x - 1} \right)\\ \left( {x - 1} \right)\left( {x + 3} \right) + 3 & = 4 - x\\ {x^2} + 2x - 3 + 3 & = 4 - x\\  {x^2} + 3x - 4 & = 0\\ \left( {x - 1} \right)\left( {x + 4} \right) & = 0\end{align*}\]
+          <p>So, the quadratic that we factored and solved has two solutions, \(x = 1\) and \(x =  - 4\).  However, when we found the LCD we also saw that we needed to avoid \(x = 1\) so we didn’t get division by zero.  Therefore, this equation has a single solution,</p>
+          
+            \[x =  - 4\]
+      </div>
+    </div>
+  </div>
+    
+    <p>Before proceeding to the next topic we should address that this idea of factoring can be used to solve equations with degree larger than two as well.  Consider the following example.</p>
+    <a class="anchor" name="Solve_QuadI_Ex3"></a>
+  <div class="example">
+    <span class="example-title">Example 3</span> Solve \(5{x^3} - 5{x^2} - 10x = 0\).
+    <div class="example-content">
+      <span id="SHLink_Soln3" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln3" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln3" class="soln-content">
+        <p>The first thing to do is factor this equation as much as possible.  In this case that means factoring out the greatest common factor first.  Here is the factored form of this equation.</p>
+          
+            \[\begin{align*}5x\left( {{x^2} - x - 2} \right) & = 0\\ 5x\left( {x - 2} \right)\left( {x + 1} \right) & = 0\end{align*}\]
+          
+          <p>Now, the zero factor property will still hold here.  In this case we have a product of three terms that is zero.  The only way this product can be zero is if one of the terms is zero.  This means that,</p>
+          
+            \[\begin{align*}5x & = 0\hspace{0.25in} \Rightarrow & x & = 0\\ x - 2 & = 0\hspace{0.25in} \Rightarrow  & x & = 2\\ x + 1 & = 0\hspace{0.25in} \Rightarrow  & x & =  - 1\end{align*}\]
+          
+          <p>So, we have three solutions to this equation.</p>
+      </div>
+    </div>
+  </div>
+    
+    <p>So, provided we can factor a polynomial we can always use this as a solution technique.  The problem is, of course, that it is sometimes not easy to do the factoring.</p>
+    
+    <p><strong>Square Root Property</strong></p>
+    <p>The second method of solving quadratics we’ll be looking at uses the <strong>square root property</strong>,</p>
+    
+        \[{\mbox{If  }}{p^2} = d{\mbox{  then  }}p =  \pm \sqrt d \]
+    
+    <p>There is a (potentially) new symbol here that we should define first in case you haven’t seen it yet.  The symbol “\( \pm \)” is read as : “plus or minus” and that is exactly what it tells us.  This symbol is shorthand that tells us that we really have two numbers here.  One is \(p = \sqrt d \) and the other is \(p =  - \sqrt d \).  Get used to this notation as it will be used frequently in the next couple of sections as we discuss the remaining solution techniques.  It will also arise in other sections of this chapter and even in other chapters.</p>
+    
+    <p>This is a fairly simple property to use, however it can only be used on a small portion of the equations that we’re ever likely to encounter.  Let’s see some examples of this property.</p>
+    
+    <a class="anchor" name="Solve_QuadI_Ex4"></a>
+  <div class="example">
+    <span class="example-title">Example 4</span> Solve each of the following equations.
+    <ol class="example_parts_list">
+      <li>\({x^2} - 100 = 0\)</li>
+      <li>\(25{y^2} - 3 = 0\)</li>
+      <li>\(4{z^2} + 49 = 0\)</li>
+      <li>\({\left( {2t - 9} \right)^2} = 5\)</li>
+      <li>\({\left( {3x + 10} \right)^2} + 81 = 0\)</li>
+    </ol>
+    <span id="SHALink_S_Soln4" class="SH-Link SH-All">Show All Solutions</span>&nbsp;<span id="SHALink_H_Soln4" class="SH-Link SH-All">Hide All Solutions</span>
+    <div class="example-content">
+      <span id="SHLink_DSoln4" class="SH-Link soln-title">Show Discussion</span> <span id="SHImg_DSoln4" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_DSoln4" class="soln-content">
+        <p>There really isn’t all that much to these problems.  In order to use the square root property all that we need to do is get the squared quantity on the left side by itself with a coefficient of 1 and the number on the other side.  Once this is done we can use the square root property.</p>
+      </div>
+      
+      <br />
+      <span class="soln-list-item soln-list-subitem">a</span> \({x^2} - 100 = 0\) <span id="SHLink_Soln4a" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln4a" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln4a" class="soln-content">
+        <p>This is a fairly simple problem so here is the work for this equation.</p>
+          
+              \[{x^2} = 100\hspace{0.25in}x =  \pm \sqrt {100}  =  \pm 10\]
+          <p>So, there are two solutions to this equation, \(x =  \pm 10\).  Remember this means that there are really two solutions here, \(x =  - 10\) and \(x = 10\).</p>
+      </div>
+
+      <br />
+      <span class="soln-list-item soln-list-subitem">b</span> \(25{y^2} - 3 = 0\) <span id="SHLink_Soln4b" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln4b" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln4b" class="soln-content">
+        <p>Okay, the main difference between this one and the previous one is the 25 in front of the squared term.  The square root property wants a coefficient of one there.  That’s easy enough to deal with however; we’ll just divide both sides by 25.  Here is the work for this equation.</p>
+          
+            \[\begin{align*}25{y^2} & = 3\\ {y^2} & = \frac{3}{{25}}\hspace{0.25in} \Rightarrow \hspace{0.25in}y =  \pm \sqrt {\frac{3}{{25}}}  =  \pm \frac{{\sqrt 3 }}{5}\end{align*}\]
+          <p>In this case the solutions are a little messy, but many of these will do so don’t worry about that.  Also note that since we knew what the square root of 25 was we went ahead and split the square root of the fraction up as shown.  Again, remember that there are really two solutions here, one positive and one negative.</p>
+      </div>
+
+      <br />
+      <span class="soln-list-item soln-list-subitem">c</span> \(4{z^2} + 49 = 0\) <span id="SHLink_Soln4c" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln4c" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln4c" class="soln-content">
+        <p>This one is nearly identical to the previous part with one difference that we’ll see at the end of the example.  Here is the work for this equation.</p>
+          
+            \[\begin{align*}4{z^2} & =  - 49\\ {z^2} & =  - \frac{{49}}{4}\hspace{0.25in} \Rightarrow \hspace{0.25in}z =  \pm \sqrt { - \frac{{49}}{4}}  =  \pm \,i\,\sqrt {\frac{{49}}{4}}  =  \pm \frac{7}{2}i\end{align*}\]
+          
+          <p>So, there are two solutions to this equation : \(z =  \pm \frac{7}{2}i\).  Notice as well that they are complex solutions.  This will happen with the solution to many quadratic equations so make sure that you can deal with them.</p>
+      </div>
+
+      <br />
+      <span class="soln-list-item soln-list-subitem">d</span> \({\left( {2t - 9} \right)^2} = 5\) <span id="SHLink_Soln4d" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln4d" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln4d" class="soln-content">
+        <p>This one looks different from the previous parts, however it works the same way.  The square root property can be used anytime we have <em>something</em> squared equals a number.  That is what we have here.  The main difference of course is that the something that is squared isn’t a single variable it is something else.  So, here is the application of the square root property for this equation.</p>
+          
+              \[2t - 9 =  \pm \sqrt 5 \]
+          
+          <p>Now, we just need to solve for \(t\) and despite the “plus or minus” in the equation it works the same way we would solve any linear equation.  We will add 9 to both sides and then divide by a 2.</p>
+          
+            \[\begin{align*}2t & = 9 \pm \sqrt 5 \\ t & = \frac{1}{2}\left( {9 \pm \sqrt 5 } \right) = \frac{9}{2} \pm \frac{{\sqrt 5 }}{2}\end{align*}\]
+          
+          <p>Note that we multiplied the fraction through the parenthesis for the final answer.  We will usually do this in these problems.  Also, do NOT convert these to decimals unless you are asked to.  This is the standard form for these answers.  With that being said we should convert them to decimals just to make sure that you can.  Here are the decimal values of the two solutions.</p>
+          
+              \[t = \frac{9}{2} + \frac{{\sqrt 5 }}{2} = 5.61803\hspace{0.25in}{\mbox{and}}\hspace{0.25in}t = \frac{9}{2} - \frac{{\sqrt 5 }}{2} = 3.38197\]
+      </div>
+
+      <br />
+      <span class="soln-list-item soln-list-subitem">e</span> \({\left( {3x + 10} \right)^2} + 81 = 0\) <span id="SHLink_Soln4e" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln4e" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln4e" class="soln-content">
+        <p>In this final part we’ll not put much in the way of details into the work.</p>
+          
+            \[\begin{align*}{\left( {3x + 10} \right)^2} & =  - 81\\ 3x + 10 & =  \pm \,9\,i\\  3x & =  - 10 \pm \,9\,i\\ x & =  - \frac{{10}}{3} \pm 3\,i\end{align*}\]
+          <p>So we got two complex solutions again and notice as well that with both of the previous part we put the “plus or minus” part last.  This is usually the way these are written.</p>
+      </div>
+    </div>
+  </div>
+    
+    <p>As mentioned at the start of this section we are going to break this topic up into two sections for the benefit of those viewing this on the web.  The next two methods of solving quadratic equations, completing the square and quadratic formula, are given in the next section.</p>
+    
+
+  
+
+
+      
+
+
+
+    </div>
+    <!-- End of content div -->
+
+
+    <div class="footer">
+      <div class="footer-links">
+        [<a href="http://tutorial.math.lamar.edu/Contact.aspx">Contact Me</a>]&nbsp;[<a href="../../MyStudents-2.html">My Students</a>]&nbsp;[<a href="http://tutorial.math.lamar.edu/Privacy.aspx">Privacy Statement</a>]&nbsp;[<a href="../../Help-2.html">Site Help &amp; FAQ</a>]&nbsp;[<a href="http://tutorial.math.lamar.edu/Terms.aspx">Terms of Use</a>]
+      </div>
+      <div class="footer-dates">
+        <div class="footer-copyright"><span id="lblCopyRight">&copy; 2003 - 2019 Paul Dawkins</span></div>
+        <div class="footer-spacer"></div>
+        <div class="footer-modified-date">Page Last Modified : <span id="lblModified">6/2/2018</span></div>
+      </div>
+      
+
+    </div>
+  </div>
+  <!-- End of page div...  -->
+</body>
+
+<!-- Mirrored from tutorial.math.lamar.edu/Classes/Alg/SolveQuadraticEqnsI.aspx by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 27 Feb 2019 06:15:34 GMT -->
+</html>

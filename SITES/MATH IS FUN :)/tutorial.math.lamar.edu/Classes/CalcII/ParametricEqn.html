@@ -1,0 +1,1507 @@
+
+
+<!DOCTYPE html>
+
+<html>
+
+<!-- Mirrored from tutorial.math.lamar.edu/Classes/CalcII/ParametricEqn.aspx by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 27 Feb 2019 06:15:35 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=yes" /><meta http-equiv="X-UA-Compatible" content="IE=edge" />  <!-- For best MathJax performance on IE  -->
+
+  <meta name="google-site-verification" content="uLoA31CJfOhIVMJWBjCmQL8xNMmmLybZU3LRKavy9WQ" /><title>
+	Calculus II - Parametric Equations and Curves
+</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="../../../www.googletagmanager.com/gtag/js1872?id=UA-331594-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-331594-1');
+  </script>
+
+  <link type="text/css" href="../../css/jquery.mmenu.all.css" rel="stylesheet" /><link type="text/css" href="../../css/jquery.dropdown.css" rel="stylesheet" /><link href="../../FA/css/fontawesome-all.min.css" rel="stylesheet" /><link type="text/css" href="../../css/notes-all.css" rel="stylesheet" /><link type="text/css" href="../../css/notes-google.css" rel="stylesheet" /><link type="text/css" href="../../css/notes-mmenu.css" rel="stylesheet" /><link type="text/css" href="../../css/notes-dropdown.css" rel="stylesheet" />
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+     TeX: { equationNumbers: { autoNumber: "AMS" } }
+    });
+  </script>
+  <script type="text/javascript" async src="../../../cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax2ba6.js?config=TeX-AMS_CHTML-full"></script>
+  <script type="text/javascript" src="../../../code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="../../js/jquery.mmenu.all.js"></script>
+  <script type="text/javascript" src="../../js/jquery.dropdown.js"></script>
+  <script type="text/javascript" src="../../js/notes-all.js"></script>  
+
+  <script>
+    (function () {
+      var cx = '001004262401526223570:11yv6vpcqvy';
+      var gcse = document.createElement('script');
+      gcse.type = 'text/javascript';
+      gcse.async = true;
+      gcse.src = '../../../cse.google.com/cse07b6.html?cx=' + cx;
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(gcse, s);
+    })();
+  </script>
+
+<meta http-equiv="keywords" name="keywords" content="parametric equations, parametric curves, graphing parametric equations, graphing parametric curves, eliminating the parameter" /><meta http-equiv="description" name="description" content="In this section we will introduce parametric equations and parametric curves (i.e. graphs of parametric equations).  We will graph several sets of parametric equations and discuss how to eliminate the parameter to get an algebraic equation which will often help with the graphing process." /></head>
+<body onload="init({Notes: 'NoteMobile;8/21/2018;true'})">
+
+  <div id="page">
+
+    <div class="header">
+      <div class="header-row">
+        <!--<a href="#menu"><span></span></a>-->
+        <div id="side-menu-icon" class="header-side-menu-icon"><a href="#menu"><span class="fas fa-bars fa-lg" aria-hidden="true" title="Main Menu - Change between topics, chapters and sections as well as a few extra pages."></span></a></div>
+        <span class="header-title"><a href="../../index.html" class="header-title-link">Paul's Online Notes</a></span>
+        <div class="header-spacer"></div>
+
+        <div id="content-top-menu" class="top-menu">
+          <button id="content-type-menu" class="top-menu-button" data-jq-dropdown="#jq-dropdown-type" title="View (Notes, Practice Problems or Assignment Problems, Show/Hide Solutions and/or Steps) Menu">
+            <span id="tab_top_menu_notes" class="top-menu-item-title">Notes</span> <span class="far fa-eye fa-lg" aria-hidden="true"></span>
+          </button>
+
+          <button id="quicknav-menu" class="top-menu-button" data-jq-dropdown="#jq-dropdown-quicknav" title="Quick Navigation (Previous/Next Sections and Problems and Full Problem List) Menu">
+            <span class="top-menu-item-title">Quick Nav</span> <span class="fas fa-exchange fa-lg" aria-hidden="true"></span>
+          </button>
+          
+          <button id="download-menu" class="top-menu-button" data-jq-dropdown="#jq-dropdown-download" title="Download pdf Menu">
+            <span class="top-menu-item-title">Download</span> <span class="far fa-download fa-lg" aria-hidden="true"></span>
+          </button>
+
+          <button id="print-menu" class="top-menu-button top-menu-button-icon-only" data-jq-dropdown="#jq-print-download" title="Print Menu">
+            <span class="far fa-print fa-lg" aria-hidden="true"></span>
+          </button>
+        </div>
+
+        <div id="header-google-search" class="header-search">
+          <gcse:search></gcse:search>
+        </div>
+        <div id="header-search-icon" title="Site Search" class="header-menu-icon"><span id="search-icon" class="fas fa-search" aria-hidden="true"></span></div>
+
+      </div>
+    </div>
+
+     <div id="jq-dropdown-type" class="jq-dropdown jq-dropdown-tip">
+      <ul class="jq-dropdown-menu">
+        
+        <li id="li_type_menu_goto" class="top-menu-nav-title">Go To</li>
+        <li id="li_type_menu_notes">
+          <span id="type_menu_notes_span" title="Viewing the Notes for the current topic." class="top-menu-current">Notes</span>
+          
+        </li>
+        <li id="li_type_menu_practice">
+          
+          
+          <a href="http://tutorial.math.lamar.edu/Problems/CalcII/ParametricEqn.aspx" id="type_menu_practice_link" title="Go to Practice Problems for current topic.">Practice Problems</a>
+        </li>
+        <li id="li_type_menu_asgn">
+          
+          <a href="http://tutorial.math.lamar.edu/ProblemsNS/CalcII/ParametricEqn.aspx" id="type_menu_asgn_link" title="Go to Assignment Problems for current topic.">Assignment Problems</a>
+        </li>
+        <li id="li_type_menu_sh" class="top-menu-nav-title">Show/Hide</li>
+        <li id="li_type_menu_show" title="Show any hidden solutions and/or steps that may be present on the page."><a href="javascript:SHPrintPage(1,0)" id="view_menu_show">Show all Solutions/Steps/<em>etc.</em></a></li>
+        <li id="li_type_menu_hide" title="Hide any visible solutions and/or steps that may be present on the page."><a href="javascript:SHPrintPage(0,0)" id="view_menu_hide">Hide all Solutions/Steps/<em>etc.</em></a></li>
+      </ul>
+    </div>
+
+    <div id="jq-dropdown-quicknav" class="jq-dropdown jq-dropdown-tip">
+      <ul class="jq-dropdown-menu">
+        <li id="li_nav_menu_sections" class="top-menu-nav-title">Sections</li>
+        <li id="li_nav_menu_prev_section"><a href="ParametricIntro.html" id="a_nav_menu_prev_section" class="top-menu-nav-link" title="Previous Section : Parametric Equations and Polar Coordinates Introduction"><span class="top-menu-prev fas fa-chevron-left"></span> Parametric Equations and Polar Coordinates Introduction</a></li>
+        <li id="li_nav_menu_next_section"><a href="ParaTangent.html" id="a_nav_menu_next_section" class="top-menu-nav-link" title="Next Section : Tangents with Parametric Equations"><span class="top-menu-prev-hidden fas fa-chevron-left"></span> Tangents with Parametric Equations <span class="top-menu-next fas fa-chevron-right"></span></a></li>
+        <li id="li_nav_menu_chapters" class="top-menu-nav-title">Chapters</li>
+        <li id="li_nav_menu_prev_chapter"><a href="IntAppsIntro.html" id="a_nav_menu_prev_chapter" class="top-menu-nav-link" title="Previous Chapter : Applications of Integrals"><span class="top-menu-prev fas fa-chevron-left"></span><span class="top-menu-prev fas fa-chevron-left"></span> Applications of Integrals</a></li>
+        <li id="li_nav_menu_next_chapter"><a href="SeriesIntro.html" id="a_nav_menu_next_chapter" class="top-menu-nav-link" title="Next Chapter : Series &amp; Sequences"><span class="top-menu-prev-hidden fas fa-chevron-left"></span><span class="top-menu-prev-hidden fas fa-chevron-left"></span> Series & Sequences <span class="top-menu-next fas fa-chevron-right"></span><span class="top-menu-next fas fa-chevron-right"></span></a></li>
+        
+        
+        
+        
+        <li id="li_nav_menu_classes" class="top-menu-nav-title">Classes</li>
+        <li>
+          
+          <a href="../Alg/Alg.html" id="nav_menu_alg_link" title="Go To Algebra Notes">Algebra</a>
+        </li>
+        <li>
+          
+          <a href="../CalcI/CalcI.html" id="nav_menu_calci_link" title="Go To Calculus I Notes">Calculus I</a>
+        </li>
+        <li>
+          <span id="nav_menu_calcii_span" title="Currently Viewing Calculus II Material" class="top-menu-current">Calculus II</span>
+          
+        </li>
+        <li>
+          
+          <a href="../CalcIII/CalcIII.html" id="nav_menu_calciii_link" title="Go To Calculus III Notes">Calculus III</a>
+        </li>
+        <li>
+          
+          <a href="../DE/DE.html" id="nav_menu_de_link" title="Go To Differential Equations Notes">Differential Equations</a>
+        </li>
+        <li id="li_nav_menu_extras" class="top-menu-nav-title">Extras</li>
+        <li>
+          
+          <a href="../../Extras/AlgebraTrigReview/AlgebraTrig.html" id="nav_menu_algtrig_link" title="Go To Algebra &amp; Trig Review">Algebra &amp; Trig Review</a>
+        </li>
+        <li>
+          
+          <a href="../../Extras/CommonErrors/CommonMathErrors.html" id="nav_menu_commonerrors_link" title="Go To Common Math Errors">Common Math Errors</a>
+        </li>
+        <li>
+          
+          <a href="../../Extras/ComplexPrimer/ComplexNumbers.html" id="nav_menu_complexnumbers_link" title="Go To Complex Numbers Primer">Complex Number Primer</a>
+        </li>
+        <li>
+          
+          <a href="../../Extras/StudyMath/HowToStudyMath.html" id="nav_menu_studymath_link" title="Go To How To Study Math">How To Study Math</a>
+        </li>
+        <li>
+          
+          <a href="../../Extras/CheatSheets_Tables.html" id="nav_menu_cheattables_link" title="Go To List of Cheat Sheets and Tables">Cheat Sheets &amp; Tables</a>
+        </li>
+        <li id="li_nav_menu_misc" class="top-menu-nav-title">Misc</li>
+        <li><a href="http://tutorial.math.lamar.edu/contact.aspx" id="nav_menu_contact" title="Contact Me!">Contact Me</a></li>
+        <li><a href="../../mathjax.html" id="nav_menu_mathjax" title="Info on MathJax and MathJax Configuration Menu">MathJax Help and Configuration</a></li>
+        <li><a href="../../mystudents.html" id="nav_menu_students" title="Go here if you are currently taking a class from me!">My Students</a></li>
+      </ul>
+    </div>
+
+    <div id="jq-dropdown-download" class="jq-dropdown jq-dropdown-anchor-right jq-dropdown-tip">
+      <ul class="jq-dropdown-menu">
+        
+        <li id="li_download_menu_notes" class="top-menu-nav-title">Notes Downloads</li>
+        <li id="li_download_menu_notes_book"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=B,2,N" id="download_menu_notes_book" data-PDF="Download - Menu$Notes - Book$Calculus II$/Downloads/CalcII/Notes/Complete.pdf">Complete Book</a></li>
+        
+        <li id="li_download_menu_notes_chapter"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=C,9,N" id="download_menu_notes_chapter" data-PDF="Download - Menu$Notes - Chapter$Calculus II - Parametric Equations and Polar Coordinates$/Downloads/CalcII/Notes/ParametricEqns_PolarCoords.pdf">Current Chapter</a></li>
+        <li id="li_download_menu_notes_section"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=S,81,N" id="download_menu_notes_section" data-PDF="Download - Menu$Notes - Section$Calculus II - Parametric Equations and Curves$/Downloads/CalcII/Notes/ParametricEqns.pdf">Current Section</a></li>
+        <li id="li_download_menu_practice" class="top-menu-nav-title">Practice Problems Downloads</li>
+        
+        <li id="li_download_menu_practice_book"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=B,2,P" id="download_menu_practice_book" data-PDF="Download - Menu$Practice Problems - Book$Calculus II$/Downloads/CalcII/Practice Problems/Complete.pdf">Complete Book - Problems Only</a></li>
+        <li id="li_download_menu_solutions_book"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=B,2,S" id="download_menu_solutions_book" data-PDF="Download - Menu$Practice Problems Solutions - Book$Calculus II$/Downloads/CalcII/Practice Problems Solutions/Complete.pdf">Complete Book - Solutions</a></li>
+        <li id="li_download_menu_b_c" class="top-menu-divider"></li>
+        <li id="li_download_menu_practice_chapter"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=C,9,P" id="download_menu_practice_chapter" data-PDF="Download - Menu$Practice Problems - Chapter$Calculus II - Parametric Equations and Polar Coordinates$/Downloads/CalcII/Practice Problems/ParametricEqns_PolarCoords.pdf">Current Chapter - Problems Only</a></li>
+        <li id="li_download_menu_solutions_chapter"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=C,9,S" id="download_menu_solutions_chapter" data-PDF="Download - Menu$Practice Problems Solutions - Chapter$Calculus II - Parametric Equations and Polar Coordinates$/Downloads/CalcII/Practice Problems Solutions/ParametricEqns_PolarCoords.pdf">Current Chapter - Solutions</a></li>
+        <li id="li_download_menu_c_s" class="top-menu-divider"></li>
+        <li id="li_download_menu_practice_section"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=S,81,P" id="download_menu_practice_section" data-PDF="Download - Menu$Practice Problems - Section$Calculus II - Parametric Equations and Curves$/Downloads/CalcII/Practice Problems/ParametricEqns.pdf">Current Section - Problems Only</a></li>
+        <li id="li_download_menu_solutions_section"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=S,81,S" id="download_menu_solutions_section" data-PDF="Download - Menu$Practice Problems Solutions - Section$Calculus II - Parametric Equations and Curves$/Downloads/CalcII/Practice Problems Solutions/ParametricEqns.pdf">Current Section - Solutions</a></li>
+        <li id="li_download_menu_asgn" class="top-menu-nav-title">Assignment Problems Downloads</li>
+        
+        <li id="li_download_menu_asgn_book"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=B,2,A" id="download_menu_asgn_book" data-PDF="Download - Menu$Assignment Problems - Book$Calculus II$/Downloads/CalcII/Assignment Problems/Complete.pdf">Complete Book</a></li>
+        <li id="li_download_menu_asgn_chapter"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=C,9,A" id="download_menu_asgn_chapter" data-PDF="Download - Menu$Assignment Problems - Chapter$Calculus II - Parametric Equations and Polar Coordinates$/Downloads/CalcII/Assignment Problems/ParametricEqns_PolarCoords.pdf">Current Chapter</a></li>
+        <li id="li_download_menu_asgn_section"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=S,81,A" id="download_menu_asgn_section" data-PDF="Download - Menu$Assignment Problems - Section$Calculus II - Parametric Equations and Curves$/Downloads/CalcII/Assignment Problems/ParametricEqns.pdf">Current Section</a></li>
+        <li id="li_download_menu_other" class="top-menu-nav-title">Other Items</li>
+        <li id="li_download_menu_urls">
+          <a href="http://tutorial.math.lamar.edu/DownloadURLs.aspx?bi=2&amp;ci=9&amp;si=81" id="download_menu_urls">Get URL's for Download Items</a>
+        </li>
+      </ul>
+    </div>
+
+    <div id="jq-print-download" class="jq-dropdown jq-dropdown-anchor-right jq-dropdown-tip">
+      <ul class="jq-dropdown-menu">
+        <li id="li_print_menu_default"><a href="javascript:SHPrintPage()" id="print_menu_default">Print Page in Current Form (Default)</a></li>
+        <li id="li_print_menu_show"><a href="javascript:SHPrintPage(1,1)" id="print_menu_show">Show all Solutions/Steps and Print Page</a></li>
+        <li id="li_print_menu_hide"><a href="javascript:SHPrintPage(0,1)" id="print_menu_hide">Hide all Solutions/Steps and Print Page</a></li>
+      </ul>
+    </div>
+
+
+
+   
+
+    <nav id="menu" class="notes-nav">
+      <ul>
+        <li><a href="../../index.html" class="mm-link">Home</a></li>
+        <li><span>Classes</span></li>
+        <li><a href="../Alg/Alg.html" class="mm-link">Algebra</a>
+          <ul>
+            <li><a href="../Alg/Preliminaries.html" class="mm-link">Preliminaries</a>
+              <ul>
+                <li><a href="../Alg/IntegerExponents.html" class="mm-link">Integer Exponents</a></li>
+                <li><a href="../Alg/RationalExponents.html" class="mm-link">Rational Exponents</a></li>
+                <li><a href="../Alg/Radicals.html" class="mm-link">Radicals</a></li>
+                <li><a href="../Alg/Polynomials.html" class="mm-link">Polynomials</a></li>
+                <li><a href="../Alg/Factoring.html" class="mm-link">Factoring Polynomials</a></li>
+                <li><a href="../Alg/RationalExpressions.html" class="mm-link">Rational Expressions</a></li>
+                <li><a href="../Alg/ComplexNumbers.html" class="mm-link">Complex Numbers</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/Solving.html" class="mm-link">Solving Equations and Inequalities</a>
+              <ul>
+                <li><a href="../Alg/SolutionSets.html" class="mm-link">Solutions and Solution Sets</a></li>
+                <li><a href="../Alg/SolveLinearEqns.html" class="mm-link">Linear Equations</a></li>
+                <li><a href="../Alg/LinearApps.html" class="mm-link">Applications of Linear Equations</a></li>
+                <li><a href="../Alg/SolveMultiVariable.html" class="mm-link">Equations With More Than One Variable</a></li>
+                <li><a href="../Alg/SolveQuadraticEqnsI.html" class="mm-link">Quadratic Equations - Part I</a></li>
+                <li><a href="../Alg/SolveQuadraticEqnsII.html" class="mm-link">Quadratic Equations - Part II</a></li>
+                <li><a href="../Alg/SolveQuadraticEqnSummary.html" class="mm-link">Quadratic Equations : A Summary</a></li>
+                <li><a href="../Alg/QuadraticApps.html" class="mm-link">Applications of Quadratic Equations</a></li>
+                <li><a href="../Alg/ReducibleToQuadratic.html" class="mm-link">Equations Reducible to Quadratic in Form</a></li>
+                <li><a href="../Alg/SolveRadicalEqns.html" class="mm-link">Equations with Radicals</a></li>
+                <li><a href="../Alg/SolveLinearInequalities.html" class="mm-link">Linear Inequalities</a></li>
+                <li><a href="../Alg/SolvePolyInequalities.html" class="mm-link">Polynomial Inequalities</a></li>
+                <li><a href="../Alg/SolveRationalInequalities.html" class="mm-link">Rational Inequalities</a></li>
+                <li><a href="../Alg/SolveAbsValueEqns.html" class="mm-link">Absolute Value Equations</a></li>
+                <li><a href="../Alg/SolveAbsValueIneq.html" class="mm-link">Absolute Value Inequalities</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/Graphing_Functions.html" class="mm-link">Graphing and Functions</a>
+              <ul>
+                <li><a href="../Alg/Graphing.html" class="mm-link">Graphing</a></li>
+                <li><a href="../Alg/Lines.html" class="mm-link">Lines</a></li>
+                <li><a href="../Alg/Circles.html" class="mm-link">Circles</a></li>
+                <li><a href="../Alg/FunctionDefn.html" class="mm-link">The Definition of a Function</a></li>
+                <li><a href="../Alg/GraphFunctions.html" class="mm-link">Graphing Functions</a></li>
+                <li><a href="../Alg/CombineFunctions.html" class="mm-link">Combining Functions</a></li>
+                <li><a href="../Alg/InverseFunctions.html" class="mm-link">Inverse Functions</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/CommonGraphs.html" class="mm-link">Common Graphs</a>
+              <ul>
+                <li><a href="../Alg/Lines_Circles_PWF.html" class="mm-link">Lines, Circles and Piecewise Functions</a></li>
+                <li><a href="../Alg/Parabolas.html" class="mm-link">Parabolas</a></li>
+                <li><a href="../Alg/Ellipses.html" class="mm-link">Ellipses</a></li>
+                <li><a href="../Alg/Hyperbolas.html" class="mm-link">Hyperbolas</a></li>
+                <li><a href="../Alg/MiscFunctions.html" class="mm-link">Miscellaneous Functions</a></li>
+                <li><a href="../Alg/Transformations.html" class="mm-link">Transformations</a></li>
+                <li><a href="../Alg/Symmetry.html" class="mm-link">Symmetry</a></li>
+                <li><a href="../Alg/GraphRationalFcns.html" class="mm-link">Rational Functions</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/PolynomialFunctions.html" class="mm-link">Polynomial Functions</a>
+              <ul>
+                <li><a href="../Alg/DividingPolynomials.html" class="mm-link">Dividing Polynomials</a></li>
+                <li><a href="../Alg/ZeroesOfPolynomials.html" class="mm-link">Zeroes/Roots of Polynomials</a></li>
+                <li><a href="../Alg/GraphingPolynomials.html" class="mm-link">Graphing Polynomials</a></li>
+                <li><a href="../Alg/FindingZeroesOfPolynomials.html" class="mm-link">Finding Zeroes of Polynomials</a></li>
+                <li><a href="../Alg/PartialFractions.html" class="mm-link">Partial Fractions</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/ExpAndLog.html" class="mm-link">Exponential and Logarithm Functions</a>
+              <ul>
+                <li><a href="../Alg/ExpFunctions.html" class="mm-link">Exponential Functions</a></li>
+                <li><a href="../Alg/LogFunctions.html" class="mm-link">Logarithm Functions</a></li>
+                <li><a href="../Alg/SolveExpEqns.html" class="mm-link">Solving Exponential Equations</a></li>
+                <li><a href="../Alg/SolveLogEqns.html" class="mm-link">Solving Logarithm Equations</a></li>
+                <li><a href="../Alg/ExpLogApplications.html" class="mm-link">Applications</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/Systems.html" class="mm-link">Systems of Equations</a>
+              <ul>
+                <li><a href="../Alg/SystemsTwoVrble.html" class="mm-link">Linear Systems with Two Variables</a></li>
+                <li><a href="../Alg/SystemsThreeVrble.html" class="mm-link">Linear Systems with Three Variables</a></li>
+                <li><a href="../Alg/AugmentedMatrix.html" class="mm-link">Augmented Matrices</a></li>
+                <li><a href="../Alg/AugmentedMatrixII.html" class="mm-link">More on the Augmented Matrix</a></li>
+                <li><a href="../Alg/NonlinearSystems.html" class="mm-link">Nonlinear Systems</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../CalcI/CalcI.html" class="mm-link">Calculus I</a>
+          <ul>
+            <li><a href="../CalcI/ReviewIntro.html" class="mm-link">Review</a>
+              <ul>
+                <li><a href="../CalcI/Functions.html" class="mm-link">Functions</a></li>
+                <li><a href="../CalcI/InverseFunctions.html" class="mm-link">Inverse Functions</a></li>
+                <li><a href="../CalcI/TrigFcns.html" class="mm-link">Trig Functions</a></li>
+                <li><a href="../CalcI/TrigEquations.html" class="mm-link">Solving Trig Equations</a></li>
+                <li><a href="../CalcI/TrigEquations_CalcI.html" class="mm-link">Trig Equations with Calculators, Part I</a></li>
+                <li><a href="../CalcI/TrigEquations_CalcII.html" class="mm-link">Trig Equations with Calculators, Part II</a></li>
+                <li><a href="../CalcI/ExpFunctions.html" class="mm-link">Exponential Functions</a></li>
+                <li><a href="../CalcI/LogFcns.html" class="mm-link">Logarithm Functions</a></li>
+                <li><a href="../CalcI/ExpLogEqns.html" class="mm-link">Exponential and Logarithm Equations</a></li>
+                <li><a href="../CalcI/CommonGraphs.html" class="mm-link">Common Graphs</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcI/limitsIntro.html" class="mm-link">Limits</a>
+              <ul>
+                <li><a href="../CalcI/Tangents_Rates.html" class="mm-link">Tangent Lines and Rates of Change</a></li>
+                <li><a href="../CalcI/TheLimit.html" class="mm-link">The Limit</a></li>
+                <li><a href="../CalcI/OneSidedLimits.html" class="mm-link">One-Sided Limits</a></li>
+                <li><a href="../CalcI/LimitsProperties.html" class="mm-link">Limit Properties</a></li>
+                <li><a href="../CalcI/ComputingLimits.html" class="mm-link">Computing Limits</a></li>
+                <li><a href="../CalcI/InfiniteLimits.html" class="mm-link">Infinite Limits</a></li>
+                <li><a href="../CalcI/LimitsAtInfinityI.html" class="mm-link">Limits At Infinity, Part I</a></li>
+                <li><a href="../CalcI/LimitsAtInfinityII.html" class="mm-link">Limits At Infinity, Part II</a></li>
+                <li><a href="../CalcI/Continuity.html" class="mm-link">Continuity</a></li>
+                <li><a href="../CalcI/DefnOfLimit.html" class="mm-link">The Definition of the Limit</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcI/DerivativeIntro.html" class="mm-link">Derivatives</a>
+              <ul>
+                <li><a href="../CalcI/DefnOfDerivative.html" class="mm-link">The Definition of the Derivative</a></li>
+                <li><a href="../CalcI/DerivativeInterp.html" class="mm-link">Interpretation of the Derivative</a></li>
+                <li><a href="../CalcI/DiffFormulas.html" class="mm-link">Differentiation Formulas</a></li>
+                <li><a href="../CalcI/ProductQuotientRule.html" class="mm-link">Product and Quotient Rule</a></li>
+                <li><a href="../CalcI/DiffTrigFcns.html" class="mm-link">Derivatives of Trig Functions</a></li>
+                <li><a href="../CalcI/DiffExpLogFcns.html" class="mm-link">Derivatives of Exponential and Logarithm Functions</a></li>
+                <li><a href="../CalcI/DiffInvTrigFcns.html" class="mm-link">Derivatives of Inverse Trig Functions</a></li>
+                <li><a href="../CalcI/DiffHyperFcns.html" class="mm-link">Derivatives of Hyperbolic Functions</a></li>
+                <li><a href="../CalcI/ChainRule.html" class="mm-link">Chain Rule</a></li>
+                <li><a href="../CalcI/ImplicitDIff.html" class="mm-link">Implicit Differentiation</a></li>
+                <li><a href="../CalcI/RelatedRates.html" class="mm-link">Related Rates</a></li>
+                <li><a href="../CalcI/HigherOrderDerivatives.html" class="mm-link">Higher Order Derivatives</a></li>
+                <li><a href="../CalcI/LogDiff.html" class="mm-link">Logarithmic Differentiation</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcI/DerivAppsIntro.html" class="mm-link">Applications of Derivatives</a>
+              <ul>
+                <li><a href="../CalcI/RateOfChange.html" class="mm-link">Rates of Change</a></li>
+                <li><a href="../CalcI/CriticalPoints.html" class="mm-link">Critical Points</a></li>
+                <li><a href="../CalcI/MinMaxValues.html" class="mm-link">Minimum and Maximum Values</a></li>
+                <li><a href="../CalcI/AbsExtrema.html" class="mm-link">Finding Absolute Extrema</a></li>
+                <li><a href="../CalcI/ShapeofGraphPtI.html" class="mm-link">The Shape of a Graph, Part I</a></li>
+                <li><a href="../CalcI/ShapeofGraphPtII.html" class="mm-link">The Shape of a Graph, Part II</a></li>
+                <li><a href="../CalcI/MeanValueTheorem.html" class="mm-link">The Mean Value Theorem</a></li>
+                <li><a href="../CalcI/Optimization.html" class="mm-link">Optimization</a></li>
+                <li><a href="../CalcI/MoreOptimization.html" class="mm-link">More Optimization Problems</a></li>
+                <li><a href="../CalcI/LHospitalsRule.html" class="mm-link">L'Hospital's Rule and Indeterminate Forms</a></li>
+                <li><a href="../CalcI/LinearApproximations.html" class="mm-link">Linear Approximations</a></li>
+                <li><a href="../CalcI/Differentials.html" class="mm-link">Differentials</a></li>
+                <li><a href="../CalcI/NewtonsMethod.html" class="mm-link">Newton's Method</a></li>
+                <li><a href="../CalcI/BusinessApps.html" class="mm-link">Business Applications</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcI/IntegralsIntro.html" class="mm-link">Integrals</a>
+              <ul>
+                <li><a href="../CalcI/IndefiniteIntegrals.html" class="mm-link">Indefinite Integrals</a></li>
+                <li><a href="../CalcI/ComputingIndefiniteIntegrals.html" class="mm-link">Computing Indefinite Integrals</a></li>
+                <li><a href="../CalcI/SubstitutionRuleIndefinite.html" class="mm-link">Substitution Rule for Indefinite Integrals</a></li>
+                <li><a href="../CalcI/SubstitutionRuleIndefinitePtII.html" class="mm-link">More Substitution Rule</a></li>
+                <li><a href="../CalcI/AreaProblem.html" class="mm-link">Area Problem</a></li>
+                <li><a href="../CalcI/DefnOfDefiniteIntegral.html" class="mm-link">Definition of the Definite Integral</a></li>
+                <li><a href="../CalcI/ComputingDefiniteIntegrals.html" class="mm-link">Computing Definite Integrals</a></li>
+                <li><a href="../CalcI/SubstitutionRuleDefinite.html" class="mm-link">Substitution Rule for Definite Integrals</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcI/IntAppsIntro.html" class="mm-link">Applications of Integrals</a>
+              <ul>
+                <li><a href="../CalcI/AvgFcnValue.html" class="mm-link">Average Function Value</a></li>
+                <li><a href="../CalcI/AreaBetweenCurves.html" class="mm-link">Area Between Curves</a></li>
+                <li><a href="../CalcI/VolumeWithRings.html" class="mm-link">Volumes of Solids of Revolution / Method of Rings</a></li>
+                <li><a href="../CalcI/VolumeWithCylinder.html" class="mm-link">Volumes of Solids of Revolution/Method of Cylinders</a></li>
+                <li><a href="../CalcI/MoreVolume.html" class="mm-link">More Volume Problems</a></li>
+                <li><a href="../CalcI/Work.html" class="mm-link">Work</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcI/ExtrasIntro.html" class="mm-link">Extras</a>
+              <ul>
+                <li><a href="../CalcI/LimitProofs.html" class="mm-link">Proof of Various Limit Properties</a></li>
+                <li><a href="../CalcI/DerivativeProofs.html" class="mm-link">Proof of Various Derivative Properties</a></li>
+                <li><a href="../CalcI/ProofTrigDeriv.html" class="mm-link">Proof of Trig Limits</a></li>
+                <li><a href="../CalcI/DerivativeAppsProofs.html" class="mm-link">Proofs of Derivative Applications Facts</a></li>
+                <li><a href="../CalcI/ProofIntProp.html" class="mm-link">Proof of Various Integral Properties </a></li>
+                <li><a href="../CalcI/Area_Volume_Formulas.html" class="mm-link">Area and Volume Formulas</a></li>
+                <li><a href="../CalcI/TypesOfInfinity.html" class="mm-link">Types of Infinity</a></li>
+                <li><a href="../CalcI/SummationNotation.html" class="mm-link">Summation Notation</a></li>
+                <li><a href="../CalcI/ConstantofIntegration.html" class="mm-link">Constant of Integration</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="CalcII.html" class="mm-link">Calculus II</a>
+          <ul>
+            <li><a href="IntTechIntro.html" class="mm-link">Integration Techniques</a>
+              <ul>
+                <li><a href="IntegrationByParts.html" class="mm-link">Integration by Parts</a></li>
+                <li><a href="IntegralsWithTrig.html" class="mm-link">Integrals Involving Trig Functions</a></li>
+                <li><a href="TrigSubstitutions.html" class="mm-link">Trig Substitutions</a></li>
+                <li><a href="PartialFractions.html" class="mm-link">Partial Fractions</a></li>
+                <li><a href="IntegralsWithRoots.html" class="mm-link">Integrals Involving Roots</a></li>
+                <li><a href="IntegralsWithQuadratics.html" class="mm-link">Integrals Involving Quadratics</a></li>
+                <li><a href="IntegrationStrategy.html" class="mm-link">Integration Strategy</a></li>
+                <li><a href="ImproperIntegrals.html" class="mm-link">Improper Integrals</a></li>
+                <li><a href="ImproperIntegralsCompTest.html" class="mm-link">Comparison Test for Improper Integrals</a></li>
+                <li><a href="ApproximatingDefIntegrals.html" class="mm-link">Approximating Definite Integrals</a></li>
+              </ul>
+            </li>
+            <li><a href="IntAppsIntro.html" class="mm-link">Applications of Integrals</a>
+              <ul>
+                <li><a href="ArcLength.html" class="mm-link">Arc Length</a></li>
+                <li><a href="SurfaceArea.html" class="mm-link">Surface Area</a></li>
+                <li><a href="CenterOfMass.html" class="mm-link">Center of Mass</a></li>
+                <li><a href="HydrostaticPressure.html" class="mm-link">Hydrostatic Pressure</a></li>
+                <li><a href="Probability.html" class="mm-link">Probability</a></li>
+              </ul>
+            </li>
+            <li><a href="ParametricIntro.html" class="mm-link">Parametric Equations and Polar Coordinates</a>
+              <ul>
+                <li><a href="ParametricEqn.html" class="mm-link">Parametric Equations and Curves</a></li>
+                <li><a href="ParaTangent.html" class="mm-link">Tangents with Parametric Equations</a></li>
+                <li><a href="ParaArea.html" class="mm-link">Area with Parametric Equations</a></li>
+                <li><a href="ParaArcLength.html" class="mm-link">Arc Length with Parametric Equations</a></li>
+                <li><a href="ParaSurfaceArea.html" class="mm-link">Surface Area with Parametric Equations</a></li>
+                <li><a href="PolarCoordinates.html" class="mm-link">Polar Coordinates</a></li>
+                <li><a href="PolarTangents.html" class="mm-link">Tangents with Polar Coordinates</a></li>
+                <li><a href="PolarArea.html" class="mm-link">Area with Polar Coordinates</a></li>
+                <li><a href="PolarArcLength.html" class="mm-link">Arc Length with Polar Coordinates</a></li>
+                <li><a href="PolarSurfaceArea.html" class="mm-link">Surface Area with Polar Coordinates</a></li>
+                <li><a href="ArcLength_SurfaceArea.html" class="mm-link">Arc Length and Surface Area Revisited</a></li>
+              </ul>
+            </li>
+            <li><a href="SeriesIntro.html" class="mm-link">Series & Sequences</a>
+              <ul>
+                <li><a href="Sequences.html" class="mm-link">Sequences</a></li>
+                <li><a href="MoreSequences.html" class="mm-link">More on Sequences</a></li>
+                <li><a href="Series_Basics.html" class="mm-link">Series - The Basics</a></li>
+                <li><a href="ConvergenceOfSeries.html" class="mm-link">Convergence/Divergence of Series</a></li>
+                <li><a href="Series_Special.html" class="mm-link">Special Series</a></li>
+                <li><a href="IntegralTest.html" class="mm-link">Integral Test</a></li>
+                <li><a href="SeriesCompTest.html" class="mm-link">Comparison Test/Limit Comparison Test</a></li>
+                <li><a href="AlternatingSeries.html" class="mm-link">Alternating Series Test</a></li>
+                <li><a href="AbsoluteConvergence.html" class="mm-link">Absolute Convergence</a></li>
+                <li><a href="RatioTest.html" class="mm-link">Ratio Test</a></li>
+                <li><a href="RootTest.html" class="mm-link">Root Test</a></li>
+                <li><a href="SeriesStrategy.html" class="mm-link">Strategy for Series</a></li>
+                <li><a href="EstimatingSeries.html" class="mm-link">Estimating the Value of a Series</a></li>
+                <li><a href="PowerSeries.html" class="mm-link">Power Series</a></li>
+                <li><a href="PowerSeriesandFunctions.html" class="mm-link">Power Series and Functions</a></li>
+                <li><a href="TaylorSeries.html" class="mm-link">Taylor Series</a></li>
+                <li><a href="TaylorSeriesApps.html" class="mm-link">Applications of Series</a></li>
+                <li><a href="BinomialSeries.html" class="mm-link">Binomial Series</a></li>
+              </ul>
+            </li>
+            <li><a href="VectorsIntro.html" class="mm-link">Vectors</a>
+              <ul>
+                <li><a href="Vectors_Basics.html" class="mm-link">Vectors - The Basics</a></li>
+                <li><a href="VectorArithmetic.html" class="mm-link">Vector Arithmetic</a></li>
+                <li><a href="DotProduct.html" class="mm-link">Dot Product</a></li>
+                <li><a href="CrossProduct.html" class="mm-link">Cross Product</a></li>
+              </ul>
+            </li>
+            <li><a href="3DSpace.html" class="mm-link">3-Dimensional Space</a>
+              <ul>
+                <li><a href="3DCoords.html" class="mm-link">The 3-D Coordinate System</a></li>
+                <li><a href="EqnsOfLines.html" class="mm-link">Equations of Lines</a></li>
+                <li><a href="EqnsOfPlanes.html" class="mm-link">Equations of Planes</a></li>
+                <li><a href="QuadricSurfaces.html" class="mm-link">Quadric Surfaces</a></li>
+                <li><a href="MultiVrbleFcns.html" class="mm-link">Functions of Several Variables</a></li>
+                <li><a href="VectorFunctions.html" class="mm-link">Vector Functions</a></li>
+                <li><a href="VectorFcnsCalculus.html" class="mm-link">Calculus with Vector Functions</a></li>
+                <li><a href="TangentNormalVectors.html" class="mm-link">Tangent, Normal and Binormal Vectors</a></li>
+                <li><a href="VectorArcLength.html" class="mm-link">Arc Length with Vector Functions</a></li>
+                <li><a href="Curvature.html" class="mm-link">Curvature</a></li>
+                <li><a href="Velocity_Acceleration.html" class="mm-link">Velocity and Acceleration</a></li>
+                <li><a href="CylindricalCoords.html" class="mm-link">Cylindrical Coordinates</a></li>
+                <li><a href="SphericalCoords.html" class="mm-link">Spherical Coordinates</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../CalcIII/CalcIII.html" class="mm-link">Calculus III</a>
+          <ul>
+            <li><a href="../CalcIII/3DSpace.html" class="mm-link">3-Dimensional Space</a>
+              <ul>
+                <li><a href="../CalcIII/3DCoords.html" class="mm-link">The 3-D Coordinate System</a></li>
+                <li><a href="../CalcIII/EqnsOfLines.html" class="mm-link">Equations of Lines</a></li>
+                <li><a href="../CalcIII/EqnsOfPlanes.html" class="mm-link">Equations of Planes</a></li>
+                <li><a href="../CalcIII/QuadricSurfaces.html" class="mm-link">Quadric Surfaces</a></li>
+                <li><a href="../CalcIII/MultiVrbleFcns.html" class="mm-link">Functions of Several Variables</a></li>
+                <li><a href="../CalcIII/VectorFunctions.html" class="mm-link">Vector Functions</a></li>
+                <li><a href="../CalcIII/VectorFcnsCalculus.html" class="mm-link">Calculus with Vector Functions</a></li>
+                <li><a href="../CalcIII/TangentNormalVectors.html" class="mm-link">Tangent, Normal and Binormal Vectors</a></li>
+                <li><a href="../CalcIII/VectorArcLength.html" class="mm-link">Arc Length with Vector Functions</a></li>
+                <li><a href="../CalcIII/Curvature.html" class="mm-link">Curvature</a></li>
+                <li><a href="../CalcIII/Velocity_Acceleration.html" class="mm-link">Velocity and Acceleration</a></li>
+                <li><a href="../CalcIII/CylindricalCoords.html" class="mm-link">Cylindrical Coordinates</a></li>
+                <li><a href="../CalcIII/SphericalCoords.html" class="mm-link">Spherical Coordinates</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/PartialDerivsIntro.html" class="mm-link">Partial Derivatives</a>
+              <ul>
+                <li><a href="../CalcIII/Limits.html" class="mm-link">Limits</a></li>
+                <li><a href="../CalcIII/PartialDerivatives.html" class="mm-link">Partial Derivatives</a></li>
+                <li><a href="../CalcIII/PartialDerivInterp.html" class="mm-link">Interpretations of Partial Derivatives</a></li>
+                <li><a href="../CalcIII/HighOrderPartialDerivs.html" class="mm-link">Higher Order Partial Derivatives</a></li>
+                <li><a href="../CalcIII/Differentials.html" class="mm-link">Differentials</a></li>
+                <li><a href="../CalcIII/ChainRule.html" class="mm-link">Chain Rule</a></li>
+                <li><a href="../CalcIII/DirectionalDeriv.html" class="mm-link">Directional Derivatives</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/PartialDerivAppsIntro.html" class="mm-link">Applications of Partial Derivatives</a>
+              <ul>
+                <li><a href="../CalcIII/TangentPlanes.html" class="mm-link">Tangent Planes and Linear Approximations</a></li>
+                <li><a href="../CalcIII/GradientVectorTangentPlane.html" class="mm-link">Gradient Vector, Tangent Planes and Normal Lines</a></li>
+                <li><a href="../CalcIII/RelativeExtrema.html" class="mm-link">Relative Minimums and Maximums</a></li>
+                <li><a href="../CalcIII/AbsoluteExtrema.html" class="mm-link">Absolute Minimums and Maximums</a></li>
+                <li><a href="../CalcIII/LagrangeMultipliers.html" class="mm-link">Lagrange Multipliers</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/MultipleIntegralsIntro.html" class="mm-link">Multiple Integrals</a>
+              <ul>
+                <li><a href="../CalcIII/DoubleIntegrals.html" class="mm-link">Double Integrals</a></li>
+                <li><a href="../CalcIII/IteratedIntegrals.html" class="mm-link">Iterated Integrals</a></li>
+                <li><a href="../CalcIII/DIGeneralRegion.html" class="mm-link">Double Integrals over General Regions</a></li>
+                <li><a href="../CalcIII/DIPolarCoords.html" class="mm-link">Double Integrals in Polar Coordinates</a></li>
+                <li><a href="../CalcIII/TripleIntegrals.html" class="mm-link">Triple Integrals</a></li>
+                <li><a href="../CalcIII/TICylindricalCoords.html" class="mm-link">Triple Integrals in Cylindrical Coordinates</a></li>
+                <li><a href="../CalcIII/TISphericalCoords.html" class="mm-link">Triple Integrals in Spherical Coordinates</a></li>
+                <li><a href="../CalcIII/ChangeOfVariables.html" class="mm-link">Change of Variables</a></li>
+                <li><a href="../CalcIII/SurfaceArea.html" class="mm-link">Surface Area</a></li>
+                <li><a href="../CalcIII/Area_Volume.html" class="mm-link">Area and Volume Revisited</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/LineIntegralsIntro.html" class="mm-link">Line Integrals</a>
+              <ul>
+                <li><a href="../CalcIII/VectorFields.html" class="mm-link">Vector Fields</a></li>
+                <li><a href="../CalcIII/LineIntegralsPtI.html" class="mm-link">Line Integrals - Part I</a></li>
+                <li><a href="../CalcIII/LineIntegralsPtII.html" class="mm-link">Line Integrals - Part II</a></li>
+                <li><a href="../CalcIII/LineIntegralsVectorFields.html" class="mm-link">Line Integrals of Vector Fields</a></li>
+                <li><a href="../CalcIII/FundThmLineIntegrals.html" class="mm-link">Fundamental Theorem for Line Integrals</a></li>
+                <li><a href="../CalcIII/ConservativeVectorField.html" class="mm-link">Conservative Vector Fields</a></li>
+                <li><a href="../CalcIII/GreensTheorem.html" class="mm-link">Green's Theorem</a></li>
+                <li><a href="../CalcIII/CurlDivergence.html" class="mm-link">Curl and Divergence</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/SurfaceIntegralsIntro.html" class="mm-link">Surface Integrals</a>
+              <ul>
+                <li><a href="../CalcIII/ParametricSurfaces.html" class="mm-link">Parametric Surfaces</a></li>
+                <li><a href="../CalcIII/SurfaceIntegrals.html" class="mm-link">Surface Integrals</a></li>
+                <li><a href="../CalcIII/SurfIntVectorField.html" class="mm-link">Surface Integrals of Vector Fields</a></li>
+                <li><a href="../CalcIII/StokesTheorem.html" class="mm-link">Stokes' Theorem</a></li>
+                <li><a href="../CalcIII/DivergenceTheorem.html" class="mm-link">Divergence Theorem</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../DE/DE.html" class="mm-link">Differential Equations</a>
+          <ul>
+            <li><a href="../DE/IntroBasic.html" class="mm-link">Basic Concepts</a>
+              <ul>
+                <li><a href="../DE/Definitions.html" class="mm-link">Definitions</a></li>
+                <li><a href="../DE/DirectionFields.html" class="mm-link">Direction Fields</a></li>
+                <li><a href="../DE/FinalThoughts.html" class="mm-link">Final Thoughts</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/IntroFirstOrder.html" class="mm-link">First Order DE's</a>
+              <ul>
+                <li><a href="../DE/Linear.html" class="mm-link">Linear Equations</a></li>
+                <li><a href="../DE/Separable.html" class="mm-link">Separable Equations</a></li>
+                <li><a href="../DE/Exact.html" class="mm-link">Exact Equations</a></li>
+                <li><a href="../DE/Bernoulli.html" class="mm-link">Bernoulli Differential Equations</a></li>
+                <li><a href="../DE/Substitutions.html" class="mm-link">Substitutions</a></li>
+                <li><a href="../DE/IoV.html" class="mm-link">Intervals of Validity</a></li>
+                <li><a href="../DE/Modeling.html" class="mm-link">Modeling with First Order DE's</a></li>
+                <li><a href="../DE/EquilibriumSolutions.html" class="mm-link">Equilibrium Solutions</a></li>
+                <li><a href="../DE/EulersMethod.html" class="mm-link">Euler's Method</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/IntroSecondOrder.html" class="mm-link">Second Order DE's</a>
+              <ul>
+                <li><a href="../DE/SecondOrderConcepts.html" class="mm-link">Basic Concepts</a></li>
+                <li><a href="../DE/RealRoots.html" class="mm-link">Real & Distinct Roots</a></li>
+                <li><a href="../DE/ComplexRoots.html" class="mm-link">Complex Roots</a></li>
+                <li><a href="../DE/RepeatedRoots.html" class="mm-link">Repeated Roots</a></li>
+                <li><a href="../DE/ReductionofOrder.html" class="mm-link">Reduction of Order</a></li>
+                <li><a href="../DE/FundamentalSetsofSolutions.html" class="mm-link">Fundamental Sets of Solutions</a></li>
+                <li><a href="../DE/Wronskian.html" class="mm-link">More on the  Wronskian</a></li>
+                <li><a href="../DE/NonhomogeneousDE.html" class="mm-link">Nonhomogeneous Differential Equations</a></li>
+                <li><a href="../DE/UndeterminedCoefficients.html" class="mm-link">Undetermined Coefficients</a></li>
+                <li><a href="../DE/VariationofParameters.html" class="mm-link">Variation of Parameters</a></li>
+                <li><a href="../DE/Vibrations.html" class="mm-link">Mechanical Vibrations</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/LaplaceIntro.html" class="mm-link">Laplace Transforms</a>
+              <ul>
+                <li><a href="../DE/LaplaceDefinition.html" class="mm-link">The Definition</a></li>
+                <li><a href="../DE/LaplaceTransforms.html" class="mm-link">Laplace Transforms</a></li>
+                <li><a href="../DE/InverseTransforms.html" class="mm-link">Inverse Laplace Transforms</a></li>
+                <li><a href="../DE/StepFunctions.html" class="mm-link">Step Functions</a></li>
+                <li><a href="../DE/IVPWithLaplace.html" class="mm-link">Solving IVP's with Laplace Transforms</a></li>
+                <li><a href="../DE/IVPWithNonConstantCoefficient.html" class="mm-link">Nonconstant Coefficient IVP's</a></li>
+                <li><a href="../DE/IVPWithStepFunction.html" class="mm-link">IVP's With Step Functions</a></li>
+                <li><a href="../DE/DiracDeltaFunction.html" class="mm-link">Dirac Delta Function</a></li>
+                <li><a href="../DE/ConvolutionIntegrals.html" class="mm-link">Convolution Integrals</a></li>
+                <li><a href="../DE/Laplace_Table.html" class="mm-link">Table Of Laplace Transforms</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/SystemsIntro.html" class="mm-link">Systems of DE's</a>
+              <ul>
+                <li><a href="../DE/LA_Systems.html" class="mm-link">Review : Systems of Equations</a></li>
+                <li><a href="../DE/LA_Matrix.html" class="mm-link">Review : Matrices & Vectors</a></li>
+                <li><a href="../DE/LA_Eigen.html" class="mm-link">Review : Eigenvalues & Eigenvectors</a></li>
+                <li><a href="../DE/SystemsDE.html" class="mm-link">Systems of Differential Equations</a></li>
+                <li><a href="../DE/SolutionsToSystems.html" class="mm-link">Solutions to Systems</a></li>
+                <li><a href="../DE/PhasePlane.html" class="mm-link">Phase Plane</a></li>
+                <li><a href="../DE/RealEigenvalues.html" class="mm-link">Real Eigenvalues</a></li>
+                <li><a href="../DE/ComplexEigenvalues.html" class="mm-link">Complex Eigenvalues</a></li>
+                <li><a href="../DE/RepeatedEigenvalues.html" class="mm-link">Repeated Eigenvalues</a></li>
+                <li><a href="../DE/NonhomogeneousSystems.html" class="mm-link">Nonhomogeneous Systems</a></li>
+                <li><a href="../DE/SystemsLaplace.html" class="mm-link">Laplace Transforms</a></li>
+                <li><a href="../DE/SystemsModeling.html" class="mm-link">Modeling</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/SeriesIntro.html" class="mm-link">Series Solutions to DE's</a>
+              <ul>
+                <li><a href="../DE/PowerSeries.html" class="mm-link">Review : Power Series</a></li>
+                <li><a href="../DE/TaylorSeries.html" class="mm-link">Review : Taylor Series</a></li>
+                <li><a href="../DE/SeriesSolutions.html" class="mm-link">Series Solutions</a></li>
+                <li><a href="../DE/EulerEquations.html" class="mm-link">Euler Equations</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/IntroHigherOrder.html" class="mm-link">Higher Order Differential Equations</a>
+              <ul>
+                <li><a href="../DE/HOBasicConcepts.html" class="mm-link">Basic Concepts for <em>n</em><sup>th</sup> Order Linear Equations</a></li>
+                <li><a href="../DE/HOHomogeneousDE.html" class="mm-link">Linear Homogeneous Differential Equations</a></li>
+                <li><a href="../DE/HOUndeterminedCoeff.html" class="mm-link">Undetermined Coefficients</a></li>
+                <li><a href="../DE/HOVariationOfParam.html" class="mm-link">Variation of Parameters</a></li>
+                <li><a href="../DE/HOLaplaceTransforms.html" class="mm-link">Laplace Transforms</a></li>
+                <li><a href="../DE/HOSystems.html" class="mm-link">Systems of Differential Equations</a></li>
+                <li><a href="../DE/HOSeries.html" class="mm-link">Series Solutions</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/IntroBVP.html" class="mm-link">Boundary Value Problems &amp; Fourier Series</a>
+              <ul>
+                <li><a href="../DE/BoundaryValueProblem.html" class="mm-link">Boundary Value Problems</a></li>
+                <li><a href="../DE/BVPEvals.html" class="mm-link">Eigenvalues and Eigenfunctions</a></li>
+                <li><a href="../DE/PeriodicOrthogonal.html" class="mm-link">Periodic Functions &amp; Orthogonal Functions</a></li>
+                <li><a href="../DE/FourierSineSeries.html" class="mm-link">Fourier Sine Series</a></li>
+                <li><a href="../DE/FourierCosineSeries.html" class="mm-link">Fourier Cosine Series</a></li>
+                <li><a href="../DE/FourierSeries.html" class="mm-link">Fourier Series</a></li>
+                <li><a href="../DE/ConvergenceFourierSeries.html" class="mm-link">Convergence of Fourier Series</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/IntroPDE.html" class="mm-link">Partial Differential Equations </a>
+              <ul>
+                <li><a href="../DE/TheHeatEquation.html" class="mm-link">The Heat Equation</a></li>
+                <li><a href="../DE/TheWaveEquation.html" class="mm-link">The Wave Equation</a></li>
+                <li><a href="../DE/PDETerminology.html" class="mm-link">Terminology</a></li>
+                <li><a href="../DE/SeparationofVariables.html" class="mm-link">Separation of Variables</a></li>
+                <li><a href="../DE/SolvingHeatEquation.html" class="mm-link">Solving the Heat Equation</a></li>
+                <li><a href="../DE/HeatEqnNonZero.html" class="mm-link">Heat Equation with Non-Zero Temperature Boundaries</a></li>
+                <li><a href="../DE/LaplacesEqn.html" class="mm-link">Laplace's Equation</a></li>
+                <li><a href="../DE/VibratingString.html" class="mm-link">Vibrating String</a></li>
+                <li><a href="../DE/PDESummary.html" class="mm-link">Summary of Separation of Variables</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><span>Extras</span></li>
+        <li><a href="../../Extras/AlgebraTrigReview/AlgebraTrig.html" class="mm-link">Algebra &amp; Trig Review</a>
+          <ul>
+            <li><a href="../../Extras/AlgebraTrigReview/AlgebraIntro.html" class="mm-link">Algebra</a>
+              <ul>
+                <li><a href="../../Extras/AlgebraTrigReview/Exponents.html" class="mm-link">Exponents </a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/AbsoluteValue.html" class="mm-link">Absolute Value</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Radicals.html" class="mm-link">Radicals</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Rationalizing.html" class="mm-link">Rationalizing </a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Functions.html" class="mm-link">Functions </a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/MultPoly.html" class="mm-link">Multiplying Polynomials</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Factoring.html" class="mm-link">Factoring</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SimpRatExp.html" class="mm-link">Simplifying Rational Expressions</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Graphing.html" class="mm-link">Graphing and Common Graphs</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveEqnPtI.html" class="mm-link">Solving Equations, Part I</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveEqnPtII.html" class="mm-link">Solving Equations, Part II</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveSystems.html" class="mm-link">Solving Systems of Equations</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveIneq.html" class="mm-link">Solving Inequalities</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveAbsValue.html" class="mm-link">Absolute Value Equations and Inequalities</a></li>
+              </ul>
+            </li>
+            <li><a href="../../Extras/AlgebraTrigReview/TrigIntro.html" class="mm-link">Trigonometry</a>
+              <ul>
+                <li><a href="../../Extras/AlgebraTrigReview/TrigFunctions.html" class="mm-link">Trig Function Evaluation</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/TrigGraphs.html" class="mm-link">Graphs of Trig Functions</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/TrigFormulas.html" class="mm-link">Trig Formulas</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveTrigEqn.html" class="mm-link">Solving Trig Equations</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/InverseTrig.html" class="mm-link">Inverse Trig Functions</a></li>
+              </ul>
+            </li>
+            <li><a href="../../Extras/AlgebraTrigReview/ExpLogIntro.html" class="mm-link">Exponentials & Logarithms</a>
+              <ul>
+                <li><a href="../../Extras/AlgebraTrigReview/ExponentialFcns.html" class="mm-link">Basic Exponential Functions</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/LogarithmFcns.html" class="mm-link">Basic Logarithm Functions</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/LogProperties.html" class="mm-link">Logarithm Properties</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SimpLogs.html" class="mm-link">Simplifying Logarithms</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveExpEqn.html" class="mm-link">Solving Exponential Equations</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveLogEqn.html" class="mm-link">Solving Logarithm Equations</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../../Extras/CommonErrors/CommonMathErrors.html" class="mm-link">Common Math Errors</a>
+          <ul>
+            <li><a href="../../Extras/CommonErrors/GeneralErrors.html" class="mm-link">General Errors</a>
+            </li>
+            <li><a href="../../Extras/CommonErrors/AlgebraErrors.html" class="mm-link">Algebra Errors</a>
+            </li>
+            <li><a href="../../Extras/CommonErrors/TrigErrors.html" class="mm-link">Trig Errors</a>
+            </li>
+            <li><a href="../../Extras/CommonErrors/CommonErrors.html" class="mm-link">Common Errors</a>
+            </li>
+            <li><a href="../../Extras/CommonErrors/CalculusErrors.html" class="mm-link">Calculus Errors</a>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../../Extras/ComplexPrimer/ComplexNumbers.html" class="mm-link">Complex Number Primer</a>
+          <ul>
+            <li><a href="../../Extras/ComplexPrimer/Definition.html" class="mm-link">The Definition</a>
+            </li>
+            <li><a href="../../Extras/ComplexPrimer/Arithmetic.html" class="mm-link">Arithmetic</a>
+            </li>
+            <li><a href="../../Extras/ComplexPrimer/ConjugateModulus.html" class="mm-link">Conjugate and Modulus</a>
+            </li>
+            <li><a href="../../Extras/ComplexPrimer/Forms.html" class="mm-link">Polar and Exponential Forms</a>
+            </li>
+            <li><a href="../../Extras/ComplexPrimer/Roots.html" class="mm-link">Powers and Roots</a>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../../Extras/StudyMath/HowToStudyMath.html" class="mm-link">How To Study Math</a>
+          <ul>
+            <li><a href="../../Extras/StudyMath/GeneralTips.html" class="mm-link">General Tips</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/TakingNotes.html" class="mm-link">Taking Notes</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/GettingHelp.html" class="mm-link">Getting Help</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/Homework.html" class="mm-link">Doing Homework</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/ProblemSolving.html" class="mm-link">Problem Solving</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/StudyForExam.html" class="mm-link">Studying For an Exam</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/TakingExam.html" class="mm-link">Taking an Exam</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/Errors.html" class="mm-link">Learn From Your Errors</a>
+            </li>
+          </ul>
+        </li>
+
+        <li><span>Misc Links</span></li>
+        <li><a href="http://tutorial.math.lamar.edu/contact.aspx" class="mm-link">Contact Me</a></li>
+        <li><a href="../../links.html" class="mm-link">Links</a></li>
+        <li><a href="../../mathjax.html" class="mm-link">MathJax Help and Configuration</a></li>
+        <li><a href="../../mystudents.html" class="mm-link">My Students</a></li>
+        <li><a href="http://tutorial.math.lamar.edu/privacy.aspx" class="mm-link">Privacy Statement</a></li>
+        <li><a href="../../help.html" class="mm-link">Site Help & FAQ</a></li>
+        <li><a href="http://tutorial.math.lamar.edu/terms.aspx" class="mm-link">Terms of Use</a></li>
+      </ul>
+    </nav>
+
+
+
+    <div class="top-info-bar">
+      <span id="mobile-title" class="mobile-header-title header-title">Paul's Online Notes</span>
+      <br />
+      <span class="top-menu-breadcrumb">
+        <a href="../../index.html" id="breadcrumb_home_link" title="Go to Main Page">Home</a>
+        <span id="breadcrumb_h_b_sep_span">/ </span>
+        <a href="CalcII.html" id="breadcrumb_book_link" title="Go to Book Introduction">Calculus II</a>
+        
+        <span id="breadcrumb_b_c_sep_span">/ </span>
+        <a href="ParametricIntro.html" id="breadcrumb_chapter_link" title="Go to Chapter Introduction">Parametric Equations and Polar Coordinates</a>
+        
+        <span id="breadcrumb_section_span"> / Parametric Equations and Curves</span>
+      </span>
+
+    </div>
+
+    <div id="nav_links" class="top-nav-bar">
+      
+      <span id="nav_current_notes">Notes</span>
+      <a href="http://tutorial.math.lamar.edu/Problems/CalcII/ParametricEqn.aspx" id="nav_links_practice" title="Go to Practice Problems for current topic.">Practice<span class="nav_desktop_extra"> Problems</span></a>
+      
+      <a href="http://tutorial.math.lamar.edu/ProblemsNS/CalcII/ParametricEqn.aspx" id="nav_links_asgn" title="Go to Assignment Problems for current topic.">Assignment<span class="nav_desktop_extra">  Problems</span></a>
+      
+    </div>
+
+    <div class="header-divider"></div>
+
+    <div class="content">  
+      
+      
+      <span id="SHLink_NoteMobile" class="SH-Link content-note-link-mobile">Show Mobile Notice</span>
+      <span id="SHImg_NoteMobile" class="fas fa-caret-right SH-padding content-note-link-mobile" aria-hidden="true"></span>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+
+      <span id="SHALink_S_Note" class="SH-Link SH-Hide SH-Bracket">Show All Notes</span>&nbsp;<span id="SHALink_H_Note" class="SH-Link SH-Hide SH-Bracket">Hide All Notes</span>
+      
+      
+      <div id="SHObj_NoteMobile" class="content-note-container content-note-container-mobile">
+        <div class="content-note-header">Mobile Notice</div>
+        <div class="content-note">You appear to be on a device with a "narrow" screen width (<em>i.e.</em> you are probably on a mobile phone).  Due to the nature of the mathematics on this site it is best views in landscape mode.  If your device is not in landscape mode many of the equations will run off the side of your device (should be able to scroll to see them) and some of the menu items will be cut off due to the narrow screen width.</div>
+      </div>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+
+      
+
+
+  <form method="post" action="http://tutorial.math.lamar.edu/Classes/CalcII/ParametricEqn.aspx" id="ctl00">
+<div class="aspNetHidden">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+</div>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="934DBEAB" />
+</div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </form>
+
+  <h3>Section 3-1 : Parametric Equations and Curves</h3>
+    
+    <p>To this point (in both Calculus I and Calculus II) we’ve looked almost exclusively at functions in the form \(y = f\left( x \right)\) or \(x = h\left( y \right)\) and almost all of the formulas that we’ve developed require that functions be in one of these two forms.  The problem is that not all curves or equations that we’d like to look at fall easily into this form.</p>
+    
+    <p>Take, for example, a circle.  It is easy enough to write down the equation of a circle centered at the origin with radius \(r\).</p>
+    
+        \[{x^2} + {y^2} = {r^2}\]
+    
+    <p>However, we will never be able to write the equation of a circle down as a single equation in either of the forms above.  Sure we can solve for \(x\) or \(y\) as the following two formulas show</p>
+    
+      \[y =  \pm \sqrt {{r^2} - {x^2}} \hspace{0.5in}\hspace{0.25in}x =  \pm \sqrt {{r^2} - {y^2}} \]
+    <p>but there are in fact two functions in each of these. Each formula gives a portion of the circle.</p>
+    
+        \[\begin{align*}y & = \sqrt {{r^2} - {x^2}} & \hspace{0.15in} & \left( {{\mbox{top}}} \right) \hspace{0.75in}\ & x & = \sqrt {{r^2} - {y^2}} & \hspace{0.15in} & \left( {{\mbox{right side}}} \right)\\ y & =  - \sqrt {{r^2} - {x^2}} & \hspace{0.15in} & \left( {{\mbox{bottom}}} \right)\hspace{0.75in} & x & =  - \sqrt {{r^2} - {y^2}} & \hspace{0.15in} & \left( {{\mbox{left side}}} \right)\end{align*}\]
+    
+    <p>Unfortunately, we usually are working on the whole circle, or simply can’t say that we’re going to be working only on one portion of it.  Even if we can narrow things down to only one of these portions the function is still often fairly unpleasant to work with.</p>
+    
+    <p>There are also a great many curves out there that we can’t even write down as a single equation in terms of only \(x\) and \(y\).  So, to deal with some of these problems we introduce <strong>parametric equations</strong>.  Instead of defining \(y\) in terms of \(x\) (\(y = f\left( x \right)\)) or \(x\) in terms of \(y\) (\(x = h\left( y \right)\)) we define both \(x\) and \(y\) in terms of a third variable called a parameter as follows,</p>
+    
+        \[x = f\left( t \right)\hspace{0.5in}y = g\left( t \right)\]
+    
+    <p>This third variable is usually denoted by \(t\) (as we did here) but doesn’t have to be of course.  Sometimes we will restrict the values of \(t\) that we’ll use and at other times we won’t.  This will often be dependent on the problem and just what we are attempting to do.</p>
+    
+    <p>Each value of \(t\) defines a point \(\left( {x,y} \right) = \left( {f\left( t \right),g\left( t \right)} \right)\) that we can plot.  The collection of points that we get by letting \(t\) be all possible values is the graph of the parametric equations and is called the <strong>parametric curve</strong>.</p>
+    
+    <p>To help visualize just what a parametric curve is pretend that we have a big tank of water that is in constant motion and we drop a ping pong ball into the tank.  The point \(\left( {x,y} \right) = \left( {f\left( t \right),g\left( t \right)} \right)\) will then represent the location of the ping pong ball in the tank at time \(t\) and the parametric curve will be a trace of all the locations of the ping pong ball.  Note that this is not always a correct analogy but it is useful initially to help visualize just what a parametric curve is.</p>
+    
+    <p>Sketching a parametric curve is not always an easy thing to do.  Let’s take a look at an example to see one way of sketching a parametric curve.  This example will also illustrate why this method is usually not the best.</p>
+    
+  <a class="anchor" name="Para_Eqn_Ex1"></a>
+  <div class="example">
+    <span class="example-title">Example 1</span> Sketch the parametric curve for the following set of parametric equations.
+          
+              \[x = {t^2} + t\hspace{0.5in}y = 2t - 1\]
+    <div class="example-content">
+      <span id="SHLink_Soln1" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln1" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln1" class="soln-content">
+        <p>At this point our only option for sketching a parametric curve is to pick values of \(t\), plug them into the parametric equations and then plot the points.  So, let’s plug in some \(t\)’s.</p>
+          
+            <table class="table-no-outer-border">
+              <tr>
+                <th>\(t\)</th>
+                <th>\(x\)</th>
+                <th style="border-right:unset">\(y\)</th>
+              </tr>
+              <tr>
+                <td class="table-cell-center">-2</td>
+                <td class="table-cell-center">2</td>
+                <td class="table-cell-center" style="border-right:unset">-5</td>
+              </tr>
+              <tr>
+                <td class="table-cell-center">-1</td>
+                <td class="table-cell-center">0</td>
+                <td class="table-cell-center" style="border-right:unset">-3</td>
+              </tr>
+              <tr>
+                <td class="table-cell-center">\( - \frac{1}{2}\)</td>
+                <td class="table-cell-center">\( - \frac{1}{4}\)</td>
+                <td class="table-cell-center" style="border-right:unset">-2</td>
+              </tr>
+              <tr>
+                <td class="table-cell-center">0</td>
+                <td class="table-cell-center">0</td>
+                <td class="table-cell-center" style="border-right:unset">-1</td>
+              </tr>
+              <tr>
+                <td class="table-cell-center">1</td>
+                <td class="table-cell-center">2</td>
+                <td class="table-cell-center" style="border-right:unset">1</td>
+              </tr>
+            </table>
+          
+          <p>The first question that should be asked at this point is, how did we know to use the values of \(t\) that we did, especially the third choice?  Unfortunately, there is no real answer to this question at this point.  We simply pick \(t\)’s until we are fairly confident that we’ve got a good idea of what the curve looks like.  It is this problem with picking “good” values of \(t\) that make this method of sketching parametric curves one of the poorer choices.  Sometimes we have no choice, but if we do have a choice we should avoid it.</p>
+          
+          <p>We’ll discuss an alternate graphing method in later examples that will help to explain how these values of \(t\) were chosen.</p>
+          
+          <p>We have one more idea to discuss before we actually sketch the curve.  Parametric curves have a <strong>direction of motion</strong>.  The direction of motion is given by increasing \(t\).  So, when plotting parametric curves, we also include arrows that show the direction of motion.  We will often give the value of \(t\) that gave specific points on the graph as well to make it clear the value of \(t\) that gave that particular point.</p>
+          
+          <p>Here is the sketch of this parametric curve.</p>
+          
+            <div class="center-div"><img alt="This is the graph of a parabola with vertex $\left( -\frac{1}{4},-2 \right)$ and opens to the right.  Also included on the graph are dots corresponding to the points given in the table above and the values of t that gave them are listed near the point.  There are also arrow heads on the graph indicated the direction that the graph is traced out as the value of t increases.  The graph starts in the lower right corner and increases moving to the left to the vertex and then continues to increase moving to the right." height="250" src="http://tutorial.math.lamar.edu/Classes/CalcII/ParametricEqn_Files/image001.gif" width="385" /></div>
+          
+            
+          <p>So, it looks like we have a parabola that opens to the right.</p>
+          
+          <p>Before we end this example there is a somewhat important and subtle point that we need to discuss first.  Notice that we made sure to include a portion of the sketch to the right of the points corresponding to \(t =  - 2\) and \(t = 1\) to indicate that there are portions of the sketch there.  Had we simply stopped the sketch at those points we are indicating that there was no portion of the curve to the right of those points and there clearly will be.  We just didn’t compute any of those points.</p>
+          
+          <p>This may seem like an unimportant point, but as we’ll see in the next example it’s more important than we might think.</p>
+      </div>
+    </div>
+  </div>
+    
+    <p>Before addressing a much easier way to sketch this graph let’s first address the issue of limits on the parameter.  In the previous example we didn’t have any limits on the parameter.  Without limits on the parameter the graph will continue in both directions as shown in the sketch above.</p>
+    
+    <p>We will often have limits on the parameter however and this will affect the sketch of the parametric equations.  To see this effect let’s look a slight variation of the previous example.</p>
+    
+  <a class="anchor" name="Para_Eqn_Ex2"></a>
+  <div class="example">
+    <span class="example-title">Example 2</span> Sketch the parametric curve for the following set of parametric equations.
+          
+            \[x = {t^2} + t\hspace{0.5in}y = 2t - 1\hspace{0.5in} - 1 \le t \le 1\]
+    <div class="example-content">
+      <span id="SHLink_Soln2" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln2" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln2" class="soln-content">
+        <p>Note that the only difference here is the presence of the limits on \(t\).  All these limits do is tell us that we can’t take any value of \(t\) outside of this range.  Therefore, the parametric curve will only be a portion of the curve above.  Here is the parametric curve for this example.</p>
+          
+            <div class="center-div"><img alt="This is the same parabola from the 1st example except that it starts at (0,-3) and ends at (2,1).  The graph does not extend past these points to make it clear that the only portion of the parabola for this curve is between those two points.  Also included are the t values for each of the points plotted and the arrow heads indicating the direction the curve is plotted out as t increases." height="250" src="http://tutorial.math.lamar.edu/Classes/CalcII/ParametricEqn_Files/image002.gif" width="385" /></div>
+          
+          <p>Notice that with this sketch we started and stopped the sketch right on the points originating from the end points of the range of \(t\)’s.  Contrast this with the sketch in the previous example where we had a portion of the sketch to the right of the “start” and “end” points that we computed.</p>
+          
+          <p>In this case the curve starts at \(t =  - 1\) and ends at \(t = 1\), whereas in the previous example the curve didn’t really start at the right most points that we computed.  We need to be clear in our sketches if the curve starts/ends right at a point, or if that point was simply the first/last one that we computed.</p>
+      </div>
+    </div>
+  </div>
+    
+    <p>It is now time to take a look at an easier method of sketching this parametric curve.  This method uses the fact that in many, but not all, cases we can actually eliminate the parameter from the parametric equations and get a function involving only \(x\) and \(y\).  We will sometimes call this the <em>algebraic equation</em> to differentiate it from the original parametric equations.  There will be two small problems with this method, but it will be easy to address those problems.  It is important to note however that we won’t always be able to do this.</p>
+    
+    <p>Just how we eliminate the parameter will depend upon the parametric equations that we’ve got.  Let’s see how to eliminate the parameter for the set of parametric equations that we’ve been working with to this point.</p>
+  
+  <a class="anchor" name="Para_Eqn_Ex3"></a>
+  <div class="example">
+    <span class="example-title">Example 3</span> Eliminate the parameter from the following set of parametric equations.
+          
+              \[x = {t^2} + t\hspace{0.5in}y = 2t - 1\]
+    <div class="example-content">
+      <span id="SHLink_Soln3" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln3" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln3" class="soln-content">
+        <p>One of the easiest ways to eliminate the parameter is to simply solve one of the equations for the parameter (\(t\), in this case) and substitute that into the other equation.  Note that while this may be the easiest to eliminate the parameter, it’s usually not the best way as we’ll see soon enough.</p>
+          
+          <p>In this case we can easily solve \(y\) for \(t\).</p>
+
+          \[t = \frac{1}{2}\left( {y + 1} \right)\]
+          
+          <p>Plugging this into the equation for \(x\) gives the following algebraic equation,</p>
+
+          \[x = {\left( {\frac{1}{2}\left( {y + 1} \right)} \right)^2} + \frac{1}{2}\left( {y + 1} \right) = \frac{1}{4}{y^2} + y + \frac{3}{4}\]
+          
+          <p>Sure enough from our Algebra knowledge we can see that this is a parabola that opens to the right and will have a vertex at \(\left( { - \frac{1}{4}, - 2} \right)\).</p>
+          
+          <p>We won’t bother with a sketch for this one as we’ve already sketched this once and the point here was more to eliminate the parameter anyway.</p>
+          
+          <p>Before we leave this example let’s address one quick issue.</p>
+          
+          <p>In the first example we just, seemingly randomly, picked values of \(t\) to use in our table, especially the third value.  There really was no apparent reason for choosing \(t =  - \frac{1}{2}\).  It is however probably the most important choice of \(t\) as it is the one that gives the vertex.</p>
+          
+          <p>The reality is that when writing this material up we actually did this problem first then went back and did the first problem.  Plotting points is generally the way most people first learn how to construct graphs and it does illustrate some important concepts, such as direction, so it made sense to do that first in the notes.  In practice however, this example is often done first.</p>
+          
+          <p>So, how did we get those values of \(t\)?  Well let’s start off with the vertex as that is probably the most important point on the graph.  We have the \(x\) and \(y\) coordinates of the vertex and we also have \(x\) and \(y\) parametric equations for those coordinates.  So, plug in the coordinates for the vertex into the parametric equations and solve for \(t\).  Doing this gives,</p>
+          
+          \[\begin{array}{ll}{ - \frac{1}{4} = {t^2} + t}\\{ - 2 = 2t - 1}\end{array}\hspace{0.5in} \Rightarrow \hspace{0.5in}\begin{array}{ll}{t =  - \frac{1}{2}\,\,\,\left( {{\mbox{double root}}} \right)}\\{t =  - \frac{1}{2}}\end{array}\]
+          
+          <p>So, as we can see, the value of \(t\) that will give both of these coordinates is \(t =  - \frac{1}{2}\).  Note that the \(x\) parametric equation gave a double root and this will often not happen.  Often we would have gotten two distinct roots from that equation.  In fact, it won’t be unusual to get multiple values of \(t\) from each of the equations.</p>
+          
+          <p>However, what we can say is that there will be a value(s) of \(t\) that occurs in both sets of solutions and that is the \(t\) that we want for that point.  We’ll eventually see an example where this happens in a later section.</p>
+          
+          <p>Now, from this work we can see that if we use \(t =  - \frac{1}{2}\) we will get the vertex and so we included that value of \(t\) in the table in Example 1.  Once we had that value of \(t\) we chose two integer values of \(t\) on either side to finish out the table.</p>
+          
+          <p>As we will see in later examples in this section determining values of \(t\) that will give specific points is something that we’ll need to do on a fairly regular basis.  It is fairly simple however as this example has shown.  All we need to be able to do is solve a (usually) fairly basic equation which by this point in time shouldn’t be too difficult.</p>
+      </div>
+    </div>
+  </div>
+    
+    <p>Getting a sketch of the parametric curve once we’ve eliminated the parameter seems fairly simple.  All we need to do is graph the equation that we found by eliminating the parameter.  As noted already however, there are two small problems with this method.  The first is direction of motion.  The equation involving only \(x\) and \(y\) will NOT give the direction of motion of the parametric curve.  This is generally an easy problem to fix however.  Let’s take a quick look at the derivatives of the parametric equations from the last example.  They are,</p>
+    
+    
+        \[\begin{align*}\frac{{dx}}{{dt}} & = 2t + 1\\ \frac{{dy}}{{dt}} & = 2\end{align*}\]
+    
+    <p>Now, all we need to do is recall our Calculus I knowledge.  The derivative of \(y\) with respect to \(t\) is clearly always positive.  Recalling that one of the interpretations of the first derivative is rate of change we now know that as \(t\) increases \(y\) must also increase.  Therefore, we must be moving up the curve from bottom to top as \(t\) increases as that is the only direction that will always give an increasing \(y\) as \(t\) increases.</p>
+    
+    <p>Note that the \(x\) derivative isn’t as useful for this analysis as it will be both positive and negative and hence \(x\) will be both increasing and decreasing depending on the value of \(t\).  That doesn’t help with direction much as following the curve in either direction will exhibit both increasing and decreasing \(x\).</p>
+    
+    <p>In some cases, only one of the equations, such as this example, will give the direction while in other cases either one could be used.  It is also possible that, in some cases, both derivatives would be needed to determine direction.  It will always be dependent on the individual set of parametric equations.</p>
+    
+    <p>The second problem with eliminating the parameter is best illustrated in an example as we’ll be running into this problem in the remaining examples.</p>
+    
+  <a class="anchor" name="Para_Eqn_Ex4"></a>
+  <div class="example">
+    <span class="example-title">Example 4</span> Sketch the parametric curve for the following set of parametric equations.  Clearly indicate direction of motion.
+          
+            \[x = 5\cos t\hspace{0.5in}y = 2\sin t\hspace{0.5in}0 \le t \le 2\pi \]
+    <div class="example-content">
+      <span id="SHLink_Soln4" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln4" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln4" class="soln-content">
+        <p>Before we proceed with eliminating the parameter for this problem let’s first address again why just picking \(t\)’s and plotting points is not really a good idea.</p>
+          
+          <p>Given the range of \(t\)’s in the problem statement let’s use the following set of \(t\)’s.</p>
+          
+            <table class="table-no-outer-border">
+              <tr>
+                <th>\(t\)</th>
+                <th>\(x\)</th>
+                <th style="border-right:unset">\(y\)</th>
+              </tr>
+              <tr>
+                <td class="table-cell-center">0</td>
+                <td class="table-cell-center">5</td>
+                <td class="table-cell-center" style="border-right:unset">0</td>
+              </tr>
+              <tr>
+                <td class="table-cell-center">\(\frac{\pi }{2}\)</td>
+                <td class="table-cell-center">0</td>
+                <td class="table-cell-center" style="border-right:unset">2</td>
+              </tr>
+              <tr>
+                <td class="table-cell-center">\(\pi \)</td>
+                <td class="table-cell-center">-5</td>
+                <td class="table-cell-center" style="border-right:unset">0</td>
+              </tr>
+              <tr>
+                <td class="table-cell-center">\(\frac{{3\pi }}{2}\)</td>
+                <td class="table-cell-center">0</td>
+                <td class="table-cell-center" style="border-right:unset">-2</td>
+              </tr>
+              <tr>
+                <td class="table-cell-center">\(2\pi \)</td>
+                <td class="table-cell-center">5</td>
+                <td class="table-cell-center" style="border-right:unset">0</td>
+              </tr>
+            </table>
+          
+          <p>The question that we need to ask now is do we have enough points to accurately sketch the graph of this set of parametric equations?  Below are some sketches of some possible graphs of the parametric equation based only on these five points.</p>
+          
+          
+          
+            <div class="center-div"><img alt="This is the graph of an ellipse that is centered at the origin whose right/left/top/bottom points are those listed in the table above.  Also listed at each of the points are the values of t that gave that point." height="170" src="http://tutorial.math.lamar.edu/Classes/CalcII/ParametricEqn_Files/image003.gif" width="390" /></div>
+          
+            <div class="center-div"><img alt="This is the graph of a diamond with the points of the diamond appearing on the x and y axis at the points given in the table above.  Also listed at each of the points are the values of t that gave that point." height="170" src="http://tutorial.math.lamar.edu/Classes/CalcII/ParametricEqn_Files/image004.gif" width="390" /></div>
+          
+            <div class="center-div"><img alt="This is a rectangle whose sides are parallel to the x and y axis and go through the points given in the table above.  Also listed at each of the points are the values of t that gave that point." height="170" src="http://tutorial.math.lamar.edu/Classes/CalcII/ParametricEqn_Files/image005.gif" width="390" /></div>
+          
+            <div class="center-div"><img alt="This is a very silly looking graph that wanders all over the place and goes through the points given in the table above.  Also listed at each of the points are the values of t that gave that point." height="170" src="http://tutorial.math.lamar.edu/Classes/CalcII/ParametricEqn_Files/image006.gif" width="390" /></div>
+          
+          <p>Given the nature of sine/cosine you might be able to eliminate the diamond and the square but there is no denying that they are graphs that go through the given points.  The last graph is also a little silly but it does show a graph going through the given points.</p>
+          
+          <p>Again, given the nature of sine/cosine you can probably guess that the correct graph is the ellipse.  However, that is all that would be at this point.  A guess.  Nothing actually says unequivocally that the parametric curve is an ellipse just from those five points.  That is the danger of sketching parametric curves based on a handful of points.  Unless we know what the graph will be ahead of time we are really just making a guess.</p>
+          
+          <p>So, in general, we should avoid plotting points to sketch parametric curves.  The best method, provided it can be done, is to eliminate the parameter.  As noted just prior to starting this example there is still a potential problem with eliminating the parameter that we’ll need to deal with. We will eventually discuss this issue.  For now, let’s just proceed with eliminating the parameter.</p>
+          
+          <p>We’ll start by eliminating the parameter as we did in the previous section.  We’ll solve one of the of the equations for \(t\) and plug this into the other equation.  For example, we could do the following,</p>
+          
+          \[t = {\cos ^{ - 1}}\left( {\frac{x}{5}} \right)\hspace{0.5in} \Rightarrow \hspace{0.5in}y = 2\sin \left( {{{\cos }^{ - 1}}\left( {\frac{x}{5}} \right)} \right)\]
+          
+          <p>Can you see the problem with doing this?  This is definitely easy to do but we have a greater chance of correctly graphing the original parametric equations by plotting points than we do graphing this!</p>
+          
+          <p>There are many ways to eliminate the parameter from the parametric equations and solving for \(t\) is usually not the best way to do it.  While it is often easy to do we will, in most cases, end up with an equation that is almost impossible to deal with.</p>
+          
+          <p>So, how can we eliminate the parameter here?  In this case all we need to do is recall a very nice trig identity and the equation of an ellipse.  Recall,</p>
+          \[{\cos ^2}t + {\sin ^2}t = 1\]
+          
+          <p>Then from the parametric equations we get,</p>
+
+          \[\cos t = \frac{x}{5}\hspace{0.5in}\sin t = \frac{y}{2}\]
+          
+          <p>Then, using the trig identity from above and these equations we get,</p>
+          
+          \[1 = {\cos ^2}t + {\sin ^2}t = {\left( {\frac{x}{5}} \right)^2} + {\left( {\frac{y}{2}} \right)^2} = \frac{{{x^2}}}{{25}} + \frac{{{y^2}}}{4}\]
+          
+          <p>So we now know that we will have an ellipse.</p>
+          
+          <p>Now, let’s continue on with the example.  We’ve identified that the parametric equations describe an ellipse, but we can’t just sketch an ellipse and be done with it.</p>
+          
+          <p>First, just because the algebraic equation was an ellipse doesn’t actually mean that the parametric curve is the full ellipse.  It is always possible that the parametric curve is only a portion of the ellipse.  In order to identify just how much of the ellipse the parametric curve will cover let’s go back to the parametric equations and see what they tell us about any limits on \(x\) and \(y\).  Based on our knowledge of sine and cosine we have the following,</p>
+          
+          \[\begin{align*} & - 1 \le \cos t \le 1\hspace{0.25in} \Rightarrow \hspace{0.25in} - 5 \le 5\cos t \le 5\hspace{0.25in} \Rightarrow \hspace{0.25in}\,\, - 5 \le x \le 5\\ &amp;  - 1 \le \sin t \le 1\hspace{0.25in} \Rightarrow \hspace{0.25in} - 2 \le 2\sin t \le 2 \,\hspace{0.25in} \Rightarrow \hspace{0.25in}\,\, - 2 \le y \le 2\end{align*}\]
+          
+          <p>So, by starting with sine/cosine and “building up” the equation for \(x\) and \(y\) using basic algebraic manipulations we get that the parametric equations enforce the above limits on \(x\) and \(y\).  In this case, these also happen to be the full limits on \(x\) and \(y\) we get by graphing the full ellipse.</p>
+          
+          <p>This is the second potential issue alluded to above.  The parametric curve may not always trace out the full graph of the algebraic curve.  We should always find limits on \(x\) and \(y\) enforced upon us by the parametric curve to determine just how much of the algebraic curve is actually sketched out by the parametric equations.</p>
+          
+          <p>Therefore, in this case, we now know that we get a full ellipse from the parametric equations.  Before we proceed with the rest of the example be careful to not always just assume we will get the full graph of the algebraic equation.  There are definitely times when we will not get the full graph and we’ll need to do a similar analysis to determine just how much of the graph we actually get.  We’ll see an example of this later.</p>
+          
+          <p>Note as well that any limits on \(t\) given in the problem statement can also affect how much of the graph of the algebraic equation we get.  In this case however, based on the table of values we computed at the start of the problem we can see that we do indeed get the full ellipse in the range \(0 \le t \le 2\pi \).  That won’t always be the case however, so pay attention to any restrictions on \(t\) that might exist!</p>
+          
+          <p>Next, we need to determine a direction of motion for the parametric curve.  Recall that all parametric curves have a direction of motion and the equation of the ellipse simply tells us nothing about the direction of motion.</p>
+          
+          <p>To get the direction of motion it is tempting to just use the table of values we computed above to get the direction of motion.  In this case, we would guess (and yes that is all it is – a guess) that the curve traces out in a counter-clockwise direction.  We’d be correct.  In this case, we’d be correct!  The problem is that tables of values can be misleading when determining a direction of motion as we’ll see in the next example.</p>
+          
+          <p>Therefore, it is best to not use a table of values to determine the direction of motion.  To correctly determine the direction of motion we’ll use the same method of determining the direction that we discussed after Example 3.  In other words, we’ll take the derivative of the parametric equations and use our knowledge of Calculus I and trig to determine the direction of motion.</p>
+          
+          <p>The derivatives of the parametric equations are,</p>
+          
+          
+            \[\frac{{dx}}{{dt}} =  - 5\sin t\hspace{0.5in}\frac{{dy}}{{dt}} = 2\cos t\]
+          
+          <p>Now, at \(t = 0\) we are at the point \(\left( {5,0} \right)\) and let’s see what happens if we start increasing \(t\).  Let’s increase \(t\) from \(t = 0\) to \(t = \frac{\pi }{2}\).  In this range of \(t\)’s we know that sine is always positive and so from the derivative of the \(x\) equation we can see that \(x\) must be decreasing in this range of \(t\)’s.</p>
+          
+          <p>This, however, doesn’t really help us determine a direction for the parametric curve.  Starting at \(\left( {5,0} \right)\) no matter if we move in a clockwise or counter-clockwise direction \(x\) will have to decrease so we haven’t really learned anything from the \(x\) derivative.</p>
+          
+          <p>The derivative from the \(y\) parametric equation on the other hand will help us.  Again, as we increase \(t\) from  \(t = 0\) to \(t = \frac{\pi }{2}\) we know that cosine will be positive and so \(y\) must be increasing in this range.  That however, can only happen if we are moving in a counter‑clockwise direction.  If we were moving in a clockwise direction from the point \(\left( {5,0} \right)\) we can see that \(y\) would have to decrease!</p>
+          
+          <p>Therefore, in the first quadrant we must be moving in a counter-clockwise direction.  Let’s move on to the second quadrant.</p>
+          
+          <p>So, we are now at the point \(\left( {0,2} \right)\) and we will increase \(t\) from \(t = \frac{\pi }{2}\) to \(t = \pi \).  In this range of \(t\) we know that cosine will be negative and sine will be positive.  Therefore, from the derivatives of the parametric equations we can see that \(x\) is still decreasing and \(y\) will now be decreasing as well.</p>
+          
+          <p>In this quadrant the \(y\) derivative tells us nothing as \(y\) simply must decrease to move from \(\left( {0,2} \right)\).  However, in order for \(x\) to decrease, as we know it does in this quadrant, the direction must still be moving a counter-clockwise rotation.</p>
+          
+          <p>We are now at \(\left( { - 5,0} \right)\) and we will increase \(t\) from \(t = \pi \) to \(t = \frac{{3\pi }}{2}\).  In this range of \(t\) we know that cosine is negative (and hence \(y\) will be decreasing) and sine is also negative (and hence \(x\) will be increasing).  Therefore, we will continue to move in a counter‑clockwise motion.</p>
+          
+          <p>For the 4<sup>th</sup> quadrant we will start at \(\left( {0, - 2} \right)\) and increase \(t\) from \(t = \frac{{3\pi }}{2}\) to \(t = 2\pi \).  In this range of \(t\) we know that cosine is positive (and hence \(y\) will be increasing) and sine is negative (and hence \(x\) will be increasing).  So, as in the previous three quadrants, we continue to move in a counter‑clockwise motion.</p>
+          
+          <p>At this point we covered the range of \(t\)’s we were given in the problem statement and during the full range the motion was in a counter-clockwise direction.</p>
+          
+          <p>We can now fully sketch the parametric curve so, here is the sketch.</p>
+          
+            <div class="center-div"><img alt="This is the graph of an ellipse that is centered at the origin whose right/left/top/bottom points are those listed in the table in the beginning of the example.  Also listed at each of the points are the values of t that gave that point and arrow heads indicating that the graph will be sketched out in a counter clockwise direction as t increases." height="194" src="http://tutorial.math.lamar.edu/Classes/CalcII/ParametricEqn_Files/image007.gif" width="414" /></div>
+      </div>
+    </div>
+  </div>
+    
+    <p>Okay, that was a really long example.  Most of these types of problems aren’t as long.  We just had a lot to discuss in this one so we could get a couple of important ideas out of the way.  The rest of the examples in this section shouldn’t take as long to go through.</p>
+    
+    <p>Now, let’s take a look at another example that will illustrate an important idea about parametric equations.</p>
+    
+  <a class="anchor" name="Para_Eqn_Ex5"></a>
+  <div class="example">
+    <span class="example-title">Example 5</span> Sketch the parametric curve for the following set of parametric equations.  Clearly indicate direction of motion.
+          
+              \[x = 5\cos \left( {3t} \right)\hspace{0.5in}y = 2\sin \left( {3t} \right)\hspace{0.5in}0 \le t \le 2\pi \]
+    <div class="example-content">
+      <span id="SHLink_Soln5" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln5" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln5" class="soln-content">
+        <p>Note that the only difference in between these parametric equations and those in Example 4 is that we replaced the \(t\) with 3\(t\).  We can eliminate the parameter here in the same manner as we did in the previous example.</p>
+          
+          
+            \[\cos \left( {3t} \right) = \frac{x}{5}\hspace{0.5in}\sin \left( {3t} \right) = \frac{y}{2}\]
+          
+          <p>We then get,</p>
+          
+          \[1 = {\cos ^2}\left( {3t} \right) + {\sin ^2}\left( {3t} \right) = {\left( {\frac{x}{5}} \right)^2} + {\left( {\frac{y}{2}} \right)^2} = \frac{{{x^2}}}{{25}} + \frac{{{y^2}}}{4}\]
+          
+          <p>So, we get the same ellipse that we did in the previous example.  Also note that we can do the same analysis on the parametric equations to determine that we have exactly the same limits on \(x\) and \(y\).  Namely,</p>
+          
+          
+            \[ - 5 \le x \le 5\hspace{0.5in}\hspace{0.25in} - 2 \le y \le 2\]
+          
+          <p>It’s starting to look like changing the \(t\) into a 3\(t\) in the trig equations will not change the parametric curve in any way.  That is not correct however.  The curve does change in a small but important way which we will be discussing shortly.</p>
+          
+          <p>Before discussing that small change the 3\(t\) brings to the curve let’s discuss the direction of motion for this curve.  Despite the fact that we said in the last example that picking values of \(t\) and plugging in to the equations to find points to plot is a bad idea let’s do it any way.</p>
+          
+          <p>Given the range of \(t\)’s from the problem statement the following set looks like a good choice of \(t\)’s to use.</p>
+          
+            <table class="table-no-outer-border">
+              <tr>
+                <th>\(t\)</th>
+                <th>\(x\)</th>
+                <th style="border-right:unset">\(y\)</th>
+              </tr>
+              <tr>
+                <td class="table-cell-center">0</td>
+                <td class="table-cell-center">5</td>
+                <td class="table-cell-center" style="border-right:unset">0</td>
+              </tr>
+              <tr>
+                <td class="table-cell-center">\(\frac{\pi }{2}\)</td>
+                <td class="table-cell-center">0</td>
+                <td class="table-cell-center" style="border-right:unset">-2</td>
+              </tr>
+              <tr>
+                <td class="table-cell-center">\(\pi \)</td>
+                <td class="table-cell-center">-5</td>
+                <td class="table-cell-center" style="border-right:unset">0</td>
+              </tr>
+              <tr>
+                <td class="table-cell-center">\(\frac{{3\pi }}{2}\)</td>
+                <td class="table-cell-center">0</td>
+                <td class="table-cell-center" style="border-right:unset">2</td>
+              </tr>
+              <tr>
+                <td class="table-cell-center">\(2\pi \)</td>
+                <td class="table-cell-center">5</td>
+                <td class="table-cell-center" style="border-right:unset">0</td>
+              </tr>
+            </table>
+          
+          <p>So, the only change to this table of values/points from the last example is all the nonzero \(y\) values changed sign.  From a quick glance at the values in this table it would look like the curve, in this case, is moving in a clockwise direction.  But is that correct?  Recall we said that these tables of values can be misleading when used to determine direction and that’s why we don’t use them.</p>
+          
+          <p>Let’s see if our first impression is correct.  We can check our first impression by doing the derivative work to get the correct direction.  Let’s work with just the \(y\) parametric equation as the \(x\) will have the same issue that it had in the previous example.  The derivative of the \(y\) parametric equation is,</p>
+          
+          
+            \[\frac{{dy}}{{dt}} = 6\cos \left( {3t} \right)\]
+          
+          <p>Now, if we start at \(t = 0\) as we did in the previous example and start increasing \(t\).  At \(t = 0\) the derivative is clearly positive and so increasing \(t\) (at least initially) will force \(y\) to also be increasing.  The only way for this to happen is if the curve is in fact tracing out in a counter-clockwise direction initially.</p>
+          
+          <p>Now, we could continue to look at what happens as we further increase \(t\), but when dealing with a parametric curve that is a full ellipse (as this one is) and the argument of the trig functions is of the form <em>nt</em> for any constant \(n\) the direction will not change so once we know the initial direction we know that it will always move in that direction.  Note that this is only true for parametric equations in the form that we have here.  We’ll see in later examples that for different kinds of parametric equations this may no longer be true.</p>
+          
+          <p>Okay, from this analysis we can see that the curve must be traced out in a counter‑clockwise direction.  This is directly counter to our guess from the tables of values above and so we can see that, in this case, the table would probably have led us to the wrong direction.  So, once again, tables are generally not very reliable for getting pretty much any real information about a parametric curve other than a few points that must be on the curve.  Outside of that the tables are rarely useful and will generally not be dealt with in further examples.</p>
+          
+          <p>So, why did our table give an incorrect impression about the direction?  Well recall that we mentioned earlier that the 3\(t\) will lead to a small but important change to the curve versus just a \(t\)?  Let’s take a look at just what that change is as it will also answer what “went wrong” with our table of values.</p>
+          
+          <p>Let’s start by looking at \(t = 0\).  At \(t = 0\) we are at the point \(\left( {5,0} \right)\) and let’s ask ourselves what values of \(t\) put us back at this point.  We saw in Example 3 how to determine value(s) of \(t\) that put us at certain points and the same process will work here with a minor modification.</p>
+          
+          <p>Instead of looking at both the \(x\) and \(y\) equations as we did in that example let’s just look at the \(x\) equation.  The reason for this is that we’ll note that there are two points on the ellipse that will have a \(y\) coordinate of zero, \(\left( {5,0} \right)\) and \(\left( { - 5,0} \right)\).  If we set the \(y\) coordinate equal to zero we’ll find all the \(t\)’s that are at both of these points when we only want the values of \(t\) that are at \(\left( {5,0} \right)\).</p>
+          
+          <p>So, because the \(x\) coordinate of five will only occur at this point we can simply use the \(x\) parametric equation to determine the values of \(t\) that will put us at this point.  Doing this gives the following equation and solution,</p>
+          
+          \[\begin{align*}5 & = 5\cos \left( {3t} \right)\,\\ 3t & = {\cos ^{ - 1}}\left( 1 \right) = 0 + 2\pi n\hspace{0.25in}\,\,\, \to \hspace{0.25in}\,\,\,\,\,\,t = \frac{2}{3}\pi n\,\,\,\,\,\,n = 0, \pm 1, \pm 2, \pm 3, \ldots \end{align*}\]
+          
+          <p>Don’t forget that when solving a trig equation we need to add on the “\( + 2\pi n\)” where \(n\) represents the number of full revolutions in the counter-clockwise direction (positive \(n\)) and clockwise direction (negative \(n\)) that we rotate from the first solution to get all possible solutions to the equation.</p>
+          
+          <p>Now, let’s plug in a few values of \(n\) starting at \(n = 0\).  We don’t need negative \(n\) in this case since all of those would result in negative \(t\) and those fall outside of the range of \(t\)’s we were given in the problem statement.  The first few values of \(t\) are then,</p>
+          
+          \[\begin{align*}n & = 0\hspace{0.25in} : \hspace{0.25in} t = 0\\ n & = 1\hspace{0.25in}:\hspace{0.25in}t = \frac{{2\pi }}{3}\\ n & = 2\hspace{0.25in}:\hspace{0.25in}t = \frac{{4\pi }}{3}\\ n & = 3\hspace{0.25in}:\hspace{0.25in}t = \frac{{6\pi }}{3} = 2\pi \end{align*}\]
+          
+          <p>We can stop here as all further values of \(t\) will be outside the range of \(t\)’s given in this problem.</p>
+          
+          <p>So, what is this telling us?  Well back in Example 4 when the argument was just \(t\) the ellipse was traced out exactly once in the range \(0 \le t \le 2\pi \).  However, when we change the argument to 3\(t\) (and recalling that the curve will always be traced out in a counter‑clockwise direction for this problem) we are going through the “starting” point of \(\left( {5,0} \right)\) two more times than we did in the previous example.</p>
+          
+          <p>In fact, this curve is tracing out three separate times.  The first trace is completed in the range \(0 \le t \le \frac{{2\pi }}{3}\).  The second trace is completed in the range \(\frac{{2\pi }}{3} \le t \le \frac{{4\pi }}{3}\) and the third and final trace is completed in the range \(\frac{{4\pi }}{3} \le t \le 2\pi \).  In other words, changing the argument from \(t\) to 3\(t\) increase the speed of the trace and the curve will now trace out three times in the range \(0 \le t \le 2\pi \)!</p>
+          
+          <p>This is why the table gives the wrong impression.  The speed of the tracing has increased leading to an incorrect impression from the points in the table.  The table seems to suggest that between each pair of values of \(t\) a quarter of the ellipse is traced out in the clockwise direction when in reality it is tracing out three quarters of the ellipse in the counter-clockwise direction.</p>
+          
+          <p>Here’s a final sketch of the curve and note that it really isn’t all that different from the previous sketch.  The only differences are the values of \(t\) and the various points we included.  We did include a few more values of \(t\) at various points just to illustrate where the curve is at for various values of \(t\) but in general these really aren’t needed.</p>
+          
+          
+            <div class="center-div"><img alt="This is the same ellipse from the last example with one difference.  The values of t at (5,0) are given as $t=0,\frac{2\pi }{3},\frac{4\pi }{3},2\pi $, the t values of t at (0,2) are given as $t=\frac{\pi }{6},\frac{5\pi }{6},\frac{3\pi }{2}$ ,  the values of t at (-5,0) are given as $t=\frac{\pi }{3},\pi ,\frac{5\pi }{3}$ and the values of t at (0,-2) are given as $t=\frac{\pi }{2},\frac{7\pi }{6},\frac{11\pi }{6}$ ." height="194" src="http://tutorial.math.lamar.edu/Classes/CalcII/ParametricEqn_Files/image008.gif" width="450" /></div>
+      </div>
+    </div>
+  </div>
+    
+    <p>So, we saw in the last two examples two sets of parametric equations that in some way gave the same graph.  Yet, because they traced out the graph a different number of times we really do need to think of them as different parametric curves at least in some manner.  This may seem like a difference that we don’t need to worry about, but as we will see in later sections this can be a very important difference.  In some of the later sections we are going to need a curve that is traced out exactly once.</p>
+    
+    <p>Before we move on to other problems let’s briefly acknowledge what happens by changing the \(t\) to an <em>nt</em> in these kinds of parametric equations.  When we are dealing with parametric equations involving only sines and cosines and they both have the same argument if we change the argument from \(t\) to <em>nt</em> we simply change the speed with which the curve is traced out.  If \(n &gt; 1\) we will increase the speed and if \(n &lt; 1\) we will decrease the speed.</p>
+    
+    <p>Let’s take a look at a couple more examples.</p>
+    
+  <a class="anchor" name="Para_Eqn_Ex6"></a>
+  <div class="example">
+    <span class="example-title">Example 6</span> Sketch the parametric curve for the following set of parametric equations.  Clearly identify the direction of motion.  If the curve is traced out more than once give a range of the parameter for which the curve will trace out exactly once.
+          
+              \[x = {\sin ^2}t\hspace{0.5in}y = 2\cos t\]
+    <div class="example-content">
+      <span id="SHLink_Soln6" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln6" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln6" class="soln-content">
+        <p>We can eliminate the parameter much as we did in the previous two examples.  However, we’ll need to note that the \(x\) already contains a \({\sin ^2}t\) and so we won’t need to square the \(x\).  We will however, need to square the \(y\) as we need in the previous two examples.</p>
+          
+            \[x + \frac{{{y^2}}}{4} = {\sin ^2}t + {\cos ^2}t = 1\hspace{0.5in} \Rightarrow \hspace{0.5in}x = 1 - \frac{{{y^2}}}{4}\]
+          <p>In this case the algebraic equation is a parabola that opens to the left.</p>
+          
+          <p>We will need to be very, very careful however in sketching this parametric curve.  We will NOT get the whole parabola.  A sketch of the algebraic form parabola will exist for all possible values of \(y\).  However, the parametric equations have defined both \(x\) and \(y\) in terms of sine and cosine and we know that the ranges of these are limited and so we won’t get all possible values of \(x\) and \(y\) here.  So, first let’s get limits on \(x\) and \(y\) as we did in previous examples.  Doing this gives,</p>
+          
+          
+            \[\begin{array}{ccccc} - 1 \le \sin t \le 1 & \hspace{0.25in}\Rightarrow \hspace{0.25in} & 0 \le {\sin ^2}t \le 1 & \hspace{0.25in} \Rightarrow \hspace{0.25in} & 0 \le x \le 1\\ - 1 \le \cos t \le 1 & \hspace{0.25in} \Rightarrow \hspace{0.25in} & - 2 \le 2\cos t \le 2 & \hspace{0.25in} \Rightarrow \hspace{0.25in} & - 2 \le y \le 2\end{array}\]
+          
+          <p>So, it is clear from this that we will only get a portion of the parabola that is defined by the algebraic equation.  Below is a quick sketch of the portion of the parabola that the parametric curve will cover.</p>
+          
+          
+            <div class="center-div"><img alt="This is a portion of the parabola with vertex at (1,0) and opens to the left with y-intercepts at (0,2) and (0,-2).  The domain that this parabola is graphed on is 0&lt;x&lt;1 and the range is -2&lt;y&lt;2." height="259" src="http://tutorial.math.lamar.edu/Classes/CalcII/ParametricEqn_Files/image009.gif" width="96" /></div>
+          
+          <p>To finish the sketch of the parametric curve we also need the direction of motion for the curve.  Before we get to that however, let’s jump forward and determine the range of \(t\)’s for one trace.  To do this we’ll need to know the \(t\)’s that put us at each end point and we can follow the same procedure we used in the previous example.  The only difference is this time let’s use the \(y\) parametric equation instead of the \(x\) because the \(y\) coordinates of the two end points of the curve are different whereas the \(x\) coordinates are the same.</p>
+          
+          <p>So, for the top point we have,</p>
+          
+          \[\begin{align*}2 & = 2\cos t\\ t & = {\cos ^{ - 1}}\left( 1 \right) = 0 + 2\pi n = 2\pi n,\hspace{0.25in}n = 0, \pm 1, \pm 2, \pm 3, \ldots \end{align*}\]
+          
+          <p>For, plugging in some values of \(n\) we get that the curve will be at the top point at,</p>
+          
+          \[t =  \ldots , - 4\pi , - 2\pi ,0,2\pi ,4\pi , \ldots \]
+          
+          <p>Similarly, for the bottom point we have,</p>
+          
+          \[\begin{align*} - 2 & = 2\cos t\\ t & = {\cos ^{ - 1}}\left( { - 1} \right) = \pi  + 2\pi n,\hspace{0.25in}n = 0, \pm 1, \pm 2, \pm 3, \ldots \end{align*}\]
+          
+          <p>So, we see that we will be at the bottom point at,</p>
+          
+          \[t =  \ldots , - 3\pi , - \pi ,\pi ,3\pi , \ldots \]
+          
+          <p>So, if we start at say, \(t = 0\), we are at the top point and we increase \(t\) we have to move along the curve downwards until we reach \(t = \pi \) at which point we are now at the bottom point.  This means that we will trace out the curve exactly once in the range \(0 \le t \le \pi \).</p>
+          
+          <p>This is not the only range that will trace out the curve however.  Note that if we further increase \(t\) from \(t = \pi \) we will now have to travel back up the curve until we reach \(t = 2\pi \) and we are now back at the top point.  Increasing \(t\) again until we reach \(t = 3\pi \) will take us back down the curve until we reach the bottom point again, <em>etc</em>.  From this analysis we can get two more ranges of \(t\) for one trace,</p>
+          
+          \[\pi  \le t \le 2\pi \hspace{0.5in}2\pi  \le t \le 3\pi \]
+          
+          <p>As you can probably see there are an infinite number of ranges of \(t\) we could use for one trace of the curve.  Any of them would be acceptable answers for this problem.</p>
+          
+          <p>Note that in the process of determining a range of \(t\)’s for one trace we also managed to determine the direction of motion for this curve.  In the range \(0 \le t \le \pi \) we had to travel downwards along the curve to get from the top point at \(t = 0\) to the bottom point at \(t = \pi \).  However, at \(t = 2\pi \) we are back at the top point on the curve and to get there we must travel along the path.  We can’t just jump back up to the top point or take a different path to get there.  All travel must be done on the path sketched out.  This means that we had to go back 
+            up the path.  Further increasing \(t\) takes us back down the path, then up the path again <em>etc</em>.</p>
+          
+          <p>In other words, this path is sketched out in both directions because we are not putting any restrictions on the \(t\)’s and so we have to assume we are using all possible values of \(t\).  If we had put restrictions on which \(t\)’s to use we might really have ended up only moving in one direction.  That however would be a result only of the range of \(t\)’s we are using and not the parametric equations themselves.</p>
+          
+          <p>Note that we didn’t really need to do the above work to determine that the curve traces out in both directions.in this case.  Both the \(x\) and \(y\) parametric equations involve sine or cosine and we know both of those functions oscillate.  This, in turn means that both \(x\) and \(y\) will oscillate as well.  The only way for that to happen on this particular this curve will be for the curve to be traced out in both directions.</p>
+          
+          <p>Be careful with the above reasoning that the oscillatory nature of sine/cosine forces the curve to be traced out in both directions.  It can only be used in this example because the “starting” point and “ending” point of the curves are in different places.  The only way to get from one of the “end” points on the curve to the other is to travel back along the curve in the opposite direction.</p>
+          
+          <p>Contrast this with the ellipse in Example 4.  In that case we had sine/cosine in the parametric equations as well.  However, the curve only traced out in one direction, not in both directions.  In Example 4 we were graphing the full ellipse and so no matter where we start sketching the graph we will eventually get back to the “starting” point without ever retracing any portion of the graph.  In Example 4 as we trace out the full ellipse both \(x\) and \(y\) do in fact oscillate between their two “endpoints” but the curve itself does not trace out in both directions for this to happen.</p>
+          
+          <p>Basically, we can only use the oscillatory nature of sine/cosine to determine that the curve traces out in both directions if the curve starts and ends at different points.  If the starting/ending point is the same then we generally need to go through the full derivative argument to determine the actual direction of motion.</p>
+          
+          <p>So, to finish this problem out, below is a sketch of the parametric curve.  Note that we put direction arrows in both directions to clearly indicate that it would be traced out in both directions.  We also put in a few values of \(t\) just to help illustrate the direction of motion.</p>
+          
+            
+          
+            <div class="center-div"><img alt="This is the same portion of the parabola that we had in the first graph in this section.  Included are the values of t at (-2,0) are $t=\pi$, the values of t at (1,0) are $t=\frac{\pi }{2},\frac{3\pi }{2}$ and the values of t at (0,2) are $t=0,2\pi $.  Arrow heads are also included on the graph going in both directions indicated that the curve is retraced out over the parabola in both directions." height="264" src="http://tutorial.math.lamar.edu/Classes/CalcII/ParametricEqn_Files/image010.gif" width="140" /></div>
+      </div>
+    </div>
+  </div>
+    
+    <p>To this point we’ve seen examples that would trace out the complete graph that we got by eliminating the parameter if we took a large enough range of \(t\)’s.  However, in the previous example we’ve now seen that this will not always be the case.  It is more than possible to have a set of parametric equations which will continuously trace out just a portion of the curve.  We can usually determine if this will happen by looking for limits on \(x\) and \(y\) that are imposed up us by the parametric equation.</p>
+    
+    <p>We will often use parametric equations to describe the path of an object or particle.  Let’s take a look at an example of that.</p>
+    
+  <a class="anchor" name="Para_Eqn_Ex7"></a>
+  <div class="example">
+    <span class="example-title">Example 7</span> The path of a particle is given by the following set of parametric equations.
+          
+            \[x = 3\cos \left( {2t} \right)\hspace{0.5in}y = 1 + {\cos ^2}\left( {2t} \right)\]
+
+          <p>Completely describe the path of this particle.  Do this by sketching the path, determining limits on \(x\) and \(y\) and giving a range of \(t\)’s for which the path will be traced out exactly once (provide it traces out more than once of course).</p>
+    <div class="example-content">
+      <span id="SHLink_Soln7" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln7" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln7" class="soln-content">
+        <p>Eliminating the parameter this time will be a little different.  We only have cosines this time and we’ll use that to our advantage.  We can solve the \(x\) equation for cosine and plug that into the equation for \(y\).  This gives,</p>
+          
+            \[\cos \left( {2t} \right) = \frac{x}{3}\hspace{0.5in}y = 1 + {\left( {\frac{x}{3}} \right)^2} = 1 + \frac{{{x^2}}}{9}\]
+          
+          <p>This time the algebraic equation is a parabola that opens upward.  We also have the following limits on \(x\) and \(y\).</p>
+          
+            \[\begin{array}{ccccc} - 1 \le \cos \left( {2t} \right) \le 1 & \hspace{0.25in} & - 3 \le 3\cos \left( {2t} \right) \le 3 & \hspace{0.5in} & - 3 \le x \le 3\\ 0 \le {\cos ^2}\left( {2t} \right) \le 1 & \hspace{0.25in} & 1 \le 1 + {\cos ^2}\left( {2t} \right) \le 2 & \hspace{0.25in} & 1 \le y \le 2\end{array}\]
+          
+          <p>So, again we only trace out a portion of the curve.  Here is a quick sketch of the portion of the parabola that the parametric curve will cover.</p>
+          
+          
+            <div class="center-div"><img alt="This is a portion of the parabola with vertex at (0,1) and opens to the up and ends at (-3,0) and (3,0).  The domain that this parabola is graphed on is -3&lt;x&lt;3 and the range is 1&lt;y&lt;2." height="158" src="http://tutorial.math.lamar.edu/Classes/CalcII/ParametricEqn_Files/image011.gif" width="360" /></div>
+          
+          <p>Now, as we discussed in the previous example because both the \(x\) and \(y\) parametric equations involve cosine we know that both \(x\) and \(y\) must oscillate and because the “start” and “end” points of the curve are not the same the only way \(x\) and \(y\) can oscillate is for the curve to trace out in both directions.</p>
+          
+          <p>To finish the problem then all we need to do is determine a range of \(t\)’s for one trace.  Because the “end” points on the curve have the same \(y\) value and different \(x\) values we can use the \(x\) parametric equation to determine these values.  Here is that work.</p>
+          
+          \[\begin{array}{ll} \begin{aligned}x = 3: \\ \\ \\ \end{aligned} &amp;\begin{align*}3 & = 3\cos \left( {2t} \right)\\ 1 & = \cos \left( {2t} \right)\\ 2t & = 0 + 2\pi n\hspace{0.25in}\, \to \hspace{0.25in}t = \pi n\hspace{0.25in}\,\,\,n = 0, \pm 1, \pm 2, \pm 3, \ldots \end{align*}\end{array}\]
+          
+          \[\begin{array}{ll}\begin{aligned}x = -3: \\ \\ \\ \\ \end{aligned} &amp;\begin{align*} - 3 & = 3\cos \left( {2t} \right)\\ - 1 & = \cos \left( {2t} \right)\\ 2t & = \pi  + 2\pi n\hspace{0.25in}\, \to \hspace{0.25in}t = \frac{1}{2}\pi  + \pi n\hspace{0.25in}\,\,\,n = 0, \pm 1, \pm 2, \pm 3, \ldots \end{align*}\end{array}\]
+          
+          <p>So, we will be at the right end point at \(t =  \ldots , - 2\pi , - \pi ,0,\pi ,2\pi , \ldots \)  and we’ll be at the left end point at \(t =  \ldots , - \frac{3}{2}\pi , - \frac{1}{2}\pi ,\frac{1}{2}\pi ,\frac{3}{2}\pi , \ldots \) .  So, in this case there are an infinite number of ranges of \(t\)’s for one trace.  Here are a few of them.</p>
+          
+          \[ - \frac{1}{2}\pi  \le t \le 0\hspace{0.25in}\hspace{0.25in}0 \le t \le \frac{1}{2}\pi \hspace{0.25in}\hspace{0.25in}\frac{1}{2}\pi  \le t \le \pi \]
+          
+          <p>Here is a final sketch of the particle’s path with a few values of \(t\) on it.</p>
+          
+            <div class="center-div"><img alt="This is the same portion of the parabola that we had in the first graph in this section.  Included are the values of t at (-3,0) are $t=\frac{\pi}{2}$, the values of t at (0,1) are $t=\frac{\pi }{4},\frac{3\pi }{4}$  and the values of t at (3,0) are $t=0,\pi $.  Arrow heads are also included on the graph going in both directions indicated that the curve is retraced out over the parabola in both directions." height="158" src="http://tutorial.math.lamar.edu/Classes/CalcII/ParametricEqn_Files/image012.gif" width="360" /></div>
+      </div>
+    </div>
+  </div>
+    
+    <p>We should give a small warning at this point.  Because of the ideas involved in them we concentrated on parametric curves that retraced portions of the curve more than once.  Do not, however, get too locked into the idea that this will always happen.  Many, if not most parametric curves will only trace out once.  The first one we looked at is a good example of this.  That parametric curve will never repeat any portion of itself.</p>
+    
+    <p>There is one final topic to be discussed in this section before moving on.  So far we’ve started with parametric equations and eliminated the parameter to determine the parametric curve.</p>
+    
+    <p>However, there are times in which we want to go the other way.  Given a function or equation we might want to write down a set of parametric equations for it.  In these cases we say that we <strong>parameterize</strong> the function.</p>
+    <a class="anchor" name="ParaEqnEllipse"></a>
+    <p>If we take Examples 4 and 5 as examples we can do this for ellipses (and hence circles).  Given the ellipse</p>
+    
+        \[\frac{{{x^2}}}{{{a^2}}} + \frac{{{y^2}}}{{{b^2}}} = 1\]
+    <p>a set of parametric equations for it would be,</p>
+    
+      \[x = a\cos t\hspace{1.0in}y = b\sin t\]
+    
+    <p>This set of parametric equations will trace out the ellipse starting at the point \(\left( {a,0} \right)\) and will trace in a counter-clockwise direction and will trace out exactly once in the range \(0 \le t \le 2\pi \).  This is a fairly important set of parametric equations as it used continually in some subjects with dealing with ellipses and/or circles.</p>
+    
+    <p>Every curve can be parameterized in more than one way.  Any of the following will also parameterize the same ellipse.</p>
+    
+    
+      \[\begin{align*}x & = a\cos \left( {\omega \,t} \right)\hspace{0.5in} & y & = b\sin \left( {\omega \,t} \right)\\ x & = a\sin \left( {\omega \,t} \right)\hspace{0.5in} & y & = b\cos \left( {\omega \,t} \right)\\ x & = a\cos \left( {\omega \,t} \right)\hspace{0.5in} & y & =  - b\sin \left( {\omega \,t} \right)\end{align*}\]
+
+    <p>The presence of the \(\omega \) will change the speed that the ellipse rotates as we saw in Example 5.  Note as well that the last two will trace out ellipses with a clockwise direction of motion (you might want to verify this).  Also note that they won’t all start at the same place (if we think of \(t = 0\) as the starting point that is).</p>
+    
+    <p>There are many more parameterizations of an ellipse of course, but you get the idea.  It is important to remember that each parameterization will trace out the curve once with a potentially different range of \(t\)’s.  Each parameterization may rotate with different directions of motion and may start at different points.</p>
+    
+    <p>You may find that you need a parameterization of an ellipse that starts at a particular place and has a particular direction of motion and so you now know that with some work you can write down a set of parametric equations that will give you the behavior that you’re after.</p>
+    
+    <p>Now, let’s write down a couple of other important parameterizations and all the comments about direction of motion, starting point, and range of \(t\)’s for one trace (if applicable) are still true.</p>
+    
+    <p>First, because a circle is nothing more than a special case of an ellipse we can use the parameterization of an ellipse to get the parametric equations for a circle centered at the origin of radius \(r\) as well.  One possible way to parameterize a circle is,</p>
+    
+      
+    
+        \[x = r\cos t\hspace{1.0in}y = r\sin t\]
+    
+    <p>Finally, even though there may not seem to be any reason to, we can also parameterize functions in the form \(y = f\left( x \right)\) or \(x = h\left( y \right)\).  In these cases we parameterize them in the following way,</p>
+    
+      \[\begin{align*}x & = t\hspace{1.0in} & x & = h\left( t \right)\\ y & = f\left( t \right)\hspace{1.0in} & y & = t\end{align*}\]
+    
+    <p>At this point it may not seem all that useful to do a parameterization of a function like this, but there are many instances where it will actually be easier, or it may even be required, to work with the parameterization instead of the function itself.  Unfortunately, almost all of these instances occur in a Calculus III course.</p>
+    
+
+
+  
+
+
+      
+
+
+
+    </div>
+    <!-- End of content div -->
+
+
+    <div class="footer">
+      <div class="footer-links">
+        [<a href="http://tutorial.math.lamar.edu/Contact.aspx">Contact Me</a>]&nbsp;[<a href="../../MyStudents-2.html">My Students</a>]&nbsp;[<a href="http://tutorial.math.lamar.edu/Privacy.aspx">Privacy Statement</a>]&nbsp;[<a href="../../Help-2.html">Site Help &amp; FAQ</a>]&nbsp;[<a href="http://tutorial.math.lamar.edu/Terms.aspx">Terms of Use</a>]
+      </div>
+      <div class="footer-dates">
+        <div class="footer-copyright"><span id="lblCopyRight">&copy; 2003 - 2019 Paul Dawkins</span></div>
+        <div class="footer-spacer"></div>
+        <div class="footer-modified-date">Page Last Modified : <span id="lblModified">5/31/2018</span></div>
+      </div>
+      
+
+    </div>
+  </div>
+  <!-- End of page div...  -->
+</body>
+
+<!-- Mirrored from tutorial.math.lamar.edu/Classes/CalcII/ParametricEqn.aspx by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 27 Feb 2019 06:15:35 GMT -->
+</html>

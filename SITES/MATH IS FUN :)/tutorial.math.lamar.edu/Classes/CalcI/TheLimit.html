@@ -1,0 +1,1262 @@
+
+
+<!DOCTYPE html>
+
+<html>
+
+<!-- Mirrored from tutorial.math.lamar.edu/Classes/CalcI/TheLimit.aspx by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 27 Feb 2019 06:15:34 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=yes" /><meta http-equiv="X-UA-Compatible" content="IE=edge" />  <!-- For best MathJax performance on IE  -->
+
+  <meta name="google-site-verification" content="uLoA31CJfOhIVMJWBjCmQL8xNMmmLybZU3LRKavy9WQ" /><title>
+	Calculus I - The Limit
+</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="../../../www.googletagmanager.com/gtag/js1872?id=UA-331594-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-331594-1');
+  </script>
+
+  <link type="text/css" href="../../css/jquery.mmenu.all.css" rel="stylesheet" /><link type="text/css" href="../../css/jquery.dropdown.css" rel="stylesheet" /><link href="../../FA/css/fontawesome-all.min.css" rel="stylesheet" /><link type="text/css" href="../../css/notes-all.css" rel="stylesheet" /><link type="text/css" href="../../css/notes-google.css" rel="stylesheet" /><link type="text/css" href="../../css/notes-mmenu.css" rel="stylesheet" /><link type="text/css" href="../../css/notes-dropdown.css" rel="stylesheet" />
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+     TeX: { equationNumbers: { autoNumber: "AMS" } }
+    });
+  </script>
+  <script type="text/javascript" async src="../../../cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax2ba6.js?config=TeX-AMS_CHTML-full"></script>
+  <script type="text/javascript" src="../../../code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="../../js/jquery.mmenu.all.js"></script>
+  <script type="text/javascript" src="../../js/jquery.dropdown.js"></script>
+  <script type="text/javascript" src="../../js/notes-all.js"></script>  
+
+  <script>
+    (function () {
+      var cx = '001004262401526223570:11yv6vpcqvy';
+      var gcse = document.createElement('script');
+      gcse.type = 'text/javascript';
+      gcse.async = true;
+      gcse.src = '../../../cse.google.com/cse07b6.html?cx=' + cx;
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(gcse, s);
+    })();
+  </script>
+
+<meta http-equiv="keywords" name="keywords" content="estimate limits, guess limits, value of limit, compute limits, calculus limit, limit" /><meta http-equiv="description" name="description" content="In this section we will introduce the notation of the limit.  We will also take a conceptual look at limits and try to get a grasp on just what they are and what they can tell us.  We will be estimating the value of limits in this section to help us understand what they tell us.  We will actually start computing limits in a couple of sections." /></head>
+<body onload="init({Notes: 'NoteMobile;8/21/2018;true'})">
+
+  <div id="page">
+
+    <div class="header">
+      <div class="header-row">
+        <!--<a href="#menu"><span></span></a>-->
+        <div id="side-menu-icon" class="header-side-menu-icon"><a href="#menu"><span class="fas fa-bars fa-lg" aria-hidden="true" title="Main Menu - Change between topics, chapters and sections as well as a few extra pages."></span></a></div>
+        <span class="header-title"><a href="../../index.html" class="header-title-link">Paul's Online Notes</a></span>
+        <div class="header-spacer"></div>
+
+        <div id="content-top-menu" class="top-menu">
+          <button id="content-type-menu" class="top-menu-button" data-jq-dropdown="#jq-dropdown-type" title="View (Notes, Practice Problems or Assignment Problems, Show/Hide Solutions and/or Steps) Menu">
+            <span id="tab_top_menu_notes" class="top-menu-item-title">Notes</span> <span class="far fa-eye fa-lg" aria-hidden="true"></span>
+          </button>
+
+          <button id="quicknav-menu" class="top-menu-button" data-jq-dropdown="#jq-dropdown-quicknav" title="Quick Navigation (Previous/Next Sections and Problems and Full Problem List) Menu">
+            <span class="top-menu-item-title">Quick Nav</span> <span class="fas fa-exchange fa-lg" aria-hidden="true"></span>
+          </button>
+          
+          <button id="download-menu" class="top-menu-button" data-jq-dropdown="#jq-dropdown-download" title="Download pdf Menu">
+            <span class="top-menu-item-title">Download</span> <span class="far fa-download fa-lg" aria-hidden="true"></span>
+          </button>
+
+          <button id="print-menu" class="top-menu-button top-menu-button-icon-only" data-jq-dropdown="#jq-print-download" title="Print Menu">
+            <span class="far fa-print fa-lg" aria-hidden="true"></span>
+          </button>
+        </div>
+
+        <div id="header-google-search" class="header-search">
+          <gcse:search></gcse:search>
+        </div>
+        <div id="header-search-icon" title="Site Search" class="header-menu-icon"><span id="search-icon" class="fas fa-search" aria-hidden="true"></span></div>
+
+      </div>
+    </div>
+
+     <div id="jq-dropdown-type" class="jq-dropdown jq-dropdown-tip">
+      <ul class="jq-dropdown-menu">
+        
+        <li id="li_type_menu_goto" class="top-menu-nav-title">Go To</li>
+        <li id="li_type_menu_notes">
+          <span id="type_menu_notes_span" title="Viewing the Notes for the current topic." class="top-menu-current">Notes</span>
+          
+        </li>
+        <li id="li_type_menu_practice">
+          
+          
+          <a href="http://tutorial.math.lamar.edu/Problems/CalcI/TheLimit.aspx" id="type_menu_practice_link" title="Go to Practice Problems for current topic.">Practice Problems</a>
+        </li>
+        <li id="li_type_menu_asgn">
+          
+          <a href="http://tutorial.math.lamar.edu/ProblemsNS/CalcI/TheLimit.aspx" id="type_menu_asgn_link" title="Go to Assignment Problems for current topic.">Assignment Problems</a>
+        </li>
+        <li id="li_type_menu_sh" class="top-menu-nav-title">Show/Hide</li>
+        <li id="li_type_menu_show" title="Show any hidden solutions and/or steps that may be present on the page."><a href="javascript:SHPrintPage(1,0)" id="view_menu_show">Show all Solutions/Steps/<em>etc.</em></a></li>
+        <li id="li_type_menu_hide" title="Hide any visible solutions and/or steps that may be present on the page."><a href="javascript:SHPrintPage(0,0)" id="view_menu_hide">Hide all Solutions/Steps/<em>etc.</em></a></li>
+      </ul>
+    </div>
+
+    <div id="jq-dropdown-quicknav" class="jq-dropdown jq-dropdown-tip">
+      <ul class="jq-dropdown-menu">
+        <li id="li_nav_menu_sections" class="top-menu-nav-title">Sections</li>
+        <li id="li_nav_menu_prev_section"><a href="Tangents_Rates.html" id="a_nav_menu_prev_section" class="top-menu-nav-link" title="Previous Section : Tangent Lines and Rates of Change"><span class="top-menu-prev fas fa-chevron-left"></span> Tangent Lines and Rates of Change</a></li>
+        <li id="li_nav_menu_next_section"><a href="OneSidedLimits.html" id="a_nav_menu_next_section" class="top-menu-nav-link" title="Next Section : One-Sided Limits"><span class="top-menu-prev-hidden fas fa-chevron-left"></span> One-Sided Limits <span class="top-menu-next fas fa-chevron-right"></span></a></li>
+        <li id="li_nav_menu_chapters" class="top-menu-nav-title">Chapters</li>
+        <li id="li_nav_menu_prev_chapter"><a href="ReviewIntro.html" id="a_nav_menu_prev_chapter" class="top-menu-nav-link" title="Previous Chapter : Review"><span class="top-menu-prev fas fa-chevron-left"></span><span class="top-menu-prev fas fa-chevron-left"></span> Review</a></li>
+        <li id="li_nav_menu_next_chapter"><a href="DerivativeIntro.html" id="a_nav_menu_next_chapter" class="top-menu-nav-link" title="Next Chapter : Derivatives"><span class="top-menu-prev-hidden fas fa-chevron-left"></span><span class="top-menu-prev-hidden fas fa-chevron-left"></span> Derivatives <span class="top-menu-next fas fa-chevron-right"></span><span class="top-menu-next fas fa-chevron-right"></span></a></li>
+        
+        
+        
+        
+        <li id="li_nav_menu_classes" class="top-menu-nav-title">Classes</li>
+        <li>
+          
+          <a href="../Alg/Alg.html" id="nav_menu_alg_link" title="Go To Algebra Notes">Algebra</a>
+        </li>
+        <li>
+          <span id="nav_menu_calci_span" title="Currently Viewing Calculus I Material" class="top-menu-current">Calculus I</span>
+          
+        </li>
+        <li>
+          
+          <a href="../CalcII/CalcII.html" id="nav_menu_calcii_link" title="Go To Calculus II Notes">Calculus II</a>
+        </li>
+        <li>
+          
+          <a href="../CalcIII/CalcIII.html" id="nav_menu_calciii_link" title="Go To Calculus III Notes">Calculus III</a>
+        </li>
+        <li>
+          
+          <a href="../DE/DE.html" id="nav_menu_de_link" title="Go To Differential Equations Notes">Differential Equations</a>
+        </li>
+        <li id="li_nav_menu_extras" class="top-menu-nav-title">Extras</li>
+        <li>
+          
+          <a href="../../Extras/AlgebraTrigReview/AlgebraTrig.html" id="nav_menu_algtrig_link" title="Go To Algebra &amp; Trig Review">Algebra &amp; Trig Review</a>
+        </li>
+        <li>
+          
+          <a href="../../Extras/CommonErrors/CommonMathErrors.html" id="nav_menu_commonerrors_link" title="Go To Common Math Errors">Common Math Errors</a>
+        </li>
+        <li>
+          
+          <a href="../../Extras/ComplexPrimer/ComplexNumbers.html" id="nav_menu_complexnumbers_link" title="Go To Complex Numbers Primer">Complex Number Primer</a>
+        </li>
+        <li>
+          
+          <a href="../../Extras/StudyMath/HowToStudyMath.html" id="nav_menu_studymath_link" title="Go To How To Study Math">How To Study Math</a>
+        </li>
+        <li>
+          
+          <a href="../../Extras/CheatSheets_Tables.html" id="nav_menu_cheattables_link" title="Go To List of Cheat Sheets and Tables">Cheat Sheets &amp; Tables</a>
+        </li>
+        <li id="li_nav_menu_misc" class="top-menu-nav-title">Misc</li>
+        <li><a href="http://tutorial.math.lamar.edu/contact.aspx" id="nav_menu_contact" title="Contact Me!">Contact Me</a></li>
+        <li><a href="../../mathjax.html" id="nav_menu_mathjax" title="Info on MathJax and MathJax Configuration Menu">MathJax Help and Configuration</a></li>
+        <li><a href="../../mystudents.html" id="nav_menu_students" title="Go here if you are currently taking a class from me!">My Students</a></li>
+      </ul>
+    </div>
+
+    <div id="jq-dropdown-download" class="jq-dropdown jq-dropdown-anchor-right jq-dropdown-tip">
+      <ul class="jq-dropdown-menu">
+        
+        <li id="li_download_menu_notes" class="top-menu-nav-title">Notes Downloads</li>
+        <li id="li_download_menu_notes_book"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=B,8,N" id="download_menu_notes_book" data-PDF="Download - Menu$Notes - Book$Calculus I$/Downloads/CalcI/Notes/Complete.pdf">Complete Book</a></li>
+        
+        <li id="li_download_menu_notes_chapter"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=C,26,N" id="download_menu_notes_chapter" data-PDF="Download - Menu$Notes - Chapter$Calculus I - Limits$/Downloads/CalcI/Notes/Limits.pdf">Current Chapter</a></li>
+        <li id="li_download_menu_notes_section"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=S,185,N" id="download_menu_notes_section" data-PDF="Download - Menu$Notes - Section$Calculus I - The Limit$/Downloads/CalcI/Notes/TheLimit.pdf">Current Section</a></li>
+        <li id="li_download_menu_practice" class="top-menu-nav-title">Practice Problems Downloads</li>
+        
+        <li id="li_download_menu_practice_book"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=B,8,P" id="download_menu_practice_book" data-PDF="Download - Menu$Practice Problems - Book$Calculus I$/Downloads/CalcI/Practice Problems/Complete.pdf">Complete Book - Problems Only</a></li>
+        <li id="li_download_menu_solutions_book"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=B,8,S" id="download_menu_solutions_book" data-PDF="Download - Menu$Practice Problems Solutions - Book$Calculus I$/Downloads/CalcI/Practice Problems Solutions/Complete.pdf">Complete Book - Solutions</a></li>
+        <li id="li_download_menu_b_c" class="top-menu-divider"></li>
+        <li id="li_download_menu_practice_chapter"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=C,26,P" id="download_menu_practice_chapter" data-PDF="Download - Menu$Practice Problems - Chapter$Calculus I - Limits$/Downloads/CalcI/Practice Problems/Limits.pdf">Current Chapter - Problems Only</a></li>
+        <li id="li_download_menu_solutions_chapter"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=C,26,S" id="download_menu_solutions_chapter" data-PDF="Download - Menu$Practice Problems Solutions - Chapter$Calculus I - Limits$/Downloads/CalcI/Practice Problems Solutions/Limits.pdf">Current Chapter - Solutions</a></li>
+        <li id="li_download_menu_c_s" class="top-menu-divider"></li>
+        <li id="li_download_menu_practice_section"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=S,185,P" id="download_menu_practice_section" data-PDF="Download - Menu$Practice Problems - Section$Calculus I - The Limit$/Downloads/CalcI/Practice Problems/TheLimit.pdf">Current Section - Problems Only</a></li>
+        <li id="li_download_menu_solutions_section"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=S,185,S" id="download_menu_solutions_section" data-PDF="Download - Menu$Practice Problems Solutions - Section$Calculus I - The Limit$/Downloads/CalcI/Practice Problems Solutions/TheLimit.pdf">Current Section - Solutions</a></li>
+        <li id="li_download_menu_asgn" class="top-menu-nav-title">Assignment Problems Downloads</li>
+        
+        <li id="li_download_menu_asgn_book"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=B,8,A" id="download_menu_asgn_book" data-PDF="Download - Menu$Assignment Problems - Book$Calculus I$/Downloads/CalcI/Assignment Problems/Complete.pdf">Complete Book</a></li>
+        <li id="li_download_menu_asgn_chapter"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=C,26,A" id="download_menu_asgn_chapter" data-PDF="Download - Menu$Assignment Problems - Chapter$Calculus I - Limits$/Downloads/CalcI/Assignment Problems/Limits.pdf">Current Chapter</a></li>
+        <li id="li_download_menu_asgn_section"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=S,185,A" id="download_menu_asgn_section" data-PDF="Download - Menu$Assignment Problems - Section$Calculus I - The Limit$/Downloads/CalcI/Assignment Problems/TheLimit.pdf">Current Section</a></li>
+        <li id="li_download_menu_other" class="top-menu-nav-title">Other Items</li>
+        <li id="li_download_menu_urls">
+          <a href="http://tutorial.math.lamar.edu/DownloadURLs.aspx?bi=8&amp;ci=26&amp;si=185" id="download_menu_urls">Get URL's for Download Items</a>
+        </li>
+      </ul>
+    </div>
+
+    <div id="jq-print-download" class="jq-dropdown jq-dropdown-anchor-right jq-dropdown-tip">
+      <ul class="jq-dropdown-menu">
+        <li id="li_print_menu_default"><a href="javascript:SHPrintPage()" id="print_menu_default">Print Page in Current Form (Default)</a></li>
+        <li id="li_print_menu_show"><a href="javascript:SHPrintPage(1,1)" id="print_menu_show">Show all Solutions/Steps and Print Page</a></li>
+        <li id="li_print_menu_hide"><a href="javascript:SHPrintPage(0,1)" id="print_menu_hide">Hide all Solutions/Steps and Print Page</a></li>
+      </ul>
+    </div>
+
+
+
+   
+
+    <nav id="menu" class="notes-nav">
+      <ul>
+        <li><a href="../../index.html" class="mm-link">Home</a></li>
+        <li><span>Classes</span></li>
+        <li><a href="../Alg/Alg.html" class="mm-link">Algebra</a>
+          <ul>
+            <li><a href="../Alg/Preliminaries.html" class="mm-link">Preliminaries</a>
+              <ul>
+                <li><a href="../Alg/IntegerExponents.html" class="mm-link">Integer Exponents</a></li>
+                <li><a href="../Alg/RationalExponents.html" class="mm-link">Rational Exponents</a></li>
+                <li><a href="../Alg/Radicals.html" class="mm-link">Radicals</a></li>
+                <li><a href="../Alg/Polynomials.html" class="mm-link">Polynomials</a></li>
+                <li><a href="../Alg/Factoring.html" class="mm-link">Factoring Polynomials</a></li>
+                <li><a href="../Alg/RationalExpressions.html" class="mm-link">Rational Expressions</a></li>
+                <li><a href="../Alg/ComplexNumbers.html" class="mm-link">Complex Numbers</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/Solving.html" class="mm-link">Solving Equations and Inequalities</a>
+              <ul>
+                <li><a href="../Alg/SolutionSets.html" class="mm-link">Solutions and Solution Sets</a></li>
+                <li><a href="../Alg/SolveLinearEqns.html" class="mm-link">Linear Equations</a></li>
+                <li><a href="../Alg/LinearApps.html" class="mm-link">Applications of Linear Equations</a></li>
+                <li><a href="../Alg/SolveMultiVariable.html" class="mm-link">Equations With More Than One Variable</a></li>
+                <li><a href="../Alg/SolveQuadraticEqnsI.html" class="mm-link">Quadratic Equations - Part I</a></li>
+                <li><a href="../Alg/SolveQuadraticEqnsII.html" class="mm-link">Quadratic Equations - Part II</a></li>
+                <li><a href="../Alg/SolveQuadraticEqnSummary.html" class="mm-link">Quadratic Equations : A Summary</a></li>
+                <li><a href="../Alg/QuadraticApps.html" class="mm-link">Applications of Quadratic Equations</a></li>
+                <li><a href="../Alg/ReducibleToQuadratic.html" class="mm-link">Equations Reducible to Quadratic in Form</a></li>
+                <li><a href="../Alg/SolveRadicalEqns.html" class="mm-link">Equations with Radicals</a></li>
+                <li><a href="../Alg/SolveLinearInequalities.html" class="mm-link">Linear Inequalities</a></li>
+                <li><a href="../Alg/SolvePolyInequalities.html" class="mm-link">Polynomial Inequalities</a></li>
+                <li><a href="../Alg/SolveRationalInequalities.html" class="mm-link">Rational Inequalities</a></li>
+                <li><a href="../Alg/SolveAbsValueEqns.html" class="mm-link">Absolute Value Equations</a></li>
+                <li><a href="../Alg/SolveAbsValueIneq.html" class="mm-link">Absolute Value Inequalities</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/Graphing_Functions.html" class="mm-link">Graphing and Functions</a>
+              <ul>
+                <li><a href="../Alg/Graphing.html" class="mm-link">Graphing</a></li>
+                <li><a href="../Alg/Lines.html" class="mm-link">Lines</a></li>
+                <li><a href="../Alg/Circles.html" class="mm-link">Circles</a></li>
+                <li><a href="../Alg/FunctionDefn.html" class="mm-link">The Definition of a Function</a></li>
+                <li><a href="../Alg/GraphFunctions.html" class="mm-link">Graphing Functions</a></li>
+                <li><a href="../Alg/CombineFunctions.html" class="mm-link">Combining Functions</a></li>
+                <li><a href="../Alg/InverseFunctions.html" class="mm-link">Inverse Functions</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/CommonGraphs.html" class="mm-link">Common Graphs</a>
+              <ul>
+                <li><a href="../Alg/Lines_Circles_PWF.html" class="mm-link">Lines, Circles and Piecewise Functions</a></li>
+                <li><a href="../Alg/Parabolas.html" class="mm-link">Parabolas</a></li>
+                <li><a href="../Alg/Ellipses.html" class="mm-link">Ellipses</a></li>
+                <li><a href="../Alg/Hyperbolas.html" class="mm-link">Hyperbolas</a></li>
+                <li><a href="../Alg/MiscFunctions.html" class="mm-link">Miscellaneous Functions</a></li>
+                <li><a href="../Alg/Transformations.html" class="mm-link">Transformations</a></li>
+                <li><a href="../Alg/Symmetry.html" class="mm-link">Symmetry</a></li>
+                <li><a href="../Alg/GraphRationalFcns.html" class="mm-link">Rational Functions</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/PolynomialFunctions.html" class="mm-link">Polynomial Functions</a>
+              <ul>
+                <li><a href="../Alg/DividingPolynomials.html" class="mm-link">Dividing Polynomials</a></li>
+                <li><a href="../Alg/ZeroesOfPolynomials.html" class="mm-link">Zeroes/Roots of Polynomials</a></li>
+                <li><a href="../Alg/GraphingPolynomials.html" class="mm-link">Graphing Polynomials</a></li>
+                <li><a href="../Alg/FindingZeroesOfPolynomials.html" class="mm-link">Finding Zeroes of Polynomials</a></li>
+                <li><a href="../Alg/PartialFractions.html" class="mm-link">Partial Fractions</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/ExpAndLog.html" class="mm-link">Exponential and Logarithm Functions</a>
+              <ul>
+                <li><a href="../Alg/ExpFunctions.html" class="mm-link">Exponential Functions</a></li>
+                <li><a href="../Alg/LogFunctions.html" class="mm-link">Logarithm Functions</a></li>
+                <li><a href="../Alg/SolveExpEqns.html" class="mm-link">Solving Exponential Equations</a></li>
+                <li><a href="../Alg/SolveLogEqns.html" class="mm-link">Solving Logarithm Equations</a></li>
+                <li><a href="../Alg/ExpLogApplications.html" class="mm-link">Applications</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/Systems.html" class="mm-link">Systems of Equations</a>
+              <ul>
+                <li><a href="../Alg/SystemsTwoVrble.html" class="mm-link">Linear Systems with Two Variables</a></li>
+                <li><a href="../Alg/SystemsThreeVrble.html" class="mm-link">Linear Systems with Three Variables</a></li>
+                <li><a href="../Alg/AugmentedMatrix.html" class="mm-link">Augmented Matrices</a></li>
+                <li><a href="../Alg/AugmentedMatrixII.html" class="mm-link">More on the Augmented Matrix</a></li>
+                <li><a href="../Alg/NonlinearSystems.html" class="mm-link">Nonlinear Systems</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="CalcI.html" class="mm-link">Calculus I</a>
+          <ul>
+            <li><a href="ReviewIntro.html" class="mm-link">Review</a>
+              <ul>
+                <li><a href="Functions.html" class="mm-link">Functions</a></li>
+                <li><a href="InverseFunctions.html" class="mm-link">Inverse Functions</a></li>
+                <li><a href="TrigFcns.html" class="mm-link">Trig Functions</a></li>
+                <li><a href="TrigEquations.html" class="mm-link">Solving Trig Equations</a></li>
+                <li><a href="TrigEquations_CalcI.html" class="mm-link">Trig Equations with Calculators, Part I</a></li>
+                <li><a href="TrigEquations_CalcII.html" class="mm-link">Trig Equations with Calculators, Part II</a></li>
+                <li><a href="ExpFunctions.html" class="mm-link">Exponential Functions</a></li>
+                <li><a href="LogFcns.html" class="mm-link">Logarithm Functions</a></li>
+                <li><a href="ExpLogEqns.html" class="mm-link">Exponential and Logarithm Equations</a></li>
+                <li><a href="CommonGraphs.html" class="mm-link">Common Graphs</a></li>
+              </ul>
+            </li>
+            <li><a href="limitsIntro.html" class="mm-link">Limits</a>
+              <ul>
+                <li><a href="Tangents_Rates.html" class="mm-link">Tangent Lines and Rates of Change</a></li>
+                <li><a href="TheLimit.html" class="mm-link">The Limit</a></li>
+                <li><a href="OneSidedLimits.html" class="mm-link">One-Sided Limits</a></li>
+                <li><a href="LimitsProperties.html" class="mm-link">Limit Properties</a></li>
+                <li><a href="ComputingLimits.html" class="mm-link">Computing Limits</a></li>
+                <li><a href="InfiniteLimits.html" class="mm-link">Infinite Limits</a></li>
+                <li><a href="LimitsAtInfinityI.html" class="mm-link">Limits At Infinity, Part I</a></li>
+                <li><a href="LimitsAtInfinityII.html" class="mm-link">Limits At Infinity, Part II</a></li>
+                <li><a href="Continuity.html" class="mm-link">Continuity</a></li>
+                <li><a href="DefnOfLimit.html" class="mm-link">The Definition of the Limit</a></li>
+              </ul>
+            </li>
+            <li><a href="DerivativeIntro.html" class="mm-link">Derivatives</a>
+              <ul>
+                <li><a href="DefnOfDerivative.html" class="mm-link">The Definition of the Derivative</a></li>
+                <li><a href="DerivativeInterp.html" class="mm-link">Interpretation of the Derivative</a></li>
+                <li><a href="DiffFormulas.html" class="mm-link">Differentiation Formulas</a></li>
+                <li><a href="ProductQuotientRule.html" class="mm-link">Product and Quotient Rule</a></li>
+                <li><a href="DiffTrigFcns.html" class="mm-link">Derivatives of Trig Functions</a></li>
+                <li><a href="DiffExpLogFcns.html" class="mm-link">Derivatives of Exponential and Logarithm Functions</a></li>
+                <li><a href="DiffInvTrigFcns.html" class="mm-link">Derivatives of Inverse Trig Functions</a></li>
+                <li><a href="DiffHyperFcns.html" class="mm-link">Derivatives of Hyperbolic Functions</a></li>
+                <li><a href="ChainRule.html" class="mm-link">Chain Rule</a></li>
+                <li><a href="ImplicitDIff.html" class="mm-link">Implicit Differentiation</a></li>
+                <li><a href="RelatedRates.html" class="mm-link">Related Rates</a></li>
+                <li><a href="HigherOrderDerivatives.html" class="mm-link">Higher Order Derivatives</a></li>
+                <li><a href="LogDiff.html" class="mm-link">Logarithmic Differentiation</a></li>
+              </ul>
+            </li>
+            <li><a href="DerivAppsIntro.html" class="mm-link">Applications of Derivatives</a>
+              <ul>
+                <li><a href="RateOfChange.html" class="mm-link">Rates of Change</a></li>
+                <li><a href="CriticalPoints.html" class="mm-link">Critical Points</a></li>
+                <li><a href="MinMaxValues.html" class="mm-link">Minimum and Maximum Values</a></li>
+                <li><a href="AbsExtrema.html" class="mm-link">Finding Absolute Extrema</a></li>
+                <li><a href="ShapeofGraphPtI.html" class="mm-link">The Shape of a Graph, Part I</a></li>
+                <li><a href="ShapeofGraphPtII.html" class="mm-link">The Shape of a Graph, Part II</a></li>
+                <li><a href="MeanValueTheorem.html" class="mm-link">The Mean Value Theorem</a></li>
+                <li><a href="Optimization.html" class="mm-link">Optimization</a></li>
+                <li><a href="MoreOptimization.html" class="mm-link">More Optimization Problems</a></li>
+                <li><a href="LHospitalsRule.html" class="mm-link">L'Hospital's Rule and Indeterminate Forms</a></li>
+                <li><a href="LinearApproximations.html" class="mm-link">Linear Approximations</a></li>
+                <li><a href="Differentials.html" class="mm-link">Differentials</a></li>
+                <li><a href="NewtonsMethod.html" class="mm-link">Newton's Method</a></li>
+                <li><a href="BusinessApps.html" class="mm-link">Business Applications</a></li>
+              </ul>
+            </li>
+            <li><a href="IntegralsIntro.html" class="mm-link">Integrals</a>
+              <ul>
+                <li><a href="IndefiniteIntegrals.html" class="mm-link">Indefinite Integrals</a></li>
+                <li><a href="ComputingIndefiniteIntegrals.html" class="mm-link">Computing Indefinite Integrals</a></li>
+                <li><a href="SubstitutionRuleIndefinite.html" class="mm-link">Substitution Rule for Indefinite Integrals</a></li>
+                <li><a href="SubstitutionRuleIndefinitePtII.html" class="mm-link">More Substitution Rule</a></li>
+                <li><a href="AreaProblem.html" class="mm-link">Area Problem</a></li>
+                <li><a href="DefnOfDefiniteIntegral.html" class="mm-link">Definition of the Definite Integral</a></li>
+                <li><a href="ComputingDefiniteIntegrals.html" class="mm-link">Computing Definite Integrals</a></li>
+                <li><a href="SubstitutionRuleDefinite.html" class="mm-link">Substitution Rule for Definite Integrals</a></li>
+              </ul>
+            </li>
+            <li><a href="IntAppsIntro.html" class="mm-link">Applications of Integrals</a>
+              <ul>
+                <li><a href="AvgFcnValue.html" class="mm-link">Average Function Value</a></li>
+                <li><a href="AreaBetweenCurves.html" class="mm-link">Area Between Curves</a></li>
+                <li><a href="VolumeWithRings.html" class="mm-link">Volumes of Solids of Revolution / Method of Rings</a></li>
+                <li><a href="VolumeWithCylinder.html" class="mm-link">Volumes of Solids of Revolution/Method of Cylinders</a></li>
+                <li><a href="MoreVolume.html" class="mm-link">More Volume Problems</a></li>
+                <li><a href="Work.html" class="mm-link">Work</a></li>
+              </ul>
+            </li>
+            <li><a href="ExtrasIntro.html" class="mm-link">Extras</a>
+              <ul>
+                <li><a href="LimitProofs.html" class="mm-link">Proof of Various Limit Properties</a></li>
+                <li><a href="DerivativeProofs.html" class="mm-link">Proof of Various Derivative Properties</a></li>
+                <li><a href="ProofTrigDeriv.html" class="mm-link">Proof of Trig Limits</a></li>
+                <li><a href="DerivativeAppsProofs.html" class="mm-link">Proofs of Derivative Applications Facts</a></li>
+                <li><a href="ProofIntProp.html" class="mm-link">Proof of Various Integral Properties </a></li>
+                <li><a href="Area_Volume_Formulas.html" class="mm-link">Area and Volume Formulas</a></li>
+                <li><a href="TypesOfInfinity.html" class="mm-link">Types of Infinity</a></li>
+                <li><a href="SummationNotation.html" class="mm-link">Summation Notation</a></li>
+                <li><a href="ConstantofIntegration.html" class="mm-link">Constant of Integration</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../CalcII/CalcII.html" class="mm-link">Calculus II</a>
+          <ul>
+            <li><a href="../CalcII/IntTechIntro.html" class="mm-link">Integration Techniques</a>
+              <ul>
+                <li><a href="../CalcII/IntegrationByParts.html" class="mm-link">Integration by Parts</a></li>
+                <li><a href="../CalcII/IntegralsWithTrig.html" class="mm-link">Integrals Involving Trig Functions</a></li>
+                <li><a href="../CalcII/TrigSubstitutions.html" class="mm-link">Trig Substitutions</a></li>
+                <li><a href="../CalcII/PartialFractions.html" class="mm-link">Partial Fractions</a></li>
+                <li><a href="../CalcII/IntegralsWithRoots.html" class="mm-link">Integrals Involving Roots</a></li>
+                <li><a href="../CalcII/IntegralsWithQuadratics.html" class="mm-link">Integrals Involving Quadratics</a></li>
+                <li><a href="../CalcII/IntegrationStrategy.html" class="mm-link">Integration Strategy</a></li>
+                <li><a href="../CalcII/ImproperIntegrals.html" class="mm-link">Improper Integrals</a></li>
+                <li><a href="../CalcII/ImproperIntegralsCompTest.html" class="mm-link">Comparison Test for Improper Integrals</a></li>
+                <li><a href="../CalcII/ApproximatingDefIntegrals.html" class="mm-link">Approximating Definite Integrals</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/IntAppsIntro.html" class="mm-link">Applications of Integrals</a>
+              <ul>
+                <li><a href="../CalcII/ArcLength.html" class="mm-link">Arc Length</a></li>
+                <li><a href="../CalcII/SurfaceArea.html" class="mm-link">Surface Area</a></li>
+                <li><a href="../CalcII/CenterOfMass.html" class="mm-link">Center of Mass</a></li>
+                <li><a href="../CalcII/HydrostaticPressure.html" class="mm-link">Hydrostatic Pressure</a></li>
+                <li><a href="../CalcII/Probability.html" class="mm-link">Probability</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/ParametricIntro.html" class="mm-link">Parametric Equations and Polar Coordinates</a>
+              <ul>
+                <li><a href="../CalcII/ParametricEqn.html" class="mm-link">Parametric Equations and Curves</a></li>
+                <li><a href="../CalcII/ParaTangent.html" class="mm-link">Tangents with Parametric Equations</a></li>
+                <li><a href="../CalcII/ParaArea.html" class="mm-link">Area with Parametric Equations</a></li>
+                <li><a href="../CalcII/ParaArcLength.html" class="mm-link">Arc Length with Parametric Equations</a></li>
+                <li><a href="../CalcII/ParaSurfaceArea.html" class="mm-link">Surface Area with Parametric Equations</a></li>
+                <li><a href="../CalcII/PolarCoordinates.html" class="mm-link">Polar Coordinates</a></li>
+                <li><a href="../CalcII/PolarTangents.html" class="mm-link">Tangents with Polar Coordinates</a></li>
+                <li><a href="../CalcII/PolarArea.html" class="mm-link">Area with Polar Coordinates</a></li>
+                <li><a href="../CalcII/PolarArcLength.html" class="mm-link">Arc Length with Polar Coordinates</a></li>
+                <li><a href="../CalcII/PolarSurfaceArea.html" class="mm-link">Surface Area with Polar Coordinates</a></li>
+                <li><a href="../CalcII/ArcLength_SurfaceArea.html" class="mm-link">Arc Length and Surface Area Revisited</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/SeriesIntro.html" class="mm-link">Series & Sequences</a>
+              <ul>
+                <li><a href="../CalcII/Sequences.html" class="mm-link">Sequences</a></li>
+                <li><a href="../CalcII/MoreSequences.html" class="mm-link">More on Sequences</a></li>
+                <li><a href="../CalcII/Series_Basics.html" class="mm-link">Series - The Basics</a></li>
+                <li><a href="../CalcII/ConvergenceOfSeries.html" class="mm-link">Convergence/Divergence of Series</a></li>
+                <li><a href="../CalcII/Series_Special.html" class="mm-link">Special Series</a></li>
+                <li><a href="../CalcII/IntegralTest.html" class="mm-link">Integral Test</a></li>
+                <li><a href="../CalcII/SeriesCompTest.html" class="mm-link">Comparison Test/Limit Comparison Test</a></li>
+                <li><a href="../CalcII/AlternatingSeries.html" class="mm-link">Alternating Series Test</a></li>
+                <li><a href="../CalcII/AbsoluteConvergence.html" class="mm-link">Absolute Convergence</a></li>
+                <li><a href="../CalcII/RatioTest.html" class="mm-link">Ratio Test</a></li>
+                <li><a href="../CalcII/RootTest.html" class="mm-link">Root Test</a></li>
+                <li><a href="../CalcII/SeriesStrategy.html" class="mm-link">Strategy for Series</a></li>
+                <li><a href="../CalcII/EstimatingSeries.html" class="mm-link">Estimating the Value of a Series</a></li>
+                <li><a href="../CalcII/PowerSeries.html" class="mm-link">Power Series</a></li>
+                <li><a href="../CalcII/PowerSeriesandFunctions.html" class="mm-link">Power Series and Functions</a></li>
+                <li><a href="../CalcII/TaylorSeries.html" class="mm-link">Taylor Series</a></li>
+                <li><a href="../CalcII/TaylorSeriesApps.html" class="mm-link">Applications of Series</a></li>
+                <li><a href="../CalcII/BinomialSeries.html" class="mm-link">Binomial Series</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/VectorsIntro.html" class="mm-link">Vectors</a>
+              <ul>
+                <li><a href="../CalcII/Vectors_Basics.html" class="mm-link">Vectors - The Basics</a></li>
+                <li><a href="../CalcII/VectorArithmetic.html" class="mm-link">Vector Arithmetic</a></li>
+                <li><a href="../CalcII/DotProduct.html" class="mm-link">Dot Product</a></li>
+                <li><a href="../CalcII/CrossProduct.html" class="mm-link">Cross Product</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/3DSpace.html" class="mm-link">3-Dimensional Space</a>
+              <ul>
+                <li><a href="../CalcII/3DCoords.html" class="mm-link">The 3-D Coordinate System</a></li>
+                <li><a href="../CalcII/EqnsOfLines.html" class="mm-link">Equations of Lines</a></li>
+                <li><a href="../CalcII/EqnsOfPlanes.html" class="mm-link">Equations of Planes</a></li>
+                <li><a href="../CalcII/QuadricSurfaces.html" class="mm-link">Quadric Surfaces</a></li>
+                <li><a href="../CalcII/MultiVrbleFcns.html" class="mm-link">Functions of Several Variables</a></li>
+                <li><a href="../CalcII/VectorFunctions.html" class="mm-link">Vector Functions</a></li>
+                <li><a href="../CalcII/VectorFcnsCalculus.html" class="mm-link">Calculus with Vector Functions</a></li>
+                <li><a href="../CalcII/TangentNormalVectors.html" class="mm-link">Tangent, Normal and Binormal Vectors</a></li>
+                <li><a href="../CalcII/VectorArcLength.html" class="mm-link">Arc Length with Vector Functions</a></li>
+                <li><a href="../CalcII/Curvature.html" class="mm-link">Curvature</a></li>
+                <li><a href="../CalcII/Velocity_Acceleration.html" class="mm-link">Velocity and Acceleration</a></li>
+                <li><a href="../CalcII/CylindricalCoords.html" class="mm-link">Cylindrical Coordinates</a></li>
+                <li><a href="../CalcII/SphericalCoords.html" class="mm-link">Spherical Coordinates</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../CalcIII/CalcIII.html" class="mm-link">Calculus III</a>
+          <ul>
+            <li><a href="../CalcIII/3DSpace.html" class="mm-link">3-Dimensional Space</a>
+              <ul>
+                <li><a href="../CalcIII/3DCoords.html" class="mm-link">The 3-D Coordinate System</a></li>
+                <li><a href="../CalcIII/EqnsOfLines.html" class="mm-link">Equations of Lines</a></li>
+                <li><a href="../CalcIII/EqnsOfPlanes.html" class="mm-link">Equations of Planes</a></li>
+                <li><a href="../CalcIII/QuadricSurfaces.html" class="mm-link">Quadric Surfaces</a></li>
+                <li><a href="../CalcIII/MultiVrbleFcns.html" class="mm-link">Functions of Several Variables</a></li>
+                <li><a href="../CalcIII/VectorFunctions.html" class="mm-link">Vector Functions</a></li>
+                <li><a href="../CalcIII/VectorFcnsCalculus.html" class="mm-link">Calculus with Vector Functions</a></li>
+                <li><a href="../CalcIII/TangentNormalVectors.html" class="mm-link">Tangent, Normal and Binormal Vectors</a></li>
+                <li><a href="../CalcIII/VectorArcLength.html" class="mm-link">Arc Length with Vector Functions</a></li>
+                <li><a href="../CalcIII/Curvature.html" class="mm-link">Curvature</a></li>
+                <li><a href="../CalcIII/Velocity_Acceleration.html" class="mm-link">Velocity and Acceleration</a></li>
+                <li><a href="../CalcIII/CylindricalCoords.html" class="mm-link">Cylindrical Coordinates</a></li>
+                <li><a href="../CalcIII/SphericalCoords.html" class="mm-link">Spherical Coordinates</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/PartialDerivsIntro.html" class="mm-link">Partial Derivatives</a>
+              <ul>
+                <li><a href="../CalcIII/Limits.html" class="mm-link">Limits</a></li>
+                <li><a href="../CalcIII/PartialDerivatives.html" class="mm-link">Partial Derivatives</a></li>
+                <li><a href="../CalcIII/PartialDerivInterp.html" class="mm-link">Interpretations of Partial Derivatives</a></li>
+                <li><a href="../CalcIII/HighOrderPartialDerivs.html" class="mm-link">Higher Order Partial Derivatives</a></li>
+                <li><a href="../CalcIII/Differentials.html" class="mm-link">Differentials</a></li>
+                <li><a href="../CalcIII/ChainRule.html" class="mm-link">Chain Rule</a></li>
+                <li><a href="../CalcIII/DirectionalDeriv.html" class="mm-link">Directional Derivatives</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/PartialDerivAppsIntro.html" class="mm-link">Applications of Partial Derivatives</a>
+              <ul>
+                <li><a href="../CalcIII/TangentPlanes.html" class="mm-link">Tangent Planes and Linear Approximations</a></li>
+                <li><a href="../CalcIII/GradientVectorTangentPlane.html" class="mm-link">Gradient Vector, Tangent Planes and Normal Lines</a></li>
+                <li><a href="../CalcIII/RelativeExtrema.html" class="mm-link">Relative Minimums and Maximums</a></li>
+                <li><a href="../CalcIII/AbsoluteExtrema.html" class="mm-link">Absolute Minimums and Maximums</a></li>
+                <li><a href="../CalcIII/LagrangeMultipliers.html" class="mm-link">Lagrange Multipliers</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/MultipleIntegralsIntro.html" class="mm-link">Multiple Integrals</a>
+              <ul>
+                <li><a href="../CalcIII/DoubleIntegrals.html" class="mm-link">Double Integrals</a></li>
+                <li><a href="../CalcIII/IteratedIntegrals.html" class="mm-link">Iterated Integrals</a></li>
+                <li><a href="../CalcIII/DIGeneralRegion.html" class="mm-link">Double Integrals over General Regions</a></li>
+                <li><a href="../CalcIII/DIPolarCoords.html" class="mm-link">Double Integrals in Polar Coordinates</a></li>
+                <li><a href="../CalcIII/TripleIntegrals.html" class="mm-link">Triple Integrals</a></li>
+                <li><a href="../CalcIII/TICylindricalCoords.html" class="mm-link">Triple Integrals in Cylindrical Coordinates</a></li>
+                <li><a href="../CalcIII/TISphericalCoords.html" class="mm-link">Triple Integrals in Spherical Coordinates</a></li>
+                <li><a href="../CalcIII/ChangeOfVariables.html" class="mm-link">Change of Variables</a></li>
+                <li><a href="../CalcIII/SurfaceArea.html" class="mm-link">Surface Area</a></li>
+                <li><a href="../CalcIII/Area_Volume.html" class="mm-link">Area and Volume Revisited</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/LineIntegralsIntro.html" class="mm-link">Line Integrals</a>
+              <ul>
+                <li><a href="../CalcIII/VectorFields.html" class="mm-link">Vector Fields</a></li>
+                <li><a href="../CalcIII/LineIntegralsPtI.html" class="mm-link">Line Integrals - Part I</a></li>
+                <li><a href="../CalcIII/LineIntegralsPtII.html" class="mm-link">Line Integrals - Part II</a></li>
+                <li><a href="../CalcIII/LineIntegralsVectorFields.html" class="mm-link">Line Integrals of Vector Fields</a></li>
+                <li><a href="../CalcIII/FundThmLineIntegrals.html" class="mm-link">Fundamental Theorem for Line Integrals</a></li>
+                <li><a href="../CalcIII/ConservativeVectorField.html" class="mm-link">Conservative Vector Fields</a></li>
+                <li><a href="../CalcIII/GreensTheorem.html" class="mm-link">Green's Theorem</a></li>
+                <li><a href="../CalcIII/CurlDivergence.html" class="mm-link">Curl and Divergence</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/SurfaceIntegralsIntro.html" class="mm-link">Surface Integrals</a>
+              <ul>
+                <li><a href="../CalcIII/ParametricSurfaces.html" class="mm-link">Parametric Surfaces</a></li>
+                <li><a href="../CalcIII/SurfaceIntegrals.html" class="mm-link">Surface Integrals</a></li>
+                <li><a href="../CalcIII/SurfIntVectorField.html" class="mm-link">Surface Integrals of Vector Fields</a></li>
+                <li><a href="../CalcIII/StokesTheorem.html" class="mm-link">Stokes' Theorem</a></li>
+                <li><a href="../CalcIII/DivergenceTheorem.html" class="mm-link">Divergence Theorem</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../DE/DE.html" class="mm-link">Differential Equations</a>
+          <ul>
+            <li><a href="../DE/IntroBasic.html" class="mm-link">Basic Concepts</a>
+              <ul>
+                <li><a href="../DE/Definitions.html" class="mm-link">Definitions</a></li>
+                <li><a href="../DE/DirectionFields.html" class="mm-link">Direction Fields</a></li>
+                <li><a href="../DE/FinalThoughts.html" class="mm-link">Final Thoughts</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/IntroFirstOrder.html" class="mm-link">First Order DE's</a>
+              <ul>
+                <li><a href="../DE/Linear.html" class="mm-link">Linear Equations</a></li>
+                <li><a href="../DE/Separable.html" class="mm-link">Separable Equations</a></li>
+                <li><a href="../DE/Exact.html" class="mm-link">Exact Equations</a></li>
+                <li><a href="../DE/Bernoulli.html" class="mm-link">Bernoulli Differential Equations</a></li>
+                <li><a href="../DE/Substitutions.html" class="mm-link">Substitutions</a></li>
+                <li><a href="../DE/IoV.html" class="mm-link">Intervals of Validity</a></li>
+                <li><a href="../DE/Modeling.html" class="mm-link">Modeling with First Order DE's</a></li>
+                <li><a href="../DE/EquilibriumSolutions.html" class="mm-link">Equilibrium Solutions</a></li>
+                <li><a href="../DE/EulersMethod.html" class="mm-link">Euler's Method</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/IntroSecondOrder.html" class="mm-link">Second Order DE's</a>
+              <ul>
+                <li><a href="../DE/SecondOrderConcepts.html" class="mm-link">Basic Concepts</a></li>
+                <li><a href="../DE/RealRoots.html" class="mm-link">Real & Distinct Roots</a></li>
+                <li><a href="../DE/ComplexRoots.html" class="mm-link">Complex Roots</a></li>
+                <li><a href="../DE/RepeatedRoots.html" class="mm-link">Repeated Roots</a></li>
+                <li><a href="../DE/ReductionofOrder.html" class="mm-link">Reduction of Order</a></li>
+                <li><a href="../DE/FundamentalSetsofSolutions.html" class="mm-link">Fundamental Sets of Solutions</a></li>
+                <li><a href="../DE/Wronskian.html" class="mm-link">More on the  Wronskian</a></li>
+                <li><a href="../DE/NonhomogeneousDE.html" class="mm-link">Nonhomogeneous Differential Equations</a></li>
+                <li><a href="../DE/UndeterminedCoefficients.html" class="mm-link">Undetermined Coefficients</a></li>
+                <li><a href="../DE/VariationofParameters.html" class="mm-link">Variation of Parameters</a></li>
+                <li><a href="../DE/Vibrations.html" class="mm-link">Mechanical Vibrations</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/LaplaceIntro.html" class="mm-link">Laplace Transforms</a>
+              <ul>
+                <li><a href="../DE/LaplaceDefinition.html" class="mm-link">The Definition</a></li>
+                <li><a href="../DE/LaplaceTransforms.html" class="mm-link">Laplace Transforms</a></li>
+                <li><a href="../DE/InverseTransforms.html" class="mm-link">Inverse Laplace Transforms</a></li>
+                <li><a href="../DE/StepFunctions.html" class="mm-link">Step Functions</a></li>
+                <li><a href="../DE/IVPWithLaplace.html" class="mm-link">Solving IVP's with Laplace Transforms</a></li>
+                <li><a href="../DE/IVPWithNonConstantCoefficient.html" class="mm-link">Nonconstant Coefficient IVP's</a></li>
+                <li><a href="../DE/IVPWithStepFunction.html" class="mm-link">IVP's With Step Functions</a></li>
+                <li><a href="../DE/DiracDeltaFunction.html" class="mm-link">Dirac Delta Function</a></li>
+                <li><a href="../DE/ConvolutionIntegrals.html" class="mm-link">Convolution Integrals</a></li>
+                <li><a href="../DE/Laplace_Table.html" class="mm-link">Table Of Laplace Transforms</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/SystemsIntro.html" class="mm-link">Systems of DE's</a>
+              <ul>
+                <li><a href="../DE/LA_Systems.html" class="mm-link">Review : Systems of Equations</a></li>
+                <li><a href="../DE/LA_Matrix.html" class="mm-link">Review : Matrices & Vectors</a></li>
+                <li><a href="../DE/LA_Eigen.html" class="mm-link">Review : Eigenvalues & Eigenvectors</a></li>
+                <li><a href="../DE/SystemsDE.html" class="mm-link">Systems of Differential Equations</a></li>
+                <li><a href="../DE/SolutionsToSystems.html" class="mm-link">Solutions to Systems</a></li>
+                <li><a href="../DE/PhasePlane.html" class="mm-link">Phase Plane</a></li>
+                <li><a href="../DE/RealEigenvalues.html" class="mm-link">Real Eigenvalues</a></li>
+                <li><a href="../DE/ComplexEigenvalues.html" class="mm-link">Complex Eigenvalues</a></li>
+                <li><a href="../DE/RepeatedEigenvalues.html" class="mm-link">Repeated Eigenvalues</a></li>
+                <li><a href="../DE/NonhomogeneousSystems.html" class="mm-link">Nonhomogeneous Systems</a></li>
+                <li><a href="../DE/SystemsLaplace.html" class="mm-link">Laplace Transforms</a></li>
+                <li><a href="../DE/SystemsModeling.html" class="mm-link">Modeling</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/SeriesIntro.html" class="mm-link">Series Solutions to DE's</a>
+              <ul>
+                <li><a href="../DE/PowerSeries.html" class="mm-link">Review : Power Series</a></li>
+                <li><a href="../DE/TaylorSeries.html" class="mm-link">Review : Taylor Series</a></li>
+                <li><a href="../DE/SeriesSolutions.html" class="mm-link">Series Solutions</a></li>
+                <li><a href="../DE/EulerEquations.html" class="mm-link">Euler Equations</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/IntroHigherOrder.html" class="mm-link">Higher Order Differential Equations</a>
+              <ul>
+                <li><a href="../DE/HOBasicConcepts.html" class="mm-link">Basic Concepts for <em>n</em><sup>th</sup> Order Linear Equations</a></li>
+                <li><a href="../DE/HOHomogeneousDE.html" class="mm-link">Linear Homogeneous Differential Equations</a></li>
+                <li><a href="../DE/HOUndeterminedCoeff.html" class="mm-link">Undetermined Coefficients</a></li>
+                <li><a href="../DE/HOVariationOfParam.html" class="mm-link">Variation of Parameters</a></li>
+                <li><a href="../DE/HOLaplaceTransforms.html" class="mm-link">Laplace Transforms</a></li>
+                <li><a href="../DE/HOSystems.html" class="mm-link">Systems of Differential Equations</a></li>
+                <li><a href="../DE/HOSeries.html" class="mm-link">Series Solutions</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/IntroBVP.html" class="mm-link">Boundary Value Problems &amp; Fourier Series</a>
+              <ul>
+                <li><a href="../DE/BoundaryValueProblem.html" class="mm-link">Boundary Value Problems</a></li>
+                <li><a href="../DE/BVPEvals.html" class="mm-link">Eigenvalues and Eigenfunctions</a></li>
+                <li><a href="../DE/PeriodicOrthogonal.html" class="mm-link">Periodic Functions &amp; Orthogonal Functions</a></li>
+                <li><a href="../DE/FourierSineSeries.html" class="mm-link">Fourier Sine Series</a></li>
+                <li><a href="../DE/FourierCosineSeries.html" class="mm-link">Fourier Cosine Series</a></li>
+                <li><a href="../DE/FourierSeries.html" class="mm-link">Fourier Series</a></li>
+                <li><a href="../DE/ConvergenceFourierSeries.html" class="mm-link">Convergence of Fourier Series</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/IntroPDE.html" class="mm-link">Partial Differential Equations </a>
+              <ul>
+                <li><a href="../DE/TheHeatEquation.html" class="mm-link">The Heat Equation</a></li>
+                <li><a href="../DE/TheWaveEquation.html" class="mm-link">The Wave Equation</a></li>
+                <li><a href="../DE/PDETerminology.html" class="mm-link">Terminology</a></li>
+                <li><a href="../DE/SeparationofVariables.html" class="mm-link">Separation of Variables</a></li>
+                <li><a href="../DE/SolvingHeatEquation.html" class="mm-link">Solving the Heat Equation</a></li>
+                <li><a href="../DE/HeatEqnNonZero.html" class="mm-link">Heat Equation with Non-Zero Temperature Boundaries</a></li>
+                <li><a href="../DE/LaplacesEqn.html" class="mm-link">Laplace's Equation</a></li>
+                <li><a href="../DE/VibratingString.html" class="mm-link">Vibrating String</a></li>
+                <li><a href="../DE/PDESummary.html" class="mm-link">Summary of Separation of Variables</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><span>Extras</span></li>
+        <li><a href="../../Extras/AlgebraTrigReview/AlgebraTrig.html" class="mm-link">Algebra &amp; Trig Review</a>
+          <ul>
+            <li><a href="../../Extras/AlgebraTrigReview/AlgebraIntro.html" class="mm-link">Algebra</a>
+              <ul>
+                <li><a href="../../Extras/AlgebraTrigReview/Exponents.html" class="mm-link">Exponents </a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/AbsoluteValue.html" class="mm-link">Absolute Value</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Radicals.html" class="mm-link">Radicals</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Rationalizing.html" class="mm-link">Rationalizing </a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Functions.html" class="mm-link">Functions </a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/MultPoly.html" class="mm-link">Multiplying Polynomials</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Factoring.html" class="mm-link">Factoring</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SimpRatExp.html" class="mm-link">Simplifying Rational Expressions</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Graphing.html" class="mm-link">Graphing and Common Graphs</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveEqnPtI.html" class="mm-link">Solving Equations, Part I</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveEqnPtII.html" class="mm-link">Solving Equations, Part II</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveSystems.html" class="mm-link">Solving Systems of Equations</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveIneq.html" class="mm-link">Solving Inequalities</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveAbsValue.html" class="mm-link">Absolute Value Equations and Inequalities</a></li>
+              </ul>
+            </li>
+            <li><a href="../../Extras/AlgebraTrigReview/TrigIntro.html" class="mm-link">Trigonometry</a>
+              <ul>
+                <li><a href="../../Extras/AlgebraTrigReview/TrigFunctions.html" class="mm-link">Trig Function Evaluation</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/TrigGraphs.html" class="mm-link">Graphs of Trig Functions</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/TrigFormulas.html" class="mm-link">Trig Formulas</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveTrigEqn.html" class="mm-link">Solving Trig Equations</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/InverseTrig.html" class="mm-link">Inverse Trig Functions</a></li>
+              </ul>
+            </li>
+            <li><a href="../../Extras/AlgebraTrigReview/ExpLogIntro.html" class="mm-link">Exponentials & Logarithms</a>
+              <ul>
+                <li><a href="../../Extras/AlgebraTrigReview/ExponentialFcns.html" class="mm-link">Basic Exponential Functions</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/LogarithmFcns.html" class="mm-link">Basic Logarithm Functions</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/LogProperties.html" class="mm-link">Logarithm Properties</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SimpLogs.html" class="mm-link">Simplifying Logarithms</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveExpEqn.html" class="mm-link">Solving Exponential Equations</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveLogEqn.html" class="mm-link">Solving Logarithm Equations</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../../Extras/CommonErrors/CommonMathErrors.html" class="mm-link">Common Math Errors</a>
+          <ul>
+            <li><a href="../../Extras/CommonErrors/GeneralErrors.html" class="mm-link">General Errors</a>
+            </li>
+            <li><a href="../../Extras/CommonErrors/AlgebraErrors.html" class="mm-link">Algebra Errors</a>
+            </li>
+            <li><a href="../../Extras/CommonErrors/TrigErrors.html" class="mm-link">Trig Errors</a>
+            </li>
+            <li><a href="../../Extras/CommonErrors/CommonErrors.html" class="mm-link">Common Errors</a>
+            </li>
+            <li><a href="../../Extras/CommonErrors/CalculusErrors.html" class="mm-link">Calculus Errors</a>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../../Extras/ComplexPrimer/ComplexNumbers.html" class="mm-link">Complex Number Primer</a>
+          <ul>
+            <li><a href="../../Extras/ComplexPrimer/Definition.html" class="mm-link">The Definition</a>
+            </li>
+            <li><a href="../../Extras/ComplexPrimer/Arithmetic.html" class="mm-link">Arithmetic</a>
+            </li>
+            <li><a href="../../Extras/ComplexPrimer/ConjugateModulus.html" class="mm-link">Conjugate and Modulus</a>
+            </li>
+            <li><a href="../../Extras/ComplexPrimer/Forms.html" class="mm-link">Polar and Exponential Forms</a>
+            </li>
+            <li><a href="../../Extras/ComplexPrimer/Roots.html" class="mm-link">Powers and Roots</a>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../../Extras/StudyMath/HowToStudyMath.html" class="mm-link">How To Study Math</a>
+          <ul>
+            <li><a href="../../Extras/StudyMath/GeneralTips.html" class="mm-link">General Tips</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/TakingNotes.html" class="mm-link">Taking Notes</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/GettingHelp.html" class="mm-link">Getting Help</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/Homework.html" class="mm-link">Doing Homework</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/ProblemSolving.html" class="mm-link">Problem Solving</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/StudyForExam.html" class="mm-link">Studying For an Exam</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/TakingExam.html" class="mm-link">Taking an Exam</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/Errors.html" class="mm-link">Learn From Your Errors</a>
+            </li>
+          </ul>
+        </li>
+
+        <li><span>Misc Links</span></li>
+        <li><a href="http://tutorial.math.lamar.edu/contact.aspx" class="mm-link">Contact Me</a></li>
+        <li><a href="../../links.html" class="mm-link">Links</a></li>
+        <li><a href="../../mathjax.html" class="mm-link">MathJax Help and Configuration</a></li>
+        <li><a href="../../mystudents.html" class="mm-link">My Students</a></li>
+        <li><a href="http://tutorial.math.lamar.edu/privacy.aspx" class="mm-link">Privacy Statement</a></li>
+        <li><a href="../../help.html" class="mm-link">Site Help & FAQ</a></li>
+        <li><a href="http://tutorial.math.lamar.edu/terms.aspx" class="mm-link">Terms of Use</a></li>
+      </ul>
+    </nav>
+
+
+
+    <div class="top-info-bar">
+      <span id="mobile-title" class="mobile-header-title header-title">Paul's Online Notes</span>
+      <br />
+      <span class="top-menu-breadcrumb">
+        <a href="../../index.html" id="breadcrumb_home_link" title="Go to Main Page">Home</a>
+        <span id="breadcrumb_h_b_sep_span">/ </span>
+        <a href="CalcI.html" id="breadcrumb_book_link" title="Go to Book Introduction">Calculus I</a>
+        
+        <span id="breadcrumb_b_c_sep_span">/ </span>
+        <a href="limitsIntro.html" id="breadcrumb_chapter_link" title="Go to Chapter Introduction">Limits</a>
+        
+        <span id="breadcrumb_section_span"> / The Limit</span>
+      </span>
+
+    </div>
+
+    <div id="nav_links" class="top-nav-bar">
+      
+      <span id="nav_current_notes">Notes</span>
+      <a href="http://tutorial.math.lamar.edu/Problems/CalcI/TheLimit.aspx" id="nav_links_practice" title="Go to Practice Problems for current topic.">Practice<span class="nav_desktop_extra"> Problems</span></a>
+      
+      <a href="http://tutorial.math.lamar.edu/ProblemsNS/CalcI/TheLimit.aspx" id="nav_links_asgn" title="Go to Assignment Problems for current topic.">Assignment<span class="nav_desktop_extra">  Problems</span></a>
+      
+    </div>
+
+    <div class="header-divider"></div>
+
+    <div class="content">  
+      
+      
+      <span id="SHLink_NoteMobile" class="SH-Link content-note-link-mobile">Show Mobile Notice</span>
+      <span id="SHImg_NoteMobile" class="fas fa-caret-right SH-padding content-note-link-mobile" aria-hidden="true"></span>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+
+      <span id="SHALink_S_Note" class="SH-Link SH-Hide SH-Bracket">Show All Notes</span>&nbsp;<span id="SHALink_H_Note" class="SH-Link SH-Hide SH-Bracket">Hide All Notes</span>
+      
+      
+      <div id="SHObj_NoteMobile" class="content-note-container content-note-container-mobile">
+        <div class="content-note-header">Mobile Notice</div>
+        <div class="content-note">You appear to be on a device with a "narrow" screen width (<em>i.e.</em> you are probably on a mobile phone).  Due to the nature of the mathematics on this site it is best views in landscape mode.  If your device is not in landscape mode many of the equations will run off the side of your device (should be able to scroll to see them) and some of the menu items will be cut off due to the narrow screen width.</div>
+      </div>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+
+      
+
+
+  <form method="post" action="http://tutorial.math.lamar.edu/Classes/CalcI/TheLimit.aspx" id="ctl00">
+<div class="aspNetHidden">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+</div>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="9FC82456" />
+</div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </form>
+
+  <h3>Section 2-2 : The Limit</h3>
+
+  <p>In the previous <a href="Tangents_Rates.html">section</a> we looked at a couple of problems and in both problems we had a function (slope in the tangent problem case and average rate of change in the rate of change problem) and we wanted to know how that function was behaving at some point \(x = a\).  At this stage of the game we no longer care where the functions came from and we no longer care if we’re going to see them down the road again or not.  All that we need to know or worry about is that we’ve got these functions and we want to know something about them.</p>
+
+  <p>To answer the questions in the last section we choose values of \(x\) that got closer and closer to \(x = a\) and we plugged these into the function.  We also made sure that we looked at values of \(x\) that were on both the left and the right of \(x = a\).  Once we did this we looked at our table of function values and saw what the function values were approaching as \(x\) got closer and closer to \(x = a\) and used this to guess the value that we were after.</p>
+
+  <p>This process is called <strong>taking a limit</strong> and we have some notation for this.  The limit notation for the two problems from the last section is,</p>
+
+
+  \[\mathop {\lim }\limits_{x \to 1} \frac{{2 - 2{x^2}}}{{x - 1}} =  - 4\hspace{0.75in}\mathop {\lim }\limits_{t \to 5} \frac{{{t^3} - 6{t^2} + 25}}{{t - 5}} = 15\]
+    
+    <p>In this notation we will note that we always give the function that we’re working with and we also give the value of \(x\) (or \(t\)) that we are moving in towards.</p>
+
+  <p>In this section we are going to take an intuitive approach to limits and try to get a feel for what they are and what they can tell us about a function.  With that goal in mind we are not going to get into how we actually compute limits yet.  We will instead rely on what we did in the previous section as well as another approach to guess the value of the limits.</p>
+
+  <p>Both approaches that we are going to use in this section are designed to help us understand just what limits are.  In general, we don’t typically use the methods in this section to compute limits and in many cases can be very difficult to use to even estimate the value of a limit and/or will give the wrong value on occasion.  We will look at actually computing limits in a couple of sections.</p>
+
+  <p>Let’s first start off with the following “definition” of a limit.</p>
+
+  <h4>Definition</h4>
+  <div class="definition">
+    <p>We say that the limit of \(f(x)\) is \(L\) as \(x\) approaches \(a and write this as</p>
+
+    \[\mathop {\lim }\limits_{x \to a} f\left( x \right) = L\]
+          
+  <p>provided we can make \(f(x)\) as close to \(L\) as we want for all \(x\) sufficiently close to \(a\), from both sides, without actually letting \(x\) be \(a\).</p>
+  </div>
+
+  <p>This is not the exact, precise definition of a limit.  If you would like to see the more precise and mathematical definition of a limit you should check out the <a href="DefnOfLimit.html">The Definition of a Limit</a> section at the end of this chapter.  The definition given above is more of a “working” definition.  This definition helps us to get an idea of just what limits are and what they can tell us about functions.</p>
+    
+  <p>So just what does this definition mean?  Well let’s suppose that we know that the limit does in fact exist.  According to our “working” definition we can then decide how close to \(L\) that we’d like to make \(f(x)\).  For sake of argument let’s suppose that we want to make \(f(x)\) no more than 0.001 away from \(L\).  This means that we want one of the following</p>
+    
+  \[\begin{array}{lcl}f\left( x \right) - L &lt; 0.001 & \hspace{0.25in} & {\mbox{if }}f\left( x \right){\mbox{ is larger than L}}\\ L - f\left( x \right) &lt; 0.001& \hspace{0.25in} & {\mbox{if }}f\left( x \right){\mbox{ is smaller than L}}\end{array}\]
+    
+    <p>Now according to the “working” definition this means that if we get \(x\) sufficiently close to \(a\) we can make one of the above true.  However, it actually says a little more.  It says that somewhere out there in the world is a value of \(x\), say \(X\), so that for all \(x\)’s that are closer to \(a\) than \(X\) then one of the above statements will be true.</p>
+    
+    <p>This is a fairly important idea.  There are many functions out there in the world that we can make as close to \(L\) for specific values of \(x\) that are close to \(a\), but there will be other values of \(x\) closer to \(a\) that give functions values that are nowhere near close to \(L\).  In order for a limit to exist once we get \(f(x)\) as close to \(L\) as we want for some \(x\) then it will need to stay in that close to \(L\) (or get closer) for all values of \(x\) that are closer to \(a\).  We’ll see an <a href="#Limit_Limit_Ex4">example</a> of this later in this section.</p>
+    
+    <p>In somewhat simpler terms the definition says that as \(x\) gets closer and closer to \(x=a\) (from both sides of course…) then \(f(x)\) <strong>must</strong> be getting closer and closer to \(L\).  Or, as we move in towards \(x=a\) then \(f(x)\) <strong>must</strong> be moving in towards \(L\).</p>
+    
+    <p>It is important to note once again that we must look at values of \(x\) that are on both sides of \(x=a\).  We should also note that we are not allowed to use \(x=a\) in the definition.  We will often use the information that limits give us to get some information about what is going on right at \(x=a\), but the limit itself is not concerned with what is actually going on at \(x=a\).  The limit is only concerned with what is going on around the point \(x=a\).  This is an important concept about limits that we need to keep in mind.</p>
+    
+    <p>An alternative notation that we will occasionally use in denoting limits is</p>
+    
+      \[f(x) \to L\hspace{0.25in}{\rm{as}}\hspace{0.25in}x \to a\]
+    
+    <p>How do we use this definition to help us estimate limits?  We do exactly what we did in the previous <a href="Tangents_Rates.html">section</a>.  We take \(x\)’s on both sides of \(x=a\) that move in closer and closer to \(a\) and we plug these into our function.  We then look to see if we can determine what number the function values are moving in towards and use this as our estimate.</p>
+    
+    <p>Let’s work an example.</p>
+    <a class="anchor" name="Limit_Limit_Ex1"></a>
+  <div class="example">
+    <span class="example-title">Example 1</span> Estimate the value of the following limit.
+    \[\mathop {\lim }\limits_{x \to 2} \frac{{{x^2} + 4x - 12}}{{{x^2} - 2x}}\]
+    <div class="example-content">
+      <span id="SHLink_Soln1" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln1" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln1" class="soln-content">
+        <p>Notice that we did say estimate the value of the limit.  Again, we are not going to directly compute limits in this section.  The point of this section is to give us a better idea of how limits work and what they can tell us about the function.</p>
+          
+          <p>So, with that in mind we are going to work this in pretty much the same way that we did in the last section.  We will choose values of \(x\) that get closer and closer to \(x=2\) and plug these values into the function.  Doing this gives the following table of values.</p>
+          
+            <table class="table-no-outer-border">
+              <tr>
+                <th>\(x\)</th>
+                <th>\(f(x)\)</th>
+                <th>\(x\)</th>
+                <th style="border-right:unset">\(f(x)\)</th>
+              </tr>
+              <tr>
+                <td>2.5</td>
+                <td>3.4</td>
+                <td>1.5</td>
+                <td style="border:unset">5.0</td>
+              </tr>
+              <tr>
+                <td>2.1</td>
+                <td>3.857142857</td>
+                <td>1.9</td>
+                <td style="border:unset">4.157894737</td>
+              </tr>
+              <tr>
+                <td>2.01</td>
+                <td>3.985074627</td>
+                <td>1.99</td>
+                <td style="border:unset">4.015075377</td>
+              </tr>
+              <tr>
+                <td>2.001</td>
+                <td>3.998500750</td>
+                <td>1.999</td>
+                <td style="border:unset">4.001500750</td>
+              </tr>
+              <tr>
+                <td>2.0001</td>
+                <td>3.999850007</td>
+                <td>1.9999</td>
+                <td style="border:unset">4.000150008</td>
+              </tr>
+              <tr>
+                <td>2.00001</td>
+                <td>3.999985000</td>
+                <td>1.99999</td>
+                <td style="border:unset">4.000015000</td>
+              </tr>
+            </table>
+          
+          <p>Note that we made sure and picked values of \(x\) that were on both sides of \(x = 2\) and that we moved in very close to \(x = 2\) to make sure that any trends that we might be seeing are in fact correct.</p>
+          
+          <p>Also notice that we can’t actually plug in \(x = 2\) into the function as this would give us a division by zero error.  This is not a problem since the limit doesn’t care what is happening at the point in question.</p>
+          
+          <p>From this table it appears that the function is going to 4 as \(x\) approaches 2, so</p>
+          
+            \[\mathop {\lim }\limits_{x \to 2} \frac{{{x^2} + 4x - 12}}{{{x^2} - 2x}} = 4\]
+      </div>
+    </div>
+  </div>
+    
+  <p>Let’s think a little bit more about what’s going on here.  Let’s graph the function from the last example.  The graph of the function in the range of \(x\)’s that were interested in is shown below.</p>
+    
+  <div class="center-div"><img alt="This is the graph described above.  It is a vaguely upwards cupped curve that starts at approximately (0.8.10) and decreases until reaching approximately (4,3).  Also, as noted above there is an open dot at the point (2,4).  There are also arrows that flow along the graph and go towards (2,4) from both sides and set of dashed lines that go from (2,4) towards the x and y axis to make the coordinates of the point clear." height="243" src="http://tutorial.math.lamar.edu/Classes/CalcI/TheLimit_Files/image001.png" width="360" /></div>
+    
+    <p>First, notice that there is a rather large open dot at \(x = 2\).  This is there to remind us that the function (and hence the graph) doesn’t exist at \(x = 2\).</p>
+    
+    <p>As we were plugging in values of \(x\) into the function we are in effect moving along the graph in towards the point as \(x = 2\).  This is shown in the graph by the two arrows on the graph that are moving in towards the point.</p>
+    
+    <p>When we are computing limits the question that we are really asking is what \(y\) value is our graph approaching as we move in towards \(x = a\) on our graph.  We are <strong>NOT</strong> asking what \(y\) value the graph takes at the point in question.  In other words, we are asking what the graph is doing <strong>around</strong> the point \(x = a\).  In our case we can see that as \(x\) moves in towards 2 (from both sides) the function is approaching \(y = 4\) even though the function itself doesn’t even exist at \(x = 2\).  Therefore, we can say that the limit is in fact 4.</p>
+    
+    <p>So, what have we learned about limits?  Limits are asking what the function is doing <strong>around</strong> \(x = a\) and are <strong>not</strong> concerned with what the function is actually doing at \(x = a\).  This is a good thing as many of the functions that we’ll be looking at won’t even exist at \(x = a\) as we saw in our last example.</p>
+    
+    <p>Let’s work another example to drive this point home.</p>
+    <a class="anchor" name="Limit_Limit_Ex2"></a>
+  
+  <div class="example">
+    <span class="example-title">Example 2</span> Estimate the value of the following limit.
+    \[\mathop {\lim }\limits_{x \to 2} g\left( x \right)\hspace{0.25in}{\mbox{where,}}\hspace{0.25in}g\left( x \right) = \left\{ \begin{array}{ll}\displaystyle \frac{{{x^2} + 4x - 12}}{{{x^2} - 2x}} & {\mbox{if }}x \ne 2\\ 6 & {\mbox{if }}x = 2\end{array} \right.\]
+    <div class="example-content">
+      <span id="SHLink_Soln2" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln2" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln2" class="soln-content">
+        <p>The first thing to note here is that this is exactly the same function as the first example with the exception that we’ve now given it a value for \(x = 2\).  So, let’s first note that</p>
+          
+        \[g\left( 2 \right) = 6\]
+          
+        <p>As far as estimating the value of this limit goes, nothing has changed in comparison to the first example.  We could build up a table of values as we did in the first example or we could take a quick look at the graph of the function.  Either method will give us the value of the limit.</p>
+          
+        <p>Let’s first take a look at a table of values and see what that tells us.  Notice that the presence of the value for the function at \(x = 2\) will not change our choices for \(x\).  We only choose values of \(x\) that are getting closer to \(x = 2\) but we never take \(x = 2\).  In other words, the table of values that we used in the first example will be exactly the same table that we’ll use here.  So, since we’ve already got it down once there is no reason to redo it here.</p>
+          
+        <p>From this table it is again clear that the limit is,</p>
+          
+        \[\mathop {\lim }\limits_{x \to 2} g\left( x \right) = 4\]
+          
+          <p>The limit is <strong>NOT</strong> 6!  Remember from the discussion after the first example that limits do not care what the function is actually doing at the point in question.  Limits are only concerned with what is going on <strong>around</strong> the point.  Since the only thing about the function that we actually changed was its behavior at \(x = 2\) this will not change the limit.</p>
+          
+          <p>Let’s also take a quick look at this function’s graph to see if this says the same thing.</p>
+          
+            <div class="center-div"><img alt="This is identical to the graph above except there is also a close dot at the point (2,6) indicating that is the function value at x=2." height="243" src="http://tutorial.math.lamar.edu/Classes/CalcI/TheLimit_Files/image002.png" width="360" /></div>
+          
+          <p>Again, we can see that as we move in towards \(x = 2\) on our graph the function is still approaching a \(y\) value of 4.  Remember that we are only asking what the function is doing <strong>around</strong> \(x = 2\) and we don’t care what the function is actually doing at \(x = 2\).  The graph then also supports the conclusion that the limit is,</p>
+          
+            \[\mathop {\lim }\limits_{x \to 2} g\left( x \right) = 4\]
+      </div>
+    </div>
+  </div>
+    
+    <p>Let’s make the point one more time just to make sure we’ve got it.  Limits are <strong>not</strong> concerned with what is going on at \(x = a\). Limits are only concerned with what is going on <strong>around</strong> \(x = a\).  We keep saying this, but it is a very important concept about limits that we must always keep in mind.  So, we will take every opportunity to remind ourselves of this idea.</p>
+    
+    <p>Since limits aren’t concerned with what is actually happening at \(x = a\) we will, on occasion, see situations like the previous example where the limit at a point and the function value at a point are different.  This won’t always happen of course.  There are times where the function value and the limit at a point are the same and we will eventually see some examples of those.  It is important however, to not get excited about things when the function and the limit do not take the same value at a point.  It happens sometimes so we will need to be able to deal with those cases when they arise.</p>
+    
+    <p>Let’s take a look another example to try and beat this idea into the ground.</p>
+    <a class="anchor" name="Limit_Limit_Ex3"></a>
+
+  <div class="example">
+    <span class="example-title">Example 3</span> Estimate the value of the following limit.
+    \[\mathop {\lim }\limits_{\theta  \to 0} \,\frac{{1 - \cos \left( \theta  \right)}}{\theta }\]
+    <div class="example-content">
+      <span id="SHLink_Soln3" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln3" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln3" class="soln-content">
+        <p>First don’t get excited about the \(\theta\) in function.  It’s just a letter, just like \(x\) is a letter!  It’s a Greek letter, but it’s a letter and you will be asked to deal with Greek letters on occasion so it’s a good idea to start getting used to them at this point.</p>
+
+        <p>Now, also notice that if we plug in \(\theta =0\) that we will get division by zero and so the function doesn’t exist at this point.  Actually, we get 0/0 at this point, but because of the division by zero this function does not exist at \(\theta =0\).</p>
+
+        <p>So, as we did in the first example let’s get a table of values and see what if we can guess what value the function is heading in towards.</p>
+
+        <table class="table-no-outer-border">
+          <tr>
+            <th>\(\theta \)</th>
+            <th>\(f\left( \theta  \right)\)</th>
+            <th>\(\theta \)</th>
+            <th style="border-right:unset">\(f\left( \theta  \right)\)</th>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>0.45969769</td>
+            <td>-1</td>
+            <td style="border:unset">-0.45969769</td>
+          </tr>
+          <tr>
+            <td>0.1</td>
+            <td>0.04995835</td>
+            <td>-0.1</td>
+            <td style="border:unset">-0.04995835</td>
+          </tr>
+          <tr>
+            <td>0.01</td>
+            <td>0.00499996</td>
+            <td>-0.01</td>
+            <td style="border:unset">-0.00499996</td>
+          </tr>
+          <tr>
+            <td>0.001</td>
+            <td>0.00049999</td>
+            <td>-0.001</td>
+            <td style="border:unset">-0.00049999</td>
+          </tr>
+        </table>
+
+        <p>Okay, it looks like the function is moving in towards a value of zero as \(\theta\) moves in towards 0, from both sides of course.</p>
+
+        <p>Therefore, the we will guess that the limit has the value,</p>
+
+        \[\mathop {\lim }\limits_{\theta  \to 0} \,\frac{{1 - \cos \left( \theta  \right)}}{\theta } = 0\]
+      </div>
+    </div>
+  </div>
+
+  <p>So, once again, the limit had a value even though the function didn’t exist at the point we were interested in.</p>
+    
+    <p>It’s now time to work a couple of more examples that will lead us into the next idea about limits that we’re going to want to discuss.</p>
+    <a class="anchor" name="Limit_Limit_Ex4"></a>
+
+  <div class="example">
+    <span class="example-title">Example 4</span> Estimate the value of the following limit.
+    \[\mathop {\lim }\limits_{t \to 0} \cos \left( {\frac{\pi }{t}} \right)\]
+    <div class="example-content">
+      <span id="SHLink_Soln4" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln4" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln4" class="soln-content">
+        <p>Let’s build up a table of values and see what’s going on with our function in this case.</p>
+
+        <table class="table-no-outer-border">
+          <tr>
+            <th>\(t\)</th>
+            <th>\(f(t)\)</th>
+            <th>\(t\)</th>
+            <th style="border-right:unset">\(f(t)\)</th>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>-1</td>
+            <td>-1</td>
+            <td style="border:unset">-1</td>
+          </tr>
+          <tr>
+            <td>0.1</td>
+            <td>1</td>
+            <td>-0.1</td>
+            <td style="border:unset">1</td>
+          </tr>
+          <tr>
+            <td>0.01</td>
+            <td>1</td>
+            <td>-0.01</td>
+            <td style="border:unset">1</td>
+          </tr>
+          <tr>
+            <td>0.001</td>
+            <td>1</td>
+            <td>-0.001</td>
+            <td style="border:unset">1</td>
+          </tr>
+        </table>
+          
+          <p>Now, if we were to guess the limit from this table we would guess that the limit is 1.  However, if we did make this guess we would be wrong.  Consider any of the following function evaluations.</p>
+          
+        \[f\left( {\frac{1}{{2001}}} \right) =  - 1\hspace{0.55in}f\left( {\frac{2}{{2001}}} \right) = 0\hspace{0.5in}f\left( {\frac{4}{{4001}}} \right) = \frac{{\sqrt 2 }}{2}\]
+          
+        <p>In all three of these function evaluations we evaluated the function at a number that is less than 0.001 and got three totally different numbers.  Recall that the definition of the limit that we’re working with requires that the function be approaching a single value (our guess) as \(t\) gets closer and closer to the point in question.  It doesn’t say that only some of the function values must be getting closer to the guess.  It says that all the function values must be getting closer and closer to our guess.</p>
+          
+          <p>To see what’s happening here a graph of the function would be convenient.</p>
+          
+            <div class="center-div"><img alt="This is the graph of \(\cos \left( \frac{\pi }{t} \right)\)  and is a wave whose wavelength gets increasingly smaller as the graph approaches the y-axis.  The wavelength is so short near the y-axis that the graph starts to appear as just a solid bar instead of an actual line/curve that one would expect from a curve.  It is graphed on \(-1 &lt; t &lt; 1\)." height="239" src="http://tutorial.math.lamar.edu/Classes/CalcI/TheLimit_Files/image003.png" width="360" /></div>
+
+          <p>From this graph we can see that as we move in towards \(t = 0\) the function starts oscillating wildly and in fact the oscillations increases in speed the closer to \(t = 0\) that we get.  Recall from our definition of the limit that in order for a limit to exist the function must be settling down in towards a single value as we get closer to the point in question.</p>
+          
+          <p>This function clearly does not settle in towards a single number and so this limit <strong>does not exist</strong>!</p>
+      </div>
+    </div>
+  </div>
+
+
+    
+    <p>This last example points out the drawback of just picking values of the variable and using a table of function values to estimate the value of a limit.  The values of the variable that we chose in the previous example were valid and in fact were probably values that many would have picked.  In fact, they were exactly the same values we used in the problem before this one and they worked in that problem!</p>
+    
+    <p>When using a table of values there will always be the possibility that we aren’t choosing the correct values and that we will guess incorrectly for our limit.  This is something that we should always keep in mind when doing this to guess the value of limits.  In fact, this is such a problem that after this section we will never use a table of values to guess the value of a limit again.</p>
+    
+    <p>This last example also has shown us that limits do not have to exist.  To that point we’ve only seen limits that existed, but that just doesn’t always have to be the case.</p>
+    
+    <p>Let’s take a look at one more example in this section.</p>
+    <a class="anchor" name="Limit_Limit_Ex5"></a>
+
+  <div class="example">
+    <span class="example-title">Example 5</span> Estimate the value of the following limit.
+    \[\mathop {\lim }\limits_{t \to 0} H\left( t \right)\hspace{0.25in}{\mbox{where,}}\hspace{0.25in}H\left( t \right) = \left\{ \begin{array}{ll}0 & {\mbox{if }}t &lt; 0\\ 1 & {\mbox{if }}t \ge 0\end{array} \right.\]
+    <div class="example-content">
+      <span id="SHLink_Soln5" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln5" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln5" class="soln-content">
+        <p>This function is often called either the <strong>Heaviside</strong> or <strong>step</strong> function.  We could use a table of values to estimate the limit, but it’s probably just as quick in this case to use the graph so let’s do that.  Below is the graph of this function.</p>
+          
+        <div class="center-div"><img alt="This is the graph of the Heaviside function.  It consists of a horizontal line at y=1 to the right of the y-axis and a horizontal line at y=0 to the left of the y-axis.  Also included are two arrows following the graph as it goes towards the y-axis." height="249" src="http://tutorial.math.lamar.edu/Classes/CalcI/TheLimit_Files/image004.png" width="360" /></div>
+          
+        <p>We can see from the graph that if we approach \(t = 0\) from the right side the function is moving in towards a \(y\) value of 1.  Well actually it’s just staying at 1, but in the terminology that we’ve been using in this section it’s moving in towards 1…</p>
+          
+          <p>Also, if we move in towards \(t = 0\) from the left the function is moving in towards a \(y\) value of 0.</p>
+          
+          <p>According to our definition of the limit the function needs to move in towards a single value as we move in towards \(t = a\) (from both sides).  This isn’t happening in this case and so in this example we will also say that the limit doesn’t exist.</p>
+          
+          <p>Note that the limit in this example is a little different from the previous example.  In the previous example the function did not settle down to a single number as we moved in towards \(t = 0\).  In this example however, the function does settle down to a single number as \(t = 0\) on either side.  The problem is that the number is different on each side of \(t = 0\).  This is an idea that we’ll look at in a little more detail in the next section.</p>
+      </div>
+    </div>
+  </div>
+    
+    <p>Let’s summarize what we (hopefully) learned in this section.  In the first three examples we saw that limits do not care what the function is actually doing at the point in question.  They only are concerned with what is happening around the point.  In fact, we can have limits at \(x = a\) even if the function itself does not exist at that point.  Likewise, even if a function exists at a point there is no reason (at this point) to think that the limit will have the same value as the function at that point.  Sometimes the limit and the function will have the same value at a point and other times they won’t have the same value.</p>
+    
+    <p>Next, in the third and fourth examples we saw the main reason for not using a table of values to guess the value of a limit.  In those examples we used exactly the same set of values, however they only worked in one of the examples.  Using tables of values to guess the value of limits is simply not a good way to get the value of a limit.  This is the only section in which we will do this.  Tables of values should always be your last choice in finding values of limits.</p>
+    
+    <p>The last two examples showed us that not all limits will in fact exist.  We should not get locked into the idea that limits will always exist.  In most calculus courses we work with limits that almost always exist and so it’s easy to start thinking that limits always exist.  Limits don’t always exist and so don’t get into the habit of assuming that they will.</p>
+    
+    <p>Finally, we saw in the fourth example that the only way to deal with the limit was to graph the function.  Sometimes this is the only way, however this example also illustrated the drawback of using graphs.  In order to use a graph to guess the value of the limit you need to be able to actually sketch the graph.  For many functions this is not that easy to do.  
+    </p>
+    
+    <p>There is another drawback in using graphs.  Even if you have the graph it’s only going to be useful if the \(y\) value is approaching an integer.  If the \(y\) value is approaching say \(\frac{{ - 15}}{{123}}\) there is no way that you’re going to be able to guess that value from the graph and we are usually going to want exact values for our limits.</p>
+    
+    <p>So, while graphs of functions can, on occasion, make your life easier in guessing values of limits they are again probably not the best way to get values of limits.  They are only going to be useful if you can get your hands on it and the value of the limit is a “nice” number.</p>
+    
+    <p>The natural question then is why did we even talk about using tables and/or graphs to estimate limits if they aren’t the best way.  There were a couple of reasons.  
+    </p>
+    
+    <p>First, they can help us get a better understanding of what limits are and what they can tell us.  If we don’t do at least a couple of limits in this way we might not get all that good of an idea on just what limits are.</p>
+    
+    <p>The second reason for doing limits in this way is to point out their drawback so that we aren’t tempted to use them all the time!</p>
+    
+    <p>We will eventually talk about how we really do limits.  However, there is one more topic that we need to discuss before doing that.  Since this section has already gone on for a while we will talk about this in the next section.</p>
+  
+
+
+      
+
+
+
+    </div>
+    <!-- End of content div -->
+
+
+    <div class="footer">
+      <div class="footer-links">
+        [<a href="http://tutorial.math.lamar.edu/Contact.aspx">Contact Me</a>]&nbsp;[<a href="../../MyStudents-2.html">My Students</a>]&nbsp;[<a href="http://tutorial.math.lamar.edu/Privacy.aspx">Privacy Statement</a>]&nbsp;[<a href="../../Help-2.html">Site Help &amp; FAQ</a>]&nbsp;[<a href="http://tutorial.math.lamar.edu/Terms.aspx">Terms of Use</a>]
+      </div>
+      <div class="footer-dates">
+        <div class="footer-copyright"><span id="lblCopyRight">&copy; 2003 - 2019 Paul Dawkins</span></div>
+        <div class="footer-spacer"></div>
+        <div class="footer-modified-date">Page Last Modified : <span id="lblModified">5/29/2018</span></div>
+      </div>
+      
+
+    </div>
+  </div>
+  <!-- End of page div...  -->
+</body>
+
+<!-- Mirrored from tutorial.math.lamar.edu/Classes/CalcI/TheLimit.aspx by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 27 Feb 2019 06:15:34 GMT -->
+</html>

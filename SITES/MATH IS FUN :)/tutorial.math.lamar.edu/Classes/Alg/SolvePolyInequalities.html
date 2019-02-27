@@ -1,0 +1,1079 @@
+
+
+<!DOCTYPE html>
+
+<html>
+
+<!-- Mirrored from tutorial.math.lamar.edu/Classes/Alg/SolvePolyInequalities.aspx by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 27 Feb 2019 06:15:34 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=yes" /><meta http-equiv="X-UA-Compatible" content="IE=edge" />  <!-- For best MathJax performance on IE  -->
+
+  <meta name="google-site-verification" content="uLoA31CJfOhIVMJWBjCmQL8xNMmmLybZU3LRKavy9WQ" /><title>
+	Algebra - Polynomial Inequalities
+</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="../../../www.googletagmanager.com/gtag/js1872?id=UA-331594-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-331594-1');
+  </script>
+
+  <link type="text/css" href="../../css/jquery.mmenu.all.css" rel="stylesheet" /><link type="text/css" href="../../css/jquery.dropdown.css" rel="stylesheet" /><link href="../../FA/css/fontawesome-all.min.css" rel="stylesheet" /><link type="text/css" href="../../css/notes-all.css" rel="stylesheet" /><link type="text/css" href="../../css/notes-google.css" rel="stylesheet" /><link type="text/css" href="../../css/notes-mmenu.css" rel="stylesheet" /><link type="text/css" href="../../css/notes-dropdown.css" rel="stylesheet" />
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+     TeX: { equationNumbers: { autoNumber: "AMS" } }
+    });
+  </script>
+  <script type="text/javascript" async src="../../../cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax2ba6.js?config=TeX-AMS_CHTML-full"></script>
+  <script type="text/javascript" src="../../../code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="../../js/jquery.mmenu.all.js"></script>
+  <script type="text/javascript" src="../../js/jquery.dropdown.js"></script>
+  <script type="text/javascript" src="../../js/notes-all.js"></script>  
+
+  <script>
+    (function () {
+      var cx = '001004262401526223570:11yv6vpcqvy';
+      var gcse = document.createElement('script');
+      gcse.type = 'text/javascript';
+      gcse.async = true;
+      gcse.src = '../../../cse.google.com/cse07b6.html?cx=' + cx;
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(gcse, s);
+    })();
+  </script>
+
+<meta http-equiv="keywords" name="keywords" content="polynomial inequality, poly inequality, solve polynomial inequality, solve poly inequality" /><meta http-equiv="description" name="description" content="In this section we will continue solving inequalities.  However, in this section we move away from linear inequalities and move on to solving inequalities that involve polynomials of degree at least 2." /></head>
+<body onload="init({Notes: 'NoteMobile;8/21/2018;true'})">
+
+  <div id="page">
+
+    <div class="header">
+      <div class="header-row">
+        <!--<a href="#menu"><span></span></a>-->
+        <div id="side-menu-icon" class="header-side-menu-icon"><a href="#menu"><span class="fas fa-bars fa-lg" aria-hidden="true" title="Main Menu - Change between topics, chapters and sections as well as a few extra pages."></span></a></div>
+        <span class="header-title"><a href="../../index.html" class="header-title-link">Paul's Online Notes</a></span>
+        <div class="header-spacer"></div>
+
+        <div id="content-top-menu" class="top-menu">
+          <button id="content-type-menu" class="top-menu-button" data-jq-dropdown="#jq-dropdown-type" title="View (Notes, Practice Problems or Assignment Problems, Show/Hide Solutions and/or Steps) Menu">
+            <span id="tab_top_menu_notes" class="top-menu-item-title">Notes</span> <span class="far fa-eye fa-lg" aria-hidden="true"></span>
+          </button>
+
+          <button id="quicknav-menu" class="top-menu-button" data-jq-dropdown="#jq-dropdown-quicknav" title="Quick Navigation (Previous/Next Sections and Problems and Full Problem List) Menu">
+            <span class="top-menu-item-title">Quick Nav</span> <span class="fas fa-exchange fa-lg" aria-hidden="true"></span>
+          </button>
+          
+          <button id="download-menu" class="top-menu-button" data-jq-dropdown="#jq-dropdown-download" title="Download pdf Menu">
+            <span class="top-menu-item-title">Download</span> <span class="far fa-download fa-lg" aria-hidden="true"></span>
+          </button>
+
+          <button id="print-menu" class="top-menu-button top-menu-button-icon-only" data-jq-dropdown="#jq-print-download" title="Print Menu">
+            <span class="far fa-print fa-lg" aria-hidden="true"></span>
+          </button>
+        </div>
+
+        <div id="header-google-search" class="header-search">
+          <gcse:search></gcse:search>
+        </div>
+        <div id="header-search-icon" title="Site Search" class="header-menu-icon"><span id="search-icon" class="fas fa-search" aria-hidden="true"></span></div>
+
+      </div>
+    </div>
+
+     <div id="jq-dropdown-type" class="jq-dropdown jq-dropdown-tip">
+      <ul class="jq-dropdown-menu">
+        
+        <li id="li_type_menu_goto" class="top-menu-nav-title">Go To</li>
+        <li id="li_type_menu_notes">
+          <span id="type_menu_notes_span" title="Viewing the Notes for the current topic." class="top-menu-current">Notes</span>
+          
+        </li>
+        <li id="li_type_menu_practice">
+          
+          
+          <a href="http://tutorial.math.lamar.edu/Problems/Alg/SolvePolyInequalities.aspx" id="type_menu_practice_link" title="Go to Practice Problems for current topic.">Practice Problems</a>
+        </li>
+        <li id="li_type_menu_asgn">
+          
+          <a href="http://tutorial.math.lamar.edu/ProblemsNS/Alg/SolvePolyInequalities.aspx" id="type_menu_asgn_link" title="Go to Assignment Problems for current topic.">Assignment Problems</a>
+        </li>
+        <li id="li_type_menu_sh" class="top-menu-nav-title">Show/Hide</li>
+        <li id="li_type_menu_show" title="Show any hidden solutions and/or steps that may be present on the page."><a href="javascript:SHPrintPage(1,0)" id="view_menu_show">Show all Solutions/Steps/<em>etc.</em></a></li>
+        <li id="li_type_menu_hide" title="Hide any visible solutions and/or steps that may be present on the page."><a href="javascript:SHPrintPage(0,0)" id="view_menu_hide">Hide all Solutions/Steps/<em>etc.</em></a></li>
+      </ul>
+    </div>
+
+    <div id="jq-dropdown-quicknav" class="jq-dropdown jq-dropdown-tip">
+      <ul class="jq-dropdown-menu">
+        <li id="li_nav_menu_sections" class="top-menu-nav-title">Sections</li>
+        <li id="li_nav_menu_prev_section"><a href="SolveLinearInequalities.html" id="a_nav_menu_prev_section" class="top-menu-nav-link" title="Previous Section : Linear Inequalities"><span class="top-menu-prev fas fa-chevron-left"></span> Linear Inequalities</a></li>
+        <li id="li_nav_menu_next_section"><a href="SolveRationalInequalities.html" id="a_nav_menu_next_section" class="top-menu-nav-link" title="Next Section : Rational Inequalities"><span class="top-menu-prev-hidden fas fa-chevron-left"></span> Rational Inequalities <span class="top-menu-next fas fa-chevron-right"></span></a></li>
+        <li id="li_nav_menu_chapters" class="top-menu-nav-title">Chapters</li>
+        <li id="li_nav_menu_prev_chapter"><a href="Preliminaries.html" id="a_nav_menu_prev_chapter" class="top-menu-nav-link" title="Previous Chapter : Preliminaries"><span class="top-menu-prev fas fa-chevron-left"></span><span class="top-menu-prev fas fa-chevron-left"></span> Preliminaries</a></li>
+        <li id="li_nav_menu_next_chapter"><a href="Graphing_Functions.html" id="a_nav_menu_next_chapter" class="top-menu-nav-link" title="Next Chapter : Graphing and Functions"><span class="top-menu-prev-hidden fas fa-chevron-left"></span><span class="top-menu-prev-hidden fas fa-chevron-left"></span> Graphing and Functions <span class="top-menu-next fas fa-chevron-right"></span><span class="top-menu-next fas fa-chevron-right"></span></a></li>
+        
+        
+        
+        
+        <li id="li_nav_menu_classes" class="top-menu-nav-title">Classes</li>
+        <li>
+          <span id="nav_menu_alg_span" title="Currently Viewing Algebra Material" class="top-menu-current">Algebra</span>
+          
+        </li>
+        <li>
+          
+          <a href="../CalcI/CalcI.html" id="nav_menu_calci_link" title="Go To Calculus I Notes">Calculus I</a>
+        </li>
+        <li>
+          
+          <a href="../CalcII/CalcII.html" id="nav_menu_calcii_link" title="Go To Calculus II Notes">Calculus II</a>
+        </li>
+        <li>
+          
+          <a href="../CalcIII/CalcIII.html" id="nav_menu_calciii_link" title="Go To Calculus III Notes">Calculus III</a>
+        </li>
+        <li>
+          
+          <a href="../DE/DE.html" id="nav_menu_de_link" title="Go To Differential Equations Notes">Differential Equations</a>
+        </li>
+        <li id="li_nav_menu_extras" class="top-menu-nav-title">Extras</li>
+        <li>
+          
+          <a href="../../Extras/AlgebraTrigReview/AlgebraTrig.html" id="nav_menu_algtrig_link" title="Go To Algebra &amp; Trig Review">Algebra &amp; Trig Review</a>
+        </li>
+        <li>
+          
+          <a href="../../Extras/CommonErrors/CommonMathErrors.html" id="nav_menu_commonerrors_link" title="Go To Common Math Errors">Common Math Errors</a>
+        </li>
+        <li>
+          
+          <a href="../../Extras/ComplexPrimer/ComplexNumbers.html" id="nav_menu_complexnumbers_link" title="Go To Complex Numbers Primer">Complex Number Primer</a>
+        </li>
+        <li>
+          
+          <a href="../../Extras/StudyMath/HowToStudyMath.html" id="nav_menu_studymath_link" title="Go To How To Study Math">How To Study Math</a>
+        </li>
+        <li>
+          
+          <a href="../../Extras/CheatSheets_Tables.html" id="nav_menu_cheattables_link" title="Go To List of Cheat Sheets and Tables">Cheat Sheets &amp; Tables</a>
+        </li>
+        <li id="li_nav_menu_misc" class="top-menu-nav-title">Misc</li>
+        <li><a href="http://tutorial.math.lamar.edu/contact.aspx" id="nav_menu_contact" title="Contact Me!">Contact Me</a></li>
+        <li><a href="../../mathjax.html" id="nav_menu_mathjax" title="Info on MathJax and MathJax Configuration Menu">MathJax Help and Configuration</a></li>
+        <li><a href="../../mystudents.html" id="nav_menu_students" title="Go here if you are currently taking a class from me!">My Students</a></li>
+      </ul>
+    </div>
+
+    <div id="jq-dropdown-download" class="jq-dropdown jq-dropdown-anchor-right jq-dropdown-tip">
+      <ul class="jq-dropdown-menu">
+        
+        <li id="li_download_menu_notes" class="top-menu-nav-title">Notes Downloads</li>
+        <li id="li_download_menu_notes_book"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=B,9,N" id="download_menu_notes_book" data-PDF="Download - Menu$Notes - Book$Algebra$/Downloads/Alg/Notes/Complete.pdf">Complete Book</a></li>
+        
+        <li id="li_download_menu_notes_chapter"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=C,51,N" id="download_menu_notes_chapter" data-PDF="Download - Menu$Notes - Chapter$Algebra - Solving Equations and Inequalities$/Downloads/Alg/Notes/Solving.pdf">Current Chapter</a></li>
+        <li id="li_download_menu_notes_section"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=S,321,N" id="download_menu_notes_section" data-PDF="Download - Menu$Notes - Section$Algebra - Polynomial Inequalities$/Downloads/Alg/Notes/SolvePolyIneq.pdf">Current Section</a></li>
+        <li id="li_download_menu_practice" class="top-menu-nav-title">Practice Problems Downloads</li>
+        
+        <li id="li_download_menu_practice_book"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=B,9,P" id="download_menu_practice_book" data-PDF="Download - Menu$Practice Problems - Book$Algebra$/Downloads/Alg/Practice Problems/Complete.pdf">Complete Book - Problems Only</a></li>
+        <li id="li_download_menu_solutions_book"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=B,9,S" id="download_menu_solutions_book" data-PDF="Download - Menu$Practice Problems Solutions - Book$Algebra$/Downloads/Alg/Practice Problems Solutions/Complete.pdf">Complete Book - Solutions</a></li>
+        <li id="li_download_menu_b_c" class="top-menu-divider"></li>
+        <li id="li_download_menu_practice_chapter"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=C,51,P" id="download_menu_practice_chapter" data-PDF="Download - Menu$Practice Problems - Chapter$Algebra - Solving Equations and Inequalities$/Downloads/Alg/Practice Problems/Solving.pdf">Current Chapter - Problems Only</a></li>
+        <li id="li_download_menu_solutions_chapter"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=C,51,S" id="download_menu_solutions_chapter" data-PDF="Download - Menu$Practice Problems Solutions - Chapter$Algebra - Solving Equations and Inequalities$/Downloads/Alg/Practice Problems Solutions/Solving.pdf">Current Chapter - Solutions</a></li>
+        <li id="li_download_menu_c_s" class="top-menu-divider"></li>
+        <li id="li_download_menu_practice_section"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=S,321,P" id="download_menu_practice_section" data-PDF="Download - Menu$Practice Problems - Section$Algebra - Polynomial Inequalities$/Downloads/Alg/Practice Problems/SolvePolyIneq.pdf">Current Section - Problems Only</a></li>
+        <li id="li_download_menu_solutions_section"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=S,321,S" id="download_menu_solutions_section" data-PDF="Download - Menu$Practice Problems Solutions - Section$Algebra - Polynomial Inequalities$/Downloads/Alg/Practice Problems Solutions/SolvePolyIneq.pdf">Current Section - Solutions</a></li>
+        <li id="li_download_menu_asgn" class="top-menu-nav-title">Assignment Problems Downloads</li>
+        
+        <li id="li_download_menu_asgn_book"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=B,9,A" id="download_menu_asgn_book" data-PDF="Download - Menu$Assignment Problems - Book$Algebra$/Downloads/Alg/Assignment Problems/Complete.pdf">Complete Book</a></li>
+        <li id="li_download_menu_asgn_chapter"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=C,51,A" id="download_menu_asgn_chapter" data-PDF="Download - Menu$Assignment Problems - Chapter$Algebra - Solving Equations and Inequalities$/Downloads/Alg/Assignment Problems/Solving.pdf">Current Chapter</a></li>
+        <li id="li_download_menu_asgn_section"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=S,321,A" id="download_menu_asgn_section" data-PDF="Download - Menu$Assignment Problems - Section$Algebra - Polynomial Inequalities$/Downloads/Alg/Assignment Problems/SolvePolyIneq.pdf">Current Section</a></li>
+        <li id="li_download_menu_other" class="top-menu-nav-title">Other Items</li>
+        <li id="li_download_menu_urls">
+          <a href="http://tutorial.math.lamar.edu/DownloadURLs.aspx?bi=9&amp;ci=51&amp;si=321" id="download_menu_urls">Get URL's for Download Items</a>
+        </li>
+      </ul>
+    </div>
+
+    <div id="jq-print-download" class="jq-dropdown jq-dropdown-anchor-right jq-dropdown-tip">
+      <ul class="jq-dropdown-menu">
+        <li id="li_print_menu_default"><a href="javascript:SHPrintPage()" id="print_menu_default">Print Page in Current Form (Default)</a></li>
+        <li id="li_print_menu_show"><a href="javascript:SHPrintPage(1,1)" id="print_menu_show">Show all Solutions/Steps and Print Page</a></li>
+        <li id="li_print_menu_hide"><a href="javascript:SHPrintPage(0,1)" id="print_menu_hide">Hide all Solutions/Steps and Print Page</a></li>
+      </ul>
+    </div>
+
+
+
+   
+
+    <nav id="menu" class="notes-nav">
+      <ul>
+        <li><a href="../../index.html" class="mm-link">Home</a></li>
+        <li><span>Classes</span></li>
+        <li><a href="Alg.html" class="mm-link">Algebra</a>
+          <ul>
+            <li><a href="Preliminaries.html" class="mm-link">Preliminaries</a>
+              <ul>
+                <li><a href="IntegerExponents.html" class="mm-link">Integer Exponents</a></li>
+                <li><a href="RationalExponents.html" class="mm-link">Rational Exponents</a></li>
+                <li><a href="Radicals.html" class="mm-link">Radicals</a></li>
+                <li><a href="Polynomials.html" class="mm-link">Polynomials</a></li>
+                <li><a href="Factoring.html" class="mm-link">Factoring Polynomials</a></li>
+                <li><a href="RationalExpressions.html" class="mm-link">Rational Expressions</a></li>
+                <li><a href="ComplexNumbers.html" class="mm-link">Complex Numbers</a></li>
+              </ul>
+            </li>
+            <li><a href="Solving.html" class="mm-link">Solving Equations and Inequalities</a>
+              <ul>
+                <li><a href="SolutionSets.html" class="mm-link">Solutions and Solution Sets</a></li>
+                <li><a href="SolveLinearEqns.html" class="mm-link">Linear Equations</a></li>
+                <li><a href="LinearApps.html" class="mm-link">Applications of Linear Equations</a></li>
+                <li><a href="SolveMultiVariable.html" class="mm-link">Equations With More Than One Variable</a></li>
+                <li><a href="SolveQuadraticEqnsI.html" class="mm-link">Quadratic Equations - Part I</a></li>
+                <li><a href="SolveQuadraticEqnsII.html" class="mm-link">Quadratic Equations - Part II</a></li>
+                <li><a href="SolveQuadraticEqnSummary.html" class="mm-link">Quadratic Equations : A Summary</a></li>
+                <li><a href="QuadraticApps.html" class="mm-link">Applications of Quadratic Equations</a></li>
+                <li><a href="ReducibleToQuadratic.html" class="mm-link">Equations Reducible to Quadratic in Form</a></li>
+                <li><a href="SolveRadicalEqns.html" class="mm-link">Equations with Radicals</a></li>
+                <li><a href="SolveLinearInequalities.html" class="mm-link">Linear Inequalities</a></li>
+                <li><a href="SolvePolyInequalities.html" class="mm-link">Polynomial Inequalities</a></li>
+                <li><a href="SolveRationalInequalities.html" class="mm-link">Rational Inequalities</a></li>
+                <li><a href="SolveAbsValueEqns.html" class="mm-link">Absolute Value Equations</a></li>
+                <li><a href="SolveAbsValueIneq.html" class="mm-link">Absolute Value Inequalities</a></li>
+              </ul>
+            </li>
+            <li><a href="Graphing_Functions.html" class="mm-link">Graphing and Functions</a>
+              <ul>
+                <li><a href="Graphing.html" class="mm-link">Graphing</a></li>
+                <li><a href="Lines.html" class="mm-link">Lines</a></li>
+                <li><a href="Circles.html" class="mm-link">Circles</a></li>
+                <li><a href="FunctionDefn.html" class="mm-link">The Definition of a Function</a></li>
+                <li><a href="GraphFunctions.html" class="mm-link">Graphing Functions</a></li>
+                <li><a href="CombineFunctions.html" class="mm-link">Combining Functions</a></li>
+                <li><a href="InverseFunctions.html" class="mm-link">Inverse Functions</a></li>
+              </ul>
+            </li>
+            <li><a href="CommonGraphs.html" class="mm-link">Common Graphs</a>
+              <ul>
+                <li><a href="Lines_Circles_PWF.html" class="mm-link">Lines, Circles and Piecewise Functions</a></li>
+                <li><a href="Parabolas.html" class="mm-link">Parabolas</a></li>
+                <li><a href="Ellipses.html" class="mm-link">Ellipses</a></li>
+                <li><a href="Hyperbolas.html" class="mm-link">Hyperbolas</a></li>
+                <li><a href="MiscFunctions.html" class="mm-link">Miscellaneous Functions</a></li>
+                <li><a href="Transformations.html" class="mm-link">Transformations</a></li>
+                <li><a href="Symmetry.html" class="mm-link">Symmetry</a></li>
+                <li><a href="GraphRationalFcns.html" class="mm-link">Rational Functions</a></li>
+              </ul>
+            </li>
+            <li><a href="PolynomialFunctions.html" class="mm-link">Polynomial Functions</a>
+              <ul>
+                <li><a href="DividingPolynomials.html" class="mm-link">Dividing Polynomials</a></li>
+                <li><a href="ZeroesOfPolynomials.html" class="mm-link">Zeroes/Roots of Polynomials</a></li>
+                <li><a href="GraphingPolynomials.html" class="mm-link">Graphing Polynomials</a></li>
+                <li><a href="FindingZeroesOfPolynomials.html" class="mm-link">Finding Zeroes of Polynomials</a></li>
+                <li><a href="PartialFractions.html" class="mm-link">Partial Fractions</a></li>
+              </ul>
+            </li>
+            <li><a href="ExpAndLog.html" class="mm-link">Exponential and Logarithm Functions</a>
+              <ul>
+                <li><a href="ExpFunctions.html" class="mm-link">Exponential Functions</a></li>
+                <li><a href="LogFunctions.html" class="mm-link">Logarithm Functions</a></li>
+                <li><a href="SolveExpEqns.html" class="mm-link">Solving Exponential Equations</a></li>
+                <li><a href="SolveLogEqns.html" class="mm-link">Solving Logarithm Equations</a></li>
+                <li><a href="ExpLogApplications.html" class="mm-link">Applications</a></li>
+              </ul>
+            </li>
+            <li><a href="Systems.html" class="mm-link">Systems of Equations</a>
+              <ul>
+                <li><a href="SystemsTwoVrble.html" class="mm-link">Linear Systems with Two Variables</a></li>
+                <li><a href="SystemsThreeVrble.html" class="mm-link">Linear Systems with Three Variables</a></li>
+                <li><a href="AugmentedMatrix.html" class="mm-link">Augmented Matrices</a></li>
+                <li><a href="AugmentedMatrixII.html" class="mm-link">More on the Augmented Matrix</a></li>
+                <li><a href="NonlinearSystems.html" class="mm-link">Nonlinear Systems</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../CalcI/CalcI.html" class="mm-link">Calculus I</a>
+          <ul>
+            <li><a href="../CalcI/ReviewIntro.html" class="mm-link">Review</a>
+              <ul>
+                <li><a href="../CalcI/Functions.html" class="mm-link">Functions</a></li>
+                <li><a href="../CalcI/InverseFunctions.html" class="mm-link">Inverse Functions</a></li>
+                <li><a href="../CalcI/TrigFcns.html" class="mm-link">Trig Functions</a></li>
+                <li><a href="../CalcI/TrigEquations.html" class="mm-link">Solving Trig Equations</a></li>
+                <li><a href="../CalcI/TrigEquations_CalcI.html" class="mm-link">Trig Equations with Calculators, Part I</a></li>
+                <li><a href="../CalcI/TrigEquations_CalcII.html" class="mm-link">Trig Equations with Calculators, Part II</a></li>
+                <li><a href="../CalcI/ExpFunctions.html" class="mm-link">Exponential Functions</a></li>
+                <li><a href="../CalcI/LogFcns.html" class="mm-link">Logarithm Functions</a></li>
+                <li><a href="../CalcI/ExpLogEqns.html" class="mm-link">Exponential and Logarithm Equations</a></li>
+                <li><a href="../CalcI/CommonGraphs.html" class="mm-link">Common Graphs</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcI/limitsIntro.html" class="mm-link">Limits</a>
+              <ul>
+                <li><a href="../CalcI/Tangents_Rates.html" class="mm-link">Tangent Lines and Rates of Change</a></li>
+                <li><a href="../CalcI/TheLimit.html" class="mm-link">The Limit</a></li>
+                <li><a href="../CalcI/OneSidedLimits.html" class="mm-link">One-Sided Limits</a></li>
+                <li><a href="../CalcI/LimitsProperties.html" class="mm-link">Limit Properties</a></li>
+                <li><a href="../CalcI/ComputingLimits.html" class="mm-link">Computing Limits</a></li>
+                <li><a href="../CalcI/InfiniteLimits.html" class="mm-link">Infinite Limits</a></li>
+                <li><a href="../CalcI/LimitsAtInfinityI.html" class="mm-link">Limits At Infinity, Part I</a></li>
+                <li><a href="../CalcI/LimitsAtInfinityII.html" class="mm-link">Limits At Infinity, Part II</a></li>
+                <li><a href="../CalcI/Continuity.html" class="mm-link">Continuity</a></li>
+                <li><a href="../CalcI/DefnOfLimit.html" class="mm-link">The Definition of the Limit</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcI/DerivativeIntro.html" class="mm-link">Derivatives</a>
+              <ul>
+                <li><a href="../CalcI/DefnOfDerivative.html" class="mm-link">The Definition of the Derivative</a></li>
+                <li><a href="../CalcI/DerivativeInterp.html" class="mm-link">Interpretation of the Derivative</a></li>
+                <li><a href="../CalcI/DiffFormulas.html" class="mm-link">Differentiation Formulas</a></li>
+                <li><a href="../CalcI/ProductQuotientRule.html" class="mm-link">Product and Quotient Rule</a></li>
+                <li><a href="../CalcI/DiffTrigFcns.html" class="mm-link">Derivatives of Trig Functions</a></li>
+                <li><a href="../CalcI/DiffExpLogFcns.html" class="mm-link">Derivatives of Exponential and Logarithm Functions</a></li>
+                <li><a href="../CalcI/DiffInvTrigFcns.html" class="mm-link">Derivatives of Inverse Trig Functions</a></li>
+                <li><a href="../CalcI/DiffHyperFcns.html" class="mm-link">Derivatives of Hyperbolic Functions</a></li>
+                <li><a href="../CalcI/ChainRule.html" class="mm-link">Chain Rule</a></li>
+                <li><a href="../CalcI/ImplicitDIff.html" class="mm-link">Implicit Differentiation</a></li>
+                <li><a href="../CalcI/RelatedRates.html" class="mm-link">Related Rates</a></li>
+                <li><a href="../CalcI/HigherOrderDerivatives.html" class="mm-link">Higher Order Derivatives</a></li>
+                <li><a href="../CalcI/LogDiff.html" class="mm-link">Logarithmic Differentiation</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcI/DerivAppsIntro.html" class="mm-link">Applications of Derivatives</a>
+              <ul>
+                <li><a href="../CalcI/RateOfChange.html" class="mm-link">Rates of Change</a></li>
+                <li><a href="../CalcI/CriticalPoints.html" class="mm-link">Critical Points</a></li>
+                <li><a href="../CalcI/MinMaxValues.html" class="mm-link">Minimum and Maximum Values</a></li>
+                <li><a href="../CalcI/AbsExtrema.html" class="mm-link">Finding Absolute Extrema</a></li>
+                <li><a href="../CalcI/ShapeofGraphPtI.html" class="mm-link">The Shape of a Graph, Part I</a></li>
+                <li><a href="../CalcI/ShapeofGraphPtII.html" class="mm-link">The Shape of a Graph, Part II</a></li>
+                <li><a href="../CalcI/MeanValueTheorem.html" class="mm-link">The Mean Value Theorem</a></li>
+                <li><a href="../CalcI/Optimization.html" class="mm-link">Optimization</a></li>
+                <li><a href="../CalcI/MoreOptimization.html" class="mm-link">More Optimization Problems</a></li>
+                <li><a href="../CalcI/LHospitalsRule.html" class="mm-link">L'Hospital's Rule and Indeterminate Forms</a></li>
+                <li><a href="../CalcI/LinearApproximations.html" class="mm-link">Linear Approximations</a></li>
+                <li><a href="../CalcI/Differentials.html" class="mm-link">Differentials</a></li>
+                <li><a href="../CalcI/NewtonsMethod.html" class="mm-link">Newton's Method</a></li>
+                <li><a href="../CalcI/BusinessApps.html" class="mm-link">Business Applications</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcI/IntegralsIntro.html" class="mm-link">Integrals</a>
+              <ul>
+                <li><a href="../CalcI/IndefiniteIntegrals.html" class="mm-link">Indefinite Integrals</a></li>
+                <li><a href="../CalcI/ComputingIndefiniteIntegrals.html" class="mm-link">Computing Indefinite Integrals</a></li>
+                <li><a href="../CalcI/SubstitutionRuleIndefinite.html" class="mm-link">Substitution Rule for Indefinite Integrals</a></li>
+                <li><a href="../CalcI/SubstitutionRuleIndefinitePtII.html" class="mm-link">More Substitution Rule</a></li>
+                <li><a href="../CalcI/AreaProblem.html" class="mm-link">Area Problem</a></li>
+                <li><a href="../CalcI/DefnOfDefiniteIntegral.html" class="mm-link">Definition of the Definite Integral</a></li>
+                <li><a href="../CalcI/ComputingDefiniteIntegrals.html" class="mm-link">Computing Definite Integrals</a></li>
+                <li><a href="../CalcI/SubstitutionRuleDefinite.html" class="mm-link">Substitution Rule for Definite Integrals</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcI/IntAppsIntro.html" class="mm-link">Applications of Integrals</a>
+              <ul>
+                <li><a href="../CalcI/AvgFcnValue.html" class="mm-link">Average Function Value</a></li>
+                <li><a href="../CalcI/AreaBetweenCurves.html" class="mm-link">Area Between Curves</a></li>
+                <li><a href="../CalcI/VolumeWithRings.html" class="mm-link">Volumes of Solids of Revolution / Method of Rings</a></li>
+                <li><a href="../CalcI/VolumeWithCylinder.html" class="mm-link">Volumes of Solids of Revolution/Method of Cylinders</a></li>
+                <li><a href="../CalcI/MoreVolume.html" class="mm-link">More Volume Problems</a></li>
+                <li><a href="../CalcI/Work.html" class="mm-link">Work</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcI/ExtrasIntro.html" class="mm-link">Extras</a>
+              <ul>
+                <li><a href="../CalcI/LimitProofs.html" class="mm-link">Proof of Various Limit Properties</a></li>
+                <li><a href="../CalcI/DerivativeProofs.html" class="mm-link">Proof of Various Derivative Properties</a></li>
+                <li><a href="../CalcI/ProofTrigDeriv.html" class="mm-link">Proof of Trig Limits</a></li>
+                <li><a href="../CalcI/DerivativeAppsProofs.html" class="mm-link">Proofs of Derivative Applications Facts</a></li>
+                <li><a href="../CalcI/ProofIntProp.html" class="mm-link">Proof of Various Integral Properties </a></li>
+                <li><a href="../CalcI/Area_Volume_Formulas.html" class="mm-link">Area and Volume Formulas</a></li>
+                <li><a href="../CalcI/TypesOfInfinity.html" class="mm-link">Types of Infinity</a></li>
+                <li><a href="../CalcI/SummationNotation.html" class="mm-link">Summation Notation</a></li>
+                <li><a href="../CalcI/ConstantofIntegration.html" class="mm-link">Constant of Integration</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../CalcII/CalcII.html" class="mm-link">Calculus II</a>
+          <ul>
+            <li><a href="../CalcII/IntTechIntro.html" class="mm-link">Integration Techniques</a>
+              <ul>
+                <li><a href="../CalcII/IntegrationByParts.html" class="mm-link">Integration by Parts</a></li>
+                <li><a href="../CalcII/IntegralsWithTrig.html" class="mm-link">Integrals Involving Trig Functions</a></li>
+                <li><a href="../CalcII/TrigSubstitutions.html" class="mm-link">Trig Substitutions</a></li>
+                <li><a href="../CalcII/PartialFractions.html" class="mm-link">Partial Fractions</a></li>
+                <li><a href="../CalcII/IntegralsWithRoots.html" class="mm-link">Integrals Involving Roots</a></li>
+                <li><a href="../CalcII/IntegralsWithQuadratics.html" class="mm-link">Integrals Involving Quadratics</a></li>
+                <li><a href="../CalcII/IntegrationStrategy.html" class="mm-link">Integration Strategy</a></li>
+                <li><a href="../CalcII/ImproperIntegrals.html" class="mm-link">Improper Integrals</a></li>
+                <li><a href="../CalcII/ImproperIntegralsCompTest.html" class="mm-link">Comparison Test for Improper Integrals</a></li>
+                <li><a href="../CalcII/ApproximatingDefIntegrals.html" class="mm-link">Approximating Definite Integrals</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/IntAppsIntro.html" class="mm-link">Applications of Integrals</a>
+              <ul>
+                <li><a href="../CalcII/ArcLength.html" class="mm-link">Arc Length</a></li>
+                <li><a href="../CalcII/SurfaceArea.html" class="mm-link">Surface Area</a></li>
+                <li><a href="../CalcII/CenterOfMass.html" class="mm-link">Center of Mass</a></li>
+                <li><a href="../CalcII/HydrostaticPressure.html" class="mm-link">Hydrostatic Pressure</a></li>
+                <li><a href="../CalcII/Probability.html" class="mm-link">Probability</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/ParametricIntro.html" class="mm-link">Parametric Equations and Polar Coordinates</a>
+              <ul>
+                <li><a href="../CalcII/ParametricEqn.html" class="mm-link">Parametric Equations and Curves</a></li>
+                <li><a href="../CalcII/ParaTangent.html" class="mm-link">Tangents with Parametric Equations</a></li>
+                <li><a href="../CalcII/ParaArea.html" class="mm-link">Area with Parametric Equations</a></li>
+                <li><a href="../CalcII/ParaArcLength.html" class="mm-link">Arc Length with Parametric Equations</a></li>
+                <li><a href="../CalcII/ParaSurfaceArea.html" class="mm-link">Surface Area with Parametric Equations</a></li>
+                <li><a href="../CalcII/PolarCoordinates.html" class="mm-link">Polar Coordinates</a></li>
+                <li><a href="../CalcII/PolarTangents.html" class="mm-link">Tangents with Polar Coordinates</a></li>
+                <li><a href="../CalcII/PolarArea.html" class="mm-link">Area with Polar Coordinates</a></li>
+                <li><a href="../CalcII/PolarArcLength.html" class="mm-link">Arc Length with Polar Coordinates</a></li>
+                <li><a href="../CalcII/PolarSurfaceArea.html" class="mm-link">Surface Area with Polar Coordinates</a></li>
+                <li><a href="../CalcII/ArcLength_SurfaceArea.html" class="mm-link">Arc Length and Surface Area Revisited</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/SeriesIntro.html" class="mm-link">Series & Sequences</a>
+              <ul>
+                <li><a href="../CalcII/Sequences.html" class="mm-link">Sequences</a></li>
+                <li><a href="../CalcII/MoreSequences.html" class="mm-link">More on Sequences</a></li>
+                <li><a href="../CalcII/Series_Basics.html" class="mm-link">Series - The Basics</a></li>
+                <li><a href="../CalcII/ConvergenceOfSeries.html" class="mm-link">Convergence/Divergence of Series</a></li>
+                <li><a href="../CalcII/Series_Special.html" class="mm-link">Special Series</a></li>
+                <li><a href="../CalcII/IntegralTest.html" class="mm-link">Integral Test</a></li>
+                <li><a href="../CalcII/SeriesCompTest.html" class="mm-link">Comparison Test/Limit Comparison Test</a></li>
+                <li><a href="../CalcII/AlternatingSeries.html" class="mm-link">Alternating Series Test</a></li>
+                <li><a href="../CalcII/AbsoluteConvergence.html" class="mm-link">Absolute Convergence</a></li>
+                <li><a href="../CalcII/RatioTest.html" class="mm-link">Ratio Test</a></li>
+                <li><a href="../CalcII/RootTest.html" class="mm-link">Root Test</a></li>
+                <li><a href="../CalcII/SeriesStrategy.html" class="mm-link">Strategy for Series</a></li>
+                <li><a href="../CalcII/EstimatingSeries.html" class="mm-link">Estimating the Value of a Series</a></li>
+                <li><a href="../CalcII/PowerSeries.html" class="mm-link">Power Series</a></li>
+                <li><a href="../CalcII/PowerSeriesandFunctions.html" class="mm-link">Power Series and Functions</a></li>
+                <li><a href="../CalcII/TaylorSeries.html" class="mm-link">Taylor Series</a></li>
+                <li><a href="../CalcII/TaylorSeriesApps.html" class="mm-link">Applications of Series</a></li>
+                <li><a href="../CalcII/BinomialSeries.html" class="mm-link">Binomial Series</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/VectorsIntro.html" class="mm-link">Vectors</a>
+              <ul>
+                <li><a href="../CalcII/Vectors_Basics.html" class="mm-link">Vectors - The Basics</a></li>
+                <li><a href="../CalcII/VectorArithmetic.html" class="mm-link">Vector Arithmetic</a></li>
+                <li><a href="../CalcII/DotProduct.html" class="mm-link">Dot Product</a></li>
+                <li><a href="../CalcII/CrossProduct.html" class="mm-link">Cross Product</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/3DSpace.html" class="mm-link">3-Dimensional Space</a>
+              <ul>
+                <li><a href="../CalcII/3DCoords.html" class="mm-link">The 3-D Coordinate System</a></li>
+                <li><a href="../CalcII/EqnsOfLines.html" class="mm-link">Equations of Lines</a></li>
+                <li><a href="../CalcII/EqnsOfPlanes.html" class="mm-link">Equations of Planes</a></li>
+                <li><a href="../CalcII/QuadricSurfaces.html" class="mm-link">Quadric Surfaces</a></li>
+                <li><a href="../CalcII/MultiVrbleFcns.html" class="mm-link">Functions of Several Variables</a></li>
+                <li><a href="../CalcII/VectorFunctions.html" class="mm-link">Vector Functions</a></li>
+                <li><a href="../CalcII/VectorFcnsCalculus.html" class="mm-link">Calculus with Vector Functions</a></li>
+                <li><a href="../CalcII/TangentNormalVectors.html" class="mm-link">Tangent, Normal and Binormal Vectors</a></li>
+                <li><a href="../CalcII/VectorArcLength.html" class="mm-link">Arc Length with Vector Functions</a></li>
+                <li><a href="../CalcII/Curvature.html" class="mm-link">Curvature</a></li>
+                <li><a href="../CalcII/Velocity_Acceleration.html" class="mm-link">Velocity and Acceleration</a></li>
+                <li><a href="../CalcII/CylindricalCoords.html" class="mm-link">Cylindrical Coordinates</a></li>
+                <li><a href="../CalcII/SphericalCoords.html" class="mm-link">Spherical Coordinates</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../CalcIII/CalcIII.html" class="mm-link">Calculus III</a>
+          <ul>
+            <li><a href="../CalcIII/3DSpace.html" class="mm-link">3-Dimensional Space</a>
+              <ul>
+                <li><a href="../CalcIII/3DCoords.html" class="mm-link">The 3-D Coordinate System</a></li>
+                <li><a href="../CalcIII/EqnsOfLines.html" class="mm-link">Equations of Lines</a></li>
+                <li><a href="../CalcIII/EqnsOfPlanes.html" class="mm-link">Equations of Planes</a></li>
+                <li><a href="../CalcIII/QuadricSurfaces.html" class="mm-link">Quadric Surfaces</a></li>
+                <li><a href="../CalcIII/MultiVrbleFcns.html" class="mm-link">Functions of Several Variables</a></li>
+                <li><a href="../CalcIII/VectorFunctions.html" class="mm-link">Vector Functions</a></li>
+                <li><a href="../CalcIII/VectorFcnsCalculus.html" class="mm-link">Calculus with Vector Functions</a></li>
+                <li><a href="../CalcIII/TangentNormalVectors.html" class="mm-link">Tangent, Normal and Binormal Vectors</a></li>
+                <li><a href="../CalcIII/VectorArcLength.html" class="mm-link">Arc Length with Vector Functions</a></li>
+                <li><a href="../CalcIII/Curvature.html" class="mm-link">Curvature</a></li>
+                <li><a href="../CalcIII/Velocity_Acceleration.html" class="mm-link">Velocity and Acceleration</a></li>
+                <li><a href="../CalcIII/CylindricalCoords.html" class="mm-link">Cylindrical Coordinates</a></li>
+                <li><a href="../CalcIII/SphericalCoords.html" class="mm-link">Spherical Coordinates</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/PartialDerivsIntro.html" class="mm-link">Partial Derivatives</a>
+              <ul>
+                <li><a href="../CalcIII/Limits.html" class="mm-link">Limits</a></li>
+                <li><a href="../CalcIII/PartialDerivatives.html" class="mm-link">Partial Derivatives</a></li>
+                <li><a href="../CalcIII/PartialDerivInterp.html" class="mm-link">Interpretations of Partial Derivatives</a></li>
+                <li><a href="../CalcIII/HighOrderPartialDerivs.html" class="mm-link">Higher Order Partial Derivatives</a></li>
+                <li><a href="../CalcIII/Differentials.html" class="mm-link">Differentials</a></li>
+                <li><a href="../CalcIII/ChainRule.html" class="mm-link">Chain Rule</a></li>
+                <li><a href="../CalcIII/DirectionalDeriv.html" class="mm-link">Directional Derivatives</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/PartialDerivAppsIntro.html" class="mm-link">Applications of Partial Derivatives</a>
+              <ul>
+                <li><a href="../CalcIII/TangentPlanes.html" class="mm-link">Tangent Planes and Linear Approximations</a></li>
+                <li><a href="../CalcIII/GradientVectorTangentPlane.html" class="mm-link">Gradient Vector, Tangent Planes and Normal Lines</a></li>
+                <li><a href="../CalcIII/RelativeExtrema.html" class="mm-link">Relative Minimums and Maximums</a></li>
+                <li><a href="../CalcIII/AbsoluteExtrema.html" class="mm-link">Absolute Minimums and Maximums</a></li>
+                <li><a href="../CalcIII/LagrangeMultipliers.html" class="mm-link">Lagrange Multipliers</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/MultipleIntegralsIntro.html" class="mm-link">Multiple Integrals</a>
+              <ul>
+                <li><a href="../CalcIII/DoubleIntegrals.html" class="mm-link">Double Integrals</a></li>
+                <li><a href="../CalcIII/IteratedIntegrals.html" class="mm-link">Iterated Integrals</a></li>
+                <li><a href="../CalcIII/DIGeneralRegion.html" class="mm-link">Double Integrals over General Regions</a></li>
+                <li><a href="../CalcIII/DIPolarCoords.html" class="mm-link">Double Integrals in Polar Coordinates</a></li>
+                <li><a href="../CalcIII/TripleIntegrals.html" class="mm-link">Triple Integrals</a></li>
+                <li><a href="../CalcIII/TICylindricalCoords.html" class="mm-link">Triple Integrals in Cylindrical Coordinates</a></li>
+                <li><a href="../CalcIII/TISphericalCoords.html" class="mm-link">Triple Integrals in Spherical Coordinates</a></li>
+                <li><a href="../CalcIII/ChangeOfVariables.html" class="mm-link">Change of Variables</a></li>
+                <li><a href="../CalcIII/SurfaceArea.html" class="mm-link">Surface Area</a></li>
+                <li><a href="../CalcIII/Area_Volume.html" class="mm-link">Area and Volume Revisited</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/LineIntegralsIntro.html" class="mm-link">Line Integrals</a>
+              <ul>
+                <li><a href="../CalcIII/VectorFields.html" class="mm-link">Vector Fields</a></li>
+                <li><a href="../CalcIII/LineIntegralsPtI.html" class="mm-link">Line Integrals - Part I</a></li>
+                <li><a href="../CalcIII/LineIntegralsPtII.html" class="mm-link">Line Integrals - Part II</a></li>
+                <li><a href="../CalcIII/LineIntegralsVectorFields.html" class="mm-link">Line Integrals of Vector Fields</a></li>
+                <li><a href="../CalcIII/FundThmLineIntegrals.html" class="mm-link">Fundamental Theorem for Line Integrals</a></li>
+                <li><a href="../CalcIII/ConservativeVectorField.html" class="mm-link">Conservative Vector Fields</a></li>
+                <li><a href="../CalcIII/GreensTheorem.html" class="mm-link">Green's Theorem</a></li>
+                <li><a href="../CalcIII/CurlDivergence.html" class="mm-link">Curl and Divergence</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/SurfaceIntegralsIntro.html" class="mm-link">Surface Integrals</a>
+              <ul>
+                <li><a href="../CalcIII/ParametricSurfaces.html" class="mm-link">Parametric Surfaces</a></li>
+                <li><a href="../CalcIII/SurfaceIntegrals.html" class="mm-link">Surface Integrals</a></li>
+                <li><a href="../CalcIII/SurfIntVectorField.html" class="mm-link">Surface Integrals of Vector Fields</a></li>
+                <li><a href="../CalcIII/StokesTheorem.html" class="mm-link">Stokes' Theorem</a></li>
+                <li><a href="../CalcIII/DivergenceTheorem.html" class="mm-link">Divergence Theorem</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../DE/DE.html" class="mm-link">Differential Equations</a>
+          <ul>
+            <li><a href="../DE/IntroBasic.html" class="mm-link">Basic Concepts</a>
+              <ul>
+                <li><a href="../DE/Definitions.html" class="mm-link">Definitions</a></li>
+                <li><a href="../DE/DirectionFields.html" class="mm-link">Direction Fields</a></li>
+                <li><a href="../DE/FinalThoughts.html" class="mm-link">Final Thoughts</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/IntroFirstOrder.html" class="mm-link">First Order DE's</a>
+              <ul>
+                <li><a href="../DE/Linear.html" class="mm-link">Linear Equations</a></li>
+                <li><a href="../DE/Separable.html" class="mm-link">Separable Equations</a></li>
+                <li><a href="../DE/Exact.html" class="mm-link">Exact Equations</a></li>
+                <li><a href="../DE/Bernoulli.html" class="mm-link">Bernoulli Differential Equations</a></li>
+                <li><a href="../DE/Substitutions.html" class="mm-link">Substitutions</a></li>
+                <li><a href="../DE/IoV.html" class="mm-link">Intervals of Validity</a></li>
+                <li><a href="../DE/Modeling.html" class="mm-link">Modeling with First Order DE's</a></li>
+                <li><a href="../DE/EquilibriumSolutions.html" class="mm-link">Equilibrium Solutions</a></li>
+                <li><a href="../DE/EulersMethod.html" class="mm-link">Euler's Method</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/IntroSecondOrder.html" class="mm-link">Second Order DE's</a>
+              <ul>
+                <li><a href="../DE/SecondOrderConcepts.html" class="mm-link">Basic Concepts</a></li>
+                <li><a href="../DE/RealRoots.html" class="mm-link">Real & Distinct Roots</a></li>
+                <li><a href="../DE/ComplexRoots.html" class="mm-link">Complex Roots</a></li>
+                <li><a href="../DE/RepeatedRoots.html" class="mm-link">Repeated Roots</a></li>
+                <li><a href="../DE/ReductionofOrder.html" class="mm-link">Reduction of Order</a></li>
+                <li><a href="../DE/FundamentalSetsofSolutions.html" class="mm-link">Fundamental Sets of Solutions</a></li>
+                <li><a href="../DE/Wronskian.html" class="mm-link">More on the  Wronskian</a></li>
+                <li><a href="../DE/NonhomogeneousDE.html" class="mm-link">Nonhomogeneous Differential Equations</a></li>
+                <li><a href="../DE/UndeterminedCoefficients.html" class="mm-link">Undetermined Coefficients</a></li>
+                <li><a href="../DE/VariationofParameters.html" class="mm-link">Variation of Parameters</a></li>
+                <li><a href="../DE/Vibrations.html" class="mm-link">Mechanical Vibrations</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/LaplaceIntro.html" class="mm-link">Laplace Transforms</a>
+              <ul>
+                <li><a href="../DE/LaplaceDefinition.html" class="mm-link">The Definition</a></li>
+                <li><a href="../DE/LaplaceTransforms.html" class="mm-link">Laplace Transforms</a></li>
+                <li><a href="../DE/InverseTransforms.html" class="mm-link">Inverse Laplace Transforms</a></li>
+                <li><a href="../DE/StepFunctions.html" class="mm-link">Step Functions</a></li>
+                <li><a href="../DE/IVPWithLaplace.html" class="mm-link">Solving IVP's with Laplace Transforms</a></li>
+                <li><a href="../DE/IVPWithNonConstantCoefficient.html" class="mm-link">Nonconstant Coefficient IVP's</a></li>
+                <li><a href="../DE/IVPWithStepFunction.html" class="mm-link">IVP's With Step Functions</a></li>
+                <li><a href="../DE/DiracDeltaFunction.html" class="mm-link">Dirac Delta Function</a></li>
+                <li><a href="../DE/ConvolutionIntegrals.html" class="mm-link">Convolution Integrals</a></li>
+                <li><a href="../DE/Laplace_Table.html" class="mm-link">Table Of Laplace Transforms</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/SystemsIntro.html" class="mm-link">Systems of DE's</a>
+              <ul>
+                <li><a href="../DE/LA_Systems.html" class="mm-link">Review : Systems of Equations</a></li>
+                <li><a href="../DE/LA_Matrix.html" class="mm-link">Review : Matrices & Vectors</a></li>
+                <li><a href="../DE/LA_Eigen.html" class="mm-link">Review : Eigenvalues & Eigenvectors</a></li>
+                <li><a href="../DE/SystemsDE.html" class="mm-link">Systems of Differential Equations</a></li>
+                <li><a href="../DE/SolutionsToSystems.html" class="mm-link">Solutions to Systems</a></li>
+                <li><a href="../DE/PhasePlane.html" class="mm-link">Phase Plane</a></li>
+                <li><a href="../DE/RealEigenvalues.html" class="mm-link">Real Eigenvalues</a></li>
+                <li><a href="../DE/ComplexEigenvalues.html" class="mm-link">Complex Eigenvalues</a></li>
+                <li><a href="../DE/RepeatedEigenvalues.html" class="mm-link">Repeated Eigenvalues</a></li>
+                <li><a href="../DE/NonhomogeneousSystems.html" class="mm-link">Nonhomogeneous Systems</a></li>
+                <li><a href="../DE/SystemsLaplace.html" class="mm-link">Laplace Transforms</a></li>
+                <li><a href="../DE/SystemsModeling.html" class="mm-link">Modeling</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/SeriesIntro.html" class="mm-link">Series Solutions to DE's</a>
+              <ul>
+                <li><a href="../DE/PowerSeries.html" class="mm-link">Review : Power Series</a></li>
+                <li><a href="../DE/TaylorSeries.html" class="mm-link">Review : Taylor Series</a></li>
+                <li><a href="../DE/SeriesSolutions.html" class="mm-link">Series Solutions</a></li>
+                <li><a href="../DE/EulerEquations.html" class="mm-link">Euler Equations</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/IntroHigherOrder.html" class="mm-link">Higher Order Differential Equations</a>
+              <ul>
+                <li><a href="../DE/HOBasicConcepts.html" class="mm-link">Basic Concepts for <em>n</em><sup>th</sup> Order Linear Equations</a></li>
+                <li><a href="../DE/HOHomogeneousDE.html" class="mm-link">Linear Homogeneous Differential Equations</a></li>
+                <li><a href="../DE/HOUndeterminedCoeff.html" class="mm-link">Undetermined Coefficients</a></li>
+                <li><a href="../DE/HOVariationOfParam.html" class="mm-link">Variation of Parameters</a></li>
+                <li><a href="../DE/HOLaplaceTransforms.html" class="mm-link">Laplace Transforms</a></li>
+                <li><a href="../DE/HOSystems.html" class="mm-link">Systems of Differential Equations</a></li>
+                <li><a href="../DE/HOSeries.html" class="mm-link">Series Solutions</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/IntroBVP.html" class="mm-link">Boundary Value Problems &amp; Fourier Series</a>
+              <ul>
+                <li><a href="../DE/BoundaryValueProblem.html" class="mm-link">Boundary Value Problems</a></li>
+                <li><a href="../DE/BVPEvals.html" class="mm-link">Eigenvalues and Eigenfunctions</a></li>
+                <li><a href="../DE/PeriodicOrthogonal.html" class="mm-link">Periodic Functions &amp; Orthogonal Functions</a></li>
+                <li><a href="../DE/FourierSineSeries.html" class="mm-link">Fourier Sine Series</a></li>
+                <li><a href="../DE/FourierCosineSeries.html" class="mm-link">Fourier Cosine Series</a></li>
+                <li><a href="../DE/FourierSeries.html" class="mm-link">Fourier Series</a></li>
+                <li><a href="../DE/ConvergenceFourierSeries.html" class="mm-link">Convergence of Fourier Series</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/IntroPDE.html" class="mm-link">Partial Differential Equations </a>
+              <ul>
+                <li><a href="../DE/TheHeatEquation.html" class="mm-link">The Heat Equation</a></li>
+                <li><a href="../DE/TheWaveEquation.html" class="mm-link">The Wave Equation</a></li>
+                <li><a href="../DE/PDETerminology.html" class="mm-link">Terminology</a></li>
+                <li><a href="../DE/SeparationofVariables.html" class="mm-link">Separation of Variables</a></li>
+                <li><a href="../DE/SolvingHeatEquation.html" class="mm-link">Solving the Heat Equation</a></li>
+                <li><a href="../DE/HeatEqnNonZero.html" class="mm-link">Heat Equation with Non-Zero Temperature Boundaries</a></li>
+                <li><a href="../DE/LaplacesEqn.html" class="mm-link">Laplace's Equation</a></li>
+                <li><a href="../DE/VibratingString.html" class="mm-link">Vibrating String</a></li>
+                <li><a href="../DE/PDESummary.html" class="mm-link">Summary of Separation of Variables</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><span>Extras</span></li>
+        <li><a href="../../Extras/AlgebraTrigReview/AlgebraTrig.html" class="mm-link">Algebra &amp; Trig Review</a>
+          <ul>
+            <li><a href="../../Extras/AlgebraTrigReview/AlgebraIntro.html" class="mm-link">Algebra</a>
+              <ul>
+                <li><a href="../../Extras/AlgebraTrigReview/Exponents.html" class="mm-link">Exponents </a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/AbsoluteValue.html" class="mm-link">Absolute Value</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Radicals.html" class="mm-link">Radicals</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Rationalizing.html" class="mm-link">Rationalizing </a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Functions.html" class="mm-link">Functions </a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/MultPoly.html" class="mm-link">Multiplying Polynomials</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Factoring.html" class="mm-link">Factoring</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SimpRatExp.html" class="mm-link">Simplifying Rational Expressions</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Graphing.html" class="mm-link">Graphing and Common Graphs</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveEqnPtI.html" class="mm-link">Solving Equations, Part I</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveEqnPtII.html" class="mm-link">Solving Equations, Part II</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveSystems.html" class="mm-link">Solving Systems of Equations</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveIneq.html" class="mm-link">Solving Inequalities</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveAbsValue.html" class="mm-link">Absolute Value Equations and Inequalities</a></li>
+              </ul>
+            </li>
+            <li><a href="../../Extras/AlgebraTrigReview/TrigIntro.html" class="mm-link">Trigonometry</a>
+              <ul>
+                <li><a href="../../Extras/AlgebraTrigReview/TrigFunctions.html" class="mm-link">Trig Function Evaluation</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/TrigGraphs.html" class="mm-link">Graphs of Trig Functions</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/TrigFormulas.html" class="mm-link">Trig Formulas</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveTrigEqn.html" class="mm-link">Solving Trig Equations</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/InverseTrig.html" class="mm-link">Inverse Trig Functions</a></li>
+              </ul>
+            </li>
+            <li><a href="../../Extras/AlgebraTrigReview/ExpLogIntro.html" class="mm-link">Exponentials & Logarithms</a>
+              <ul>
+                <li><a href="../../Extras/AlgebraTrigReview/ExponentialFcns.html" class="mm-link">Basic Exponential Functions</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/LogarithmFcns.html" class="mm-link">Basic Logarithm Functions</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/LogProperties.html" class="mm-link">Logarithm Properties</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SimpLogs.html" class="mm-link">Simplifying Logarithms</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveExpEqn.html" class="mm-link">Solving Exponential Equations</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveLogEqn.html" class="mm-link">Solving Logarithm Equations</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../../Extras/CommonErrors/CommonMathErrors.html" class="mm-link">Common Math Errors</a>
+          <ul>
+            <li><a href="../../Extras/CommonErrors/GeneralErrors.html" class="mm-link">General Errors</a>
+            </li>
+            <li><a href="../../Extras/CommonErrors/AlgebraErrors.html" class="mm-link">Algebra Errors</a>
+            </li>
+            <li><a href="../../Extras/CommonErrors/TrigErrors.html" class="mm-link">Trig Errors</a>
+            </li>
+            <li><a href="../../Extras/CommonErrors/CommonErrors.html" class="mm-link">Common Errors</a>
+            </li>
+            <li><a href="../../Extras/CommonErrors/CalculusErrors.html" class="mm-link">Calculus Errors</a>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../../Extras/ComplexPrimer/ComplexNumbers.html" class="mm-link">Complex Number Primer</a>
+          <ul>
+            <li><a href="../../Extras/ComplexPrimer/Definition.html" class="mm-link">The Definition</a>
+            </li>
+            <li><a href="../../Extras/ComplexPrimer/Arithmetic.html" class="mm-link">Arithmetic</a>
+            </li>
+            <li><a href="../../Extras/ComplexPrimer/ConjugateModulus.html" class="mm-link">Conjugate and Modulus</a>
+            </li>
+            <li><a href="../../Extras/ComplexPrimer/Forms.html" class="mm-link">Polar and Exponential Forms</a>
+            </li>
+            <li><a href="../../Extras/ComplexPrimer/Roots.html" class="mm-link">Powers and Roots</a>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../../Extras/StudyMath/HowToStudyMath.html" class="mm-link">How To Study Math</a>
+          <ul>
+            <li><a href="../../Extras/StudyMath/GeneralTips.html" class="mm-link">General Tips</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/TakingNotes.html" class="mm-link">Taking Notes</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/GettingHelp.html" class="mm-link">Getting Help</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/Homework.html" class="mm-link">Doing Homework</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/ProblemSolving.html" class="mm-link">Problem Solving</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/StudyForExam.html" class="mm-link">Studying For an Exam</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/TakingExam.html" class="mm-link">Taking an Exam</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/Errors.html" class="mm-link">Learn From Your Errors</a>
+            </li>
+          </ul>
+        </li>
+
+        <li><span>Misc Links</span></li>
+        <li><a href="http://tutorial.math.lamar.edu/contact.aspx" class="mm-link">Contact Me</a></li>
+        <li><a href="../../links.html" class="mm-link">Links</a></li>
+        <li><a href="../../mathjax.html" class="mm-link">MathJax Help and Configuration</a></li>
+        <li><a href="../../mystudents.html" class="mm-link">My Students</a></li>
+        <li><a href="http://tutorial.math.lamar.edu/privacy.aspx" class="mm-link">Privacy Statement</a></li>
+        <li><a href="../../help.html" class="mm-link">Site Help & FAQ</a></li>
+        <li><a href="http://tutorial.math.lamar.edu/terms.aspx" class="mm-link">Terms of Use</a></li>
+      </ul>
+    </nav>
+
+
+
+    <div class="top-info-bar">
+      <span id="mobile-title" class="mobile-header-title header-title">Paul's Online Notes</span>
+      <br />
+      <span class="top-menu-breadcrumb">
+        <a href="../../index.html" id="breadcrumb_home_link" title="Go to Main Page">Home</a>
+        <span id="breadcrumb_h_b_sep_span">/ </span>
+        <a href="Alg.html" id="breadcrumb_book_link" title="Go to Book Introduction">Algebra</a>
+        
+        <span id="breadcrumb_b_c_sep_span">/ </span>
+        <a href="Solving.html" id="breadcrumb_chapter_link" title="Go to Chapter Introduction">Solving Equations and Inequalities</a>
+        
+        <span id="breadcrumb_section_span"> / Polynomial Inequalities</span>
+      </span>
+
+    </div>
+
+    <div id="nav_links" class="top-nav-bar">
+      
+      <span id="nav_current_notes">Notes</span>
+      <a href="http://tutorial.math.lamar.edu/Problems/Alg/SolvePolyInequalities.aspx" id="nav_links_practice" title="Go to Practice Problems for current topic.">Practice<span class="nav_desktop_extra"> Problems</span></a>
+      
+      <a href="http://tutorial.math.lamar.edu/ProblemsNS/Alg/SolvePolyInequalities.aspx" id="nav_links_asgn" title="Go to Assignment Problems for current topic.">Assignment<span class="nav_desktop_extra">  Problems</span></a>
+      
+    </div>
+
+    <div class="header-divider"></div>
+
+    <div class="content">  
+      
+      
+      <span id="SHLink_NoteMobile" class="SH-Link content-note-link-mobile">Show Mobile Notice</span>
+      <span id="SHImg_NoteMobile" class="fas fa-caret-right SH-padding content-note-link-mobile" aria-hidden="true"></span>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+
+      <span id="SHALink_S_Note" class="SH-Link SH-Hide SH-Bracket">Show All Notes</span>&nbsp;<span id="SHALink_H_Note" class="SH-Link SH-Hide SH-Bracket">Hide All Notes</span>
+      
+      
+      <div id="SHObj_NoteMobile" class="content-note-container content-note-container-mobile">
+        <div class="content-note-header">Mobile Notice</div>
+        <div class="content-note">You appear to be on a device with a "narrow" screen width (<em>i.e.</em> you are probably on a mobile phone).  Due to the nature of the mathematics on this site it is best views in landscape mode.  If your device is not in landscape mode many of the equations will run off the side of your device (should be able to scroll to see them) and some of the menu items will be cut off due to the narrow screen width.</div>
+      </div>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+
+      
+
+
+  <form method="post" action="http://tutorial.math.lamar.edu/Classes/Alg/SolvePolyInequalities.aspx" id="ctl00">
+<div class="aspNetHidden">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+</div>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="D76257BB" />
+</div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </form>
+
+  <h3>Section 2-12 : Polynomial Inequalities</h3>
+    
+    <p>It is now time to look at solving some more difficult inequalities.  In this section we will be solving (single) inequalities that involve polynomials of degree at least two.  Or, to put it in other words, the polynomials won’t be linear any more.  Just as we saw when solving equations the process that we have for solving linear inequalities just won’t work here.</p>
+    
+    <p>Since it’s easier to see the process as we work an example let’s do that.  As with the linear inequalities, we are looking for all the values of the variable that will make the inequality true.  This means that our solution will almost certainly involve inequalities as well.  The process that we’re going to go through will give the answers in that form.</p>
+    <a class="anchor" name="Solve_PolyI_Ex1"></a>
+  <div class="example">
+    <span class="example-title">Example 1</span> Solve \({x^2} - 10 &lt; 3x\).
+    <div class="example-content">
+      <span id="SHLink_Soln1" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln1" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln1" class="soln-content">
+        <p>There is a fairly simple process to solving these.  If you can remember it you’ll always be able to solve these kinds of inequalities.</p>
+          
+          <p><strong><u>Step 1</u> : </strong>Get a zero on one side of the inequality.  It doesn’t matter which side has the zero, however, we’re going to be factoring in the next step so keep that in mind as you do this step.  Make sure that you’ve got something that’s going to be easy to factor.</p>
+          
+          
+              \[{x^2} - 3x - 10 &lt; 0\]
+          
+          <p><strong><u>Step 2</u> : </strong>If possible, factor the polynomial.  Note that it won’t always be possible to factor this, but that won’t change things.  This step is really here to simplify the process more than anything.  Almost all of the problems that we’re going to look at will be factorable.</p>
+          
+          
+              \[\left( {x - 5} \right)\left( {x + 2} \right) &lt; 0\]
+          
+          <p><strong><u>Step 3</u> : </strong>Determine where the polynomial is zero.  Notice that these points won’t make the inequality true (in this case) because \(0 &lt; 0\) is NOT a true inequality.  That isn’t a problem.  These points are going to allow us to find the actual solution.</p>
+          
+          <p>In our case the polynomial will be zero at \(x =  - 2\) and \(x = 5\).</p>
+          
+          <p>Now, before moving on to the next step let’s address why we want these points.</p>
+          
+          <p>We haven’t discussed graphing polynomials yet, however, the graphs of polynomials are nice smooth functions that have no breaks in them.  This means that as we are moving across the number line (in any direction) if the value of the polynomial changes sign (say from positive to negative) then it MUST go through zero!</p>
+          
+          <p>So, that means that these two numbers (\(x = 5\) and \(x =  - 2\)) are the ONLY places where the polynomial can change sign.  The number line is then divided into three regions.  In each region if the inequality is satisfied by one point from that region then it is satisfied for ALL points in that region.  If this wasn’t true (<em>i.e</em> it was positive at one point in the region and negative at another) then it must also be zero somewhere in that region, but that can’t happen as we’ve already determined all the places where the polynomial can be zero!  Likewise, if the inequality isn’t satisfied for some point in that region then it isn’t satisfied for ANY point in that region.</p>
+          
+          <p>This leads us into the next step.</p>
+          
+          <p><strong><u>Step 4</u> : </strong>Graph the points where the polynomial is zero (<em>i.e.</em> the points from the previous step) on a number line and pick a <strong>test point</strong> from each of the regions.  Plug each of these test points into the polynomial and determine the sign of the polynomial at that point.</p>
+          
+          <p>This is the step in the process that has all the work, although it isn’t too bad.  Here is the number line for this problem.</p>
+          
+          <div class="center-div"><img alt="Basic number line with scale in the range from -4 &lt; x &lt; 6 and divided into three ranges by vertical dashed lines at x=-2 and x=5.  In the range x &lt; -2 the polynomial is (-8)(-1)&gt;0, so positive, at the test point of x=-3.  In the range -2 &lt; x &lt; 5 the polynomial (-5)(2)&lt;0, so negative, at the test point of x=0.  In the range x &gt; 5 the polynomial is (1)(8)&gt;0, so positive, at the test point of x=6." height="192" src="http://tutorial.math.lamar.edu/Classes/Alg/SolvePolyInequalities_Files/image001.png" width="576" /></div>
+          
+          <p>Now, let’s talk about this a little.  When we pick test points make sure that you pick easy numbers to work with.  So, don’t choose large numbers or fractions unless you are forced to by the problem.</p>
+          
+          <p>Also, note that we plugged the test points into the factored from of the polynomial and all we’re really after here is whether or not the polynomial is positive or negative.  Therefore, we didn’t actually bother with values of the polynomial just the sign and we can get that from the product shown.  The product of two negatives is a positive, <em>etc</em>.</p>
+          
+          <p>We are now ready for the final step in the process.</p>
+          
+          <p><strong><u>Step 5</u> : </strong>Write down the answer.  Recall that we discussed earlier that if any point from a region satisfied the inequality then ALL points in that region satisfied the inequality and likewise if any point from a region did not satisfy the inequality then NONE of the points in that region would satisfy the inequality.</p>
+          
+          <p>This means that all we need to do is look up at the number line above.  If the test point from a region satisfies the inequality then that region is part of the solution.  If the test point doesn’t satisfy the inequality then that region isn’t part of the solution.</p>
+          
+          <p>Now, also notice that any value of \(x\) that will satisfy the original inequality will also satisfy the inequality from Step 2 and likewise, if an \(x\) satisfies the inequality from Step 2 then it will satisfy the original inequality.</p>
+          
+          <p>So, that means that all we need to do is determine the regions in which the polynomial from Step 2 is negative.  For this problem that is only the middle region.  The inequality and interval notation for the solution to this inequality are,</p>
+          
+          
+            \[ - 2 &lt; x &lt; 5\hspace{0.5in}\left( { - 2,5} \right)\]
+          
+          <p>Notice that we do need to exclude the endpoints since we have a strict inequality (&lt; in this case) in the inequality.</p>
+      </div>
+    </div>
+  </div>
+    
+    <p>Okay, that seems like a long process, however, it really isn’t.  There was lots of explanation in the previous example.  The remaining examples won’t be as long because we won’t need quite as much explanation in them.</p>
+    <a class="anchor" name="Solve_PolyI_Ex2"></a>
+  <div class="example">
+    <span class="example-title">Example 2</span> Solve \({x^2} - 5x \ge  - 6\).
+    <div class="example-content">
+      <span id="SHLink_Soln2" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln2" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln2" class="soln-content">
+        <p>Okay, this time we’ll just go through the process without all the explanations and steps.  The first thing to do is get a zero on one side and factor the polynomial if possible.</p>
+          
+            \[\begin{array}{c}{x^2} - 5x + 6 \ge 0\\ \left( {x - 3} \right)\left( {x - 2} \right) \ge 0\end{array}\]
+          
+          <p>So, the polynomial will be zero at\(x = 2\) and \(x = 3\).  Notice as well that unlike the previous example, these will be solutions to the inequality since we’ve got a “greater than or equal to” in the inequality.</p>
+          
+          <p>Here is the number line for this example.</p>
+          <div class="center-div"><img alt="Basic number line with scale in the range from 1 &lt; x &lt; 4.5 and divided into three ranges by vertical dashed lines at x=2 and x=3.  In the range x &lt; 2 the polynomial is (-2)(-1)&gt;0, so positive, at the test point of x=1.  In the range 2 &lt; x &lt; 3 the polynomial (-0.5)(0.5)&lt;0, so negative, at the test point of x=2.5.  In the range x &gt; 3 the polynomial is (1)(2)&gt;0, so positive, at the test point of x=4." height="192" src="http://tutorial.math.lamar.edu/Classes/Alg/SolvePolyInequalities_Files/image002.png" width="576" /></div>
+          <p>Notice that in this case we were forced to choose a decimal for one of the test points.</p>
+          
+          <p>Now, we want regions where the polynomial will be positive.  So, the first and last regions will be part of the solution.  Also, in this case, we’ve got an “or equal to” in the inequality and so we’ll need to include the endpoints in our solution since at this points we get zero for the inequality and \(0 \ge 0\) is a true inequality.</p>
+          
+          <p>Here is the solution in both inequality and interval notation form.</p>
+          
+            \[\begin{array}{c} - \infty  &lt; x \le 2\hspace{0.25in}{\mbox{and}}\hspace{0.25in}3 \le x &lt; \infty \\ \left( { - \infty ,2} \right]\hspace{0.25in}{\mbox{and}}\hspace{0.25in}\left[ {3,\infty } \right)\end{array}\]
+      </div>
+    </div>
+  </div>
+
+    <a class="anchor" name="Solve_PolyI_Ex3"></a>
+  <div class="example">
+    <span class="example-title">Example 3</span> Solve \({x^4} + 4{x^3} - 12{x^2} \le 0\).
+    <div class="example-content">
+      <span id="SHLink_Soln3" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln3" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln3" class="soln-content">
+        <p>Again, we’ll just jump right into the problem.  We’ve already got zero on one side so we can go straight to factoring.</p>
+          
+            \[\begin{array}{c}{x^4} + 4{x^3} - 12{x^2} \le 0\\ {x^2}\left( {{x^2} + 4x - 12} \right) \le 0\\  {x^2}\left( {x + 6} \right)\left( {x - 2} \right) \le 0\end{array}\]
+          
+          <p>So, this polynomial is zero at \(x =  - 6\), \(x = 0\) and \(x = 2\).  Here is the number line for this problem.</p>
+
+          <div class="center-div"><img alt="Basic number line with scale in the range from -7 &lt; x &lt; 3 and divided into four ranges by vertical dashed lines at x=-6, x=0 and x=2.  In the range x &lt; -6 the polynomial is (49)(-1)(-9)&gt;0, so positive, at the test point of x=-7.  In the range -6 &lt; x &lt; 0 the polynomial is (1)(5)(-3)&lt;0, so negative, at the test point of x=-1.  In the range 0 &lt; x &lt; 2 the polynomial is (1)(7)(-1)&lt;0, so negative, at the test point of x=1.  In the range x &gt; 2 the polynomial is (9)(9)(1)&gt;0, so positive, at the test point of x=3." height="192" src="http://tutorial.math.lamar.edu/Classes/Alg/SolvePolyInequalities_Files/image003.png" width="576" /></div>
+
+          <p>First, notice that unlike the first two examples these regions do NOT alternate between positive and negative.  This is a common mistake that students make.  You really do need to plug in test points from each region.  Don’t ever just plug in for the first region and then assume that the other regions will alternate from that point.</p>
+          
+          <p>Now, for our solution we want regions where the polynomial will be negative (that’s the middle two here) or zero (that’s all three points that divide the regions).  So, we can combine up the middle two regions and the three points into a single inequality in this case.  The solution, in both inequality and interval notation form, is.</p>
+          
+              \[ - 6 \le x \le 2\hspace{0.25in}\hspace{0.25in}\left[ { - 6,2} \right]\]
+      </div>
+    </div>
+  </div>
+
+    <a class="anchor" name="Solve_PolyI_Ex4"></a>
+  <div class="example">
+    <span class="example-title">Example 4</span> Solve \(\left( {x + 1} \right){\left( {x - 3} \right)^2} &gt; 0\).
+    <div class="example-content">
+      <span id="SHLink_Soln4" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln4" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln4" class="soln-content">
+        <p>The first couple of steps have already been done for us here.  So, we can just straight into the work.  This polynomial will be zero at \(x =  - 1\) and \(x = 3\).  Here is the number line for this problem.</p>
+
+          <div class="center-div"><img alt="Basic number line with scale in the range from -2 &lt; x &lt; 4 and divided into three ranges by vertical dashed lines at x=-1 and x=3.  In the range x &lt; -1 the polynomial is (-1)(25)&lt;0, so negative, at the test point of x=-2.  In the range -1 &lt; x &lt; 3 the polynomial (1)(9)&gt;0, so positive, at the test point of x=0.  In the range x &gt; 3 the polynomial is (5)(1)&gt;0, so positive, at the test point of x=4." height="192" src="http://tutorial.math.lamar.edu/Classes/Alg/SolvePolyInequalities_Files/image004.png" width="576" /></div>
+
+          <p>Again, note that the regions don’t alternate in sign!</p>
+          
+          <p>For our solution to this inequality we are looking for regions where the polynomial is positive (that’s the last two in this case), however we don’t want values where the polynomial is zero this time since we’ve got a strict inequality (&gt;) in this problem.  This means that we want the last two regions, but not \(x = 3\).</p>
+          
+          <p>So, unlike the previous example we can’t just combine up the two regions into a single inequality since that would include a point that isn’t part of the solution.  Here is the solution for this problem.</p>
+          
+            \[\begin{array}{c} - 1 &lt; x &lt; 3\hspace{0.25in}{\mbox{and}}\hspace{0.25in}3 &lt; x &lt; \infty \\ \left( { - 1,3} \right)\hspace{0.25in}{\mbox{and}}\hspace{0.25in}\left( {3,\infty } \right)\end{array}\]
+      </div>
+    </div>
+  </div>
+    
+    <p>Now, all of the examples that we’ve worked to this point involved factorable polynomials.  However, that doesn’t have to be the case.  We can work these inequalities even if the polynomial doesn’t factor.  We should work one of these just to show you how they work.</p>
+    <a class="anchor" name="Solve_PolyI_Ex5"></a>
+  <div class="example">
+    <span class="example-title">Example 5</span> Solve \(3{x^2} - 2x - 11 &gt; 0\).
+    <div class="example-content">
+      <span id="SHLink_Soln5" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln5" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln5" class="soln-content">
+        <p>In this case the polynomial doesn’t factor so we can’t do that step.  However, we do still need to know where the polynomial is zero.  We will have to use the quadratic formula for that.  Here is what the quadratic formula gives us.</p>
+          
+              \[x = \frac{{1 \pm \sqrt {34} }}{3}\]
+          <p>In order to work the problem we’ll need to reduce this to decimals.</p>
+          
+              \[x = \frac{{1 + \sqrt {34} }}{3} = 2.27698\hspace{0.5in}x = \frac{{1 - \sqrt {34} }}{3} =  - 1.61032\]
+          
+          <p>From this point on the process is identical to the previous examples.  In the number line below the dashed lines are at the approximate values of the two decimals above and the inequalities show the value of the quadratic evaluated at the test points shown.</p>
+          <div class="center-div"><img alt="Basic number line with scale in the range from -3 &lt; x &lt; 3 and divided into three ranges by vertical dashed lines at x=-1.61 and x=2.27.  In the range x &lt; -1.61 the quadratic is 5&gt;0, so positive, at the test point of x=-2.  In the range -1.61 &lt; x &lt; 2.27 the quadratic is -11&lt;0, so negative, at the test point of x=0.  In the range x &gt; 2.27 the quadratic is 10&gt;0, so positive, at the test point of x=4." height="192" src="http://tutorial.math.lamar.edu/Classes/Alg/SolvePolyInequalities_Files/image005.png" width="576" /></div>
+          
+          <p>So, it looks like we need the two outer regions for the solution.  Here is the inequality and interval notation for the solution.</p>
+          
+              \[\begin{array}{c} \displaystyle  - \infty  &lt; x &lt; \frac{{1 - \sqrt {34} }}{3}\hspace{0.25in}{\mbox{and}}\hspace{0.25in}\frac{{1 + \sqrt {34} }}{3} &lt; x &lt; \infty \\  \displaystyle \left( { - \infty ,\frac{{1 - \sqrt {34} }}{3}} \right)\hspace{0.25in}{\mbox{and}}\hspace{0.25in}\left( {\frac{{1 + \sqrt {34} }}{3},\infty } \right)\end{array}\]
+      </div>
+    </div>
+  </div>
+  
+
+
+      
+
+
+
+    </div>
+    <!-- End of content div -->
+
+
+    <div class="footer">
+      <div class="footer-links">
+        [<a href="http://tutorial.math.lamar.edu/Contact.aspx">Contact Me</a>]&nbsp;[<a href="../../MyStudents-2.html">My Students</a>]&nbsp;[<a href="http://tutorial.math.lamar.edu/Privacy.aspx">Privacy Statement</a>]&nbsp;[<a href="../../Help-2.html">Site Help &amp; FAQ</a>]&nbsp;[<a href="http://tutorial.math.lamar.edu/Terms.aspx">Terms of Use</a>]
+      </div>
+      <div class="footer-dates">
+        <div class="footer-copyright"><span id="lblCopyRight">&copy; 2003 - 2019 Paul Dawkins</span></div>
+        <div class="footer-spacer"></div>
+        <div class="footer-modified-date">Page Last Modified : <span id="lblModified">10/29/2018</span></div>
+      </div>
+      
+
+    </div>
+  </div>
+  <!-- End of page div...  -->
+</body>
+
+<!-- Mirrored from tutorial.math.lamar.edu/Classes/Alg/SolvePolyInequalities.aspx by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 27 Feb 2019 06:15:34 GMT -->
+</html>

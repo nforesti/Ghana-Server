@@ -1,0 +1,1269 @@
+
+
+<!DOCTYPE html>
+
+<html>
+
+<!-- Mirrored from tutorial.math.lamar.edu/Classes/DE/InverseTransforms.aspx by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 27 Feb 2019 06:15:36 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=yes" /><meta http-equiv="X-UA-Compatible" content="IE=edge" />  <!-- For best MathJax performance on IE  -->
+
+  <meta name="google-site-verification" content="uLoA31CJfOhIVMJWBjCmQL8xNMmmLybZU3LRKavy9WQ" /><title>
+	Differential Equations - Inverse Laplace Transforms
+</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="../../../www.googletagmanager.com/gtag/js1872?id=UA-331594-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-331594-1');
+  </script>
+
+  <link type="text/css" href="../../css/jquery.mmenu.all.css" rel="stylesheet" /><link type="text/css" href="../../css/jquery.dropdown.css" rel="stylesheet" /><link href="../../FA/css/fontawesome-all.min.css" rel="stylesheet" /><link type="text/css" href="../../css/notes-all.css" rel="stylesheet" /><link type="text/css" href="../../css/notes-google.css" rel="stylesheet" /><link type="text/css" href="../../css/notes-mmenu.css" rel="stylesheet" /><link type="text/css" href="../../css/notes-dropdown.css" rel="stylesheet" />
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+     TeX: { equationNumbers: { autoNumber: "AMS" } }
+    });
+  </script>
+  <script type="text/javascript" async src="../../../cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax2ba6.js?config=TeX-AMS_CHTML-full"></script>
+  <script type="text/javascript" src="../../../code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="../../js/jquery.mmenu.all.js"></script>
+  <script type="text/javascript" src="../../js/jquery.dropdown.js"></script>
+  <script type="text/javascript" src="../../js/notes-all.js"></script>  
+
+  <script>
+    (function () {
+      var cx = '001004262401526223570:11yv6vpcqvy';
+      var gcse = document.createElement('script');
+      gcse.type = 'text/javascript';
+      gcse.async = true;
+      gcse.src = '../../../cse.google.com/cse07b6.html?cx=' + cx;
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(gcse, s);
+    })();
+  </script>
+
+<meta http-equiv="keywords" name="keywords" content="Laplace, Laplace Transforms, Inverse Laplace Transforms, Inverse Transforms" /><meta http-equiv="description" name="description" content="In this section we ask the opposite question from the previous section.  In other words, given a Laplace transform, what function did we originally have?  We again work a variety of examples illustrating how to use the table of Laplace transforms to do this as well as some of the manipulation of the given Laplace transform that is needed in order to use the table." /></head>
+<body onload="init({Notes: 'NoteMobile;8/21/2018;true'})">
+
+  <div id="page">
+
+    <div class="header">
+      <div class="header-row">
+        <!--<a href="#menu"><span></span></a>-->
+        <div id="side-menu-icon" class="header-side-menu-icon"><a href="#menu"><span class="fas fa-bars fa-lg" aria-hidden="true" title="Main Menu - Change between topics, chapters and sections as well as a few extra pages."></span></a></div>
+        <span class="header-title"><a href="../../index.html" class="header-title-link">Paul's Online Notes</a></span>
+        <div class="header-spacer"></div>
+
+        <div id="content-top-menu" class="top-menu">
+          <button id="content-type-menu" class="top-menu-button" data-jq-dropdown="#jq-dropdown-type" title="View (Notes, Practice Problems or Assignment Problems, Show/Hide Solutions and/or Steps) Menu">
+            <span id="tab_top_menu_notes" class="top-menu-item-title">Notes</span> <span class="far fa-eye fa-lg" aria-hidden="true"></span>
+          </button>
+
+          <button id="quicknav-menu" class="top-menu-button" data-jq-dropdown="#jq-dropdown-quicknav" title="Quick Navigation (Previous/Next Sections and Problems and Full Problem List) Menu">
+            <span class="top-menu-item-title">Quick Nav</span> <span class="fas fa-exchange fa-lg" aria-hidden="true"></span>
+          </button>
+          
+          <button id="download-menu" class="top-menu-button" data-jq-dropdown="#jq-dropdown-download" title="Download pdf Menu">
+            <span class="top-menu-item-title">Download</span> <span class="far fa-download fa-lg" aria-hidden="true"></span>
+          </button>
+
+          <button id="print-menu" class="top-menu-button top-menu-button-icon-only" data-jq-dropdown="#jq-print-download" title="Print Menu">
+            <span class="far fa-print fa-lg" aria-hidden="true"></span>
+          </button>
+        </div>
+
+        <div id="header-google-search" class="header-search">
+          <gcse:search></gcse:search>
+        </div>
+        <div id="header-search-icon" title="Site Search" class="header-menu-icon"><span id="search-icon" class="fas fa-search" aria-hidden="true"></span></div>
+
+      </div>
+    </div>
+
+     <div id="jq-dropdown-type" class="jq-dropdown jq-dropdown-tip">
+      <ul class="jq-dropdown-menu">
+        
+        <li id="li_type_menu_goto" class="top-menu-nav-title">Go To</li>
+        <li id="li_type_menu_notes">
+          <span id="type_menu_notes_span" title="Viewing the Notes for the current topic." class="top-menu-current">Notes</span>
+          
+        </li>
+        <li id="li_type_menu_practice">
+          <span id="type_menu_problem_span_de" class="top-menu-item-text">Practice and Assignment problems are not yet written.  As time permits I am working on them, however I don't have the amount of free time that I used to so it will take a while before anything shows up here.</span>
+          
+          
+        </li>
+        <li id="li_type_menu_asgn">
+          
+          
+        </li>
+        <li id="li_type_menu_sh" class="top-menu-nav-title">Show/Hide</li>
+        <li id="li_type_menu_show" title="Show any hidden solutions and/or steps that may be present on the page."><a href="javascript:SHPrintPage(1,0)" id="view_menu_show">Show all Solutions/Steps/<em>etc.</em></a></li>
+        <li id="li_type_menu_hide" title="Hide any visible solutions and/or steps that may be present on the page."><a href="javascript:SHPrintPage(0,0)" id="view_menu_hide">Hide all Solutions/Steps/<em>etc.</em></a></li>
+      </ul>
+    </div>
+
+    <div id="jq-dropdown-quicknav" class="jq-dropdown jq-dropdown-tip">
+      <ul class="jq-dropdown-menu">
+        <li id="li_nav_menu_sections" class="top-menu-nav-title">Sections</li>
+        <li id="li_nav_menu_prev_section"><a href="LaplaceTransforms.html" id="a_nav_menu_prev_section" class="top-menu-nav-link" title="Previous Section : Laplace Transforms"><span class="top-menu-prev fas fa-chevron-left"></span> Laplace Transforms</a></li>
+        <li id="li_nav_menu_next_section"><a href="StepFunctions.html" id="a_nav_menu_next_section" class="top-menu-nav-link" title="Next Section : Step Functions"><span class="top-menu-prev-hidden fas fa-chevron-left"></span> Step Functions <span class="top-menu-next fas fa-chevron-right"></span></a></li>
+        <li id="li_nav_menu_chapters" class="top-menu-nav-title">Chapters</li>
+        <li id="li_nav_menu_prev_chapter"><a href="IntroSecondOrder.html" id="a_nav_menu_prev_chapter" class="top-menu-nav-link" title="Previous Chapter : Second Order DE&#39;s"><span class="top-menu-prev fas fa-chevron-left"></span><span class="top-menu-prev fas fa-chevron-left"></span> Second Order DE's</a></li>
+        <li id="li_nav_menu_next_chapter"><a href="SystemsIntro.html" id="a_nav_menu_next_chapter" class="top-menu-nav-link" title="Next Chapter : Systems of DE&#39;s"><span class="top-menu-prev-hidden fas fa-chevron-left"></span><span class="top-menu-prev-hidden fas fa-chevron-left"></span> Systems of DE's <span class="top-menu-next fas fa-chevron-right"></span><span class="top-menu-next fas fa-chevron-right"></span></a></li>
+        
+        
+        
+        
+        <li id="li_nav_menu_classes" class="top-menu-nav-title">Classes</li>
+        <li>
+          
+          <a href="../Alg/Alg.html" id="nav_menu_alg_link" title="Go To Algebra Notes">Algebra</a>
+        </li>
+        <li>
+          
+          <a href="../CalcI/CalcI.html" id="nav_menu_calci_link" title="Go To Calculus I Notes">Calculus I</a>
+        </li>
+        <li>
+          
+          <a href="../CalcII/CalcII.html" id="nav_menu_calcii_link" title="Go To Calculus II Notes">Calculus II</a>
+        </li>
+        <li>
+          
+          <a href="../CalcIII/CalcIII.html" id="nav_menu_calciii_link" title="Go To Calculus III Notes">Calculus III</a>
+        </li>
+        <li>
+          <span id="nav_menu_de_span" title="Currently Viewing Differential Equations Material" class="top-menu-current">Differential Equations</span>
+          
+        </li>
+        <li id="li_nav_menu_extras" class="top-menu-nav-title">Extras</li>
+        <li>
+          
+          <a href="../../Extras/AlgebraTrigReview/AlgebraTrig.html" id="nav_menu_algtrig_link" title="Go To Algebra &amp; Trig Review">Algebra &amp; Trig Review</a>
+        </li>
+        <li>
+          
+          <a href="../../Extras/CommonErrors/CommonMathErrors.html" id="nav_menu_commonerrors_link" title="Go To Common Math Errors">Common Math Errors</a>
+        </li>
+        <li>
+          
+          <a href="../../Extras/ComplexPrimer/ComplexNumbers.html" id="nav_menu_complexnumbers_link" title="Go To Complex Numbers Primer">Complex Number Primer</a>
+        </li>
+        <li>
+          
+          <a href="../../Extras/StudyMath/HowToStudyMath.html" id="nav_menu_studymath_link" title="Go To How To Study Math">How To Study Math</a>
+        </li>
+        <li>
+          
+          <a href="../../Extras/CheatSheets_Tables.html" id="nav_menu_cheattables_link" title="Go To List of Cheat Sheets and Tables">Cheat Sheets &amp; Tables</a>
+        </li>
+        <li id="li_nav_menu_misc" class="top-menu-nav-title">Misc</li>
+        <li><a href="http://tutorial.math.lamar.edu/contact.aspx" id="nav_menu_contact" title="Contact Me!">Contact Me</a></li>
+        <li><a href="../../mathjax.html" id="nav_menu_mathjax" title="Info on MathJax and MathJax Configuration Menu">MathJax Help and Configuration</a></li>
+        <li><a href="../../mystudents.html" id="nav_menu_students" title="Go here if you are currently taking a class from me!">My Students</a></li>
+      </ul>
+    </div>
+
+    <div id="jq-dropdown-download" class="jq-dropdown jq-dropdown-anchor-right jq-dropdown-tip">
+      <ul class="jq-dropdown-menu">
+        
+        <li id="li_download_menu_notes" class="top-menu-nav-title">Notes Downloads</li>
+        <li id="li_download_menu_notes_book"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=B,1,N" id="download_menu_notes_book" data-PDF="Download - Menu$Notes - Book$Differential Equations$/Downloads/DE/Notes/Complete.pdf">Complete Book</a></li>
+        
+        <li id="li_download_menu_notes_chapter"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=C,19,N" id="download_menu_notes_chapter" data-PDF="Download - Menu$Notes - Chapter$Differential Equations - Laplace Transforms$/Downloads/DE/Notes/Laplace.pdf">Current Chapter</a></li>
+        <li id="li_download_menu_notes_section"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=S,108,N" id="download_menu_notes_section" data-PDF="Download - Menu$Notes - Section$Differential Equations - Inverse Laplace Transforms$/Downloads/DE/Notes/InverseTransforms.pdf">Current Section</a></li>
+        <li id="li_download_menu_practice" class="top-menu-nav-title">Practice Problems Downloads</li>
+        <li id="li_download_menu_practice_de"><span class="top-menu-item-text">Problems not yet written.</span></li>
+        
+        
+        
+        
+        
+        
+        
+        
+        <li id="li_download_menu_asgn" class="top-menu-nav-title">Assignment Problems Downloads</li>
+        <li id="li_download_menu_asgn_de"><span class="top-menu-item-text">Problems not yet written.</span></li>
+        
+        
+        
+        <li id="li_download_menu_other" class="top-menu-nav-title">Other Items</li>
+        <li id="li_download_menu_urls">
+          <a href="http://tutorial.math.lamar.edu/DownloadURLs.aspx?bi=1&amp;ci=19&amp;si=108" id="download_menu_urls">Get URL's for Download Items</a>
+        </li>
+      </ul>
+    </div>
+
+    <div id="jq-print-download" class="jq-dropdown jq-dropdown-anchor-right jq-dropdown-tip">
+      <ul class="jq-dropdown-menu">
+        <li id="li_print_menu_default"><a href="javascript:SHPrintPage()" id="print_menu_default">Print Page in Current Form (Default)</a></li>
+        <li id="li_print_menu_show"><a href="javascript:SHPrintPage(1,1)" id="print_menu_show">Show all Solutions/Steps and Print Page</a></li>
+        <li id="li_print_menu_hide"><a href="javascript:SHPrintPage(0,1)" id="print_menu_hide">Hide all Solutions/Steps and Print Page</a></li>
+      </ul>
+    </div>
+
+
+
+   
+
+    <nav id="menu" class="notes-nav">
+      <ul>
+        <li><a href="../../index.html" class="mm-link">Home</a></li>
+        <li><span>Classes</span></li>
+        <li><a href="../Alg/Alg.html" class="mm-link">Algebra</a>
+          <ul>
+            <li><a href="../Alg/Preliminaries.html" class="mm-link">Preliminaries</a>
+              <ul>
+                <li><a href="../Alg/IntegerExponents.html" class="mm-link">Integer Exponents</a></li>
+                <li><a href="../Alg/RationalExponents.html" class="mm-link">Rational Exponents</a></li>
+                <li><a href="../Alg/Radicals.html" class="mm-link">Radicals</a></li>
+                <li><a href="../Alg/Polynomials.html" class="mm-link">Polynomials</a></li>
+                <li><a href="../Alg/Factoring.html" class="mm-link">Factoring Polynomials</a></li>
+                <li><a href="../Alg/RationalExpressions.html" class="mm-link">Rational Expressions</a></li>
+                <li><a href="../Alg/ComplexNumbers.html" class="mm-link">Complex Numbers</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/Solving.html" class="mm-link">Solving Equations and Inequalities</a>
+              <ul>
+                <li><a href="../Alg/SolutionSets.html" class="mm-link">Solutions and Solution Sets</a></li>
+                <li><a href="../Alg/SolveLinearEqns.html" class="mm-link">Linear Equations</a></li>
+                <li><a href="../Alg/LinearApps.html" class="mm-link">Applications of Linear Equations</a></li>
+                <li><a href="../Alg/SolveMultiVariable.html" class="mm-link">Equations With More Than One Variable</a></li>
+                <li><a href="../Alg/SolveQuadraticEqnsI.html" class="mm-link">Quadratic Equations - Part I</a></li>
+                <li><a href="../Alg/SolveQuadraticEqnsII.html" class="mm-link">Quadratic Equations - Part II</a></li>
+                <li><a href="../Alg/SolveQuadraticEqnSummary.html" class="mm-link">Quadratic Equations : A Summary</a></li>
+                <li><a href="../Alg/QuadraticApps.html" class="mm-link">Applications of Quadratic Equations</a></li>
+                <li><a href="../Alg/ReducibleToQuadratic.html" class="mm-link">Equations Reducible to Quadratic in Form</a></li>
+                <li><a href="../Alg/SolveRadicalEqns.html" class="mm-link">Equations with Radicals</a></li>
+                <li><a href="../Alg/SolveLinearInequalities.html" class="mm-link">Linear Inequalities</a></li>
+                <li><a href="../Alg/SolvePolyInequalities.html" class="mm-link">Polynomial Inequalities</a></li>
+                <li><a href="../Alg/SolveRationalInequalities.html" class="mm-link">Rational Inequalities</a></li>
+                <li><a href="../Alg/SolveAbsValueEqns.html" class="mm-link">Absolute Value Equations</a></li>
+                <li><a href="../Alg/SolveAbsValueIneq.html" class="mm-link">Absolute Value Inequalities</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/Graphing_Functions.html" class="mm-link">Graphing and Functions</a>
+              <ul>
+                <li><a href="../Alg/Graphing.html" class="mm-link">Graphing</a></li>
+                <li><a href="../Alg/Lines.html" class="mm-link">Lines</a></li>
+                <li><a href="../Alg/Circles.html" class="mm-link">Circles</a></li>
+                <li><a href="../Alg/FunctionDefn.html" class="mm-link">The Definition of a Function</a></li>
+                <li><a href="../Alg/GraphFunctions.html" class="mm-link">Graphing Functions</a></li>
+                <li><a href="../Alg/CombineFunctions.html" class="mm-link">Combining Functions</a></li>
+                <li><a href="../Alg/InverseFunctions.html" class="mm-link">Inverse Functions</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/CommonGraphs.html" class="mm-link">Common Graphs</a>
+              <ul>
+                <li><a href="../Alg/Lines_Circles_PWF.html" class="mm-link">Lines, Circles and Piecewise Functions</a></li>
+                <li><a href="../Alg/Parabolas.html" class="mm-link">Parabolas</a></li>
+                <li><a href="../Alg/Ellipses.html" class="mm-link">Ellipses</a></li>
+                <li><a href="../Alg/Hyperbolas.html" class="mm-link">Hyperbolas</a></li>
+                <li><a href="../Alg/MiscFunctions.html" class="mm-link">Miscellaneous Functions</a></li>
+                <li><a href="../Alg/Transformations.html" class="mm-link">Transformations</a></li>
+                <li><a href="../Alg/Symmetry.html" class="mm-link">Symmetry</a></li>
+                <li><a href="../Alg/GraphRationalFcns.html" class="mm-link">Rational Functions</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/PolynomialFunctions.html" class="mm-link">Polynomial Functions</a>
+              <ul>
+                <li><a href="../Alg/DividingPolynomials.html" class="mm-link">Dividing Polynomials</a></li>
+                <li><a href="../Alg/ZeroesOfPolynomials.html" class="mm-link">Zeroes/Roots of Polynomials</a></li>
+                <li><a href="../Alg/GraphingPolynomials.html" class="mm-link">Graphing Polynomials</a></li>
+                <li><a href="../Alg/FindingZeroesOfPolynomials.html" class="mm-link">Finding Zeroes of Polynomials</a></li>
+                <li><a href="../Alg/PartialFractions.html" class="mm-link">Partial Fractions</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/ExpAndLog.html" class="mm-link">Exponential and Logarithm Functions</a>
+              <ul>
+                <li><a href="../Alg/ExpFunctions.html" class="mm-link">Exponential Functions</a></li>
+                <li><a href="../Alg/LogFunctions.html" class="mm-link">Logarithm Functions</a></li>
+                <li><a href="../Alg/SolveExpEqns.html" class="mm-link">Solving Exponential Equations</a></li>
+                <li><a href="../Alg/SolveLogEqns.html" class="mm-link">Solving Logarithm Equations</a></li>
+                <li><a href="../Alg/ExpLogApplications.html" class="mm-link">Applications</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/Systems.html" class="mm-link">Systems of Equations</a>
+              <ul>
+                <li><a href="../Alg/SystemsTwoVrble.html" class="mm-link">Linear Systems with Two Variables</a></li>
+                <li><a href="../Alg/SystemsThreeVrble.html" class="mm-link">Linear Systems with Three Variables</a></li>
+                <li><a href="../Alg/AugmentedMatrix.html" class="mm-link">Augmented Matrices</a></li>
+                <li><a href="../Alg/AugmentedMatrixII.html" class="mm-link">More on the Augmented Matrix</a></li>
+                <li><a href="../Alg/NonlinearSystems.html" class="mm-link">Nonlinear Systems</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../CalcI/CalcI.html" class="mm-link">Calculus I</a>
+          <ul>
+            <li><a href="../CalcI/ReviewIntro.html" class="mm-link">Review</a>
+              <ul>
+                <li><a href="../CalcI/Functions.html" class="mm-link">Functions</a></li>
+                <li><a href="../CalcI/InverseFunctions.html" class="mm-link">Inverse Functions</a></li>
+                <li><a href="../CalcI/TrigFcns.html" class="mm-link">Trig Functions</a></li>
+                <li><a href="../CalcI/TrigEquations.html" class="mm-link">Solving Trig Equations</a></li>
+                <li><a href="../CalcI/TrigEquations_CalcI.html" class="mm-link">Trig Equations with Calculators, Part I</a></li>
+                <li><a href="../CalcI/TrigEquations_CalcII.html" class="mm-link">Trig Equations with Calculators, Part II</a></li>
+                <li><a href="../CalcI/ExpFunctions.html" class="mm-link">Exponential Functions</a></li>
+                <li><a href="../CalcI/LogFcns.html" class="mm-link">Logarithm Functions</a></li>
+                <li><a href="../CalcI/ExpLogEqns.html" class="mm-link">Exponential and Logarithm Equations</a></li>
+                <li><a href="../CalcI/CommonGraphs.html" class="mm-link">Common Graphs</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcI/limitsIntro.html" class="mm-link">Limits</a>
+              <ul>
+                <li><a href="../CalcI/Tangents_Rates.html" class="mm-link">Tangent Lines and Rates of Change</a></li>
+                <li><a href="../CalcI/TheLimit.html" class="mm-link">The Limit</a></li>
+                <li><a href="../CalcI/OneSidedLimits.html" class="mm-link">One-Sided Limits</a></li>
+                <li><a href="../CalcI/LimitsProperties.html" class="mm-link">Limit Properties</a></li>
+                <li><a href="../CalcI/ComputingLimits.html" class="mm-link">Computing Limits</a></li>
+                <li><a href="../CalcI/InfiniteLimits.html" class="mm-link">Infinite Limits</a></li>
+                <li><a href="../CalcI/LimitsAtInfinityI.html" class="mm-link">Limits At Infinity, Part I</a></li>
+                <li><a href="../CalcI/LimitsAtInfinityII.html" class="mm-link">Limits At Infinity, Part II</a></li>
+                <li><a href="../CalcI/Continuity.html" class="mm-link">Continuity</a></li>
+                <li><a href="../CalcI/DefnOfLimit.html" class="mm-link">The Definition of the Limit</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcI/DerivativeIntro.html" class="mm-link">Derivatives</a>
+              <ul>
+                <li><a href="../CalcI/DefnOfDerivative.html" class="mm-link">The Definition of the Derivative</a></li>
+                <li><a href="../CalcI/DerivativeInterp.html" class="mm-link">Interpretation of the Derivative</a></li>
+                <li><a href="../CalcI/DiffFormulas.html" class="mm-link">Differentiation Formulas</a></li>
+                <li><a href="../CalcI/ProductQuotientRule.html" class="mm-link">Product and Quotient Rule</a></li>
+                <li><a href="../CalcI/DiffTrigFcns.html" class="mm-link">Derivatives of Trig Functions</a></li>
+                <li><a href="../CalcI/DiffExpLogFcns.html" class="mm-link">Derivatives of Exponential and Logarithm Functions</a></li>
+                <li><a href="../CalcI/DiffInvTrigFcns.html" class="mm-link">Derivatives of Inverse Trig Functions</a></li>
+                <li><a href="../CalcI/DiffHyperFcns.html" class="mm-link">Derivatives of Hyperbolic Functions</a></li>
+                <li><a href="../CalcI/ChainRule.html" class="mm-link">Chain Rule</a></li>
+                <li><a href="../CalcI/ImplicitDIff.html" class="mm-link">Implicit Differentiation</a></li>
+                <li><a href="../CalcI/RelatedRates.html" class="mm-link">Related Rates</a></li>
+                <li><a href="../CalcI/HigherOrderDerivatives.html" class="mm-link">Higher Order Derivatives</a></li>
+                <li><a href="../CalcI/LogDiff.html" class="mm-link">Logarithmic Differentiation</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcI/DerivAppsIntro.html" class="mm-link">Applications of Derivatives</a>
+              <ul>
+                <li><a href="../CalcI/RateOfChange.html" class="mm-link">Rates of Change</a></li>
+                <li><a href="../CalcI/CriticalPoints.html" class="mm-link">Critical Points</a></li>
+                <li><a href="../CalcI/MinMaxValues.html" class="mm-link">Minimum and Maximum Values</a></li>
+                <li><a href="../CalcI/AbsExtrema.html" class="mm-link">Finding Absolute Extrema</a></li>
+                <li><a href="../CalcI/ShapeofGraphPtI.html" class="mm-link">The Shape of a Graph, Part I</a></li>
+                <li><a href="../CalcI/ShapeofGraphPtII.html" class="mm-link">The Shape of a Graph, Part II</a></li>
+                <li><a href="../CalcI/MeanValueTheorem.html" class="mm-link">The Mean Value Theorem</a></li>
+                <li><a href="../CalcI/Optimization.html" class="mm-link">Optimization</a></li>
+                <li><a href="../CalcI/MoreOptimization.html" class="mm-link">More Optimization Problems</a></li>
+                <li><a href="../CalcI/LHospitalsRule.html" class="mm-link">L'Hospital's Rule and Indeterminate Forms</a></li>
+                <li><a href="../CalcI/LinearApproximations.html" class="mm-link">Linear Approximations</a></li>
+                <li><a href="../CalcI/Differentials.html" class="mm-link">Differentials</a></li>
+                <li><a href="../CalcI/NewtonsMethod.html" class="mm-link">Newton's Method</a></li>
+                <li><a href="../CalcI/BusinessApps.html" class="mm-link">Business Applications</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcI/IntegralsIntro.html" class="mm-link">Integrals</a>
+              <ul>
+                <li><a href="../CalcI/IndefiniteIntegrals.html" class="mm-link">Indefinite Integrals</a></li>
+                <li><a href="../CalcI/ComputingIndefiniteIntegrals.html" class="mm-link">Computing Indefinite Integrals</a></li>
+                <li><a href="../CalcI/SubstitutionRuleIndefinite.html" class="mm-link">Substitution Rule for Indefinite Integrals</a></li>
+                <li><a href="../CalcI/SubstitutionRuleIndefinitePtII.html" class="mm-link">More Substitution Rule</a></li>
+                <li><a href="../CalcI/AreaProblem.html" class="mm-link">Area Problem</a></li>
+                <li><a href="../CalcI/DefnOfDefiniteIntegral.html" class="mm-link">Definition of the Definite Integral</a></li>
+                <li><a href="../CalcI/ComputingDefiniteIntegrals.html" class="mm-link">Computing Definite Integrals</a></li>
+                <li><a href="../CalcI/SubstitutionRuleDefinite.html" class="mm-link">Substitution Rule for Definite Integrals</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcI/IntAppsIntro.html" class="mm-link">Applications of Integrals</a>
+              <ul>
+                <li><a href="../CalcI/AvgFcnValue.html" class="mm-link">Average Function Value</a></li>
+                <li><a href="../CalcI/AreaBetweenCurves.html" class="mm-link">Area Between Curves</a></li>
+                <li><a href="../CalcI/VolumeWithRings.html" class="mm-link">Volumes of Solids of Revolution / Method of Rings</a></li>
+                <li><a href="../CalcI/VolumeWithCylinder.html" class="mm-link">Volumes of Solids of Revolution/Method of Cylinders</a></li>
+                <li><a href="../CalcI/MoreVolume.html" class="mm-link">More Volume Problems</a></li>
+                <li><a href="../CalcI/Work.html" class="mm-link">Work</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcI/ExtrasIntro.html" class="mm-link">Extras</a>
+              <ul>
+                <li><a href="../CalcI/LimitProofs.html" class="mm-link">Proof of Various Limit Properties</a></li>
+                <li><a href="../CalcI/DerivativeProofs.html" class="mm-link">Proof of Various Derivative Properties</a></li>
+                <li><a href="../CalcI/ProofTrigDeriv.html" class="mm-link">Proof of Trig Limits</a></li>
+                <li><a href="../CalcI/DerivativeAppsProofs.html" class="mm-link">Proofs of Derivative Applications Facts</a></li>
+                <li><a href="../CalcI/ProofIntProp.html" class="mm-link">Proof of Various Integral Properties </a></li>
+                <li><a href="../CalcI/Area_Volume_Formulas.html" class="mm-link">Area and Volume Formulas</a></li>
+                <li><a href="../CalcI/TypesOfInfinity.html" class="mm-link">Types of Infinity</a></li>
+                <li><a href="../CalcI/SummationNotation.html" class="mm-link">Summation Notation</a></li>
+                <li><a href="../CalcI/ConstantofIntegration.html" class="mm-link">Constant of Integration</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../CalcII/CalcII.html" class="mm-link">Calculus II</a>
+          <ul>
+            <li><a href="../CalcII/IntTechIntro.html" class="mm-link">Integration Techniques</a>
+              <ul>
+                <li><a href="../CalcII/IntegrationByParts.html" class="mm-link">Integration by Parts</a></li>
+                <li><a href="../CalcII/IntegralsWithTrig.html" class="mm-link">Integrals Involving Trig Functions</a></li>
+                <li><a href="../CalcII/TrigSubstitutions.html" class="mm-link">Trig Substitutions</a></li>
+                <li><a href="../CalcII/PartialFractions.html" class="mm-link">Partial Fractions</a></li>
+                <li><a href="../CalcII/IntegralsWithRoots.html" class="mm-link">Integrals Involving Roots</a></li>
+                <li><a href="../CalcII/IntegralsWithQuadratics.html" class="mm-link">Integrals Involving Quadratics</a></li>
+                <li><a href="../CalcII/IntegrationStrategy.html" class="mm-link">Integration Strategy</a></li>
+                <li><a href="../CalcII/ImproperIntegrals.html" class="mm-link">Improper Integrals</a></li>
+                <li><a href="../CalcII/ImproperIntegralsCompTest.html" class="mm-link">Comparison Test for Improper Integrals</a></li>
+                <li><a href="../CalcII/ApproximatingDefIntegrals.html" class="mm-link">Approximating Definite Integrals</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/IntAppsIntro.html" class="mm-link">Applications of Integrals</a>
+              <ul>
+                <li><a href="../CalcII/ArcLength.html" class="mm-link">Arc Length</a></li>
+                <li><a href="../CalcII/SurfaceArea.html" class="mm-link">Surface Area</a></li>
+                <li><a href="../CalcII/CenterOfMass.html" class="mm-link">Center of Mass</a></li>
+                <li><a href="../CalcII/HydrostaticPressure.html" class="mm-link">Hydrostatic Pressure</a></li>
+                <li><a href="../CalcII/Probability.html" class="mm-link">Probability</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/ParametricIntro.html" class="mm-link">Parametric Equations and Polar Coordinates</a>
+              <ul>
+                <li><a href="../CalcII/ParametricEqn.html" class="mm-link">Parametric Equations and Curves</a></li>
+                <li><a href="../CalcII/ParaTangent.html" class="mm-link">Tangents with Parametric Equations</a></li>
+                <li><a href="../CalcII/ParaArea.html" class="mm-link">Area with Parametric Equations</a></li>
+                <li><a href="../CalcII/ParaArcLength.html" class="mm-link">Arc Length with Parametric Equations</a></li>
+                <li><a href="../CalcII/ParaSurfaceArea.html" class="mm-link">Surface Area with Parametric Equations</a></li>
+                <li><a href="../CalcII/PolarCoordinates.html" class="mm-link">Polar Coordinates</a></li>
+                <li><a href="../CalcII/PolarTangents.html" class="mm-link">Tangents with Polar Coordinates</a></li>
+                <li><a href="../CalcII/PolarArea.html" class="mm-link">Area with Polar Coordinates</a></li>
+                <li><a href="../CalcII/PolarArcLength.html" class="mm-link">Arc Length with Polar Coordinates</a></li>
+                <li><a href="../CalcII/PolarSurfaceArea.html" class="mm-link">Surface Area with Polar Coordinates</a></li>
+                <li><a href="../CalcII/ArcLength_SurfaceArea.html" class="mm-link">Arc Length and Surface Area Revisited</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/SeriesIntro.html" class="mm-link">Series & Sequences</a>
+              <ul>
+                <li><a href="../CalcII/Sequences.html" class="mm-link">Sequences</a></li>
+                <li><a href="../CalcII/MoreSequences.html" class="mm-link">More on Sequences</a></li>
+                <li><a href="../CalcII/Series_Basics.html" class="mm-link">Series - The Basics</a></li>
+                <li><a href="../CalcII/ConvergenceOfSeries.html" class="mm-link">Convergence/Divergence of Series</a></li>
+                <li><a href="../CalcII/Series_Special.html" class="mm-link">Special Series</a></li>
+                <li><a href="../CalcII/IntegralTest.html" class="mm-link">Integral Test</a></li>
+                <li><a href="../CalcII/SeriesCompTest.html" class="mm-link">Comparison Test/Limit Comparison Test</a></li>
+                <li><a href="../CalcII/AlternatingSeries.html" class="mm-link">Alternating Series Test</a></li>
+                <li><a href="../CalcII/AbsoluteConvergence.html" class="mm-link">Absolute Convergence</a></li>
+                <li><a href="../CalcII/RatioTest.html" class="mm-link">Ratio Test</a></li>
+                <li><a href="../CalcII/RootTest.html" class="mm-link">Root Test</a></li>
+                <li><a href="../CalcII/SeriesStrategy.html" class="mm-link">Strategy for Series</a></li>
+                <li><a href="../CalcII/EstimatingSeries.html" class="mm-link">Estimating the Value of a Series</a></li>
+                <li><a href="../CalcII/PowerSeries.html" class="mm-link">Power Series</a></li>
+                <li><a href="../CalcII/PowerSeriesandFunctions.html" class="mm-link">Power Series and Functions</a></li>
+                <li><a href="../CalcII/TaylorSeries.html" class="mm-link">Taylor Series</a></li>
+                <li><a href="../CalcII/TaylorSeriesApps.html" class="mm-link">Applications of Series</a></li>
+                <li><a href="../CalcII/BinomialSeries.html" class="mm-link">Binomial Series</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/VectorsIntro.html" class="mm-link">Vectors</a>
+              <ul>
+                <li><a href="../CalcII/Vectors_Basics.html" class="mm-link">Vectors - The Basics</a></li>
+                <li><a href="../CalcII/VectorArithmetic.html" class="mm-link">Vector Arithmetic</a></li>
+                <li><a href="../CalcII/DotProduct.html" class="mm-link">Dot Product</a></li>
+                <li><a href="../CalcII/CrossProduct.html" class="mm-link">Cross Product</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/3DSpace.html" class="mm-link">3-Dimensional Space</a>
+              <ul>
+                <li><a href="../CalcII/3DCoords.html" class="mm-link">The 3-D Coordinate System</a></li>
+                <li><a href="../CalcII/EqnsOfLines.html" class="mm-link">Equations of Lines</a></li>
+                <li><a href="../CalcII/EqnsOfPlanes.html" class="mm-link">Equations of Planes</a></li>
+                <li><a href="../CalcII/QuadricSurfaces.html" class="mm-link">Quadric Surfaces</a></li>
+                <li><a href="../CalcII/MultiVrbleFcns.html" class="mm-link">Functions of Several Variables</a></li>
+                <li><a href="../CalcII/VectorFunctions.html" class="mm-link">Vector Functions</a></li>
+                <li><a href="../CalcII/VectorFcnsCalculus.html" class="mm-link">Calculus with Vector Functions</a></li>
+                <li><a href="../CalcII/TangentNormalVectors.html" class="mm-link">Tangent, Normal and Binormal Vectors</a></li>
+                <li><a href="../CalcII/VectorArcLength.html" class="mm-link">Arc Length with Vector Functions</a></li>
+                <li><a href="../CalcII/Curvature.html" class="mm-link">Curvature</a></li>
+                <li><a href="../CalcII/Velocity_Acceleration.html" class="mm-link">Velocity and Acceleration</a></li>
+                <li><a href="../CalcII/CylindricalCoords.html" class="mm-link">Cylindrical Coordinates</a></li>
+                <li><a href="../CalcII/SphericalCoords.html" class="mm-link">Spherical Coordinates</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../CalcIII/CalcIII.html" class="mm-link">Calculus III</a>
+          <ul>
+            <li><a href="../CalcIII/3DSpace.html" class="mm-link">3-Dimensional Space</a>
+              <ul>
+                <li><a href="../CalcIII/3DCoords.html" class="mm-link">The 3-D Coordinate System</a></li>
+                <li><a href="../CalcIII/EqnsOfLines.html" class="mm-link">Equations of Lines</a></li>
+                <li><a href="../CalcIII/EqnsOfPlanes.html" class="mm-link">Equations of Planes</a></li>
+                <li><a href="../CalcIII/QuadricSurfaces.html" class="mm-link">Quadric Surfaces</a></li>
+                <li><a href="../CalcIII/MultiVrbleFcns.html" class="mm-link">Functions of Several Variables</a></li>
+                <li><a href="../CalcIII/VectorFunctions.html" class="mm-link">Vector Functions</a></li>
+                <li><a href="../CalcIII/VectorFcnsCalculus.html" class="mm-link">Calculus with Vector Functions</a></li>
+                <li><a href="../CalcIII/TangentNormalVectors.html" class="mm-link">Tangent, Normal and Binormal Vectors</a></li>
+                <li><a href="../CalcIII/VectorArcLength.html" class="mm-link">Arc Length with Vector Functions</a></li>
+                <li><a href="../CalcIII/Curvature.html" class="mm-link">Curvature</a></li>
+                <li><a href="../CalcIII/Velocity_Acceleration.html" class="mm-link">Velocity and Acceleration</a></li>
+                <li><a href="../CalcIII/CylindricalCoords.html" class="mm-link">Cylindrical Coordinates</a></li>
+                <li><a href="../CalcIII/SphericalCoords.html" class="mm-link">Spherical Coordinates</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/PartialDerivsIntro.html" class="mm-link">Partial Derivatives</a>
+              <ul>
+                <li><a href="../CalcIII/Limits.html" class="mm-link">Limits</a></li>
+                <li><a href="../CalcIII/PartialDerivatives.html" class="mm-link">Partial Derivatives</a></li>
+                <li><a href="../CalcIII/PartialDerivInterp.html" class="mm-link">Interpretations of Partial Derivatives</a></li>
+                <li><a href="../CalcIII/HighOrderPartialDerivs.html" class="mm-link">Higher Order Partial Derivatives</a></li>
+                <li><a href="../CalcIII/Differentials.html" class="mm-link">Differentials</a></li>
+                <li><a href="../CalcIII/ChainRule.html" class="mm-link">Chain Rule</a></li>
+                <li><a href="../CalcIII/DirectionalDeriv.html" class="mm-link">Directional Derivatives</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/PartialDerivAppsIntro.html" class="mm-link">Applications of Partial Derivatives</a>
+              <ul>
+                <li><a href="../CalcIII/TangentPlanes.html" class="mm-link">Tangent Planes and Linear Approximations</a></li>
+                <li><a href="../CalcIII/GradientVectorTangentPlane.html" class="mm-link">Gradient Vector, Tangent Planes and Normal Lines</a></li>
+                <li><a href="../CalcIII/RelativeExtrema.html" class="mm-link">Relative Minimums and Maximums</a></li>
+                <li><a href="../CalcIII/AbsoluteExtrema.html" class="mm-link">Absolute Minimums and Maximums</a></li>
+                <li><a href="../CalcIII/LagrangeMultipliers.html" class="mm-link">Lagrange Multipliers</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/MultipleIntegralsIntro.html" class="mm-link">Multiple Integrals</a>
+              <ul>
+                <li><a href="../CalcIII/DoubleIntegrals.html" class="mm-link">Double Integrals</a></li>
+                <li><a href="../CalcIII/IteratedIntegrals.html" class="mm-link">Iterated Integrals</a></li>
+                <li><a href="../CalcIII/DIGeneralRegion.html" class="mm-link">Double Integrals over General Regions</a></li>
+                <li><a href="../CalcIII/DIPolarCoords.html" class="mm-link">Double Integrals in Polar Coordinates</a></li>
+                <li><a href="../CalcIII/TripleIntegrals.html" class="mm-link">Triple Integrals</a></li>
+                <li><a href="../CalcIII/TICylindricalCoords.html" class="mm-link">Triple Integrals in Cylindrical Coordinates</a></li>
+                <li><a href="../CalcIII/TISphericalCoords.html" class="mm-link">Triple Integrals in Spherical Coordinates</a></li>
+                <li><a href="../CalcIII/ChangeOfVariables.html" class="mm-link">Change of Variables</a></li>
+                <li><a href="../CalcIII/SurfaceArea.html" class="mm-link">Surface Area</a></li>
+                <li><a href="../CalcIII/Area_Volume.html" class="mm-link">Area and Volume Revisited</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/LineIntegralsIntro.html" class="mm-link">Line Integrals</a>
+              <ul>
+                <li><a href="../CalcIII/VectorFields.html" class="mm-link">Vector Fields</a></li>
+                <li><a href="../CalcIII/LineIntegralsPtI.html" class="mm-link">Line Integrals - Part I</a></li>
+                <li><a href="../CalcIII/LineIntegralsPtII.html" class="mm-link">Line Integrals - Part II</a></li>
+                <li><a href="../CalcIII/LineIntegralsVectorFields.html" class="mm-link">Line Integrals of Vector Fields</a></li>
+                <li><a href="../CalcIII/FundThmLineIntegrals.html" class="mm-link">Fundamental Theorem for Line Integrals</a></li>
+                <li><a href="../CalcIII/ConservativeVectorField.html" class="mm-link">Conservative Vector Fields</a></li>
+                <li><a href="../CalcIII/GreensTheorem.html" class="mm-link">Green's Theorem</a></li>
+                <li><a href="../CalcIII/CurlDivergence.html" class="mm-link">Curl and Divergence</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/SurfaceIntegralsIntro.html" class="mm-link">Surface Integrals</a>
+              <ul>
+                <li><a href="../CalcIII/ParametricSurfaces.html" class="mm-link">Parametric Surfaces</a></li>
+                <li><a href="../CalcIII/SurfaceIntegrals.html" class="mm-link">Surface Integrals</a></li>
+                <li><a href="../CalcIII/SurfIntVectorField.html" class="mm-link">Surface Integrals of Vector Fields</a></li>
+                <li><a href="../CalcIII/StokesTheorem.html" class="mm-link">Stokes' Theorem</a></li>
+                <li><a href="../CalcIII/DivergenceTheorem.html" class="mm-link">Divergence Theorem</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="DE.html" class="mm-link">Differential Equations</a>
+          <ul>
+            <li><a href="IntroBasic.html" class="mm-link">Basic Concepts</a>
+              <ul>
+                <li><a href="Definitions.html" class="mm-link">Definitions</a></li>
+                <li><a href="DirectionFields.html" class="mm-link">Direction Fields</a></li>
+                <li><a href="FinalThoughts.html" class="mm-link">Final Thoughts</a></li>
+              </ul>
+            </li>
+            <li><a href="IntroFirstOrder.html" class="mm-link">First Order DE's</a>
+              <ul>
+                <li><a href="Linear.html" class="mm-link">Linear Equations</a></li>
+                <li><a href="Separable.html" class="mm-link">Separable Equations</a></li>
+                <li><a href="Exact.html" class="mm-link">Exact Equations</a></li>
+                <li><a href="Bernoulli.html" class="mm-link">Bernoulli Differential Equations</a></li>
+                <li><a href="Substitutions.html" class="mm-link">Substitutions</a></li>
+                <li><a href="IoV.html" class="mm-link">Intervals of Validity</a></li>
+                <li><a href="Modeling.html" class="mm-link">Modeling with First Order DE's</a></li>
+                <li><a href="EquilibriumSolutions.html" class="mm-link">Equilibrium Solutions</a></li>
+                <li><a href="EulersMethod.html" class="mm-link">Euler's Method</a></li>
+              </ul>
+            </li>
+            <li><a href="IntroSecondOrder.html" class="mm-link">Second Order DE's</a>
+              <ul>
+                <li><a href="SecondOrderConcepts.html" class="mm-link">Basic Concepts</a></li>
+                <li><a href="RealRoots.html" class="mm-link">Real & Distinct Roots</a></li>
+                <li><a href="ComplexRoots.html" class="mm-link">Complex Roots</a></li>
+                <li><a href="RepeatedRoots.html" class="mm-link">Repeated Roots</a></li>
+                <li><a href="ReductionofOrder.html" class="mm-link">Reduction of Order</a></li>
+                <li><a href="FundamentalSetsofSolutions.html" class="mm-link">Fundamental Sets of Solutions</a></li>
+                <li><a href="Wronskian.html" class="mm-link">More on the  Wronskian</a></li>
+                <li><a href="NonhomogeneousDE.html" class="mm-link">Nonhomogeneous Differential Equations</a></li>
+                <li><a href="UndeterminedCoefficients.html" class="mm-link">Undetermined Coefficients</a></li>
+                <li><a href="VariationofParameters.html" class="mm-link">Variation of Parameters</a></li>
+                <li><a href="Vibrations.html" class="mm-link">Mechanical Vibrations</a></li>
+              </ul>
+            </li>
+            <li><a href="LaplaceIntro.html" class="mm-link">Laplace Transforms</a>
+              <ul>
+                <li><a href="LaplaceDefinition.html" class="mm-link">The Definition</a></li>
+                <li><a href="LaplaceTransforms.html" class="mm-link">Laplace Transforms</a></li>
+                <li><a href="InverseTransforms.html" class="mm-link">Inverse Laplace Transforms</a></li>
+                <li><a href="StepFunctions.html" class="mm-link">Step Functions</a></li>
+                <li><a href="IVPWithLaplace.html" class="mm-link">Solving IVP's with Laplace Transforms</a></li>
+                <li><a href="IVPWithNonConstantCoefficient.html" class="mm-link">Nonconstant Coefficient IVP's</a></li>
+                <li><a href="IVPWithStepFunction.html" class="mm-link">IVP's With Step Functions</a></li>
+                <li><a href="DiracDeltaFunction.html" class="mm-link">Dirac Delta Function</a></li>
+                <li><a href="ConvolutionIntegrals.html" class="mm-link">Convolution Integrals</a></li>
+                <li><a href="Laplace_Table.html" class="mm-link">Table Of Laplace Transforms</a></li>
+              </ul>
+            </li>
+            <li><a href="SystemsIntro.html" class="mm-link">Systems of DE's</a>
+              <ul>
+                <li><a href="LA_Systems.html" class="mm-link">Review : Systems of Equations</a></li>
+                <li><a href="LA_Matrix.html" class="mm-link">Review : Matrices & Vectors</a></li>
+                <li><a href="LA_Eigen.html" class="mm-link">Review : Eigenvalues & Eigenvectors</a></li>
+                <li><a href="SystemsDE.html" class="mm-link">Systems of Differential Equations</a></li>
+                <li><a href="SolutionsToSystems.html" class="mm-link">Solutions to Systems</a></li>
+                <li><a href="PhasePlane.html" class="mm-link">Phase Plane</a></li>
+                <li><a href="RealEigenvalues.html" class="mm-link">Real Eigenvalues</a></li>
+                <li><a href="ComplexEigenvalues.html" class="mm-link">Complex Eigenvalues</a></li>
+                <li><a href="RepeatedEigenvalues.html" class="mm-link">Repeated Eigenvalues</a></li>
+                <li><a href="NonhomogeneousSystems.html" class="mm-link">Nonhomogeneous Systems</a></li>
+                <li><a href="SystemsLaplace.html" class="mm-link">Laplace Transforms</a></li>
+                <li><a href="SystemsModeling.html" class="mm-link">Modeling</a></li>
+              </ul>
+            </li>
+            <li><a href="SeriesIntro.html" class="mm-link">Series Solutions to DE's</a>
+              <ul>
+                <li><a href="PowerSeries.html" class="mm-link">Review : Power Series</a></li>
+                <li><a href="TaylorSeries.html" class="mm-link">Review : Taylor Series</a></li>
+                <li><a href="SeriesSolutions.html" class="mm-link">Series Solutions</a></li>
+                <li><a href="EulerEquations.html" class="mm-link">Euler Equations</a></li>
+              </ul>
+            </li>
+            <li><a href="IntroHigherOrder.html" class="mm-link">Higher Order Differential Equations</a>
+              <ul>
+                <li><a href="HOBasicConcepts.html" class="mm-link">Basic Concepts for <em>n</em><sup>th</sup> Order Linear Equations</a></li>
+                <li><a href="HOHomogeneousDE.html" class="mm-link">Linear Homogeneous Differential Equations</a></li>
+                <li><a href="HOUndeterminedCoeff.html" class="mm-link">Undetermined Coefficients</a></li>
+                <li><a href="HOVariationOfParam.html" class="mm-link">Variation of Parameters</a></li>
+                <li><a href="HOLaplaceTransforms.html" class="mm-link">Laplace Transforms</a></li>
+                <li><a href="HOSystems.html" class="mm-link">Systems of Differential Equations</a></li>
+                <li><a href="HOSeries.html" class="mm-link">Series Solutions</a></li>
+              </ul>
+            </li>
+            <li><a href="IntroBVP.html" class="mm-link">Boundary Value Problems &amp; Fourier Series</a>
+              <ul>
+                <li><a href="BoundaryValueProblem.html" class="mm-link">Boundary Value Problems</a></li>
+                <li><a href="BVPEvals.html" class="mm-link">Eigenvalues and Eigenfunctions</a></li>
+                <li><a href="PeriodicOrthogonal.html" class="mm-link">Periodic Functions &amp; Orthogonal Functions</a></li>
+                <li><a href="FourierSineSeries.html" class="mm-link">Fourier Sine Series</a></li>
+                <li><a href="FourierCosineSeries.html" class="mm-link">Fourier Cosine Series</a></li>
+                <li><a href="FourierSeries.html" class="mm-link">Fourier Series</a></li>
+                <li><a href="ConvergenceFourierSeries.html" class="mm-link">Convergence of Fourier Series</a></li>
+              </ul>
+            </li>
+            <li><a href="IntroPDE.html" class="mm-link">Partial Differential Equations </a>
+              <ul>
+                <li><a href="TheHeatEquation.html" class="mm-link">The Heat Equation</a></li>
+                <li><a href="TheWaveEquation.html" class="mm-link">The Wave Equation</a></li>
+                <li><a href="PDETerminology.html" class="mm-link">Terminology</a></li>
+                <li><a href="SeparationofVariables.html" class="mm-link">Separation of Variables</a></li>
+                <li><a href="SolvingHeatEquation.html" class="mm-link">Solving the Heat Equation</a></li>
+                <li><a href="HeatEqnNonZero.html" class="mm-link">Heat Equation with Non-Zero Temperature Boundaries</a></li>
+                <li><a href="LaplacesEqn.html" class="mm-link">Laplace's Equation</a></li>
+                <li><a href="VibratingString.html" class="mm-link">Vibrating String</a></li>
+                <li><a href="PDESummary.html" class="mm-link">Summary of Separation of Variables</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><span>Extras</span></li>
+        <li><a href="../../Extras/AlgebraTrigReview/AlgebraTrig.html" class="mm-link">Algebra &amp; Trig Review</a>
+          <ul>
+            <li><a href="../../Extras/AlgebraTrigReview/AlgebraIntro.html" class="mm-link">Algebra</a>
+              <ul>
+                <li><a href="../../Extras/AlgebraTrigReview/Exponents.html" class="mm-link">Exponents </a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/AbsoluteValue.html" class="mm-link">Absolute Value</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Radicals.html" class="mm-link">Radicals</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Rationalizing.html" class="mm-link">Rationalizing </a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Functions.html" class="mm-link">Functions </a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/MultPoly.html" class="mm-link">Multiplying Polynomials</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Factoring.html" class="mm-link">Factoring</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SimpRatExp.html" class="mm-link">Simplifying Rational Expressions</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Graphing.html" class="mm-link">Graphing and Common Graphs</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveEqnPtI.html" class="mm-link">Solving Equations, Part I</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveEqnPtII.html" class="mm-link">Solving Equations, Part II</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveSystems.html" class="mm-link">Solving Systems of Equations</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveIneq.html" class="mm-link">Solving Inequalities</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveAbsValue.html" class="mm-link">Absolute Value Equations and Inequalities</a></li>
+              </ul>
+            </li>
+            <li><a href="../../Extras/AlgebraTrigReview/TrigIntro.html" class="mm-link">Trigonometry</a>
+              <ul>
+                <li><a href="../../Extras/AlgebraTrigReview/TrigFunctions.html" class="mm-link">Trig Function Evaluation</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/TrigGraphs.html" class="mm-link">Graphs of Trig Functions</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/TrigFormulas.html" class="mm-link">Trig Formulas</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveTrigEqn.html" class="mm-link">Solving Trig Equations</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/InverseTrig.html" class="mm-link">Inverse Trig Functions</a></li>
+              </ul>
+            </li>
+            <li><a href="../../Extras/AlgebraTrigReview/ExpLogIntro.html" class="mm-link">Exponentials & Logarithms</a>
+              <ul>
+                <li><a href="../../Extras/AlgebraTrigReview/ExponentialFcns.html" class="mm-link">Basic Exponential Functions</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/LogarithmFcns.html" class="mm-link">Basic Logarithm Functions</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/LogProperties.html" class="mm-link">Logarithm Properties</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SimpLogs.html" class="mm-link">Simplifying Logarithms</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveExpEqn.html" class="mm-link">Solving Exponential Equations</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveLogEqn.html" class="mm-link">Solving Logarithm Equations</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../../Extras/CommonErrors/CommonMathErrors.html" class="mm-link">Common Math Errors</a>
+          <ul>
+            <li><a href="../../Extras/CommonErrors/GeneralErrors.html" class="mm-link">General Errors</a>
+            </li>
+            <li><a href="../../Extras/CommonErrors/AlgebraErrors.html" class="mm-link">Algebra Errors</a>
+            </li>
+            <li><a href="../../Extras/CommonErrors/TrigErrors.html" class="mm-link">Trig Errors</a>
+            </li>
+            <li><a href="../../Extras/CommonErrors/CommonErrors.html" class="mm-link">Common Errors</a>
+            </li>
+            <li><a href="../../Extras/CommonErrors/CalculusErrors.html" class="mm-link">Calculus Errors</a>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../../Extras/ComplexPrimer/ComplexNumbers.html" class="mm-link">Complex Number Primer</a>
+          <ul>
+            <li><a href="../../Extras/ComplexPrimer/Definition.html" class="mm-link">The Definition</a>
+            </li>
+            <li><a href="../../Extras/ComplexPrimer/Arithmetic.html" class="mm-link">Arithmetic</a>
+            </li>
+            <li><a href="../../Extras/ComplexPrimer/ConjugateModulus.html" class="mm-link">Conjugate and Modulus</a>
+            </li>
+            <li><a href="../../Extras/ComplexPrimer/Forms.html" class="mm-link">Polar and Exponential Forms</a>
+            </li>
+            <li><a href="../../Extras/ComplexPrimer/Roots.html" class="mm-link">Powers and Roots</a>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../../Extras/StudyMath/HowToStudyMath.html" class="mm-link">How To Study Math</a>
+          <ul>
+            <li><a href="../../Extras/StudyMath/GeneralTips.html" class="mm-link">General Tips</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/TakingNotes.html" class="mm-link">Taking Notes</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/GettingHelp.html" class="mm-link">Getting Help</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/Homework.html" class="mm-link">Doing Homework</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/ProblemSolving.html" class="mm-link">Problem Solving</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/StudyForExam.html" class="mm-link">Studying For an Exam</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/TakingExam.html" class="mm-link">Taking an Exam</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/Errors.html" class="mm-link">Learn From Your Errors</a>
+            </li>
+          </ul>
+        </li>
+
+        <li><span>Misc Links</span></li>
+        <li><a href="http://tutorial.math.lamar.edu/contact.aspx" class="mm-link">Contact Me</a></li>
+        <li><a href="../../links.html" class="mm-link">Links</a></li>
+        <li><a href="../../mathjax.html" class="mm-link">MathJax Help and Configuration</a></li>
+        <li><a href="../../mystudents.html" class="mm-link">My Students</a></li>
+        <li><a href="http://tutorial.math.lamar.edu/privacy.aspx" class="mm-link">Privacy Statement</a></li>
+        <li><a href="../../help.html" class="mm-link">Site Help & FAQ</a></li>
+        <li><a href="http://tutorial.math.lamar.edu/terms.aspx" class="mm-link">Terms of Use</a></li>
+      </ul>
+    </nav>
+
+
+
+    <div class="top-info-bar">
+      <span id="mobile-title" class="mobile-header-title header-title">Paul's Online Notes</span>
+      <br />
+      <span class="top-menu-breadcrumb">
+        <a href="../../index.html" id="breadcrumb_home_link" title="Go to Main Page">Home</a>
+        <span id="breadcrumb_h_b_sep_span">/ </span>
+        <a href="DE.html" id="breadcrumb_book_link" title="Go to Book Introduction">Differential Equations</a>
+        
+        <span id="breadcrumb_b_c_sep_span">/ </span>
+        <a href="LaplaceIntro.html" id="breadcrumb_chapter_link" title="Go to Chapter Introduction">Laplace Transforms</a>
+        
+        <span id="breadcrumb_section_span"> / Inverse Laplace Transforms</span>
+      </span>
+
+    </div>
+
+    
+
+    <div class="header-divider"></div>
+
+    <div class="content">  
+      
+      
+      <span id="SHLink_NoteMobile" class="SH-Link content-note-link-mobile">Show Mobile Notice</span>
+      <span id="SHImg_NoteMobile" class="fas fa-caret-right SH-padding content-note-link-mobile" aria-hidden="true"></span>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+
+      <span id="SHALink_S_Note" class="SH-Link SH-Hide SH-Bracket">Show All Notes</span>&nbsp;<span id="SHALink_H_Note" class="SH-Link SH-Hide SH-Bracket">Hide All Notes</span>
+      
+      
+      <div id="SHObj_NoteMobile" class="content-note-container content-note-container-mobile">
+        <div class="content-note-header">Mobile Notice</div>
+        <div class="content-note">You appear to be on a device with a "narrow" screen width (<em>i.e.</em> you are probably on a mobile phone).  Due to the nature of the mathematics on this site it is best views in landscape mode.  If your device is not in landscape mode many of the equations will run off the side of your device (should be able to scroll to see them) and some of the menu items will be cut off due to the narrow screen width.</div>
+      </div>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+
+      
+
+
+  <form method="post" action="http://tutorial.math.lamar.edu/Classes/DE/InverseTransforms.aspx" id="ctl00">
+<div class="aspNetHidden">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+</div>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="BF2CE4EE" />
+</div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </form>
+
+  <h3>Section 4-3 : Inverse Laplace Transforms</h3>
+
+
+    
+    <p>Finding the Laplace transform of a function is not terribly difficult if we’ve got a table of transforms in front of us to use as we saw in the last <a href="LaplaceTransforms.html">section</a>.  What we would like to do now is go the other way.</p>
+    
+    <p>We are going to be given a transform, \(F(s)\), and ask what function (or functions) did we have originally.  As you will see this can be a more complicated and lengthy process than taking transforms.  In these cases we say that we are finding the <strong>Inverse Laplace Transform</strong> of \(F(s)\) and use the following notation.</p>
+    
+        \[f\left( t \right) = {\mathcal{L}^{\, - 1}}\left\{ {F\left( s \right)} \right\}\]
+    
+    <p>As with Laplace transforms, we’ve got the following fact to help us take the inverse transform.</p>
+    
+    <h4>Fact</h4>
+  <div class="fact">
+    <p>Given the two Laplace
+            transforms \(F(s)\) and \(G(s)\) then</p>
+          
+            \[{\mathcal{L}^{\, - 1}}\left\{ {aF\left( s \right) + bG\left( s \right)} \right\} = a{\mathcal{L}^{\, - 1}}\left\{ {F\left( s \right)} \right\} + b{\mathcal{L}^{\, - 1}}\left\{ {G\left( s \right)} \right\}\]
+          <p>for any constants \(a\) and \(b\).</p>
+  </div>
+    
+    <p>So, we take the inverse transform of the individual transforms, put any constants back in and then add or subtract the results back up.</p>
+    
+    <p>Let’s take a look at a couple of fairly simple inverse transforms.</p>
+    <a class="anchor" name="Laplace_InvTrans_Ex1"></a>
+  <div class="example">
+    <span class="example-title">Example 1</span> Find the inverse transform of each of the following.
+    <ol class="example_parts_list">
+      <li>\(\displaystyle F\left( s \right) = \frac{6}{s} - \frac{1}{{s - 8}} + \frac{4}{{s - 3}}\)</li>
+      <li>\(\displaystyle H\left( s \right) = \frac{{19}}{{s + 2}} - \frac{1}{{3s - 5}} + \frac{7}{{{s^5}}}\)</li>
+      <li>\(\displaystyle F\left( s \right) = \frac{{6s}}{{{s^2} + 25}} + \frac{3}{{{s^2} + 25}}\)</li>
+      <li>\(\displaystyle G\left( s \right) = \frac{8}{{3{s^2} + 12}} + \frac{3}{{{s^2} - 49}}\)</li>
+    </ol>
+    <span id="SHALink_S_Soln1" class="SH-Link SH-All">Show All Solutions</span>&nbsp;<span id="SHALink_H_Soln1" class="SH-Link SH-All">Hide All Solutions</span>
+    <div class="example-content">
+      <span id="SHLink_DSoln1" class="SH-Link soln-title">Show Discussion</span> <span id="SHImg_DSoln1" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_DSoln1" class="soln-content">
+        <p>We’ve always felt that the key to doing inverse transforms is to look at the denominator and try to identify what you’ve got based on that.  If there is only one entry in the table that has that particular denominator, the next step is to make sure the numerator is correctly set up for the inverse transform process.  If it isn’t, correct it (this is always easy to do) and then take the inverse transform.</p>
+          
+          <p>If there is more than one entry in the table that has a particular denominator, then the numerators of each will be different, so go up to the numerator and see which one you’ve got.  If you need to correct the numerator to get it into the correct form and then take the inverse transform.</p>
+          
+          <p>So, with this advice in mind let’s see if we can take some inverse transforms.</p>
+      </div>
+      
+      <br />
+      <span class="soln-list-item soln-list-subitem">a</span> \(\displaystyle F\left( s \right) = \frac{6}{s} - \frac{1}{{s - 8}} + \frac{4}{{s - 3}}\) <span id="SHLink_Soln1a" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln1a" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln1a" class="soln-content">
+        <p>From the denominator of the first term it looks like the first term is just a constant.  The correct numerator for this term is a “1” so we’ll just factor the 6 out before taking the inverse transform.  The second term appears to be an exponential with \(a = 8\) and the numerator is exactly what it needs to be.  The third term also appears to be an exponential, only this time \(a = 3\) and we’ll need to factor the 4 out before taking the inverse transforms.</p>
+          
+          <p>So, with a little more detail than we’ll usually put into these,</p>
+          
+            \[\begin{align*}F\left( s \right) & = 6\,\,\frac{1}{s} - \frac{1}{{s - 8}} + 4\frac{1}{{s - 3}}\\ &amp; f\left( t \right) = 6\left( 1 \right) - {{\bf{e}}^{8t}} + 4\left( {{{\bf{e}}^{3t}}} \right)\\ &amp;  = 6 - {{\bf{e}}^{8t}} + 4{{\bf{e}}^{3t}}\end{align*}\]
+      </div>
+
+      <br />
+      <span class="soln-list-item soln-list-subitem">b</span> \(\displaystyle H\left( s \right) = \frac{{19}}{{s + 2}} - \frac{1}{{3s - 5}} + \frac{7}{{{s^5}}}\) <span id="SHLink_Soln1b" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln1b" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln1b" class="soln-content">
+        <p>The first term in this case looks like an exponential with \(a =  - 2\) and we’ll need to factor out the 19.  Be careful with negative signs in these problems, it’s very easy to lose track of them.</p>
+          
+          <p>The second term almost looks like an exponential, except that it’s got a \(3s\) instead of just an \(s\) in the denominator.  It is an exponential, but in this case,  we’ll need to factor a 3 out of the denominator before taking the inverse transform.</p>
+          
+          <p>The denominator of the third term appears to be <a href="Laplace_Table.html#LT_3">#3</a> in the table with \(n = 4\).  The numerator however, is not correct for this.  There is currently a 7 in the numerator and we need a \(4! = 24\) in the numerator.  This is very easy to fix.  Whenever a numerator is off by a multiplicative constant, as in this case, all we need to do is put the constant that we need in the numerator.  We will just need to remember to take it back out by dividing by the same constant.</p>
+          
+          <p>So, let’s first rewrite the transform.</p>
+          
+            \[\begin{align*}H\left( s \right) & = \frac{{19}}{{s - \left( { - 2} \right)}} - \frac{1}{{3\left( {s - \frac{5}{3}} \right)}} + \frac{{7\frac{{4!}}{{4!}}}}{{{s^{4 + 1}}}}\\ &amp;  = 19\frac{1}{{s - \left( { - 2} \right)}} - \frac{1}{3}\frac{1}{{s - \frac{5}{3}}} + \frac{7}{{4!}}\frac{{4!}}{{{s^{4 + 1}}}}\end{align*}\]
+          
+          <p>So, what did we do here?  We factored the 19 out of the first term.  We factored the 3 out of the denominator of the second term since it can’t be there for the inverse transform and in the third term we factored everything out of the numerator except the 4! since that is the portion that we need in the numerator for the inverse transform process.</p>
+          
+          <p>Let’s now take the inverse transform.</p>
+          
+              \[h\left( t \right) = 19{{\bf{e}}^{ - 2t}} - \frac{1}{3}{{\bf{e}}^{\frac{{5t}}{3}}} + \frac{7}{{24}}{t^4}\]
+      </div>
+
+      <br />
+      <span class="soln-list-item soln-list-subitem">c</span> \(\displaystyle F\left( s \right) = \frac{{6s}}{{{s^2} + 25}} + \frac{3}{{{s^2} + 25}}\) <span id="SHLink_Soln1c" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln1c" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln1c" class="soln-content">
+        <p>In this part we’ve got the same denominator in both terms and our table tells us that we’ve either got <a href="Laplace_Table.html#LT_7">#7</a> or <a href="Laplace_Table.html#LT_8">#8</a>.  The numerators will tell us which we’ve actually got.  The first one has an \(s\) in the numerator and so this means that the first term must be #8 and we’ll need to factor the 6 out of the numerator in this case.  The second term has only a constant in the numerator and so this term must be #7, however, in order for this to be exactly #7 we’ll need to multiply/divide a 5 in the numerator to get it correct for the table.</p>
+          
+          <p>The transform becomes,</p>
+          
+              \[\begin{align*}F\left( s \right) & = 6\frac{s}{{{s^2} + {{\left( 5 \right)}^2}}} + \frac{{3\frac{5}{5}}}{{{s^2} + {{\left( 5 \right)}^2}}}\\ &amp;  = 6\frac{s}{{{s^2} + {{\left( 5 \right)}^2}}} + \frac{3}{5}\frac{5}{{{s^2} + {{\left( 5 \right)}^2}}}\end{align*}\]
+          
+          <p>Taking the inverse transform gives,</p>
+          
+              \[f\left( t \right) = 6\cos \left( {5t} \right) + \frac{3}{5}\sin \left( {5t} \right)\]
+      </div>
+
+      <br />
+      <span class="soln-list-item soln-list-subitem">d</span> \(\displaystyle G\left( s \right) = \frac{8}{{3{s^2} + 12}} + \frac{3}{{{s^2} - 49}}\) <span id="SHLink_Soln1d" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln1d" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln1d" class="soln-content">
+        <p>In this case the first term will be a sine once we factor a 3 out of the denominator, while the second term appears to be a hyperbolic sine (<a href="Laplace_Table.html#LT_17">#17</a>).  Again, be careful with the difference between these two.  Both of the terms will also need to have their numerators fixed up.  Here is the transform once we’re done rewriting it.</p>
+          
+            \[\begin{align*}G\left( s \right) & = \frac{1}{3}\frac{8}{{{s^2} + 4}} + \frac{3}{{{s^2} - 49}}\\ &amp;  = \frac{1}{3}\frac{{\left( 4 \right)\left( 2 \right)}}{{{s^2} + {{\left( 2 \right)}^2}}} + \frac{{3\frac{7}{7}}}{{{s^2} - {{\left( 7 \right)}^2}}}\end{align*}\]
+          
+          <p>Notice that in the first term we took advantage of the fact that we could get the 2 in the numerator that we needed by factoring the 8.  The inverse transform is then,</p>
+          
+            \[g\left( t \right) = \frac{4}{3}\sin \left( {2t} \right) + \frac{3}{7}\sinh \left( {7t} \right)\]
+      </div>
+    </div>
+  </div>
+    
+    <p>So, probably the best way to identify the transform is by looking at the denominator.  If there is more than one possibility use the numerator to identify the correct one.  Fix up the numerator if needed to get it into the form needed for the inverse transform process.  Finally, take the inverse transform.</p>
+    
+    <p>Let’s do some slightly harder problems.  These are a little more involved than the first set.</p>
+    <a class="anchor" name="Laplace_InvTrans_Ex2"></a>
+  <div class="example">
+    <span class="example-title">Example 2</span> Find the inverse transform of each of the following.  
+    <ol class="example_parts_list">
+      <li>\(\displaystyle F\left( s \right) = \frac{{6s - 5}}{{{s^2} + 7}}\)</li>
+      <li>\(\displaystyle F\left( s \right) = \frac{{1 - 3s}}{{{s^2} + 8s + 21}}\)</li>
+      <li>\(\displaystyle G\left( s \right) = \frac{{3s - 2}}{{2{s^2} - 6s - 2}}\)</li>
+      <li>\(\displaystyle H\left( s \right) = \frac{{s + 7}}{{{s^2} - 3s - 10}}\)</li>
+    </ol>
+    <span id="SHALink_S_Soln2" class="SH-Link SH-All">Show All Solutions</span>&nbsp;<span id="SHALink_H_Soln2" class="SH-Link SH-All">Hide All Solutions</span>
+    <div class="example-content">
+      <span class="soln-list-item soln-list-subitem">a</span> \(\displaystyle F\left( s \right) = \frac{{6s - 5}}{{{s^2} + 7}}\) <span id="SHLink_Soln2a" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln2a" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln2a" class="soln-content">
+        <p>From the denominator of this one it appears that it is either a sine or a cosine.  However, the numerator doesn’t match up to either of these in the table.  A cosine wants just an \(s\) in the numerator with at most a multiplicative constant, while a sine wants only a constant and no \(s\) in the numerator.</p>
+          
+          <p>We’ve got both in the numerator.  This is easy to fix however.  We will just split up the transform into two terms and then do inverse transforms.</p>
+          
+            \[\begin{align*}F\left( s \right) & = \frac{{6s}}{{{s^2} + 7}} - \frac{{5\frac{{\sqrt 7 }}{{\sqrt 7 }}}}{{{s^2} + 7}}\\ f\left( t \right) & = 6\cos \left( {\sqrt 7 t} \right) - \frac{5}{{\sqrt 7 }}\sin \left( {\sqrt 7 t} \right)\end{align*}\]
+          
+          <p>Do not get too used to always getting the perfect squares in sines and cosines that we saw in the first set of examples.  More often than not (at least in my class) they won’t be perfect squares!</p>
+      </div>
+
+      <br />
+      <span class="soln-list-item soln-list-subitem">b</span> \(\displaystyle F\left( s \right) = \frac{{1 - 3s}}{{{s^2} + 8s + 21}}\) <span id="SHLink_Soln2b" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln2b" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln2b" class="soln-content">
+        <p>In this case there are no denominators in our table that look like this.  We can however make the denominator look like one of the denominators in the table by completing the square on the denominator.  So, let’s do that first.</p>
+          
+            \[\begin{align*}{s^2} + 8s + 21 & = {s^2} + 8s + 16 - 16 + 21\\ &amp;  = {s^2} + 8s + 16 + 5\\ &amp;  = {\left( {s + 4} \right)^2} + 5\end{align*}\]
+          
+          <p>Recall that in completing the square you take half the coefficient of the \(s\), square this, and then add and subtract the result to the polynomial.  After doing this the first three terms should factor as a perfect square.</p>
+          
+          <p>So, the transform can be written as the following.</p>
+          
+              \[F\left( s \right) = \frac{{1 - 3s}}{{{{\left( {s + 4} \right)}^2} + 5}}\]
+          
+          <p>Okay, with this rewrite it looks like we’ve got <a href="Laplace_Table.html#LT_19">#19</a> and/or <a href="Laplace_Table.html#LT_20">#20</a>’s from our table of transforms.  However, note that in order for it to be a <a href="Laplace_Table.html">#19</a> we want just a constant in the numerator and in order to be a <a href="Laplace_Table.html">#20</a> we need an \(s – a\) in the numerator.  We’ve got neither of these, so we’ll have to correct the numerator to get it into proper form.</p>
+          
+          <p>In correcting the numerator always get the \(s – a\) first.  This is the important part.  We will also need to be careful of the 3 that sits in front of the \(s\).  One way to take care of this is to break the term into two pieces, factor the 3 out of the second and then fix up the numerator of this term.  This will work; however, it will put three terms into our answer and there are really only two terms.</p>
+          
+          <p>So, we will leave the transform as a single term and correct it as follows,</p>
+          
+            \[\begin{align*}F\left( s \right) & = \frac{{1 - 3\left( {s + 4 - 4} \right)}}{{{{\left( {s + 4} \right)}^2} + 5}}\\ &amp;  = \frac{{1 - 3\left( {s + 4} \right) + 12}}{{{{\left( {s + 4} \right)}^2} + 5}}\\ &amp;  = \frac{{ - 3\left( {s + 4} \right) + 13}}{{{{\left( {s + 4} \right)}^2} + 5}}\end{align*}\]
+          
+          <p>We needed an \(s + 4\) in the numerator, so we put that in.  We just needed to make sure and take the 4 back out by subtracting it back out.  Also, because of the 3 multiplying the \(s\) we needed to do all this inside a set of parenthesis.  Then we partially multiplied the 3 through the second term and combined the constants.  With the transform in this form, we can break it up into two transforms each of which are in the tables and so we can do inverse transforms on them,</p>
+          
+            \[\begin{align*}F\left( s \right) & =  - 3\frac{{s + 4}}{{{{\left( {s + 4} \right)}^2} + 5}} + \frac{{13\frac{{\sqrt 5 }}{{\sqrt 5 }}}}{{{{\left( {s + 4} \right)}^2} + 5}}\\ f\left( t \right) & =  - 3{{\bf{e}}^{ - 4t}}\cos \left( {\sqrt 5 t} \right) + \frac{{13}}{{\sqrt 5 }}{{\bf{e}}^{ - 4t}}\sin \left( {\sqrt 5 t} \right)\end{align*}\]
+      </div>
+
+      <br />
+      <span class="soln-list-item soln-list-subitem">c</span> \(\displaystyle G\left( s \right) = \frac{{3s - 2}}{{2{s^2} - 6s - 2}}\) <span id="SHLink_Soln2c" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln2c" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln2c" class="soln-content">
+         <p>This one is similar to the last one.  We just need to be careful with the completing the square however.  The first thing that we should do is factor a 2 out of the denominator, then complete the square.  Remember that when completing the square a coefficient of 1 on the \(s^{2}\) term is needed!  So, here’s the work for this transform.</p>
+          
+            \[\begin{align*}G\left( s \right) & = \frac{{3s - 2}}{{2\left( {{s^2} - 3s - 1} \right)}}\\ &amp;  = \frac{1}{2}\frac{{3s - 2}}{{{s^2} - 3s + \frac{9}{4} - \frac{9}{4} - 1}}\\ &amp;  = \frac{1}{2}\frac{{3s - 2}}{{{{\left( {s - \frac{3}{2}} \right)}^2} - \frac{{13}}{4}}}\end{align*}\]
+          
+          <p>So, it looks like we’ve got <a href="Laplace_Table.html#LT_21">#21</a> and <a href="Laplace_Table.html#LT_22">#22</a> with a corrected numerator.  Here’s the work for that and the inverse transform.</p>
+          
+            \[\begin{align*}G\left( s \right) & = \frac{1}{2}\frac{{3\left( {s - \frac{3}{2} + \frac{3}{2}} \right) - 2}}{{{{\left( {s - \frac{3}{2}} \right)}^2} - \frac{{13}}{4}}}\\ &amp;  = \frac{1}{2}\frac{{3\left( {s - \frac{3}{2}} \right) + \frac{5}{2}}}{{{{\left( {s - \frac{3}{2}} \right)}^2} - \frac{{13}}{4}}}\\ &amp;  = \frac{1}{2}\left( {\frac{{3\left( {s - \frac{3}{2}} \right)}}{{{{\left( {s - \frac{3}{2}} \right)}^2} - \frac{{13}}{4}}} + \frac{{\frac{5}{2}\frac{{\sqrt {13} }}{{\sqrt {13} }}}}{{{{\left( {s - \frac{3}{2}} \right)}^2} - \frac{{13}}{4}}}} \right)\\ g\left( t \right) & = \frac{1}{2}\left( {3{{\bf{e}}^{\frac{{3\,t}}{2}}}\cosh \left( {\frac{{\sqrt {13} }}{2}t} \right) + \frac{5}{{\sqrt {13} }}{{\bf{e}}^{\frac{{3\,t}}{2}}}\sinh \left( {\frac{{\sqrt {13} }}{2}t} \right)} \right)\end{align*}\]
+          
+          <p>In correcting the numerator of the second term, notice that I only put in the square root since we already had the “over 2” part of the fraction that we needed in the numerator.</p>
+      </div>
+
+      <br />
+      <span class="soln-list-item soln-list-subitem">d</span> \(\displaystyle H\left( s \right) = \frac{{s + 7}}{{{s^2} - 3s - 10}}\) <span id="SHLink_Soln2d" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln2d" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln2d" class="soln-content">
+        <p>This one appears to be similar to the previous two, but it actually isn’t.  The denominators in the previous two couldn’t be easily factored.  In this case the denominator does factor and so we need to deal with it differently.  Here is the transform with the factored denominator.</p>
+          
+              \[H\left( s \right) = \frac{{s + 7}}{{\left( {s + 2} \right)\left( {s - 5} \right)}}\]
+          
+          <p>The denominator of this transform seems to suggest that we’ve got a couple of exponentials, however in order to be exponentials there can only be a single term in the denominator and no \(s\)’s in the numerator.</p>
+          
+          <p>To fix this we will need to do partial fractions on this transform.  In this case the partial fraction decomposition will be</p>
+          
+              \[H\left( s \right) = \frac{A}{{s + 2}} + \frac{B}{{s - 5}}\]
+          
+          <p>Don’t remember how to do partial fractions?  In this example we’ll show you one way of getting the values of the constants and after this example we’ll review how to get the correct form of the partial fraction decomposition.</p>
+          
+          <p>Okay, so let’s get the constants.  There is a method for finding the constants that will always work, however it can lead to more work than is sometimes required.  Eventually, we will need that method, however in this case there is an easier way to find the constants.</p>
+          
+          <p>Regardless of the method used, the first step is to actually add the two terms back up.  This gives the following.</p>
+          
+            \[\frac{{s + 7}}{{\left( {s + 2} \right)\left( {s - 5} \right)}} = \frac{{A\left( {s - 5} \right) + B\left( {s + 2} \right)}}{{\left( {s + 2} \right)\left( {s - 5} \right)}}\]
+          
+          <p>Now, this needs to be true for any \(s\) that we should choose to put in.  So, since the denominators are the same we just need to get the numerators equal.  Therefore, set the numerators equal.</p>
+          
+              \[s + 7 = A\left( {s - 5} \right) + B\left( {s + 2} \right)\]
+          
+          <p>Again, this must be true for ANY value of \(s\) that we want to put in.  So, let’s take advantage of that.  If it must be true for any value of \(s\) then it must be true for \(s =  - 2\), to pick a value at random.  In this case we get,</p>
+          
+            \[5 = A\left( { - 7} \right) + B\left( 0 \right)\hspace{0.25in} \Rightarrow  \hspace{0.25in} A =  - \frac{5}{7}\]
+          
+          <p>We found \(A\) by appropriately picking \(s\).  We can \(B\) in the same way if we chose \(s = 5\).</p>
+          
+            \[12 = A\left( 0 \right) + B\left( 7 \right)\hspace{0.25in} \Rightarrow \hspace{0.25in}B = \frac{{12}}{7}\]
+          
+          <p>This will not always work, but when it does it will usually simplify the work considerably.</p>
+          
+          <p>So, with these constants the transform becomes,</p>
+          
+            \[H\left( s \right) = \frac{{ - \frac{5}{7}}}{{s + 2}} + \frac{{\frac{{12}}{7}}}{{s - 5}}\]
+          
+          <p>We can now easily do the inverse transform to get,</p>
+          
+              \[h\left( t \right) =  - \frac{5}{7}{{\bf{e}}^{ - 2t}} + \frac{{12}}{7}{{\bf{e}}^{5t}}\]
+      </div>
+    </div>
+  </div>
+    
+    <p>The last part of this example needed partial fractions to get the inverse transform.  When we finally get back to differential equations and we start using Laplace
+      transforms to solve them, you will quickly come to understand that partial fractions are a fact of life in these problems.  Almost every problem will require partial fractions to one degree or another.</p>
+    
+    <p>Note that we could have done the last part of this example as we had done the previous two parts.  If we had we would have gotten hyperbolic functions.  However, recalling the <a href="Laplace_Table.html#Note2">definition</a> of the hyperbolic functions we could have written the result in the form we got from the way we worked our problem.  However, most students have a better feel for exponentials than they do for hyperbolic functions and so it’s usually best to just use partial fractions and get the answer in terms of exponentials.  It may be a little more work, but it will give a nicer (and easier to work with) form of the answer.</p>
+    
+    <p>Be warned that in my class I’ve got a rule that if the denominator can be factored with integer coefficients then it must be.</p>
+    
+    <p>So, let’s remind you how to get the correct partial fraction decomposition.  The first step is to factor the denominator as much as possible.  Then for each term in the denominator we will use the following table to get a term or terms for our partial fraction decomposition.</p>
+    
+      <table class="table-no-outer-border">
+        <tr>
+          <th>Factor in<br />denominator</th>
+          <th style="border-right:unset">Term in partial<br />fraction decomposition</th>
+        </tr>
+        <tr>
+          <td class="table-cell-center">\(ax + b\)</td>
+          <td class="table-cell-center" style="border-right:unset">\(\displaystyle \frac{A}{{ax + b}}\)</td>
+        </tr>
+        <tr>
+          <td class="table-cell-center">\({\left( {ax + b} \right)^k}\)</td>
+          <td class="table-cell-center" style="border-right:unset">\(\displaystyle \frac{{{A_1}}}{{ax + b}} + \frac{{{A_2}}}{{{{\left( {ax + b} \right)}^2}}} +  \cdots  + \frac{{{A_k}}}{{{{\left( {ax + b} \right)}^k}}}\)</td>
+        </tr>
+        <tr>
+          <td class="table-cell-center">\(a{x^2} + bx + c\)</td>
+          <td class="table-cell-center" style="border-right:unset">\(\displaystyle \frac{{Ax + B}}{{a{x^2} + bx + c}}\)</td>
+        </tr>
+        <tr>
+          <td class="table-cell-center">\({\left( {a{x^2} + bx + c} \right)^k}\)</td>
+          <td class="table-cell-center" style="border-right:unset">\(\displaystyle \frac{{{A_1}x + {B_1}}}{{a{x^2} + bx + c}} + \frac{{{A_2}x + {B_2}}}{{{{\left( {a{x^2} + bx + c} \right)}^2}}} +  \cdots  + \frac{{{A_k}x + {B_k}}}{{{{\left( {a{x^2} + bx + c} \right)}^k}}}\)</td>
+        </tr>
+      </table>
+    
+    <p>Notice that the first and third cases are really special cases of the second and fourth cases respectively.</p>
+    
+    <p>So, let’s do a couple more examples to remind you how to do partial fractions.</p>
+    
+    <a class="anchor" name="Laplace_InvTrans_Ex3"></a>
+  <div class="example">
+    <span class="example-title">Example 3</span> Find the inverse transform of each of the following.
+    <ol class="example_parts_list">
+      <li>\(\displaystyle G\left( s \right) = \frac{{86s - 78}}{{\left( {s + 3} \right)\left( {s - 4} \right)\left( {5s - 1} \right)}}\)</li>
+      <li>\(\displaystyle F\left( s \right) = \frac{{2 - 5s}}{{\left( {s - 6} \right)\left( {{s^2} + 11} \right)}}\)</li>
+      <li>\(\displaystyle G\left( s \right) = \frac{{25}}{{{s^3}\left( {{s^2} + 4s + 5} \right)}}\)</li>
+    </ol>
+    <span id="SHALink_S_Soln3" class="SH-Link SH-All">Show All Solutions</span>&nbsp;<span id="SHALink_H_Soln3" class="SH-Link SH-All">Hide All Solutions</span>
+    <div class="example-content">
+      <span class="soln-list-item soln-list-subitem">a</span> \(\displaystyle G\left( s \right) = \frac{{86s - 78}}{{\left( {s + 3} \right)\left( {s - 4} \right)\left( {5s - 1} \right)}}\) <span id="SHLink_Soln3a" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln3a" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln3a" class="soln-content">
+        <p>Here’s the partial fraction decomposition for this part.</p>
+          
+              \[G\left( s \right) = \frac{A}{{s + 3}} + \frac{B}{{s - 4}} + \frac{C}{{5s - 1}}\]
+          
+          <p>Now, this time we won’t go into quite the detail as we did in the last example.  We are after the numerator of the partial fraction decomposition and this is usually easy enough to do in our heads.  Therefore, we will go straight to setting numerators equal.</p>
+          
+            \[86s - 78 = A\left( {s - 4} \right)\left( {5s - 1} \right) + B\left( {s + 3} \right)\left( {5s - 1} \right) + C\left( {s + 3} \right)\left( {s - 4} \right)\]
+          
+          <p>As with the last example, we can easily get the constants by correctly picking values of \(s\).</p>
+          
+            \[\begin{align*} & s =  - 3 & - 336 & = A\left( { - 7} \right)\left( { - 16} \right) &  \Rightarrow \hspace{0.25in}A & =  - 3\\ &amp; s = \frac{1}{5}&  - \frac{{304}}{5} & = C\left( {\frac{{16}}{5}} \right)\left( { - \frac{{19}}{5}} \right) & \Rightarrow \hspace{0.25in}C & = 5\\ &amp; s = 4 & 266 & = B\left( 7 \right)\left( {19} \right) & \Rightarrow \hspace{0.25in}B & = 2\end{align*}\]
+          
+          <p>So, the partial fraction decomposition for this transform is,</p>
+          
+              \[G\left( s \right) =  - \frac{3}{{s + 3}} + \frac{2}{{s - 4}} + \frac{5}{{5s - 1}}\]
+          
+          <p>Now, in order to actually take the inverse transform we will need to factor a 5 out of the denominator of the last term.  The corrected transform as well as its inverse transform is.</p>
+          
+            \[\begin{align*}G\left( s \right) & =  - \frac{3}{{s + 3}} + \frac{2}{{s - 4}} + \frac{1}{{s - \frac{1}{5}}}\\ g\left( t \right) & =  - 3{{\bf{e}}^{ - 3t}} + 2{{\bf{e}}^{4t}} + {{\bf{e}}^{\frac{t}{5}}}\end{align*}\]
+      </div>
+
+      <br />
+      <span class="soln-list-item soln-list-subitem">b</span> \(\displaystyle F\left( s \right) = \frac{{2 - 5s}}{{\left( {s - 6} \right)\left( {{s^2} + 11} \right)}}\) <span id="SHLink_Soln3b" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln3b" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln3b" class="soln-content">
+        <p>So, for the first time we’ve got a quadratic in the denominator.  Here’s the decomposition for this part.</p>
+          
+              \[F\left( s \right) = \frac{A}{{s - 6}} + \frac{{Bs + C}}{{{s^2} + 11}}\]
+          
+          <p>Setting numerators equal gives,</p>
+          
+              \[2 - 5s = A\left( {{s^2} + 11} \right) + \left( {Bs + C} \right)\left( {s - 6} \right)\]
+          
+          <p>Okay, in this case we could use \(s = 6\) to quickly find \(A\), but that’s all it would give.  In this case we will need to go the “long” way around to getting the constants.  Note that this way will always work but is sometimes more work than is required.</p>
+          
+          <p>The “long” way is to completely multiply out the right side and collect like terms.</p>
+          
+            \[\begin{align*}2 - 5s = A\left( {{s^2} + 11} \right) + \left( {Bs + C} \right)\left( {s - 6} \right)\\ &amp;  = A{s^2} + 11A + B{s^2} - 6B + Cs - 6C\\ &amp;  = \left( {A + B} \right){s^2} + \left( { - 6B + C} \right)s + 11A - 6C\end{align*}\]
+          
+          <p>In order for these two to be equal the coefficients of the \(s^{2}\), \(s\) and the constants must all be equal.  So, setting coefficients equal gives the following system of equations that can be solved.</p>
+          
+            \[\left. {\begin{aligned} & {s^2}: & A + B & = 0\\ & {s^1}: & - 6B + C & =  - 5\\ & {s^0}: & 11A - 6C & = 2\end{aligned}} \right\}\hspace{0.25in} \Rightarrow \hspace{0.25in}A =  - \frac{{28}}{{47}},\,\,\,\,B = \frac{{28}}{{47}},\,\,\,\,\,C =  - \frac{{67}}{{47}}\]
+          
+          <p>Notice that we used \(s^{0}\) to denote the constants.  This is habit on my part and isn’t really required, it’s just what I’m used to doing.  Also, the coefficients are fairly messy fractions in this case.  Get used to that.  They will often be like this when we get back into solving differential equations.</p>
+          
+          <p>There is a way to make our life a little easier as well with this.  Since all of the fractions have a denominator of 47 we’ll factor that out as we plug them back into the decomposition.  This will make dealing with them much easier.  The partial fraction decomposition is then,</p>
+          
+            \[\begin{align*}F\left( s \right) & = \frac{1}{{47}}\left( { - \frac{{28}}{{s - 6}} + \frac{{28s - 67}}{{{s^2} + 11}}} \right)\\ &amp;  = \frac{1}{{47}}\left( { - \frac{{28}}{{s - 6}} + \frac{{28s}}{{{s^2} + 11}} - \frac{{67\frac{{\sqrt {11} }}{{\sqrt {11} }}}}{{{s^2} + 11}}} \right)\end{align*}\]
+          
+          <p>The inverse transform is then.</p>
+          
+            \[f\left( t \right) = \frac{1}{{47}}\left( { - 28{{\bf{e}}^{6t}} + 28\cos \left( {\sqrt {11} t} \right) - \frac{{67}}{{\sqrt {11} }}\sin \left( {\sqrt {11} t} \right)} \right)\]
+      </div>
+
+      <br />
+      <span class="soln-list-item soln-list-subitem">c</span> \(\displaystyle G\left( s \right) = \frac{{25}}{{{s^3}\left( {{s^2} + 4s + 5} \right)}}\) <span id="SHLink_Soln3c" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln3c" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln3c" class="soln-content">
+        <p>With this last part do not get excited about the \(s^{3}\).  We can think of this term as</p>
+          
+              \[{s^3} = {\left( {s - 0} \right)^3}\]
+          <p>and it becomes a linear term to a power.  So, the partial fraction decomposition is</p>
+          
+            \[G\left( s \right) = \frac{A}{s} + \frac{B}{{{s^2}}} + \frac{C}{{{s^3}}} + \frac{{Ds + E}}{{{s^2} + 4s + 5}}\]
+          
+          <p>Setting numerators equal and multiplying out gives.</p>
+          
+            \[\begin{align*}25 & = A{s^2}\left( {{s^2} + 4s + 5} \right) + Bs\left( {{s^2} + 4s + 5} \right) + C\left( {{s^2} + 4s + 5} \right) + \left( {Ds + E} \right){s^3}\\ &amp;  = \left( {A + D} \right){s^4} + \left( {4A + B + E} \right){s^3} + \left( {5A + 4B + C} \right){s^2} + \left( {5B + 4C} \right)s + 5C\end{align*}\]
+          
+          <p>Setting coefficients equal gives the following system.</p>
+          
+            \[\left. {\begin{aligned}& {s^4}: & A + D & = 0\\ & {s^3}: & 4A + B + E & = 0\\ & {s^2}: & 5A + 4B + C & = 0\\ & {s^1}: & 5B + 4C & = 0\\ & {s^0}: & 5C & = 25\end{aligned}} \right\}\hspace{0.25in} \Rightarrow \hspace{0.25in}A = \frac{{11}}{5},B =  - 4,C = 5,D =  - \frac{{11}}{5},E =  - \frac{{24}}{5}\]
+          
+          <p>This system looks messy, but it’s easier to solve than it might look.  First, we get \(C\) for free from the last equation.  We can then use the fourth equation to find \(B\).  The third equation will then give \(A\), <em>etc</em>.</p>
+          
+          <p>When plugging into the decomposition we’ll get everything with a denominator of 5, then factor that out as we did in the previous part in order to make things easier to deal with.</p>
+          
+            \[G\left( s \right) = \frac{1}{5}\left( {\frac{{11}}{s} - \frac{{20}}{{{s^2}}} + \frac{{25}}{{{s^3}}} - \frac{{11s + 24}}{{{s^2} + 4s + 5}}} \right)\]
+          
+          <p>Note that we also factored a minus sign out of the last two terms.  To complete this part we’ll need to complete the square on the later term and fix up a couple of numerators.  Here’s that work.</p>
+          
+            \[\begin{align*}G\left( s \right) & = \frac{1}{5}\left( {\frac{{11}}{s} - \frac{{20}}{{{s^2}}} + \frac{{25}}{{{s^3}}} - \frac{{11s + 24}}{{{s^2} + 4s + 5}}} \right)\\ &amp;  = \frac{1}{5}\left( {\frac{{11}}{s} - \frac{{20}}{{{s^2}}} + \frac{{25}}{{{s^3}}} - \frac{{11\left( {s + 2 - 2} \right) + 24}}{{{{\left( {s + 2} \right)}^2} + 1}}} \right)\\ &amp;  = \frac{1}{5}\left( {\frac{{11}}{s} - \frac{{20}}{{{s^2}}} + \frac{{25\frac{{2!}}{{2!}}}}{{{s^3}}} - \frac{{11\left( {s + 2} \right)}}{{{{\left( {s + 2} \right)}^2} + 1}} - \frac{2}{{{{\left( {s + 2} \right)}^2} + 1}}} \right)\end{align*}\]
+          
+          <p>The inverse transform is then.</p>
+          
+            \[g\left( t \right) = \frac{1}{5}\left( {11 - 20t + \frac{{25}}{2}{t^2} - 11{{\bf{e}}^{ - 2t}}\cos \left( t \right) - 2{{\bf{e}}^{ - 2t}}\sin \left( t \right)} \right)\]
+      </div>
+    </div>
+  </div>
+    
+    <p>So, one final time.  Partial fractions are a fact of life when using Laplace
+      transforms to solve differential equations.  Make sure that you can deal with them.</p>
+    
+ 
+  
+
+
+      
+
+
+
+    </div>
+    <!-- End of content div -->
+
+
+    <div class="footer">
+      <div class="footer-links">
+        [<a href="http://tutorial.math.lamar.edu/Contact.aspx">Contact Me</a>]&nbsp;[<a href="../../MyStudents-2.html">My Students</a>]&nbsp;[<a href="http://tutorial.math.lamar.edu/Privacy.aspx">Privacy Statement</a>]&nbsp;[<a href="../../Help-2.html">Site Help &amp; FAQ</a>]&nbsp;[<a href="http://tutorial.math.lamar.edu/Terms.aspx">Terms of Use</a>]
+      </div>
+      <div class="footer-dates">
+        <div class="footer-copyright"><span id="lblCopyRight">&copy; 2003 - 2019 Paul Dawkins</span></div>
+        <div class="footer-spacer"></div>
+        <div class="footer-modified-date">Page Last Modified : <span id="lblModified">6/3/2018</span></div>
+      </div>
+      
+
+    </div>
+  </div>
+  <!-- End of page div...  -->
+</body>
+
+<!-- Mirrored from tutorial.math.lamar.edu/Classes/DE/InverseTransforms.aspx by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 27 Feb 2019 06:15:36 GMT -->
+</html>

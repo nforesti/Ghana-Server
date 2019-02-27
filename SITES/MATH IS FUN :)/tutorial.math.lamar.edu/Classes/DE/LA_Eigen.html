@@ -1,0 +1,1238 @@
+
+
+<!DOCTYPE html>
+
+<html>
+
+<!-- Mirrored from tutorial.math.lamar.edu/Classes/DE/LA_Eigen.aspx by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 27 Feb 2019 06:15:36 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=yes" /><meta http-equiv="X-UA-Compatible" content="IE=edge" />  <!-- For best MathJax performance on IE  -->
+
+  <meta name="google-site-verification" content="uLoA31CJfOhIVMJWBjCmQL8xNMmmLybZU3LRKavy9WQ" /><title>
+	Differential Equations - Review : Eigenvalues & Eigenvectors
+</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="../../../www.googletagmanager.com/gtag/js1872?id=UA-331594-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-331594-1');
+  </script>
+
+  <link type="text/css" href="../../css/jquery.mmenu.all.css" rel="stylesheet" /><link type="text/css" href="../../css/jquery.dropdown.css" rel="stylesheet" /><link href="../../FA/css/fontawesome-all.min.css" rel="stylesheet" /><link type="text/css" href="../../css/notes-all.css" rel="stylesheet" /><link type="text/css" href="../../css/notes-google.css" rel="stylesheet" /><link type="text/css" href="../../css/notes-mmenu.css" rel="stylesheet" /><link type="text/css" href="../../css/notes-dropdown.css" rel="stylesheet" />
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+     TeX: { equationNumbers: { autoNumber: "AMS" } }
+    });
+  </script>
+  <script type="text/javascript" async src="../../../cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax2ba6.js?config=TeX-AMS_CHTML-full"></script>
+  <script type="text/javascript" src="../../../code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="../../js/jquery.mmenu.all.js"></script>
+  <script type="text/javascript" src="../../js/jquery.dropdown.js"></script>
+  <script type="text/javascript" src="../../js/notes-all.js"></script>  
+
+  <script>
+    (function () {
+      var cx = '001004262401526223570:11yv6vpcqvy';
+      var gcse = document.createElement('script');
+      gcse.type = 'text/javascript';
+      gcse.async = true;
+      gcse.src = '../../../cse.google.com/cse07b6.html?cx=' + cx;
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(gcse, s);
+    })();
+  </script>
+
+<meta http-equiv="keywords" name="keywords" content="eigenvalue, eigenvector" /><meta http-equiv="description" name="description" content="In this section we will introduce the concept of eigenvalues and eigenvectors of a matrix.  We define the characteristic polynomial and show how it can be used to find the eigenvalues for a matrix.  Once we have the eigenvalues for a matrix we also show how to find the corresponding eigenvalues for the matrix." /></head>
+<body onload="init({Notes: 'NoteMobile;8/21/2018;true'})">
+
+  <div id="page">
+
+    <div class="header">
+      <div class="header-row">
+        <!--<a href="#menu"><span></span></a>-->
+        <div id="side-menu-icon" class="header-side-menu-icon"><a href="#menu"><span class="fas fa-bars fa-lg" aria-hidden="true" title="Main Menu - Change between topics, chapters and sections as well as a few extra pages."></span></a></div>
+        <span class="header-title"><a href="../../index.html" class="header-title-link">Paul's Online Notes</a></span>
+        <div class="header-spacer"></div>
+
+        <div id="content-top-menu" class="top-menu">
+          <button id="content-type-menu" class="top-menu-button" data-jq-dropdown="#jq-dropdown-type" title="View (Notes, Practice Problems or Assignment Problems, Show/Hide Solutions and/or Steps) Menu">
+            <span id="tab_top_menu_notes" class="top-menu-item-title">Notes</span> <span class="far fa-eye fa-lg" aria-hidden="true"></span>
+          </button>
+
+          <button id="quicknav-menu" class="top-menu-button" data-jq-dropdown="#jq-dropdown-quicknav" title="Quick Navigation (Previous/Next Sections and Problems and Full Problem List) Menu">
+            <span class="top-menu-item-title">Quick Nav</span> <span class="fas fa-exchange fa-lg" aria-hidden="true"></span>
+          </button>
+          
+          <button id="download-menu" class="top-menu-button" data-jq-dropdown="#jq-dropdown-download" title="Download pdf Menu">
+            <span class="top-menu-item-title">Download</span> <span class="far fa-download fa-lg" aria-hidden="true"></span>
+          </button>
+
+          <button id="print-menu" class="top-menu-button top-menu-button-icon-only" data-jq-dropdown="#jq-print-download" title="Print Menu">
+            <span class="far fa-print fa-lg" aria-hidden="true"></span>
+          </button>
+        </div>
+
+        <div id="header-google-search" class="header-search">
+          <gcse:search></gcse:search>
+        </div>
+        <div id="header-search-icon" title="Site Search" class="header-menu-icon"><span id="search-icon" class="fas fa-search" aria-hidden="true"></span></div>
+
+      </div>
+    </div>
+
+     <div id="jq-dropdown-type" class="jq-dropdown jq-dropdown-tip">
+      <ul class="jq-dropdown-menu">
+        
+        <li id="li_type_menu_goto" class="top-menu-nav-title">Go To</li>
+        <li id="li_type_menu_notes">
+          <span id="type_menu_notes_span" title="Viewing the Notes for the current topic." class="top-menu-current">Notes</span>
+          
+        </li>
+        <li id="li_type_menu_practice">
+          <span id="type_menu_problem_span_de" class="top-menu-item-text">Practice and Assignment problems are not yet written.  As time permits I am working on them, however I don't have the amount of free time that I used to so it will take a while before anything shows up here.</span>
+          
+          
+        </li>
+        <li id="li_type_menu_asgn">
+          
+          
+        </li>
+        <li id="li_type_menu_sh" class="top-menu-nav-title">Show/Hide</li>
+        <li id="li_type_menu_show" title="Show any hidden solutions and/or steps that may be present on the page."><a href="javascript:SHPrintPage(1,0)" id="view_menu_show">Show all Solutions/Steps/<em>etc.</em></a></li>
+        <li id="li_type_menu_hide" title="Hide any visible solutions and/or steps that may be present on the page."><a href="javascript:SHPrintPage(0,0)" id="view_menu_hide">Hide all Solutions/Steps/<em>etc.</em></a></li>
+      </ul>
+    </div>
+
+    <div id="jq-dropdown-quicknav" class="jq-dropdown jq-dropdown-tip">
+      <ul class="jq-dropdown-menu">
+        <li id="li_nav_menu_sections" class="top-menu-nav-title">Sections</li>
+        <li id="li_nav_menu_prev_section"><a href="LA_Matrix.html" id="a_nav_menu_prev_section" class="top-menu-nav-link" title="Previous Section : Review : Matrices &amp; Vectors"><span class="top-menu-prev fas fa-chevron-left"></span> Review : Matrices & Vectors</a></li>
+        <li id="li_nav_menu_next_section"><a href="SystemsDE.html" id="a_nav_menu_next_section" class="top-menu-nav-link" title="Next Section : Systems of Differential Equations"><span class="top-menu-prev-hidden fas fa-chevron-left"></span> Systems of Differential Equations <span class="top-menu-next fas fa-chevron-right"></span></a></li>
+        <li id="li_nav_menu_chapters" class="top-menu-nav-title">Chapters</li>
+        <li id="li_nav_menu_prev_chapter"><a href="LaplaceIntro.html" id="a_nav_menu_prev_chapter" class="top-menu-nav-link" title="Previous Chapter : Laplace Transforms"><span class="top-menu-prev fas fa-chevron-left"></span><span class="top-menu-prev fas fa-chevron-left"></span> Laplace Transforms</a></li>
+        <li id="li_nav_menu_next_chapter"><a href="SeriesIntro.html" id="a_nav_menu_next_chapter" class="top-menu-nav-link" title="Next Chapter : Series Solutions to DE&#39;s"><span class="top-menu-prev-hidden fas fa-chevron-left"></span><span class="top-menu-prev-hidden fas fa-chevron-left"></span> Series Solutions to DE's <span class="top-menu-next fas fa-chevron-right"></span><span class="top-menu-next fas fa-chevron-right"></span></a></li>
+        
+        
+        
+        
+        <li id="li_nav_menu_classes" class="top-menu-nav-title">Classes</li>
+        <li>
+          
+          <a href="../Alg/Alg.html" id="nav_menu_alg_link" title="Go To Algebra Notes">Algebra</a>
+        </li>
+        <li>
+          
+          <a href="../CalcI/CalcI.html" id="nav_menu_calci_link" title="Go To Calculus I Notes">Calculus I</a>
+        </li>
+        <li>
+          
+          <a href="../CalcII/CalcII.html" id="nav_menu_calcii_link" title="Go To Calculus II Notes">Calculus II</a>
+        </li>
+        <li>
+          
+          <a href="../CalcIII/CalcIII.html" id="nav_menu_calciii_link" title="Go To Calculus III Notes">Calculus III</a>
+        </li>
+        <li>
+          <span id="nav_menu_de_span" title="Currently Viewing Differential Equations Material" class="top-menu-current">Differential Equations</span>
+          
+        </li>
+        <li id="li_nav_menu_extras" class="top-menu-nav-title">Extras</li>
+        <li>
+          
+          <a href="../../Extras/AlgebraTrigReview/AlgebraTrig.html" id="nav_menu_algtrig_link" title="Go To Algebra &amp; Trig Review">Algebra &amp; Trig Review</a>
+        </li>
+        <li>
+          
+          <a href="../../Extras/CommonErrors/CommonMathErrors.html" id="nav_menu_commonerrors_link" title="Go To Common Math Errors">Common Math Errors</a>
+        </li>
+        <li>
+          
+          <a href="../../Extras/ComplexPrimer/ComplexNumbers.html" id="nav_menu_complexnumbers_link" title="Go To Complex Numbers Primer">Complex Number Primer</a>
+        </li>
+        <li>
+          
+          <a href="../../Extras/StudyMath/HowToStudyMath.html" id="nav_menu_studymath_link" title="Go To How To Study Math">How To Study Math</a>
+        </li>
+        <li>
+          
+          <a href="../../Extras/CheatSheets_Tables.html" id="nav_menu_cheattables_link" title="Go To List of Cheat Sheets and Tables">Cheat Sheets &amp; Tables</a>
+        </li>
+        <li id="li_nav_menu_misc" class="top-menu-nav-title">Misc</li>
+        <li><a href="http://tutorial.math.lamar.edu/contact.aspx" id="nav_menu_contact" title="Contact Me!">Contact Me</a></li>
+        <li><a href="../../mathjax.html" id="nav_menu_mathjax" title="Info on MathJax and MathJax Configuration Menu">MathJax Help and Configuration</a></li>
+        <li><a href="../../mystudents.html" id="nav_menu_students" title="Go here if you are currently taking a class from me!">My Students</a></li>
+      </ul>
+    </div>
+
+    <div id="jq-dropdown-download" class="jq-dropdown jq-dropdown-anchor-right jq-dropdown-tip">
+      <ul class="jq-dropdown-menu">
+        
+        <li id="li_download_menu_notes" class="top-menu-nav-title">Notes Downloads</li>
+        <li id="li_download_menu_notes_book"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=B,1,N" id="download_menu_notes_book" data-PDF="Download - Menu$Notes - Book$Differential Equations$/Downloads/DE/Notes/Complete.pdf">Complete Book</a></li>
+        
+        <li id="li_download_menu_notes_chapter"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=C,21,N" id="download_menu_notes_chapter" data-PDF="Download - Menu$Notes - Chapter$Differential Equations - Systems of DE&#39;s$/Downloads/DE/Notes/Systems.pdf">Current Chapter</a></li>
+        <li id="li_download_menu_notes_section"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=S,123,N" id="download_menu_notes_section" data-PDF="Download - Menu$Notes - Section$Differential Equations - Review : Eigenvalues &amp; Eigenvectors$/Downloads/DE/Notes/LAEigen.pdf">Current Section</a></li>
+        <li id="li_download_menu_practice" class="top-menu-nav-title">Practice Problems Downloads</li>
+        <li id="li_download_menu_practice_de"><span class="top-menu-item-text">Problems not yet written.</span></li>
+        
+        
+        
+        
+        
+        
+        
+        
+        <li id="li_download_menu_asgn" class="top-menu-nav-title">Assignment Problems Downloads</li>
+        <li id="li_download_menu_asgn_de"><span class="top-menu-item-text">Problems not yet written.</span></li>
+        
+        
+        
+        <li id="li_download_menu_other" class="top-menu-nav-title">Other Items</li>
+        <li id="li_download_menu_urls">
+          <a href="http://tutorial.math.lamar.edu/DownloadURLs.aspx?bi=1&amp;ci=21&amp;si=123" id="download_menu_urls">Get URL's for Download Items</a>
+        </li>
+      </ul>
+    </div>
+
+    <div id="jq-print-download" class="jq-dropdown jq-dropdown-anchor-right jq-dropdown-tip">
+      <ul class="jq-dropdown-menu">
+        <li id="li_print_menu_default"><a href="javascript:SHPrintPage()" id="print_menu_default">Print Page in Current Form (Default)</a></li>
+        <li id="li_print_menu_show"><a href="javascript:SHPrintPage(1,1)" id="print_menu_show">Show all Solutions/Steps and Print Page</a></li>
+        <li id="li_print_menu_hide"><a href="javascript:SHPrintPage(0,1)" id="print_menu_hide">Hide all Solutions/Steps and Print Page</a></li>
+      </ul>
+    </div>
+
+
+
+   
+
+    <nav id="menu" class="notes-nav">
+      <ul>
+        <li><a href="../../index.html" class="mm-link">Home</a></li>
+        <li><span>Classes</span></li>
+        <li><a href="../Alg/Alg.html" class="mm-link">Algebra</a>
+          <ul>
+            <li><a href="../Alg/Preliminaries.html" class="mm-link">Preliminaries</a>
+              <ul>
+                <li><a href="../Alg/IntegerExponents.html" class="mm-link">Integer Exponents</a></li>
+                <li><a href="../Alg/RationalExponents.html" class="mm-link">Rational Exponents</a></li>
+                <li><a href="../Alg/Radicals.html" class="mm-link">Radicals</a></li>
+                <li><a href="../Alg/Polynomials.html" class="mm-link">Polynomials</a></li>
+                <li><a href="../Alg/Factoring.html" class="mm-link">Factoring Polynomials</a></li>
+                <li><a href="../Alg/RationalExpressions.html" class="mm-link">Rational Expressions</a></li>
+                <li><a href="../Alg/ComplexNumbers.html" class="mm-link">Complex Numbers</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/Solving.html" class="mm-link">Solving Equations and Inequalities</a>
+              <ul>
+                <li><a href="../Alg/SolutionSets.html" class="mm-link">Solutions and Solution Sets</a></li>
+                <li><a href="../Alg/SolveLinearEqns.html" class="mm-link">Linear Equations</a></li>
+                <li><a href="../Alg/LinearApps.html" class="mm-link">Applications of Linear Equations</a></li>
+                <li><a href="../Alg/SolveMultiVariable.html" class="mm-link">Equations With More Than One Variable</a></li>
+                <li><a href="../Alg/SolveQuadraticEqnsI.html" class="mm-link">Quadratic Equations - Part I</a></li>
+                <li><a href="../Alg/SolveQuadraticEqnsII.html" class="mm-link">Quadratic Equations - Part II</a></li>
+                <li><a href="../Alg/SolveQuadraticEqnSummary.html" class="mm-link">Quadratic Equations : A Summary</a></li>
+                <li><a href="../Alg/QuadraticApps.html" class="mm-link">Applications of Quadratic Equations</a></li>
+                <li><a href="../Alg/ReducibleToQuadratic.html" class="mm-link">Equations Reducible to Quadratic in Form</a></li>
+                <li><a href="../Alg/SolveRadicalEqns.html" class="mm-link">Equations with Radicals</a></li>
+                <li><a href="../Alg/SolveLinearInequalities.html" class="mm-link">Linear Inequalities</a></li>
+                <li><a href="../Alg/SolvePolyInequalities.html" class="mm-link">Polynomial Inequalities</a></li>
+                <li><a href="../Alg/SolveRationalInequalities.html" class="mm-link">Rational Inequalities</a></li>
+                <li><a href="../Alg/SolveAbsValueEqns.html" class="mm-link">Absolute Value Equations</a></li>
+                <li><a href="../Alg/SolveAbsValueIneq.html" class="mm-link">Absolute Value Inequalities</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/Graphing_Functions.html" class="mm-link">Graphing and Functions</a>
+              <ul>
+                <li><a href="../Alg/Graphing.html" class="mm-link">Graphing</a></li>
+                <li><a href="../Alg/Lines.html" class="mm-link">Lines</a></li>
+                <li><a href="../Alg/Circles.html" class="mm-link">Circles</a></li>
+                <li><a href="../Alg/FunctionDefn.html" class="mm-link">The Definition of a Function</a></li>
+                <li><a href="../Alg/GraphFunctions.html" class="mm-link">Graphing Functions</a></li>
+                <li><a href="../Alg/CombineFunctions.html" class="mm-link">Combining Functions</a></li>
+                <li><a href="../Alg/InverseFunctions.html" class="mm-link">Inverse Functions</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/CommonGraphs.html" class="mm-link">Common Graphs</a>
+              <ul>
+                <li><a href="../Alg/Lines_Circles_PWF.html" class="mm-link">Lines, Circles and Piecewise Functions</a></li>
+                <li><a href="../Alg/Parabolas.html" class="mm-link">Parabolas</a></li>
+                <li><a href="../Alg/Ellipses.html" class="mm-link">Ellipses</a></li>
+                <li><a href="../Alg/Hyperbolas.html" class="mm-link">Hyperbolas</a></li>
+                <li><a href="../Alg/MiscFunctions.html" class="mm-link">Miscellaneous Functions</a></li>
+                <li><a href="../Alg/Transformations.html" class="mm-link">Transformations</a></li>
+                <li><a href="../Alg/Symmetry.html" class="mm-link">Symmetry</a></li>
+                <li><a href="../Alg/GraphRationalFcns.html" class="mm-link">Rational Functions</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/PolynomialFunctions.html" class="mm-link">Polynomial Functions</a>
+              <ul>
+                <li><a href="../Alg/DividingPolynomials.html" class="mm-link">Dividing Polynomials</a></li>
+                <li><a href="../Alg/ZeroesOfPolynomials.html" class="mm-link">Zeroes/Roots of Polynomials</a></li>
+                <li><a href="../Alg/GraphingPolynomials.html" class="mm-link">Graphing Polynomials</a></li>
+                <li><a href="../Alg/FindingZeroesOfPolynomials.html" class="mm-link">Finding Zeroes of Polynomials</a></li>
+                <li><a href="../Alg/PartialFractions.html" class="mm-link">Partial Fractions</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/ExpAndLog.html" class="mm-link">Exponential and Logarithm Functions</a>
+              <ul>
+                <li><a href="../Alg/ExpFunctions.html" class="mm-link">Exponential Functions</a></li>
+                <li><a href="../Alg/LogFunctions.html" class="mm-link">Logarithm Functions</a></li>
+                <li><a href="../Alg/SolveExpEqns.html" class="mm-link">Solving Exponential Equations</a></li>
+                <li><a href="../Alg/SolveLogEqns.html" class="mm-link">Solving Logarithm Equations</a></li>
+                <li><a href="../Alg/ExpLogApplications.html" class="mm-link">Applications</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/Systems.html" class="mm-link">Systems of Equations</a>
+              <ul>
+                <li><a href="../Alg/SystemsTwoVrble.html" class="mm-link">Linear Systems with Two Variables</a></li>
+                <li><a href="../Alg/SystemsThreeVrble.html" class="mm-link">Linear Systems with Three Variables</a></li>
+                <li><a href="../Alg/AugmentedMatrix.html" class="mm-link">Augmented Matrices</a></li>
+                <li><a href="../Alg/AugmentedMatrixII.html" class="mm-link">More on the Augmented Matrix</a></li>
+                <li><a href="../Alg/NonlinearSystems.html" class="mm-link">Nonlinear Systems</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../CalcI/CalcI.html" class="mm-link">Calculus I</a>
+          <ul>
+            <li><a href="../CalcI/ReviewIntro.html" class="mm-link">Review</a>
+              <ul>
+                <li><a href="../CalcI/Functions.html" class="mm-link">Functions</a></li>
+                <li><a href="../CalcI/InverseFunctions.html" class="mm-link">Inverse Functions</a></li>
+                <li><a href="../CalcI/TrigFcns.html" class="mm-link">Trig Functions</a></li>
+                <li><a href="../CalcI/TrigEquations.html" class="mm-link">Solving Trig Equations</a></li>
+                <li><a href="../CalcI/TrigEquations_CalcI.html" class="mm-link">Trig Equations with Calculators, Part I</a></li>
+                <li><a href="../CalcI/TrigEquations_CalcII.html" class="mm-link">Trig Equations with Calculators, Part II</a></li>
+                <li><a href="../CalcI/ExpFunctions.html" class="mm-link">Exponential Functions</a></li>
+                <li><a href="../CalcI/LogFcns.html" class="mm-link">Logarithm Functions</a></li>
+                <li><a href="../CalcI/ExpLogEqns.html" class="mm-link">Exponential and Logarithm Equations</a></li>
+                <li><a href="../CalcI/CommonGraphs.html" class="mm-link">Common Graphs</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcI/limitsIntro.html" class="mm-link">Limits</a>
+              <ul>
+                <li><a href="../CalcI/Tangents_Rates.html" class="mm-link">Tangent Lines and Rates of Change</a></li>
+                <li><a href="../CalcI/TheLimit.html" class="mm-link">The Limit</a></li>
+                <li><a href="../CalcI/OneSidedLimits.html" class="mm-link">One-Sided Limits</a></li>
+                <li><a href="../CalcI/LimitsProperties.html" class="mm-link">Limit Properties</a></li>
+                <li><a href="../CalcI/ComputingLimits.html" class="mm-link">Computing Limits</a></li>
+                <li><a href="../CalcI/InfiniteLimits.html" class="mm-link">Infinite Limits</a></li>
+                <li><a href="../CalcI/LimitsAtInfinityI.html" class="mm-link">Limits At Infinity, Part I</a></li>
+                <li><a href="../CalcI/LimitsAtInfinityII.html" class="mm-link">Limits At Infinity, Part II</a></li>
+                <li><a href="../CalcI/Continuity.html" class="mm-link">Continuity</a></li>
+                <li><a href="../CalcI/DefnOfLimit.html" class="mm-link">The Definition of the Limit</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcI/DerivativeIntro.html" class="mm-link">Derivatives</a>
+              <ul>
+                <li><a href="../CalcI/DefnOfDerivative.html" class="mm-link">The Definition of the Derivative</a></li>
+                <li><a href="../CalcI/DerivativeInterp.html" class="mm-link">Interpretation of the Derivative</a></li>
+                <li><a href="../CalcI/DiffFormulas.html" class="mm-link">Differentiation Formulas</a></li>
+                <li><a href="../CalcI/ProductQuotientRule.html" class="mm-link">Product and Quotient Rule</a></li>
+                <li><a href="../CalcI/DiffTrigFcns.html" class="mm-link">Derivatives of Trig Functions</a></li>
+                <li><a href="../CalcI/DiffExpLogFcns.html" class="mm-link">Derivatives of Exponential and Logarithm Functions</a></li>
+                <li><a href="../CalcI/DiffInvTrigFcns.html" class="mm-link">Derivatives of Inverse Trig Functions</a></li>
+                <li><a href="../CalcI/DiffHyperFcns.html" class="mm-link">Derivatives of Hyperbolic Functions</a></li>
+                <li><a href="../CalcI/ChainRule.html" class="mm-link">Chain Rule</a></li>
+                <li><a href="../CalcI/ImplicitDIff.html" class="mm-link">Implicit Differentiation</a></li>
+                <li><a href="../CalcI/RelatedRates.html" class="mm-link">Related Rates</a></li>
+                <li><a href="../CalcI/HigherOrderDerivatives.html" class="mm-link">Higher Order Derivatives</a></li>
+                <li><a href="../CalcI/LogDiff.html" class="mm-link">Logarithmic Differentiation</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcI/DerivAppsIntro.html" class="mm-link">Applications of Derivatives</a>
+              <ul>
+                <li><a href="../CalcI/RateOfChange.html" class="mm-link">Rates of Change</a></li>
+                <li><a href="../CalcI/CriticalPoints.html" class="mm-link">Critical Points</a></li>
+                <li><a href="../CalcI/MinMaxValues.html" class="mm-link">Minimum and Maximum Values</a></li>
+                <li><a href="../CalcI/AbsExtrema.html" class="mm-link">Finding Absolute Extrema</a></li>
+                <li><a href="../CalcI/ShapeofGraphPtI.html" class="mm-link">The Shape of a Graph, Part I</a></li>
+                <li><a href="../CalcI/ShapeofGraphPtII.html" class="mm-link">The Shape of a Graph, Part II</a></li>
+                <li><a href="../CalcI/MeanValueTheorem.html" class="mm-link">The Mean Value Theorem</a></li>
+                <li><a href="../CalcI/Optimization.html" class="mm-link">Optimization</a></li>
+                <li><a href="../CalcI/MoreOptimization.html" class="mm-link">More Optimization Problems</a></li>
+                <li><a href="../CalcI/LHospitalsRule.html" class="mm-link">L'Hospital's Rule and Indeterminate Forms</a></li>
+                <li><a href="../CalcI/LinearApproximations.html" class="mm-link">Linear Approximations</a></li>
+                <li><a href="../CalcI/Differentials.html" class="mm-link">Differentials</a></li>
+                <li><a href="../CalcI/NewtonsMethod.html" class="mm-link">Newton's Method</a></li>
+                <li><a href="../CalcI/BusinessApps.html" class="mm-link">Business Applications</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcI/IntegralsIntro.html" class="mm-link">Integrals</a>
+              <ul>
+                <li><a href="../CalcI/IndefiniteIntegrals.html" class="mm-link">Indefinite Integrals</a></li>
+                <li><a href="../CalcI/ComputingIndefiniteIntegrals.html" class="mm-link">Computing Indefinite Integrals</a></li>
+                <li><a href="../CalcI/SubstitutionRuleIndefinite.html" class="mm-link">Substitution Rule for Indefinite Integrals</a></li>
+                <li><a href="../CalcI/SubstitutionRuleIndefinitePtII.html" class="mm-link">More Substitution Rule</a></li>
+                <li><a href="../CalcI/AreaProblem.html" class="mm-link">Area Problem</a></li>
+                <li><a href="../CalcI/DefnOfDefiniteIntegral.html" class="mm-link">Definition of the Definite Integral</a></li>
+                <li><a href="../CalcI/ComputingDefiniteIntegrals.html" class="mm-link">Computing Definite Integrals</a></li>
+                <li><a href="../CalcI/SubstitutionRuleDefinite.html" class="mm-link">Substitution Rule for Definite Integrals</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcI/IntAppsIntro.html" class="mm-link">Applications of Integrals</a>
+              <ul>
+                <li><a href="../CalcI/AvgFcnValue.html" class="mm-link">Average Function Value</a></li>
+                <li><a href="../CalcI/AreaBetweenCurves.html" class="mm-link">Area Between Curves</a></li>
+                <li><a href="../CalcI/VolumeWithRings.html" class="mm-link">Volumes of Solids of Revolution / Method of Rings</a></li>
+                <li><a href="../CalcI/VolumeWithCylinder.html" class="mm-link">Volumes of Solids of Revolution/Method of Cylinders</a></li>
+                <li><a href="../CalcI/MoreVolume.html" class="mm-link">More Volume Problems</a></li>
+                <li><a href="../CalcI/Work.html" class="mm-link">Work</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcI/ExtrasIntro.html" class="mm-link">Extras</a>
+              <ul>
+                <li><a href="../CalcI/LimitProofs.html" class="mm-link">Proof of Various Limit Properties</a></li>
+                <li><a href="../CalcI/DerivativeProofs.html" class="mm-link">Proof of Various Derivative Properties</a></li>
+                <li><a href="../CalcI/ProofTrigDeriv.html" class="mm-link">Proof of Trig Limits</a></li>
+                <li><a href="../CalcI/DerivativeAppsProofs.html" class="mm-link">Proofs of Derivative Applications Facts</a></li>
+                <li><a href="../CalcI/ProofIntProp.html" class="mm-link">Proof of Various Integral Properties </a></li>
+                <li><a href="../CalcI/Area_Volume_Formulas.html" class="mm-link">Area and Volume Formulas</a></li>
+                <li><a href="../CalcI/TypesOfInfinity.html" class="mm-link">Types of Infinity</a></li>
+                <li><a href="../CalcI/SummationNotation.html" class="mm-link">Summation Notation</a></li>
+                <li><a href="../CalcI/ConstantofIntegration.html" class="mm-link">Constant of Integration</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../CalcII/CalcII.html" class="mm-link">Calculus II</a>
+          <ul>
+            <li><a href="../CalcII/IntTechIntro.html" class="mm-link">Integration Techniques</a>
+              <ul>
+                <li><a href="../CalcII/IntegrationByParts.html" class="mm-link">Integration by Parts</a></li>
+                <li><a href="../CalcII/IntegralsWithTrig.html" class="mm-link">Integrals Involving Trig Functions</a></li>
+                <li><a href="../CalcII/TrigSubstitutions.html" class="mm-link">Trig Substitutions</a></li>
+                <li><a href="../CalcII/PartialFractions.html" class="mm-link">Partial Fractions</a></li>
+                <li><a href="../CalcII/IntegralsWithRoots.html" class="mm-link">Integrals Involving Roots</a></li>
+                <li><a href="../CalcII/IntegralsWithQuadratics.html" class="mm-link">Integrals Involving Quadratics</a></li>
+                <li><a href="../CalcII/IntegrationStrategy.html" class="mm-link">Integration Strategy</a></li>
+                <li><a href="../CalcII/ImproperIntegrals.html" class="mm-link">Improper Integrals</a></li>
+                <li><a href="../CalcII/ImproperIntegralsCompTest.html" class="mm-link">Comparison Test for Improper Integrals</a></li>
+                <li><a href="../CalcII/ApproximatingDefIntegrals.html" class="mm-link">Approximating Definite Integrals</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/IntAppsIntro.html" class="mm-link">Applications of Integrals</a>
+              <ul>
+                <li><a href="../CalcII/ArcLength.html" class="mm-link">Arc Length</a></li>
+                <li><a href="../CalcII/SurfaceArea.html" class="mm-link">Surface Area</a></li>
+                <li><a href="../CalcII/CenterOfMass.html" class="mm-link">Center of Mass</a></li>
+                <li><a href="../CalcII/HydrostaticPressure.html" class="mm-link">Hydrostatic Pressure</a></li>
+                <li><a href="../CalcII/Probability.html" class="mm-link">Probability</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/ParametricIntro.html" class="mm-link">Parametric Equations and Polar Coordinates</a>
+              <ul>
+                <li><a href="../CalcII/ParametricEqn.html" class="mm-link">Parametric Equations and Curves</a></li>
+                <li><a href="../CalcII/ParaTangent.html" class="mm-link">Tangents with Parametric Equations</a></li>
+                <li><a href="../CalcII/ParaArea.html" class="mm-link">Area with Parametric Equations</a></li>
+                <li><a href="../CalcII/ParaArcLength.html" class="mm-link">Arc Length with Parametric Equations</a></li>
+                <li><a href="../CalcII/ParaSurfaceArea.html" class="mm-link">Surface Area with Parametric Equations</a></li>
+                <li><a href="../CalcII/PolarCoordinates.html" class="mm-link">Polar Coordinates</a></li>
+                <li><a href="../CalcII/PolarTangents.html" class="mm-link">Tangents with Polar Coordinates</a></li>
+                <li><a href="../CalcII/PolarArea.html" class="mm-link">Area with Polar Coordinates</a></li>
+                <li><a href="../CalcII/PolarArcLength.html" class="mm-link">Arc Length with Polar Coordinates</a></li>
+                <li><a href="../CalcII/PolarSurfaceArea.html" class="mm-link">Surface Area with Polar Coordinates</a></li>
+                <li><a href="../CalcII/ArcLength_SurfaceArea.html" class="mm-link">Arc Length and Surface Area Revisited</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/SeriesIntro.html" class="mm-link">Series & Sequences</a>
+              <ul>
+                <li><a href="../CalcII/Sequences.html" class="mm-link">Sequences</a></li>
+                <li><a href="../CalcII/MoreSequences.html" class="mm-link">More on Sequences</a></li>
+                <li><a href="../CalcII/Series_Basics.html" class="mm-link">Series - The Basics</a></li>
+                <li><a href="../CalcII/ConvergenceOfSeries.html" class="mm-link">Convergence/Divergence of Series</a></li>
+                <li><a href="../CalcII/Series_Special.html" class="mm-link">Special Series</a></li>
+                <li><a href="../CalcII/IntegralTest.html" class="mm-link">Integral Test</a></li>
+                <li><a href="../CalcII/SeriesCompTest.html" class="mm-link">Comparison Test/Limit Comparison Test</a></li>
+                <li><a href="../CalcII/AlternatingSeries.html" class="mm-link">Alternating Series Test</a></li>
+                <li><a href="../CalcII/AbsoluteConvergence.html" class="mm-link">Absolute Convergence</a></li>
+                <li><a href="../CalcII/RatioTest.html" class="mm-link">Ratio Test</a></li>
+                <li><a href="../CalcII/RootTest.html" class="mm-link">Root Test</a></li>
+                <li><a href="../CalcII/SeriesStrategy.html" class="mm-link">Strategy for Series</a></li>
+                <li><a href="../CalcII/EstimatingSeries.html" class="mm-link">Estimating the Value of a Series</a></li>
+                <li><a href="../CalcII/PowerSeries.html" class="mm-link">Power Series</a></li>
+                <li><a href="../CalcII/PowerSeriesandFunctions.html" class="mm-link">Power Series and Functions</a></li>
+                <li><a href="../CalcII/TaylorSeries.html" class="mm-link">Taylor Series</a></li>
+                <li><a href="../CalcII/TaylorSeriesApps.html" class="mm-link">Applications of Series</a></li>
+                <li><a href="../CalcII/BinomialSeries.html" class="mm-link">Binomial Series</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/VectorsIntro.html" class="mm-link">Vectors</a>
+              <ul>
+                <li><a href="../CalcII/Vectors_Basics.html" class="mm-link">Vectors - The Basics</a></li>
+                <li><a href="../CalcII/VectorArithmetic.html" class="mm-link">Vector Arithmetic</a></li>
+                <li><a href="../CalcII/DotProduct.html" class="mm-link">Dot Product</a></li>
+                <li><a href="../CalcII/CrossProduct.html" class="mm-link">Cross Product</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/3DSpace.html" class="mm-link">3-Dimensional Space</a>
+              <ul>
+                <li><a href="../CalcII/3DCoords.html" class="mm-link">The 3-D Coordinate System</a></li>
+                <li><a href="../CalcII/EqnsOfLines.html" class="mm-link">Equations of Lines</a></li>
+                <li><a href="../CalcII/EqnsOfPlanes.html" class="mm-link">Equations of Planes</a></li>
+                <li><a href="../CalcII/QuadricSurfaces.html" class="mm-link">Quadric Surfaces</a></li>
+                <li><a href="../CalcII/MultiVrbleFcns.html" class="mm-link">Functions of Several Variables</a></li>
+                <li><a href="../CalcII/VectorFunctions.html" class="mm-link">Vector Functions</a></li>
+                <li><a href="../CalcII/VectorFcnsCalculus.html" class="mm-link">Calculus with Vector Functions</a></li>
+                <li><a href="../CalcII/TangentNormalVectors.html" class="mm-link">Tangent, Normal and Binormal Vectors</a></li>
+                <li><a href="../CalcII/VectorArcLength.html" class="mm-link">Arc Length with Vector Functions</a></li>
+                <li><a href="../CalcII/Curvature.html" class="mm-link">Curvature</a></li>
+                <li><a href="../CalcII/Velocity_Acceleration.html" class="mm-link">Velocity and Acceleration</a></li>
+                <li><a href="../CalcII/CylindricalCoords.html" class="mm-link">Cylindrical Coordinates</a></li>
+                <li><a href="../CalcII/SphericalCoords.html" class="mm-link">Spherical Coordinates</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../CalcIII/CalcIII.html" class="mm-link">Calculus III</a>
+          <ul>
+            <li><a href="../CalcIII/3DSpace.html" class="mm-link">3-Dimensional Space</a>
+              <ul>
+                <li><a href="../CalcIII/3DCoords.html" class="mm-link">The 3-D Coordinate System</a></li>
+                <li><a href="../CalcIII/EqnsOfLines.html" class="mm-link">Equations of Lines</a></li>
+                <li><a href="../CalcIII/EqnsOfPlanes.html" class="mm-link">Equations of Planes</a></li>
+                <li><a href="../CalcIII/QuadricSurfaces.html" class="mm-link">Quadric Surfaces</a></li>
+                <li><a href="../CalcIII/MultiVrbleFcns.html" class="mm-link">Functions of Several Variables</a></li>
+                <li><a href="../CalcIII/VectorFunctions.html" class="mm-link">Vector Functions</a></li>
+                <li><a href="../CalcIII/VectorFcnsCalculus.html" class="mm-link">Calculus with Vector Functions</a></li>
+                <li><a href="../CalcIII/TangentNormalVectors.html" class="mm-link">Tangent, Normal and Binormal Vectors</a></li>
+                <li><a href="../CalcIII/VectorArcLength.html" class="mm-link">Arc Length with Vector Functions</a></li>
+                <li><a href="../CalcIII/Curvature.html" class="mm-link">Curvature</a></li>
+                <li><a href="../CalcIII/Velocity_Acceleration.html" class="mm-link">Velocity and Acceleration</a></li>
+                <li><a href="../CalcIII/CylindricalCoords.html" class="mm-link">Cylindrical Coordinates</a></li>
+                <li><a href="../CalcIII/SphericalCoords.html" class="mm-link">Spherical Coordinates</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/PartialDerivsIntro.html" class="mm-link">Partial Derivatives</a>
+              <ul>
+                <li><a href="../CalcIII/Limits.html" class="mm-link">Limits</a></li>
+                <li><a href="../CalcIII/PartialDerivatives.html" class="mm-link">Partial Derivatives</a></li>
+                <li><a href="../CalcIII/PartialDerivInterp.html" class="mm-link">Interpretations of Partial Derivatives</a></li>
+                <li><a href="../CalcIII/HighOrderPartialDerivs.html" class="mm-link">Higher Order Partial Derivatives</a></li>
+                <li><a href="../CalcIII/Differentials.html" class="mm-link">Differentials</a></li>
+                <li><a href="../CalcIII/ChainRule.html" class="mm-link">Chain Rule</a></li>
+                <li><a href="../CalcIII/DirectionalDeriv.html" class="mm-link">Directional Derivatives</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/PartialDerivAppsIntro.html" class="mm-link">Applications of Partial Derivatives</a>
+              <ul>
+                <li><a href="../CalcIII/TangentPlanes.html" class="mm-link">Tangent Planes and Linear Approximations</a></li>
+                <li><a href="../CalcIII/GradientVectorTangentPlane.html" class="mm-link">Gradient Vector, Tangent Planes and Normal Lines</a></li>
+                <li><a href="../CalcIII/RelativeExtrema.html" class="mm-link">Relative Minimums and Maximums</a></li>
+                <li><a href="../CalcIII/AbsoluteExtrema.html" class="mm-link">Absolute Minimums and Maximums</a></li>
+                <li><a href="../CalcIII/LagrangeMultipliers.html" class="mm-link">Lagrange Multipliers</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/MultipleIntegralsIntro.html" class="mm-link">Multiple Integrals</a>
+              <ul>
+                <li><a href="../CalcIII/DoubleIntegrals.html" class="mm-link">Double Integrals</a></li>
+                <li><a href="../CalcIII/IteratedIntegrals.html" class="mm-link">Iterated Integrals</a></li>
+                <li><a href="../CalcIII/DIGeneralRegion.html" class="mm-link">Double Integrals over General Regions</a></li>
+                <li><a href="../CalcIII/DIPolarCoords.html" class="mm-link">Double Integrals in Polar Coordinates</a></li>
+                <li><a href="../CalcIII/TripleIntegrals.html" class="mm-link">Triple Integrals</a></li>
+                <li><a href="../CalcIII/TICylindricalCoords.html" class="mm-link">Triple Integrals in Cylindrical Coordinates</a></li>
+                <li><a href="../CalcIII/TISphericalCoords.html" class="mm-link">Triple Integrals in Spherical Coordinates</a></li>
+                <li><a href="../CalcIII/ChangeOfVariables.html" class="mm-link">Change of Variables</a></li>
+                <li><a href="../CalcIII/SurfaceArea.html" class="mm-link">Surface Area</a></li>
+                <li><a href="../CalcIII/Area_Volume.html" class="mm-link">Area and Volume Revisited</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/LineIntegralsIntro.html" class="mm-link">Line Integrals</a>
+              <ul>
+                <li><a href="../CalcIII/VectorFields.html" class="mm-link">Vector Fields</a></li>
+                <li><a href="../CalcIII/LineIntegralsPtI.html" class="mm-link">Line Integrals - Part I</a></li>
+                <li><a href="../CalcIII/LineIntegralsPtII.html" class="mm-link">Line Integrals - Part II</a></li>
+                <li><a href="../CalcIII/LineIntegralsVectorFields.html" class="mm-link">Line Integrals of Vector Fields</a></li>
+                <li><a href="../CalcIII/FundThmLineIntegrals.html" class="mm-link">Fundamental Theorem for Line Integrals</a></li>
+                <li><a href="../CalcIII/ConservativeVectorField.html" class="mm-link">Conservative Vector Fields</a></li>
+                <li><a href="../CalcIII/GreensTheorem.html" class="mm-link">Green's Theorem</a></li>
+                <li><a href="../CalcIII/CurlDivergence.html" class="mm-link">Curl and Divergence</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/SurfaceIntegralsIntro.html" class="mm-link">Surface Integrals</a>
+              <ul>
+                <li><a href="../CalcIII/ParametricSurfaces.html" class="mm-link">Parametric Surfaces</a></li>
+                <li><a href="../CalcIII/SurfaceIntegrals.html" class="mm-link">Surface Integrals</a></li>
+                <li><a href="../CalcIII/SurfIntVectorField.html" class="mm-link">Surface Integrals of Vector Fields</a></li>
+                <li><a href="../CalcIII/StokesTheorem.html" class="mm-link">Stokes' Theorem</a></li>
+                <li><a href="../CalcIII/DivergenceTheorem.html" class="mm-link">Divergence Theorem</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="DE.html" class="mm-link">Differential Equations</a>
+          <ul>
+            <li><a href="IntroBasic.html" class="mm-link">Basic Concepts</a>
+              <ul>
+                <li><a href="Definitions.html" class="mm-link">Definitions</a></li>
+                <li><a href="DirectionFields.html" class="mm-link">Direction Fields</a></li>
+                <li><a href="FinalThoughts.html" class="mm-link">Final Thoughts</a></li>
+              </ul>
+            </li>
+            <li><a href="IntroFirstOrder.html" class="mm-link">First Order DE's</a>
+              <ul>
+                <li><a href="Linear.html" class="mm-link">Linear Equations</a></li>
+                <li><a href="Separable.html" class="mm-link">Separable Equations</a></li>
+                <li><a href="Exact.html" class="mm-link">Exact Equations</a></li>
+                <li><a href="Bernoulli.html" class="mm-link">Bernoulli Differential Equations</a></li>
+                <li><a href="Substitutions.html" class="mm-link">Substitutions</a></li>
+                <li><a href="IoV.html" class="mm-link">Intervals of Validity</a></li>
+                <li><a href="Modeling.html" class="mm-link">Modeling with First Order DE's</a></li>
+                <li><a href="EquilibriumSolutions.html" class="mm-link">Equilibrium Solutions</a></li>
+                <li><a href="EulersMethod.html" class="mm-link">Euler's Method</a></li>
+              </ul>
+            </li>
+            <li><a href="IntroSecondOrder.html" class="mm-link">Second Order DE's</a>
+              <ul>
+                <li><a href="SecondOrderConcepts.html" class="mm-link">Basic Concepts</a></li>
+                <li><a href="RealRoots.html" class="mm-link">Real & Distinct Roots</a></li>
+                <li><a href="ComplexRoots.html" class="mm-link">Complex Roots</a></li>
+                <li><a href="RepeatedRoots.html" class="mm-link">Repeated Roots</a></li>
+                <li><a href="ReductionofOrder.html" class="mm-link">Reduction of Order</a></li>
+                <li><a href="FundamentalSetsofSolutions.html" class="mm-link">Fundamental Sets of Solutions</a></li>
+                <li><a href="Wronskian.html" class="mm-link">More on the  Wronskian</a></li>
+                <li><a href="NonhomogeneousDE.html" class="mm-link">Nonhomogeneous Differential Equations</a></li>
+                <li><a href="UndeterminedCoefficients.html" class="mm-link">Undetermined Coefficients</a></li>
+                <li><a href="VariationofParameters.html" class="mm-link">Variation of Parameters</a></li>
+                <li><a href="Vibrations.html" class="mm-link">Mechanical Vibrations</a></li>
+              </ul>
+            </li>
+            <li><a href="LaplaceIntro.html" class="mm-link">Laplace Transforms</a>
+              <ul>
+                <li><a href="LaplaceDefinition.html" class="mm-link">The Definition</a></li>
+                <li><a href="LaplaceTransforms.html" class="mm-link">Laplace Transforms</a></li>
+                <li><a href="InverseTransforms.html" class="mm-link">Inverse Laplace Transforms</a></li>
+                <li><a href="StepFunctions.html" class="mm-link">Step Functions</a></li>
+                <li><a href="IVPWithLaplace.html" class="mm-link">Solving IVP's with Laplace Transforms</a></li>
+                <li><a href="IVPWithNonConstantCoefficient.html" class="mm-link">Nonconstant Coefficient IVP's</a></li>
+                <li><a href="IVPWithStepFunction.html" class="mm-link">IVP's With Step Functions</a></li>
+                <li><a href="DiracDeltaFunction.html" class="mm-link">Dirac Delta Function</a></li>
+                <li><a href="ConvolutionIntegrals.html" class="mm-link">Convolution Integrals</a></li>
+                <li><a href="Laplace_Table.html" class="mm-link">Table Of Laplace Transforms</a></li>
+              </ul>
+            </li>
+            <li><a href="SystemsIntro.html" class="mm-link">Systems of DE's</a>
+              <ul>
+                <li><a href="LA_Systems.html" class="mm-link">Review : Systems of Equations</a></li>
+                <li><a href="LA_Matrix.html" class="mm-link">Review : Matrices & Vectors</a></li>
+                <li><a href="LA_Eigen.html" class="mm-link">Review : Eigenvalues & Eigenvectors</a></li>
+                <li><a href="SystemsDE.html" class="mm-link">Systems of Differential Equations</a></li>
+                <li><a href="SolutionsToSystems.html" class="mm-link">Solutions to Systems</a></li>
+                <li><a href="PhasePlane.html" class="mm-link">Phase Plane</a></li>
+                <li><a href="RealEigenvalues.html" class="mm-link">Real Eigenvalues</a></li>
+                <li><a href="ComplexEigenvalues.html" class="mm-link">Complex Eigenvalues</a></li>
+                <li><a href="RepeatedEigenvalues.html" class="mm-link">Repeated Eigenvalues</a></li>
+                <li><a href="NonhomogeneousSystems.html" class="mm-link">Nonhomogeneous Systems</a></li>
+                <li><a href="SystemsLaplace.html" class="mm-link">Laplace Transforms</a></li>
+                <li><a href="SystemsModeling.html" class="mm-link">Modeling</a></li>
+              </ul>
+            </li>
+            <li><a href="SeriesIntro.html" class="mm-link">Series Solutions to DE's</a>
+              <ul>
+                <li><a href="PowerSeries.html" class="mm-link">Review : Power Series</a></li>
+                <li><a href="TaylorSeries.html" class="mm-link">Review : Taylor Series</a></li>
+                <li><a href="SeriesSolutions.html" class="mm-link">Series Solutions</a></li>
+                <li><a href="EulerEquations.html" class="mm-link">Euler Equations</a></li>
+              </ul>
+            </li>
+            <li><a href="IntroHigherOrder.html" class="mm-link">Higher Order Differential Equations</a>
+              <ul>
+                <li><a href="HOBasicConcepts.html" class="mm-link">Basic Concepts for <em>n</em><sup>th</sup> Order Linear Equations</a></li>
+                <li><a href="HOHomogeneousDE.html" class="mm-link">Linear Homogeneous Differential Equations</a></li>
+                <li><a href="HOUndeterminedCoeff.html" class="mm-link">Undetermined Coefficients</a></li>
+                <li><a href="HOVariationOfParam.html" class="mm-link">Variation of Parameters</a></li>
+                <li><a href="HOLaplaceTransforms.html" class="mm-link">Laplace Transforms</a></li>
+                <li><a href="HOSystems.html" class="mm-link">Systems of Differential Equations</a></li>
+                <li><a href="HOSeries.html" class="mm-link">Series Solutions</a></li>
+              </ul>
+            </li>
+            <li><a href="IntroBVP.html" class="mm-link">Boundary Value Problems &amp; Fourier Series</a>
+              <ul>
+                <li><a href="BoundaryValueProblem.html" class="mm-link">Boundary Value Problems</a></li>
+                <li><a href="BVPEvals.html" class="mm-link">Eigenvalues and Eigenfunctions</a></li>
+                <li><a href="PeriodicOrthogonal.html" class="mm-link">Periodic Functions &amp; Orthogonal Functions</a></li>
+                <li><a href="FourierSineSeries.html" class="mm-link">Fourier Sine Series</a></li>
+                <li><a href="FourierCosineSeries.html" class="mm-link">Fourier Cosine Series</a></li>
+                <li><a href="FourierSeries.html" class="mm-link">Fourier Series</a></li>
+                <li><a href="ConvergenceFourierSeries.html" class="mm-link">Convergence of Fourier Series</a></li>
+              </ul>
+            </li>
+            <li><a href="IntroPDE.html" class="mm-link">Partial Differential Equations </a>
+              <ul>
+                <li><a href="TheHeatEquation.html" class="mm-link">The Heat Equation</a></li>
+                <li><a href="TheWaveEquation.html" class="mm-link">The Wave Equation</a></li>
+                <li><a href="PDETerminology.html" class="mm-link">Terminology</a></li>
+                <li><a href="SeparationofVariables.html" class="mm-link">Separation of Variables</a></li>
+                <li><a href="SolvingHeatEquation.html" class="mm-link">Solving the Heat Equation</a></li>
+                <li><a href="HeatEqnNonZero.html" class="mm-link">Heat Equation with Non-Zero Temperature Boundaries</a></li>
+                <li><a href="LaplacesEqn.html" class="mm-link">Laplace's Equation</a></li>
+                <li><a href="VibratingString.html" class="mm-link">Vibrating String</a></li>
+                <li><a href="PDESummary.html" class="mm-link">Summary of Separation of Variables</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><span>Extras</span></li>
+        <li><a href="../../Extras/AlgebraTrigReview/AlgebraTrig.html" class="mm-link">Algebra &amp; Trig Review</a>
+          <ul>
+            <li><a href="../../Extras/AlgebraTrigReview/AlgebraIntro.html" class="mm-link">Algebra</a>
+              <ul>
+                <li><a href="../../Extras/AlgebraTrigReview/Exponents.html" class="mm-link">Exponents </a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/AbsoluteValue.html" class="mm-link">Absolute Value</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Radicals.html" class="mm-link">Radicals</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Rationalizing.html" class="mm-link">Rationalizing </a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Functions.html" class="mm-link">Functions </a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/MultPoly.html" class="mm-link">Multiplying Polynomials</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Factoring.html" class="mm-link">Factoring</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SimpRatExp.html" class="mm-link">Simplifying Rational Expressions</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Graphing.html" class="mm-link">Graphing and Common Graphs</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveEqnPtI.html" class="mm-link">Solving Equations, Part I</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveEqnPtII.html" class="mm-link">Solving Equations, Part II</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveSystems.html" class="mm-link">Solving Systems of Equations</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveIneq.html" class="mm-link">Solving Inequalities</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveAbsValue.html" class="mm-link">Absolute Value Equations and Inequalities</a></li>
+              </ul>
+            </li>
+            <li><a href="../../Extras/AlgebraTrigReview/TrigIntro.html" class="mm-link">Trigonometry</a>
+              <ul>
+                <li><a href="../../Extras/AlgebraTrigReview/TrigFunctions.html" class="mm-link">Trig Function Evaluation</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/TrigGraphs.html" class="mm-link">Graphs of Trig Functions</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/TrigFormulas.html" class="mm-link">Trig Formulas</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveTrigEqn.html" class="mm-link">Solving Trig Equations</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/InverseTrig.html" class="mm-link">Inverse Trig Functions</a></li>
+              </ul>
+            </li>
+            <li><a href="../../Extras/AlgebraTrigReview/ExpLogIntro.html" class="mm-link">Exponentials & Logarithms</a>
+              <ul>
+                <li><a href="../../Extras/AlgebraTrigReview/ExponentialFcns.html" class="mm-link">Basic Exponential Functions</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/LogarithmFcns.html" class="mm-link">Basic Logarithm Functions</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/LogProperties.html" class="mm-link">Logarithm Properties</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SimpLogs.html" class="mm-link">Simplifying Logarithms</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveExpEqn.html" class="mm-link">Solving Exponential Equations</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveLogEqn.html" class="mm-link">Solving Logarithm Equations</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../../Extras/CommonErrors/CommonMathErrors.html" class="mm-link">Common Math Errors</a>
+          <ul>
+            <li><a href="../../Extras/CommonErrors/GeneralErrors.html" class="mm-link">General Errors</a>
+            </li>
+            <li><a href="../../Extras/CommonErrors/AlgebraErrors.html" class="mm-link">Algebra Errors</a>
+            </li>
+            <li><a href="../../Extras/CommonErrors/TrigErrors.html" class="mm-link">Trig Errors</a>
+            </li>
+            <li><a href="../../Extras/CommonErrors/CommonErrors.html" class="mm-link">Common Errors</a>
+            </li>
+            <li><a href="../../Extras/CommonErrors/CalculusErrors.html" class="mm-link">Calculus Errors</a>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../../Extras/ComplexPrimer/ComplexNumbers.html" class="mm-link">Complex Number Primer</a>
+          <ul>
+            <li><a href="../../Extras/ComplexPrimer/Definition.html" class="mm-link">The Definition</a>
+            </li>
+            <li><a href="../../Extras/ComplexPrimer/Arithmetic.html" class="mm-link">Arithmetic</a>
+            </li>
+            <li><a href="../../Extras/ComplexPrimer/ConjugateModulus.html" class="mm-link">Conjugate and Modulus</a>
+            </li>
+            <li><a href="../../Extras/ComplexPrimer/Forms.html" class="mm-link">Polar and Exponential Forms</a>
+            </li>
+            <li><a href="../../Extras/ComplexPrimer/Roots.html" class="mm-link">Powers and Roots</a>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../../Extras/StudyMath/HowToStudyMath.html" class="mm-link">How To Study Math</a>
+          <ul>
+            <li><a href="../../Extras/StudyMath/GeneralTips.html" class="mm-link">General Tips</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/TakingNotes.html" class="mm-link">Taking Notes</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/GettingHelp.html" class="mm-link">Getting Help</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/Homework.html" class="mm-link">Doing Homework</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/ProblemSolving.html" class="mm-link">Problem Solving</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/StudyForExam.html" class="mm-link">Studying For an Exam</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/TakingExam.html" class="mm-link">Taking an Exam</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/Errors.html" class="mm-link">Learn From Your Errors</a>
+            </li>
+          </ul>
+        </li>
+
+        <li><span>Misc Links</span></li>
+        <li><a href="http://tutorial.math.lamar.edu/contact.aspx" class="mm-link">Contact Me</a></li>
+        <li><a href="../../links.html" class="mm-link">Links</a></li>
+        <li><a href="../../mathjax.html" class="mm-link">MathJax Help and Configuration</a></li>
+        <li><a href="../../mystudents.html" class="mm-link">My Students</a></li>
+        <li><a href="http://tutorial.math.lamar.edu/privacy.aspx" class="mm-link">Privacy Statement</a></li>
+        <li><a href="../../help.html" class="mm-link">Site Help & FAQ</a></li>
+        <li><a href="http://tutorial.math.lamar.edu/terms.aspx" class="mm-link">Terms of Use</a></li>
+      </ul>
+    </nav>
+
+
+
+    <div class="top-info-bar">
+      <span id="mobile-title" class="mobile-header-title header-title">Paul's Online Notes</span>
+      <br />
+      <span class="top-menu-breadcrumb">
+        <a href="../../index.html" id="breadcrumb_home_link" title="Go to Main Page">Home</a>
+        <span id="breadcrumb_h_b_sep_span">/ </span>
+        <a href="DE.html" id="breadcrumb_book_link" title="Go to Book Introduction">Differential Equations</a>
+        
+        <span id="breadcrumb_b_c_sep_span">/ </span>
+        <a href="SystemsIntro.html" id="breadcrumb_chapter_link" title="Go to Chapter Introduction">Systems of DE&#39;s</a>
+        
+        <span id="breadcrumb_section_span"> / Review : Eigenvalues &amp; Eigenvectors</span>
+      </span>
+
+    </div>
+
+    
+
+    <div class="header-divider"></div>
+
+    <div class="content">  
+      
+      
+      <span id="SHLink_NoteMobile" class="SH-Link content-note-link-mobile">Show Mobile Notice</span>
+      <span id="SHImg_NoteMobile" class="fas fa-caret-right SH-padding content-note-link-mobile" aria-hidden="true"></span>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+
+      <span id="SHALink_S_Note" class="SH-Link SH-Hide SH-Bracket">Show All Notes</span>&nbsp;<span id="SHALink_H_Note" class="SH-Link SH-Hide SH-Bracket">Hide All Notes</span>
+      
+      
+      <div id="SHObj_NoteMobile" class="content-note-container content-note-container-mobile">
+        <div class="content-note-header">Mobile Notice</div>
+        <div class="content-note">You appear to be on a device with a "narrow" screen width (<em>i.e.</em> you are probably on a mobile phone).  Due to the nature of the mathematics on this site it is best views in landscape mode.  If your device is not in landscape mode many of the equations will run off the side of your device (should be able to scroll to see them) and some of the menu items will be cut off due to the narrow screen width.</div>
+      </div>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+
+      
+
+
+  <form method="post" action="http://tutorial.math.lamar.edu/Classes/DE/LA_Eigen.aspx" id="ctl00">
+<div class="aspNetHidden">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+</div>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="5203DF3E" />
+</div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </form>
+
+  <h3>Section 5-3 : Review : Eigenvalues & Eigenvectors</h3>
+    
+     <p>If you get nothing out of this quick review of linear algebra you must get this section.  Without this section you will not be able to do any of the differential equations work that is in this chapter.</p>
+    
+     <p>So, let’s start with the following.  If we multiply an \(n \times n\) matrix by an \(n \times 1\) vector we will get a new \(n \times 1\) vector back.  In other words,</p>
+    
+        \[A\,\vec \eta  = \vec y\]
+    
+     <p>What we want to know is if it is possible for the following to happen.  Instead of just getting a brand new vector out of the multiplication is it possible instead to get the following,</p>
+    
+        \[\begin{equation}A\,\vec \eta  = \lambda \vec \eta \label{eq:eq1} \end{equation} \]
+    
+     <p>In other words, is it possible, at least for certain \(\lambda \) and \(\vec \eta \), to have matrix multiplication be the same as just multiplying the vector by a constant?  Of course, we probably wouldn’t be talking about this if the answer was no.  So, it is possible for this to happen, however, it won’t happen for just any value of \(\lambda \) or \(\vec \eta \).  If we do happen to have a \(\lambda \) and \(\vec \eta \) for which this works (and they will always come in pairs) then we call \(\lambda\) an <strong>eigenvalue</strong> of \(A\) and \(\vec \eta \) an <strong>eigenvector</strong> of \(A\).</p>
+    
+     <p>So, how do we go about finding the eigenvalues and eigenvectors for a matrix?  Well first notice that if \(\vec \eta  = \vec 0\) then \(\eqref{eq:eq1}\) is going to be true for any value of \(\lambda \) and so we are going to make the assumption that \(\vec \eta  \ne \vec 0\).  With that out of the way let’s rewrite \(\eqref{eq:eq1}\) a little.</p>
+    
+      \[\begin{align*}A\vec \eta  - \lambda \vec \eta  & = \vec 0\\ A\vec \eta  - \lambda {I_n}\vec \eta  & = \vec 0\\  \left( {A - \lambda {I_n}} \right)\vec \eta & = \vec 0\end{align*}\]
+    
+     <p>Notice that before we factored out the \(\vec \eta \) we added in the appropriately sized identity matrix.  This is equivalent to multiplying things by a one and so doesn’t change the value of anything.  We needed to do this because without it we would have had the difference of a matrix, \(A\), and a constant, \(\lambda \), and this can’t be done.  We now have the difference of two matrices of the same size which can be done.</p>
+    
+     <p>So, with this rewrite we see that</p>
+    
+        \[\begin{equation}\left( {A - \lambda {I_n}} \right)\vec \eta  = \vec 0 \label{eq:eq2}\end{equation}\]
+
+     <p>is equivalent to \(\eqref{eq:eq1}\).  In order to find the eigenvectors for a matrix we will need to solve a homogeneous system.  Recall the <a href="LA_Matrix.html#System_Fact_2">fact</a> from the previous section that we know that we will either have exactly one solution (\(\vec \eta  = \vec 0\)) or we will have infinitely many nonzero solutions.  Since we’ve already said that we don’t want \(\vec \eta 
+      = \vec 0\) this means that we want the second case.</p>
+    
+     <p>Knowing this will allow us to find the eigenvalues for a matrix.  Recall from this fact that we will get the second case only if the matrix in the system is singular.  Therefore, we will need to determine the values of \(\lambda \) for which we get,</p>
+    
+        \[\det \left( {A - \lambda I} \right) = 0\]
+    
+     <p>Once we have the eigenvalues we can then go back and determine the eigenvectors for each eigenvalue.  Let’s take a look at a couple of quick facts about eigenvalues and eigenvectors.</p>
+    
+     <h4>Fact</h4>
+  <div class="fact">
+    <p>If \(A\) is an \(n \times n\) matrix then \(\det \left( {A - \lambda I} \right) = 0\) is an \(n^{\text{th}}\) degree polynomial.  This polynomial is called the <strong>characteristic polynomial</strong>.</p>
+  </div>
+    
+     <p>To find eigenvalues of a matrix all we need to do is solve a polynomial.  That’s generally not too bad provided we keep \(n\) small.  Likewise this fact also tells us that for an \(n \times n\) matrix, \(A\), we will have \(n\) eigenvalues if we include all repeated eigenvalues.</p>
+  
+  <a class="anchor" name="EV_Fact"></a>
+  <h4>Fact</h4>
+  <div class="fact">
+    <p>If \({\lambda _{\,1}}, {\lambda _{\,2}}, \ldots ,{\lambda _{\,n}}\) is the complete list of eigenvalues for \(A\) (including all repeated eigenvalues) then,</p>
+    <ol class="general-list">
+      <li>If \(\lambda \) occurs only once in the list then we call \(\lambda \) <strong>simple</strong>.<br /><br /></li>
+      <li>If \(\lambda \) occurs \(k&gt;1\) times in the list then we say that \(\lambda \) has <strong>multiplicity \(k\)</strong>.<br /><br /></li>
+      <li>If \({\lambda _{\,1}},{\lambda _{\,2}}, \ldots ,{\lambda _{\,k}}\) (\(k \le n\)) are the simple eigenvalues in the list with corresponding eigenvectors \({\vec \eta ^{\left( 1 \right)}}\), \({\vec \eta ^{\left( 2 \right)}}\), …, \({\vec \eta ^{\left( k \right)}}\) then the eigenvectors are all linearly independent.<br /><br /></li>
+      <li>If \(\lambda \) is an eigenvalue of multiplicity \(k &gt; 1\) then \(\lambda \) will have anywhere from 1 to \(k\) linearly independent eigenvectors.</li>
+    </ol>
+  </div>
+    
+     <p>The usefulness of these facts will become apparent when we get back into differential equations since in that work we will want linearly independent solutions.</p>
+    
+     <p>Let’s work a couple of examples now to see how we actually go about finding eigenvalues and eigenvectors.</p>
+     <a class="anchor" name="Systems_EvalEvect_Ex1"></a>
+  <div class="example">
+    <span class="example-title">Example 1</span> Find the eigenvalues and eigenvectors of the following matrix.
+          
+              \[A = \left( {\begin{array}{*{20}{c}}2&amp;7\\{ - 1}&amp;{ - 6}\end{array}} \right)\]
+    <div class="example-content">
+      <span id="SHLink_Soln1" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln1" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln1" class="soln-content">
+        <p>The first thing that we need to do is find the eigenvalues.  That means we need the following matrix,</p>
+          
+            \[A - \lambda I = \left( {\begin{array}{*{20}{c}}2&amp;7\\{ - 1}&amp;{ - 6}\end{array}} \right) - \lambda \left( {\begin{array}{*{20}{c}}1&amp;0\\0&amp;1\end{array}} \right) = \left( {\begin{array}{*{20}{c}}{2 - \lambda }&amp;7\\{ - 1}&amp;{ - 6 - \lambda }\end{array}} \right)\]
+           <p>In particular we need to determine where the determinant of this matrix is zero.</p>
+          
+            \[\det \left( {A - \lambda I} \right) = \left( {2 - \lambda } \right)\left( { - 6 - \lambda } \right) + 7 = {\lambda ^2} + 4\lambda  - 5 = \left( {\lambda  + 5} \right)\left( {\lambda  - 1} \right)\]
+          
+           <p>So, it looks like we will have two simple eigenvalues for this matrix, \({\lambda _{\,1}} =  - 5\) and \({\lambda _{\,2}} = 1\).  We will now need to find the eigenvectors for each of these.  Also note that according to the fact above, the two eigenvectors should be linearly independent. </p>
+          
+           <p>To find the eigenvectors we simply plug in each eigenvalue into <!--[if supportFields]> GOTOBUTTON ZEqnNum594711  \* MERGEFORMAT  REF ZEqnNum594711 \! \* MERGEFORMAT (2)<![endif]--><!--[if supportFields]><![endif]--> and solve.  So, let’s do that.</p>
+          
+           <p>\({\lambda _{\,1}} =  - 5\) : <br />
+             In this case we need to solve the following system.</p>
+          
+            \[\left( {\begin{array}{*{20}{c}}7&amp;7\\{ - 1}&amp;{ - 1}\end{array}} \right)\vec \eta  = \left( {\begin{array}{*{20}{c}}0\\0\end{array}} \right)\]
+          
+           <p>Recall that officially to solve this system we use the following augmented matrix.</p>
+          
+              \[\left( {\begin{array}{*{20}{c}}7&amp;7&amp;0\\{ - 1}&amp;{ - 1}&amp;0\end{array}} \right)\begin{array}{*{20}{c}}{\frac{1}{7}{R_1} + {R_2}}\\ \Rightarrow \end{array}\left( {\begin{array}{*{20}{c}}7&amp;7&amp;0\\0&amp;0&amp;0\end{array}} \right)\]
+          
+           <p>Upon reducing down we see that we get a single equation</p>
+          
+              \[7{\eta _1} + 7{\eta _2} = 0\hspace{0.25in} \Rightarrow \hspace{0.25in}{\eta _1} =  - {\eta _2}\]
+           <p>that will yield an infinite number of solutions.  This is expected behavior.  Recall that we picked the eigenvalues so that the matrix would be singular and so we would get infinitely many solutions.</p>
+          
+           <p>Notice as well that we could have identified this from the original system.  This won’t always be the case, but in the \(2 \times 2\) case we can see from the system that one row will be a multiple of the other and so we will get infinite solutions.  From this point on we won’t be actually solving systems in these cases.  We will just go straight to the equation and we can use either of the two rows for this equation.</p>
+          
+           <p>Now, let’s get back to the eigenvector, since that is what we were after.  In general then the eigenvector will be any vector that satisfies the following,</p>
+          
+            \[\vec \eta  = \left( {\begin{array}{*{20}{c}}{{\eta _1}}\\{{\eta _2}}\end{array}} \right) = \left( {\begin{array}{*{20}{c}}{ - {\eta _2}}\\{{\eta _2}}\end{array}} \right)\hspace{0.25in},{\eta _2} \ne 0\]
+           <p>To get this we used the solution to the equation that we found above. </p>
+          
+           <p>We really don’t want a general eigenvector however so we will pick a value for \({\eta _{\,2}}\) to get a specific eigenvector.  We can choose anything (except \({\eta _{\,2}} = 0\)), so pick something that will make the eigenvector “nice”.  Note as well that since we’ve already assumed that the eigenvector is not zero we must choose a value that will not give us zero, which is why we want to avoid \({\eta _{\,2}} = 0\) in this case.  Here’s the eigenvector for this eigenvalue.</p>
+          
+              \[{\vec \eta ^{\left( 1 \right)}} = \left( {\begin{array}{*{20}{c}}{ - 1}\\1\end{array}} \right),\hspace{0.25in}{\mbox{using }}{\eta _2} = 1\]
+          
+           <p>Now we get to do this all over again for the second eigenvalue.</p>
+          
+           <p>\({\lambda _{\,2}} = 1\) :<br />
+             We’ll do much less work with this part than we did with the previous part.  We will need to solve the following system.</p>
+          
+            \[\left( {\begin{array}{*{20}{c}}1&amp;7\\{ - 1}&amp;{ - 7}\end{array}} \right)\vec \eta  = \left( {\begin{array}{*{20}{c}}0\\0\end{array}} \right)\]
+          
+           <p>Clearly both rows are multiples of each other and so we will get infinitely many solutions.  We can choose to work with either row.  We’ll run with the first because to avoid having too many minus signs floating around.  Doing this gives us,</p>
+          
+              \[{\eta _1} + 7{\eta _2} = 0\hspace{0.25in}{\eta _1} =  - 7{\eta _2}\]
+          
+           <p>Note that we can solve this for either of the two variables.  However, with an eye towards working with these later on let’s try to avoid as many fractions as possible.  The eigenvector is then,</p>
+          
+            \[\vec \eta  = \left( {\begin{array}{*{20}{c}}{{\eta _1}}\\{{\eta _2}}\end{array}} \right) = \left( {\begin{array}{*{20}{c}}{ - 7{\eta _2}}\\{{\eta _2}}\end{array}} \right)\hspace{0.25in},{\eta _2} \ne 0\]
+          
+              \[{\vec \eta ^{\left( 2 \right)}} = \left( {\begin{array}{*{20}{c}}{ - 7}\\1\end{array}} \right),\hspace{0.25in}{\mbox{using }}{\eta _2} = 1\]
+          
+           <p>Summarizing we have,</p>
+          
+            \[\begin{align*}{\lambda _1} & =  - 5 & \hspace{0.25in}{{\vec \eta }^{\left( 1 \right)}} & = \left( {\begin{array}{*{20}{c}}{ - 1}\\1\end{array}} \right)\\{\lambda _2} & = 1 & \hspace{0.25in}{{\vec \eta }^{\left( 1 \right)}} & = \left( {\begin{array}{*{20}{c}}{ - 7}\\1\end{array}} \right)\end{align*}\]
+           <p>Note that the two eigenvectors are linearly independent as predicted.</p>
+      </div>
+    </div>
+  </div>
+
+     <a class="anchor" name="Systems_EvalEvect_Ex2"></a>
+  <div class="example">
+    <span class="example-title">Example 2</span> Find the eigenvalues and eigenvectors of the following matrix.
+          
+            \[A = \left( {\begin{array}{*{20}{c}}1&amp;{ - 1}\\{\frac{4}{9}}&amp;{ - \frac{1}{3}}\end{array}} \right)\]
+    <div class="example-content">
+      <span id="SHLink_Soln2" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln2" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln2" class="soln-content">
+        <p>This matrix has fractions in it.  That’s life so don’t get excited about it.  First, we need the eigenvalues.</p>
+          
+            \[\begin{align*}\det \left( {A - \lambda I} \right) & = \left| {\begin{array}{*{20}{c}}{1 - \lambda }&amp;{ - 1}\\{\frac{4}{9}}&amp;{ - \frac{1}{3} - \lambda }\end{array}} \right|\\ &amp;  = \left( {1 - \lambda } \right)\left( { - \frac{1}{3} - \lambda } \right) + \frac{4}{9}\\ &amp;  = {\lambda ^2} - \frac{2}{3}\lambda  + \frac{1}{9}\\ &amp;  = {\left( {\lambda  - \frac{1}{3}} \right)^2}\hspace{0.25in} \Rightarrow \hspace{0.25in}{\lambda _{1,2}} = \frac{1}{3}\end{align*}\]
+          
+           <p>So, it looks like we’ve got an eigenvalue of multiplicity 2 here.  Remember that the power on the term will be the multiplicity.</p>
+          
+           <p>Now, let’s find the eigenvector(s).  This one is going to be a little different from the first example.  There is only one eigenvalue so let’s do the work for that one.  We will need to solve the following system,</p>
+          
+            \[\left( {\begin{array}{*{20}{c}}{\frac{2}{3}}&amp;{ - 1}\\{\frac{4}{9}}&amp;{ - \frac{2}{3}}\end{array}} \right)\left( {\begin{array}{*{20}{c}}{{\eta _1}}\\{{\eta _2}}\end{array}} \right) = \left( {\begin{array}{*{20}{c}}0\\0\end{array}} \right)\hspace{0.25in} \Rightarrow \hspace{0.25in}{R_1} = \frac{3}{2}{R_2}\]
+          
+           <p>So, the rows are multiples of each other.  We’ll work with the first equation in this example to find the eigenvector.</p>
+          
+            \[\frac{2}{3}{\eta _1} - {\eta _2} = 0\hspace{0.25in}{\eta _2} = \frac{2}{3}{\eta _1}\]
+          
+           <p>Recall in the last example we decided that we wanted to make these as “nice” as possible and so should avoid fractions if we can.  Sometimes, as in this case, we simply can’t so we’ll have to deal with it.  In this case the eigenvector will be,</p>
+          
+            \[\vec \eta  = \left( {\begin{array}{*{20}{c}}{{\eta _1}}\\{{\eta _2}}\end{array}} \right) = \left( {\begin{array}{*{20}{c}}{{\eta _1}}\\{\frac{2}{3}{\eta _1}}\end{array}} \right),\hspace{0.25in}{\eta _1} \ne 0\]
+          
+              \[{\vec \eta ^{\left( 1 \right)}} = \left( {\begin{array}{*{20}{c}}3\\2\end{array}} \right),\hspace{0.25in}{\eta _1} = 3\]
+          
+           <p>Note that by careful choice of the variable in this case we were able to get rid of the fraction that we had.  This is something that in general doesn’t much matter if we do or not.  However, when we get back to differential equations it will be easier on us if we don’t have any fractions so we will usually try to eliminate them at this step.</p>
+          
+           <p>Also, in this case we are only going to get a single (linearly independent) eigenvector.  We can get other eigenvectors, by choosing different values of \({\eta _{\,1}}\).  However, each of these will be linearly dependent with the first eigenvector.  If you’re not convinced of this try it.  Pick some values for \({\eta _{\,1}}\) and get a different vector and check to see if the two are linearly dependent.</p>
+          
+           <p>Recall from the fact above that an eigenvalue of multiplicity \(k\) will have anywhere from 1 to \(k\) linearly independent eigenvectors.  In this case we got one.  For most of the \(2 \times 2\) matrices that we’ll be working with this will be the case, although it doesn’t have to be.  We can, on occasion, get two.</p>
+      </div>
+    </div>
+  </div>
+
+     <a class="anchor" name="Systems_EvalEvect_Ex3"></a>
+  <div class="example">
+    <span class="example-title">Example 3</span> Find the eigenvalues and eigenvectors of the following matrix.
+          
+              \[A = \left( {\begin{array}{*{20}{c}}{ - 4}&amp;{ - 17}\\2&amp;2\end{array}} \right)\]
+    <div class="example-content">
+      <span id="SHLink_Soln3" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln3" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln3" class="soln-content">
+        <p>So, we’ll start with the eigenvalues.</p>
+          
+            \[\begin{align*}\det \left( {A - \lambda I} \right) & = \left| {\begin{array}{*{20}{c}}{ - 4 - \lambda }&amp;{ - 17}\\2&amp;{2 - \lambda }\end{array}} \right|\\ &amp;  = \left( { - 4 - \lambda } \right)\left( {2 - \lambda } \right) + 34\\ &amp;  = {\lambda ^2} + 2\lambda  + 26\end{align*}\]
+          
+           <p>This doesn’t factor, so upon using the quadratic formula we arrive at,</p>
+          
+              \[{\lambda _{1,2}} =  - 1 \pm 5i\]
+          
+           <p>In this case we get complex eigenvalues which are definitely a fact of life with eigenvalue/eigenvector problems so get used to them.</p>
+          
+           <p>Finding eigenvectors for complex eigenvalues is identical to the previous two examples, but it will be somewhat messier.  So, let’s do that.</p>
+          
+           <p>\({\lambda _{\,1}} =  - 1 + 5\,i\) :<br />
+             The system that we need to solve this time is</p>
+          
+            \[\begin{align*}\left( {\begin{array}{*{20}{c}}{ - 4 - \left( { - 1 + 5i} \right)}&amp;{ - 17}\\2&amp;{2 - \left( { - 1 + 5i} \right)}\end{array}} \right)\left( {\begin{array}{*{20}{c}}{{\eta _1}}\\{{\eta _2}}\end{array}} \right) & = \left( {\begin{array}{*{20}{c}}0\\0\end{array}} \right)\\ \left( {\begin{array}{*{20}{c}}{ - 3 - 5i}&amp;{ - 17}\\2&amp;{3 - 5i}\end{array}} \right)\left( {\begin{array}{*{20}{c}}{{\eta _1}}\\{{\eta _2}}\end{array}} \right) & = \left( {\begin{array}{*{20}{c}}0\\0\end{array}} \right)\end{align*}\]
+          
+           <p>Now, it’s not super clear that the rows are multiples of each other, but they are.  In this case we have,</p>
+          
+              \[{R_1} =  - \frac{1}{2}\left( {3 + 5i} \right){R_2}\]
+          
+           <p>This is not something that you need to worry about, we just wanted to make the point.  For the work that we’ll be doing later on with differential equations we will just assume that we’ve done everything correctly and we’ve got two rows that are multiples of each other.  Therefore, all that we need to do here is pick one of the rows and work with it.</p>
+          
+           <p>We’ll work with the second row this time.</p>
+          
+              \[2{\eta _1} + \left( {3 - 5i} \right){\eta _2} = 0\]
+          
+           <p>Now we can solve for either of the two variables.  However, again looking forward to differential equations, we are going to need the “\(i\)” in the numerator so solve the equation in such a way as this will happen.  Doing this gives,</p>
+          
+            \[\begin{align*}2{\eta _1} & =  - \left( {3 - 5i} \right){\eta _2}\\ {\eta _1} & =  - \frac{1}{2}\left( {3 - 5i} \right){\eta _2}\end{align*}\]
+           <p>So, the eigenvector in this case is</p>
+          
+            \[\vec \eta  = \left( {\begin{array}{*{20}{c}}{{\eta _1}}\\{{\eta _2}}\end{array}} \right) = \left( {\begin{array}{*{20}{c}}{ - \frac{1}{2}\left( {3 - 5i} \right){\eta _2}}\\{{\eta _2}}\end{array}} \right),\hspace{0.25in}{\eta _2} \ne 0\]
+          
+            \[{\vec \eta ^{\left( 1 \right)}} = \left( {\begin{array}{*{20}{c}}{ - 3 + 5i}\\2\end{array}} \right),\hspace{0.25in}{\eta _2} = 2\]
+          
+           <p>As with the previous example we choose the value of the variable to clear out the fraction.</p>
+          
+           <p>Now, the work for the second eigenvector is almost identical and so we’ll not dwell on that too much.</p>
+           
+           <p>\({\lambda _{\,2}} =  - 1 - 5\,i\) :<br />
+             The system that we need to solve here is</p>
+          
+            \[\begin{align*}\left( {\begin{array}{*{20}{c}}{ - 4 - \left( { - 1 - 5i} \right)}&amp;{ - 17}\\2&amp;{2 - \left( { - 1 - 5i} \right)}\end{array}} \right)\left( {\begin{array}{*{20}{c}}{{\eta _1}}\\{{\eta _2}}\end{array}} \right) & = \left( {\begin{array}{*{20}{c}}0\\0\end{array}} \right)\\ \left( {\begin{array}{*{20}{c}}{ - 3 + 5i}&amp;{ - 17}\\2&amp;{3 + 5i}\end{array}} \right)\left( {\begin{array}{*{20}{c}}{{\eta _1}}\\{{\eta _2}}\end{array}} \right) & = \left( {\begin{array}{*{20}{c}}0\\0\end{array}} \right)\end{align*}\]
+          
+           <p>Working with the second row again gives,</p>
+          
+              \[2{\eta _1} + \left( {3 + 5i} \right){\eta _2} = 0\hspace{0.25in} \Rightarrow \hspace{0.25in}{\eta _1} =  - \frac{1}{2}\left( {3 + 5i} \right){\eta _2}\]
+          
+           <p>The eigenvector in this case is</p>
+          
+            \[\vec \eta  = \left( {\begin{array}{*{20}{c}}{{\eta _1}}\\{{\eta _2}}\end{array}} \right) = \left( {\begin{array}{*{20}{c}}{ - \frac{1}{2}\left( {3 + 5i} \right){\eta _2}}\\{{\eta _2}}\end{array}} \right),\hspace{0.25in}{\eta _2} \ne 0\]
+          
+            \[{\vec \eta ^{\left( 2 \right)}} = \left( {\begin{array}{*{20}{c}}{ - 3 - 5i}\\2\end{array}} \right),\hspace{0.25in}{\eta _2} = 2\]
+           <p>Summarizing, </p>
+          
+            \[\begin{align*}{\lambda _{\,1}} & =  - 1 + 5i & \hspace{0.25in}{{\vec \eta }^{\left( 1 \right)}} & = \left( {\begin{array}{*{20}{c}}{ - 3 + 5i}\\2\end{array}} \right)\\ {\lambda _{\,2}} & =  - 1 - 5i & \hspace{0.25in}{{\vec \eta }^{\left( 2 \right)}} & = \left( {\begin{array}{*{20}{c}}{ - 3 - 5i}\\2\end{array}} \right)\end{align*}\]
+      </div>
+    </div>
+  </div>
+
+     <p>There is a nice fact that we can use to simplify the work when we get complex eigenvalues.  We need a bit of terminology first however.</p>
+    
+     <p>If we start with a complex number,</p>
+    
+        \[z = a + bi\]
+     <p>then the <strong>complex conjugate</strong> of \(z\) is</p>
+    
+      \[\overline{z} = a - bi\]
+    
+     <p>To compute the complex conjugate of a complex number we simply change the sign on the term that contains the “\(i\)”.  The complex conjugate of a vector is just the conjugate of each of the vector’s components.</p>
+    
+     <p>We now have the following fact about complex eigenvalues and eigenvectors.</p>
+    
+     <h4>Fact</h4>
+  <div class="fact">
+    <p>If \(A\) is an \(n \times n\) matrix with only real numbers and if \({\lambda _{\,1}} = a + bi\) is an eigenvalue with eigenvector \({\vec \eta ^{\left( 1 \right)}}\).  Then \({\lambda _{\,2}} = \overline {{\lambda _{\,1}}}  = a - bi\) is also an eigenvalue and its eigenvector is the conjugate of \({\vec \eta ^{\left( 1 \right)}}\).</p>
+  </div>
+    
+     <p>This fact is something that you should feel free to use as you need to in our work.</p>
+    
+     <p>Now, we need to work one final eigenvalue/eigenvector problem.  To this point we’ve only worked with \(2 \times 2\) matrices and we should work at least one that isn’t \(2 \times 2\).  Also, we need to work one in which we get an eigenvalue of multiplicity greater than one that has more than one linearly independent eigenvector.</p>
+     <a class="anchor" name="Systems_EvalEvect_Ex4"></a>
+  <div class="example">
+    <span class="example-title">Example 4</span> Find the eigenvalues and eigenvectors of the following matrix.
+          
+              \[A = \left( {\begin{array}{*{20}{c}}0&amp;1&amp;1\\1&amp;0&amp;1\\1&amp;1&amp;0\end{array}} \right)\]
+    <div class="example-content">
+      <span id="SHLink_Soln4" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln4" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln4" class="soln-content">
+        <p>Despite the fact that this is a \(3 \times 3\) matrix, it still works the same as the \(2 \times 2\) matrices that we’ve been working with.  So, start with the eigenvalues</p>
+          
+            \[\begin{align*}\det \left( {A - \lambda I} \right) & = \left| {\begin{array}{*{20}{c}}{ - \lambda }&amp;1&amp;1\\1&amp;{ - \lambda }&amp;1\\1&amp;1&amp;{ - \lambda }\end{array}} \right|\\ &amp;  =  - {\lambda ^3} + 3\lambda  + 2\\ &amp;  = \left( {\lambda  - 2} \right){\left( {\lambda  + 1} \right)^2}\hspace{0.25in}{\lambda _1} = 2,\,\,\,{\lambda _{2,3}} =  - 1\end{align*}\]
+          
+           <p>So, we’ve got a simple eigenvalue and an eigenvalue of multiplicity 2.  Note that we used the same method of computing the determinant of a \(3 \times 3\) matrix that we used in the previous section.  We just didn’t show the work.</p>
+          
+           <p>Let’s now get the eigenvectors.  We’ll start with the simple eigenvector.</p>
+           
+           <p>\({\lambda _{\,1}} = 2\) : <br />Here we’ll need to solve,</p>
+          
+            \[\left( {\begin{array}{*{20}{c}}{ - 2}&amp;1&amp;1\\1&amp;{ - 2}&amp;1\\1&amp;1&amp;{ - 2}\end{array}} \right)\left( {\begin{array}{*{20}{c}}{{\eta _1}}\\{{\eta _2}}\\{{\eta _3}}\end{array}} \right) = \left( {\begin{array}{*{20}{c}}0\\0\\0\end{array}} \right)\]
+          
+           <p>This time, unlike the \(2 \times 2\) cases we worked earlier, we actually need to solve the system.  So let’s do that.</p>
+          
+            \[\left( {\begin{array}{*{20}{c}}{ - 2}&amp;1&amp;1&amp;0\\1&amp;{ - 2}&amp;1&amp;0\\1&amp;1&amp;{ - 2}&amp;0\end{array}} \right)\begin{array}{*{20}{c}}{{R_1} \leftrightarrow {R_2}}\\ \Rightarrow \end{array}\left( {\begin{array}{*{20}{c}}1&amp;{ - 2}&amp;1&amp;0\\{ - 2}&amp;1&amp;1&amp;0\\1&amp;1&amp;{ - 2}&amp;0\end{array}} \right)\begin{array}{*{20}{c}}{{R_2} + 2{R_1}}\\{{R_3} - {R_1}}\\ \Rightarrow \end{array}\left( {\begin{array}{*{20}{c}}1&amp;{ - 2}&amp;1&amp;0\\0&amp;{ - 3}&amp;3&amp;0\\0&amp;3&amp;{ - 3}&amp;0\end{array}} \right)\]
+          
+          
+              \[\begin{array}{*{20}{c}}{ - \frac{1}{3}{R_2}}\\ \Rightarrow \end{array}\left( {\begin{array}{*{20}{c}}1&amp;{ - 2}&amp;1&amp;0\\0&amp;1&amp;{ - 1}&amp;0\\0&amp;3&amp;{ - 3}&amp;0\end{array}} \right)\begin{array}{*{20}{c}}{{R_3} - 3{R_2}}\\{{R_1} + 2{R_2}}\\ \Rightarrow \end{array}\left( {\begin{array}{*{20}{c}}1&amp;0&amp;{ - 1}&amp;0\\0&amp;1&amp;{ - 1}&amp;0\\0&amp;0&amp;0&amp;0\end{array}} \right)\]
+          
+           <p>Going back to equations gives,</p>
+          
+            \[\begin{align*}{\eta _1} - {\eta _3} & = 0 & \Rightarrow \hspace{0.25in}{\eta _1} & = {\eta _3}\\ {\eta _2} - {\eta _3} & = 0 & \Rightarrow \hspace{0.25in}{\eta _2} & = {\eta _3}\end{align*}\]
+          
+           <p>So, again we get infinitely many solutions as we should for eigenvectors.  The eigenvector is then,</p>
+          
+            \[\vec \eta  = \left( {\begin{array}{*{20}{c}}{{\eta _1}}\\{{\eta _2}}\\{{\eta _3}}\end{array}} \right) = \left( {\begin{array}{*{20}{c}}{{\eta _3}}\\{{\eta _3}}\\{{\eta _3}}\end{array}} \right),\hspace{0.25in}{\eta _3} \ne 0\]
+          
+              \[{\vec \eta ^{\left( 1 \right)}} = \left( {\begin{array}{*{20}{c}}1\\1\\1\end{array}} \right),\hspace{0.25in}{\eta _3} = 1\]
+          
+           <p>Now, let’s do the other eigenvalue.</p>
+          
+           <p>\({\lambda _{\,2}} =  - 1\) : <br />
+             Here we’ll need to solve,</p>
+          
+              \[\left( {\begin{array}{*{20}{c}}1&amp;1&amp;1\\1&amp;1&amp;1\\1&amp;1&amp;1\end{array}} \right)\left( {\begin{array}{*{20}{c}}{{\eta _1}}\\{{\eta _2}}\\{{\eta _3}}\end{array}} \right) = \left( {\begin{array}{*{20}{c}}0\\0\\0\end{array}} \right)\]
+          
+           <p>Okay, in this case is clear that all three rows are the same and so there isn’t any reason to actually solve the system since we can clear out the bottom two rows to all zeroes in one step.  The equation that we get then is,</p>
+          
+            \[{\eta _1} + {\eta _2} + {\eta _3} = 0\hspace{0.25in} \Rightarrow \hspace{0.25in}{\eta _1} =  - {\eta _2} - {\eta _3}\]
+          
+          
+           <p>So, in this case we get to pick two of the values for free and will still get infinitely many solutions.  Here is the general eigenvector for this case,</p>
+          
+            \[\vec \eta  = \left( {\begin{array}{*{20}{c}}{{\eta _1}}\\{{\eta _2}}\\{{\eta _3}}\end{array}} \right) = \left( {\begin{array}{*{20}{c}}{ - {\eta _2} - {\eta _3}}\\{{\eta _2}}\\{{\eta _3}}\end{array}} \right),\hspace{0.25in}{\eta _2} \ne 0{\mbox{ and }}{\eta _3} \ne 0{\mbox{ at the same time}}\]
+          
+           <p>Notice the restriction this time.  Recall that we only require that the eigenvector not be the zero vector.  This means that we can allow one or the other of the two variables to be zero, we just can’t allow both of them to be zero at the same time!</p>
+          
+           <p>What this means for us is that we are going to get two linearly independent eigenvectors this time.  Here they are.</p>
+          
+            \[{\vec \eta ^{\left( 2 \right)}} = \left( {\begin{array}{*{20}{c}}{ - 1}\\0\\1\end{array}} \right)\hspace{0.25in}{\eta _2} = 0{\mbox{ and }}{\eta _3} = 1\]
+          
+            \[{\vec \eta ^{\left( 3 \right)}} = \left( {\begin{array}{*{20}{c}}{ - 1}\\1\\0\end{array}} \right)\hspace{0.25in}{\eta _2} = 1{\mbox{ and }}{\eta _3} = 0\]
+          
+           <p>Now when we talked about linear independent vectors in the last <a href="LA_Matrix.html#LILD">section</a> we only looked at \(n\) vectors each with \(n\) components.  We can still talk about linear independence in this case however.  Recall <a href="Wronskian.html">back</a> with we did linear independence for functions we saw at the time that if two functions were linearly dependent then they were multiples of each other.  Well the same thing holds true for vectors.  Two vectors will be linearly dependent if they are multiples of each other. 
+            In this case there is no way to get \({\vec \eta ^{\left( 2 \right)}}\) by multiplying \({\vec \eta ^{\left( 3 \right)}}\) by a constant.  Therefore, these two vectors must be linearly independent.</p>
+          
+           <p>So, summarizing up, here are the eigenvalues and eigenvectors for this matrix</p>
+          
+            \[\begin{align*}{\lambda _1}  & = 2 & \hspace{0.25in}{{\vec \eta }^{\left( 1 \right)}} & = \left( {\begin{array}{*{20}{c}}1\\1\\1\end{array}} \right)\\ {\lambda _2} & =  - 1 & \hspace{0.25in}{{\vec \eta }^{\left( 2 \right)}} & = \left( {\begin{array}{*{20}{c}}{ - 1}\\0\\1\end{array}} \right)\\ {\lambda _3} & =  - 1 & \hspace{0.25in}{{\vec \eta }^{\left( 3 \right)}} & = \left( {\begin{array}{*{20}{c}}{ - 1}\\1\\0\end{array}} \right)\end{align*}\]
+      </div>
+    </div>
+  </div>
+
+  
+
+
+      
+
+
+
+    </div>
+    <!-- End of content div -->
+
+
+    <div class="footer">
+      <div class="footer-links">
+        [<a href="http://tutorial.math.lamar.edu/Contact.aspx">Contact Me</a>]&nbsp;[<a href="../../MyStudents-2.html">My Students</a>]&nbsp;[<a href="http://tutorial.math.lamar.edu/Privacy.aspx">Privacy Statement</a>]&nbsp;[<a href="../../Help-2.html">Site Help &amp; FAQ</a>]&nbsp;[<a href="http://tutorial.math.lamar.edu/Terms.aspx">Terms of Use</a>]
+      </div>
+      <div class="footer-dates">
+        <div class="footer-copyright"><span id="lblCopyRight">&copy; 2003 - 2019 Paul Dawkins</span></div>
+        <div class="footer-spacer"></div>
+        <div class="footer-modified-date">Page Last Modified : <span id="lblModified">6/3/2018</span></div>
+      </div>
+      
+
+    </div>
+  </div>
+  <!-- End of page div...  -->
+</body>
+
+<!-- Mirrored from tutorial.math.lamar.edu/Classes/DE/LA_Eigen.aspx by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 27 Feb 2019 06:15:36 GMT -->
+</html>
