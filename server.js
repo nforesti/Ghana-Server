@@ -10,12 +10,12 @@ const download = require('./download');
 app.use( bodyParser.json() ); 
 app.use(bodyParser.urlencoded({ extended: true })); 
 
-app.get('/', function(req, res){
-  res.sendFile(__dirname + '/index.html');
+app.get('/downloadPage', function(req, res){
+  res.sendFile(__dirname + '/html/downloadPage.html');
 });
 
-app.get('/index.css', function(req, res) {
-  res.sendFile(__dirname + '/index.css');
+app.get('/downloadPage.css', function(req, res) {
+  res.sendFile(__dirname + '/css/downloadPage.css');
 })
 
 http.listen(3000, function(){
@@ -33,9 +33,9 @@ app.post('/api/download', function(req, res) {
 
     var cont = true;
     if ( exists ) {
-      fs.readFile("files.json", (error, files) => {
+      fs.readFile("JSON/files.json", (error, files) => {
         if ( error ) {
-          res.send("ERROR READING DOWNLAODED FILES (files.json):" + error)
+          res.send("ERROR READING DOWNLAODED FILES (JSON/files.json):" + error)
           cont = false;
           return;
         }
@@ -49,9 +49,9 @@ app.post('/api/download', function(req, res) {
           }
         })
 
-        fs.readFile("downloadQueue.json", (err, data) => {
+        fs.readFile("JSON/downloadQueue.json", (err, data) => {
           if ( err ) {
-            res.send("ERROR ACCESSING DOWNLOAD QUEUE (downloadQueue.json):"+ err);
+            res.send("ERROR ACCESSING DOWNLOAD QUEUE (JSON/downloadQueue.json):"+ err);
             cont = false;
             return;
           }
@@ -66,7 +66,7 @@ app.post('/api/download', function(req, res) {
           })
 
           if ( cont ) {
-            fs.writeFileSync("downloadQueue.json", 
+            fs.writeFileSync("JSON/downloadQueue.json", 
                           JSON.stringify(Object.assign(JSON.parse(data), req.body),
                           null, 4)
                         );
@@ -90,9 +90,9 @@ var available = {
 };
 setInterval(() => {
   if ( available.avail ) {
-    fs.readFile("downloadQueue.json", (err, data) => {
+    fs.readFile("JSON/downloadQueue.json", (err, data) => {
       if ( err ) {
-        console.error("ERROR ACCESSING DOWNLOAD QUEUE (downloadQueue.json):", err)
+        console.error("ERROR ACCESSING DOWNLOAD QUEUE (JSON/downloadQueue.json):", err)
         return;
       }
 
@@ -110,7 +110,7 @@ setInterval(() => {
         }
         delete queue[key];
         
-        fs.writeFileSync("downloadQueue.json", JSON.stringify(queue,null, 4));
+        fs.writeFileSync("JSON/downloadQueue.json", JSON.stringify(queue,null, 4));
 
         available = {
           avail: false,

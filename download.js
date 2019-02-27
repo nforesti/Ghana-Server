@@ -14,9 +14,9 @@ function httrackWrap(data, updateAvailable) {
         updateAvailable();
         
 
-        fs.readFile("files.json", (err, files) => {
+        fs.readFile("JSON/files.json", (err, files) => {
             if ( err ) {
-            console.err("ERROR ACCESSING FILES (files.json):", err);
+            console.err("ERROR ACCESSING FILES (JSON/files.json):", err);
             return;
             }
 
@@ -24,7 +24,7 @@ function httrackWrap(data, updateAvailable) {
             // Object.assign(JSON.parse(data), NEW FILE PATH)
             tmp[data.name] = data;
             // INCLUDE FILE PATH
-            fs.writeFileSync("files.json", 
+            fs.writeFileSync("JSON/files.json", 
                                 JSON.stringify(tmp, Object.assign(JSON.parse(files)), 
                                 null, 4
                             ));
