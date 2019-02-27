@@ -10,7 +10,7 @@ function httrackWrap(data, updateAvailable) {
   
     /*** This likes to stall and take forever to download for -rN where N >= 2 ***/
     /* N controls the depth of the mirror (aka recursive depth) */
-    shell.exec('httrack ' + data.url + ' -O ./SITES --verbose -r2 +*.html', {silent: true}, (avail = updateAvailable) => {
+    shell.exec('httrack ' + data.url + ' -O ./SITES/' + data.name + ' -r1 +*.html', {silent: true}, (avail = updateAvailable) => {
         updateAvailable();
         
 
@@ -25,7 +25,7 @@ function httrackWrap(data, updateAvailable) {
             tmp[data.name] = data;
             // INCLUDE FILE PATH
             fs.writeFileSync("files.json", 
-                                JSON.stringify(Object.assign(JSON.parse(files), tmp), 
+                                JSON.stringify(tmp, Object.assign(JSON.parse(files)), 
                                 null, 4
                             ));
         })

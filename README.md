@@ -3,7 +3,7 @@ admin@132.239.189.105
 globalties
 
 HOW TO RUN:
-bash serve.sh
+bash deploy.sh
 navigate to localhost:3000 to view
 
 Flow of data:
