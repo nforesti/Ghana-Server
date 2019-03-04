@@ -1,0 +1,1288 @@
+
+
+<!DOCTYPE html>
+
+<html>
+
+<!-- Mirrored from tutorial.math.lamar.edu/Classes/CalcI/DerivativeProofs.aspx by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 27 Feb 2019 06:15:35 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=yes" /><meta http-equiv="X-UA-Compatible" content="IE=edge" />  <!-- For best MathJax performance on IE  -->
+
+  <meta name="google-site-verification" content="uLoA31CJfOhIVMJWBjCmQL8xNMmmLybZU3LRKavy9WQ" /><title>
+	Calculus I - Proof of Various Derivative Properties
+</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="../../../www.googletagmanager.com/gtag/js1872?id=UA-331594-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-331594-1');
+  </script>
+
+  <link type="text/css" href="../../css/jquery.mmenu.all.css" rel="stylesheet" /><link type="text/css" href="../../css/jquery.dropdown.css" rel="stylesheet" /><link href="../../FA/css/fontawesome-all.min.css" rel="stylesheet" /><link type="text/css" href="../../css/notes-all.css" rel="stylesheet" /><link type="text/css" href="../../css/notes-google.css" rel="stylesheet" /><link type="text/css" href="../../css/notes-mmenu.css" rel="stylesheet" /><link type="text/css" href="../../css/notes-dropdown.css" rel="stylesheet" />
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+     TeX: { equationNumbers: { autoNumber: "AMS" } }
+    });
+  </script>
+  <script type="text/javascript" async src="../../../cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax2ba6.js?config=TeX-AMS_CHTML-full"></script>
+  <script type="text/javascript" src="../../../code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="../../js/jquery.mmenu.all.js"></script>
+  <script type="text/javascript" src="../../js/jquery.dropdown.js"></script>
+  <script type="text/javascript" src="../../js/notes-all.js"></script>  
+
+  <script>
+    (function () {
+      var cx = '001004262401526223570:11yv6vpcqvy';
+      var gcse = document.createElement('script');
+      gcse.type = 'text/javascript';
+      gcse.async = true;
+      gcse.src = '../../../cse.google.com/cse07b6.html?cx=' + cx;
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(gcse, s);
+    })();
+  </script>
+
+<meta http-equiv="keywords" name="keywords" content="proof of product rule, proof of quotient rule, proof of chain rule" /><meta http-equiv="description" name="description" content="In this section we prove several of the rules/formulas/properties of derivatives that we saw in Derivatives Chapter." /></head>
+<body onload="init({Notes: 'NoteMobile;8/21/2018;true'})">
+
+  <div id="page">
+
+    <div class="header">
+      <div class="header-row">
+        <!--<a href="#menu"><span></span></a>-->
+        <div id="side-menu-icon" class="header-side-menu-icon"><a href="#menu"><span class="fas fa-bars fa-lg" aria-hidden="true" title="Main Menu - Change between topics, chapters and sections as well as a few extra pages."></span></a></div>
+        <span class="header-title"><a href="../../index.html" class="header-title-link">Paul's Online Notes</a></span>
+        <div class="header-spacer"></div>
+
+        <div id="content-top-menu" class="top-menu">
+          <button id="content-type-menu" class="top-menu-button" data-jq-dropdown="#jq-dropdown-type" title="View (Notes, Practice Problems or Assignment Problems, Show/Hide Solutions and/or Steps) Menu">
+            <span id="tab_top_menu_notes" class="top-menu-item-title">Notes</span> <span class="far fa-eye fa-lg" aria-hidden="true"></span>
+          </button>
+
+          <button id="quicknav-menu" class="top-menu-button" data-jq-dropdown="#jq-dropdown-quicknav" title="Quick Navigation (Previous/Next Sections and Problems and Full Problem List) Menu">
+            <span class="top-menu-item-title">Quick Nav</span> <span class="fas fa-exchange fa-lg" aria-hidden="true"></span>
+          </button>
+          
+          <button id="download-menu" class="top-menu-button" data-jq-dropdown="#jq-dropdown-download" title="Download pdf Menu">
+            <span class="top-menu-item-title">Download</span> <span class="far fa-download fa-lg" aria-hidden="true"></span>
+          </button>
+
+          <button id="print-menu" class="top-menu-button top-menu-button-icon-only" data-jq-dropdown="#jq-print-download" title="Print Menu">
+            <span class="far fa-print fa-lg" aria-hidden="true"></span>
+          </button>
+        </div>
+
+        <div id="header-google-search" class="header-search">
+          <gcse:search></gcse:search>
+        </div>
+        <div id="header-search-icon" title="Site Search" class="header-menu-icon"><span id="search-icon" class="fas fa-search" aria-hidden="true"></span></div>
+
+      </div>
+    </div>
+
+     <div id="jq-dropdown-type" class="jq-dropdown jq-dropdown-tip">
+      <ul class="jq-dropdown-menu">
+        
+        <li id="li_type_menu_goto" class="top-menu-nav-title">Go To</li>
+        <li id="li_type_menu_notes">
+          <span id="type_menu_notes_span" title="Viewing the Notes for the current topic." class="top-menu-current">Notes</span>
+          
+        </li>
+        <li id="li_type_menu_practice">
+          
+          
+          <a href="http://tutorial.math.lamar.edu/Problems/CalcI/DerivativeProofs.aspx" id="type_menu_practice_link" title="Go to Practice Problems for current topic.">Practice Problems</a>
+        </li>
+        <li id="li_type_menu_asgn">
+          
+          <a href="http://tutorial.math.lamar.edu/ProblemsNS/CalcI/DerivativeProofs.aspx" id="type_menu_asgn_link" title="Go to Assignment Problems for current topic.">Assignment Problems</a>
+        </li>
+        <li id="li_type_menu_sh" class="top-menu-nav-title">Show/Hide</li>
+        <li id="li_type_menu_show" title="Show any hidden solutions and/or steps that may be present on the page."><a href="javascript:SHPrintPage(1,0)" id="view_menu_show">Show all Solutions/Steps/<em>etc.</em></a></li>
+        <li id="li_type_menu_hide" title="Hide any visible solutions and/or steps that may be present on the page."><a href="javascript:SHPrintPage(0,0)" id="view_menu_hide">Hide all Solutions/Steps/<em>etc.</em></a></li>
+      </ul>
+    </div>
+
+    <div id="jq-dropdown-quicknav" class="jq-dropdown jq-dropdown-tip">
+      <ul class="jq-dropdown-menu">
+        <li id="li_nav_menu_sections" class="top-menu-nav-title">Sections</li>
+        <li id="li_nav_menu_prev_section"><a href="LimitProofs.html" id="a_nav_menu_prev_section" class="top-menu-nav-link" title="Previous Section : Proof of Various Limit Properties"><span class="top-menu-prev fas fa-chevron-left"></span> Proof of Various Limit Properties</a></li>
+        <li id="li_nav_menu_next_section"><a href="ProofTrigDeriv.html" id="a_nav_menu_next_section" class="top-menu-nav-link" title="Next Section : Proof of Trig Limits"><span class="top-menu-prev-hidden fas fa-chevron-left"></span> Proof of Trig Limits <span class="top-menu-next fas fa-chevron-right"></span></a></li>
+        <li id="li_nav_menu_chapters" class="top-menu-nav-title">Chapters</li>
+        <li id="li_nav_menu_prev_chapter"><a href="IntAppsIntro.html" id="a_nav_menu_prev_chapter" class="top-menu-nav-link" title="Previous Chapter : Applications of Integrals"><span class="top-menu-prev fas fa-chevron-left"></span><span class="top-menu-prev fas fa-chevron-left"></span> Applications of Integrals</a></li>
+        
+        
+        
+        
+        
+        <li id="li_nav_menu_classes" class="top-menu-nav-title">Classes</li>
+        <li>
+          
+          <a href="../Alg/Alg.html" id="nav_menu_alg_link" title="Go To Algebra Notes">Algebra</a>
+        </li>
+        <li>
+          <span id="nav_menu_calci_span" title="Currently Viewing Calculus I Material" class="top-menu-current">Calculus I</span>
+          
+        </li>
+        <li>
+          
+          <a href="../CalcII/CalcII.html" id="nav_menu_calcii_link" title="Go To Calculus II Notes">Calculus II</a>
+        </li>
+        <li>
+          
+          <a href="../CalcIII/CalcIII.html" id="nav_menu_calciii_link" title="Go To Calculus III Notes">Calculus III</a>
+        </li>
+        <li>
+          
+          <a href="../DE/DE.html" id="nav_menu_de_link" title="Go To Differential Equations Notes">Differential Equations</a>
+        </li>
+        <li id="li_nav_menu_extras" class="top-menu-nav-title">Extras</li>
+        <li>
+          
+          <a href="../../Extras/AlgebraTrigReview/AlgebraTrig.html" id="nav_menu_algtrig_link" title="Go To Algebra &amp; Trig Review">Algebra &amp; Trig Review</a>
+        </li>
+        <li>
+          
+          <a href="../../Extras/CommonErrors/CommonMathErrors.html" id="nav_menu_commonerrors_link" title="Go To Common Math Errors">Common Math Errors</a>
+        </li>
+        <li>
+          
+          <a href="../../Extras/ComplexPrimer/ComplexNumbers.html" id="nav_menu_complexnumbers_link" title="Go To Complex Numbers Primer">Complex Number Primer</a>
+        </li>
+        <li>
+          
+          <a href="../../Extras/StudyMath/HowToStudyMath.html" id="nav_menu_studymath_link" title="Go To How To Study Math">How To Study Math</a>
+        </li>
+        <li>
+          
+          <a href="../../Extras/CheatSheets_Tables.html" id="nav_menu_cheattables_link" title="Go To List of Cheat Sheets and Tables">Cheat Sheets &amp; Tables</a>
+        </li>
+        <li id="li_nav_menu_misc" class="top-menu-nav-title">Misc</li>
+        <li><a href="http://tutorial.math.lamar.edu/contact.aspx" id="nav_menu_contact" title="Contact Me!">Contact Me</a></li>
+        <li><a href="../../mathjax.html" id="nav_menu_mathjax" title="Info on MathJax and MathJax Configuration Menu">MathJax Help and Configuration</a></li>
+        <li><a href="../../mystudents.html" id="nav_menu_students" title="Go here if you are currently taking a class from me!">My Students</a></li>
+      </ul>
+    </div>
+
+    <div id="jq-dropdown-download" class="jq-dropdown jq-dropdown-anchor-right jq-dropdown-tip">
+      <ul class="jq-dropdown-menu">
+        
+        <li id="li_download_menu_notes" class="top-menu-nav-title">Notes Downloads</li>
+        <li id="li_download_menu_notes_book"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=B,8,N" id="download_menu_notes_book" data-PDF="Download - Menu$Notes - Book$Calculus I$/Downloads/CalcI/Notes/Complete.pdf">Complete Book</a></li>
+        
+        <li id="li_download_menu_notes_chapter"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=C,31,N" id="download_menu_notes_chapter" data-PDF="Download - Menu$Notes - Chapter$Calculus I - Extras$/Downloads/CalcI/Notes/Extras.pdf">Current Chapter</a></li>
+        <li id="li_download_menu_notes_section"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=S,230,N" id="download_menu_notes_section" data-PDF="Download - Menu$Notes - Section$Calculus I - Proof of Various Derivative Properties$/Downloads/CalcI/Notes/ProofsDerivatives.pdf">Current Section</a></li>
+        <li id="li_download_menu_practice" class="top-menu-nav-title">Practice Problems Downloads</li>
+        
+        <li id="li_download_menu_practice_book"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=B,8,P" id="download_menu_practice_book" data-PDF="Download - Menu$Practice Problems - Book$Calculus I$/Downloads/CalcI/Practice Problems/Complete.pdf">Complete Book - Problems Only</a></li>
+        <li id="li_download_menu_solutions_book"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=B,8,S" id="download_menu_solutions_book" data-PDF="Download - Menu$Practice Problems Solutions - Book$Calculus I$/Downloads/CalcI/Practice Problems Solutions/Complete.pdf">Complete Book - Solutions</a></li>
+        
+        
+        
+        
+        
+        
+        <li id="li_download_menu_asgn" class="top-menu-nav-title">Assignment Problems Downloads</li>
+        
+        <li id="li_download_menu_asgn_book"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=B,8,A" id="download_menu_asgn_book" data-PDF="Download - Menu$Assignment Problems - Book$Calculus I$/Downloads/CalcI/Assignment Problems/Complete.pdf">Complete Book</a></li>
+        
+        
+        <li id="li_download_menu_other" class="top-menu-nav-title">Other Items</li>
+        <li id="li_download_menu_urls">
+          <a href="http://tutorial.math.lamar.edu/DownloadURLs.aspx?bi=8&amp;ci=31&amp;si=230" id="download_menu_urls">Get URL's for Download Items</a>
+        </li>
+      </ul>
+    </div>
+
+    <div id="jq-print-download" class="jq-dropdown jq-dropdown-anchor-right jq-dropdown-tip">
+      <ul class="jq-dropdown-menu">
+        <li id="li_print_menu_default"><a href="javascript:SHPrintPage()" id="print_menu_default">Print Page in Current Form (Default)</a></li>
+        <li id="li_print_menu_show"><a href="javascript:SHPrintPage(1,1)" id="print_menu_show">Show all Solutions/Steps and Print Page</a></li>
+        <li id="li_print_menu_hide"><a href="javascript:SHPrintPage(0,1)" id="print_menu_hide">Hide all Solutions/Steps and Print Page</a></li>
+      </ul>
+    </div>
+
+
+
+   
+
+    <nav id="menu" class="notes-nav">
+      <ul>
+        <li><a href="../../index.html" class="mm-link">Home</a></li>
+        <li><span>Classes</span></li>
+        <li><a href="../Alg/Alg.html" class="mm-link">Algebra</a>
+          <ul>
+            <li><a href="../Alg/Preliminaries.html" class="mm-link">Preliminaries</a>
+              <ul>
+                <li><a href="../Alg/IntegerExponents.html" class="mm-link">Integer Exponents</a></li>
+                <li><a href="../Alg/RationalExponents.html" class="mm-link">Rational Exponents</a></li>
+                <li><a href="../Alg/Radicals.html" class="mm-link">Radicals</a></li>
+                <li><a href="../Alg/Polynomials.html" class="mm-link">Polynomials</a></li>
+                <li><a href="../Alg/Factoring.html" class="mm-link">Factoring Polynomials</a></li>
+                <li><a href="../Alg/RationalExpressions.html" class="mm-link">Rational Expressions</a></li>
+                <li><a href="../Alg/ComplexNumbers.html" class="mm-link">Complex Numbers</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/Solving.html" class="mm-link">Solving Equations and Inequalities</a>
+              <ul>
+                <li><a href="../Alg/SolutionSets.html" class="mm-link">Solutions and Solution Sets</a></li>
+                <li><a href="../Alg/SolveLinearEqns.html" class="mm-link">Linear Equations</a></li>
+                <li><a href="../Alg/LinearApps.html" class="mm-link">Applications of Linear Equations</a></li>
+                <li><a href="../Alg/SolveMultiVariable.html" class="mm-link">Equations With More Than One Variable</a></li>
+                <li><a href="../Alg/SolveQuadraticEqnsI.html" class="mm-link">Quadratic Equations - Part I</a></li>
+                <li><a href="../Alg/SolveQuadraticEqnsII.html" class="mm-link">Quadratic Equations - Part II</a></li>
+                <li><a href="../Alg/SolveQuadraticEqnSummary.html" class="mm-link">Quadratic Equations : A Summary</a></li>
+                <li><a href="../Alg/QuadraticApps.html" class="mm-link">Applications of Quadratic Equations</a></li>
+                <li><a href="../Alg/ReducibleToQuadratic.html" class="mm-link">Equations Reducible to Quadratic in Form</a></li>
+                <li><a href="../Alg/SolveRadicalEqns.html" class="mm-link">Equations with Radicals</a></li>
+                <li><a href="../Alg/SolveLinearInequalities.html" class="mm-link">Linear Inequalities</a></li>
+                <li><a href="../Alg/SolvePolyInequalities.html" class="mm-link">Polynomial Inequalities</a></li>
+                <li><a href="../Alg/SolveRationalInequalities.html" class="mm-link">Rational Inequalities</a></li>
+                <li><a href="../Alg/SolveAbsValueEqns.html" class="mm-link">Absolute Value Equations</a></li>
+                <li><a href="../Alg/SolveAbsValueIneq.html" class="mm-link">Absolute Value Inequalities</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/Graphing_Functions.html" class="mm-link">Graphing and Functions</a>
+              <ul>
+                <li><a href="../Alg/Graphing.html" class="mm-link">Graphing</a></li>
+                <li><a href="../Alg/Lines.html" class="mm-link">Lines</a></li>
+                <li><a href="../Alg/Circles.html" class="mm-link">Circles</a></li>
+                <li><a href="../Alg/FunctionDefn.html" class="mm-link">The Definition of a Function</a></li>
+                <li><a href="../Alg/GraphFunctions.html" class="mm-link">Graphing Functions</a></li>
+                <li><a href="../Alg/CombineFunctions.html" class="mm-link">Combining Functions</a></li>
+                <li><a href="../Alg/InverseFunctions.html" class="mm-link">Inverse Functions</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/CommonGraphs.html" class="mm-link">Common Graphs</a>
+              <ul>
+                <li><a href="../Alg/Lines_Circles_PWF.html" class="mm-link">Lines, Circles and Piecewise Functions</a></li>
+                <li><a href="../Alg/Parabolas.html" class="mm-link">Parabolas</a></li>
+                <li><a href="../Alg/Ellipses.html" class="mm-link">Ellipses</a></li>
+                <li><a href="../Alg/Hyperbolas.html" class="mm-link">Hyperbolas</a></li>
+                <li><a href="../Alg/MiscFunctions.html" class="mm-link">Miscellaneous Functions</a></li>
+                <li><a href="../Alg/Transformations.html" class="mm-link">Transformations</a></li>
+                <li><a href="../Alg/Symmetry.html" class="mm-link">Symmetry</a></li>
+                <li><a href="../Alg/GraphRationalFcns.html" class="mm-link">Rational Functions</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/PolynomialFunctions.html" class="mm-link">Polynomial Functions</a>
+              <ul>
+                <li><a href="../Alg/DividingPolynomials.html" class="mm-link">Dividing Polynomials</a></li>
+                <li><a href="../Alg/ZeroesOfPolynomials.html" class="mm-link">Zeroes/Roots of Polynomials</a></li>
+                <li><a href="../Alg/GraphingPolynomials.html" class="mm-link">Graphing Polynomials</a></li>
+                <li><a href="../Alg/FindingZeroesOfPolynomials.html" class="mm-link">Finding Zeroes of Polynomials</a></li>
+                <li><a href="../Alg/PartialFractions.html" class="mm-link">Partial Fractions</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/ExpAndLog.html" class="mm-link">Exponential and Logarithm Functions</a>
+              <ul>
+                <li><a href="../Alg/ExpFunctions.html" class="mm-link">Exponential Functions</a></li>
+                <li><a href="../Alg/LogFunctions.html" class="mm-link">Logarithm Functions</a></li>
+                <li><a href="../Alg/SolveExpEqns.html" class="mm-link">Solving Exponential Equations</a></li>
+                <li><a href="../Alg/SolveLogEqns.html" class="mm-link">Solving Logarithm Equations</a></li>
+                <li><a href="../Alg/ExpLogApplications.html" class="mm-link">Applications</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/Systems.html" class="mm-link">Systems of Equations</a>
+              <ul>
+                <li><a href="../Alg/SystemsTwoVrble.html" class="mm-link">Linear Systems with Two Variables</a></li>
+                <li><a href="../Alg/SystemsThreeVrble.html" class="mm-link">Linear Systems with Three Variables</a></li>
+                <li><a href="../Alg/AugmentedMatrix.html" class="mm-link">Augmented Matrices</a></li>
+                <li><a href="../Alg/AugmentedMatrixII.html" class="mm-link">More on the Augmented Matrix</a></li>
+                <li><a href="../Alg/NonlinearSystems.html" class="mm-link">Nonlinear Systems</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="CalcI.html" class="mm-link">Calculus I</a>
+          <ul>
+            <li><a href="ReviewIntro.html" class="mm-link">Review</a>
+              <ul>
+                <li><a href="Functions.html" class="mm-link">Functions</a></li>
+                <li><a href="InverseFunctions.html" class="mm-link">Inverse Functions</a></li>
+                <li><a href="TrigFcns.html" class="mm-link">Trig Functions</a></li>
+                <li><a href="TrigEquations.html" class="mm-link">Solving Trig Equations</a></li>
+                <li><a href="TrigEquations_CalcI.html" class="mm-link">Trig Equations with Calculators, Part I</a></li>
+                <li><a href="TrigEquations_CalcII.html" class="mm-link">Trig Equations with Calculators, Part II</a></li>
+                <li><a href="ExpFunctions.html" class="mm-link">Exponential Functions</a></li>
+                <li><a href="LogFcns.html" class="mm-link">Logarithm Functions</a></li>
+                <li><a href="ExpLogEqns.html" class="mm-link">Exponential and Logarithm Equations</a></li>
+                <li><a href="CommonGraphs.html" class="mm-link">Common Graphs</a></li>
+              </ul>
+            </li>
+            <li><a href="limitsIntro.html" class="mm-link">Limits</a>
+              <ul>
+                <li><a href="Tangents_Rates.html" class="mm-link">Tangent Lines and Rates of Change</a></li>
+                <li><a href="TheLimit.html" class="mm-link">The Limit</a></li>
+                <li><a href="OneSidedLimits.html" class="mm-link">One-Sided Limits</a></li>
+                <li><a href="LimitsProperties.html" class="mm-link">Limit Properties</a></li>
+                <li><a href="ComputingLimits.html" class="mm-link">Computing Limits</a></li>
+                <li><a href="InfiniteLimits.html" class="mm-link">Infinite Limits</a></li>
+                <li><a href="LimitsAtInfinityI.html" class="mm-link">Limits At Infinity, Part I</a></li>
+                <li><a href="LimitsAtInfinityII.html" class="mm-link">Limits At Infinity, Part II</a></li>
+                <li><a href="Continuity.html" class="mm-link">Continuity</a></li>
+                <li><a href="DefnOfLimit.html" class="mm-link">The Definition of the Limit</a></li>
+              </ul>
+            </li>
+            <li><a href="DerivativeIntro.html" class="mm-link">Derivatives</a>
+              <ul>
+                <li><a href="DefnOfDerivative.html" class="mm-link">The Definition of the Derivative</a></li>
+                <li><a href="DerivativeInterp.html" class="mm-link">Interpretation of the Derivative</a></li>
+                <li><a href="DiffFormulas.html" class="mm-link">Differentiation Formulas</a></li>
+                <li><a href="ProductQuotientRule.html" class="mm-link">Product and Quotient Rule</a></li>
+                <li><a href="DiffTrigFcns.html" class="mm-link">Derivatives of Trig Functions</a></li>
+                <li><a href="DiffExpLogFcns.html" class="mm-link">Derivatives of Exponential and Logarithm Functions</a></li>
+                <li><a href="DiffInvTrigFcns.html" class="mm-link">Derivatives of Inverse Trig Functions</a></li>
+                <li><a href="DiffHyperFcns.html" class="mm-link">Derivatives of Hyperbolic Functions</a></li>
+                <li><a href="ChainRule.html" class="mm-link">Chain Rule</a></li>
+                <li><a href="ImplicitDIff.html" class="mm-link">Implicit Differentiation</a></li>
+                <li><a href="RelatedRates.html" class="mm-link">Related Rates</a></li>
+                <li><a href="HigherOrderDerivatives.html" class="mm-link">Higher Order Derivatives</a></li>
+                <li><a href="LogDiff.html" class="mm-link">Logarithmic Differentiation</a></li>
+              </ul>
+            </li>
+            <li><a href="DerivAppsIntro.html" class="mm-link">Applications of Derivatives</a>
+              <ul>
+                <li><a href="RateOfChange.html" class="mm-link">Rates of Change</a></li>
+                <li><a href="CriticalPoints.html" class="mm-link">Critical Points</a></li>
+                <li><a href="MinMaxValues.html" class="mm-link">Minimum and Maximum Values</a></li>
+                <li><a href="AbsExtrema.html" class="mm-link">Finding Absolute Extrema</a></li>
+                <li><a href="ShapeofGraphPtI.html" class="mm-link">The Shape of a Graph, Part I</a></li>
+                <li><a href="ShapeofGraphPtII.html" class="mm-link">The Shape of a Graph, Part II</a></li>
+                <li><a href="MeanValueTheorem.html" class="mm-link">The Mean Value Theorem</a></li>
+                <li><a href="Optimization.html" class="mm-link">Optimization</a></li>
+                <li><a href="MoreOptimization.html" class="mm-link">More Optimization Problems</a></li>
+                <li><a href="LHospitalsRule.html" class="mm-link">L'Hospital's Rule and Indeterminate Forms</a></li>
+                <li><a href="LinearApproximations.html" class="mm-link">Linear Approximations</a></li>
+                <li><a href="Differentials.html" class="mm-link">Differentials</a></li>
+                <li><a href="NewtonsMethod.html" class="mm-link">Newton's Method</a></li>
+                <li><a href="BusinessApps.html" class="mm-link">Business Applications</a></li>
+              </ul>
+            </li>
+            <li><a href="IntegralsIntro.html" class="mm-link">Integrals</a>
+              <ul>
+                <li><a href="IndefiniteIntegrals.html" class="mm-link">Indefinite Integrals</a></li>
+                <li><a href="ComputingIndefiniteIntegrals.html" class="mm-link">Computing Indefinite Integrals</a></li>
+                <li><a href="SubstitutionRuleIndefinite.html" class="mm-link">Substitution Rule for Indefinite Integrals</a></li>
+                <li><a href="SubstitutionRuleIndefinitePtII.html" class="mm-link">More Substitution Rule</a></li>
+                <li><a href="AreaProblem.html" class="mm-link">Area Problem</a></li>
+                <li><a href="DefnOfDefiniteIntegral.html" class="mm-link">Definition of the Definite Integral</a></li>
+                <li><a href="ComputingDefiniteIntegrals.html" class="mm-link">Computing Definite Integrals</a></li>
+                <li><a href="SubstitutionRuleDefinite.html" class="mm-link">Substitution Rule for Definite Integrals</a></li>
+              </ul>
+            </li>
+            <li><a href="IntAppsIntro.html" class="mm-link">Applications of Integrals</a>
+              <ul>
+                <li><a href="AvgFcnValue.html" class="mm-link">Average Function Value</a></li>
+                <li><a href="AreaBetweenCurves.html" class="mm-link">Area Between Curves</a></li>
+                <li><a href="VolumeWithRings.html" class="mm-link">Volumes of Solids of Revolution / Method of Rings</a></li>
+                <li><a href="VolumeWithCylinder.html" class="mm-link">Volumes of Solids of Revolution/Method of Cylinders</a></li>
+                <li><a href="MoreVolume.html" class="mm-link">More Volume Problems</a></li>
+                <li><a href="Work.html" class="mm-link">Work</a></li>
+              </ul>
+            </li>
+            <li><a href="ExtrasIntro.html" class="mm-link">Extras</a>
+              <ul>
+                <li><a href="LimitProofs.html" class="mm-link">Proof of Various Limit Properties</a></li>
+                <li><a href="DerivativeProofs.html" class="mm-link">Proof of Various Derivative Properties</a></li>
+                <li><a href="ProofTrigDeriv.html" class="mm-link">Proof of Trig Limits</a></li>
+                <li><a href="DerivativeAppsProofs.html" class="mm-link">Proofs of Derivative Applications Facts</a></li>
+                <li><a href="ProofIntProp.html" class="mm-link">Proof of Various Integral Properties </a></li>
+                <li><a href="Area_Volume_Formulas.html" class="mm-link">Area and Volume Formulas</a></li>
+                <li><a href="TypesOfInfinity.html" class="mm-link">Types of Infinity</a></li>
+                <li><a href="SummationNotation.html" class="mm-link">Summation Notation</a></li>
+                <li><a href="ConstantofIntegration.html" class="mm-link">Constant of Integration</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../CalcII/CalcII.html" class="mm-link">Calculus II</a>
+          <ul>
+            <li><a href="../CalcII/IntTechIntro.html" class="mm-link">Integration Techniques</a>
+              <ul>
+                <li><a href="../CalcII/IntegrationByParts.html" class="mm-link">Integration by Parts</a></li>
+                <li><a href="../CalcII/IntegralsWithTrig.html" class="mm-link">Integrals Involving Trig Functions</a></li>
+                <li><a href="../CalcII/TrigSubstitutions.html" class="mm-link">Trig Substitutions</a></li>
+                <li><a href="../CalcII/PartialFractions.html" class="mm-link">Partial Fractions</a></li>
+                <li><a href="../CalcII/IntegralsWithRoots.html" class="mm-link">Integrals Involving Roots</a></li>
+                <li><a href="../CalcII/IntegralsWithQuadratics.html" class="mm-link">Integrals Involving Quadratics</a></li>
+                <li><a href="../CalcII/IntegrationStrategy.html" class="mm-link">Integration Strategy</a></li>
+                <li><a href="../CalcII/ImproperIntegrals.html" class="mm-link">Improper Integrals</a></li>
+                <li><a href="../CalcII/ImproperIntegralsCompTest.html" class="mm-link">Comparison Test for Improper Integrals</a></li>
+                <li><a href="../CalcII/ApproximatingDefIntegrals.html" class="mm-link">Approximating Definite Integrals</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/IntAppsIntro.html" class="mm-link">Applications of Integrals</a>
+              <ul>
+                <li><a href="../CalcII/ArcLength.html" class="mm-link">Arc Length</a></li>
+                <li><a href="../CalcII/SurfaceArea.html" class="mm-link">Surface Area</a></li>
+                <li><a href="../CalcII/CenterOfMass.html" class="mm-link">Center of Mass</a></li>
+                <li><a href="../CalcII/HydrostaticPressure.html" class="mm-link">Hydrostatic Pressure</a></li>
+                <li><a href="../CalcII/Probability.html" class="mm-link">Probability</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/ParametricIntro.html" class="mm-link">Parametric Equations and Polar Coordinates</a>
+              <ul>
+                <li><a href="../CalcII/ParametricEqn.html" class="mm-link">Parametric Equations and Curves</a></li>
+                <li><a href="../CalcII/ParaTangent.html" class="mm-link">Tangents with Parametric Equations</a></li>
+                <li><a href="../CalcII/ParaArea.html" class="mm-link">Area with Parametric Equations</a></li>
+                <li><a href="../CalcII/ParaArcLength.html" class="mm-link">Arc Length with Parametric Equations</a></li>
+                <li><a href="../CalcII/ParaSurfaceArea.html" class="mm-link">Surface Area with Parametric Equations</a></li>
+                <li><a href="../CalcII/PolarCoordinates.html" class="mm-link">Polar Coordinates</a></li>
+                <li><a href="../CalcII/PolarTangents.html" class="mm-link">Tangents with Polar Coordinates</a></li>
+                <li><a href="../CalcII/PolarArea.html" class="mm-link">Area with Polar Coordinates</a></li>
+                <li><a href="../CalcII/PolarArcLength.html" class="mm-link">Arc Length with Polar Coordinates</a></li>
+                <li><a href="../CalcII/PolarSurfaceArea.html" class="mm-link">Surface Area with Polar Coordinates</a></li>
+                <li><a href="../CalcII/ArcLength_SurfaceArea.html" class="mm-link">Arc Length and Surface Area Revisited</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/SeriesIntro.html" class="mm-link">Series & Sequences</a>
+              <ul>
+                <li><a href="../CalcII/Sequences.html" class="mm-link">Sequences</a></li>
+                <li><a href="../CalcII/MoreSequences.html" class="mm-link">More on Sequences</a></li>
+                <li><a href="../CalcII/Series_Basics.html" class="mm-link">Series - The Basics</a></li>
+                <li><a href="../CalcII/ConvergenceOfSeries.html" class="mm-link">Convergence/Divergence of Series</a></li>
+                <li><a href="../CalcII/Series_Special.html" class="mm-link">Special Series</a></li>
+                <li><a href="../CalcII/IntegralTest.html" class="mm-link">Integral Test</a></li>
+                <li><a href="../CalcII/SeriesCompTest.html" class="mm-link">Comparison Test/Limit Comparison Test</a></li>
+                <li><a href="../CalcII/AlternatingSeries.html" class="mm-link">Alternating Series Test</a></li>
+                <li><a href="../CalcII/AbsoluteConvergence.html" class="mm-link">Absolute Convergence</a></li>
+                <li><a href="../CalcII/RatioTest.html" class="mm-link">Ratio Test</a></li>
+                <li><a href="../CalcII/RootTest.html" class="mm-link">Root Test</a></li>
+                <li><a href="../CalcII/SeriesStrategy.html" class="mm-link">Strategy for Series</a></li>
+                <li><a href="../CalcII/EstimatingSeries.html" class="mm-link">Estimating the Value of a Series</a></li>
+                <li><a href="../CalcII/PowerSeries.html" class="mm-link">Power Series</a></li>
+                <li><a href="../CalcII/PowerSeriesandFunctions.html" class="mm-link">Power Series and Functions</a></li>
+                <li><a href="../CalcII/TaylorSeries.html" class="mm-link">Taylor Series</a></li>
+                <li><a href="../CalcII/TaylorSeriesApps.html" class="mm-link">Applications of Series</a></li>
+                <li><a href="../CalcII/BinomialSeries.html" class="mm-link">Binomial Series</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/VectorsIntro.html" class="mm-link">Vectors</a>
+              <ul>
+                <li><a href="../CalcII/Vectors_Basics.html" class="mm-link">Vectors - The Basics</a></li>
+                <li><a href="../CalcII/VectorArithmetic.html" class="mm-link">Vector Arithmetic</a></li>
+                <li><a href="../CalcII/DotProduct.html" class="mm-link">Dot Product</a></li>
+                <li><a href="../CalcII/CrossProduct.html" class="mm-link">Cross Product</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/3DSpace.html" class="mm-link">3-Dimensional Space</a>
+              <ul>
+                <li><a href="../CalcII/3DCoords.html" class="mm-link">The 3-D Coordinate System</a></li>
+                <li><a href="../CalcII/EqnsOfLines.html" class="mm-link">Equations of Lines</a></li>
+                <li><a href="../CalcII/EqnsOfPlanes.html" class="mm-link">Equations of Planes</a></li>
+                <li><a href="../CalcII/QuadricSurfaces.html" class="mm-link">Quadric Surfaces</a></li>
+                <li><a href="../CalcII/MultiVrbleFcns.html" class="mm-link">Functions of Several Variables</a></li>
+                <li><a href="../CalcII/VectorFunctions.html" class="mm-link">Vector Functions</a></li>
+                <li><a href="../CalcII/VectorFcnsCalculus.html" class="mm-link">Calculus with Vector Functions</a></li>
+                <li><a href="../CalcII/TangentNormalVectors.html" class="mm-link">Tangent, Normal and Binormal Vectors</a></li>
+                <li><a href="../CalcII/VectorArcLength.html" class="mm-link">Arc Length with Vector Functions</a></li>
+                <li><a href="../CalcII/Curvature.html" class="mm-link">Curvature</a></li>
+                <li><a href="../CalcII/Velocity_Acceleration.html" class="mm-link">Velocity and Acceleration</a></li>
+                <li><a href="../CalcII/CylindricalCoords.html" class="mm-link">Cylindrical Coordinates</a></li>
+                <li><a href="../CalcII/SphericalCoords.html" class="mm-link">Spherical Coordinates</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../CalcIII/CalcIII.html" class="mm-link">Calculus III</a>
+          <ul>
+            <li><a href="../CalcIII/3DSpace.html" class="mm-link">3-Dimensional Space</a>
+              <ul>
+                <li><a href="../CalcIII/3DCoords.html" class="mm-link">The 3-D Coordinate System</a></li>
+                <li><a href="../CalcIII/EqnsOfLines.html" class="mm-link">Equations of Lines</a></li>
+                <li><a href="../CalcIII/EqnsOfPlanes.html" class="mm-link">Equations of Planes</a></li>
+                <li><a href="../CalcIII/QuadricSurfaces.html" class="mm-link">Quadric Surfaces</a></li>
+                <li><a href="../CalcIII/MultiVrbleFcns.html" class="mm-link">Functions of Several Variables</a></li>
+                <li><a href="../CalcIII/VectorFunctions.html" class="mm-link">Vector Functions</a></li>
+                <li><a href="../CalcIII/VectorFcnsCalculus.html" class="mm-link">Calculus with Vector Functions</a></li>
+                <li><a href="../CalcIII/TangentNormalVectors.html" class="mm-link">Tangent, Normal and Binormal Vectors</a></li>
+                <li><a href="../CalcIII/VectorArcLength.html" class="mm-link">Arc Length with Vector Functions</a></li>
+                <li><a href="../CalcIII/Curvature.html" class="mm-link">Curvature</a></li>
+                <li><a href="../CalcIII/Velocity_Acceleration.html" class="mm-link">Velocity and Acceleration</a></li>
+                <li><a href="../CalcIII/CylindricalCoords.html" class="mm-link">Cylindrical Coordinates</a></li>
+                <li><a href="../CalcIII/SphericalCoords.html" class="mm-link">Spherical Coordinates</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/PartialDerivsIntro.html" class="mm-link">Partial Derivatives</a>
+              <ul>
+                <li><a href="../CalcIII/Limits.html" class="mm-link">Limits</a></li>
+                <li><a href="../CalcIII/PartialDerivatives.html" class="mm-link">Partial Derivatives</a></li>
+                <li><a href="../CalcIII/PartialDerivInterp.html" class="mm-link">Interpretations of Partial Derivatives</a></li>
+                <li><a href="../CalcIII/HighOrderPartialDerivs.html" class="mm-link">Higher Order Partial Derivatives</a></li>
+                <li><a href="../CalcIII/Differentials.html" class="mm-link">Differentials</a></li>
+                <li><a href="../CalcIII/ChainRule.html" class="mm-link">Chain Rule</a></li>
+                <li><a href="../CalcIII/DirectionalDeriv.html" class="mm-link">Directional Derivatives</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/PartialDerivAppsIntro.html" class="mm-link">Applications of Partial Derivatives</a>
+              <ul>
+                <li><a href="../CalcIII/TangentPlanes.html" class="mm-link">Tangent Planes and Linear Approximations</a></li>
+                <li><a href="../CalcIII/GradientVectorTangentPlane.html" class="mm-link">Gradient Vector, Tangent Planes and Normal Lines</a></li>
+                <li><a href="../CalcIII/RelativeExtrema.html" class="mm-link">Relative Minimums and Maximums</a></li>
+                <li><a href="../CalcIII/AbsoluteExtrema.html" class="mm-link">Absolute Minimums and Maximums</a></li>
+                <li><a href="../CalcIII/LagrangeMultipliers.html" class="mm-link">Lagrange Multipliers</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/MultipleIntegralsIntro.html" class="mm-link">Multiple Integrals</a>
+              <ul>
+                <li><a href="../CalcIII/DoubleIntegrals.html" class="mm-link">Double Integrals</a></li>
+                <li><a href="../CalcIII/IteratedIntegrals.html" class="mm-link">Iterated Integrals</a></li>
+                <li><a href="../CalcIII/DIGeneralRegion.html" class="mm-link">Double Integrals over General Regions</a></li>
+                <li><a href="../CalcIII/DIPolarCoords.html" class="mm-link">Double Integrals in Polar Coordinates</a></li>
+                <li><a href="../CalcIII/TripleIntegrals.html" class="mm-link">Triple Integrals</a></li>
+                <li><a href="../CalcIII/TICylindricalCoords.html" class="mm-link">Triple Integrals in Cylindrical Coordinates</a></li>
+                <li><a href="../CalcIII/TISphericalCoords.html" class="mm-link">Triple Integrals in Spherical Coordinates</a></li>
+                <li><a href="../CalcIII/ChangeOfVariables.html" class="mm-link">Change of Variables</a></li>
+                <li><a href="../CalcIII/SurfaceArea.html" class="mm-link">Surface Area</a></li>
+                <li><a href="../CalcIII/Area_Volume.html" class="mm-link">Area and Volume Revisited</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/LineIntegralsIntro.html" class="mm-link">Line Integrals</a>
+              <ul>
+                <li><a href="../CalcIII/VectorFields.html" class="mm-link">Vector Fields</a></li>
+                <li><a href="../CalcIII/LineIntegralsPtI.html" class="mm-link">Line Integrals - Part I</a></li>
+                <li><a href="../CalcIII/LineIntegralsPtII.html" class="mm-link">Line Integrals - Part II</a></li>
+                <li><a href="../CalcIII/LineIntegralsVectorFields.html" class="mm-link">Line Integrals of Vector Fields</a></li>
+                <li><a href="../CalcIII/FundThmLineIntegrals.html" class="mm-link">Fundamental Theorem for Line Integrals</a></li>
+                <li><a href="../CalcIII/ConservativeVectorField.html" class="mm-link">Conservative Vector Fields</a></li>
+                <li><a href="../CalcIII/GreensTheorem.html" class="mm-link">Green's Theorem</a></li>
+                <li><a href="../CalcIII/CurlDivergence.html" class="mm-link">Curl and Divergence</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/SurfaceIntegralsIntro.html" class="mm-link">Surface Integrals</a>
+              <ul>
+                <li><a href="../CalcIII/ParametricSurfaces.html" class="mm-link">Parametric Surfaces</a></li>
+                <li><a href="../CalcIII/SurfaceIntegrals.html" class="mm-link">Surface Integrals</a></li>
+                <li><a href="../CalcIII/SurfIntVectorField.html" class="mm-link">Surface Integrals of Vector Fields</a></li>
+                <li><a href="../CalcIII/StokesTheorem.html" class="mm-link">Stokes' Theorem</a></li>
+                <li><a href="../CalcIII/DivergenceTheorem.html" class="mm-link">Divergence Theorem</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../DE/DE.html" class="mm-link">Differential Equations</a>
+          <ul>
+            <li><a href="../DE/IntroBasic.html" class="mm-link">Basic Concepts</a>
+              <ul>
+                <li><a href="../DE/Definitions.html" class="mm-link">Definitions</a></li>
+                <li><a href="../DE/DirectionFields.html" class="mm-link">Direction Fields</a></li>
+                <li><a href="../DE/FinalThoughts.html" class="mm-link">Final Thoughts</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/IntroFirstOrder.html" class="mm-link">First Order DE's</a>
+              <ul>
+                <li><a href="../DE/Linear.html" class="mm-link">Linear Equations</a></li>
+                <li><a href="../DE/Separable.html" class="mm-link">Separable Equations</a></li>
+                <li><a href="../DE/Exact.html" class="mm-link">Exact Equations</a></li>
+                <li><a href="../DE/Bernoulli.html" class="mm-link">Bernoulli Differential Equations</a></li>
+                <li><a href="../DE/Substitutions.html" class="mm-link">Substitutions</a></li>
+                <li><a href="../DE/IoV.html" class="mm-link">Intervals of Validity</a></li>
+                <li><a href="../DE/Modeling.html" class="mm-link">Modeling with First Order DE's</a></li>
+                <li><a href="../DE/EquilibriumSolutions.html" class="mm-link">Equilibrium Solutions</a></li>
+                <li><a href="../DE/EulersMethod.html" class="mm-link">Euler's Method</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/IntroSecondOrder.html" class="mm-link">Second Order DE's</a>
+              <ul>
+                <li><a href="../DE/SecondOrderConcepts.html" class="mm-link">Basic Concepts</a></li>
+                <li><a href="../DE/RealRoots.html" class="mm-link">Real & Distinct Roots</a></li>
+                <li><a href="../DE/ComplexRoots.html" class="mm-link">Complex Roots</a></li>
+                <li><a href="../DE/RepeatedRoots.html" class="mm-link">Repeated Roots</a></li>
+                <li><a href="../DE/ReductionofOrder.html" class="mm-link">Reduction of Order</a></li>
+                <li><a href="../DE/FundamentalSetsofSolutions.html" class="mm-link">Fundamental Sets of Solutions</a></li>
+                <li><a href="../DE/Wronskian.html" class="mm-link">More on the  Wronskian</a></li>
+                <li><a href="../DE/NonhomogeneousDE.html" class="mm-link">Nonhomogeneous Differential Equations</a></li>
+                <li><a href="../DE/UndeterminedCoefficients.html" class="mm-link">Undetermined Coefficients</a></li>
+                <li><a href="../DE/VariationofParameters.html" class="mm-link">Variation of Parameters</a></li>
+                <li><a href="../DE/Vibrations.html" class="mm-link">Mechanical Vibrations</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/LaplaceIntro.html" class="mm-link">Laplace Transforms</a>
+              <ul>
+                <li><a href="../DE/LaplaceDefinition.html" class="mm-link">The Definition</a></li>
+                <li><a href="../DE/LaplaceTransforms.html" class="mm-link">Laplace Transforms</a></li>
+                <li><a href="../DE/InverseTransforms.html" class="mm-link">Inverse Laplace Transforms</a></li>
+                <li><a href="../DE/StepFunctions.html" class="mm-link">Step Functions</a></li>
+                <li><a href="../DE/IVPWithLaplace.html" class="mm-link">Solving IVP's with Laplace Transforms</a></li>
+                <li><a href="../DE/IVPWithNonConstantCoefficient.html" class="mm-link">Nonconstant Coefficient IVP's</a></li>
+                <li><a href="../DE/IVPWithStepFunction.html" class="mm-link">IVP's With Step Functions</a></li>
+                <li><a href="../DE/DiracDeltaFunction.html" class="mm-link">Dirac Delta Function</a></li>
+                <li><a href="../DE/ConvolutionIntegrals.html" class="mm-link">Convolution Integrals</a></li>
+                <li><a href="../DE/Laplace_Table.html" class="mm-link">Table Of Laplace Transforms</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/SystemsIntro.html" class="mm-link">Systems of DE's</a>
+              <ul>
+                <li><a href="../DE/LA_Systems.html" class="mm-link">Review : Systems of Equations</a></li>
+                <li><a href="../DE/LA_Matrix.html" class="mm-link">Review : Matrices & Vectors</a></li>
+                <li><a href="../DE/LA_Eigen.html" class="mm-link">Review : Eigenvalues & Eigenvectors</a></li>
+                <li><a href="../DE/SystemsDE.html" class="mm-link">Systems of Differential Equations</a></li>
+                <li><a href="../DE/SolutionsToSystems.html" class="mm-link">Solutions to Systems</a></li>
+                <li><a href="../DE/PhasePlane.html" class="mm-link">Phase Plane</a></li>
+                <li><a href="../DE/RealEigenvalues.html" class="mm-link">Real Eigenvalues</a></li>
+                <li><a href="../DE/ComplexEigenvalues.html" class="mm-link">Complex Eigenvalues</a></li>
+                <li><a href="../DE/RepeatedEigenvalues.html" class="mm-link">Repeated Eigenvalues</a></li>
+                <li><a href="../DE/NonhomogeneousSystems.html" class="mm-link">Nonhomogeneous Systems</a></li>
+                <li><a href="../DE/SystemsLaplace.html" class="mm-link">Laplace Transforms</a></li>
+                <li><a href="../DE/SystemsModeling.html" class="mm-link">Modeling</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/SeriesIntro.html" class="mm-link">Series Solutions to DE's</a>
+              <ul>
+                <li><a href="../DE/PowerSeries.html" class="mm-link">Review : Power Series</a></li>
+                <li><a href="../DE/TaylorSeries.html" class="mm-link">Review : Taylor Series</a></li>
+                <li><a href="../DE/SeriesSolutions.html" class="mm-link">Series Solutions</a></li>
+                <li><a href="../DE/EulerEquations.html" class="mm-link">Euler Equations</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/IntroHigherOrder.html" class="mm-link">Higher Order Differential Equations</a>
+              <ul>
+                <li><a href="../DE/HOBasicConcepts.html" class="mm-link">Basic Concepts for <em>n</em><sup>th</sup> Order Linear Equations</a></li>
+                <li><a href="../DE/HOHomogeneousDE.html" class="mm-link">Linear Homogeneous Differential Equations</a></li>
+                <li><a href="../DE/HOUndeterminedCoeff.html" class="mm-link">Undetermined Coefficients</a></li>
+                <li><a href="../DE/HOVariationOfParam.html" class="mm-link">Variation of Parameters</a></li>
+                <li><a href="../DE/HOLaplaceTransforms.html" class="mm-link">Laplace Transforms</a></li>
+                <li><a href="../DE/HOSystems.html" class="mm-link">Systems of Differential Equations</a></li>
+                <li><a href="../DE/HOSeries.html" class="mm-link">Series Solutions</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/IntroBVP.html" class="mm-link">Boundary Value Problems &amp; Fourier Series</a>
+              <ul>
+                <li><a href="../DE/BoundaryValueProblem.html" class="mm-link">Boundary Value Problems</a></li>
+                <li><a href="../DE/BVPEvals.html" class="mm-link">Eigenvalues and Eigenfunctions</a></li>
+                <li><a href="../DE/PeriodicOrthogonal.html" class="mm-link">Periodic Functions &amp; Orthogonal Functions</a></li>
+                <li><a href="../DE/FourierSineSeries.html" class="mm-link">Fourier Sine Series</a></li>
+                <li><a href="../DE/FourierCosineSeries.html" class="mm-link">Fourier Cosine Series</a></li>
+                <li><a href="../DE/FourierSeries.html" class="mm-link">Fourier Series</a></li>
+                <li><a href="../DE/ConvergenceFourierSeries.html" class="mm-link">Convergence of Fourier Series</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/IntroPDE.html" class="mm-link">Partial Differential Equations </a>
+              <ul>
+                <li><a href="../DE/TheHeatEquation.html" class="mm-link">The Heat Equation</a></li>
+                <li><a href="../DE/TheWaveEquation.html" class="mm-link">The Wave Equation</a></li>
+                <li><a href="../DE/PDETerminology.html" class="mm-link">Terminology</a></li>
+                <li><a href="../DE/SeparationofVariables.html" class="mm-link">Separation of Variables</a></li>
+                <li><a href="../DE/SolvingHeatEquation.html" class="mm-link">Solving the Heat Equation</a></li>
+                <li><a href="../DE/HeatEqnNonZero.html" class="mm-link">Heat Equation with Non-Zero Temperature Boundaries</a></li>
+                <li><a href="../DE/LaplacesEqn.html" class="mm-link">Laplace's Equation</a></li>
+                <li><a href="../DE/VibratingString.html" class="mm-link">Vibrating String</a></li>
+                <li><a href="../DE/PDESummary.html" class="mm-link">Summary of Separation of Variables</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><span>Extras</span></li>
+        <li><a href="../../Extras/AlgebraTrigReview/AlgebraTrig.html" class="mm-link">Algebra &amp; Trig Review</a>
+          <ul>
+            <li><a href="../../Extras/AlgebraTrigReview/AlgebraIntro.html" class="mm-link">Algebra</a>
+              <ul>
+                <li><a href="../../Extras/AlgebraTrigReview/Exponents.html" class="mm-link">Exponents </a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/AbsoluteValue.html" class="mm-link">Absolute Value</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Radicals.html" class="mm-link">Radicals</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Rationalizing.html" class="mm-link">Rationalizing </a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Functions.html" class="mm-link">Functions </a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/MultPoly.html" class="mm-link">Multiplying Polynomials</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Factoring.html" class="mm-link">Factoring</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SimpRatExp.html" class="mm-link">Simplifying Rational Expressions</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Graphing.html" class="mm-link">Graphing and Common Graphs</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveEqnPtI.html" class="mm-link">Solving Equations, Part I</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveEqnPtII.html" class="mm-link">Solving Equations, Part II</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveSystems.html" class="mm-link">Solving Systems of Equations</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveIneq.html" class="mm-link">Solving Inequalities</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveAbsValue.html" class="mm-link">Absolute Value Equations and Inequalities</a></li>
+              </ul>
+            </li>
+            <li><a href="../../Extras/AlgebraTrigReview/TrigIntro.html" class="mm-link">Trigonometry</a>
+              <ul>
+                <li><a href="../../Extras/AlgebraTrigReview/TrigFunctions.html" class="mm-link">Trig Function Evaluation</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/TrigGraphs.html" class="mm-link">Graphs of Trig Functions</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/TrigFormulas.html" class="mm-link">Trig Formulas</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveTrigEqn.html" class="mm-link">Solving Trig Equations</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/InverseTrig.html" class="mm-link">Inverse Trig Functions</a></li>
+              </ul>
+            </li>
+            <li><a href="../../Extras/AlgebraTrigReview/ExpLogIntro.html" class="mm-link">Exponentials & Logarithms</a>
+              <ul>
+                <li><a href="../../Extras/AlgebraTrigReview/ExponentialFcns.html" class="mm-link">Basic Exponential Functions</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/LogarithmFcns.html" class="mm-link">Basic Logarithm Functions</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/LogProperties.html" class="mm-link">Logarithm Properties</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SimpLogs.html" class="mm-link">Simplifying Logarithms</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveExpEqn.html" class="mm-link">Solving Exponential Equations</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveLogEqn.html" class="mm-link">Solving Logarithm Equations</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../../Extras/CommonErrors/CommonMathErrors.html" class="mm-link">Common Math Errors</a>
+          <ul>
+            <li><a href="../../Extras/CommonErrors/GeneralErrors.html" class="mm-link">General Errors</a>
+            </li>
+            <li><a href="../../Extras/CommonErrors/AlgebraErrors.html" class="mm-link">Algebra Errors</a>
+            </li>
+            <li><a href="../../Extras/CommonErrors/TrigErrors.html" class="mm-link">Trig Errors</a>
+            </li>
+            <li><a href="../../Extras/CommonErrors/CommonErrors.html" class="mm-link">Common Errors</a>
+            </li>
+            <li><a href="../../Extras/CommonErrors/CalculusErrors.html" class="mm-link">Calculus Errors</a>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../../Extras/ComplexPrimer/ComplexNumbers.html" class="mm-link">Complex Number Primer</a>
+          <ul>
+            <li><a href="../../Extras/ComplexPrimer/Definition.html" class="mm-link">The Definition</a>
+            </li>
+            <li><a href="../../Extras/ComplexPrimer/Arithmetic.html" class="mm-link">Arithmetic</a>
+            </li>
+            <li><a href="../../Extras/ComplexPrimer/ConjugateModulus.html" class="mm-link">Conjugate and Modulus</a>
+            </li>
+            <li><a href="../../Extras/ComplexPrimer/Forms.html" class="mm-link">Polar and Exponential Forms</a>
+            </li>
+            <li><a href="../../Extras/ComplexPrimer/Roots.html" class="mm-link">Powers and Roots</a>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../../Extras/StudyMath/HowToStudyMath.html" class="mm-link">How To Study Math</a>
+          <ul>
+            <li><a href="../../Extras/StudyMath/GeneralTips.html" class="mm-link">General Tips</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/TakingNotes.html" class="mm-link">Taking Notes</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/GettingHelp.html" class="mm-link">Getting Help</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/Homework.html" class="mm-link">Doing Homework</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/ProblemSolving.html" class="mm-link">Problem Solving</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/StudyForExam.html" class="mm-link">Studying For an Exam</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/TakingExam.html" class="mm-link">Taking an Exam</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/Errors.html" class="mm-link">Learn From Your Errors</a>
+            </li>
+          </ul>
+        </li>
+
+        <li><span>Misc Links</span></li>
+        <li><a href="http://tutorial.math.lamar.edu/contact.aspx" class="mm-link">Contact Me</a></li>
+        <li><a href="../../links.html" class="mm-link">Links</a></li>
+        <li><a href="../../mathjax.html" class="mm-link">MathJax Help and Configuration</a></li>
+        <li><a href="../../mystudents.html" class="mm-link">My Students</a></li>
+        <li><a href="http://tutorial.math.lamar.edu/privacy.aspx" class="mm-link">Privacy Statement</a></li>
+        <li><a href="../../help.html" class="mm-link">Site Help & FAQ</a></li>
+        <li><a href="http://tutorial.math.lamar.edu/terms.aspx" class="mm-link">Terms of Use</a></li>
+      </ul>
+    </nav>
+
+
+
+    <div class="top-info-bar">
+      <span id="mobile-title" class="mobile-header-title header-title">Paul's Online Notes</span>
+      <br />
+      <span class="top-menu-breadcrumb">
+        <a href="../../index.html" id="breadcrumb_home_link" title="Go to Main Page">Home</a>
+        <span id="breadcrumb_h_b_sep_span">/ </span>
+        <a href="CalcI.html" id="breadcrumb_book_link" title="Go to Book Introduction">Calculus I</a>
+        
+        <span id="breadcrumb_b_c_sep_span">/ </span>
+        <a href="ExtrasIntro.html" id="breadcrumb_chapter_link" title="Go to Chapter Introduction">Extras</a>
+        
+        <span id="breadcrumb_section_span"> / Proof of Various Derivative Properties</span>
+      </span>
+
+    </div>
+
+    <div id="nav_links" class="top-nav-bar">
+      
+      <span id="nav_current_notes">Notes</span>
+      <a href="http://tutorial.math.lamar.edu/Problems/CalcI/DerivativeProofs.aspx" id="nav_links_practice" title="Go to Practice Problems for current topic.">Practice<span class="nav_desktop_extra"> Problems</span></a>
+      
+      <a href="http://tutorial.math.lamar.edu/ProblemsNS/CalcI/DerivativeProofs.aspx" id="nav_links_asgn" title="Go to Assignment Problems for current topic.">Assignment<span class="nav_desktop_extra">  Problems</span></a>
+      
+    </div>
+
+    <div class="header-divider"></div>
+
+    <div class="content">  
+      
+      
+      <span id="SHLink_NoteMobile" class="SH-Link content-note-link-mobile">Show Mobile Notice</span>
+      <span id="SHImg_NoteMobile" class="fas fa-caret-right SH-padding content-note-link-mobile" aria-hidden="true"></span>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+
+      <span id="SHALink_S_Note" class="SH-Link SH-Hide SH-Bracket">Show All Notes</span>&nbsp;<span id="SHALink_H_Note" class="SH-Link SH-Hide SH-Bracket">Hide All Notes</span>
+      
+      
+      <div id="SHObj_NoteMobile" class="content-note-container content-note-container-mobile">
+        <div class="content-note-header">Mobile Notice</div>
+        <div class="content-note">You appear to be on a device with a "narrow" screen width (<em>i.e.</em> you are probably on a mobile phone).  Due to the nature of the mathematics on this site it is best views in landscape mode.  If your device is not in landscape mode many of the equations will run off the side of your device (should be able to scroll to see them) and some of the menu items will be cut off due to the narrow screen width.</div>
+      </div>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+
+      
+
+
+  <form method="post" action="http://tutorial.math.lamar.edu/Classes/CalcI/DerivativeProofs.aspx" id="ctl00">
+<div class="aspNetHidden">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+</div>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="1F92BCF3" />
+</div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </form>
+
+  <h3>Section 7-2 : Proof of Various Derivative Properties</h3>
+
+    
+    <p>In this section we’re going to prove many of the various derivative facts, formulas and/or properties that we encountered in the early part of the <a href="DerivativeIntro.html">Derivatives</a> chapter.  Not all of them will be proved here and some will only be proved for special cases, but at least you’ll see that some of them aren’t just pulled out of the air.</p>
+    
+    
+      
+      <div class="center-div"><img alt="Separator" height="14" src="http://tutorial.math.lamar.edu/Classes/CalcI/DerivativeProofs_Files/image001.gif" width="214" /></div>
+    <a class="anchor" name="Extras_DerPf_DefCont"></a>
+
+    <h4>Theorem, from Definition of Derivative</h4>
+  <div class="fact">
+    <p>If \(f\left( x \right)\) is differentiable at \(x = a\) then \(f\left( x \right)\) is continuous at \(x = a\).</p>
+  </div>
+    
+    <h4>Proof</h4>
+  <div class="proof">
+    <p>Because \(f\left( x \right)\) is differentiable at \(x = a\) we know that</p>
+          
+            \[f'\left( a \right) = \mathop {\lim }\limits_{x \to a} \frac{{f\left( x \right) - f\left( a \right)}}{{x - a}}\]
+          <p>exists.  We’ll need this in a bit.</p>
+          
+          <p>If we next assume that \(x \ne a\) we can write the following,</p>
+
+          \[f\left( x \right) - f\left( a \right) = \frac{{f\left( x \right) - f\left( a \right)}}{{x - a}}\left( {x - a} \right)\]
+          
+          <p>Then basic properties of limits tells us that we have,</p>
+
+          \[\begin{align*}\mathop {\lim }\limits_{x \to a} \left( {f\left( x \right) - f\left( a \right)} \right) & = \mathop {\lim }\limits_{x \to a} \left[ {\frac{{f\left( x \right) - f\left( a \right)}}{{x - a}}\left( {x - a} \right)} \right]\\ &amp;  = \mathop {\lim }\limits_{x \to a} \frac{{f\left( x \right) - f\left( a \right)}}{{x - a}}\,\,\,\mathop {\lim }\limits_{x \to a} \left( {x - a} \right)\end{align*}\]
+          
+          <p>The first limit on the right is just \(f'\left( a \right)\) as we noted above and the second limit is clearly zero and so,</p>
+
+          \[\mathop {\lim }\limits_{x \to a} \left( {f\left( x \right) - f\left( a \right)} \right) = f'\left( a \right) \cdot 0 = 0\]
+          
+          <p>Okay, we’ve managed to prove that \(\mathop {\lim }\limits_{x \to a} \left( {f\left( x \right) - f\left( a \right)} \right) = 0\).  But just how does this help us to prove that \(f\left( x \right)\) is continuous at \(x = a\)?</p>
+          
+          <p>Let’s start with the following.</p>
+
+          \[\mathop {\lim }\limits_{x \to a} f\left( x \right) = \mathop {\lim }\limits_{x \to a} \left[ {f\left( x \right) + f\left( a \right) - f\left( a \right)} \right]\]
+          
+          <p>Note that we’ve just added in zero on the right side.  A little rewriting and the use of limit properties gives,</p>
+
+          \[\begin{align*}\mathop {\lim }\limits_{x \to a} f\left( x \right) & = \mathop {\lim }\limits_{x \to a} \left[ {f\left( a \right) + f\left( x \right) - f\left( a \right)} \right]\\ &amp;  = \mathop {\lim }\limits_{x \to a} f\left( a \right) + \mathop {\lim }\limits_{x \to a} \left[ {f\left( x \right) - f\left( a \right)} \right]\end{align*}\]
+
+          <p>Now, we just proved above that \(\mathop {\lim }\limits_{x \to a} \left( {f\left( x \right) - f\left( a \right)} \right) = 0\)  and because \(f\left( a \right)\) is a constant we also know that \(\mathop {\lim }\limits_{x \to a} f\left( a \right) = f\left( a \right)\) and so this becomes,</p>
+
+          \[\mathop {\lim }\limits_{x \to a} f\left( x \right) = \mathop {\lim }\limits_{x \to a} f\left( a \right) + 0 = f\left( a \right)\]
+          <p>Or, in other words, \[\mathop {\lim }\limits_{x \to a} f\left( x \right) = f\left( a \right)\] but this is exactly what it means for \(f\left( x \right)\) is continuous at \(x = a\) and so we’re done.</p>
+  </div>
+      
+      <div class="center-div"><img alt="Separator" height="14" src="http://tutorial.math.lamar.edu/Classes/CalcI/DerivativeProofs_Files/image001.gif" width="214" /></div>
+
+    <a class="anchor" name="Extras_DerPf_Sum"></a>
+  
+  <h4>Proof of Sum/Difference of Two Functions : \({\left( {f\left( x \right) \pm g\left( x \right)} \right)^\prime } = f'\left( x \right) \pm g'\left( x \right)\)</h4>
+  <div class="proof">
+    <p>This is easy enough to prove using the definition of the derivative.  We’ll start with the sum of two functions.  First plug the sum into the definition of the derivative and rewrite the numerator a little.</p>
+          
+            \[\begin{align*}{\left( {f\left( x \right) + g\left( x \right)} \right)^\prime } & = \mathop {\lim }\limits_{h \to 0} \frac{{f\left( {x + h} \right) + g\left( {x + h} \right) - \left( {f\left( x \right) + g\left( x \right)} \right)}}{h}\\ &amp;  = \mathop {\lim }\limits_{h \to 0} \frac{{f\left( {x + h} \right) - f\left( x \right) + g\left( {x + h} \right) - g\left( x \right)}}{h}\end{align*}\]
+          <p>Now, break up the fraction into two pieces and recall that the limit of a sum is the sum of the limits.  Using this fact we see that we end up with the definition of the derivative for each of the two functions.</p>
+          
+            \[\begin{align*}{\left( {f\left( x \right) + g\left( x \right)} \right)^\prime } & = \mathop {\lim }\limits_{h \to 0} \frac{{f\left( {x + h} \right) - f\left( x \right)}}{h} + \mathop {\lim }\limits_{h \to 0} \frac{{g\left( {x + h} \right) - g\left( x \right)}}{h}\\ &amp;  = f'\left( x \right) + g'\left( x \right)\end{align*}\]
+          
+          <p>The proof of the difference of two functions in nearly identical so we’ll give it here without any explanation.</p>
+          
+            \[\begin{align*}{\left( {f\left( x \right) - g\left( x \right)} \right)^\prime } & = \mathop {\lim }\limits_{h \to 0} \frac{{f\left( {x + h} \right) - g\left( {x + h} \right) - \left( {f\left( x \right) - g\left( x \right)} \right)}}{h}\\ &amp;  = \mathop {\lim }\limits_{h \to 0} \frac{{f\left( {x + h} \right) - f\left( x \right) - \left( {g\left( {x + h} \right) - g\left( x \right)} \right)}}{h}\\ &amp;  = \mathop {\lim }\limits_{h \to 0} \frac{{f\left( {x + h} \right) - f\left( x \right)}}{h} - \frac{{g\left( {x + h} \right) - g\left( x \right)}}{h}\\ &amp;  = f'\left( x \right) - g'\left( x \right)\end{align*}\]
+  </div>
+      
+      <div class="center-div"><img alt="Separator" height="14" src="http://tutorial.math.lamar.edu/Classes/CalcI/DerivativeProofs_Files/image001.gif" width="214" /></div>
+
+    <a class="anchor" name="Extras_DerPf_cf"></a>
+
+    <h4>Proof of Constant Times a Function : \({\left( {cf\left( x \right)} \right)^\prime } = cf'\left( x \right)\)</h4>
+  <div class="proof">
+    <p>This is property is very easy to prove using the definition provided you recall that we can factor a constant out of a limit.  Here’s the work for this property.</p>
+          
+            \[{\left( {cf\left( x \right)} \right)^\prime } = \mathop {\lim }\limits_{h \to 0} \frac{{cf\left( {x + h} \right) - cf\left( x \right)}}{h} = c\mathop {\lim }\limits_{h \to 0} \frac{{f\left( {x + h} \right) - f\left( x \right)}}{h} = cf'\left( x \right)\]
+  </div>
+      
+      <div class="center-div"><img alt="Separator" height="14" src="http://tutorial.math.lamar.edu/Classes/CalcI/DerivativeProofs_Files/image001.gif" width="214" /></div>
+    <a class="anchor" name="Extras_DerPf_c"></a>
+
+    <h4>Proof of the Derivative of a Constant : \(\displaystyle \frac{d}{{dx}}\left( c \right) = 0\)</h4>
+  <div class="proof">
+    <p>This is very easy to prove using the definition of the derivative so define \(f\left( x \right) = c\) and the use the definition of the derivative.</p>
+          
+          
+            \[f'\left( x \right) = \mathop {\lim }\limits_{h \to 0} \frac{{f\left( {x + h} \right) - f\left( x \right)}}{h} = \mathop {\lim }\limits_{h \to 0} \frac{{c - c}}{h} = \mathop {\lim }\limits_{h \to 0} 0 = 0\]
+  </div>
+      
+      <div class="center-div"><img alt="Separator" height="14" src="http://tutorial.math.lamar.edu/Classes/CalcI/DerivativeProofs_Files/image001.gif" width="214" /></div>
+    <a class="anchor" name="Extras_DerPf_PowerRule"></a>
+
+    <h4>Power Rule : \(\displaystyle \frac{d}{{dx}}\left( {{x^n}} \right) = n{x^{n - 1}}\)</h4>
+
+    <p>There are actually three proofs that we can give here and we’re going to go through all three here so you can see all of them.  However, having said that, for the first two we will need to restrict \(n\) to be a positive integer.  At the time that the Power Rule was introduced only enough information has been given to allow the proof for only integers. So, the first two proofs are really to be read at that point.</p>
+    
+    <p>The third proof will work for any real number \(n\).  However, it does assume that you’ve read most of the Derivatives chapter and so should only be read after you’ve gone through the whole chapter.</p>
+    
+    <h4>Proof 1</h4>
+  <div class="proof">
+    <p>In this case as noted above we need to assume that \(n\) is a positive integer.  We’ll use the definition of the derivative and the Binomial Theorem in this theorem.  The Binomial Theorem tells us that,</p>
+          
+              \[\begin{align*}{\left( {a + b} \right)^n} & = \sum\limits_{k = 0}^n {\left( {\begin{array}{*{20}{c}}n\\k\end{array}} \right){a^{n - k}}{b^k}} \\ &amp;  = {a^n} + \left( {\begin{array}{*{20}{c}}n\\1\end{array}} \right){a^{n - 1}}b + \left( {\begin{array}{*{20}{c}}n\\2\end{array}} \right){a^{n - 2}}{b^2} + \left( {\begin{array}{*{20}{c}}n\\3\end{array}} \right){a^{n - 3}}{b^3} +  \cdots  + \left( {\begin{array}{*{20}{c}}n\\{n - 1}\end{array}} \right)a{b^{n - 1}} + \left( {\begin{array}{*{20}{c}}n\\n\end{array}} \right){b^n}\\ &amp;  = {a^n} + n{a^{n - 1}}b + \frac{{n\left( {n - 1} \right)}}{{2!}}{a^{n - 2}}{b^2} + \frac{{n\left( {n - 1} \right)\left( {n - 2} \right)}}{{3!}}{a^{n 
+            - 3}}{b^3} +  \cdots  + na{b^{n - 1}} + {b^n}\end{align*}\]
+
+          <p>where,</p>
+          
+            \[\left( {\begin{array}{*{20}{c}}n\\k\end{array}} \right) = \frac{{n!}}{{k!\left( {n - k} \right)!}}\]
+          <p>are called the binomial coefficients and \(n! = n\left( {n - 1} \right)\left( {n - 2} \right) \cdots \left( 2 \right)\left( 1 \right)\) is the factorial.</p>
+          
+          <p>So, let’s go through the details of this proof.  First, plug \(f\left( x \right) = {x^n}\) into the definition of the derivative and use the Binomial Theorem to expand out the first term.</p>
+          
+            \[\begin{align*}f'\left( x \right) & = \mathop {\lim }\limits_{h \to 0} \frac{{{{\left( {x + h} \right)}^n} - {x^n}}}{h}\\ &amp;  = \mathop {\lim }\limits_{h \to 0} \frac{{\left( {{x^n} + n{x^{n - 1}}h + \frac{{n\left( {n - 1} \right)}}{{2!}}{x^{n - 2}}{h^2} +  \cdots  + nx{h^{n - 1}} + {h^n}} \right) - {x^n}}}{h}\end{align*}\]
+
+          <p>Now, notice that we can cancel an \({x^n}\) and then each term in the numerator will have an \(h\) in them that can be factored out and then canceled against the \(h\) in the denominator.  At this point we can evaluate the limit.</p>
+          
+            \[\begin{align*}f'\left( x \right) & = \mathop {\lim }\limits_{h \to 0} \frac{{n{x^{n - 1}}h + \frac{{n\left( {n - 1} \right)}}{{2!}}{x^{n - 2}}{h^2} +  \cdots  + nx{h^{n - 1}} + {h^n}}}{h}\\ &amp;  = \mathop {\lim }\limits_{h \to 0} n{x^{n - 1}} + \frac{{n\left( {n - 1} \right)}}{{2!}}{x^{n - 2}}h +  \cdots  + nx{h^{n - 2}} + {h^{n - 1}}\\ &amp;  = n{x^{n - 1}}\end{align*}\]
+  </div>
+    
+    <h4>Proof 2</h4>
+  <div class="proof">
+    <p>For this proof we’ll again need to restrict \(n\) to be a positive integer.  In this case if we define \(f\left( x \right) = {x^n}\) we know from the alternate limit form of the definition of the derivative that the derivative \(f'\left( a \right)\) is given by,</p>
+          
+            \[f'\left( a \right) = \mathop {\lim }\limits_{x \to a} \frac{{f\left( x \right) - f\left( a \right)}}{{x - a}} = \mathop {\lim }\limits_{x \to a} \frac{{{x^n} - {a^n}}}{{x - a}}\]
+          
+          <p>Now we have the following formula,</p>
+          
+            \[{x^n} - {a^n} = \left( {x - a} \right)\left( {{x^{n - 1}} + a{x^{n - 2}} + {a^2}{x^{n - 3}} +  \cdots  + {a^{n - 3}}{x^2} + {a^{n - 2}}x + {a^{n - 1}}} \right)\]
+
+          <p>You can verify this if you’d like by simply multiplying the two factors together.  Also, notice that there are a total of \(n\) terms in the second factor (this will be important in a bit).</p>
+          
+          <p>If we plug this into the formula for the derivative we see that we can cancel the \(x - a\) and then compute the limit.</p>
+          
+            \[\begin{align*}f'\left( a \right) & = \mathop {\lim }\limits_{x \to a} \frac{{\left( {x - a} \right)\left( {{x^{n - 1}} + a{x^{n - 2}} + {a^2}{x^{n - 3}} +  \cdots  + {a^{n - 3}}{x^2} + {a^{n - 2}}x + {a^{n - 1}}} \right)}}{{x - a}}\\ &amp;  = \mathop {\lim }\limits_{x \to a} {x^{n - 1}} + a{x^{n - 2}} + {a^2}{x^{n - 3}} +  \cdots  + {a^{n - 3}}{x^2} + {a^{n - 2}}x + {a^{n - 1}}\\ &amp;  = {a^{n - 1}} + a{a^{n - 2}} + {a^2}{a^{n - 3}} +  \cdots  + {a^{n - 3}}{a^2} + {a^{n - 2}}a + {a^{n - 1}}\\ &amp;  = n{a^{n - 1}}\end{align*}\]
+          
+          <p>After combining the exponents in each term we can see that we get the same term.  So, then recalling that there are \(n\) terms in second factor we can see that we get what we claimed it would be.</p>
+          
+          <p>To completely finish this off we simply replace the \(a\) with an \(x\) to get,</p>
+          
+              \[f'\left( x \right) = n{x^{n - 1}}\]
+  </div>
+    
+    <h4>Proof 3</h4>
+  <div class="proof">
+    <p>In this proof we no longer need to restrict \(n\) to be a positive integer.  It can now be any real number.  However, this proof also assumes that you’ve read all the way through the Derivative chapter.  In particular it needs both <a href="http://tutorial.math.lamar.edu/Classes/CalcI/ImplicitDiff.aspx">Implicit Differentiation</a> and <a href="LogDiff.html">Logarithmic Differentiation</a>.  If you’ve not read, and understand, these sections then this proof will not make any sense to you.</p>
+          
+          <p>So, to get set up for logarithmic differentiation let’s first define \(y = {x^n}\) then take the log of both sides, simplify the right side using logarithm properties and then differentiate using implicit differentiation.</p>
+          
+            \[\begin{align*}\ln y & = \ln {x^n}\\ \ln y & = n\ln x\\ \frac{{y'}}{y} & = n\frac{1}{x}\end{align*}\]
+          
+          <p>Finally, all we need to do is solve for \(y'\) and then substitute in for \(y\).</p>
+          
+              \[y' = y\frac{n}{x} = {x^n}\left( {\frac{n}{x}} \right) = n{x^{n - 1}}\]
+  </div>
+    
+    <p>Before moving onto the next proof, let’s notice that in all three proofs we did require that the exponent, \(n\), be a number (integer in the first two, any real number in the third).  In the first proof we couldn’t have used the Binomial Theorem if the exponent wasn’t a positive integer.  In the second proof we couldn’t have factored \({x^n} - {a^n}\) if the exponent hadn’t been a positive integer.  Finally, in the third proof we would have gotten a much different derivative if \(n\) had not been a constant.</p>
+    
+    <p>This is important because people will often misuse the power rule and use it even when the exponent is not a number and/or the base is not a variable.</p>
+    
+    
+      
+      <div class="center-div"><img alt="Separator" height="14" src="http://tutorial.math.lamar.edu/Classes/CalcI/DerivativeProofs_Files/image001.gif" width="214" /></div>
+    <a class="anchor" name="Extras_DerPf_ProdRule"></a>
+
+    <h4>Product Rule : \({\left( {f\,g} \right)^\prime } = f'\,g + f\,g'\)</h4>
+    <p>As with the Power Rule above, the Product Rule can be proved either by using the definition of the derivative or it can be proved using Logarithmic Differentiation.  We’ll show both proofs here.</p>
+
+  <h4>Proof 1</h4>
+  <div class="proof">
+    <p>This proof can be a little tricky when you first see it so let’s be a little careful here.  We’ll first use the definition of the derivative on the product.</p>
+          
+            \[{\left( {f\,g} \right)^\prime } = \mathop {\lim }\limits_{h \to 0} \frac{{f\left( {x + h} \right)g\left( {x + h} \right) - f\left( x \right)g\left( x \right)}}{h}\]
+          
+          <p>On the surface this appears to do nothing for us.  We’ll first need to manipulate things a little to get the proof going.  What we’ll do is subtract out and add in \(f\left( {x + h} \right)g\left( x \right)\) to the numerator.  Note that we’re really just adding in a zero here since these two terms will cancel.  This will give us,</p>
+          
+          
+            \[{\left( {f\,g} \right)^\prime } = \mathop {\lim }\limits_{h \to 0} \frac{{f\left( {x + h} \right)g\left( {x + h} \right) - f\left( {x + h} \right)g\left( x \right) + f\left( {x + h} \right)g\left( x \right) - f\left( x \right)g\left( x \right)}}{h}\]
+          
+          <p>Notice that we added the two terms into the middle of the numerator.  As written we can break up the limit into two pieces.  From the first piece we can factor a \(f\left( {x + h} \right)\) out and we can factor a \(g\left( x \right)\) out of the second piece.  Doing this gives,</p>
+          
+          
+            \[\begin{align*}{\left( {f\,g} \right)^\prime } & = \mathop {\lim }\limits_{h \to 0} \frac{{f\left( {x + h} \right)\left( {g\left( {x + h} \right) - g\left( x \right)} \right)}}{h} + \mathop {\lim }\limits_{h \to 0} \frac{{g\left( x \right)\left( {f\left( {x + h} \right) - f\left( x \right)} \right)}}{h}\\ &amp;  = \mathop {\lim }\limits_{h \to 0} f\left( {x + h} \right)\frac{{g\left( {x + h} \right) - g\left( x \right)}}{h} + \mathop {\lim }\limits_{h \to 0} g\left( x \right)\frac{{f\left( {x + h} \right) - f\left( x \right)}}{h}\end{align*}\]
+          
+          <p>At this point we can use limit properties to write,</p>
+          
+            \[{\left( {f\,g} \right)^\prime } = \left( {\mathop {\lim }\limits_{h \to 0} f\left( {x + h} \right)} \right)\left( {\mathop {\lim }\limits_{h \to 0} \frac{{g\left( {x + h} \right) - g\left( x \right)}}{h}} \right) + \left( {\mathop {\lim }\limits_{h \to 0} g\left( x \right)} \right)\left( {\mathop {\lim }\limits_{h \to 0} \frac{{f\left( {x + h} \right) - f\left( x \right)}}{h}} \right)\]
+          
+          <p>The individual limits in here are,</p>
+          
+            \[\begin{align*}\mathop {\lim }\limits_{h \to 0} \frac{{g\left( {x + h} \right) - g\left( x \right)}}{h} & = g'\left( x \right) & \hspace{0.75in} & \mathop {\lim }\limits_{h \to 0} g\left( x \right) = g\left( x \right)\\ \mathop {\lim }\limits_{h \to 0} \frac{{f\left( {x + h} \right) - f\left( x \right)}}{h} & = f'\left( x \right) & \hspace{0.75in} & \mathop {\lim }\limits_{h \to 0} f\left( {x + h} \right) = f\left( x \right)\end{align*}\]
+          
+          <p>The two limits on the left are nothing more than the definition the derivative for \(g\left( x \right)\) and \(f\left( x \right)\) respectively.  The upper limit on the right seems a little tricky but remember that the limit of a constant is just the constant.  In this case since the limit is only concerned with allowing \(h\) to go to zero.  The key here is to recognize that changing \(h\) will not change \(x\) and so as far as this limit is concerned \(g\left( x \right)\) is a constant.  Note that the function is probably not a constant, however as far as the limit is concerned the 
+            function can be treated as a constant.  We get the lower limit on the right we get simply by plugging \(h = 0\) into the function</p>
+          
+          <p>Plugging all these into the last step gives us,</p>
+          
+            \[{\left( {f\,g} \right)^\prime } = f\left( x \right)g'\left( x \right) + g\left( x \right)f'\left( x \right)\]
+  </div>
+    
+    <h4>Proof 2</h4>
+  <div class="proof">
+    <p>This is a much quicker proof but does presuppose that you’ve read and understood the <a href="http://tutorial.math.lamar.edu/Classes/CalcI/ImplicitDiff.aspx">Implicit Differentiation</a> and <a href="LogDiff.html">Logarithmic Differentiation</a> sections.  If you haven’t then this proof will not make a lot of sense to you.</p>
+          
+          <p>First write call the product \(y\) and take the log of both sides and use a property of logarithms on the right side.</p>
+          
+            \[\begin{align*}y & = f\left( x \right)g\left( x \right)\\ \ln \left( y \right) & = \ln \left( {f\left( x \right)g\left( x \right)} \right) = \ln f\left( x \right) + \ln g\left( x \right)\end{align*}\]
+          
+          <p>Next, we take the derivative of both sides and solve for \(y'\).</p>
+          
+            \[\frac{{y'}}{y} = \frac{{f'\left( x \right)}}{{f\left( x \right)}} + \frac{{g'\left( x \right)}}{{g\left( x \right)}}\hspace{0.25in}\hspace{0.25in} \Rightarrow \hspace{0.25in}\hspace{0.25in}y' = y\left( {\frac{{f'\left( x \right)}}{{f\left( x \right)}} + \frac{{g'\left( x \right)}}{{g\left( x \right)}}} \right)\]
+          
+          <p>Finally, all we need to do is plug in for \(y\) and then multiply this through the parenthesis and we get the Product Rule.</p>
+          
+            \[y' = f\left( x \right)g\left( x \right)\left( {\frac{{f'\left( x \right)}}{{f\left( x \right)}} + \frac{{g'\left( x \right)}}{{g\left( x \right)}}} \right)\hspace{0.25in} \Rightarrow \hspace{0.25in}{\left( {fg} \right)^\prime } = g\left( x \right)f'\left( x \right) + f\left( x \right)g'\left( x \right)\]
+  </div>
+     
+      <div class="center-div"><img alt="Separator" height="14" src="http://tutorial.math.lamar.edu/Classes/CalcI/DerivativeProofs_Files/image001.gif" width="214" /></div>
+
+    <a class="anchor" name="Extras_DerPf_QuotRule"></a>
+    
+  <h4>Quotient Rule :  \({\left( {\frac{f}{g}} \right)^\prime } = \frac{{f'\,g - f\,g'}}{{{g^2}}}\)</h4>
+
+    <p>Again, we can do this using the definition of the derivative or with Logarithmic Definition.</p>
+    
+    <h4>Proof 1</h4>
+  <div class="proof">
+    <p>First plug the quotient into the definition of the derivative and rewrite the quotient a little.</p>
+          
+          
+            \[\begin{align*}{\left( {\frac{f}{g}} \right)^\prime } & = \mathop {\lim }\limits_{h \to 0} \frac{{\frac{{f\left( {x + h} \right)}}{{g\left( {x + h} \right)}} - \frac{{f\left( x \right)}}{{g\left( x \right)}}}}{h}\\ &amp;  = \mathop {\lim }\limits_{h \to 0} \frac{1}{h}\,\,\frac{{f\left( {x + h} \right)g\left( x \right) - f\left( x \right)g\left( {x + h} \right)}}{{g\left( {x + h} \right)g\left( x \right)}}\end{align*}\]
+
+          <p>To make our life a little easier we moved the \(h\) in the denominator of the first step out to the front as a \(\frac{1}{h}\).  We also wrote the numerator as a single rational expression.  This step is required to make this proof work.</p>
+          
+          <p>Now, for the next step will need to subtract out and add in \(f\left( x \right)g\left( x \right)\) to the numerator.</p>
+          
+          
+            \[{\left( {\frac{f}{g}} \right)^\prime } = \mathop {\lim }\limits_{h \to 0} \frac{1}{h}\,\,\frac{{f\left( {x + h} \right)g\left( x \right) - f\left( x \right)g\left( x \right) + f\left( x \right)g\left( x \right) - f\left( x \right)g\left( {x + h} \right)}}{{g\left( {x + h} \right)g\left( x \right)}}\]
+          
+          <p>The next step is to rewrite things a little,</p>
+          
+          
+            \[{\left( {\frac{f}{g}} \right)^\prime } = \mathop {\lim }\limits_{h \to 0} \frac{1}{{g\left( {x + h} \right)g\left( x \right)}}\,\,\frac{{f\left( {x + h} \right)g\left( x \right) - f\left( x \right)g\left( x \right) + f\left( x \right)g\left( x \right) - f\left( x \right)g\left( {x + h} \right)}}{h}\]
+          
+          <p>Note that all we did was interchange the two denominators.  Since we are multiplying the fractions we can do this.</p>
+          
+          <p>Next, the larger fraction can be broken up as follows.</p>
+          
+            \[{\left( {\frac{f}{g}} \right)^\prime } = \mathop {\lim }\limits_{h \to 0} \frac{1}{{g\left( {x + h} \right)g\left( x \right)}}\,\,\left( {\frac{{f\left( {x + h} \right)g\left( x \right) - f\left( x \right)g\left( x \right)}}{h} + \frac{{f\left( x \right)g\left( x \right) - f\left( x \right)g\left( {x + h} \right)}}{h}} \right)\]
+          
+          <p>In the first fraction we will factor a \(g\left( x \right)\) out and in the second we will factor a \( - f\left( x \right)\) out.  This gives,</p>
+          
+            \[{\left( {\frac{f}{g}} \right)^\prime } = \mathop {\lim }\limits_{h \to 0} \frac{1}{{g\left( {x + h} \right)g\left( x \right)}}\,\,\left( {g\left( x \right)\frac{{f\left( {x + h} \right) - f\left( x \right)}}{h} - f\left( x \right)\frac{{g\left( {x + h} \right) - g\left( x \right)}}{h}} \right)\]
+          
+          <p>We can now use the basic properties of limits to write this as,</p>
+          
+          
+            \[\begin{align*}{\left( {\frac{f}{g}} \right)^\prime } & = \frac{1}{{\mathop {\lim }\limits_{h \to 0} g\left( {x + h} \right)\mathop {\lim }\limits_{h \to 0} g\left( x \right)}}\,\left( {\left( {\mathop {\lim }\limits_{h \to 0} g\left( x \right)} \right)\left( {\mathop {\lim }\limits_{h \to 0} \frac{{f\left( {x + h} \right) - f\left( x \right)}}{h}} \right) - } \right.\\ &amp; \hspace{2.25in}\left. {\left( {\mathop {\lim }\limits_{h \to 0} f\left( x \right)} \right)\left( {\mathop {\lim }\limits_{h \to 0} \frac{{g\left( {x + h} \right) - g\left( x \right)}}{h}} \right)} \right)\end{align*}\]
+          
+          <p>The individual limits are,</p>
+          
+            \[\begin{align*}\mathop {\lim }\limits_{h \to 0} \frac{{g\left( {x + h} \right) - g\left( x \right)}}{h} & = g'\left( x \right) & \hspace{0.5in} \mathop {\lim }\limits_{h \to 0} g\left( {x + h} \right) & = g\left( x \right) & \hspace{0.5in} & \mathop {\lim }\limits_{h \to 0} g\left( x \right) = g\left( x \right)\\ \mathop {\lim }\limits_{h \to 0} \frac{{f\left( {x + h} \right) - f\left( x \right)}}{h} & = f'\left( x \right) & \hspace{0.5in} \mathop {\lim }\limits_{h \to 0} f\left( x \right) & = f\left( x \right) & & \end{align*}\]
+          
+          <p>The first two limits in each row are nothing more than the definition the derivative for \(g\left( x \right)\) and \(f\left( x \right)\) respectively.  The middle limit in the top row we get simply by plugging in \(h = 0\).  The final limit in each row may seem a little tricky.  Recall that the limit of a constant is just the constant.  Well since the limit is only concerned with allowing \(h\) to go to zero as far as its concerned \(g\left( x \right)\) and \(f\left( x \right)\)are constants since changing \(h\) will not change
+            \(x\).  Note that the function is probably not a constant, however as far as the limit is concerned the function can be treated as a constant.</p>
+          
+          <p>Plugging in the limits and doing some rearranging gives,</p>
+          
+            \[\begin{align*}{\left( {\frac{f}{g}} \right)^\prime } & = \frac{1}{{g\left( x \right)g\left( x \right)}}\,\,\left( {g\left( x \right)f'\left( x \right) - f\left( x \right)g'\left( x \right)} \right)\\ &amp;  = \frac{{f'\,g - f\,g'}}{{{g^2}}}\end{align*}\]
+          <p>There’s the quotient rule.</p>
+  </div>
+
+    
+    <h4>Proof 2</h4>
+  <div class="proof">
+    <p>Now let’s do the proof using Logarithmic Differentiation.  We’ll first call the quotient \(y\), take the log of both sides and use a property of logs on the right side.</p>
+          
+            \[\begin{align*}y & = \frac{{f\left( x \right)}}{{g\left( x \right)}}\\ \ln y & = \ln \left( {\frac{{f\left( x \right)}}{{g\left( x \right)}}} \right) = \ln f\left( x \right) - \ln g\left( x \right)\end{align*}\]
+          
+          <p>Next, we take the derivative of both sides and solve for \(y'\).</p>
+          
+            \[\frac{{y'}}{y} = \frac{{f'\left( x \right)}}{{f\left( x \right)}} - \frac{{g'\left( x \right)}}{{g\left( x \right)}}\hspace{0.25in}\hspace{0.25in} \Rightarrow \hspace{0.25in}\hspace{0.25in}y' = y\left( {\frac{{f'\left( x \right)}}{{f\left( x \right)}} - \frac{{g'\left( x \right)}}{{g\left( x \right)}}} \right)\]
+          
+          <p>Next, plug in \(y\) and do some simplification to get the quotient rule.</p>
+          
+            \[\begin{align*}y' & = \frac{{f\left( x \right)}}{{g\left( x \right)}}\left( {\frac{{f'\left( x \right)}}{{f\left( x \right)}} - \frac{{g'\left( x \right)}}{{g\left( x \right)}}} \right)\\ &amp;  = \frac{{f'\left( x \right)}}{{g\left( x \right)}} - \frac{{g'\left( x \right)f\left( x \right)}}{{{{\left( {g\left( x \right)} \right)}^2}}}\\ &amp;  = \frac{{f'\left( x \right)g\left( x \right)}}{{{{\left( {g\left( x \right)} \right)}^2}}} - \frac{{f\left( x \right)g'\left( x \right)}}{{{{\left( {g\left( x \right)} \right)}^2}}} = \frac{{f'\left( x \right)g\left( x \right) - f\left( x \right)g'\left( x \right)}}{{{{\left( {g\left( x \right)} \right)}^2}}}\end{align*}\]
+  </div>
+      
+      <div class="center-div"><img alt="Separator" height="14" src="http://tutorial.math.lamar.edu/Classes/CalcI/DerivativeProofs_Files/image001.gif" width="214" /></div>
+    <a class="anchor" name="Extras_DerPf_ChainRule"></a>
+    
+  <h4>Chain Rule</h4>
+  <div class="fact">
+    <p>If \(f\left( x \right)\) and \(g\left( x \right)\) are both differentiable functions and we define \(F\left( x \right) = \left( {f \circ g} \right)\left( x \right)\) then the derivative of <em>F(x)</em> is \(F'\left( x \right) = f'\left( {g\left( x \right)} \right)\,\,\,g'\left( x \right)\).</p>
+  </div>
+
+    
+    <h4>Proof</h4>
+  <div class="proof">
+    <p>We’ll start off the proof by defining \(u = g\left( x \right)\) and noticing that in terms of this definition what we’re being asked to prove is,</p>
+          \[\frac{d}{{dx}}\left[ {f\left( u \right)} \right] = f'\left( u \right)\frac{{du}}{{dx}}\]
+          
+          <p>Let’s take a look at the derivative of \(u\left( x \right)\) (again, remember we’ve defined \(u = g\left( x \right)\) and so \(u\) really is a function of \(x\)) which we know exists because we are assuming that\(g\left( x \right)\) is differentiable.  By definition we have,</p>
+          
+            \[u'\left( x \right) = \mathop {\lim }\limits_{h \to 0} \frac{{u\left( {x + h} \right) - u\left( x \right)}}{h}\]
+          
+          <p>Note as well that,</p>
+          \[\mathop {\lim }\limits_{h \to 0} \left( {\frac{{u\left( {x + h} \right) - u\left( x \right)}}{h} - u'\left( x \right)} \right) = \mathop {\lim }\limits_{h \to 0} \frac{{u\left( {x + h} \right) - u\left( x \right)}}{h} - \mathop {\lim }\limits_{h \to 0} u'\left( x \right) = u'\left( x \right) - u'\left( x \right) = 0\]
+          
+          <p>Now, define,</p>
+
+          \[v\left( h \right) = \left\{ {\begin{array}{*{20}{l}}{\displaystyle \frac{{u\left( {x + h} \right) - u\left( x \right)}}{h} - u'\left( x \right)}&amp;{{\mbox{  if }}h \ne 0}\\0&amp;{{\mbox{  if }}h = 0}\end{array}} \right.\]
+          
+          <p>and notice that \(\mathop {\lim }\limits_{h \to 0} v\left( h \right) = 0 = v\left( 0 \right)\) and so \(v\left( h \right)\) is continuous at \(h = 0\)</p>
+          
+          <p>Now if we assume that \(h \ne 0\) we can rewrite the definition of \(v\left( h \right)\) to get,</p>
+
+          \[\begin{equation}u\left( {x + h} \right) = u\left( x \right) + h\left( {v\left( h \right) + u'\left( x \right)} \right)\label{eq:eq1}\end{equation}\]
+          
+          <p>Now, notice that \(\eqref{eq:eq1}\) is in fact valid even if we let \(h = 0\) and so is valid for any value of \(h\).</p>
+          
+          <p>Next, since we also know that \(f\left( x \right)\) is differentiable we can do something similar.  However, we’re going to use a different set of letters/variables here for reasons that will be apparent in a bit.  So, define,</p>
+
+          \[w\left( k \right) = \left\{ {\begin{array}{*{20}{l}}{\displaystyle \frac{{f\left( {z + k} \right) - f\left( z \right)}}{k} - f'\left( z \right)}&amp;{{\mbox{  if }}k \ne 0}\\0&amp;{{\mbox{  if }}k = 0}\end{array}} \right.\]
+
+          <p>we can go through a similar argument that we did above so show that \(w\left( k \right)\) is continuous at \(k = 0\) and that,</p>
+
+          \[\begin{equation}f\left( {z + k} \right) = f\left( z \right) + k\left( {w\left( k \right) + f'\left( z \right)} \right) \label{eq:eq2} \end{equation}\] 
+          
+          <p>Do not get excited about the different letters here all we did was use \(k\) instead of \(h\) and let \(x = z\).  Nothing fancy here, but the change of letters will be useful down the road.</p>
+          
+          <p>Okay, to this point it doesn’t look like we’ve really done anything that gets us even close to proving the chain rule.  The work above will turn out to be very important in our proof however so let’s get going on the proof.</p>
+          
+          <p>What we need to do here is use the definition of the derivative and evaluate the following limit.</p>
+
+          \[\begin{equation}\frac{d}{{dx}}\left[ {f\left[ {u\left( x \right)} \right]} \right] = \mathop {\lim }\limits_{h \to 0} \frac{{f\left[ {u\left( {x + h} \right)} \right] - f\left[ {u\left( x \right)} \right]}}{h} \label{eq:eq3} \end{equation}\]
+
+          <p>Note that even though the notation is more than a little messy if we use \(u\left( x \right)\) instead of \(u\) we need to remind ourselves here that \(u\) really is a function of \(x\).</p>
+          
+          <p>Let’s now use \(\eqref{eq:eq1}\) to rewrite the \(u\left( {x + h} \right)\) and yes the notation is going to be unpleasant but we’re going to have to deal with it.  By using \(\eqref{eq:eq1}\), the numerator in the limit above becomes,</p>
+          
+          \[f\left[ {u\left( {x + h} \right)} \right] - f\left[ {u\left( x \right)} \right] = f\left[ {u\left( x \right) + h\left( {v\left( h \right) + u'\left( x \right)} \right)} \right] - f\left[ {u\left( x \right)} \right]\]
+          
+          <p>If we then define \(z = u\left( x \right)\) and \(k = h\left( {v\left( h \right) + u'\left( x \right)} \right)\) we can use \(\eqref{eq:eq2}\) to further write this as,</p>
+
+          \[\begin{align*}f\left[ {u\left( {x + h} \right)} \right] - f\left[ {u\left( x \right)} \right] & = f\left[ {u\left( x \right) + h\left( {v\left( h \right) + u'\left( x \right)} \right)} \right] - f\left[ {u\left( x \right)} \right]\\ &amp;  = f\left[ {u\left( x \right)} \right] + h\left( {v\left( h \right) + u'\left( x \right)} \right)\left( {w\left( k \right) + f'\left[ {u\left( x \right)} \right]} \right) - f\left[ {u\left( x \right)} \right]\\ &amp;  = h\left( {v\left( h \right) + u'\left( x \right)} \right)\left( {w\left( k \right) + f'\left[ {u\left( x \right)} \right]} \right)\end{align*}\]
+          
+          <p>Notice that we were able to cancel a \(f\left[ {u\left( x \right)} \right]\) to simplify things up a little.  Also, note that the \(w\left( k \right)\) was intentionally left that way to keep the mess to a minimum here, just remember that \(k = h\left( {v\left( h \right) + u'\left( x \right)} \right)\) here as that will be important here in a bit.  Let’s now go back and remember that all this was the numerator of our limit, \(\eqref{eq:eq3}\).  Plugging this into \(\eqref{eq:eq3}\) gives,</p>
+
+          \[\begin{align*}\frac{d}{{dx}}\left[ {f\left[ {u\left( x \right)} \right]} \right] & = \mathop {\lim }\limits_{h \to 0} \frac{{h\left( {v\left( h \right) + u'\left( x \right)} \right)\left( {w\left( k \right) + f'\left[ {u\left( x \right)} \right]} \right)}}{h}\\ &amp;  = \mathop {\lim }\limits_{h \to 0} \left( {v\left( h \right) + u'\left( x \right)} \right)\left( {w\left( k \right) + f'\left[ {u\left( x \right)} \right]} \right)\end{align*}\]
+          
+          <p>Notice that the \(h\)’s canceled out.  Next, recall that \(k = h\left( {v\left( h \right) + u'\left( x \right)} \right)\) and so,</p>
+
+          \[\mathop {\lim }\limits_{h \to 0} k = \mathop {\lim }\limits_{h \to 0} h\left( {v\left( h \right) + u'\left( x \right)} \right) = 0\]
+
+          <p>But, if \(\mathop {\lim }\limits_{h \to 0} k = 0\), as we’ve defined \(k\) anyway, then by the definition of \(w\) and the fact that we know \(w\left( k \right)\) is continuous at \(k = 0\) we also know that,</p>
+
+          \[\mathop {\lim }\limits_{h \to 0} w\left( k \right) = w\left( {\mathop {\lim }\limits_{h \to 0} k} \right) = w\left( 0 \right) = 0\]
+          
+          <p>Also, recall that \(\mathop {\lim }\limits_{h \to 0} v\left( h \right) = 0\).  Using all of these facts our limit becomes,</p>
+
+          \[\begin{align*}\frac{d}{{dx}}\left[ {f\left[ {u\left( x \right)} \right]} \right] & = \mathop {\lim }\limits_{h \to 0} \left( {v\left( h \right) + u'\left( x \right)} \right)\left( {w\left( k \right) + f'\left[ {u\left( x \right)} \right]} \right)\\ &amp;  = u'\left( x \right)f'\left[ {u\left( x \right)} \right]\\ &amp;  = f'\left[ {u\left( x \right)} \right]\frac{{du}}{{dx}}\end{align*}\]
+          
+          <p>This is exactly what we needed to prove and so we’re done.</p>
+  </div>
+  
+
+
+      
+
+
+
+    </div>
+    <!-- End of content div -->
+
+
+    <div class="footer">
+      <div class="footer-links">
+        [<a href="http://tutorial.math.lamar.edu/Contact.aspx">Contact Me</a>]&nbsp;[<a href="../../MyStudents-2.html">My Students</a>]&nbsp;[<a href="http://tutorial.math.lamar.edu/Privacy.aspx">Privacy Statement</a>]&nbsp;[<a href="../../Help-2.html">Site Help &amp; FAQ</a>]&nbsp;[<a href="http://tutorial.math.lamar.edu/Terms.aspx">Terms of Use</a>]
+      </div>
+      <div class="footer-dates">
+        <div class="footer-copyright"><span id="lblCopyRight">&copy; 2003 - 2019 Paul Dawkins</span></div>
+        <div class="footer-spacer"></div>
+        <div class="footer-modified-date">Page Last Modified : <span id="lblModified">1/22/2019</span></div>
+      </div>
+      
+
+    </div>
+  </div>
+  <!-- End of page div...  -->
+</body>
+
+<!-- Mirrored from tutorial.math.lamar.edu/Classes/CalcI/DerivativeProofs.aspx by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 27 Feb 2019 06:15:35 GMT -->
+</html>

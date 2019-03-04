@@ -1,0 +1,1154 @@
+
+
+<!DOCTYPE html>
+
+<html>
+
+<!-- Mirrored from tutorial.math.lamar.edu/Classes/DE/PowerSeries.aspx by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 27 Feb 2019 06:15:36 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=yes" /><meta http-equiv="X-UA-Compatible" content="IE=edge" />  <!-- For best MathJax performance on IE  -->
+
+  <meta name="google-site-verification" content="uLoA31CJfOhIVMJWBjCmQL8xNMmmLybZU3LRKavy9WQ" /><title>
+	Differential Equations - Review : Power Series
+</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="../../../www.googletagmanager.com/gtag/js1872?id=UA-331594-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-331594-1');
+  </script>
+
+  <link type="text/css" href="../../css/jquery.mmenu.all.css" rel="stylesheet" /><link type="text/css" href="../../css/jquery.dropdown.css" rel="stylesheet" /><link href="../../FA/css/fontawesome-all.min.css" rel="stylesheet" /><link type="text/css" href="../../css/notes-all.css" rel="stylesheet" /><link type="text/css" href="../../css/notes-google.css" rel="stylesheet" /><link type="text/css" href="../../css/notes-mmenu.css" rel="stylesheet" /><link type="text/css" href="../../css/notes-dropdown.css" rel="stylesheet" />
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+     TeX: { equationNumbers: { autoNumber: "AMS" } }
+    });
+  </script>
+  <script type="text/javascript" async src="../../../cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax2ba6.js?config=TeX-AMS_CHTML-full"></script>
+  <script type="text/javascript" src="../../../code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="../../js/jquery.mmenu.all.js"></script>
+  <script type="text/javascript" src="../../js/jquery.dropdown.js"></script>
+  <script type="text/javascript" src="../../js/notes-all.js"></script>  
+
+  <script>
+    (function () {
+      var cx = '001004262401526223570:11yv6vpcqvy';
+      var gcse = document.createElement('script');
+      gcse.type = 'text/javascript';
+      gcse.async = true;
+      gcse.src = '../../../cse.google.com/cse07b6.html?cx=' + cx;
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(gcse, s);
+    })();
+  </script>
+
+<meta http-equiv="keywords" name="keywords" content="power series, power series review, review of power series" /><meta http-equiv="description" name="description" content="In this section we give a brief review of some of the basics of power series.  Included are discussions of using the Ratio Test to determine if a power series will converge, adding/subtracting power series, differentiating power series and index shifts for power series." /></head>
+<body onload="init({Notes: 'NoteMobile;8/21/2018;true'})">
+
+  <div id="page">
+
+    <div class="header">
+      <div class="header-row">
+        <!--<a href="#menu"><span></span></a>-->
+        <div id="side-menu-icon" class="header-side-menu-icon"><a href="#menu"><span class="fas fa-bars fa-lg" aria-hidden="true" title="Main Menu - Change between topics, chapters and sections as well as a few extra pages."></span></a></div>
+        <span class="header-title"><a href="../../index.html" class="header-title-link">Paul's Online Notes</a></span>
+        <div class="header-spacer"></div>
+
+        <div id="content-top-menu" class="top-menu">
+          <button id="content-type-menu" class="top-menu-button" data-jq-dropdown="#jq-dropdown-type" title="View (Notes, Practice Problems or Assignment Problems, Show/Hide Solutions and/or Steps) Menu">
+            <span id="tab_top_menu_notes" class="top-menu-item-title">Notes</span> <span class="far fa-eye fa-lg" aria-hidden="true"></span>
+          </button>
+
+          <button id="quicknav-menu" class="top-menu-button" data-jq-dropdown="#jq-dropdown-quicknav" title="Quick Navigation (Previous/Next Sections and Problems and Full Problem List) Menu">
+            <span class="top-menu-item-title">Quick Nav</span> <span class="fas fa-exchange fa-lg" aria-hidden="true"></span>
+          </button>
+          
+          <button id="download-menu" class="top-menu-button" data-jq-dropdown="#jq-dropdown-download" title="Download pdf Menu">
+            <span class="top-menu-item-title">Download</span> <span class="far fa-download fa-lg" aria-hidden="true"></span>
+          </button>
+
+          <button id="print-menu" class="top-menu-button top-menu-button-icon-only" data-jq-dropdown="#jq-print-download" title="Print Menu">
+            <span class="far fa-print fa-lg" aria-hidden="true"></span>
+          </button>
+        </div>
+
+        <div id="header-google-search" class="header-search">
+          <gcse:search></gcse:search>
+        </div>
+        <div id="header-search-icon" title="Site Search" class="header-menu-icon"><span id="search-icon" class="fas fa-search" aria-hidden="true"></span></div>
+
+      </div>
+    </div>
+
+     <div id="jq-dropdown-type" class="jq-dropdown jq-dropdown-tip">
+      <ul class="jq-dropdown-menu">
+        
+        <li id="li_type_menu_goto" class="top-menu-nav-title">Go To</li>
+        <li id="li_type_menu_notes">
+          <span id="type_menu_notes_span" title="Viewing the Notes for the current topic." class="top-menu-current">Notes</span>
+          
+        </li>
+        <li id="li_type_menu_practice">
+          <span id="type_menu_problem_span_de" class="top-menu-item-text">Practice and Assignment problems are not yet written.  As time permits I am working on them, however I don't have the amount of free time that I used to so it will take a while before anything shows up here.</span>
+          
+          
+        </li>
+        <li id="li_type_menu_asgn">
+          
+          
+        </li>
+        <li id="li_type_menu_sh" class="top-menu-nav-title">Show/Hide</li>
+        <li id="li_type_menu_show" title="Show any hidden solutions and/or steps that may be present on the page."><a href="javascript:SHPrintPage(1,0)" id="view_menu_show">Show all Solutions/Steps/<em>etc.</em></a></li>
+        <li id="li_type_menu_hide" title="Hide any visible solutions and/or steps that may be present on the page."><a href="javascript:SHPrintPage(0,0)" id="view_menu_hide">Hide all Solutions/Steps/<em>etc.</em></a></li>
+      </ul>
+    </div>
+
+    <div id="jq-dropdown-quicknav" class="jq-dropdown jq-dropdown-tip">
+      <ul class="jq-dropdown-menu">
+        <li id="li_nav_menu_sections" class="top-menu-nav-title">Sections</li>
+        <li id="li_nav_menu_prev_section"><a href="SeriesIntro.html" id="a_nav_menu_prev_section" class="top-menu-nav-link" title="Previous Section : Series Solutions to DE&#39;s Introduction"><span class="top-menu-prev fas fa-chevron-left"></span> Series Solutions to DE's Introduction</a></li>
+        <li id="li_nav_menu_next_section"><a href="TaylorSeries.html" id="a_nav_menu_next_section" class="top-menu-nav-link" title="Next Section : Review : Taylor Series"><span class="top-menu-prev-hidden fas fa-chevron-left"></span> Review : Taylor Series <span class="top-menu-next fas fa-chevron-right"></span></a></li>
+        <li id="li_nav_menu_chapters" class="top-menu-nav-title">Chapters</li>
+        <li id="li_nav_menu_prev_chapter"><a href="SystemsIntro.html" id="a_nav_menu_prev_chapter" class="top-menu-nav-link" title="Previous Chapter : Systems of DE&#39;s"><span class="top-menu-prev fas fa-chevron-left"></span><span class="top-menu-prev fas fa-chevron-left"></span> Systems of DE's</a></li>
+        <li id="li_nav_menu_next_chapter"><a href="IntroHigherOrder.html" id="a_nav_menu_next_chapter" class="top-menu-nav-link" title="Next Chapter : Higher Order Differential Equations"><span class="top-menu-prev-hidden fas fa-chevron-left"></span><span class="top-menu-prev-hidden fas fa-chevron-left"></span> Higher Order Differential Equations <span class="top-menu-next fas fa-chevron-right"></span><span class="top-menu-next fas fa-chevron-right"></span></a></li>
+        
+        
+        
+        
+        <li id="li_nav_menu_classes" class="top-menu-nav-title">Classes</li>
+        <li>
+          
+          <a href="../Alg/Alg.html" id="nav_menu_alg_link" title="Go To Algebra Notes">Algebra</a>
+        </li>
+        <li>
+          
+          <a href="../CalcI/CalcI.html" id="nav_menu_calci_link" title="Go To Calculus I Notes">Calculus I</a>
+        </li>
+        <li>
+          
+          <a href="../CalcII/CalcII.html" id="nav_menu_calcii_link" title="Go To Calculus II Notes">Calculus II</a>
+        </li>
+        <li>
+          
+          <a href="../CalcIII/CalcIII.html" id="nav_menu_calciii_link" title="Go To Calculus III Notes">Calculus III</a>
+        </li>
+        <li>
+          <span id="nav_menu_de_span" title="Currently Viewing Differential Equations Material" class="top-menu-current">Differential Equations</span>
+          
+        </li>
+        <li id="li_nav_menu_extras" class="top-menu-nav-title">Extras</li>
+        <li>
+          
+          <a href="../../Extras/AlgebraTrigReview/AlgebraTrig.html" id="nav_menu_algtrig_link" title="Go To Algebra &amp; Trig Review">Algebra &amp; Trig Review</a>
+        </li>
+        <li>
+          
+          <a href="../../Extras/CommonErrors/CommonMathErrors.html" id="nav_menu_commonerrors_link" title="Go To Common Math Errors">Common Math Errors</a>
+        </li>
+        <li>
+          
+          <a href="../../Extras/ComplexPrimer/ComplexNumbers.html" id="nav_menu_complexnumbers_link" title="Go To Complex Numbers Primer">Complex Number Primer</a>
+        </li>
+        <li>
+          
+          <a href="../../Extras/StudyMath/HowToStudyMath.html" id="nav_menu_studymath_link" title="Go To How To Study Math">How To Study Math</a>
+        </li>
+        <li>
+          
+          <a href="../../Extras/CheatSheets_Tables.html" id="nav_menu_cheattables_link" title="Go To List of Cheat Sheets and Tables">Cheat Sheets &amp; Tables</a>
+        </li>
+        <li id="li_nav_menu_misc" class="top-menu-nav-title">Misc</li>
+        <li><a href="http://tutorial.math.lamar.edu/contact.aspx" id="nav_menu_contact" title="Contact Me!">Contact Me</a></li>
+        <li><a href="../../mathjax.html" id="nav_menu_mathjax" title="Info on MathJax and MathJax Configuration Menu">MathJax Help and Configuration</a></li>
+        <li><a href="../../mystudents.html" id="nav_menu_students" title="Go here if you are currently taking a class from me!">My Students</a></li>
+      </ul>
+    </div>
+
+    <div id="jq-dropdown-download" class="jq-dropdown jq-dropdown-anchor-right jq-dropdown-tip">
+      <ul class="jq-dropdown-menu">
+        
+        <li id="li_download_menu_notes" class="top-menu-nav-title">Notes Downloads</li>
+        <li id="li_download_menu_notes_book"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=B,1,N" id="download_menu_notes_book" data-PDF="Download - Menu$Notes - Book$Differential Equations$/Downloads/DE/Notes/Complete.pdf">Complete Book</a></li>
+        
+        <li id="li_download_menu_notes_chapter"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=C,22,N" id="download_menu_notes_chapter" data-PDF="Download - Menu$Notes - Chapter$Differential Equations - Series Solutions to DE&#39;s$/Downloads/DE/Notes/Series.pdf">Current Chapter</a></li>
+        <li id="li_download_menu_notes_section"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=S,125,N" id="download_menu_notes_section" data-PDF="Download - Menu$Notes - Section$Differential Equations - Review : Power Series$/Downloads/DE/Notes/PowerSeries.pdf">Current Section</a></li>
+        <li id="li_download_menu_practice" class="top-menu-nav-title">Practice Problems Downloads</li>
+        <li id="li_download_menu_practice_de"><span class="top-menu-item-text">Problems not yet written.</span></li>
+        
+        
+        
+        
+        
+        
+        
+        
+        <li id="li_download_menu_asgn" class="top-menu-nav-title">Assignment Problems Downloads</li>
+        <li id="li_download_menu_asgn_de"><span class="top-menu-item-text">Problems not yet written.</span></li>
+        
+        
+        
+        <li id="li_download_menu_other" class="top-menu-nav-title">Other Items</li>
+        <li id="li_download_menu_urls">
+          <a href="http://tutorial.math.lamar.edu/DownloadURLs.aspx?bi=1&amp;ci=22&amp;si=125" id="download_menu_urls">Get URL's for Download Items</a>
+        </li>
+      </ul>
+    </div>
+
+    <div id="jq-print-download" class="jq-dropdown jq-dropdown-anchor-right jq-dropdown-tip">
+      <ul class="jq-dropdown-menu">
+        <li id="li_print_menu_default"><a href="javascript:SHPrintPage()" id="print_menu_default">Print Page in Current Form (Default)</a></li>
+        <li id="li_print_menu_show"><a href="javascript:SHPrintPage(1,1)" id="print_menu_show">Show all Solutions/Steps and Print Page</a></li>
+        <li id="li_print_menu_hide"><a href="javascript:SHPrintPage(0,1)" id="print_menu_hide">Hide all Solutions/Steps and Print Page</a></li>
+      </ul>
+    </div>
+
+
+
+   
+
+    <nav id="menu" class="notes-nav">
+      <ul>
+        <li><a href="../../index.html" class="mm-link">Home</a></li>
+        <li><span>Classes</span></li>
+        <li><a href="../Alg/Alg.html" class="mm-link">Algebra</a>
+          <ul>
+            <li><a href="../Alg/Preliminaries.html" class="mm-link">Preliminaries</a>
+              <ul>
+                <li><a href="../Alg/IntegerExponents.html" class="mm-link">Integer Exponents</a></li>
+                <li><a href="../Alg/RationalExponents.html" class="mm-link">Rational Exponents</a></li>
+                <li><a href="../Alg/Radicals.html" class="mm-link">Radicals</a></li>
+                <li><a href="../Alg/Polynomials.html" class="mm-link">Polynomials</a></li>
+                <li><a href="../Alg/Factoring.html" class="mm-link">Factoring Polynomials</a></li>
+                <li><a href="../Alg/RationalExpressions.html" class="mm-link">Rational Expressions</a></li>
+                <li><a href="../Alg/ComplexNumbers.html" class="mm-link">Complex Numbers</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/Solving.html" class="mm-link">Solving Equations and Inequalities</a>
+              <ul>
+                <li><a href="../Alg/SolutionSets.html" class="mm-link">Solutions and Solution Sets</a></li>
+                <li><a href="../Alg/SolveLinearEqns.html" class="mm-link">Linear Equations</a></li>
+                <li><a href="../Alg/LinearApps.html" class="mm-link">Applications of Linear Equations</a></li>
+                <li><a href="../Alg/SolveMultiVariable.html" class="mm-link">Equations With More Than One Variable</a></li>
+                <li><a href="../Alg/SolveQuadraticEqnsI.html" class="mm-link">Quadratic Equations - Part I</a></li>
+                <li><a href="../Alg/SolveQuadraticEqnsII.html" class="mm-link">Quadratic Equations - Part II</a></li>
+                <li><a href="../Alg/SolveQuadraticEqnSummary.html" class="mm-link">Quadratic Equations : A Summary</a></li>
+                <li><a href="../Alg/QuadraticApps.html" class="mm-link">Applications of Quadratic Equations</a></li>
+                <li><a href="../Alg/ReducibleToQuadratic.html" class="mm-link">Equations Reducible to Quadratic in Form</a></li>
+                <li><a href="../Alg/SolveRadicalEqns.html" class="mm-link">Equations with Radicals</a></li>
+                <li><a href="../Alg/SolveLinearInequalities.html" class="mm-link">Linear Inequalities</a></li>
+                <li><a href="../Alg/SolvePolyInequalities.html" class="mm-link">Polynomial Inequalities</a></li>
+                <li><a href="../Alg/SolveRationalInequalities.html" class="mm-link">Rational Inequalities</a></li>
+                <li><a href="../Alg/SolveAbsValueEqns.html" class="mm-link">Absolute Value Equations</a></li>
+                <li><a href="../Alg/SolveAbsValueIneq.html" class="mm-link">Absolute Value Inequalities</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/Graphing_Functions.html" class="mm-link">Graphing and Functions</a>
+              <ul>
+                <li><a href="../Alg/Graphing.html" class="mm-link">Graphing</a></li>
+                <li><a href="../Alg/Lines.html" class="mm-link">Lines</a></li>
+                <li><a href="../Alg/Circles.html" class="mm-link">Circles</a></li>
+                <li><a href="../Alg/FunctionDefn.html" class="mm-link">The Definition of a Function</a></li>
+                <li><a href="../Alg/GraphFunctions.html" class="mm-link">Graphing Functions</a></li>
+                <li><a href="../Alg/CombineFunctions.html" class="mm-link">Combining Functions</a></li>
+                <li><a href="../Alg/InverseFunctions.html" class="mm-link">Inverse Functions</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/CommonGraphs.html" class="mm-link">Common Graphs</a>
+              <ul>
+                <li><a href="../Alg/Lines_Circles_PWF.html" class="mm-link">Lines, Circles and Piecewise Functions</a></li>
+                <li><a href="../Alg/Parabolas.html" class="mm-link">Parabolas</a></li>
+                <li><a href="../Alg/Ellipses.html" class="mm-link">Ellipses</a></li>
+                <li><a href="../Alg/Hyperbolas.html" class="mm-link">Hyperbolas</a></li>
+                <li><a href="../Alg/MiscFunctions.html" class="mm-link">Miscellaneous Functions</a></li>
+                <li><a href="../Alg/Transformations.html" class="mm-link">Transformations</a></li>
+                <li><a href="../Alg/Symmetry.html" class="mm-link">Symmetry</a></li>
+                <li><a href="../Alg/GraphRationalFcns.html" class="mm-link">Rational Functions</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/PolynomialFunctions.html" class="mm-link">Polynomial Functions</a>
+              <ul>
+                <li><a href="../Alg/DividingPolynomials.html" class="mm-link">Dividing Polynomials</a></li>
+                <li><a href="../Alg/ZeroesOfPolynomials.html" class="mm-link">Zeroes/Roots of Polynomials</a></li>
+                <li><a href="../Alg/GraphingPolynomials.html" class="mm-link">Graphing Polynomials</a></li>
+                <li><a href="../Alg/FindingZeroesOfPolynomials.html" class="mm-link">Finding Zeroes of Polynomials</a></li>
+                <li><a href="../Alg/PartialFractions.html" class="mm-link">Partial Fractions</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/ExpAndLog.html" class="mm-link">Exponential and Logarithm Functions</a>
+              <ul>
+                <li><a href="../Alg/ExpFunctions.html" class="mm-link">Exponential Functions</a></li>
+                <li><a href="../Alg/LogFunctions.html" class="mm-link">Logarithm Functions</a></li>
+                <li><a href="../Alg/SolveExpEqns.html" class="mm-link">Solving Exponential Equations</a></li>
+                <li><a href="../Alg/SolveLogEqns.html" class="mm-link">Solving Logarithm Equations</a></li>
+                <li><a href="../Alg/ExpLogApplications.html" class="mm-link">Applications</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/Systems.html" class="mm-link">Systems of Equations</a>
+              <ul>
+                <li><a href="../Alg/SystemsTwoVrble.html" class="mm-link">Linear Systems with Two Variables</a></li>
+                <li><a href="../Alg/SystemsThreeVrble.html" class="mm-link">Linear Systems with Three Variables</a></li>
+                <li><a href="../Alg/AugmentedMatrix.html" class="mm-link">Augmented Matrices</a></li>
+                <li><a href="../Alg/AugmentedMatrixII.html" class="mm-link">More on the Augmented Matrix</a></li>
+                <li><a href="../Alg/NonlinearSystems.html" class="mm-link">Nonlinear Systems</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../CalcI/CalcI.html" class="mm-link">Calculus I</a>
+          <ul>
+            <li><a href="../CalcI/ReviewIntro.html" class="mm-link">Review</a>
+              <ul>
+                <li><a href="../CalcI/Functions.html" class="mm-link">Functions</a></li>
+                <li><a href="../CalcI/InverseFunctions.html" class="mm-link">Inverse Functions</a></li>
+                <li><a href="../CalcI/TrigFcns.html" class="mm-link">Trig Functions</a></li>
+                <li><a href="../CalcI/TrigEquations.html" class="mm-link">Solving Trig Equations</a></li>
+                <li><a href="../CalcI/TrigEquations_CalcI.html" class="mm-link">Trig Equations with Calculators, Part I</a></li>
+                <li><a href="../CalcI/TrigEquations_CalcII.html" class="mm-link">Trig Equations with Calculators, Part II</a></li>
+                <li><a href="../CalcI/ExpFunctions.html" class="mm-link">Exponential Functions</a></li>
+                <li><a href="../CalcI/LogFcns.html" class="mm-link">Logarithm Functions</a></li>
+                <li><a href="../CalcI/ExpLogEqns.html" class="mm-link">Exponential and Logarithm Equations</a></li>
+                <li><a href="../CalcI/CommonGraphs.html" class="mm-link">Common Graphs</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcI/limitsIntro.html" class="mm-link">Limits</a>
+              <ul>
+                <li><a href="../CalcI/Tangents_Rates.html" class="mm-link">Tangent Lines and Rates of Change</a></li>
+                <li><a href="../CalcI/TheLimit.html" class="mm-link">The Limit</a></li>
+                <li><a href="../CalcI/OneSidedLimits.html" class="mm-link">One-Sided Limits</a></li>
+                <li><a href="../CalcI/LimitsProperties.html" class="mm-link">Limit Properties</a></li>
+                <li><a href="../CalcI/ComputingLimits.html" class="mm-link">Computing Limits</a></li>
+                <li><a href="../CalcI/InfiniteLimits.html" class="mm-link">Infinite Limits</a></li>
+                <li><a href="../CalcI/LimitsAtInfinityI.html" class="mm-link">Limits At Infinity, Part I</a></li>
+                <li><a href="../CalcI/LimitsAtInfinityII.html" class="mm-link">Limits At Infinity, Part II</a></li>
+                <li><a href="../CalcI/Continuity.html" class="mm-link">Continuity</a></li>
+                <li><a href="../CalcI/DefnOfLimit.html" class="mm-link">The Definition of the Limit</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcI/DerivativeIntro.html" class="mm-link">Derivatives</a>
+              <ul>
+                <li><a href="../CalcI/DefnOfDerivative.html" class="mm-link">The Definition of the Derivative</a></li>
+                <li><a href="../CalcI/DerivativeInterp.html" class="mm-link">Interpretation of the Derivative</a></li>
+                <li><a href="../CalcI/DiffFormulas.html" class="mm-link">Differentiation Formulas</a></li>
+                <li><a href="../CalcI/ProductQuotientRule.html" class="mm-link">Product and Quotient Rule</a></li>
+                <li><a href="../CalcI/DiffTrigFcns.html" class="mm-link">Derivatives of Trig Functions</a></li>
+                <li><a href="../CalcI/DiffExpLogFcns.html" class="mm-link">Derivatives of Exponential and Logarithm Functions</a></li>
+                <li><a href="../CalcI/DiffInvTrigFcns.html" class="mm-link">Derivatives of Inverse Trig Functions</a></li>
+                <li><a href="../CalcI/DiffHyperFcns.html" class="mm-link">Derivatives of Hyperbolic Functions</a></li>
+                <li><a href="../CalcI/ChainRule.html" class="mm-link">Chain Rule</a></li>
+                <li><a href="../CalcI/ImplicitDIff.html" class="mm-link">Implicit Differentiation</a></li>
+                <li><a href="../CalcI/RelatedRates.html" class="mm-link">Related Rates</a></li>
+                <li><a href="../CalcI/HigherOrderDerivatives.html" class="mm-link">Higher Order Derivatives</a></li>
+                <li><a href="../CalcI/LogDiff.html" class="mm-link">Logarithmic Differentiation</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcI/DerivAppsIntro.html" class="mm-link">Applications of Derivatives</a>
+              <ul>
+                <li><a href="../CalcI/RateOfChange.html" class="mm-link">Rates of Change</a></li>
+                <li><a href="../CalcI/CriticalPoints.html" class="mm-link">Critical Points</a></li>
+                <li><a href="../CalcI/MinMaxValues.html" class="mm-link">Minimum and Maximum Values</a></li>
+                <li><a href="../CalcI/AbsExtrema.html" class="mm-link">Finding Absolute Extrema</a></li>
+                <li><a href="../CalcI/ShapeofGraphPtI.html" class="mm-link">The Shape of a Graph, Part I</a></li>
+                <li><a href="../CalcI/ShapeofGraphPtII.html" class="mm-link">The Shape of a Graph, Part II</a></li>
+                <li><a href="../CalcI/MeanValueTheorem.html" class="mm-link">The Mean Value Theorem</a></li>
+                <li><a href="../CalcI/Optimization.html" class="mm-link">Optimization</a></li>
+                <li><a href="../CalcI/MoreOptimization.html" class="mm-link">More Optimization Problems</a></li>
+                <li><a href="../CalcI/LHospitalsRule.html" class="mm-link">L'Hospital's Rule and Indeterminate Forms</a></li>
+                <li><a href="../CalcI/LinearApproximations.html" class="mm-link">Linear Approximations</a></li>
+                <li><a href="../CalcI/Differentials.html" class="mm-link">Differentials</a></li>
+                <li><a href="../CalcI/NewtonsMethod.html" class="mm-link">Newton's Method</a></li>
+                <li><a href="../CalcI/BusinessApps.html" class="mm-link">Business Applications</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcI/IntegralsIntro.html" class="mm-link">Integrals</a>
+              <ul>
+                <li><a href="../CalcI/IndefiniteIntegrals.html" class="mm-link">Indefinite Integrals</a></li>
+                <li><a href="../CalcI/ComputingIndefiniteIntegrals.html" class="mm-link">Computing Indefinite Integrals</a></li>
+                <li><a href="../CalcI/SubstitutionRuleIndefinite.html" class="mm-link">Substitution Rule for Indefinite Integrals</a></li>
+                <li><a href="../CalcI/SubstitutionRuleIndefinitePtII.html" class="mm-link">More Substitution Rule</a></li>
+                <li><a href="../CalcI/AreaProblem.html" class="mm-link">Area Problem</a></li>
+                <li><a href="../CalcI/DefnOfDefiniteIntegral.html" class="mm-link">Definition of the Definite Integral</a></li>
+                <li><a href="../CalcI/ComputingDefiniteIntegrals.html" class="mm-link">Computing Definite Integrals</a></li>
+                <li><a href="../CalcI/SubstitutionRuleDefinite.html" class="mm-link">Substitution Rule for Definite Integrals</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcI/IntAppsIntro.html" class="mm-link">Applications of Integrals</a>
+              <ul>
+                <li><a href="../CalcI/AvgFcnValue.html" class="mm-link">Average Function Value</a></li>
+                <li><a href="../CalcI/AreaBetweenCurves.html" class="mm-link">Area Between Curves</a></li>
+                <li><a href="../CalcI/VolumeWithRings.html" class="mm-link">Volumes of Solids of Revolution / Method of Rings</a></li>
+                <li><a href="../CalcI/VolumeWithCylinder.html" class="mm-link">Volumes of Solids of Revolution/Method of Cylinders</a></li>
+                <li><a href="../CalcI/MoreVolume.html" class="mm-link">More Volume Problems</a></li>
+                <li><a href="../CalcI/Work.html" class="mm-link">Work</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcI/ExtrasIntro.html" class="mm-link">Extras</a>
+              <ul>
+                <li><a href="../CalcI/LimitProofs.html" class="mm-link">Proof of Various Limit Properties</a></li>
+                <li><a href="../CalcI/DerivativeProofs.html" class="mm-link">Proof of Various Derivative Properties</a></li>
+                <li><a href="../CalcI/ProofTrigDeriv.html" class="mm-link">Proof of Trig Limits</a></li>
+                <li><a href="../CalcI/DerivativeAppsProofs.html" class="mm-link">Proofs of Derivative Applications Facts</a></li>
+                <li><a href="../CalcI/ProofIntProp.html" class="mm-link">Proof of Various Integral Properties </a></li>
+                <li><a href="../CalcI/Area_Volume_Formulas.html" class="mm-link">Area and Volume Formulas</a></li>
+                <li><a href="../CalcI/TypesOfInfinity.html" class="mm-link">Types of Infinity</a></li>
+                <li><a href="../CalcI/SummationNotation.html" class="mm-link">Summation Notation</a></li>
+                <li><a href="../CalcI/ConstantofIntegration.html" class="mm-link">Constant of Integration</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../CalcII/CalcII.html" class="mm-link">Calculus II</a>
+          <ul>
+            <li><a href="../CalcII/IntTechIntro.html" class="mm-link">Integration Techniques</a>
+              <ul>
+                <li><a href="../CalcII/IntegrationByParts.html" class="mm-link">Integration by Parts</a></li>
+                <li><a href="../CalcII/IntegralsWithTrig.html" class="mm-link">Integrals Involving Trig Functions</a></li>
+                <li><a href="../CalcII/TrigSubstitutions.html" class="mm-link">Trig Substitutions</a></li>
+                <li><a href="../CalcII/PartialFractions.html" class="mm-link">Partial Fractions</a></li>
+                <li><a href="../CalcII/IntegralsWithRoots.html" class="mm-link">Integrals Involving Roots</a></li>
+                <li><a href="../CalcII/IntegralsWithQuadratics.html" class="mm-link">Integrals Involving Quadratics</a></li>
+                <li><a href="../CalcII/IntegrationStrategy.html" class="mm-link">Integration Strategy</a></li>
+                <li><a href="../CalcII/ImproperIntegrals.html" class="mm-link">Improper Integrals</a></li>
+                <li><a href="../CalcII/ImproperIntegralsCompTest.html" class="mm-link">Comparison Test for Improper Integrals</a></li>
+                <li><a href="../CalcII/ApproximatingDefIntegrals.html" class="mm-link">Approximating Definite Integrals</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/IntAppsIntro.html" class="mm-link">Applications of Integrals</a>
+              <ul>
+                <li><a href="../CalcII/ArcLength.html" class="mm-link">Arc Length</a></li>
+                <li><a href="../CalcII/SurfaceArea.html" class="mm-link">Surface Area</a></li>
+                <li><a href="../CalcII/CenterOfMass.html" class="mm-link">Center of Mass</a></li>
+                <li><a href="../CalcII/HydrostaticPressure.html" class="mm-link">Hydrostatic Pressure</a></li>
+                <li><a href="../CalcII/Probability.html" class="mm-link">Probability</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/ParametricIntro.html" class="mm-link">Parametric Equations and Polar Coordinates</a>
+              <ul>
+                <li><a href="../CalcII/ParametricEqn.html" class="mm-link">Parametric Equations and Curves</a></li>
+                <li><a href="../CalcII/ParaTangent.html" class="mm-link">Tangents with Parametric Equations</a></li>
+                <li><a href="../CalcII/ParaArea.html" class="mm-link">Area with Parametric Equations</a></li>
+                <li><a href="../CalcII/ParaArcLength.html" class="mm-link">Arc Length with Parametric Equations</a></li>
+                <li><a href="../CalcII/ParaSurfaceArea.html" class="mm-link">Surface Area with Parametric Equations</a></li>
+                <li><a href="../CalcII/PolarCoordinates.html" class="mm-link">Polar Coordinates</a></li>
+                <li><a href="../CalcII/PolarTangents.html" class="mm-link">Tangents with Polar Coordinates</a></li>
+                <li><a href="../CalcII/PolarArea.html" class="mm-link">Area with Polar Coordinates</a></li>
+                <li><a href="../CalcII/PolarArcLength.html" class="mm-link">Arc Length with Polar Coordinates</a></li>
+                <li><a href="../CalcII/PolarSurfaceArea.html" class="mm-link">Surface Area with Polar Coordinates</a></li>
+                <li><a href="../CalcII/ArcLength_SurfaceArea.html" class="mm-link">Arc Length and Surface Area Revisited</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/SeriesIntro.html" class="mm-link">Series & Sequences</a>
+              <ul>
+                <li><a href="../CalcII/Sequences.html" class="mm-link">Sequences</a></li>
+                <li><a href="../CalcII/MoreSequences.html" class="mm-link">More on Sequences</a></li>
+                <li><a href="../CalcII/Series_Basics.html" class="mm-link">Series - The Basics</a></li>
+                <li><a href="../CalcII/ConvergenceOfSeries.html" class="mm-link">Convergence/Divergence of Series</a></li>
+                <li><a href="../CalcII/Series_Special.html" class="mm-link">Special Series</a></li>
+                <li><a href="../CalcII/IntegralTest.html" class="mm-link">Integral Test</a></li>
+                <li><a href="../CalcII/SeriesCompTest.html" class="mm-link">Comparison Test/Limit Comparison Test</a></li>
+                <li><a href="../CalcII/AlternatingSeries.html" class="mm-link">Alternating Series Test</a></li>
+                <li><a href="../CalcII/AbsoluteConvergence.html" class="mm-link">Absolute Convergence</a></li>
+                <li><a href="../CalcII/RatioTest.html" class="mm-link">Ratio Test</a></li>
+                <li><a href="../CalcII/RootTest.html" class="mm-link">Root Test</a></li>
+                <li><a href="../CalcII/SeriesStrategy.html" class="mm-link">Strategy for Series</a></li>
+                <li><a href="../CalcII/EstimatingSeries.html" class="mm-link">Estimating the Value of a Series</a></li>
+                <li><a href="../CalcII/PowerSeries.html" class="mm-link">Power Series</a></li>
+                <li><a href="../CalcII/PowerSeriesandFunctions.html" class="mm-link">Power Series and Functions</a></li>
+                <li><a href="../CalcII/TaylorSeries.html" class="mm-link">Taylor Series</a></li>
+                <li><a href="../CalcII/TaylorSeriesApps.html" class="mm-link">Applications of Series</a></li>
+                <li><a href="../CalcII/BinomialSeries.html" class="mm-link">Binomial Series</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/VectorsIntro.html" class="mm-link">Vectors</a>
+              <ul>
+                <li><a href="../CalcII/Vectors_Basics.html" class="mm-link">Vectors - The Basics</a></li>
+                <li><a href="../CalcII/VectorArithmetic.html" class="mm-link">Vector Arithmetic</a></li>
+                <li><a href="../CalcII/DotProduct.html" class="mm-link">Dot Product</a></li>
+                <li><a href="../CalcII/CrossProduct.html" class="mm-link">Cross Product</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/3DSpace.html" class="mm-link">3-Dimensional Space</a>
+              <ul>
+                <li><a href="../CalcII/3DCoords.html" class="mm-link">The 3-D Coordinate System</a></li>
+                <li><a href="../CalcII/EqnsOfLines.html" class="mm-link">Equations of Lines</a></li>
+                <li><a href="../CalcII/EqnsOfPlanes.html" class="mm-link">Equations of Planes</a></li>
+                <li><a href="../CalcII/QuadricSurfaces.html" class="mm-link">Quadric Surfaces</a></li>
+                <li><a href="../CalcII/MultiVrbleFcns.html" class="mm-link">Functions of Several Variables</a></li>
+                <li><a href="../CalcII/VectorFunctions.html" class="mm-link">Vector Functions</a></li>
+                <li><a href="../CalcII/VectorFcnsCalculus.html" class="mm-link">Calculus with Vector Functions</a></li>
+                <li><a href="../CalcII/TangentNormalVectors.html" class="mm-link">Tangent, Normal and Binormal Vectors</a></li>
+                <li><a href="../CalcII/VectorArcLength.html" class="mm-link">Arc Length with Vector Functions</a></li>
+                <li><a href="../CalcII/Curvature.html" class="mm-link">Curvature</a></li>
+                <li><a href="../CalcII/Velocity_Acceleration.html" class="mm-link">Velocity and Acceleration</a></li>
+                <li><a href="../CalcII/CylindricalCoords.html" class="mm-link">Cylindrical Coordinates</a></li>
+                <li><a href="../CalcII/SphericalCoords.html" class="mm-link">Spherical Coordinates</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../CalcIII/CalcIII.html" class="mm-link">Calculus III</a>
+          <ul>
+            <li><a href="../CalcIII/3DSpace.html" class="mm-link">3-Dimensional Space</a>
+              <ul>
+                <li><a href="../CalcIII/3DCoords.html" class="mm-link">The 3-D Coordinate System</a></li>
+                <li><a href="../CalcIII/EqnsOfLines.html" class="mm-link">Equations of Lines</a></li>
+                <li><a href="../CalcIII/EqnsOfPlanes.html" class="mm-link">Equations of Planes</a></li>
+                <li><a href="../CalcIII/QuadricSurfaces.html" class="mm-link">Quadric Surfaces</a></li>
+                <li><a href="../CalcIII/MultiVrbleFcns.html" class="mm-link">Functions of Several Variables</a></li>
+                <li><a href="../CalcIII/VectorFunctions.html" class="mm-link">Vector Functions</a></li>
+                <li><a href="../CalcIII/VectorFcnsCalculus.html" class="mm-link">Calculus with Vector Functions</a></li>
+                <li><a href="../CalcIII/TangentNormalVectors.html" class="mm-link">Tangent, Normal and Binormal Vectors</a></li>
+                <li><a href="../CalcIII/VectorArcLength.html" class="mm-link">Arc Length with Vector Functions</a></li>
+                <li><a href="../CalcIII/Curvature.html" class="mm-link">Curvature</a></li>
+                <li><a href="../CalcIII/Velocity_Acceleration.html" class="mm-link">Velocity and Acceleration</a></li>
+                <li><a href="../CalcIII/CylindricalCoords.html" class="mm-link">Cylindrical Coordinates</a></li>
+                <li><a href="../CalcIII/SphericalCoords.html" class="mm-link">Spherical Coordinates</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/PartialDerivsIntro.html" class="mm-link">Partial Derivatives</a>
+              <ul>
+                <li><a href="../CalcIII/Limits.html" class="mm-link">Limits</a></li>
+                <li><a href="../CalcIII/PartialDerivatives.html" class="mm-link">Partial Derivatives</a></li>
+                <li><a href="../CalcIII/PartialDerivInterp.html" class="mm-link">Interpretations of Partial Derivatives</a></li>
+                <li><a href="../CalcIII/HighOrderPartialDerivs.html" class="mm-link">Higher Order Partial Derivatives</a></li>
+                <li><a href="../CalcIII/Differentials.html" class="mm-link">Differentials</a></li>
+                <li><a href="../CalcIII/ChainRule.html" class="mm-link">Chain Rule</a></li>
+                <li><a href="../CalcIII/DirectionalDeriv.html" class="mm-link">Directional Derivatives</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/PartialDerivAppsIntro.html" class="mm-link">Applications of Partial Derivatives</a>
+              <ul>
+                <li><a href="../CalcIII/TangentPlanes.html" class="mm-link">Tangent Planes and Linear Approximations</a></li>
+                <li><a href="../CalcIII/GradientVectorTangentPlane.html" class="mm-link">Gradient Vector, Tangent Planes and Normal Lines</a></li>
+                <li><a href="../CalcIII/RelativeExtrema.html" class="mm-link">Relative Minimums and Maximums</a></li>
+                <li><a href="../CalcIII/AbsoluteExtrema.html" class="mm-link">Absolute Minimums and Maximums</a></li>
+                <li><a href="../CalcIII/LagrangeMultipliers.html" class="mm-link">Lagrange Multipliers</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/MultipleIntegralsIntro.html" class="mm-link">Multiple Integrals</a>
+              <ul>
+                <li><a href="../CalcIII/DoubleIntegrals.html" class="mm-link">Double Integrals</a></li>
+                <li><a href="../CalcIII/IteratedIntegrals.html" class="mm-link">Iterated Integrals</a></li>
+                <li><a href="../CalcIII/DIGeneralRegion.html" class="mm-link">Double Integrals over General Regions</a></li>
+                <li><a href="../CalcIII/DIPolarCoords.html" class="mm-link">Double Integrals in Polar Coordinates</a></li>
+                <li><a href="../CalcIII/TripleIntegrals.html" class="mm-link">Triple Integrals</a></li>
+                <li><a href="../CalcIII/TICylindricalCoords.html" class="mm-link">Triple Integrals in Cylindrical Coordinates</a></li>
+                <li><a href="../CalcIII/TISphericalCoords.html" class="mm-link">Triple Integrals in Spherical Coordinates</a></li>
+                <li><a href="../CalcIII/ChangeOfVariables.html" class="mm-link">Change of Variables</a></li>
+                <li><a href="../CalcIII/SurfaceArea.html" class="mm-link">Surface Area</a></li>
+                <li><a href="../CalcIII/Area_Volume.html" class="mm-link">Area and Volume Revisited</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/LineIntegralsIntro.html" class="mm-link">Line Integrals</a>
+              <ul>
+                <li><a href="../CalcIII/VectorFields.html" class="mm-link">Vector Fields</a></li>
+                <li><a href="../CalcIII/LineIntegralsPtI.html" class="mm-link">Line Integrals - Part I</a></li>
+                <li><a href="../CalcIII/LineIntegralsPtII.html" class="mm-link">Line Integrals - Part II</a></li>
+                <li><a href="../CalcIII/LineIntegralsVectorFields.html" class="mm-link">Line Integrals of Vector Fields</a></li>
+                <li><a href="../CalcIII/FundThmLineIntegrals.html" class="mm-link">Fundamental Theorem for Line Integrals</a></li>
+                <li><a href="../CalcIII/ConservativeVectorField.html" class="mm-link">Conservative Vector Fields</a></li>
+                <li><a href="../CalcIII/GreensTheorem.html" class="mm-link">Green's Theorem</a></li>
+                <li><a href="../CalcIII/CurlDivergence.html" class="mm-link">Curl and Divergence</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/SurfaceIntegralsIntro.html" class="mm-link">Surface Integrals</a>
+              <ul>
+                <li><a href="../CalcIII/ParametricSurfaces.html" class="mm-link">Parametric Surfaces</a></li>
+                <li><a href="../CalcIII/SurfaceIntegrals.html" class="mm-link">Surface Integrals</a></li>
+                <li><a href="../CalcIII/SurfIntVectorField.html" class="mm-link">Surface Integrals of Vector Fields</a></li>
+                <li><a href="../CalcIII/StokesTheorem.html" class="mm-link">Stokes' Theorem</a></li>
+                <li><a href="../CalcIII/DivergenceTheorem.html" class="mm-link">Divergence Theorem</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="DE.html" class="mm-link">Differential Equations</a>
+          <ul>
+            <li><a href="IntroBasic.html" class="mm-link">Basic Concepts</a>
+              <ul>
+                <li><a href="Definitions.html" class="mm-link">Definitions</a></li>
+                <li><a href="DirectionFields.html" class="mm-link">Direction Fields</a></li>
+                <li><a href="FinalThoughts.html" class="mm-link">Final Thoughts</a></li>
+              </ul>
+            </li>
+            <li><a href="IntroFirstOrder.html" class="mm-link">First Order DE's</a>
+              <ul>
+                <li><a href="Linear.html" class="mm-link">Linear Equations</a></li>
+                <li><a href="Separable.html" class="mm-link">Separable Equations</a></li>
+                <li><a href="Exact.html" class="mm-link">Exact Equations</a></li>
+                <li><a href="Bernoulli.html" class="mm-link">Bernoulli Differential Equations</a></li>
+                <li><a href="Substitutions.html" class="mm-link">Substitutions</a></li>
+                <li><a href="IoV.html" class="mm-link">Intervals of Validity</a></li>
+                <li><a href="Modeling.html" class="mm-link">Modeling with First Order DE's</a></li>
+                <li><a href="EquilibriumSolutions.html" class="mm-link">Equilibrium Solutions</a></li>
+                <li><a href="EulersMethod.html" class="mm-link">Euler's Method</a></li>
+              </ul>
+            </li>
+            <li><a href="IntroSecondOrder.html" class="mm-link">Second Order DE's</a>
+              <ul>
+                <li><a href="SecondOrderConcepts.html" class="mm-link">Basic Concepts</a></li>
+                <li><a href="RealRoots.html" class="mm-link">Real & Distinct Roots</a></li>
+                <li><a href="ComplexRoots.html" class="mm-link">Complex Roots</a></li>
+                <li><a href="RepeatedRoots.html" class="mm-link">Repeated Roots</a></li>
+                <li><a href="ReductionofOrder.html" class="mm-link">Reduction of Order</a></li>
+                <li><a href="FundamentalSetsofSolutions.html" class="mm-link">Fundamental Sets of Solutions</a></li>
+                <li><a href="Wronskian.html" class="mm-link">More on the  Wronskian</a></li>
+                <li><a href="NonhomogeneousDE.html" class="mm-link">Nonhomogeneous Differential Equations</a></li>
+                <li><a href="UndeterminedCoefficients.html" class="mm-link">Undetermined Coefficients</a></li>
+                <li><a href="VariationofParameters.html" class="mm-link">Variation of Parameters</a></li>
+                <li><a href="Vibrations.html" class="mm-link">Mechanical Vibrations</a></li>
+              </ul>
+            </li>
+            <li><a href="LaplaceIntro.html" class="mm-link">Laplace Transforms</a>
+              <ul>
+                <li><a href="LaplaceDefinition.html" class="mm-link">The Definition</a></li>
+                <li><a href="LaplaceTransforms.html" class="mm-link">Laplace Transforms</a></li>
+                <li><a href="InverseTransforms.html" class="mm-link">Inverse Laplace Transforms</a></li>
+                <li><a href="StepFunctions.html" class="mm-link">Step Functions</a></li>
+                <li><a href="IVPWithLaplace.html" class="mm-link">Solving IVP's with Laplace Transforms</a></li>
+                <li><a href="IVPWithNonConstantCoefficient.html" class="mm-link">Nonconstant Coefficient IVP's</a></li>
+                <li><a href="IVPWithStepFunction.html" class="mm-link">IVP's With Step Functions</a></li>
+                <li><a href="DiracDeltaFunction.html" class="mm-link">Dirac Delta Function</a></li>
+                <li><a href="ConvolutionIntegrals.html" class="mm-link">Convolution Integrals</a></li>
+                <li><a href="Laplace_Table.html" class="mm-link">Table Of Laplace Transforms</a></li>
+              </ul>
+            </li>
+            <li><a href="SystemsIntro.html" class="mm-link">Systems of DE's</a>
+              <ul>
+                <li><a href="LA_Systems.html" class="mm-link">Review : Systems of Equations</a></li>
+                <li><a href="LA_Matrix.html" class="mm-link">Review : Matrices & Vectors</a></li>
+                <li><a href="LA_Eigen.html" class="mm-link">Review : Eigenvalues & Eigenvectors</a></li>
+                <li><a href="SystemsDE.html" class="mm-link">Systems of Differential Equations</a></li>
+                <li><a href="SolutionsToSystems.html" class="mm-link">Solutions to Systems</a></li>
+                <li><a href="PhasePlane.html" class="mm-link">Phase Plane</a></li>
+                <li><a href="RealEigenvalues.html" class="mm-link">Real Eigenvalues</a></li>
+                <li><a href="ComplexEigenvalues.html" class="mm-link">Complex Eigenvalues</a></li>
+                <li><a href="RepeatedEigenvalues.html" class="mm-link">Repeated Eigenvalues</a></li>
+                <li><a href="NonhomogeneousSystems.html" class="mm-link">Nonhomogeneous Systems</a></li>
+                <li><a href="SystemsLaplace.html" class="mm-link">Laplace Transforms</a></li>
+                <li><a href="SystemsModeling.html" class="mm-link">Modeling</a></li>
+              </ul>
+            </li>
+            <li><a href="SeriesIntro.html" class="mm-link">Series Solutions to DE's</a>
+              <ul>
+                <li><a href="PowerSeries.html" class="mm-link">Review : Power Series</a></li>
+                <li><a href="TaylorSeries.html" class="mm-link">Review : Taylor Series</a></li>
+                <li><a href="SeriesSolutions.html" class="mm-link">Series Solutions</a></li>
+                <li><a href="EulerEquations.html" class="mm-link">Euler Equations</a></li>
+              </ul>
+            </li>
+            <li><a href="IntroHigherOrder.html" class="mm-link">Higher Order Differential Equations</a>
+              <ul>
+                <li><a href="HOBasicConcepts.html" class="mm-link">Basic Concepts for <em>n</em><sup>th</sup> Order Linear Equations</a></li>
+                <li><a href="HOHomogeneousDE.html" class="mm-link">Linear Homogeneous Differential Equations</a></li>
+                <li><a href="HOUndeterminedCoeff.html" class="mm-link">Undetermined Coefficients</a></li>
+                <li><a href="HOVariationOfParam.html" class="mm-link">Variation of Parameters</a></li>
+                <li><a href="HOLaplaceTransforms.html" class="mm-link">Laplace Transforms</a></li>
+                <li><a href="HOSystems.html" class="mm-link">Systems of Differential Equations</a></li>
+                <li><a href="HOSeries.html" class="mm-link">Series Solutions</a></li>
+              </ul>
+            </li>
+            <li><a href="IntroBVP.html" class="mm-link">Boundary Value Problems &amp; Fourier Series</a>
+              <ul>
+                <li><a href="BoundaryValueProblem.html" class="mm-link">Boundary Value Problems</a></li>
+                <li><a href="BVPEvals.html" class="mm-link">Eigenvalues and Eigenfunctions</a></li>
+                <li><a href="PeriodicOrthogonal.html" class="mm-link">Periodic Functions &amp; Orthogonal Functions</a></li>
+                <li><a href="FourierSineSeries.html" class="mm-link">Fourier Sine Series</a></li>
+                <li><a href="FourierCosineSeries.html" class="mm-link">Fourier Cosine Series</a></li>
+                <li><a href="FourierSeries.html" class="mm-link">Fourier Series</a></li>
+                <li><a href="ConvergenceFourierSeries.html" class="mm-link">Convergence of Fourier Series</a></li>
+              </ul>
+            </li>
+            <li><a href="IntroPDE.html" class="mm-link">Partial Differential Equations </a>
+              <ul>
+                <li><a href="TheHeatEquation.html" class="mm-link">The Heat Equation</a></li>
+                <li><a href="TheWaveEquation.html" class="mm-link">The Wave Equation</a></li>
+                <li><a href="PDETerminology.html" class="mm-link">Terminology</a></li>
+                <li><a href="SeparationofVariables.html" class="mm-link">Separation of Variables</a></li>
+                <li><a href="SolvingHeatEquation.html" class="mm-link">Solving the Heat Equation</a></li>
+                <li><a href="HeatEqnNonZero.html" class="mm-link">Heat Equation with Non-Zero Temperature Boundaries</a></li>
+                <li><a href="LaplacesEqn.html" class="mm-link">Laplace's Equation</a></li>
+                <li><a href="VibratingString.html" class="mm-link">Vibrating String</a></li>
+                <li><a href="PDESummary.html" class="mm-link">Summary of Separation of Variables</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><span>Extras</span></li>
+        <li><a href="../../Extras/AlgebraTrigReview/AlgebraTrig.html" class="mm-link">Algebra &amp; Trig Review</a>
+          <ul>
+            <li><a href="../../Extras/AlgebraTrigReview/AlgebraIntro.html" class="mm-link">Algebra</a>
+              <ul>
+                <li><a href="../../Extras/AlgebraTrigReview/Exponents.html" class="mm-link">Exponents </a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/AbsoluteValue.html" class="mm-link">Absolute Value</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Radicals.html" class="mm-link">Radicals</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Rationalizing.html" class="mm-link">Rationalizing </a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Functions.html" class="mm-link">Functions </a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/MultPoly.html" class="mm-link">Multiplying Polynomials</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Factoring.html" class="mm-link">Factoring</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SimpRatExp.html" class="mm-link">Simplifying Rational Expressions</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Graphing.html" class="mm-link">Graphing and Common Graphs</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveEqnPtI.html" class="mm-link">Solving Equations, Part I</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveEqnPtII.html" class="mm-link">Solving Equations, Part II</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveSystems.html" class="mm-link">Solving Systems of Equations</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveIneq.html" class="mm-link">Solving Inequalities</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveAbsValue.html" class="mm-link">Absolute Value Equations and Inequalities</a></li>
+              </ul>
+            </li>
+            <li><a href="../../Extras/AlgebraTrigReview/TrigIntro.html" class="mm-link">Trigonometry</a>
+              <ul>
+                <li><a href="../../Extras/AlgebraTrigReview/TrigFunctions.html" class="mm-link">Trig Function Evaluation</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/TrigGraphs.html" class="mm-link">Graphs of Trig Functions</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/TrigFormulas.html" class="mm-link">Trig Formulas</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveTrigEqn.html" class="mm-link">Solving Trig Equations</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/InverseTrig.html" class="mm-link">Inverse Trig Functions</a></li>
+              </ul>
+            </li>
+            <li><a href="../../Extras/AlgebraTrigReview/ExpLogIntro.html" class="mm-link">Exponentials & Logarithms</a>
+              <ul>
+                <li><a href="../../Extras/AlgebraTrigReview/ExponentialFcns.html" class="mm-link">Basic Exponential Functions</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/LogarithmFcns.html" class="mm-link">Basic Logarithm Functions</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/LogProperties.html" class="mm-link">Logarithm Properties</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SimpLogs.html" class="mm-link">Simplifying Logarithms</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveExpEqn.html" class="mm-link">Solving Exponential Equations</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveLogEqn.html" class="mm-link">Solving Logarithm Equations</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../../Extras/CommonErrors/CommonMathErrors.html" class="mm-link">Common Math Errors</a>
+          <ul>
+            <li><a href="../../Extras/CommonErrors/GeneralErrors.html" class="mm-link">General Errors</a>
+            </li>
+            <li><a href="../../Extras/CommonErrors/AlgebraErrors.html" class="mm-link">Algebra Errors</a>
+            </li>
+            <li><a href="../../Extras/CommonErrors/TrigErrors.html" class="mm-link">Trig Errors</a>
+            </li>
+            <li><a href="../../Extras/CommonErrors/CommonErrors.html" class="mm-link">Common Errors</a>
+            </li>
+            <li><a href="../../Extras/CommonErrors/CalculusErrors.html" class="mm-link">Calculus Errors</a>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../../Extras/ComplexPrimer/ComplexNumbers.html" class="mm-link">Complex Number Primer</a>
+          <ul>
+            <li><a href="../../Extras/ComplexPrimer/Definition.html" class="mm-link">The Definition</a>
+            </li>
+            <li><a href="../../Extras/ComplexPrimer/Arithmetic.html" class="mm-link">Arithmetic</a>
+            </li>
+            <li><a href="../../Extras/ComplexPrimer/ConjugateModulus.html" class="mm-link">Conjugate and Modulus</a>
+            </li>
+            <li><a href="../../Extras/ComplexPrimer/Forms.html" class="mm-link">Polar and Exponential Forms</a>
+            </li>
+            <li><a href="../../Extras/ComplexPrimer/Roots.html" class="mm-link">Powers and Roots</a>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../../Extras/StudyMath/HowToStudyMath.html" class="mm-link">How To Study Math</a>
+          <ul>
+            <li><a href="../../Extras/StudyMath/GeneralTips.html" class="mm-link">General Tips</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/TakingNotes.html" class="mm-link">Taking Notes</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/GettingHelp.html" class="mm-link">Getting Help</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/Homework.html" class="mm-link">Doing Homework</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/ProblemSolving.html" class="mm-link">Problem Solving</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/StudyForExam.html" class="mm-link">Studying For an Exam</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/TakingExam.html" class="mm-link">Taking an Exam</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/Errors.html" class="mm-link">Learn From Your Errors</a>
+            </li>
+          </ul>
+        </li>
+
+        <li><span>Misc Links</span></li>
+        <li><a href="http://tutorial.math.lamar.edu/contact.aspx" class="mm-link">Contact Me</a></li>
+        <li><a href="../../links.html" class="mm-link">Links</a></li>
+        <li><a href="../../mathjax.html" class="mm-link">MathJax Help and Configuration</a></li>
+        <li><a href="../../mystudents.html" class="mm-link">My Students</a></li>
+        <li><a href="http://tutorial.math.lamar.edu/privacy.aspx" class="mm-link">Privacy Statement</a></li>
+        <li><a href="../../help.html" class="mm-link">Site Help & FAQ</a></li>
+        <li><a href="http://tutorial.math.lamar.edu/terms.aspx" class="mm-link">Terms of Use</a></li>
+      </ul>
+    </nav>
+
+
+
+    <div class="top-info-bar">
+      <span id="mobile-title" class="mobile-header-title header-title">Paul's Online Notes</span>
+      <br />
+      <span class="top-menu-breadcrumb">
+        <a href="../../index.html" id="breadcrumb_home_link" title="Go to Main Page">Home</a>
+        <span id="breadcrumb_h_b_sep_span">/ </span>
+        <a href="DE.html" id="breadcrumb_book_link" title="Go to Book Introduction">Differential Equations</a>
+        
+        <span id="breadcrumb_b_c_sep_span">/ </span>
+        <a href="SeriesIntro.html" id="breadcrumb_chapter_link" title="Go to Chapter Introduction">Series Solutions to DE&#39;s</a>
+        
+        <span id="breadcrumb_section_span"> / Review : Power Series</span>
+      </span>
+
+    </div>
+
+    
+
+    <div class="header-divider"></div>
+
+    <div class="content">  
+      
+      
+      <span id="SHLink_NoteMobile" class="SH-Link content-note-link-mobile">Show Mobile Notice</span>
+      <span id="SHImg_NoteMobile" class="fas fa-caret-right SH-padding content-note-link-mobile" aria-hidden="true"></span>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+
+      <span id="SHALink_S_Note" class="SH-Link SH-Hide SH-Bracket">Show All Notes</span>&nbsp;<span id="SHALink_H_Note" class="SH-Link SH-Hide SH-Bracket">Hide All Notes</span>
+      
+      
+      <div id="SHObj_NoteMobile" class="content-note-container content-note-container-mobile">
+        <div class="content-note-header">Mobile Notice</div>
+        <div class="content-note">You appear to be on a device with a "narrow" screen width (<em>i.e.</em> you are probably on a mobile phone).  Due to the nature of the mathematics on this site it is best views in landscape mode.  If your device is not in landscape mode many of the equations will run off the side of your device (should be able to scroll to see them) and some of the menu items will be cut off due to the narrow screen width.</div>
+      </div>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+
+      
+
+
+  <form method="post" action="http://tutorial.math.lamar.edu/Classes/DE/PowerSeries.aspx" id="ctl00">
+<div class="aspNetHidden">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+</div>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="56001CD7" />
+</div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </form>
+
+  <h3>Section 6-1 : Review : Power Series</h3>
+
+    
+    <p>Before looking at series solutions to a differential equation we will first need to do a cursory review of power series.  A power series is a series in the form,</p>
+    
+      \[\begin{equation}f\left( x \right) = \sum\limits_{n = 0}^\infty  {{a_n}{{\left( {x - {x_0}} \right)}^n}} \label{eq:eq1}\end{equation}\] 
+
+    <p>where, \(x_{0}\) and \(a_{n}\) are numbers.  We can see from this that a power series is a function of \(x\).  The function notation is not always included, but sometimes it is so we put it into the definition above.</p>
+    
+    <p>Before proceeding with our review we should probably first recall just what series really are.  Recall that series are really just summations.  One way to write our power series is then,</p>
+    
+      \[\begin{equation}\begin{aligned}f\left( x \right) &= \sum\limits_{n = 0}^\infty  {{a_n}{{\left( {x - {x_0}} \right)}^n}} \\ &amp;  = {a_0} + {a_1}\left( {x - {x_0}} \right) + {a_2}{\left( {x - {x_0}} \right)^2} + {a_3}{\left( {x - {x_0}} \right)^3} +  \cdots \end{aligned}\label{eq:eq2}\end{equation}\] 
+    
+    <p>Notice as well that if we needed to for some reason we could always write the power series as,</p>
+    
+      \[\begin{align*}f\left( x \right) &= \sum\limits_{n = 0}^\infty  {{a_n}{{\left( {x - {x_0}} \right)}^n}} \\ &amp;  = {a_0} + {a_1}\left( {x - {x_0}} \right) + {a_2}{\left( {x - {x_0}} \right)^2} + {a_3}{\left( {x - {x_0}} \right)^3} +  \cdots \\ &amp;  = {a_0} + \sum\limits_{n = 1}^\infty  {{a_n}{{\left( {x - {x_0}} \right)}^n}} \end{align*}\]
+    
+    <p>All that we’re doing here is noticing that if we ignore the first term (corresponding to \(n = 0\)) the remainder is just a series that starts at \(n = 1\).  When we do this we say that we’ve stripped out the \(n = 0\), or first, term.  We don’t need to stop at the first term either.  If we strip out the first three terms we’ll get,</p>
+    
+      \[\sum\limits_{n = 0}^\infty  {{a_n}{{\left( {x - {x_0}} \right)}^n}}  = {a_0} + {a_1}\left( {x - {x_0}} \right) + {a_2}{\left( {x - {x_0}} \right)^2} + \sum\limits_{n = 3}^\infty  {{a_n}{{\left( {x - {x_0}} \right)}^n}} \]
+    
+    <p>There are times when we’ll want to do this so make sure that you can do it.</p>
+    
+    <p>Now, since power series are functions of \(x\) and we know that not every series will in fact exist, it then makes sense to ask if a power series will exist for all \(x\).  This question is answered by looking at the convergence of the power series.  We say that a power series <strong>converges</strong> for \(x = c\) if the series,</p>
+    
+        \[\sum\limits_{n = 0}^\infty  {{a_n}{{\left( {c - {x_0}} \right)}^n}} \]
+    <p>converges.  Recall that this series will converge if the limit of partial sums,</p>
+    
+      \[\mathop {\lim }\limits_{N \to \infty } \sum\limits_{n = 0}^N {{a_n}{{\left( {c - {x_0}} \right)}^n}} \]
+    <p>exists and is finite.  In other words, a power series will converge for \(x = c\) if</p>
+    
+        \[\sum\limits_{n = 0}^\infty  {{a_n}{{\left( {c - {x_0}} \right)}^n}} \]
+    <p>is a finite number.</p>
+    
+    <p>Note that a power series will always converge if \(x = x_{0}\).  In this case the power series will become</p>
+    
+        \[\sum\limits_{n = 0}^\infty  {{a_n}{{\left( {{x_0} - {x_0}} \right)}^n}}  = {a_0}\]
+    
+    <p>With this we now know that power series are guaranteed to exist for at least one value of \(x\).  We have the following fact about the convergence of a power series.</p>
+    
+    <h4>Fact</h4>
+  <div class="fact">
+    <p>Given a power series, \(\eqref{eq:eq1}\), there will exist a number \(0 \le \rho  \le \infty \) so that the power series will converge for \(\left| {x - {x_0}} \right| &lt; \rho \) and diverge for \(\left| {x - {x_0}} \right| &gt; \rho \). This number is called the <strong>radius of convergence</strong>.</p>
+  </div>
+    
+    <p>Determining the radius of convergence for most power series is usually quite simple if we use the ratio test.</p>
+    
+    <h4>Ratio Test</h4>
+  <div class="fact">
+    <p>Given a power series compute,</p>
+          
+            \[L = \left| {x - {x_0}} \right|\mathop {\lim }\limits_{n \to \infty } \left| {\frac{{{a_{n + 1}}}}{{{a_n}}}} \right|\]
+          <p>then,</p>
+          
+            \[\begin{align*}& L &lt; 1 & \Rightarrow \hspace{0.25in} &{\mbox{the series converges}}\\ &amp; L &gt; 1 & \Rightarrow \hspace{0.25in} &{\mbox{the series diverges}}\\ &amp; L = 1 & \Rightarrow \hspace{0.25in} &{\mbox{the series may converge or diverge}}\end{align*}\]
+  </div>
+    
+    <p>Let’s take a quick look at how this can be used to determine the radius of convergence.</p>
+    <a class="anchor" name="Series_Power_Ex1"></a>
+  <div class="example">
+    <span class="example-title">Example 1</span> Determine the radius of convergence for the following power series.
+          
+            \[\sum\limits_{n = 0}^\infty  {\frac{{{{\left( { - 3} \right)}^n}}}{{n\,{7^{n + 1}}}}{{\left( {x - 5} \right)}^n}} \]
+    <div class="example-content">
+      <span id="SHLink_Soln1" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln1" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln1" class="soln-content">
+        <p>So, in this case we have,</p>
+          
+              \[{a_n} = \frac{{{{\left( { - 3} \right)}^n}}}{{n\,{7^{n + 1}}}}\hspace{0.25in}{a_{n + 1}} = \frac{{{{\left( { - 3} \right)}^{n + 1}}}}{{\left( {n + 1} \right)\,{7^{n + 2}}}}\]
+          <p>Remember that to compute \(a_{n+1}\) all we do is replace all the \(n\)’s in \(a_{n}\) with \(n+1\).  Using the ratio test then gives,</p>
+          
+            \[\begin{align*}L & = \left| {x - 5} \right|\mathop {\lim }\limits_{n \to \infty } \left| {\frac{{{a_{n + 1}}}}{{{a_n}}}} \right|\\ &amp;  = \left| {x - 5} \right|\mathop {\lim }\limits_{n \to \infty } \left| {\frac{{{{\left( { - 3} \right)}^{n + 1}}}}{{\left( {n + 1} \right)\,{7^{n + 2}}}}\,\,\frac{{n\,{7^{n + 1}}}}{{{{\left( { - 3} \right)}^n}}}} \right|\\ &amp;  = \left| {x - 5} \right|\mathop {\lim }\limits_{n \to \infty } \left| {\frac{{ - 3}}{{\left( {n + 1} \right)\,7}}\,\,\frac{n}{1}} \right|\\ &amp;  = \frac{3}{7}\left| {x - 5} \right|\end{align*}\]
+          
+          <p>Now we know that the series will converge if,</p>
+          
+              \[\frac{3}{7}\left| {x - 5} \right| &lt; 1\hspace{0.25in} \Rightarrow \hspace{0.25in}\left| {x - 5} \right| &lt; \frac{7}{3}\]
+          <p>and the series will diverge if,</p>
+          
+              \[\frac{3}{7}\left| {x - 5} \right| &gt; 1\hspace{0.25in} \Rightarrow \hspace{0.25in}\left| {x - 5} \right| &gt; \frac{7}{3}\]
+          
+          <p>In other words, the radius of the convergence for this series is,</p>
+          
+              \[\rho  = \frac{7}{3}\]
+      </div>
+    </div>
+  </div>
+    
+    <p>As this last example has shown, the radius of convergence is found almost immediately upon using the ratio test.</p>
+    
+    <p>So, why are we worried about the convergence of power series?  Well in order for a series solution to a differential equation to exist at a particular \(x\) it will need to be convergent at that \(x\).  If it’s not convergent at a given \(x\) then the series solution won’t exist at that \(x\).  So, the convergence of power series is fairly important.</p>
+    
+    <p>Next, we need to do a quick review of some of the basics of manipulating series.  We’ll start with addition and subtraction.</p>
+    
+    <p>There really isn’t a whole lot to addition and subtraction.  All that we need to worry about is that the two series start at the same place and both have the same exponent of the \(x-x_{0}\).  If they do then we can perform addition and/or subtraction as follows,</p>
+    
+      \[\sum\limits_{n = {n_0}}^\infty  {{a_n}{{\left( {x - {x_0}} \right)}^n}}  \pm \sum\limits_{n = {n_0}}^\infty  {{b_n}{{\left( {x - {x_0}} \right)}^n}}  = \sum\limits_{n = {n_0}}^\infty  {\left( {{a_n} \pm {b_n}} \right){{\left( {x - {x_0}} \right)}^n}} \]
+    
+    <p>In other words, all we do is add or subtract the coefficients and we get the new series.</p>
+    
+    <p>One of the rules that we’re going to have when we get around to finding series solutions to differential equations is that the only \(x\) that we want in a series is the \(x\) that sits in \({\left( {x - {x_0}} \right)^n}\).  This means that we will need to be able to deal with series of the form,</p>
+    
+      \[{\left( {x - {x_0}} \right)^c}\sum\limits_{n = 0}^\infty  {{a_n}{{\left( {x - {x_0}} \right)}^n}} \]
+    <p>where \(c\) is some constant.  These are actually quite easy to deal with.</p>
+    
+      \[\begin{align*}{\left( {x - {x_0}} \right)^c}\sum\limits_{n = 0}^\infty  {{a_n}{{\left( {x - {x_0}} \right)}^n}} & = {\left( {x - {x_0}} \right)^c}\left( {{a_0} + {a_1}\left( {x - {x_0}} \right) + {a_2}{{\left( {x - {x_0}} \right)}^2} +  \cdots } \right)\\ &amp;  = {a_0}{\left( {x - {x_0}} \right)^c} + {a_1}{\left( {x - {x_0}} \right)^{1 + c}} + {a_2}{\left( {x - {x_0}} \right)^{2 + c}} +  \cdots \\ &amp; \sum\limits_{n = 0}^\infty  {{a_n}{{\left( {x - {x_0}} \right)}^{n + c}}} \end{align*}\]
+    
+    <p>So, all we need to do is to multiply the term in front into the series and add exponents.  Also note that in order to do this both the coefficient in front of the series and the term inside the series must be in the form \(x-x_{0}\).  If they are not the same we can’t do this, we will eventually see how to deal with terms that aren’t in this form.</p>
+    <a class="anchor" name="Derivative"></a>
+    <p>Next, we need to talk about differentiation of a power series.  By looking at \(\eqref{eq:eq2}\) it should be fairly easy to see how we will differentiate a power series.  Since a series is just a giant summation all we need to do is differentiate the individual terms.  The derivative of a power series will be,</p>
+    
+      \[\begin{align*}f'\left( x \right) & = {a_1} + 2{a_2}\left( {x - {x_0}} \right) + 3{a_3}{\left( {x - {x_0}} \right)^2} +  \cdots \\ &amp;  = \sum\limits_{n = 1}^\infty  {n{a_n}{{\left( {x - {x_0}} \right)}^{n - 1}}} \\ &amp;  = \sum\limits_{n = 0}^\infty  {n{a_n}{{\left( {x - {x_0}} \right)}^{n - 1}}} \end{align*}\]
+    
+    <p>So, all we need to do is just differentiate the term inside the series and we’re done.  Notice as well that there are in fact two forms of the derivative.  Since the \(n = 0\) term of the derivative is zero it won’t change the value of the series and so we can include it or not as we need to.  In our work we will usually want the derivative to start at \(n = 1\), however there will be the occasional problem were it would be more convenient to start it at \(n = 0\).</p>
+    
+    <p>Following how we found the first derivative it should make sense that the second derivative is,</p>
+    
+      \[\begin{align*}f''\left( x \right) & = \sum\limits_{n = 2}^\infty  {n\left( {n - 1} \right){a_n}{{\left( {x - {x_0}} \right)}^{n - 2}}} \\ &amp;  = \sum\limits_{n = 1}^\infty  {n\left( {n - 1} \right){a_n}{{\left( {x - {x_0}} \right)}^{n - 2}}} \\ &amp;  = \sum\limits_{n = 0}^\infty  {n\left( {n - 1} \right){a_n}{{\left( {x - {x_0}} \right)}^{n - 2}}} \end{align*}\]
+    
+    <p>In this case since the \(n = 0\) and \(n = 1\) terms are both zero we can start at any of three possible starting points as determined by the problem that we’re working.</p>
+    <a class="anchor" name="Index_Shift"></a>
+    <p>Next, we need to talk about <strong>index shifts</strong>.  As we will see eventually we are going to want our power series written in terms of \({\left( {x - {x_0}} \right)^n}\) and they often won’t, initially at least, be in that form.  To get them into the form we need we will need to perform an index shift.</p>
+    
+    <p>Index shifts themselves really aren’t concerned with the exponent on the \(x\) term, they instead are concerned with where the series starts as the following example shows.</p>
+    <a class="anchor" name="Series_Power_Ex2"></a>
+  <div class="example">
+    <span class="example-title">Example 2</span> Write the following as a series that starts at \(n = 0\) instead of \(n = 3\).
+          
+              \[\sum\limits_{n = 3}^\infty  {{n^2}{a_{n - 1}}{{\left( {x + 4} \right)}^{n + 2}}} \]
+    <div class="example-content">
+      <span id="SHLink_Soln2" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln2" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln2" class="soln-content">
+        <p>An index shift is a fairly simple manipulation to perform.  First, we will notice that if we define \(i=n-3\) then when \(n = 3\) we will have \(i=0\).  So, what we’ll do is rewrite the series in terms of \(i\) instead of \(n\).  We can do this by noting that \(n=i+3\).  So, everywhere we see an \(n\) in the actual series term we will replace it with an \(i+3\).  Doing this gives,</p>
+          
+            \[\begin{align*}\sum\limits_{n = 3}^\infty  {{n^2}{a_{n - 1}}{{\left( {x + 4} \right)}^{n + 2}}}  & = \sum\limits_{i = 0}^\infty  {{{\left( {i + 3} \right)}^2}{a_{i + 3 - 1}}{{\left( {x + 4} \right)}^{i + 3 + 2}}} \\ &amp;  = \sum\limits_{i = 0}^\infty  {{{\left( {i + 3} \right)}^2}{a_{i + 2}}{{\left( {x + 4} \right)}^{i + 5}}} \end{align*}\]
+          
+          <p>The upper limit won’t change in this process since infinity minus three is still infinity.</p>
+          
+          <p>The final step is to realize that the letter we use for the index doesn’t matter and so we can just switch back to \(n\)’s.</p>
+          
+            \[\sum\limits_{n = 3}^\infty  {{n^2}{a_{n - 1}}{{\left( {x + 4} \right)}^{n + 2}}}  = \sum\limits_{n = 0}^\infty  {{{\left( {n + 3} \right)}^2}{a_{n + 2}}{{\left( {x + 4} \right)}^{n + 5}}} \]
+      </div>
+    </div>
+  </div>
+    
+    <p>Now, we usually don’t go through this process to do an index shift.  All we do is notice that we dropped the starting point in the series by 3 and everywhere else we saw an \(n\) in the series we increased it by 3.  In other words, all the \(n\)’s in the series move in the opposite direction that we moved the starting point.</p>
+    <a class="anchor" name="Series_Power_Ex3"></a>
+  <div class="example">
+    <span class="example-title">Example 3</span> Write the following as a series that starts at \(n = 5\) instead of \(n = 3\).</p>
+          
+              \[\sum\limits_{n = 3}^\infty  {{n^2}{a_{n - 1}}{{\left( {x + 4} \right)}^{n + 2}}} \]
+    <div class="example-content">
+      <span id="SHLink_Soln3" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln3" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln3" class="soln-content">
+        <p>To start the series to start at \(n = 5\) all we need to do is notice that this means we will increase the starting point by 2 and so all the other \(n\)’s will need to decrease by 2.  Doing this for the series in the previous example would give,</p>
+          
+            \[\sum\limits_{n = 3}^\infty  {{n^2}{a_{n - 1}}{{\left( {x + 4} \right)}^{n + 2}}}  = \sum\limits_{n = 5}^\infty  {{{\left( {n - 2} \right)}^2}{a_{n - 3}}{{\left( {x + 4} \right)}^n}} \]
+      </div>
+    </div>
+  </div>
+    
+    <p>Now, as we noted when we started this discussion about index shift the whole point is to get our series into terms of \({\left( {x - {x_0}} \right)^n}\).  We can see in the previous example that we did exactly that with an index shift.  The original exponent on the <em>(x+4)</em> was <em>n+2</em>.  To get this down to an \(n\) we needed to decrease the exponent by 2.  This can be done with an index that increases the starting point by 2.</p>
+    
+    <p>Let’s take a look at a couple of more examples of this.</p>
+    <a class="anchor" name="Series_Power_Ex4"></a>
+  <div class="example">
+    <span class="example-title">Example 4</span> Write each of the following as a single series in terms of \({\left( {x - {x_0}} \right)^n}\).
+    <ol class="example_parts_list">
+      <li>\({\left( {x + 2} \right)^2}\sum\limits_{n = 3}^\infty  {n{a_n}{{\left( {x + 2} \right)}^{n - 4}}}  - \sum\limits_{n = 1}^\infty  {n{a_n}{{\left( {x + 2} \right)}^{n + 1}}} \)</li>
+      <li>\(x\sum\limits_{n = 0}^\infty  {{{\left( {n - 5} \right)}^2}{b_{n + 1}}{{\left( {x - 3} \right)}^{n + 3}}} \)</li>
+    </ol>
+    <span id="SHALink_S_Soln4" class="SH-Link SH-All">Show All Solutions</span>&nbsp;<span id="SHALink_H_Soln4" class="SH-Link SH-All">Hide All Solutions</span>
+    <div class="example-content">
+      <span class="soln-list-item soln-list-subitem">a</span> \({\left( {x + 2} \right)^2}\sum\limits_{n = 3}^\infty  {n{a_n}{{\left( {x + 2} \right)}^{n - 4}}}  - \sum\limits_{n = 1}^\infty  {n{a_n}{{\left( {x + 2} \right)}^{n + 1}}} \) <span id="SHLink_Soln4a" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln4a" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln4a" class="soln-content">
+        <p>First, notice that there are two series here and the instructions clearly ask for only a single series.  So, we will need to subtract the two series at some point in time.  The vast majority of our work will be to get the two series prepared for the subtraction.  This means that the two series can’t have any coefficients in front of them (other than one of course…), they will need to start at the same value of \(n\) and they will need the same exponent on the \(x-x_{0}\).</p>
+          
+          <p>We’ll almost always want to take care of any coefficients first.  So, we have one in front of the first series so let’s multiply that into the first series.  Doing this gives,</p>
+          
+            \[\sum\limits_{n = 3}^\infty  {n{a_n}{{\left( {x + 2} \right)}^{n - 2}}}  - \sum\limits_{n = 1}^\infty  {n{a_n}{{\left( {x + 2} \right)}^{n + 1}}} \]
+          
+          <p>Now, the instructions specify that the new series must be in terms of \({\left( {x - {x_0}} \right)^n}\), so that’s the next thing that we’ve got to take care of.  We will do this by an index shift on each of the series.  The exponent on the first series needs to go up by two so we’ll shift the first series down by 2.  On the second series will need to shift up by 1 to get the exponent to move down by 1.  Performing the index shifts gives us the following,</p>
+          
+            \[\sum\limits_{n = 1}^\infty  {\left( {n + 2} \right){a_{n + 2}}{{\left( {x + 2} \right)}^n}}  - \sum\limits_{n = 2}^\infty  {\left( {n - 1} \right){a_{n - 1}}{{\left( {x + 2} \right)}^n}} \]
+          
+          <p>Finally, in order to subtract the two series we’ll need to get them to start at the same value of \(n\).  Depending on the series in the problem we can do this in a variety of ways.  In this case let’s notice that since there is an <em>n-1</em> in the second series we can in fact start the second series at \(n = 1\) without changing its value.  Also note that in doing so we will get both of the series to start at \(n = 1\) and so we can do the subtraction.  Our final answer is then,</p>
+          
+            \[\sum\limits_{n = 1}^\infty  {\left( {n + 2} \right){a_{n + 2}}{{\left( {x + 2} \right)}^n}}  - \sum\limits_{n = 1}^\infty  {\left( {n - 1} \right){a_{n - 1}}{{\left( {x + 2} \right)}^n}}  = \sum\limits_{n = 1}^\infty  {\left[ {\left( {n + 2} \right){a_{n + 2}} - \left( {n - 1} \right){a_{n - 1}}} \right]{{\left( {x + 2} \right)}^n}} \]
+      </div>
+
+      <br />
+      <span class="soln-list-item soln-list-subitem">b</span> \(x\sum\limits_{n = 0}^\infty  {{{\left( {n - 5} \right)}^2}{b_{n + 1}}{{\left( {x - 3} \right)}^{n + 3}}} \) <span id="SHLink_Soln4b" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln4b" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln4b" class="soln-content">
+        <p>In this part the main issue is the fact that we can’t just multiply the coefficient into the series this time since the coefficient doesn’t have the same form as the term inside the series.  Therefore, the first thing that we’ll need to do is correct the coefficient so that we can bring it into the series.  We do this as follows,</p>
+          
+            \[\begin{align*}x\sum\limits_{n = 0}^\infty  {{{\left( {n - 5} \right)}^2}{b_{n + 1}}{{\left( {x - 3} \right)}^{n + 3}}} & = \left( {x - 3 + 3} \right)\sum\limits_{n = 0}^\infty  {{{\left( {n - 5} \right)}^2}{b_{n + 1}}{{\left( {x - 3} \right)}^{n + 3}}} \\ &amp;  = \left( {x - 3} \right)\sum\limits_{n = 0}^\infty  {{{\left( {n - 5} \right)}^2}{b_{n + 1}}{{\left( {x - 3} \right)}^{n + 3}}}  + 3\sum\limits_{n = 0}^\infty  {{{\left( {n - 5} \right)}^2}{b_{n + 1}}{{\left( {x - 3} \right)}^{n + 3}}} \end{align*}\]
+          
+          <p>We can now move the coefficient into the series, but in the process of we managed to pick up a second series.  This will happen so get used to it.  Moving the coefficients of both series in gives,</p>
+          
+            \[\sum\limits_{n = 0}^\infty  {{{\left( {n - 5} \right)}^2}{b_{n + 1}}{{\left( {x - 3} \right)}^{n + 4}}}  + \sum\limits_{n = 0}^\infty  {3{{\left( {n - 5} \right)}^2}{b_{n + 1}}{{\left( {x - 3} \right)}^{n + 3}}} \]
+          
+          <p>We now need to get the exponent in both series to be an \(n\).  This will mean shifting the first series up by 4 and the second series up by 3.  Doing this gives,</p>
+          
+            \[\sum\limits_{n = 4}^\infty  {{{\left( {n - 9} \right)}^2}{b_{n - 3}}{{\left( {x - 3} \right)}^n}}  + \sum\limits_{n = 3}^\infty  {3{{\left( {n - 8} \right)}^2}{b_{n - 2}}{{\left( {x - 3} \right)}^n}} \]
+          
+          <p>In this case we can’t just start the first series at \(n = 3\) because there is not an \(n-3\) sitting in that series to make the \(n = 3\) term zero.  So, we won’t be able to do this part as we did in the first part of this example.</p>
+          
+          <p>What we’ll need to do in this part is strip out the \(n = 3\) from the second series so they will both start at \(n = 4\).  We will then be able to add the two series together.  Stripping out the \(n = 3\) term from the second series gives,</p>
+          
+            \[\sum\limits_{n = 4}^\infty  {{{\left( {n - 9} \right)}^2}{b_{n - 3}}{{\left( {x - 3} \right)}^n}}  + 3{\left( { - 5} \right)^2}{b_1}{\left( {x - 3} \right)^3} + \sum\limits_{n = 4}^\infty  {3{{\left( {n - 8} \right)}^2}{b_{n - 2}}{{\left( {x - 3} \right)}^n}} \]
+          
+          <p>We can now add the two series together.</p>
+          
+            \[75{b_1}{\left( {x - 3} \right)^3} + \sum\limits_{n = 4}^\infty  {\left[ {{{\left( {n - 9} \right)}^2}{b_{n - 3}} + 3{{\left( {n - 8} \right)}^2}{b_{n - 2}}} \right]{{\left( {x - 3} \right)}^n}} \]
+          
+          <p>This is what we’re looking for.  We won’t worry about the extra term sitting in front of the series.  When we finally get around to finding series solutions to differential equations we will see how to deal with that term there.</p>
+      </div>
+    </div>
+  </div>
+    
+    <p>There is one final fact that we need take care of before moving on.  Before giving this fact for power series let’s notice that the only way for</p>
+    
+        \[a + bx + c{x^2} = 0\]
+    <p>to be zero for all \(x\) is to have \(a = b = c = 0\).</p>
+    
+    <p>We’ve got a similar fact for power series.</p>
+    <a class="anchor" name="PowerFact"></a>
+    <h4>Fact</h4>
+  <div class="fact">
+    <p>If,</p>
+          
+              \[\sum\limits_{n = 0}^\infty  {{a_n}{{\left( {x - {x_0}} \right)}^n} = 0} \]
+          <p>for all \(x\) then,</p>
+          
+            \[{a_n} = 0,\,\,\,n = 0,1,2, \ldots \]
+  </div>
+    
+    <p>This fact will be key to our work with differential equations so don’t forget it.</p>
+    
+  
+
+
+      
+
+
+
+    </div>
+    <!-- End of content div -->
+
+
+    <div class="footer">
+      <div class="footer-links">
+        [<a href="http://tutorial.math.lamar.edu/Contact.aspx">Contact Me</a>]&nbsp;[<a href="../../MyStudents-2.html">My Students</a>]&nbsp;[<a href="http://tutorial.math.lamar.edu/Privacy.aspx">Privacy Statement</a>]&nbsp;[<a href="../../Help-2.html">Site Help &amp; FAQ</a>]&nbsp;[<a href="http://tutorial.math.lamar.edu/Terms.aspx">Terms of Use</a>]
+      </div>
+      <div class="footer-dates">
+        <div class="footer-copyright"><span id="lblCopyRight">&copy; 2003 - 2019 Paul Dawkins</span></div>
+        <div class="footer-spacer"></div>
+        <div class="footer-modified-date">Page Last Modified : <span id="lblModified">6/4/2018</span></div>
+      </div>
+      
+
+    </div>
+  </div>
+  <!-- End of page div...  -->
+</body>
+
+<!-- Mirrored from tutorial.math.lamar.edu/Classes/DE/PowerSeries.aspx by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 27 Feb 2019 06:15:36 GMT -->
+</html>

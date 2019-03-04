@@ -1,0 +1,1407 @@
+
+
+<!DOCTYPE html>
+
+<html>
+
+<!-- Mirrored from tutorial.math.lamar.edu/Classes/DE/EulersMethod.aspx by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 27 Feb 2019 06:15:36 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=yes" /><meta http-equiv="X-UA-Compatible" content="IE=edge" />  <!-- For best MathJax performance on IE  -->
+
+  <meta name="google-site-verification" content="uLoA31CJfOhIVMJWBjCmQL8xNMmmLybZU3LRKavy9WQ" /><title>
+	Differential Equations - Euler's Method
+</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="../../../www.googletagmanager.com/gtag/js1872?id=UA-331594-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-331594-1');
+  </script>
+
+  <link type="text/css" href="../../css/jquery.mmenu.all.css" rel="stylesheet" /><link type="text/css" href="../../css/jquery.dropdown.css" rel="stylesheet" /><link href="../../FA/css/fontawesome-all.min.css" rel="stylesheet" /><link type="text/css" href="../../css/notes-all.css" rel="stylesheet" /><link type="text/css" href="../../css/notes-google.css" rel="stylesheet" /><link type="text/css" href="../../css/notes-mmenu.css" rel="stylesheet" /><link type="text/css" href="../../css/notes-dropdown.css" rel="stylesheet" />
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+     TeX: { equationNumbers: { autoNumber: "AMS" } }
+    });
+  </script>
+  <script type="text/javascript" async src="../../../cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax2ba6.js?config=TeX-AMS_CHTML-full"></script>
+  <script type="text/javascript" src="../../../code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="../../js/jquery.mmenu.all.js"></script>
+  <script type="text/javascript" src="../../js/jquery.dropdown.js"></script>
+  <script type="text/javascript" src="../../js/notes-all.js"></script>  
+
+  <script>
+    (function () {
+      var cx = '001004262401526223570:11yv6vpcqvy';
+      var gcse = document.createElement('script');
+      gcse.type = 'text/javascript';
+      gcse.async = true;
+      gcse.src = '../../../cse.google.com/cse07b6.html?cx=' + cx;
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(gcse, s);
+    })();
+  </script>
+
+<meta http-equiv="keywords" name="keywords" content="eulers method, approximating solutions, approximate solution" /><meta http-equiv="description" name="description" content="In this section we’ll take a brief look at a fairly simple method for approximating solutions to differential equations.  We derive the formulas used by Euler’s Method and give a brief discussion of the errors in the approximations of the solutions." /></head>
+<body onload="init({Notes: 'NoteMobile;8/21/2018;true'})">
+
+  <div id="page">
+
+    <div class="header">
+      <div class="header-row">
+        <!--<a href="#menu"><span></span></a>-->
+        <div id="side-menu-icon" class="header-side-menu-icon"><a href="#menu"><span class="fas fa-bars fa-lg" aria-hidden="true" title="Main Menu - Change between topics, chapters and sections as well as a few extra pages."></span></a></div>
+        <span class="header-title"><a href="../../index.html" class="header-title-link">Paul's Online Notes</a></span>
+        <div class="header-spacer"></div>
+
+        <div id="content-top-menu" class="top-menu">
+          <button id="content-type-menu" class="top-menu-button" data-jq-dropdown="#jq-dropdown-type" title="View (Notes, Practice Problems or Assignment Problems, Show/Hide Solutions and/or Steps) Menu">
+            <span id="tab_top_menu_notes" class="top-menu-item-title">Notes</span> <span class="far fa-eye fa-lg" aria-hidden="true"></span>
+          </button>
+
+          <button id="quicknav-menu" class="top-menu-button" data-jq-dropdown="#jq-dropdown-quicknav" title="Quick Navigation (Previous/Next Sections and Problems and Full Problem List) Menu">
+            <span class="top-menu-item-title">Quick Nav</span> <span class="fas fa-exchange fa-lg" aria-hidden="true"></span>
+          </button>
+          
+          <button id="download-menu" class="top-menu-button" data-jq-dropdown="#jq-dropdown-download" title="Download pdf Menu">
+            <span class="top-menu-item-title">Download</span> <span class="far fa-download fa-lg" aria-hidden="true"></span>
+          </button>
+
+          <button id="print-menu" class="top-menu-button top-menu-button-icon-only" data-jq-dropdown="#jq-print-download" title="Print Menu">
+            <span class="far fa-print fa-lg" aria-hidden="true"></span>
+          </button>
+        </div>
+
+        <div id="header-google-search" class="header-search">
+          <gcse:search></gcse:search>
+        </div>
+        <div id="header-search-icon" title="Site Search" class="header-menu-icon"><span id="search-icon" class="fas fa-search" aria-hidden="true"></span></div>
+
+      </div>
+    </div>
+
+     <div id="jq-dropdown-type" class="jq-dropdown jq-dropdown-tip">
+      <ul class="jq-dropdown-menu">
+        
+        <li id="li_type_menu_goto" class="top-menu-nav-title">Go To</li>
+        <li id="li_type_menu_notes">
+          <span id="type_menu_notes_span" title="Viewing the Notes for the current topic." class="top-menu-current">Notes</span>
+          
+        </li>
+        <li id="li_type_menu_practice">
+          <span id="type_menu_problem_span_de" class="top-menu-item-text">Practice and Assignment problems are not yet written.  As time permits I am working on them, however I don't have the amount of free time that I used to so it will take a while before anything shows up here.</span>
+          
+          
+        </li>
+        <li id="li_type_menu_asgn">
+          
+          
+        </li>
+        <li id="li_type_menu_sh" class="top-menu-nav-title">Show/Hide</li>
+        <li id="li_type_menu_show" title="Show any hidden solutions and/or steps that may be present on the page."><a href="javascript:SHPrintPage(1,0)" id="view_menu_show">Show all Solutions/Steps/<em>etc.</em></a></li>
+        <li id="li_type_menu_hide" title="Hide any visible solutions and/or steps that may be present on the page."><a href="javascript:SHPrintPage(0,0)" id="view_menu_hide">Hide all Solutions/Steps/<em>etc.</em></a></li>
+      </ul>
+    </div>
+
+    <div id="jq-dropdown-quicknav" class="jq-dropdown jq-dropdown-tip">
+      <ul class="jq-dropdown-menu">
+        <li id="li_nav_menu_sections" class="top-menu-nav-title">Sections</li>
+        <li id="li_nav_menu_prev_section"><a href="EquilibriumSolutions.html" id="a_nav_menu_prev_section" class="top-menu-nav-link" title="Previous Section : Equilibrium Solutions"><span class="top-menu-prev fas fa-chevron-left"></span> Equilibrium Solutions</a></li>
+        <li id="li_nav_menu_next_section"><a href="IntroSecondOrder.html" id="a_nav_menu_next_section" class="top-menu-nav-link" title="Next Section : Second Order DE&#39;s Introduction"><span class="top-menu-prev-hidden fas fa-chevron-left"></span> Second Order DE's Introduction <span class="top-menu-next fas fa-chevron-right"></span></a></li>
+        <li id="li_nav_menu_chapters" class="top-menu-nav-title">Chapters</li>
+        <li id="li_nav_menu_prev_chapter"><a href="IntroBasic.html" id="a_nav_menu_prev_chapter" class="top-menu-nav-link" title="Previous Chapter : Basic Concepts"><span class="top-menu-prev fas fa-chevron-left"></span><span class="top-menu-prev fas fa-chevron-left"></span> Basic Concepts</a></li>
+        <li id="li_nav_menu_next_chapter"><a href="IntroSecondOrder.html" id="a_nav_menu_next_chapter" class="top-menu-nav-link" title="Next Chapter : Second Order DE&#39;s"><span class="top-menu-prev-hidden fas fa-chevron-left"></span><span class="top-menu-prev-hidden fas fa-chevron-left"></span> Second Order DE's <span class="top-menu-next fas fa-chevron-right"></span><span class="top-menu-next fas fa-chevron-right"></span></a></li>
+        
+        
+        
+        
+        <li id="li_nav_menu_classes" class="top-menu-nav-title">Classes</li>
+        <li>
+          
+          <a href="../Alg/Alg.html" id="nav_menu_alg_link" title="Go To Algebra Notes">Algebra</a>
+        </li>
+        <li>
+          
+          <a href="../CalcI/CalcI.html" id="nav_menu_calci_link" title="Go To Calculus I Notes">Calculus I</a>
+        </li>
+        <li>
+          
+          <a href="../CalcII/CalcII.html" id="nav_menu_calcii_link" title="Go To Calculus II Notes">Calculus II</a>
+        </li>
+        <li>
+          
+          <a href="../CalcIII/CalcIII.html" id="nav_menu_calciii_link" title="Go To Calculus III Notes">Calculus III</a>
+        </li>
+        <li>
+          <span id="nav_menu_de_span" title="Currently Viewing Differential Equations Material" class="top-menu-current">Differential Equations</span>
+          
+        </li>
+        <li id="li_nav_menu_extras" class="top-menu-nav-title">Extras</li>
+        <li>
+          
+          <a href="../../Extras/AlgebraTrigReview/AlgebraTrig.html" id="nav_menu_algtrig_link" title="Go To Algebra &amp; Trig Review">Algebra &amp; Trig Review</a>
+        </li>
+        <li>
+          
+          <a href="../../Extras/CommonErrors/CommonMathErrors.html" id="nav_menu_commonerrors_link" title="Go To Common Math Errors">Common Math Errors</a>
+        </li>
+        <li>
+          
+          <a href="../../Extras/ComplexPrimer/ComplexNumbers.html" id="nav_menu_complexnumbers_link" title="Go To Complex Numbers Primer">Complex Number Primer</a>
+        </li>
+        <li>
+          
+          <a href="../../Extras/StudyMath/HowToStudyMath.html" id="nav_menu_studymath_link" title="Go To How To Study Math">How To Study Math</a>
+        </li>
+        <li>
+          
+          <a href="../../Extras/CheatSheets_Tables.html" id="nav_menu_cheattables_link" title="Go To List of Cheat Sheets and Tables">Cheat Sheets &amp; Tables</a>
+        </li>
+        <li id="li_nav_menu_misc" class="top-menu-nav-title">Misc</li>
+        <li><a href="http://tutorial.math.lamar.edu/contact.aspx" id="nav_menu_contact" title="Contact Me!">Contact Me</a></li>
+        <li><a href="../../mathjax.html" id="nav_menu_mathjax" title="Info on MathJax and MathJax Configuration Menu">MathJax Help and Configuration</a></li>
+        <li><a href="../../mystudents.html" id="nav_menu_students" title="Go here if you are currently taking a class from me!">My Students</a></li>
+      </ul>
+    </div>
+
+    <div id="jq-dropdown-download" class="jq-dropdown jq-dropdown-anchor-right jq-dropdown-tip">
+      <ul class="jq-dropdown-menu">
+        
+        <li id="li_download_menu_notes" class="top-menu-nav-title">Notes Downloads</li>
+        <li id="li_download_menu_notes_book"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=B,1,N" id="download_menu_notes_book" data-PDF="Download - Menu$Notes - Book$Differential Equations$/Downloads/DE/Notes/Complete.pdf">Complete Book</a></li>
+        
+        <li id="li_download_menu_notes_chapter"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=C,17,N" id="download_menu_notes_chapter" data-PDF="Download - Menu$Notes - Chapter$Differential Equations - First Order DE&#39;s$/Downloads/DE/Notes/First_Order.pdf">Current Chapter</a></li>
+        <li id="li_download_menu_notes_section"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=S,131,N" id="download_menu_notes_section" data-PDF="Download - Menu$Notes - Section$Differential Equations - Euler&#39;s Method$/Downloads/DE/Notes/Eulers_Method.pdf">Current Section</a></li>
+        <li id="li_download_menu_practice" class="top-menu-nav-title">Practice Problems Downloads</li>
+        <li id="li_download_menu_practice_de"><span class="top-menu-item-text">Problems not yet written.</span></li>
+        
+        
+        
+        
+        
+        
+        
+        
+        <li id="li_download_menu_asgn" class="top-menu-nav-title">Assignment Problems Downloads</li>
+        <li id="li_download_menu_asgn_de"><span class="top-menu-item-text">Problems not yet written.</span></li>
+        
+        
+        
+        <li id="li_download_menu_other" class="top-menu-nav-title">Other Items</li>
+        <li id="li_download_menu_urls">
+          <a href="http://tutorial.math.lamar.edu/DownloadURLs.aspx?bi=1&amp;ci=17&amp;si=131" id="download_menu_urls">Get URL's for Download Items</a>
+        </li>
+      </ul>
+    </div>
+
+    <div id="jq-print-download" class="jq-dropdown jq-dropdown-anchor-right jq-dropdown-tip">
+      <ul class="jq-dropdown-menu">
+        <li id="li_print_menu_default"><a href="javascript:SHPrintPage()" id="print_menu_default">Print Page in Current Form (Default)</a></li>
+        <li id="li_print_menu_show"><a href="javascript:SHPrintPage(1,1)" id="print_menu_show">Show all Solutions/Steps and Print Page</a></li>
+        <li id="li_print_menu_hide"><a href="javascript:SHPrintPage(0,1)" id="print_menu_hide">Hide all Solutions/Steps and Print Page</a></li>
+      </ul>
+    </div>
+
+
+
+   
+
+    <nav id="menu" class="notes-nav">
+      <ul>
+        <li><a href="../../index.html" class="mm-link">Home</a></li>
+        <li><span>Classes</span></li>
+        <li><a href="../Alg/Alg.html" class="mm-link">Algebra</a>
+          <ul>
+            <li><a href="../Alg/Preliminaries.html" class="mm-link">Preliminaries</a>
+              <ul>
+                <li><a href="../Alg/IntegerExponents.html" class="mm-link">Integer Exponents</a></li>
+                <li><a href="../Alg/RationalExponents.html" class="mm-link">Rational Exponents</a></li>
+                <li><a href="../Alg/Radicals.html" class="mm-link">Radicals</a></li>
+                <li><a href="../Alg/Polynomials.html" class="mm-link">Polynomials</a></li>
+                <li><a href="../Alg/Factoring.html" class="mm-link">Factoring Polynomials</a></li>
+                <li><a href="../Alg/RationalExpressions.html" class="mm-link">Rational Expressions</a></li>
+                <li><a href="../Alg/ComplexNumbers.html" class="mm-link">Complex Numbers</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/Solving.html" class="mm-link">Solving Equations and Inequalities</a>
+              <ul>
+                <li><a href="../Alg/SolutionSets.html" class="mm-link">Solutions and Solution Sets</a></li>
+                <li><a href="../Alg/SolveLinearEqns.html" class="mm-link">Linear Equations</a></li>
+                <li><a href="../Alg/LinearApps.html" class="mm-link">Applications of Linear Equations</a></li>
+                <li><a href="../Alg/SolveMultiVariable.html" class="mm-link">Equations With More Than One Variable</a></li>
+                <li><a href="../Alg/SolveQuadraticEqnsI.html" class="mm-link">Quadratic Equations - Part I</a></li>
+                <li><a href="../Alg/SolveQuadraticEqnsII.html" class="mm-link">Quadratic Equations - Part II</a></li>
+                <li><a href="../Alg/SolveQuadraticEqnSummary.html" class="mm-link">Quadratic Equations : A Summary</a></li>
+                <li><a href="../Alg/QuadraticApps.html" class="mm-link">Applications of Quadratic Equations</a></li>
+                <li><a href="../Alg/ReducibleToQuadratic.html" class="mm-link">Equations Reducible to Quadratic in Form</a></li>
+                <li><a href="../Alg/SolveRadicalEqns.html" class="mm-link">Equations with Radicals</a></li>
+                <li><a href="../Alg/SolveLinearInequalities.html" class="mm-link">Linear Inequalities</a></li>
+                <li><a href="../Alg/SolvePolyInequalities.html" class="mm-link">Polynomial Inequalities</a></li>
+                <li><a href="../Alg/SolveRationalInequalities.html" class="mm-link">Rational Inequalities</a></li>
+                <li><a href="../Alg/SolveAbsValueEqns.html" class="mm-link">Absolute Value Equations</a></li>
+                <li><a href="../Alg/SolveAbsValueIneq.html" class="mm-link">Absolute Value Inequalities</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/Graphing_Functions.html" class="mm-link">Graphing and Functions</a>
+              <ul>
+                <li><a href="../Alg/Graphing.html" class="mm-link">Graphing</a></li>
+                <li><a href="../Alg/Lines.html" class="mm-link">Lines</a></li>
+                <li><a href="../Alg/Circles.html" class="mm-link">Circles</a></li>
+                <li><a href="../Alg/FunctionDefn.html" class="mm-link">The Definition of a Function</a></li>
+                <li><a href="../Alg/GraphFunctions.html" class="mm-link">Graphing Functions</a></li>
+                <li><a href="../Alg/CombineFunctions.html" class="mm-link">Combining Functions</a></li>
+                <li><a href="../Alg/InverseFunctions.html" class="mm-link">Inverse Functions</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/CommonGraphs.html" class="mm-link">Common Graphs</a>
+              <ul>
+                <li><a href="../Alg/Lines_Circles_PWF.html" class="mm-link">Lines, Circles and Piecewise Functions</a></li>
+                <li><a href="../Alg/Parabolas.html" class="mm-link">Parabolas</a></li>
+                <li><a href="../Alg/Ellipses.html" class="mm-link">Ellipses</a></li>
+                <li><a href="../Alg/Hyperbolas.html" class="mm-link">Hyperbolas</a></li>
+                <li><a href="../Alg/MiscFunctions.html" class="mm-link">Miscellaneous Functions</a></li>
+                <li><a href="../Alg/Transformations.html" class="mm-link">Transformations</a></li>
+                <li><a href="../Alg/Symmetry.html" class="mm-link">Symmetry</a></li>
+                <li><a href="../Alg/GraphRationalFcns.html" class="mm-link">Rational Functions</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/PolynomialFunctions.html" class="mm-link">Polynomial Functions</a>
+              <ul>
+                <li><a href="../Alg/DividingPolynomials.html" class="mm-link">Dividing Polynomials</a></li>
+                <li><a href="../Alg/ZeroesOfPolynomials.html" class="mm-link">Zeroes/Roots of Polynomials</a></li>
+                <li><a href="../Alg/GraphingPolynomials.html" class="mm-link">Graphing Polynomials</a></li>
+                <li><a href="../Alg/FindingZeroesOfPolynomials.html" class="mm-link">Finding Zeroes of Polynomials</a></li>
+                <li><a href="../Alg/PartialFractions.html" class="mm-link">Partial Fractions</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/ExpAndLog.html" class="mm-link">Exponential and Logarithm Functions</a>
+              <ul>
+                <li><a href="../Alg/ExpFunctions.html" class="mm-link">Exponential Functions</a></li>
+                <li><a href="../Alg/LogFunctions.html" class="mm-link">Logarithm Functions</a></li>
+                <li><a href="../Alg/SolveExpEqns.html" class="mm-link">Solving Exponential Equations</a></li>
+                <li><a href="../Alg/SolveLogEqns.html" class="mm-link">Solving Logarithm Equations</a></li>
+                <li><a href="../Alg/ExpLogApplications.html" class="mm-link">Applications</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/Systems.html" class="mm-link">Systems of Equations</a>
+              <ul>
+                <li><a href="../Alg/SystemsTwoVrble.html" class="mm-link">Linear Systems with Two Variables</a></li>
+                <li><a href="../Alg/SystemsThreeVrble.html" class="mm-link">Linear Systems with Three Variables</a></li>
+                <li><a href="../Alg/AugmentedMatrix.html" class="mm-link">Augmented Matrices</a></li>
+                <li><a href="../Alg/AugmentedMatrixII.html" class="mm-link">More on the Augmented Matrix</a></li>
+                <li><a href="../Alg/NonlinearSystems.html" class="mm-link">Nonlinear Systems</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../CalcI/CalcI.html" class="mm-link">Calculus I</a>
+          <ul>
+            <li><a href="../CalcI/ReviewIntro.html" class="mm-link">Review</a>
+              <ul>
+                <li><a href="../CalcI/Functions.html" class="mm-link">Functions</a></li>
+                <li><a href="../CalcI/InverseFunctions.html" class="mm-link">Inverse Functions</a></li>
+                <li><a href="../CalcI/TrigFcns.html" class="mm-link">Trig Functions</a></li>
+                <li><a href="../CalcI/TrigEquations.html" class="mm-link">Solving Trig Equations</a></li>
+                <li><a href="../CalcI/TrigEquations_CalcI.html" class="mm-link">Trig Equations with Calculators, Part I</a></li>
+                <li><a href="../CalcI/TrigEquations_CalcII.html" class="mm-link">Trig Equations with Calculators, Part II</a></li>
+                <li><a href="../CalcI/ExpFunctions.html" class="mm-link">Exponential Functions</a></li>
+                <li><a href="../CalcI/LogFcns.html" class="mm-link">Logarithm Functions</a></li>
+                <li><a href="../CalcI/ExpLogEqns.html" class="mm-link">Exponential and Logarithm Equations</a></li>
+                <li><a href="../CalcI/CommonGraphs.html" class="mm-link">Common Graphs</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcI/limitsIntro.html" class="mm-link">Limits</a>
+              <ul>
+                <li><a href="../CalcI/Tangents_Rates.html" class="mm-link">Tangent Lines and Rates of Change</a></li>
+                <li><a href="../CalcI/TheLimit.html" class="mm-link">The Limit</a></li>
+                <li><a href="../CalcI/OneSidedLimits.html" class="mm-link">One-Sided Limits</a></li>
+                <li><a href="../CalcI/LimitsProperties.html" class="mm-link">Limit Properties</a></li>
+                <li><a href="../CalcI/ComputingLimits.html" class="mm-link">Computing Limits</a></li>
+                <li><a href="../CalcI/InfiniteLimits.html" class="mm-link">Infinite Limits</a></li>
+                <li><a href="../CalcI/LimitsAtInfinityI.html" class="mm-link">Limits At Infinity, Part I</a></li>
+                <li><a href="../CalcI/LimitsAtInfinityII.html" class="mm-link">Limits At Infinity, Part II</a></li>
+                <li><a href="../CalcI/Continuity.html" class="mm-link">Continuity</a></li>
+                <li><a href="../CalcI/DefnOfLimit.html" class="mm-link">The Definition of the Limit</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcI/DerivativeIntro.html" class="mm-link">Derivatives</a>
+              <ul>
+                <li><a href="../CalcI/DefnOfDerivative.html" class="mm-link">The Definition of the Derivative</a></li>
+                <li><a href="../CalcI/DerivativeInterp.html" class="mm-link">Interpretation of the Derivative</a></li>
+                <li><a href="../CalcI/DiffFormulas.html" class="mm-link">Differentiation Formulas</a></li>
+                <li><a href="../CalcI/ProductQuotientRule.html" class="mm-link">Product and Quotient Rule</a></li>
+                <li><a href="../CalcI/DiffTrigFcns.html" class="mm-link">Derivatives of Trig Functions</a></li>
+                <li><a href="../CalcI/DiffExpLogFcns.html" class="mm-link">Derivatives of Exponential and Logarithm Functions</a></li>
+                <li><a href="../CalcI/DiffInvTrigFcns.html" class="mm-link">Derivatives of Inverse Trig Functions</a></li>
+                <li><a href="../CalcI/DiffHyperFcns.html" class="mm-link">Derivatives of Hyperbolic Functions</a></li>
+                <li><a href="../CalcI/ChainRule.html" class="mm-link">Chain Rule</a></li>
+                <li><a href="../CalcI/ImplicitDIff.html" class="mm-link">Implicit Differentiation</a></li>
+                <li><a href="../CalcI/RelatedRates.html" class="mm-link">Related Rates</a></li>
+                <li><a href="../CalcI/HigherOrderDerivatives.html" class="mm-link">Higher Order Derivatives</a></li>
+                <li><a href="../CalcI/LogDiff.html" class="mm-link">Logarithmic Differentiation</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcI/DerivAppsIntro.html" class="mm-link">Applications of Derivatives</a>
+              <ul>
+                <li><a href="../CalcI/RateOfChange.html" class="mm-link">Rates of Change</a></li>
+                <li><a href="../CalcI/CriticalPoints.html" class="mm-link">Critical Points</a></li>
+                <li><a href="../CalcI/MinMaxValues.html" class="mm-link">Minimum and Maximum Values</a></li>
+                <li><a href="../CalcI/AbsExtrema.html" class="mm-link">Finding Absolute Extrema</a></li>
+                <li><a href="../CalcI/ShapeofGraphPtI.html" class="mm-link">The Shape of a Graph, Part I</a></li>
+                <li><a href="../CalcI/ShapeofGraphPtII.html" class="mm-link">The Shape of a Graph, Part II</a></li>
+                <li><a href="../CalcI/MeanValueTheorem.html" class="mm-link">The Mean Value Theorem</a></li>
+                <li><a href="../CalcI/Optimization.html" class="mm-link">Optimization</a></li>
+                <li><a href="../CalcI/MoreOptimization.html" class="mm-link">More Optimization Problems</a></li>
+                <li><a href="../CalcI/LHospitalsRule.html" class="mm-link">L'Hospital's Rule and Indeterminate Forms</a></li>
+                <li><a href="../CalcI/LinearApproximations.html" class="mm-link">Linear Approximations</a></li>
+                <li><a href="../CalcI/Differentials.html" class="mm-link">Differentials</a></li>
+                <li><a href="../CalcI/NewtonsMethod.html" class="mm-link">Newton's Method</a></li>
+                <li><a href="../CalcI/BusinessApps.html" class="mm-link">Business Applications</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcI/IntegralsIntro.html" class="mm-link">Integrals</a>
+              <ul>
+                <li><a href="../CalcI/IndefiniteIntegrals.html" class="mm-link">Indefinite Integrals</a></li>
+                <li><a href="../CalcI/ComputingIndefiniteIntegrals.html" class="mm-link">Computing Indefinite Integrals</a></li>
+                <li><a href="../CalcI/SubstitutionRuleIndefinite.html" class="mm-link">Substitution Rule for Indefinite Integrals</a></li>
+                <li><a href="../CalcI/SubstitutionRuleIndefinitePtII.html" class="mm-link">More Substitution Rule</a></li>
+                <li><a href="../CalcI/AreaProblem.html" class="mm-link">Area Problem</a></li>
+                <li><a href="../CalcI/DefnOfDefiniteIntegral.html" class="mm-link">Definition of the Definite Integral</a></li>
+                <li><a href="../CalcI/ComputingDefiniteIntegrals.html" class="mm-link">Computing Definite Integrals</a></li>
+                <li><a href="../CalcI/SubstitutionRuleDefinite.html" class="mm-link">Substitution Rule for Definite Integrals</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcI/IntAppsIntro.html" class="mm-link">Applications of Integrals</a>
+              <ul>
+                <li><a href="../CalcI/AvgFcnValue.html" class="mm-link">Average Function Value</a></li>
+                <li><a href="../CalcI/AreaBetweenCurves.html" class="mm-link">Area Between Curves</a></li>
+                <li><a href="../CalcI/VolumeWithRings.html" class="mm-link">Volumes of Solids of Revolution / Method of Rings</a></li>
+                <li><a href="../CalcI/VolumeWithCylinder.html" class="mm-link">Volumes of Solids of Revolution/Method of Cylinders</a></li>
+                <li><a href="../CalcI/MoreVolume.html" class="mm-link">More Volume Problems</a></li>
+                <li><a href="../CalcI/Work.html" class="mm-link">Work</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcI/ExtrasIntro.html" class="mm-link">Extras</a>
+              <ul>
+                <li><a href="../CalcI/LimitProofs.html" class="mm-link">Proof of Various Limit Properties</a></li>
+                <li><a href="../CalcI/DerivativeProofs.html" class="mm-link">Proof of Various Derivative Properties</a></li>
+                <li><a href="../CalcI/ProofTrigDeriv.html" class="mm-link">Proof of Trig Limits</a></li>
+                <li><a href="../CalcI/DerivativeAppsProofs.html" class="mm-link">Proofs of Derivative Applications Facts</a></li>
+                <li><a href="../CalcI/ProofIntProp.html" class="mm-link">Proof of Various Integral Properties </a></li>
+                <li><a href="../CalcI/Area_Volume_Formulas.html" class="mm-link">Area and Volume Formulas</a></li>
+                <li><a href="../CalcI/TypesOfInfinity.html" class="mm-link">Types of Infinity</a></li>
+                <li><a href="../CalcI/SummationNotation.html" class="mm-link">Summation Notation</a></li>
+                <li><a href="../CalcI/ConstantofIntegration.html" class="mm-link">Constant of Integration</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../CalcII/CalcII.html" class="mm-link">Calculus II</a>
+          <ul>
+            <li><a href="../CalcII/IntTechIntro.html" class="mm-link">Integration Techniques</a>
+              <ul>
+                <li><a href="../CalcII/IntegrationByParts.html" class="mm-link">Integration by Parts</a></li>
+                <li><a href="../CalcII/IntegralsWithTrig.html" class="mm-link">Integrals Involving Trig Functions</a></li>
+                <li><a href="../CalcII/TrigSubstitutions.html" class="mm-link">Trig Substitutions</a></li>
+                <li><a href="../CalcII/PartialFractions.html" class="mm-link">Partial Fractions</a></li>
+                <li><a href="../CalcII/IntegralsWithRoots.html" class="mm-link">Integrals Involving Roots</a></li>
+                <li><a href="../CalcII/IntegralsWithQuadratics.html" class="mm-link">Integrals Involving Quadratics</a></li>
+                <li><a href="../CalcII/IntegrationStrategy.html" class="mm-link">Integration Strategy</a></li>
+                <li><a href="../CalcII/ImproperIntegrals.html" class="mm-link">Improper Integrals</a></li>
+                <li><a href="../CalcII/ImproperIntegralsCompTest.html" class="mm-link">Comparison Test for Improper Integrals</a></li>
+                <li><a href="../CalcII/ApproximatingDefIntegrals.html" class="mm-link">Approximating Definite Integrals</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/IntAppsIntro.html" class="mm-link">Applications of Integrals</a>
+              <ul>
+                <li><a href="../CalcII/ArcLength.html" class="mm-link">Arc Length</a></li>
+                <li><a href="../CalcII/SurfaceArea.html" class="mm-link">Surface Area</a></li>
+                <li><a href="../CalcII/CenterOfMass.html" class="mm-link">Center of Mass</a></li>
+                <li><a href="../CalcII/HydrostaticPressure.html" class="mm-link">Hydrostatic Pressure</a></li>
+                <li><a href="../CalcII/Probability.html" class="mm-link">Probability</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/ParametricIntro.html" class="mm-link">Parametric Equations and Polar Coordinates</a>
+              <ul>
+                <li><a href="../CalcII/ParametricEqn.html" class="mm-link">Parametric Equations and Curves</a></li>
+                <li><a href="../CalcII/ParaTangent.html" class="mm-link">Tangents with Parametric Equations</a></li>
+                <li><a href="../CalcII/ParaArea.html" class="mm-link">Area with Parametric Equations</a></li>
+                <li><a href="../CalcII/ParaArcLength.html" class="mm-link">Arc Length with Parametric Equations</a></li>
+                <li><a href="../CalcII/ParaSurfaceArea.html" class="mm-link">Surface Area with Parametric Equations</a></li>
+                <li><a href="../CalcII/PolarCoordinates.html" class="mm-link">Polar Coordinates</a></li>
+                <li><a href="../CalcII/PolarTangents.html" class="mm-link">Tangents with Polar Coordinates</a></li>
+                <li><a href="../CalcII/PolarArea.html" class="mm-link">Area with Polar Coordinates</a></li>
+                <li><a href="../CalcII/PolarArcLength.html" class="mm-link">Arc Length with Polar Coordinates</a></li>
+                <li><a href="../CalcII/PolarSurfaceArea.html" class="mm-link">Surface Area with Polar Coordinates</a></li>
+                <li><a href="../CalcII/ArcLength_SurfaceArea.html" class="mm-link">Arc Length and Surface Area Revisited</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/SeriesIntro.html" class="mm-link">Series & Sequences</a>
+              <ul>
+                <li><a href="../CalcII/Sequences.html" class="mm-link">Sequences</a></li>
+                <li><a href="../CalcII/MoreSequences.html" class="mm-link">More on Sequences</a></li>
+                <li><a href="../CalcII/Series_Basics.html" class="mm-link">Series - The Basics</a></li>
+                <li><a href="../CalcII/ConvergenceOfSeries.html" class="mm-link">Convergence/Divergence of Series</a></li>
+                <li><a href="../CalcII/Series_Special.html" class="mm-link">Special Series</a></li>
+                <li><a href="../CalcII/IntegralTest.html" class="mm-link">Integral Test</a></li>
+                <li><a href="../CalcII/SeriesCompTest.html" class="mm-link">Comparison Test/Limit Comparison Test</a></li>
+                <li><a href="../CalcII/AlternatingSeries.html" class="mm-link">Alternating Series Test</a></li>
+                <li><a href="../CalcII/AbsoluteConvergence.html" class="mm-link">Absolute Convergence</a></li>
+                <li><a href="../CalcII/RatioTest.html" class="mm-link">Ratio Test</a></li>
+                <li><a href="../CalcII/RootTest.html" class="mm-link">Root Test</a></li>
+                <li><a href="../CalcII/SeriesStrategy.html" class="mm-link">Strategy for Series</a></li>
+                <li><a href="../CalcII/EstimatingSeries.html" class="mm-link">Estimating the Value of a Series</a></li>
+                <li><a href="../CalcII/PowerSeries.html" class="mm-link">Power Series</a></li>
+                <li><a href="../CalcII/PowerSeriesandFunctions.html" class="mm-link">Power Series and Functions</a></li>
+                <li><a href="../CalcII/TaylorSeries.html" class="mm-link">Taylor Series</a></li>
+                <li><a href="../CalcII/TaylorSeriesApps.html" class="mm-link">Applications of Series</a></li>
+                <li><a href="../CalcII/BinomialSeries.html" class="mm-link">Binomial Series</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/VectorsIntro.html" class="mm-link">Vectors</a>
+              <ul>
+                <li><a href="../CalcII/Vectors_Basics.html" class="mm-link">Vectors - The Basics</a></li>
+                <li><a href="../CalcII/VectorArithmetic.html" class="mm-link">Vector Arithmetic</a></li>
+                <li><a href="../CalcII/DotProduct.html" class="mm-link">Dot Product</a></li>
+                <li><a href="../CalcII/CrossProduct.html" class="mm-link">Cross Product</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/3DSpace.html" class="mm-link">3-Dimensional Space</a>
+              <ul>
+                <li><a href="../CalcII/3DCoords.html" class="mm-link">The 3-D Coordinate System</a></li>
+                <li><a href="../CalcII/EqnsOfLines.html" class="mm-link">Equations of Lines</a></li>
+                <li><a href="../CalcII/EqnsOfPlanes.html" class="mm-link">Equations of Planes</a></li>
+                <li><a href="../CalcII/QuadricSurfaces.html" class="mm-link">Quadric Surfaces</a></li>
+                <li><a href="../CalcII/MultiVrbleFcns.html" class="mm-link">Functions of Several Variables</a></li>
+                <li><a href="../CalcII/VectorFunctions.html" class="mm-link">Vector Functions</a></li>
+                <li><a href="../CalcII/VectorFcnsCalculus.html" class="mm-link">Calculus with Vector Functions</a></li>
+                <li><a href="../CalcII/TangentNormalVectors.html" class="mm-link">Tangent, Normal and Binormal Vectors</a></li>
+                <li><a href="../CalcII/VectorArcLength.html" class="mm-link">Arc Length with Vector Functions</a></li>
+                <li><a href="../CalcII/Curvature.html" class="mm-link">Curvature</a></li>
+                <li><a href="../CalcII/Velocity_Acceleration.html" class="mm-link">Velocity and Acceleration</a></li>
+                <li><a href="../CalcII/CylindricalCoords.html" class="mm-link">Cylindrical Coordinates</a></li>
+                <li><a href="../CalcII/SphericalCoords.html" class="mm-link">Spherical Coordinates</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../CalcIII/CalcIII.html" class="mm-link">Calculus III</a>
+          <ul>
+            <li><a href="../CalcIII/3DSpace.html" class="mm-link">3-Dimensional Space</a>
+              <ul>
+                <li><a href="../CalcIII/3DCoords.html" class="mm-link">The 3-D Coordinate System</a></li>
+                <li><a href="../CalcIII/EqnsOfLines.html" class="mm-link">Equations of Lines</a></li>
+                <li><a href="../CalcIII/EqnsOfPlanes.html" class="mm-link">Equations of Planes</a></li>
+                <li><a href="../CalcIII/QuadricSurfaces.html" class="mm-link">Quadric Surfaces</a></li>
+                <li><a href="../CalcIII/MultiVrbleFcns.html" class="mm-link">Functions of Several Variables</a></li>
+                <li><a href="../CalcIII/VectorFunctions.html" class="mm-link">Vector Functions</a></li>
+                <li><a href="../CalcIII/VectorFcnsCalculus.html" class="mm-link">Calculus with Vector Functions</a></li>
+                <li><a href="../CalcIII/TangentNormalVectors.html" class="mm-link">Tangent, Normal and Binormal Vectors</a></li>
+                <li><a href="../CalcIII/VectorArcLength.html" class="mm-link">Arc Length with Vector Functions</a></li>
+                <li><a href="../CalcIII/Curvature.html" class="mm-link">Curvature</a></li>
+                <li><a href="../CalcIII/Velocity_Acceleration.html" class="mm-link">Velocity and Acceleration</a></li>
+                <li><a href="../CalcIII/CylindricalCoords.html" class="mm-link">Cylindrical Coordinates</a></li>
+                <li><a href="../CalcIII/SphericalCoords.html" class="mm-link">Spherical Coordinates</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/PartialDerivsIntro.html" class="mm-link">Partial Derivatives</a>
+              <ul>
+                <li><a href="../CalcIII/Limits.html" class="mm-link">Limits</a></li>
+                <li><a href="../CalcIII/PartialDerivatives.html" class="mm-link">Partial Derivatives</a></li>
+                <li><a href="../CalcIII/PartialDerivInterp.html" class="mm-link">Interpretations of Partial Derivatives</a></li>
+                <li><a href="../CalcIII/HighOrderPartialDerivs.html" class="mm-link">Higher Order Partial Derivatives</a></li>
+                <li><a href="../CalcIII/Differentials.html" class="mm-link">Differentials</a></li>
+                <li><a href="../CalcIII/ChainRule.html" class="mm-link">Chain Rule</a></li>
+                <li><a href="../CalcIII/DirectionalDeriv.html" class="mm-link">Directional Derivatives</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/PartialDerivAppsIntro.html" class="mm-link">Applications of Partial Derivatives</a>
+              <ul>
+                <li><a href="../CalcIII/TangentPlanes.html" class="mm-link">Tangent Planes and Linear Approximations</a></li>
+                <li><a href="../CalcIII/GradientVectorTangentPlane.html" class="mm-link">Gradient Vector, Tangent Planes and Normal Lines</a></li>
+                <li><a href="../CalcIII/RelativeExtrema.html" class="mm-link">Relative Minimums and Maximums</a></li>
+                <li><a href="../CalcIII/AbsoluteExtrema.html" class="mm-link">Absolute Minimums and Maximums</a></li>
+                <li><a href="../CalcIII/LagrangeMultipliers.html" class="mm-link">Lagrange Multipliers</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/MultipleIntegralsIntro.html" class="mm-link">Multiple Integrals</a>
+              <ul>
+                <li><a href="../CalcIII/DoubleIntegrals.html" class="mm-link">Double Integrals</a></li>
+                <li><a href="../CalcIII/IteratedIntegrals.html" class="mm-link">Iterated Integrals</a></li>
+                <li><a href="../CalcIII/DIGeneralRegion.html" class="mm-link">Double Integrals over General Regions</a></li>
+                <li><a href="../CalcIII/DIPolarCoords.html" class="mm-link">Double Integrals in Polar Coordinates</a></li>
+                <li><a href="../CalcIII/TripleIntegrals.html" class="mm-link">Triple Integrals</a></li>
+                <li><a href="../CalcIII/TICylindricalCoords.html" class="mm-link">Triple Integrals in Cylindrical Coordinates</a></li>
+                <li><a href="../CalcIII/TISphericalCoords.html" class="mm-link">Triple Integrals in Spherical Coordinates</a></li>
+                <li><a href="../CalcIII/ChangeOfVariables.html" class="mm-link">Change of Variables</a></li>
+                <li><a href="../CalcIII/SurfaceArea.html" class="mm-link">Surface Area</a></li>
+                <li><a href="../CalcIII/Area_Volume.html" class="mm-link">Area and Volume Revisited</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/LineIntegralsIntro.html" class="mm-link">Line Integrals</a>
+              <ul>
+                <li><a href="../CalcIII/VectorFields.html" class="mm-link">Vector Fields</a></li>
+                <li><a href="../CalcIII/LineIntegralsPtI.html" class="mm-link">Line Integrals - Part I</a></li>
+                <li><a href="../CalcIII/LineIntegralsPtII.html" class="mm-link">Line Integrals - Part II</a></li>
+                <li><a href="../CalcIII/LineIntegralsVectorFields.html" class="mm-link">Line Integrals of Vector Fields</a></li>
+                <li><a href="../CalcIII/FundThmLineIntegrals.html" class="mm-link">Fundamental Theorem for Line Integrals</a></li>
+                <li><a href="../CalcIII/ConservativeVectorField.html" class="mm-link">Conservative Vector Fields</a></li>
+                <li><a href="../CalcIII/GreensTheorem.html" class="mm-link">Green's Theorem</a></li>
+                <li><a href="../CalcIII/CurlDivergence.html" class="mm-link">Curl and Divergence</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/SurfaceIntegralsIntro.html" class="mm-link">Surface Integrals</a>
+              <ul>
+                <li><a href="../CalcIII/ParametricSurfaces.html" class="mm-link">Parametric Surfaces</a></li>
+                <li><a href="../CalcIII/SurfaceIntegrals.html" class="mm-link">Surface Integrals</a></li>
+                <li><a href="../CalcIII/SurfIntVectorField.html" class="mm-link">Surface Integrals of Vector Fields</a></li>
+                <li><a href="../CalcIII/StokesTheorem.html" class="mm-link">Stokes' Theorem</a></li>
+                <li><a href="../CalcIII/DivergenceTheorem.html" class="mm-link">Divergence Theorem</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="DE.html" class="mm-link">Differential Equations</a>
+          <ul>
+            <li><a href="IntroBasic.html" class="mm-link">Basic Concepts</a>
+              <ul>
+                <li><a href="Definitions.html" class="mm-link">Definitions</a></li>
+                <li><a href="DirectionFields.html" class="mm-link">Direction Fields</a></li>
+                <li><a href="FinalThoughts.html" class="mm-link">Final Thoughts</a></li>
+              </ul>
+            </li>
+            <li><a href="IntroFirstOrder.html" class="mm-link">First Order DE's</a>
+              <ul>
+                <li><a href="Linear.html" class="mm-link">Linear Equations</a></li>
+                <li><a href="Separable.html" class="mm-link">Separable Equations</a></li>
+                <li><a href="Exact.html" class="mm-link">Exact Equations</a></li>
+                <li><a href="Bernoulli.html" class="mm-link">Bernoulli Differential Equations</a></li>
+                <li><a href="Substitutions.html" class="mm-link">Substitutions</a></li>
+                <li><a href="IoV.html" class="mm-link">Intervals of Validity</a></li>
+                <li><a href="Modeling.html" class="mm-link">Modeling with First Order DE's</a></li>
+                <li><a href="EquilibriumSolutions.html" class="mm-link">Equilibrium Solutions</a></li>
+                <li><a href="EulersMethod.html" class="mm-link">Euler's Method</a></li>
+              </ul>
+            </li>
+            <li><a href="IntroSecondOrder.html" class="mm-link">Second Order DE's</a>
+              <ul>
+                <li><a href="SecondOrderConcepts.html" class="mm-link">Basic Concepts</a></li>
+                <li><a href="RealRoots.html" class="mm-link">Real & Distinct Roots</a></li>
+                <li><a href="ComplexRoots.html" class="mm-link">Complex Roots</a></li>
+                <li><a href="RepeatedRoots.html" class="mm-link">Repeated Roots</a></li>
+                <li><a href="ReductionofOrder.html" class="mm-link">Reduction of Order</a></li>
+                <li><a href="FundamentalSetsofSolutions.html" class="mm-link">Fundamental Sets of Solutions</a></li>
+                <li><a href="Wronskian.html" class="mm-link">More on the  Wronskian</a></li>
+                <li><a href="NonhomogeneousDE.html" class="mm-link">Nonhomogeneous Differential Equations</a></li>
+                <li><a href="UndeterminedCoefficients.html" class="mm-link">Undetermined Coefficients</a></li>
+                <li><a href="VariationofParameters.html" class="mm-link">Variation of Parameters</a></li>
+                <li><a href="Vibrations.html" class="mm-link">Mechanical Vibrations</a></li>
+              </ul>
+            </li>
+            <li><a href="LaplaceIntro.html" class="mm-link">Laplace Transforms</a>
+              <ul>
+                <li><a href="LaplaceDefinition.html" class="mm-link">The Definition</a></li>
+                <li><a href="LaplaceTransforms.html" class="mm-link">Laplace Transforms</a></li>
+                <li><a href="InverseTransforms.html" class="mm-link">Inverse Laplace Transforms</a></li>
+                <li><a href="StepFunctions.html" class="mm-link">Step Functions</a></li>
+                <li><a href="IVPWithLaplace.html" class="mm-link">Solving IVP's with Laplace Transforms</a></li>
+                <li><a href="IVPWithNonConstantCoefficient.html" class="mm-link">Nonconstant Coefficient IVP's</a></li>
+                <li><a href="IVPWithStepFunction.html" class="mm-link">IVP's With Step Functions</a></li>
+                <li><a href="DiracDeltaFunction.html" class="mm-link">Dirac Delta Function</a></li>
+                <li><a href="ConvolutionIntegrals.html" class="mm-link">Convolution Integrals</a></li>
+                <li><a href="Laplace_Table.html" class="mm-link">Table Of Laplace Transforms</a></li>
+              </ul>
+            </li>
+            <li><a href="SystemsIntro.html" class="mm-link">Systems of DE's</a>
+              <ul>
+                <li><a href="LA_Systems.html" class="mm-link">Review : Systems of Equations</a></li>
+                <li><a href="LA_Matrix.html" class="mm-link">Review : Matrices & Vectors</a></li>
+                <li><a href="LA_Eigen.html" class="mm-link">Review : Eigenvalues & Eigenvectors</a></li>
+                <li><a href="SystemsDE.html" class="mm-link">Systems of Differential Equations</a></li>
+                <li><a href="SolutionsToSystems.html" class="mm-link">Solutions to Systems</a></li>
+                <li><a href="PhasePlane.html" class="mm-link">Phase Plane</a></li>
+                <li><a href="RealEigenvalues.html" class="mm-link">Real Eigenvalues</a></li>
+                <li><a href="ComplexEigenvalues.html" class="mm-link">Complex Eigenvalues</a></li>
+                <li><a href="RepeatedEigenvalues.html" class="mm-link">Repeated Eigenvalues</a></li>
+                <li><a href="NonhomogeneousSystems.html" class="mm-link">Nonhomogeneous Systems</a></li>
+                <li><a href="SystemsLaplace.html" class="mm-link">Laplace Transforms</a></li>
+                <li><a href="SystemsModeling.html" class="mm-link">Modeling</a></li>
+              </ul>
+            </li>
+            <li><a href="SeriesIntro.html" class="mm-link">Series Solutions to DE's</a>
+              <ul>
+                <li><a href="PowerSeries.html" class="mm-link">Review : Power Series</a></li>
+                <li><a href="TaylorSeries.html" class="mm-link">Review : Taylor Series</a></li>
+                <li><a href="SeriesSolutions.html" class="mm-link">Series Solutions</a></li>
+                <li><a href="EulerEquations.html" class="mm-link">Euler Equations</a></li>
+              </ul>
+            </li>
+            <li><a href="IntroHigherOrder.html" class="mm-link">Higher Order Differential Equations</a>
+              <ul>
+                <li><a href="HOBasicConcepts.html" class="mm-link">Basic Concepts for <em>n</em><sup>th</sup> Order Linear Equations</a></li>
+                <li><a href="HOHomogeneousDE.html" class="mm-link">Linear Homogeneous Differential Equations</a></li>
+                <li><a href="HOUndeterminedCoeff.html" class="mm-link">Undetermined Coefficients</a></li>
+                <li><a href="HOVariationOfParam.html" class="mm-link">Variation of Parameters</a></li>
+                <li><a href="HOLaplaceTransforms.html" class="mm-link">Laplace Transforms</a></li>
+                <li><a href="HOSystems.html" class="mm-link">Systems of Differential Equations</a></li>
+                <li><a href="HOSeries.html" class="mm-link">Series Solutions</a></li>
+              </ul>
+            </li>
+            <li><a href="IntroBVP.html" class="mm-link">Boundary Value Problems &amp; Fourier Series</a>
+              <ul>
+                <li><a href="BoundaryValueProblem.html" class="mm-link">Boundary Value Problems</a></li>
+                <li><a href="BVPEvals.html" class="mm-link">Eigenvalues and Eigenfunctions</a></li>
+                <li><a href="PeriodicOrthogonal.html" class="mm-link">Periodic Functions &amp; Orthogonal Functions</a></li>
+                <li><a href="FourierSineSeries.html" class="mm-link">Fourier Sine Series</a></li>
+                <li><a href="FourierCosineSeries.html" class="mm-link">Fourier Cosine Series</a></li>
+                <li><a href="FourierSeries.html" class="mm-link">Fourier Series</a></li>
+                <li><a href="ConvergenceFourierSeries.html" class="mm-link">Convergence of Fourier Series</a></li>
+              </ul>
+            </li>
+            <li><a href="IntroPDE.html" class="mm-link">Partial Differential Equations </a>
+              <ul>
+                <li><a href="TheHeatEquation.html" class="mm-link">The Heat Equation</a></li>
+                <li><a href="TheWaveEquation.html" class="mm-link">The Wave Equation</a></li>
+                <li><a href="PDETerminology.html" class="mm-link">Terminology</a></li>
+                <li><a href="SeparationofVariables.html" class="mm-link">Separation of Variables</a></li>
+                <li><a href="SolvingHeatEquation.html" class="mm-link">Solving the Heat Equation</a></li>
+                <li><a href="HeatEqnNonZero.html" class="mm-link">Heat Equation with Non-Zero Temperature Boundaries</a></li>
+                <li><a href="LaplacesEqn.html" class="mm-link">Laplace's Equation</a></li>
+                <li><a href="VibratingString.html" class="mm-link">Vibrating String</a></li>
+                <li><a href="PDESummary.html" class="mm-link">Summary of Separation of Variables</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><span>Extras</span></li>
+        <li><a href="../../Extras/AlgebraTrigReview/AlgebraTrig.html" class="mm-link">Algebra &amp; Trig Review</a>
+          <ul>
+            <li><a href="../../Extras/AlgebraTrigReview/AlgebraIntro.html" class="mm-link">Algebra</a>
+              <ul>
+                <li><a href="../../Extras/AlgebraTrigReview/Exponents.html" class="mm-link">Exponents </a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/AbsoluteValue.html" class="mm-link">Absolute Value</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Radicals.html" class="mm-link">Radicals</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Rationalizing.html" class="mm-link">Rationalizing </a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Functions.html" class="mm-link">Functions </a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/MultPoly.html" class="mm-link">Multiplying Polynomials</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Factoring.html" class="mm-link">Factoring</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SimpRatExp.html" class="mm-link">Simplifying Rational Expressions</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Graphing.html" class="mm-link">Graphing and Common Graphs</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveEqnPtI.html" class="mm-link">Solving Equations, Part I</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveEqnPtII.html" class="mm-link">Solving Equations, Part II</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveSystems.html" class="mm-link">Solving Systems of Equations</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveIneq.html" class="mm-link">Solving Inequalities</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveAbsValue.html" class="mm-link">Absolute Value Equations and Inequalities</a></li>
+              </ul>
+            </li>
+            <li><a href="../../Extras/AlgebraTrigReview/TrigIntro.html" class="mm-link">Trigonometry</a>
+              <ul>
+                <li><a href="../../Extras/AlgebraTrigReview/TrigFunctions.html" class="mm-link">Trig Function Evaluation</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/TrigGraphs.html" class="mm-link">Graphs of Trig Functions</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/TrigFormulas.html" class="mm-link">Trig Formulas</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveTrigEqn.html" class="mm-link">Solving Trig Equations</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/InverseTrig.html" class="mm-link">Inverse Trig Functions</a></li>
+              </ul>
+            </li>
+            <li><a href="../../Extras/AlgebraTrigReview/ExpLogIntro.html" class="mm-link">Exponentials & Logarithms</a>
+              <ul>
+                <li><a href="../../Extras/AlgebraTrigReview/ExponentialFcns.html" class="mm-link">Basic Exponential Functions</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/LogarithmFcns.html" class="mm-link">Basic Logarithm Functions</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/LogProperties.html" class="mm-link">Logarithm Properties</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SimpLogs.html" class="mm-link">Simplifying Logarithms</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveExpEqn.html" class="mm-link">Solving Exponential Equations</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveLogEqn.html" class="mm-link">Solving Logarithm Equations</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../../Extras/CommonErrors/CommonMathErrors.html" class="mm-link">Common Math Errors</a>
+          <ul>
+            <li><a href="../../Extras/CommonErrors/GeneralErrors.html" class="mm-link">General Errors</a>
+            </li>
+            <li><a href="../../Extras/CommonErrors/AlgebraErrors.html" class="mm-link">Algebra Errors</a>
+            </li>
+            <li><a href="../../Extras/CommonErrors/TrigErrors.html" class="mm-link">Trig Errors</a>
+            </li>
+            <li><a href="../../Extras/CommonErrors/CommonErrors.html" class="mm-link">Common Errors</a>
+            </li>
+            <li><a href="../../Extras/CommonErrors/CalculusErrors.html" class="mm-link">Calculus Errors</a>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../../Extras/ComplexPrimer/ComplexNumbers.html" class="mm-link">Complex Number Primer</a>
+          <ul>
+            <li><a href="../../Extras/ComplexPrimer/Definition.html" class="mm-link">The Definition</a>
+            </li>
+            <li><a href="../../Extras/ComplexPrimer/Arithmetic.html" class="mm-link">Arithmetic</a>
+            </li>
+            <li><a href="../../Extras/ComplexPrimer/ConjugateModulus.html" class="mm-link">Conjugate and Modulus</a>
+            </li>
+            <li><a href="../../Extras/ComplexPrimer/Forms.html" class="mm-link">Polar and Exponential Forms</a>
+            </li>
+            <li><a href="../../Extras/ComplexPrimer/Roots.html" class="mm-link">Powers and Roots</a>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../../Extras/StudyMath/HowToStudyMath.html" class="mm-link">How To Study Math</a>
+          <ul>
+            <li><a href="../../Extras/StudyMath/GeneralTips.html" class="mm-link">General Tips</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/TakingNotes.html" class="mm-link">Taking Notes</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/GettingHelp.html" class="mm-link">Getting Help</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/Homework.html" class="mm-link">Doing Homework</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/ProblemSolving.html" class="mm-link">Problem Solving</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/StudyForExam.html" class="mm-link">Studying For an Exam</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/TakingExam.html" class="mm-link">Taking an Exam</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/Errors.html" class="mm-link">Learn From Your Errors</a>
+            </li>
+          </ul>
+        </li>
+
+        <li><span>Misc Links</span></li>
+        <li><a href="http://tutorial.math.lamar.edu/contact.aspx" class="mm-link">Contact Me</a></li>
+        <li><a href="../../links.html" class="mm-link">Links</a></li>
+        <li><a href="../../mathjax.html" class="mm-link">MathJax Help and Configuration</a></li>
+        <li><a href="../../mystudents.html" class="mm-link">My Students</a></li>
+        <li><a href="http://tutorial.math.lamar.edu/privacy.aspx" class="mm-link">Privacy Statement</a></li>
+        <li><a href="../../help.html" class="mm-link">Site Help & FAQ</a></li>
+        <li><a href="http://tutorial.math.lamar.edu/terms.aspx" class="mm-link">Terms of Use</a></li>
+      </ul>
+    </nav>
+
+
+
+    <div class="top-info-bar">
+      <span id="mobile-title" class="mobile-header-title header-title">Paul's Online Notes</span>
+      <br />
+      <span class="top-menu-breadcrumb">
+        <a href="../../index.html" id="breadcrumb_home_link" title="Go to Main Page">Home</a>
+        <span id="breadcrumb_h_b_sep_span">/ </span>
+        <a href="DE.html" id="breadcrumb_book_link" title="Go to Book Introduction">Differential Equations</a>
+        
+        <span id="breadcrumb_b_c_sep_span">/ </span>
+        <a href="IntroFirstOrder.html" id="breadcrumb_chapter_link" title="Go to Chapter Introduction">First Order DE&#39;s</a>
+        
+        <span id="breadcrumb_section_span"> / Euler&#39;s Method</span>
+      </span>
+
+    </div>
+
+    
+
+    <div class="header-divider"></div>
+
+    <div class="content">  
+      
+      
+      <span id="SHLink_NoteMobile" class="SH-Link content-note-link-mobile">Show Mobile Notice</span>
+      <span id="SHImg_NoteMobile" class="fas fa-caret-right SH-padding content-note-link-mobile" aria-hidden="true"></span>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+
+      <span id="SHALink_S_Note" class="SH-Link SH-Hide SH-Bracket">Show All Notes</span>&nbsp;<span id="SHALink_H_Note" class="SH-Link SH-Hide SH-Bracket">Hide All Notes</span>
+      
+      
+      <div id="SHObj_NoteMobile" class="content-note-container content-note-container-mobile">
+        <div class="content-note-header">Mobile Notice</div>
+        <div class="content-note">You appear to be on a device with a "narrow" screen width (<em>i.e.</em> you are probably on a mobile phone).  Due to the nature of the mathematics on this site it is best views in landscape mode.  If your device is not in landscape mode many of the equations will run off the side of your device (should be able to scroll to see them) and some of the menu items will be cut off due to the narrow screen width.</div>
+      </div>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+
+      
+
+
+  <form method="post" action="http://tutorial.math.lamar.edu/Classes/DE/EulersMethod.aspx" id="ctl00">
+<div class="aspNetHidden">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+</div>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="5037EC23" />
+</div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </form>
+
+  <h3>Section 2-9 : Euler's Method</h3>
+
+    
+    <p>Up to this point practically every differential equation that we’ve been presented with could be solved.  The problem with this is that these are the exceptions rather than the rule.  The vast majority of first order differential equations can’t be solved.</p>
+    
+    <p>In order to teach you something about solving first order differential equations we’ve had to restrict ourselves down to the fairly restrictive cases of linear, separable, or exact differential equations or differential equations that could be solved with a set of very specific substitutions.  Most first order differential equations however fall into none of these categories.  In fact, even those that are separable or exact cannot always be solved for an explicit solution.  Without explicit solutions to these it would be hard to get any information about the solution.</p>
+    
+    <p>So, what do we do when faced with a differential equation that we can’t solve?  The answer depends on what you are looking for.  If you are only looking for long term behavior of a solution you can always sketch a direction field.  This can be done without too much difficulty for some fairly complex differential equations that we can’t solve to get exact solutions.</p>
+    
+    <p>The problem with this approach is that it’s only really good for getting general trends in solutions and for long term behavior of solutions.  There are times when we will need something more.  For instance, maybe we need to determine how a specific solution behaves, including some values that the solution will take.  There are also a fairly large set of differential equations that are not easy to sketch good direction fields for.</p>
+    
+    <p>In these cases, we resort to numerical methods that will allow us to approximate solutions to differential equations.  There are many different methods that can be used to approximate solutions to a differential equation and in fact whole classes can be taught just dealing with the various methods.  We are going to look at one of the oldest and easiest to use here.  This method was originally devised by Euler and is called, oddly enough, Euler’s Method.</p>
+    
+    <p>Let’s start with a general first order IVP</p>
+    
+      \[\begin{equation}\frac{{dy}}{{dt}} = f\left( {t,y} \right)\hspace{0.25in}y\left( {{t_0}} \right) = {y_0}\label{eq:eq1}\end{equation}\]
+
+    <p>where \(f(t,y)\) is a known function and the values in the initial condition are also known numbers.  From the second theorem in the <a href="IoV.html">Intervals of Validity</a> section we know that if \(f\) and \(f_{y}\) are continuous functions then there is a unique solution to the IVP in some interval surrounding \(t = {t_0}\).  So, let’s assume that everything is nice and continuous so that we know that a solution will in fact exist.</p>
+    
+    <p>We want to approximate the solution to \(\eqref{eq:eq1}\) near \(t = {t_0}\).  We’ll start with the two pieces of information that we do know about the solution.  First, we know the value of the solution at \(t = {t_0}\) from the initial condition.  Second, we also know the value of the derivative at \(t = {t_0}\).  We can get this by plugging the initial condition into \(f(t,y)\) into the differential 
+      equation itself.  So, the derivative at this point is.</p>
+    
+        \[{\left. {\frac{{dy}}{{dt}}} \right|_{t = {t_0}}} = f\left( {{t_0},{y_0}} \right)\]
+    
+    <p>Now, recall from your Calculus I class that these two pieces of information are enough for us to write down the equation of the tangent line to the solution at \(t = {t_0}\).  The tangent line is</p>
+    
+        \[y = {y_0} + f\left( {{t_0},{y_0}} \right)\left( {t - {t_0}} \right)\]
+    
+    <p>Take a look at the figure below</p>
+    
+    
+      <div class="center-div"><img alt="This graph has no domain/range scale and shows only the 1st quadrant.  Shown in the graph is a sample solution function, labeled y(t).  It is looks to be a parabola with vertex in the 1st quadrant and opening downward.  The left most point on the solution curve is labeled at $\left(t_{0},y_{0}\right)$.  Also on the solution curve is another point (between the leftmost point and the vertex) labeled $\left(t_{1},y(t_{1})\right)$.  Included on the graph is the tangent line to the curve at $\left(t_{0},y_{0}\right)$.  It rises over the solution curve and over the point $\left(t_{1},y(t_{1})\right)$ on the solution curve is a point on the tangent line labeled $\left(t_{1},y_{1}\right)$." border="0" height="238" src="http://tutorial.math.lamar.edu/Classes/DE/EulersMethod_Files/image001.png" width="375" /></div>
+    
+    <p>If \(t_{1}\) is close enough to \(t_{0}\) then the point \(y_{1}\) on the tangent line should be fairly close to the actual value of the solution at \(t_{1}\), or \(y(t_{1})\).  Finding \(y_{1}\) is easy enough. All we need to do is plug \(t_{1}\) in the equation for the tangent line.</p>
+    
+        \[{y_1} = {y_0} + f\left( {{t_0},{y_0}} \right)\left( {{t_1} - {t_0}} \right)\]
+    
+    <p>Now, we would like to proceed in a similar manner, but we don’t have the value of the solution at \(t_{1}\) and so we won’t know the slope of the tangent line to the solution at this point.  This is a problem.  We can partially solve it however, by recalling that \(y_{1}\) is an approximation to the solution at \(t_{1}\).  If \(y_{1}\) is a very good approximation to the actual value of the solution then we can use that to estimate the slope of the tangent line at \(t_{1}\).</p>
+    
+    
+    <p>So, let’s hope that \(y_{1}\) is a good approximation to the solution and construct a line through the point (\(t_{1}, y_{1}\)) that has slope \(f(t_{1}, y_{1}\)).  This gives</p>
+    
+        \[y = {y_1} + f\left( {{t_1},{y_1}} \right)\left( {t - {t_1}} \right)\]
+    
+    <p>Now, to get an approximation to the solution at  \(t=t_{2}\) we will hope that this new line will be fairly close to the actual solution at \(t_{2}\) and use the value of the line at \(t_{2}\) as an approximation to the actual solution.  This gives.</p>
+    
+      \[{y_2} = {y_1} + f\left( {{t_1},{y_1}} \right)\left( {{t_2} - {t_1}} \right)\]
+    
+    <p>We can continue in this fashion.  Use the previously computed approximation to get the next approximation.  So,</p>
+    
+      \[\begin{align*}{y_3} & = {y_2} + f\left( {{t_2},{y_2}} \right)\left( {{t_3} - {t_2}} \right)\\ {y_4} & = {y_3} + f\left( {{t_3},{y_3}} \right)\left( {{t_4} - {t_3}} \right)\\ &amp; etc.\end{align*}\]
+    
+    <p>In general, if we have \(t_{n}\) and the approximation to the solution at this point, \(y_{n}\), and we want to find the approximation at \(t_{n+1}\) all we need to do is use the following.</p>
+    
+      \[{y_{n + 1}} = {y_n} + f\left( {{t_n},{y_n}} \right) \cdot \left( {{t_{n + 1}} - {t_n}} \right)\]
+    
+    <p>If we define \({f_n} = f\left( {{t_n},{y_n}} \right)\) we can simplify the formula to</p>
+    
+        \[\begin{equation}{y_{n + 1}} = {y_n} + {f_n} \cdot \left( {{t_{n + 1}} - {t_n}} \right)\label{eq:eq2}\end{equation}\]
+    
+    <p>Often, we will assume that the step sizes between the points \(t_{0}\) , \(t_{1}\) , \(t_{2}\) , … are of a uniform size of \(h\).  In other words, we will often assume that</p>
+    
+        \[{t_{n + 1}} - {t_n} = h\]
+    
+    <p>This doesn’t have to be done and there are times when it’s best that we not do this.  However, if we do the formula for the next approximation becomes.</p>
+    
+        \[\begin{equation}{y_{n + 1}} = {y_n} + h\,{f_n}\label{eq:eq3}\end{equation}\]
+    
+    <p>So, how do we use Euler’s Method?  It’s fairly simple.  We start with \(\eqref{eq:eq1}\) and decide if we want to use a uniform step size or not.  Then starting with \((t_{0}, y_{0})\) we repeatedly evaluate \(\eqref{eq:eq2}\) or \(\eqref{eq:eq3}\) depending on whether we chose to use a uniform step size or not.  We continue until we’ve gone the desired number of steps or reached the desired time.  This will give us a sequence of numbers \(y_{1}\) , \(y_{2}\) , \(y_{3}\) , … \(y_{n}\)  that will approximate the value of the actual solution at \(t_{1}\) , \(t_{2}\) , \(t_{3}\) , … \(t_{n}\).</p>
+    
+    <p>What do we do if we want a value of the solution at some other point than those used here?  One possibility is to go back and redefine our set of points to a new set that will include the points we are after and redo Euler’s Method using this new set of points.  However, this is cumbersome and could take a lot of time especially if we had to make changes to the set of points more than once.</p>
+    
+    <p>Another possibility is to remember how we arrived at the approximations in the first place.  Recall that we used the tangent line</p>
+    
+        \[y = {y_0} + f\left( {{t_0},{y_0}} \right)\left( {t - {t_0}} \right)\]
+    <p>to get the value of \(y_{1}\).  We could use this tangent line as an approximation for the solution on the interval \([t_{0}, t_{1}]\).  Likewise, we used the tangent line</p>
+    
+        \[y = {y_1} + f\left( {{t_1},{y_1}} \right)\left( {t - {t_1}} \right)\]
+    <p>to get the value of \(y_{2}\).  We could use this tangent line as an approximation for the solution on the interval \([t_{1}, t_{2}]\).  Continuing in this manner we would get a set of lines that, when strung together, should be an approximation to the solution as a whole.</p>
+    
+    <p>In practice you would need to write a computer program to do these computations for you.  In most cases the function \(f(t,y)\) would be too large and/or complicated to use by hand and in most serious uses of Euler’s Method you would want to use hundreds of steps which would make doing this by hand prohibitive.  So, here is a bit of <em>pseudo-code</em> that you can use to write a program for Euler’s Method that uses a uniform step size, \(h\).</p>
+    
+    
+    <ol class="general-list">
+      <li class="MsoNormal"><strong>define</strong> \(f\left( {t,y} \right)\).</li>
+      <li class="MsoNormal"><strong>input</strong>  \(t_{0}\) and \(y_{0}\). </li>
+      <li class="MsoNormal"><strong>input</strong> step size, \(h\) and the number of steps, \(n\).</li>
+      <li class="MsoNormal"><strong>for</strong> \(j\) from 1 to \(n\) <strong>do</strong>
+        <ol class="example_parts_list">
+          <li class="MsoNormal">\(m = f(t_{0}, y_{0})\)</li>
+          <li class="MsoNormal">\(y_{1} = y_{0} + h*m\)</li>
+          <li class="MsoNormal">\(t_{1} = t_{0} + h\)</li>
+          <li class="MsoNormal">Print \(t_{1}\) and \(y_{1}\)</li>
+          <li class="MsoNormal">\(t_{0} = t_{1}\)  </li>
+          <li class="MsoNormal">\(y_{0} = y_{1}\)  </li>
+        </ol>
+      </li>
+      <li class="MsoNormal"><strong>end</strong></li>
+    </ol>
+    
+    <p>The <em>pseudo-code</em> for a non-uniform step size would be a little more complicated, but it would essentially be the same.</p>
+    
+    <p>So, let’s take a look at a couple of examples.  We’ll use Euler’s Method to approximate solutions to a couple of first order differential equations.  The differential equations that we’ll be using are linear first order differential equations that can be easily solved for an exact solution.  Of course, in practice we wouldn’t use Euler’s Method on these kinds of differential equations, but by using easily solvable differential equations we will be able to check the accuracy of the method.  Knowing the accuracy of any approximation method is a good thing.  It is important to know if the method is liable to give a good approximation or not.</p>
+    <a class="anchor" name="First_Euler_Ex1"></a>
+  <div class="example">
+    <span class="example-title">Example 1</span> For the IVP
+          
+              \[y' + 2y = 2 - {{\bf{e}}^{ - 4t}}\hspace{0.25in}y\left( 0 \right) = 1\]
+
+          <p>Use Euler’s Method with a step size of \(h = 0.1\) to find approximate values of the solution at \(t\) = 0.1, 0.2, 0.3, 0.4, and 0.5.  Compare them to the exact values of the solution at these points.</p>
+    <div class="example-content">
+      <span id="SHLink_Soln1" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln1" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln1" class="soln-content">
+        <p>This is a fairly simple linear differential equation so we’ll leave it to you to check that the solution is</p>
+          
+              \[y\left( t \right) = 1 + \frac{1}{2}{{\bf{e}}^{ - 4t}} - \frac{1}{2}{{\bf{e}}^{ - 2t}}\]
+          
+          <p>In order to use Euler’s Method we first need to rewrite the differential equation into the form given in \(\eqref{eq:eq1}\).</p>
+          
+              \[y' = 2 - {{\bf{e}}^{ - 4t}} - 2y\]
+          
+          <p>From this we can see that \(f\left( {t,y} \right) = 2 - {{\bf{e}}^{ - 4t}} - 2y\).  Also note that \(t_{0} = 0\) and \(y_{0} = 1\).  We can now start doing some computations.</p>
+          
+            \[\begin{align*}{f_0} &= f\left( {0,1} \right) = 2 - {{\bf{e}}^{ - 4\left( 0 \right)}} - 2\left( 1 \right) =  - 1\\ {y_1} & = {y_0} + h\,{f_0} = 1 + \left( {0.1} \right)\left( { - 1} \right) = 0.9\end{align*}\]
+          
+          <p>So, the approximation to the solution at \(t_{1} = 0.1\) is \(y_{1} = 0.9\).</p>
+          
+          <p>At the next step we have</p>
+          
+            \[\begin{align*}{f_1} & = f\left( {0.1,0.9} \right) = 2 - {{\bf{e}}^{ - 4\left( {0.1} \right)}} - 2\left( {0.9} \right) =  - \,0.470320046\\  {y_2} & = {y_1} + h\,{f_1} = 0.9 + \left( {0.1} \right)\left( { - \,0.470320046} \right) = 0.852967995\end{align*}\]
+          
+          <p>Therefore, the approximation to the solution at \(t_{2} = 0.2\) is \(y_{2} = 0.852967995\).</p>
+          
+          <p>I’ll leave it to you to check the remainder of these computations.</p>
+          
+            \[\begin{align*}{f_2} & =  - 0.155264954 & \hspace{0.25in}{y_3} & = 0.837441500\\ {f_3} & = 0.023922788 & \hspace{0.25in}{y_4} & = 0.839833779\\ {f_4} & = 0.1184359245 & \hspace{0.25in}{y_5}&  = 0.851677371\end{align*}\]
+          
+          <p>Here’s a quick table that gives the approximations as well as the exact value of the solutions at the given points.</p>
+          
+          <table class="table-no-outer-border">
+              <tr>
+                <th><strong>Time, \(t_{n}\) </strong></th>
+                <th><strong>Approximation</strong></th>
+                <th><strong>Exact</strong></th>
+                <th style="border-right:unset"><strong>Error</strong></th>
+              </tr>
+              <tr>
+                <td>\(t_{0} = 0\)</td>
+                <td>\(y_{0} =1\)</td>
+                <td>\(y(0) = 1\)</td>
+                <td class="table-cell-right" style="border-right:unset">0 %</td>
+              </tr>
+              <tr>
+                <td>\(t_{1} = 0.1\)</td>
+                <td>\(y_{1} =0.9\)</td>
+                <td>\(y(0.1) = 0.925794646\)</td>
+                <td class="table-cell-right" style="border-right:unset">2.79 %</td>
+              </tr>
+              <tr>
+                <td>\(t_{2} = 0.2\)</td>
+                <td>\(y_{2} =0.852967995\)</td>
+                <td>\(y(0.2) = 0.889504459\)</td>
+                <td class="table-cell-right" style="border-right:unset">4.11 %</td>
+              </tr>
+              <tr>
+                <td>\(t_{3} = 0.3\)</td>
+                <td>\(y_{3} =0.837441500\)</td>
+                <td>\(y(0.3) = 0.876191288\)</td>
+                <td class="table-cell-right" style="border-right:unset">4.42 %</td>
+              </tr>
+              <tr>
+                <td>\(t_{4} = 0.4\)</td>
+                <td>\(y_{4} =0.839833779\)</td>
+                <td>\(y(0.4) = 0.876283777\)</td>
+                <td class="table-cell-right" style="border-right:unset">4.16 %</td>
+              </tr>
+              <tr>
+                <td>\(t_{5} = 0.5\)</td>
+                <td>\(y_{5} =0.851677371\)</td>
+                <td>\(y(0.5) = 0.883727921\)</td>
+                <td class="table-cell-right" style="border-right:unset">3.63 %</td>
+              </tr>
+            </table>
+          
+          <p>We’ve also included the error as a percentage.  It’s often easier to see how well an approximation does if you look at percentages.  The formula for this is,</p>
+          
+          
+              \[\mbox{percent error} = \frac{{\left| {\mbox{exact} - \mbox{approximate}} \right|}}{{\mbox{exact}}} \times 100\]
+          
+          <p>We used absolute value in the numerator because we really don’t care at this point if the approximation is larger or smaller than the exact.  We’re only interested in how close the two are.</p>
+      </div>
+    </div>
+  </div>
+
+    <p>The maximum error in the approximations from the last example was 4.42%, which isn’t too bad, but also isn’t all that great of an approximation.  So, provided we aren’t after very accurate approximations this didn’t do too badly.  This kind of error is generally unacceptable in almost all real applications however.  So, how can we get better approximations?</p>
+    
+    <p>Recall that we are getting the approximations by using a tangent line to approximate the value of the solution and that we are moving forward in time by steps of \(h\).  So, if we want a more accurate approximation, then it seems like one way to get a better approximation is to not move forward as much with each step.  In other words, take smaller \(h\)’s.</p>
+    <a class="anchor" name="First_Euler_Ex2"></a>
+  <div class="example">
+    <span class="example-title">Example 2</span> Repeat the previous example only this time give the approximations at \(t = 1\), \(t = 2\), \(t = 3\), \(t = 4\), and \(t = 5\).  Use \(h = 0.1\), \(h = 0.05\), \(h = 0.01\), \(h = 0.005\), and \(h = 0.001\) for the approximations.
+    <div class="example-content">
+      <span id="SHLink_Soln2" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln2" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln2" class="soln-content">
+        <p>Below are two tables, one gives approximations to the solution and the other gives the errors for each approximation.  We’ll leave the computational details to you to check.</p>
+          
+          <table class="table-no-outer-border">
+              <tr>
+                <td class="table-cell-center" colspan="7" style="border-right:unset"><strong>Approximations </strong></td>
+              </tr>
+              <tr>
+                <th><strong>Time</strong></th>
+                <th><strong>Exact</strong></th>
+                <th><strong>\(h = 0.1\)</strong></th>
+                <th><strong>\(h = 0.05\)</strong></th>
+                <th><strong>\(h = 0.01\)</strong></th>
+                <th><strong>\(h = 0.005\)</strong></th>
+                <th style="border-right:unset"><strong>\(h = 0.001\)</strong></th>
+              </tr>
+              <tr>
+                <td>\(t\) = 1</td>
+                <td>0.9414902</td>
+                <td>0.9313244</td>
+                <td>0.9364698</td>
+                <td>0.9404994</td>
+                <td>0.9409957</td>
+                <td style="border-right:unset">0.9413914</td>
+              </tr>
+              <tr>
+                <td>\(t\) = 2</td>
+                <td>0.9910099</td>
+                <td>0.9913681</td>
+                <td>0.9911126</td>
+                <td>0.9910193</td>
+                <td>0.9910139</td>
+                <td style="border-right:unset">0.9910106</td>
+              </tr>
+              <tr>
+                <td>\(t\) = 3</td>
+                <td>0.9987637</td>
+                <td>0.9990501</td>
+                <td>0.9988982</td>
+                <td>0.9987890</td>
+                <td>0.9987763</td>
+                <td style="border-right:unset">0.9987662</td>
+              </tr>
+              <tr>
+                <td>\(t\) = 4</td>
+                <td>0.9998323</td>
+                <td>0.9998976</td>
+                <td>0.9998657</td>
+                <td>0.9998390</td>
+                <td>0.9998357</td>
+                <td style="border-right:unset">0.9998330</td>
+              </tr>
+              <tr>
+                <td>\(t\) = 5</td>
+                <td>0.9999773</td>
+                <td>0.9999890</td>
+                <td>0.9999837</td>
+                <td>0.9999786</td>
+                <td>0.9999780</td>
+                <td style="border-right:unset">0.9999774</td>
+              </tr>
+            </table>
+        
+        <br />  
+
+          <table class="table-no-outer-border">
+              <tr>
+                <td class="table-cell-center" colspan="6" style="border-right:unset"><strong>Percentage Errors</strong></td>
+              </tr>
+              <tr>
+                <th><strong>Time</strong></th>
+                <th><strong>\(h = 0.1\)</strong></th>
+                <th><strong>\(h = 0.05\)</strong></th>
+                <th><strong>\(h = 0.01\)</strong></th>
+                <th><strong>\(h = 0.005\)</strong></th>
+                <th style="border-right:unset"><strong>\(h = 0.001\)</strong></th>
+              </tr>
+              <tr>
+                <td>\(t\) = 1</td>
+                <td class="table-cell-right">1.08 %</td>
+                <td class="table-cell-right">0.53 %</td>
+                <td class="table-cell-right">0.105 %</td>
+                <td class="table-cell-right">0.053 %</td>
+                <td class="table-cell-right" style="border-right:unset">0.0105 %</td>
+              </tr>
+              <tr>
+                <td>\(t\) = 2</td>
+                <td class="table-cell-right">0.036 %</td>
+                <td class="table-cell-right">0.010 %</td>
+                <td class="table-cell-right">0.00094 %</td>
+                <td class="table-cell-right">0.00041 %</td>
+                <td class="table-cell-right" style="border-right:unset">0.0000703 %</td>
+              </tr>
+              <tr>
+                <td>\(t\) = 3</td>
+                <td class="table-cell-right">0.029 %</td>
+                <td class="table-cell-right">0.013 %</td>
+                <td class="table-cell-right">0.0025 %</td>
+                <td class="table-cell-right">0.0013 %</td>
+                <td class="table-cell-right" style="border-right:unset">0.00025 %</td>
+              </tr>
+              <tr>
+                <td>\(t\) = 4</td>
+                <td class="table-cell-right">0.0065 %</td>
+                <td class="table-cell-right">0.0033 %</td>
+                <td class="table-cell-right">0.00067 %</td>
+                <td class="table-cell-right">0.00034 %</td>
+                <td class="table-cell-right" style="border-right:unset">0.000067 %</td>
+              </tr>
+              <tr>
+                <td>\(t\) = 5</td>
+                <td class="table-cell-right">0.0012 %</td>
+                <td class="table-cell-right">0.00064 %</td>
+                <td class="table-cell-right">0.00013 %</td>
+                <td class="table-cell-right">0.000068 %</td>
+                <td class="table-cell-right" style="border-right:unset">0.000014 %</td>
+              </tr>
+            </table>
+          
+          <p>We can see from these tables that decreasing \(h\) does in fact improve the accuracy of the approximation as we expected.</p>
+      </div>
+    </div>
+  </div>
+    
+    <p>There are a couple of other interesting things to note from the data.  First, notice that in general, decreasing the step size, \(h\), by a factor of 10 also decreased the error by about a factor of 10 as well.</p>
+    
+    <p>Also, notice that as \(t\) increases the approximation actually tends to get better.  This isn’t the case completely as we can see that in all but the first case the \(t\) = 3 error is worse than the error at \(t\) = 2, but after that point, it only gets better.  This should not be expected in general.  In this case this is more a function of the shape of the solution.  Below is a graph of the solution (the line) as well as the approximations (the dots) for \(h = 0.1\).</p>
+    
+    
+      <div class="center-div"><img alt="A graph with domain $0 \le t \le 5$ and range $0 \le y \le 1$.  The graph starts at (0,1) and decreases to a valley at approximately (0.25, 0.9) and then increases until approximately (1,1).  After which the solution flattens out to a nearly horizontal line. Also included on the graph is a series of dots.  For the most part the dots fall almost directly on the graph of the solution.  The only exception to this is at the valley where the dots fall slightly below the graph of the solution." border="0" height="243" src="http://tutorial.math.lamar.edu/Classes/DE/EulersMethod_Files/image002.png" width="360" /></div>
+    
+      
+    <p>Notice that the approximation is worst where the function is changing rapidly.  This should not be too surprising.  Recall that we’re using tangent lines to get the approximations and so the value of the tangent line at a given \(t\) will often be significantly different than the function due to the rapidly changing function at that point.</p>
+    
+    <p>Also, in this case, because the function ends up fairly flat as \(t\) increases, the tangents start looking like the function itself and so the approximations are very accurate.  This won’t always be the case of course.</p>
+    
+    <p>Let’s take a look at one more example.</p>
+    <a class="anchor" name="First_Euler_Ex3"></a>
+  <div class="example">
+    <span class="example-title">Example 3</span> For the IVP
+          
+            \[y' - y =  - \frac{1}{2}{{\bf{e}}^{\frac{t}{2}}}\sin \left( {5t} \right) + 5{{\bf{e}}^{\frac{t}{2}}}\cos \left( {5t} \right)\hspace{0.25in}y\left( 0 \right) = 0\]
+
+          <p>Use Euler’s Method to find the approximation to the solution at \(t = 1\), \(t = 2\), \(t = 3\), \(t = 4\), and \(t = 5\).  Use \(h = 0.1\), \(h = 0.05\), \(h = 0.01\), \(h = 0.005\), and \(h = 0.001\) for the approximations.</p>
+    <div class="example-content">
+      <span id="SHLink_Soln3" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln3" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln3" class="soln-content">
+        <p>We’ll leave it to you to check the details of the solution process.  The solution to this linear first order differential equation is.</p>
+          
+              \[y\left( t \right) = {{\bf{e}}^{\frac{t}{2}}}\sin \left( {5t} \right)\]
+          
+          <p>Here are two tables giving the approximations and the percentage error for each approximation.</p>
+          
+          <table class="table-no-outer-border">
+              <tr>
+                <td class="table-cell-center" colspan="7" style="border-right:unset"><strong>Approximations </strong></td>
+              </tr>
+              <tr>
+                <th><strong>Time</strong></th>
+                <th><strong>Exact</strong></th>
+                <th><strong>\(h = 0.1\)</strong></th>
+                <th><strong>\(h = 0.05\)</strong></th>
+                <th><strong>\(h = 0.01\)</strong></th>
+                <th><strong>\(h = 0.005\)</strong></th>
+                <th style="border-right:unset"><strong>\(h = 0.001\)</strong></th>
+              </tr>
+              <tr>
+                <td>\(t\) = 1</td>
+                <td>-1.58100</td>
+                <td>-0.97167</td>
+                <td>-1.26512</td>
+                <td>-1.51580</td>
+                <td>-1.54826</td>
+                <td style="border-right:unset">-1.57443</td>
+              </tr>
+              <tr>
+                <td>\(t\) = 2</td>
+                <td>-1.47880</td>
+                <td>0.65270</td>
+                <td>-0.34327</td>
+                <td>-1.23907</td>
+                <td>-1.35810</td>
+                <td style="border-right:unset">-1.45453</td>
+              </tr>
+              <tr>
+                <td>\(t\) = 3</td>
+                <td>2.91439</td>
+                <td>7.30209</td>
+                <td>5.34682</td>
+                <td>3.44488</td>
+                <td>3.18259</td>
+                <td style="border-right:unset">2.96851</td>
+              </tr>
+              <tr>
+                <td>\(t\) = 4</td>
+                <td>6.74580</td>
+                <td>15.56128</td>
+                <td>11.84839</td>
+                <td>7.89808</td>
+                <td>7.33093</td>
+                <td style="border-right:unset">6.86429</td>
+              </tr>
+              <tr>
+                <td>\(t\) = 5</td>
+                <td>-1.61237</td>
+                <td>21.95465</td>
+                <td>12.24018</td>
+                <td>1.56056</td>
+                <td>0.0018864</td>
+                <td style="border-right:unset">-1.28498</td>
+              </tr>
+            </table>
+          
+          <br />
+          
+            <table class="table-no-outer-border">
+              <tr>
+                <td class="table-cell-center" colspan="6" style="border-right:unset"><strong>Percentage Errors</strong></td>
+              </tr>
+              <tr>
+                <th><strong>Time</strong></th>
+                <th><strong>\(h = 0.1\)</strong></th>
+                <th><strong>\(h = 0.05\)</strong></th>
+                <th><strong>\(h = 0.01\)</strong></th>
+                <th><strong>\(h = 0.005\)</strong></th>
+                <th style="border-right:unset"><strong>\(h = 0.001\)</strong></th>
+              </tr>
+              <tr>
+                <td>\(t\) = 1</td>
+                <td class="table-cell-right">38.54 %</td>
+                <td class="table-cell-right">19.98 %</td>
+                <td class="table-cell-right">4.12 %</td>
+                <td class="table-cell-right">2.07 %</td>
+                <td class="table-cell-right" style="border-right:unset">0.42 %</td>
+              </tr>
+              <tr>
+                <td>\(t\) = 2</td>
+                <td class="table-cell-right">144.14 %</td>
+                <td class="table-cell-right">76.79 %</td>
+                <td class="table-cell-right">16.21 %</td>
+                <td class="table-cell-right">8.16 %</td>
+                <td class="table-cell-right" style="border-right:unset">1.64 %</td>
+              </tr>
+              <tr>
+                <td>\(t\) = 3</td>
+                <td class="table-cell-right">150.55 %</td>
+                <td class="table-cell-right">83.46 %</td>
+                <td class="table-cell-right">18.20 %</td>
+                <td class="table-cell-right">9.20 %</td>
+                <td class="table-cell-right" style="border-right:unset">1.86 %</td>
+              </tr>
+              <tr>
+                <td>\(t\) = 4</td>
+                <td class="table-cell-right">130.68 %</td>
+                <td class="table-cell-right">75.64 %</td>
+                <td class="table-cell-right">17.08 %</td>
+                <td class="table-cell-right">8.67 %</td>
+                <td class="table-cell-right" style="border-right:unset">1.76 %</td>
+              </tr>
+              <tr>
+                <td>\(t\) = 5</td>
+                <td class="table-cell-right">1461.63 %</td>
+                <td class="table-cell-right">859.14 %</td>
+                <td class="table-cell-right">196.79 %</td>
+                <td class="table-cell-right">100.12 %</td>
+                <td class="table-cell-right" style="border-right:unset">20.30 %</td>
+              </tr>
+            </table>
+          
+          <p>So, with this example Euler’s Method does not do nearly as well as it did on the first IVP.  Some of the observations we made in Example 2 are still true however.  Decreasing the size of \(h\) decreases the error as we saw with the last example and would expect to happen.  Also, as we saw in the last example, decreasing \(h\) by a factor of 10 also decreases the error by about a factor of 10.</p>
+          
+          <p>However, unlike the last example increasing \(t\) sees an increasing error.  This behavior is fairly common in the approximations.  We shouldn’t expect the error to decrease as \(t\) increases as we saw in the last example.  Each successive approximation is found using a previous approximation.  Therefore, at each step we introduce error and so approximations should, in general, get worse as \(t\) increases.</p>
+          
+          <p>Below is a graph of the solution (the line) as well as the approximations (the dots) for \(h\) = 0.05.</p>
+          
+          
+            <div class="center-div"><img alt="A graph with domain $0 \le t \le 5$ and range $-10 \le y \le 15$.  The graph starts at (0,0) and is an oscillation with an increasing amplitude.  Peaks occur at approximately t=0.5, 1.5, 2.8 and 4.1.  Valleys occur at approximately t=1, 2.2, 3.5 and 4.8.  The amplitude of the first peak is approximately 2 while the amplitude of the last peak is approximately 8.  The amplitude of the first valley is approximately -2 while the amplitude of the last valley is approximately -10.  Also included on the graph is a series of dots.  The dots also graph out an oscillation with increasing amplitude whose peaks/valleys occur at nearly the same points as the graph of the solution.  Initially the dots fall almost directly on the graph of the solution.  After approximately t=1 however the dots start rising above the graph of the solution and as t increases the dots get higher and higher over the graph of the solution.  The last peak in the dots occurs at approximately y=15 (as opposed to y=8 for the solution) and the last valley occurs at approximately y=2 (as opposed to y=-10 for the solution)." border="0" height="228" src="http://tutorial.math.lamar.edu/Classes/DE/EulersMethod_Files/image003.png" width="360" /></div>
+          
+            
+          <p>As we can see the approximations do follow the general shape of the solution, however, the error is clearly getting much worse as \(t\) increases.</p>
+      </div>
+    </div>
+  </div>
+    
+    <p>So, Euler’s method is a nice method for approximating fairly nice solutions that don’t change rapidly.  However, not all solutions will be this nicely behaved.  There are other approximation methods that do a much better job of approximating solutions.  These are not the focus of this course however, so I’ll leave it to you to look further into this field if you are interested.</p>
+    
+    <p>Also notice that we don’t generally have the actual solution around to check the accuracy of the approximation.  We generally try to find bounds on the error for each method that will tell us how well an approximation should do.  These error bounds are again not really the focus of this course, so I’ll leave these to you as well if you’re interested in looking into them.</p>
+    
+  
+  
+
+
+      
+
+
+
+    </div>
+    <!-- End of content div -->
+
+
+    <div class="footer">
+      <div class="footer-links">
+        [<a href="http://tutorial.math.lamar.edu/Contact.aspx">Contact Me</a>]&nbsp;[<a href="../../MyStudents-2.html">My Students</a>]&nbsp;[<a href="http://tutorial.math.lamar.edu/Privacy.aspx">Privacy Statement</a>]&nbsp;[<a href="../../Help-2.html">Site Help &amp; FAQ</a>]&nbsp;[<a href="http://tutorial.math.lamar.edu/Terms.aspx">Terms of Use</a>]
+      </div>
+      <div class="footer-dates">
+        <div class="footer-copyright"><span id="lblCopyRight">&copy; 2003 - 2019 Paul Dawkins</span></div>
+        <div class="footer-spacer"></div>
+        <div class="footer-modified-date">Page Last Modified : <span id="lblModified">12/3/2018</span></div>
+      </div>
+      
+
+    </div>
+  </div>
+  <!-- End of page div...  -->
+</body>
+
+<!-- Mirrored from tutorial.math.lamar.edu/Classes/DE/EulersMethod.aspx by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 27 Feb 2019 06:15:36 GMT -->
+</html>

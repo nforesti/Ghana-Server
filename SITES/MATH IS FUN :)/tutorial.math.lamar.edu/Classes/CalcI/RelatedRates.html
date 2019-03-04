@@ -1,0 +1,1346 @@
+
+
+<!DOCTYPE html>
+
+<html>
+
+<!-- Mirrored from tutorial.math.lamar.edu/Classes/CalcI/RelatedRates.aspx by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 27 Feb 2019 06:15:35 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=yes" /><meta http-equiv="X-UA-Compatible" content="IE=edge" />  <!-- For best MathJax performance on IE  -->
+
+  <meta name="google-site-verification" content="uLoA31CJfOhIVMJWBjCmQL8xNMmmLybZU3LRKavy9WQ" /><title>
+	Calculus I - Related Rates
+</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="../../../www.googletagmanager.com/gtag/js1872?id=UA-331594-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-331594-1');
+  </script>
+
+  <link type="text/css" href="../../css/jquery.mmenu.all.css" rel="stylesheet" /><link type="text/css" href="../../css/jquery.dropdown.css" rel="stylesheet" /><link href="../../FA/css/fontawesome-all.min.css" rel="stylesheet" /><link type="text/css" href="../../css/notes-all.css" rel="stylesheet" /><link type="text/css" href="../../css/notes-google.css" rel="stylesheet" /><link type="text/css" href="../../css/notes-mmenu.css" rel="stylesheet" /><link type="text/css" href="../../css/notes-dropdown.css" rel="stylesheet" />
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+     TeX: { equationNumbers: { autoNumber: "AMS" } }
+    });
+  </script>
+  <script type="text/javascript" async src="../../../cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax2ba6.js?config=TeX-AMS_CHTML-full"></script>
+  <script type="text/javascript" src="../../../code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="../../js/jquery.mmenu.all.js"></script>
+  <script type="text/javascript" src="../../js/jquery.dropdown.js"></script>
+  <script type="text/javascript" src="../../js/notes-all.js"></script>  
+
+  <script>
+    (function () {
+      var cx = '001004262401526223570:11yv6vpcqvy';
+      var gcse = document.createElement('script');
+      gcse.type = 'text/javascript';
+      gcse.async = true;
+      gcse.src = '../../../cse.google.com/cse07b6.html?cx=' + cx;
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(gcse, s);
+    })();
+  </script>
+
+<meta http-equiv="keywords" name="keywords" content="related rates" /><meta http-equiv="description" name="description" content="In this section we will discuss the only application of derivatives in this section, Related Rates.  In related rates problems we are give the rate of change of one quantity in a problem and asked to determine the rate of one (or more) quantities in the problem.  This is often one of the more difficult sections for students.  We work quite a few problems in this section so hopefully by the end of this section you will get a decent understanding on how these problems work." /></head>
+<body onload="init({Notes: 'NoteMobile;8/21/2018;true'})">
+
+  <div id="page">
+
+    <div class="header">
+      <div class="header-row">
+        <!--<a href="#menu"><span></span></a>-->
+        <div id="side-menu-icon" class="header-side-menu-icon"><a href="#menu"><span class="fas fa-bars fa-lg" aria-hidden="true" title="Main Menu - Change between topics, chapters and sections as well as a few extra pages."></span></a></div>
+        <span class="header-title"><a href="../../index.html" class="header-title-link">Paul's Online Notes</a></span>
+        <div class="header-spacer"></div>
+
+        <div id="content-top-menu" class="top-menu">
+          <button id="content-type-menu" class="top-menu-button" data-jq-dropdown="#jq-dropdown-type" title="View (Notes, Practice Problems or Assignment Problems, Show/Hide Solutions and/or Steps) Menu">
+            <span id="tab_top_menu_notes" class="top-menu-item-title">Notes</span> <span class="far fa-eye fa-lg" aria-hidden="true"></span>
+          </button>
+
+          <button id="quicknav-menu" class="top-menu-button" data-jq-dropdown="#jq-dropdown-quicknav" title="Quick Navigation (Previous/Next Sections and Problems and Full Problem List) Menu">
+            <span class="top-menu-item-title">Quick Nav</span> <span class="fas fa-exchange fa-lg" aria-hidden="true"></span>
+          </button>
+          
+          <button id="download-menu" class="top-menu-button" data-jq-dropdown="#jq-dropdown-download" title="Download pdf Menu">
+            <span class="top-menu-item-title">Download</span> <span class="far fa-download fa-lg" aria-hidden="true"></span>
+          </button>
+
+          <button id="print-menu" class="top-menu-button top-menu-button-icon-only" data-jq-dropdown="#jq-print-download" title="Print Menu">
+            <span class="far fa-print fa-lg" aria-hidden="true"></span>
+          </button>
+        </div>
+
+        <div id="header-google-search" class="header-search">
+          <gcse:search></gcse:search>
+        </div>
+        <div id="header-search-icon" title="Site Search" class="header-menu-icon"><span id="search-icon" class="fas fa-search" aria-hidden="true"></span></div>
+
+      </div>
+    </div>
+
+     <div id="jq-dropdown-type" class="jq-dropdown jq-dropdown-tip">
+      <ul class="jq-dropdown-menu">
+        
+        <li id="li_type_menu_goto" class="top-menu-nav-title">Go To</li>
+        <li id="li_type_menu_notes">
+          <span id="type_menu_notes_span" title="Viewing the Notes for the current topic." class="top-menu-current">Notes</span>
+          
+        </li>
+        <li id="li_type_menu_practice">
+          
+          
+          <a href="http://tutorial.math.lamar.edu/Problems/CalcI/RelatedRates.aspx" id="type_menu_practice_link" title="Go to Practice Problems for current topic.">Practice Problems</a>
+        </li>
+        <li id="li_type_menu_asgn">
+          
+          <a href="http://tutorial.math.lamar.edu/ProblemsNS/CalcI/RelatedRates.aspx" id="type_menu_asgn_link" title="Go to Assignment Problems for current topic.">Assignment Problems</a>
+        </li>
+        <li id="li_type_menu_sh" class="top-menu-nav-title">Show/Hide</li>
+        <li id="li_type_menu_show" title="Show any hidden solutions and/or steps that may be present on the page."><a href="javascript:SHPrintPage(1,0)" id="view_menu_show">Show all Solutions/Steps/<em>etc.</em></a></li>
+        <li id="li_type_menu_hide" title="Hide any visible solutions and/or steps that may be present on the page."><a href="javascript:SHPrintPage(0,0)" id="view_menu_hide">Hide all Solutions/Steps/<em>etc.</em></a></li>
+      </ul>
+    </div>
+
+    <div id="jq-dropdown-quicknav" class="jq-dropdown jq-dropdown-tip">
+      <ul class="jq-dropdown-menu">
+        <li id="li_nav_menu_sections" class="top-menu-nav-title">Sections</li>
+        <li id="li_nav_menu_prev_section"><a href="ImplicitDIff.html" id="a_nav_menu_prev_section" class="top-menu-nav-link" title="Previous Section : Implicit Differentiation"><span class="top-menu-prev fas fa-chevron-left"></span> Implicit Differentiation</a></li>
+        <li id="li_nav_menu_next_section"><a href="HigherOrderDerivatives.html" id="a_nav_menu_next_section" class="top-menu-nav-link" title="Next Section : Higher Order Derivatives"><span class="top-menu-prev-hidden fas fa-chevron-left"></span> Higher Order Derivatives <span class="top-menu-next fas fa-chevron-right"></span></a></li>
+        <li id="li_nav_menu_chapters" class="top-menu-nav-title">Chapters</li>
+        <li id="li_nav_menu_prev_chapter"><a href="limitsIntro.html" id="a_nav_menu_prev_chapter" class="top-menu-nav-link" title="Previous Chapter : Limits"><span class="top-menu-prev fas fa-chevron-left"></span><span class="top-menu-prev fas fa-chevron-left"></span> Limits</a></li>
+        <li id="li_nav_menu_next_chapter"><a href="DerivAppsIntro.html" id="a_nav_menu_next_chapter" class="top-menu-nav-link" title="Next Chapter : Applications of Derivatives"><span class="top-menu-prev-hidden fas fa-chevron-left"></span><span class="top-menu-prev-hidden fas fa-chevron-left"></span> Applications of Derivatives <span class="top-menu-next fas fa-chevron-right"></span><span class="top-menu-next fas fa-chevron-right"></span></a></li>
+        
+        
+        
+        
+        <li id="li_nav_menu_classes" class="top-menu-nav-title">Classes</li>
+        <li>
+          
+          <a href="../Alg/Alg.html" id="nav_menu_alg_link" title="Go To Algebra Notes">Algebra</a>
+        </li>
+        <li>
+          <span id="nav_menu_calci_span" title="Currently Viewing Calculus I Material" class="top-menu-current">Calculus I</span>
+          
+        </li>
+        <li>
+          
+          <a href="../CalcII/CalcII.html" id="nav_menu_calcii_link" title="Go To Calculus II Notes">Calculus II</a>
+        </li>
+        <li>
+          
+          <a href="../CalcIII/CalcIII.html" id="nav_menu_calciii_link" title="Go To Calculus III Notes">Calculus III</a>
+        </li>
+        <li>
+          
+          <a href="../DE/DE.html" id="nav_menu_de_link" title="Go To Differential Equations Notes">Differential Equations</a>
+        </li>
+        <li id="li_nav_menu_extras" class="top-menu-nav-title">Extras</li>
+        <li>
+          
+          <a href="../../Extras/AlgebraTrigReview/AlgebraTrig.html" id="nav_menu_algtrig_link" title="Go To Algebra &amp; Trig Review">Algebra &amp; Trig Review</a>
+        </li>
+        <li>
+          
+          <a href="../../Extras/CommonErrors/CommonMathErrors.html" id="nav_menu_commonerrors_link" title="Go To Common Math Errors">Common Math Errors</a>
+        </li>
+        <li>
+          
+          <a href="../../Extras/ComplexPrimer/ComplexNumbers.html" id="nav_menu_complexnumbers_link" title="Go To Complex Numbers Primer">Complex Number Primer</a>
+        </li>
+        <li>
+          
+          <a href="../../Extras/StudyMath/HowToStudyMath.html" id="nav_menu_studymath_link" title="Go To How To Study Math">How To Study Math</a>
+        </li>
+        <li>
+          
+          <a href="../../Extras/CheatSheets_Tables.html" id="nav_menu_cheattables_link" title="Go To List of Cheat Sheets and Tables">Cheat Sheets &amp; Tables</a>
+        </li>
+        <li id="li_nav_menu_misc" class="top-menu-nav-title">Misc</li>
+        <li><a href="http://tutorial.math.lamar.edu/contact.aspx" id="nav_menu_contact" title="Contact Me!">Contact Me</a></li>
+        <li><a href="../../mathjax.html" id="nav_menu_mathjax" title="Info on MathJax and MathJax Configuration Menu">MathJax Help and Configuration</a></li>
+        <li><a href="../../mystudents.html" id="nav_menu_students" title="Go here if you are currently taking a class from me!">My Students</a></li>
+      </ul>
+    </div>
+
+    <div id="jq-dropdown-download" class="jq-dropdown jq-dropdown-anchor-right jq-dropdown-tip">
+      <ul class="jq-dropdown-menu">
+        
+        <li id="li_download_menu_notes" class="top-menu-nav-title">Notes Downloads</li>
+        <li id="li_download_menu_notes_book"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=B,8,N" id="download_menu_notes_book" data-PDF="Download - Menu$Notes - Book$Calculus I$/Downloads/CalcI/Notes/Complete.pdf">Complete Book</a></li>
+        
+        <li id="li_download_menu_notes_chapter"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=C,27,N" id="download_menu_notes_chapter" data-PDF="Download - Menu$Notes - Chapter$Calculus I - Derivatives$/Downloads/CalcI/Notes/Derivatives.pdf">Current Chapter</a></li>
+        <li id="li_download_menu_notes_section"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=S,202,N" id="download_menu_notes_section" data-PDF="Download - Menu$Notes - Section$Calculus I - Related Rates$/Downloads/CalcI/Notes/RelatedRates.pdf">Current Section</a></li>
+        <li id="li_download_menu_practice" class="top-menu-nav-title">Practice Problems Downloads</li>
+        
+        <li id="li_download_menu_practice_book"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=B,8,P" id="download_menu_practice_book" data-PDF="Download - Menu$Practice Problems - Book$Calculus I$/Downloads/CalcI/Practice Problems/Complete.pdf">Complete Book - Problems Only</a></li>
+        <li id="li_download_menu_solutions_book"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=B,8,S" id="download_menu_solutions_book" data-PDF="Download - Menu$Practice Problems Solutions - Book$Calculus I$/Downloads/CalcI/Practice Problems Solutions/Complete.pdf">Complete Book - Solutions</a></li>
+        <li id="li_download_menu_b_c" class="top-menu-divider"></li>
+        <li id="li_download_menu_practice_chapter"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=C,27,P" id="download_menu_practice_chapter" data-PDF="Download - Menu$Practice Problems - Chapter$Calculus I - Derivatives$/Downloads/CalcI/Practice Problems/Derivatives.pdf">Current Chapter - Problems Only</a></li>
+        <li id="li_download_menu_solutions_chapter"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=C,27,S" id="download_menu_solutions_chapter" data-PDF="Download - Menu$Practice Problems Solutions - Chapter$Calculus I - Derivatives$/Downloads/CalcI/Practice Problems Solutions/Derivatives.pdf">Current Chapter - Solutions</a></li>
+        <li id="li_download_menu_c_s" class="top-menu-divider"></li>
+        <li id="li_download_menu_practice_section"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=S,202,P" id="download_menu_practice_section" data-PDF="Download - Menu$Practice Problems - Section$Calculus I - Related Rates$/Downloads/CalcI/Practice Problems/RelatedRates.pdf">Current Section - Problems Only</a></li>
+        <li id="li_download_menu_solutions_section"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=S,202,S" id="download_menu_solutions_section" data-PDF="Download - Menu$Practice Problems Solutions - Section$Calculus I - Related Rates$/Downloads/CalcI/Practice Problems Solutions/RelatedRates.pdf">Current Section - Solutions</a></li>
+        <li id="li_download_menu_asgn" class="top-menu-nav-title">Assignment Problems Downloads</li>
+        
+        <li id="li_download_menu_asgn_book"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=B,8,A" id="download_menu_asgn_book" data-PDF="Download - Menu$Assignment Problems - Book$Calculus I$/Downloads/CalcI/Assignment Problems/Complete.pdf">Complete Book</a></li>
+        <li id="li_download_menu_asgn_chapter"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=C,27,A" id="download_menu_asgn_chapter" data-PDF="Download - Menu$Assignment Problems - Chapter$Calculus I - Derivatives$/Downloads/CalcI/Assignment Problems/Derivatives.pdf">Current Chapter</a></li>
+        <li id="li_download_menu_asgn_section"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=S,202,A" id="download_menu_asgn_section" data-PDF="Download - Menu$Assignment Problems - Section$Calculus I - Related Rates$/Downloads/CalcI/Assignment Problems/RelatedRates.pdf">Current Section</a></li>
+        <li id="li_download_menu_other" class="top-menu-nav-title">Other Items</li>
+        <li id="li_download_menu_urls">
+          <a href="http://tutorial.math.lamar.edu/DownloadURLs.aspx?bi=8&amp;ci=27&amp;si=202" id="download_menu_urls">Get URL's for Download Items</a>
+        </li>
+      </ul>
+    </div>
+
+    <div id="jq-print-download" class="jq-dropdown jq-dropdown-anchor-right jq-dropdown-tip">
+      <ul class="jq-dropdown-menu">
+        <li id="li_print_menu_default"><a href="javascript:SHPrintPage()" id="print_menu_default">Print Page in Current Form (Default)</a></li>
+        <li id="li_print_menu_show"><a href="javascript:SHPrintPage(1,1)" id="print_menu_show">Show all Solutions/Steps and Print Page</a></li>
+        <li id="li_print_menu_hide"><a href="javascript:SHPrintPage(0,1)" id="print_menu_hide">Hide all Solutions/Steps and Print Page</a></li>
+      </ul>
+    </div>
+
+
+
+   
+
+    <nav id="menu" class="notes-nav">
+      <ul>
+        <li><a href="../../index.html" class="mm-link">Home</a></li>
+        <li><span>Classes</span></li>
+        <li><a href="../Alg/Alg.html" class="mm-link">Algebra</a>
+          <ul>
+            <li><a href="../Alg/Preliminaries.html" class="mm-link">Preliminaries</a>
+              <ul>
+                <li><a href="../Alg/IntegerExponents.html" class="mm-link">Integer Exponents</a></li>
+                <li><a href="../Alg/RationalExponents.html" class="mm-link">Rational Exponents</a></li>
+                <li><a href="../Alg/Radicals.html" class="mm-link">Radicals</a></li>
+                <li><a href="../Alg/Polynomials.html" class="mm-link">Polynomials</a></li>
+                <li><a href="../Alg/Factoring.html" class="mm-link">Factoring Polynomials</a></li>
+                <li><a href="../Alg/RationalExpressions.html" class="mm-link">Rational Expressions</a></li>
+                <li><a href="../Alg/ComplexNumbers.html" class="mm-link">Complex Numbers</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/Solving.html" class="mm-link">Solving Equations and Inequalities</a>
+              <ul>
+                <li><a href="../Alg/SolutionSets.html" class="mm-link">Solutions and Solution Sets</a></li>
+                <li><a href="../Alg/SolveLinearEqns.html" class="mm-link">Linear Equations</a></li>
+                <li><a href="../Alg/LinearApps.html" class="mm-link">Applications of Linear Equations</a></li>
+                <li><a href="../Alg/SolveMultiVariable.html" class="mm-link">Equations With More Than One Variable</a></li>
+                <li><a href="../Alg/SolveQuadraticEqnsI.html" class="mm-link">Quadratic Equations - Part I</a></li>
+                <li><a href="../Alg/SolveQuadraticEqnsII.html" class="mm-link">Quadratic Equations - Part II</a></li>
+                <li><a href="../Alg/SolveQuadraticEqnSummary.html" class="mm-link">Quadratic Equations : A Summary</a></li>
+                <li><a href="../Alg/QuadraticApps.html" class="mm-link">Applications of Quadratic Equations</a></li>
+                <li><a href="../Alg/ReducibleToQuadratic.html" class="mm-link">Equations Reducible to Quadratic in Form</a></li>
+                <li><a href="../Alg/SolveRadicalEqns.html" class="mm-link">Equations with Radicals</a></li>
+                <li><a href="../Alg/SolveLinearInequalities.html" class="mm-link">Linear Inequalities</a></li>
+                <li><a href="../Alg/SolvePolyInequalities.html" class="mm-link">Polynomial Inequalities</a></li>
+                <li><a href="../Alg/SolveRationalInequalities.html" class="mm-link">Rational Inequalities</a></li>
+                <li><a href="../Alg/SolveAbsValueEqns.html" class="mm-link">Absolute Value Equations</a></li>
+                <li><a href="../Alg/SolveAbsValueIneq.html" class="mm-link">Absolute Value Inequalities</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/Graphing_Functions.html" class="mm-link">Graphing and Functions</a>
+              <ul>
+                <li><a href="../Alg/Graphing.html" class="mm-link">Graphing</a></li>
+                <li><a href="../Alg/Lines.html" class="mm-link">Lines</a></li>
+                <li><a href="../Alg/Circles.html" class="mm-link">Circles</a></li>
+                <li><a href="../Alg/FunctionDefn.html" class="mm-link">The Definition of a Function</a></li>
+                <li><a href="../Alg/GraphFunctions.html" class="mm-link">Graphing Functions</a></li>
+                <li><a href="../Alg/CombineFunctions.html" class="mm-link">Combining Functions</a></li>
+                <li><a href="../Alg/InverseFunctions.html" class="mm-link">Inverse Functions</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/CommonGraphs.html" class="mm-link">Common Graphs</a>
+              <ul>
+                <li><a href="../Alg/Lines_Circles_PWF.html" class="mm-link">Lines, Circles and Piecewise Functions</a></li>
+                <li><a href="../Alg/Parabolas.html" class="mm-link">Parabolas</a></li>
+                <li><a href="../Alg/Ellipses.html" class="mm-link">Ellipses</a></li>
+                <li><a href="../Alg/Hyperbolas.html" class="mm-link">Hyperbolas</a></li>
+                <li><a href="../Alg/MiscFunctions.html" class="mm-link">Miscellaneous Functions</a></li>
+                <li><a href="../Alg/Transformations.html" class="mm-link">Transformations</a></li>
+                <li><a href="../Alg/Symmetry.html" class="mm-link">Symmetry</a></li>
+                <li><a href="../Alg/GraphRationalFcns.html" class="mm-link">Rational Functions</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/PolynomialFunctions.html" class="mm-link">Polynomial Functions</a>
+              <ul>
+                <li><a href="../Alg/DividingPolynomials.html" class="mm-link">Dividing Polynomials</a></li>
+                <li><a href="../Alg/ZeroesOfPolynomials.html" class="mm-link">Zeroes/Roots of Polynomials</a></li>
+                <li><a href="../Alg/GraphingPolynomials.html" class="mm-link">Graphing Polynomials</a></li>
+                <li><a href="../Alg/FindingZeroesOfPolynomials.html" class="mm-link">Finding Zeroes of Polynomials</a></li>
+                <li><a href="../Alg/PartialFractions.html" class="mm-link">Partial Fractions</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/ExpAndLog.html" class="mm-link">Exponential and Logarithm Functions</a>
+              <ul>
+                <li><a href="../Alg/ExpFunctions.html" class="mm-link">Exponential Functions</a></li>
+                <li><a href="../Alg/LogFunctions.html" class="mm-link">Logarithm Functions</a></li>
+                <li><a href="../Alg/SolveExpEqns.html" class="mm-link">Solving Exponential Equations</a></li>
+                <li><a href="../Alg/SolveLogEqns.html" class="mm-link">Solving Logarithm Equations</a></li>
+                <li><a href="../Alg/ExpLogApplications.html" class="mm-link">Applications</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/Systems.html" class="mm-link">Systems of Equations</a>
+              <ul>
+                <li><a href="../Alg/SystemsTwoVrble.html" class="mm-link">Linear Systems with Two Variables</a></li>
+                <li><a href="../Alg/SystemsThreeVrble.html" class="mm-link">Linear Systems with Three Variables</a></li>
+                <li><a href="../Alg/AugmentedMatrix.html" class="mm-link">Augmented Matrices</a></li>
+                <li><a href="../Alg/AugmentedMatrixII.html" class="mm-link">More on the Augmented Matrix</a></li>
+                <li><a href="../Alg/NonlinearSystems.html" class="mm-link">Nonlinear Systems</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="CalcI.html" class="mm-link">Calculus I</a>
+          <ul>
+            <li><a href="ReviewIntro.html" class="mm-link">Review</a>
+              <ul>
+                <li><a href="Functions.html" class="mm-link">Functions</a></li>
+                <li><a href="InverseFunctions.html" class="mm-link">Inverse Functions</a></li>
+                <li><a href="TrigFcns.html" class="mm-link">Trig Functions</a></li>
+                <li><a href="TrigEquations.html" class="mm-link">Solving Trig Equations</a></li>
+                <li><a href="TrigEquations_CalcI.html" class="mm-link">Trig Equations with Calculators, Part I</a></li>
+                <li><a href="TrigEquations_CalcII.html" class="mm-link">Trig Equations with Calculators, Part II</a></li>
+                <li><a href="ExpFunctions.html" class="mm-link">Exponential Functions</a></li>
+                <li><a href="LogFcns.html" class="mm-link">Logarithm Functions</a></li>
+                <li><a href="ExpLogEqns.html" class="mm-link">Exponential and Logarithm Equations</a></li>
+                <li><a href="CommonGraphs.html" class="mm-link">Common Graphs</a></li>
+              </ul>
+            </li>
+            <li><a href="limitsIntro.html" class="mm-link">Limits</a>
+              <ul>
+                <li><a href="Tangents_Rates.html" class="mm-link">Tangent Lines and Rates of Change</a></li>
+                <li><a href="TheLimit.html" class="mm-link">The Limit</a></li>
+                <li><a href="OneSidedLimits.html" class="mm-link">One-Sided Limits</a></li>
+                <li><a href="LimitsProperties.html" class="mm-link">Limit Properties</a></li>
+                <li><a href="ComputingLimits.html" class="mm-link">Computing Limits</a></li>
+                <li><a href="InfiniteLimits.html" class="mm-link">Infinite Limits</a></li>
+                <li><a href="LimitsAtInfinityI.html" class="mm-link">Limits At Infinity, Part I</a></li>
+                <li><a href="LimitsAtInfinityII.html" class="mm-link">Limits At Infinity, Part II</a></li>
+                <li><a href="Continuity.html" class="mm-link">Continuity</a></li>
+                <li><a href="DefnOfLimit.html" class="mm-link">The Definition of the Limit</a></li>
+              </ul>
+            </li>
+            <li><a href="DerivativeIntro.html" class="mm-link">Derivatives</a>
+              <ul>
+                <li><a href="DefnOfDerivative.html" class="mm-link">The Definition of the Derivative</a></li>
+                <li><a href="DerivativeInterp.html" class="mm-link">Interpretation of the Derivative</a></li>
+                <li><a href="DiffFormulas.html" class="mm-link">Differentiation Formulas</a></li>
+                <li><a href="ProductQuotientRule.html" class="mm-link">Product and Quotient Rule</a></li>
+                <li><a href="DiffTrigFcns.html" class="mm-link">Derivatives of Trig Functions</a></li>
+                <li><a href="DiffExpLogFcns.html" class="mm-link">Derivatives of Exponential and Logarithm Functions</a></li>
+                <li><a href="DiffInvTrigFcns.html" class="mm-link">Derivatives of Inverse Trig Functions</a></li>
+                <li><a href="DiffHyperFcns.html" class="mm-link">Derivatives of Hyperbolic Functions</a></li>
+                <li><a href="ChainRule.html" class="mm-link">Chain Rule</a></li>
+                <li><a href="ImplicitDIff.html" class="mm-link">Implicit Differentiation</a></li>
+                <li><a href="RelatedRates.html" class="mm-link">Related Rates</a></li>
+                <li><a href="HigherOrderDerivatives.html" class="mm-link">Higher Order Derivatives</a></li>
+                <li><a href="LogDiff.html" class="mm-link">Logarithmic Differentiation</a></li>
+              </ul>
+            </li>
+            <li><a href="DerivAppsIntro.html" class="mm-link">Applications of Derivatives</a>
+              <ul>
+                <li><a href="RateOfChange.html" class="mm-link">Rates of Change</a></li>
+                <li><a href="CriticalPoints.html" class="mm-link">Critical Points</a></li>
+                <li><a href="MinMaxValues.html" class="mm-link">Minimum and Maximum Values</a></li>
+                <li><a href="AbsExtrema.html" class="mm-link">Finding Absolute Extrema</a></li>
+                <li><a href="ShapeofGraphPtI.html" class="mm-link">The Shape of a Graph, Part I</a></li>
+                <li><a href="ShapeofGraphPtII.html" class="mm-link">The Shape of a Graph, Part II</a></li>
+                <li><a href="MeanValueTheorem.html" class="mm-link">The Mean Value Theorem</a></li>
+                <li><a href="Optimization.html" class="mm-link">Optimization</a></li>
+                <li><a href="MoreOptimization.html" class="mm-link">More Optimization Problems</a></li>
+                <li><a href="LHospitalsRule.html" class="mm-link">L'Hospital's Rule and Indeterminate Forms</a></li>
+                <li><a href="LinearApproximations.html" class="mm-link">Linear Approximations</a></li>
+                <li><a href="Differentials.html" class="mm-link">Differentials</a></li>
+                <li><a href="NewtonsMethod.html" class="mm-link">Newton's Method</a></li>
+                <li><a href="BusinessApps.html" class="mm-link">Business Applications</a></li>
+              </ul>
+            </li>
+            <li><a href="IntegralsIntro.html" class="mm-link">Integrals</a>
+              <ul>
+                <li><a href="IndefiniteIntegrals.html" class="mm-link">Indefinite Integrals</a></li>
+                <li><a href="ComputingIndefiniteIntegrals.html" class="mm-link">Computing Indefinite Integrals</a></li>
+                <li><a href="SubstitutionRuleIndefinite.html" class="mm-link">Substitution Rule for Indefinite Integrals</a></li>
+                <li><a href="SubstitutionRuleIndefinitePtII.html" class="mm-link">More Substitution Rule</a></li>
+                <li><a href="AreaProblem.html" class="mm-link">Area Problem</a></li>
+                <li><a href="DefnOfDefiniteIntegral.html" class="mm-link">Definition of the Definite Integral</a></li>
+                <li><a href="ComputingDefiniteIntegrals.html" class="mm-link">Computing Definite Integrals</a></li>
+                <li><a href="SubstitutionRuleDefinite.html" class="mm-link">Substitution Rule for Definite Integrals</a></li>
+              </ul>
+            </li>
+            <li><a href="IntAppsIntro.html" class="mm-link">Applications of Integrals</a>
+              <ul>
+                <li><a href="AvgFcnValue.html" class="mm-link">Average Function Value</a></li>
+                <li><a href="AreaBetweenCurves.html" class="mm-link">Area Between Curves</a></li>
+                <li><a href="VolumeWithRings.html" class="mm-link">Volumes of Solids of Revolution / Method of Rings</a></li>
+                <li><a href="VolumeWithCylinder.html" class="mm-link">Volumes of Solids of Revolution/Method of Cylinders</a></li>
+                <li><a href="MoreVolume.html" class="mm-link">More Volume Problems</a></li>
+                <li><a href="Work.html" class="mm-link">Work</a></li>
+              </ul>
+            </li>
+            <li><a href="ExtrasIntro.html" class="mm-link">Extras</a>
+              <ul>
+                <li><a href="LimitProofs.html" class="mm-link">Proof of Various Limit Properties</a></li>
+                <li><a href="DerivativeProofs.html" class="mm-link">Proof of Various Derivative Properties</a></li>
+                <li><a href="ProofTrigDeriv.html" class="mm-link">Proof of Trig Limits</a></li>
+                <li><a href="DerivativeAppsProofs.html" class="mm-link">Proofs of Derivative Applications Facts</a></li>
+                <li><a href="ProofIntProp.html" class="mm-link">Proof of Various Integral Properties </a></li>
+                <li><a href="Area_Volume_Formulas.html" class="mm-link">Area and Volume Formulas</a></li>
+                <li><a href="TypesOfInfinity.html" class="mm-link">Types of Infinity</a></li>
+                <li><a href="SummationNotation.html" class="mm-link">Summation Notation</a></li>
+                <li><a href="ConstantofIntegration.html" class="mm-link">Constant of Integration</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../CalcII/CalcII.html" class="mm-link">Calculus II</a>
+          <ul>
+            <li><a href="../CalcII/IntTechIntro.html" class="mm-link">Integration Techniques</a>
+              <ul>
+                <li><a href="../CalcII/IntegrationByParts.html" class="mm-link">Integration by Parts</a></li>
+                <li><a href="../CalcII/IntegralsWithTrig.html" class="mm-link">Integrals Involving Trig Functions</a></li>
+                <li><a href="../CalcII/TrigSubstitutions.html" class="mm-link">Trig Substitutions</a></li>
+                <li><a href="../CalcII/PartialFractions.html" class="mm-link">Partial Fractions</a></li>
+                <li><a href="../CalcII/IntegralsWithRoots.html" class="mm-link">Integrals Involving Roots</a></li>
+                <li><a href="../CalcII/IntegralsWithQuadratics.html" class="mm-link">Integrals Involving Quadratics</a></li>
+                <li><a href="../CalcII/IntegrationStrategy.html" class="mm-link">Integration Strategy</a></li>
+                <li><a href="../CalcII/ImproperIntegrals.html" class="mm-link">Improper Integrals</a></li>
+                <li><a href="../CalcII/ImproperIntegralsCompTest.html" class="mm-link">Comparison Test for Improper Integrals</a></li>
+                <li><a href="../CalcII/ApproximatingDefIntegrals.html" class="mm-link">Approximating Definite Integrals</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/IntAppsIntro.html" class="mm-link">Applications of Integrals</a>
+              <ul>
+                <li><a href="../CalcII/ArcLength.html" class="mm-link">Arc Length</a></li>
+                <li><a href="../CalcII/SurfaceArea.html" class="mm-link">Surface Area</a></li>
+                <li><a href="../CalcII/CenterOfMass.html" class="mm-link">Center of Mass</a></li>
+                <li><a href="../CalcII/HydrostaticPressure.html" class="mm-link">Hydrostatic Pressure</a></li>
+                <li><a href="../CalcII/Probability.html" class="mm-link">Probability</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/ParametricIntro.html" class="mm-link">Parametric Equations and Polar Coordinates</a>
+              <ul>
+                <li><a href="../CalcII/ParametricEqn.html" class="mm-link">Parametric Equations and Curves</a></li>
+                <li><a href="../CalcII/ParaTangent.html" class="mm-link">Tangents with Parametric Equations</a></li>
+                <li><a href="../CalcII/ParaArea.html" class="mm-link">Area with Parametric Equations</a></li>
+                <li><a href="../CalcII/ParaArcLength.html" class="mm-link">Arc Length with Parametric Equations</a></li>
+                <li><a href="../CalcII/ParaSurfaceArea.html" class="mm-link">Surface Area with Parametric Equations</a></li>
+                <li><a href="../CalcII/PolarCoordinates.html" class="mm-link">Polar Coordinates</a></li>
+                <li><a href="../CalcII/PolarTangents.html" class="mm-link">Tangents with Polar Coordinates</a></li>
+                <li><a href="../CalcII/PolarArea.html" class="mm-link">Area with Polar Coordinates</a></li>
+                <li><a href="../CalcII/PolarArcLength.html" class="mm-link">Arc Length with Polar Coordinates</a></li>
+                <li><a href="../CalcII/PolarSurfaceArea.html" class="mm-link">Surface Area with Polar Coordinates</a></li>
+                <li><a href="../CalcII/ArcLength_SurfaceArea.html" class="mm-link">Arc Length and Surface Area Revisited</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/SeriesIntro.html" class="mm-link">Series & Sequences</a>
+              <ul>
+                <li><a href="../CalcII/Sequences.html" class="mm-link">Sequences</a></li>
+                <li><a href="../CalcII/MoreSequences.html" class="mm-link">More on Sequences</a></li>
+                <li><a href="../CalcII/Series_Basics.html" class="mm-link">Series - The Basics</a></li>
+                <li><a href="../CalcII/ConvergenceOfSeries.html" class="mm-link">Convergence/Divergence of Series</a></li>
+                <li><a href="../CalcII/Series_Special.html" class="mm-link">Special Series</a></li>
+                <li><a href="../CalcII/IntegralTest.html" class="mm-link">Integral Test</a></li>
+                <li><a href="../CalcII/SeriesCompTest.html" class="mm-link">Comparison Test/Limit Comparison Test</a></li>
+                <li><a href="../CalcII/AlternatingSeries.html" class="mm-link">Alternating Series Test</a></li>
+                <li><a href="../CalcII/AbsoluteConvergence.html" class="mm-link">Absolute Convergence</a></li>
+                <li><a href="../CalcII/RatioTest.html" class="mm-link">Ratio Test</a></li>
+                <li><a href="../CalcII/RootTest.html" class="mm-link">Root Test</a></li>
+                <li><a href="../CalcII/SeriesStrategy.html" class="mm-link">Strategy for Series</a></li>
+                <li><a href="../CalcII/EstimatingSeries.html" class="mm-link">Estimating the Value of a Series</a></li>
+                <li><a href="../CalcII/PowerSeries.html" class="mm-link">Power Series</a></li>
+                <li><a href="../CalcII/PowerSeriesandFunctions.html" class="mm-link">Power Series and Functions</a></li>
+                <li><a href="../CalcII/TaylorSeries.html" class="mm-link">Taylor Series</a></li>
+                <li><a href="../CalcII/TaylorSeriesApps.html" class="mm-link">Applications of Series</a></li>
+                <li><a href="../CalcII/BinomialSeries.html" class="mm-link">Binomial Series</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/VectorsIntro.html" class="mm-link">Vectors</a>
+              <ul>
+                <li><a href="../CalcII/Vectors_Basics.html" class="mm-link">Vectors - The Basics</a></li>
+                <li><a href="../CalcII/VectorArithmetic.html" class="mm-link">Vector Arithmetic</a></li>
+                <li><a href="../CalcII/DotProduct.html" class="mm-link">Dot Product</a></li>
+                <li><a href="../CalcII/CrossProduct.html" class="mm-link">Cross Product</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/3DSpace.html" class="mm-link">3-Dimensional Space</a>
+              <ul>
+                <li><a href="../CalcII/3DCoords.html" class="mm-link">The 3-D Coordinate System</a></li>
+                <li><a href="../CalcII/EqnsOfLines.html" class="mm-link">Equations of Lines</a></li>
+                <li><a href="../CalcII/EqnsOfPlanes.html" class="mm-link">Equations of Planes</a></li>
+                <li><a href="../CalcII/QuadricSurfaces.html" class="mm-link">Quadric Surfaces</a></li>
+                <li><a href="../CalcII/MultiVrbleFcns.html" class="mm-link">Functions of Several Variables</a></li>
+                <li><a href="../CalcII/VectorFunctions.html" class="mm-link">Vector Functions</a></li>
+                <li><a href="../CalcII/VectorFcnsCalculus.html" class="mm-link">Calculus with Vector Functions</a></li>
+                <li><a href="../CalcII/TangentNormalVectors.html" class="mm-link">Tangent, Normal and Binormal Vectors</a></li>
+                <li><a href="../CalcII/VectorArcLength.html" class="mm-link">Arc Length with Vector Functions</a></li>
+                <li><a href="../CalcII/Curvature.html" class="mm-link">Curvature</a></li>
+                <li><a href="../CalcII/Velocity_Acceleration.html" class="mm-link">Velocity and Acceleration</a></li>
+                <li><a href="../CalcII/CylindricalCoords.html" class="mm-link">Cylindrical Coordinates</a></li>
+                <li><a href="../CalcII/SphericalCoords.html" class="mm-link">Spherical Coordinates</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../CalcIII/CalcIII.html" class="mm-link">Calculus III</a>
+          <ul>
+            <li><a href="../CalcIII/3DSpace.html" class="mm-link">3-Dimensional Space</a>
+              <ul>
+                <li><a href="../CalcIII/3DCoords.html" class="mm-link">The 3-D Coordinate System</a></li>
+                <li><a href="../CalcIII/EqnsOfLines.html" class="mm-link">Equations of Lines</a></li>
+                <li><a href="../CalcIII/EqnsOfPlanes.html" class="mm-link">Equations of Planes</a></li>
+                <li><a href="../CalcIII/QuadricSurfaces.html" class="mm-link">Quadric Surfaces</a></li>
+                <li><a href="../CalcIII/MultiVrbleFcns.html" class="mm-link">Functions of Several Variables</a></li>
+                <li><a href="../CalcIII/VectorFunctions.html" class="mm-link">Vector Functions</a></li>
+                <li><a href="../CalcIII/VectorFcnsCalculus.html" class="mm-link">Calculus with Vector Functions</a></li>
+                <li><a href="../CalcIII/TangentNormalVectors.html" class="mm-link">Tangent, Normal and Binormal Vectors</a></li>
+                <li><a href="../CalcIII/VectorArcLength.html" class="mm-link">Arc Length with Vector Functions</a></li>
+                <li><a href="../CalcIII/Curvature.html" class="mm-link">Curvature</a></li>
+                <li><a href="../CalcIII/Velocity_Acceleration.html" class="mm-link">Velocity and Acceleration</a></li>
+                <li><a href="../CalcIII/CylindricalCoords.html" class="mm-link">Cylindrical Coordinates</a></li>
+                <li><a href="../CalcIII/SphericalCoords.html" class="mm-link">Spherical Coordinates</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/PartialDerivsIntro.html" class="mm-link">Partial Derivatives</a>
+              <ul>
+                <li><a href="../CalcIII/Limits.html" class="mm-link">Limits</a></li>
+                <li><a href="../CalcIII/PartialDerivatives.html" class="mm-link">Partial Derivatives</a></li>
+                <li><a href="../CalcIII/PartialDerivInterp.html" class="mm-link">Interpretations of Partial Derivatives</a></li>
+                <li><a href="../CalcIII/HighOrderPartialDerivs.html" class="mm-link">Higher Order Partial Derivatives</a></li>
+                <li><a href="../CalcIII/Differentials.html" class="mm-link">Differentials</a></li>
+                <li><a href="../CalcIII/ChainRule.html" class="mm-link">Chain Rule</a></li>
+                <li><a href="../CalcIII/DirectionalDeriv.html" class="mm-link">Directional Derivatives</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/PartialDerivAppsIntro.html" class="mm-link">Applications of Partial Derivatives</a>
+              <ul>
+                <li><a href="../CalcIII/TangentPlanes.html" class="mm-link">Tangent Planes and Linear Approximations</a></li>
+                <li><a href="../CalcIII/GradientVectorTangentPlane.html" class="mm-link">Gradient Vector, Tangent Planes and Normal Lines</a></li>
+                <li><a href="../CalcIII/RelativeExtrema.html" class="mm-link">Relative Minimums and Maximums</a></li>
+                <li><a href="../CalcIII/AbsoluteExtrema.html" class="mm-link">Absolute Minimums and Maximums</a></li>
+                <li><a href="../CalcIII/LagrangeMultipliers.html" class="mm-link">Lagrange Multipliers</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/MultipleIntegralsIntro.html" class="mm-link">Multiple Integrals</a>
+              <ul>
+                <li><a href="../CalcIII/DoubleIntegrals.html" class="mm-link">Double Integrals</a></li>
+                <li><a href="../CalcIII/IteratedIntegrals.html" class="mm-link">Iterated Integrals</a></li>
+                <li><a href="../CalcIII/DIGeneralRegion.html" class="mm-link">Double Integrals over General Regions</a></li>
+                <li><a href="../CalcIII/DIPolarCoords.html" class="mm-link">Double Integrals in Polar Coordinates</a></li>
+                <li><a href="../CalcIII/TripleIntegrals.html" class="mm-link">Triple Integrals</a></li>
+                <li><a href="../CalcIII/TICylindricalCoords.html" class="mm-link">Triple Integrals in Cylindrical Coordinates</a></li>
+                <li><a href="../CalcIII/TISphericalCoords.html" class="mm-link">Triple Integrals in Spherical Coordinates</a></li>
+                <li><a href="../CalcIII/ChangeOfVariables.html" class="mm-link">Change of Variables</a></li>
+                <li><a href="../CalcIII/SurfaceArea.html" class="mm-link">Surface Area</a></li>
+                <li><a href="../CalcIII/Area_Volume.html" class="mm-link">Area and Volume Revisited</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/LineIntegralsIntro.html" class="mm-link">Line Integrals</a>
+              <ul>
+                <li><a href="../CalcIII/VectorFields.html" class="mm-link">Vector Fields</a></li>
+                <li><a href="../CalcIII/LineIntegralsPtI.html" class="mm-link">Line Integrals - Part I</a></li>
+                <li><a href="../CalcIII/LineIntegralsPtII.html" class="mm-link">Line Integrals - Part II</a></li>
+                <li><a href="../CalcIII/LineIntegralsVectorFields.html" class="mm-link">Line Integrals of Vector Fields</a></li>
+                <li><a href="../CalcIII/FundThmLineIntegrals.html" class="mm-link">Fundamental Theorem for Line Integrals</a></li>
+                <li><a href="../CalcIII/ConservativeVectorField.html" class="mm-link">Conservative Vector Fields</a></li>
+                <li><a href="../CalcIII/GreensTheorem.html" class="mm-link">Green's Theorem</a></li>
+                <li><a href="../CalcIII/CurlDivergence.html" class="mm-link">Curl and Divergence</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/SurfaceIntegralsIntro.html" class="mm-link">Surface Integrals</a>
+              <ul>
+                <li><a href="../CalcIII/ParametricSurfaces.html" class="mm-link">Parametric Surfaces</a></li>
+                <li><a href="../CalcIII/SurfaceIntegrals.html" class="mm-link">Surface Integrals</a></li>
+                <li><a href="../CalcIII/SurfIntVectorField.html" class="mm-link">Surface Integrals of Vector Fields</a></li>
+                <li><a href="../CalcIII/StokesTheorem.html" class="mm-link">Stokes' Theorem</a></li>
+                <li><a href="../CalcIII/DivergenceTheorem.html" class="mm-link">Divergence Theorem</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../DE/DE.html" class="mm-link">Differential Equations</a>
+          <ul>
+            <li><a href="../DE/IntroBasic.html" class="mm-link">Basic Concepts</a>
+              <ul>
+                <li><a href="../DE/Definitions.html" class="mm-link">Definitions</a></li>
+                <li><a href="../DE/DirectionFields.html" class="mm-link">Direction Fields</a></li>
+                <li><a href="../DE/FinalThoughts.html" class="mm-link">Final Thoughts</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/IntroFirstOrder.html" class="mm-link">First Order DE's</a>
+              <ul>
+                <li><a href="../DE/Linear.html" class="mm-link">Linear Equations</a></li>
+                <li><a href="../DE/Separable.html" class="mm-link">Separable Equations</a></li>
+                <li><a href="../DE/Exact.html" class="mm-link">Exact Equations</a></li>
+                <li><a href="../DE/Bernoulli.html" class="mm-link">Bernoulli Differential Equations</a></li>
+                <li><a href="../DE/Substitutions.html" class="mm-link">Substitutions</a></li>
+                <li><a href="../DE/IoV.html" class="mm-link">Intervals of Validity</a></li>
+                <li><a href="../DE/Modeling.html" class="mm-link">Modeling with First Order DE's</a></li>
+                <li><a href="../DE/EquilibriumSolutions.html" class="mm-link">Equilibrium Solutions</a></li>
+                <li><a href="../DE/EulersMethod.html" class="mm-link">Euler's Method</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/IntroSecondOrder.html" class="mm-link">Second Order DE's</a>
+              <ul>
+                <li><a href="../DE/SecondOrderConcepts.html" class="mm-link">Basic Concepts</a></li>
+                <li><a href="../DE/RealRoots.html" class="mm-link">Real & Distinct Roots</a></li>
+                <li><a href="../DE/ComplexRoots.html" class="mm-link">Complex Roots</a></li>
+                <li><a href="../DE/RepeatedRoots.html" class="mm-link">Repeated Roots</a></li>
+                <li><a href="../DE/ReductionofOrder.html" class="mm-link">Reduction of Order</a></li>
+                <li><a href="../DE/FundamentalSetsofSolutions.html" class="mm-link">Fundamental Sets of Solutions</a></li>
+                <li><a href="../DE/Wronskian.html" class="mm-link">More on the  Wronskian</a></li>
+                <li><a href="../DE/NonhomogeneousDE.html" class="mm-link">Nonhomogeneous Differential Equations</a></li>
+                <li><a href="../DE/UndeterminedCoefficients.html" class="mm-link">Undetermined Coefficients</a></li>
+                <li><a href="../DE/VariationofParameters.html" class="mm-link">Variation of Parameters</a></li>
+                <li><a href="../DE/Vibrations.html" class="mm-link">Mechanical Vibrations</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/LaplaceIntro.html" class="mm-link">Laplace Transforms</a>
+              <ul>
+                <li><a href="../DE/LaplaceDefinition.html" class="mm-link">The Definition</a></li>
+                <li><a href="../DE/LaplaceTransforms.html" class="mm-link">Laplace Transforms</a></li>
+                <li><a href="../DE/InverseTransforms.html" class="mm-link">Inverse Laplace Transforms</a></li>
+                <li><a href="../DE/StepFunctions.html" class="mm-link">Step Functions</a></li>
+                <li><a href="../DE/IVPWithLaplace.html" class="mm-link">Solving IVP's with Laplace Transforms</a></li>
+                <li><a href="../DE/IVPWithNonConstantCoefficient.html" class="mm-link">Nonconstant Coefficient IVP's</a></li>
+                <li><a href="../DE/IVPWithStepFunction.html" class="mm-link">IVP's With Step Functions</a></li>
+                <li><a href="../DE/DiracDeltaFunction.html" class="mm-link">Dirac Delta Function</a></li>
+                <li><a href="../DE/ConvolutionIntegrals.html" class="mm-link">Convolution Integrals</a></li>
+                <li><a href="../DE/Laplace_Table.html" class="mm-link">Table Of Laplace Transforms</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/SystemsIntro.html" class="mm-link">Systems of DE's</a>
+              <ul>
+                <li><a href="../DE/LA_Systems.html" class="mm-link">Review : Systems of Equations</a></li>
+                <li><a href="../DE/LA_Matrix.html" class="mm-link">Review : Matrices & Vectors</a></li>
+                <li><a href="../DE/LA_Eigen.html" class="mm-link">Review : Eigenvalues & Eigenvectors</a></li>
+                <li><a href="../DE/SystemsDE.html" class="mm-link">Systems of Differential Equations</a></li>
+                <li><a href="../DE/SolutionsToSystems.html" class="mm-link">Solutions to Systems</a></li>
+                <li><a href="../DE/PhasePlane.html" class="mm-link">Phase Plane</a></li>
+                <li><a href="../DE/RealEigenvalues.html" class="mm-link">Real Eigenvalues</a></li>
+                <li><a href="../DE/ComplexEigenvalues.html" class="mm-link">Complex Eigenvalues</a></li>
+                <li><a href="../DE/RepeatedEigenvalues.html" class="mm-link">Repeated Eigenvalues</a></li>
+                <li><a href="../DE/NonhomogeneousSystems.html" class="mm-link">Nonhomogeneous Systems</a></li>
+                <li><a href="../DE/SystemsLaplace.html" class="mm-link">Laplace Transforms</a></li>
+                <li><a href="../DE/SystemsModeling.html" class="mm-link">Modeling</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/SeriesIntro.html" class="mm-link">Series Solutions to DE's</a>
+              <ul>
+                <li><a href="../DE/PowerSeries.html" class="mm-link">Review : Power Series</a></li>
+                <li><a href="../DE/TaylorSeries.html" class="mm-link">Review : Taylor Series</a></li>
+                <li><a href="../DE/SeriesSolutions.html" class="mm-link">Series Solutions</a></li>
+                <li><a href="../DE/EulerEquations.html" class="mm-link">Euler Equations</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/IntroHigherOrder.html" class="mm-link">Higher Order Differential Equations</a>
+              <ul>
+                <li><a href="../DE/HOBasicConcepts.html" class="mm-link">Basic Concepts for <em>n</em><sup>th</sup> Order Linear Equations</a></li>
+                <li><a href="../DE/HOHomogeneousDE.html" class="mm-link">Linear Homogeneous Differential Equations</a></li>
+                <li><a href="../DE/HOUndeterminedCoeff.html" class="mm-link">Undetermined Coefficients</a></li>
+                <li><a href="../DE/HOVariationOfParam.html" class="mm-link">Variation of Parameters</a></li>
+                <li><a href="../DE/HOLaplaceTransforms.html" class="mm-link">Laplace Transforms</a></li>
+                <li><a href="../DE/HOSystems.html" class="mm-link">Systems of Differential Equations</a></li>
+                <li><a href="../DE/HOSeries.html" class="mm-link">Series Solutions</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/IntroBVP.html" class="mm-link">Boundary Value Problems &amp; Fourier Series</a>
+              <ul>
+                <li><a href="../DE/BoundaryValueProblem.html" class="mm-link">Boundary Value Problems</a></li>
+                <li><a href="../DE/BVPEvals.html" class="mm-link">Eigenvalues and Eigenfunctions</a></li>
+                <li><a href="../DE/PeriodicOrthogonal.html" class="mm-link">Periodic Functions &amp; Orthogonal Functions</a></li>
+                <li><a href="../DE/FourierSineSeries.html" class="mm-link">Fourier Sine Series</a></li>
+                <li><a href="../DE/FourierCosineSeries.html" class="mm-link">Fourier Cosine Series</a></li>
+                <li><a href="../DE/FourierSeries.html" class="mm-link">Fourier Series</a></li>
+                <li><a href="../DE/ConvergenceFourierSeries.html" class="mm-link">Convergence of Fourier Series</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/IntroPDE.html" class="mm-link">Partial Differential Equations </a>
+              <ul>
+                <li><a href="../DE/TheHeatEquation.html" class="mm-link">The Heat Equation</a></li>
+                <li><a href="../DE/TheWaveEquation.html" class="mm-link">The Wave Equation</a></li>
+                <li><a href="../DE/PDETerminology.html" class="mm-link">Terminology</a></li>
+                <li><a href="../DE/SeparationofVariables.html" class="mm-link">Separation of Variables</a></li>
+                <li><a href="../DE/SolvingHeatEquation.html" class="mm-link">Solving the Heat Equation</a></li>
+                <li><a href="../DE/HeatEqnNonZero.html" class="mm-link">Heat Equation with Non-Zero Temperature Boundaries</a></li>
+                <li><a href="../DE/LaplacesEqn.html" class="mm-link">Laplace's Equation</a></li>
+                <li><a href="../DE/VibratingString.html" class="mm-link">Vibrating String</a></li>
+                <li><a href="../DE/PDESummary.html" class="mm-link">Summary of Separation of Variables</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><span>Extras</span></li>
+        <li><a href="../../Extras/AlgebraTrigReview/AlgebraTrig.html" class="mm-link">Algebra &amp; Trig Review</a>
+          <ul>
+            <li><a href="../../Extras/AlgebraTrigReview/AlgebraIntro.html" class="mm-link">Algebra</a>
+              <ul>
+                <li><a href="../../Extras/AlgebraTrigReview/Exponents.html" class="mm-link">Exponents </a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/AbsoluteValue.html" class="mm-link">Absolute Value</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Radicals.html" class="mm-link">Radicals</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Rationalizing.html" class="mm-link">Rationalizing </a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Functions.html" class="mm-link">Functions </a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/MultPoly.html" class="mm-link">Multiplying Polynomials</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Factoring.html" class="mm-link">Factoring</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SimpRatExp.html" class="mm-link">Simplifying Rational Expressions</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Graphing.html" class="mm-link">Graphing and Common Graphs</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveEqnPtI.html" class="mm-link">Solving Equations, Part I</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveEqnPtII.html" class="mm-link">Solving Equations, Part II</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveSystems.html" class="mm-link">Solving Systems of Equations</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveIneq.html" class="mm-link">Solving Inequalities</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveAbsValue.html" class="mm-link">Absolute Value Equations and Inequalities</a></li>
+              </ul>
+            </li>
+            <li><a href="../../Extras/AlgebraTrigReview/TrigIntro.html" class="mm-link">Trigonometry</a>
+              <ul>
+                <li><a href="../../Extras/AlgebraTrigReview/TrigFunctions.html" class="mm-link">Trig Function Evaluation</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/TrigGraphs.html" class="mm-link">Graphs of Trig Functions</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/TrigFormulas.html" class="mm-link">Trig Formulas</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveTrigEqn.html" class="mm-link">Solving Trig Equations</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/InverseTrig.html" class="mm-link">Inverse Trig Functions</a></li>
+              </ul>
+            </li>
+            <li><a href="../../Extras/AlgebraTrigReview/ExpLogIntro.html" class="mm-link">Exponentials & Logarithms</a>
+              <ul>
+                <li><a href="../../Extras/AlgebraTrigReview/ExponentialFcns.html" class="mm-link">Basic Exponential Functions</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/LogarithmFcns.html" class="mm-link">Basic Logarithm Functions</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/LogProperties.html" class="mm-link">Logarithm Properties</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SimpLogs.html" class="mm-link">Simplifying Logarithms</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveExpEqn.html" class="mm-link">Solving Exponential Equations</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveLogEqn.html" class="mm-link">Solving Logarithm Equations</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../../Extras/CommonErrors/CommonMathErrors.html" class="mm-link">Common Math Errors</a>
+          <ul>
+            <li><a href="../../Extras/CommonErrors/GeneralErrors.html" class="mm-link">General Errors</a>
+            </li>
+            <li><a href="../../Extras/CommonErrors/AlgebraErrors.html" class="mm-link">Algebra Errors</a>
+            </li>
+            <li><a href="../../Extras/CommonErrors/TrigErrors.html" class="mm-link">Trig Errors</a>
+            </li>
+            <li><a href="../../Extras/CommonErrors/CommonErrors.html" class="mm-link">Common Errors</a>
+            </li>
+            <li><a href="../../Extras/CommonErrors/CalculusErrors.html" class="mm-link">Calculus Errors</a>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../../Extras/ComplexPrimer/ComplexNumbers.html" class="mm-link">Complex Number Primer</a>
+          <ul>
+            <li><a href="../../Extras/ComplexPrimer/Definition.html" class="mm-link">The Definition</a>
+            </li>
+            <li><a href="../../Extras/ComplexPrimer/Arithmetic.html" class="mm-link">Arithmetic</a>
+            </li>
+            <li><a href="../../Extras/ComplexPrimer/ConjugateModulus.html" class="mm-link">Conjugate and Modulus</a>
+            </li>
+            <li><a href="../../Extras/ComplexPrimer/Forms.html" class="mm-link">Polar and Exponential Forms</a>
+            </li>
+            <li><a href="../../Extras/ComplexPrimer/Roots.html" class="mm-link">Powers and Roots</a>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../../Extras/StudyMath/HowToStudyMath.html" class="mm-link">How To Study Math</a>
+          <ul>
+            <li><a href="../../Extras/StudyMath/GeneralTips.html" class="mm-link">General Tips</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/TakingNotes.html" class="mm-link">Taking Notes</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/GettingHelp.html" class="mm-link">Getting Help</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/Homework.html" class="mm-link">Doing Homework</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/ProblemSolving.html" class="mm-link">Problem Solving</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/StudyForExam.html" class="mm-link">Studying For an Exam</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/TakingExam.html" class="mm-link">Taking an Exam</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/Errors.html" class="mm-link">Learn From Your Errors</a>
+            </li>
+          </ul>
+        </li>
+
+        <li><span>Misc Links</span></li>
+        <li><a href="http://tutorial.math.lamar.edu/contact.aspx" class="mm-link">Contact Me</a></li>
+        <li><a href="../../links.html" class="mm-link">Links</a></li>
+        <li><a href="../../mathjax.html" class="mm-link">MathJax Help and Configuration</a></li>
+        <li><a href="../../mystudents.html" class="mm-link">My Students</a></li>
+        <li><a href="http://tutorial.math.lamar.edu/privacy.aspx" class="mm-link">Privacy Statement</a></li>
+        <li><a href="../../help.html" class="mm-link">Site Help & FAQ</a></li>
+        <li><a href="http://tutorial.math.lamar.edu/terms.aspx" class="mm-link">Terms of Use</a></li>
+      </ul>
+    </nav>
+
+
+
+    <div class="top-info-bar">
+      <span id="mobile-title" class="mobile-header-title header-title">Paul's Online Notes</span>
+      <br />
+      <span class="top-menu-breadcrumb">
+        <a href="../../index.html" id="breadcrumb_home_link" title="Go to Main Page">Home</a>
+        <span id="breadcrumb_h_b_sep_span">/ </span>
+        <a href="CalcI.html" id="breadcrumb_book_link" title="Go to Book Introduction">Calculus I</a>
+        
+        <span id="breadcrumb_b_c_sep_span">/ </span>
+        <a href="DerivativeIntro.html" id="breadcrumb_chapter_link" title="Go to Chapter Introduction">Derivatives</a>
+        
+        <span id="breadcrumb_section_span"> / Related Rates</span>
+      </span>
+
+    </div>
+
+    <div id="nav_links" class="top-nav-bar">
+      
+      <span id="nav_current_notes">Notes</span>
+      <a href="http://tutorial.math.lamar.edu/Problems/CalcI/RelatedRates.aspx" id="nav_links_practice" title="Go to Practice Problems for current topic.">Practice<span class="nav_desktop_extra"> Problems</span></a>
+      
+      <a href="http://tutorial.math.lamar.edu/ProblemsNS/CalcI/RelatedRates.aspx" id="nav_links_asgn" title="Go to Assignment Problems for current topic.">Assignment<span class="nav_desktop_extra">  Problems</span></a>
+      
+    </div>
+
+    <div class="header-divider"></div>
+
+    <div class="content">  
+      
+      
+      <span id="SHLink_NoteMobile" class="SH-Link content-note-link-mobile">Show Mobile Notice</span>
+      <span id="SHImg_NoteMobile" class="fas fa-caret-right SH-padding content-note-link-mobile" aria-hidden="true"></span>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+
+      <span id="SHALink_S_Note" class="SH-Link SH-Hide SH-Bracket">Show All Notes</span>&nbsp;<span id="SHALink_H_Note" class="SH-Link SH-Hide SH-Bracket">Hide All Notes</span>
+      
+      
+      <div id="SHObj_NoteMobile" class="content-note-container content-note-container-mobile">
+        <div class="content-note-header">Mobile Notice</div>
+        <div class="content-note">You appear to be on a device with a "narrow" screen width (<em>i.e.</em> you are probably on a mobile phone).  Due to the nature of the mathematics on this site it is best views in landscape mode.  If your device is not in landscape mode many of the equations will run off the side of your device (should be able to scroll to see them) and some of the menu items will be cut off due to the narrow screen width.</div>
+      </div>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+
+      
+
+
+  <form method="post" action="http://tutorial.math.lamar.edu/Classes/CalcI/RelatedRates.aspx" id="ctl00">
+<div class="aspNetHidden">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+</div>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="D8757188" />
+</div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </form>
+
+  <h3>Section 3-11 : Related Rates</h3>
+
+    <p>In this section we are going to look at an application of implicit differentiation.  Most of the applications of derivatives are in the next chapter however there are a couple of reasons for placing it in this chapter as opposed to putting it into the next chapter with the other applications.  The first reason is that it’s an application of implicit differentiation and so putting it right after that section means that we won’t have forgotten how to do implicit differentiation.  The other reason is simply that after doing all these derivatives we need to be reminded that there really are actual applications to derivatives.  Sometimes it is easy to forget there really is a reason that we’re spending all this time on derivatives.</p>
+    
+    <p>For these related rates problems, it’s usually best to just jump right into some problems and see how they work.</p>
+    <a class="anchor" name="Deriv_Rates_Ex1"></a>
+      <div class="example">
+    <span class="example-title">Example 1</span> Example 1  Air is being pumped into a spherical balloon at a rate of 5 cm<sup>3</sup>/min.  Determine the rate at which the radius of the balloon is increasing when the diameter of the balloon is 20 cm.
+    <div class="example-content">
+      <span id="SHLink_Soln1" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln1" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln1" class="soln-content">
+        <p>The first thing that we’ll need to do here is to identify what information that we’ve been given and what we want to find.  Before we do that let’s notice that both the volume of the balloon and the radius of the balloon will vary with time and so are really functions of time, <em>i.e.</em> \(V\left( t \right)\) and \(r\left( t \right)\).</p>
+          
+          <p>We know that air is being pumped into the balloon at a rate of 5 cm<sup>3</sup>/min.  This is the rate at which the volume is increasing.  Recall that rates of change are nothing more than derivatives and so we know that,</p>
+          
+              \[V'\left( t \right) = 5\]
+          
+          <p>We want to determine the rate at which the radius is changing.  Again, rates are derivatives and so it looks like we want to determine,</p>
+          
+            \[r'\left( t \right) = ?\hspace{0.25in}{\rm{when}}\hspace{0.25in}r\left( t \right) = \frac{d}{2} = 10\,{\rm{cm}}\]
+
+          <p>Note that we needed to convert the diameter to a radius.</p>
+          
+          <p>Now that we’ve identified what we have been given and what we want to find we need to relate these two quantities to each other.  In this case we can relate the volume and the radius with the formula for the volume of a sphere.</p>
+          
+              \[V\left( t \right) = \frac{4}{3}\pi {\left[ {r\left( t \right)} \right]^3}\]
+          
+          <p>As in the previous section when we looked at implicit differentiation, we will typically not use the \(\left( t \right)\) part of things in the formulas, but since this is the first time through one of these we will do that to remind ourselves that they are really functions of \(t\).</p>
+          
+          <p>Now we don’t really want a relationship between the volume and the radius.  What we really want is a relationship between their derivatives.  We can do this by differentiating both sides with respect to \(t\).  In other words, we will need to do implicit differentiation on the above formula.  Doing this gives,</p>
+          
+              \[V' = 4\pi {r^2}r'\]
+          
+          <p>Note that at this point we went ahead and dropped the \(\left( t \right)\) from each of the terms.  Now all that we need to do is plug in what we know and solve for what we want to find.</p>
+          
+          \[5 = 4\pi \left( {{{10}^2}} \right)r'\hspace{0.25in}\hspace{0.25in} \Rightarrow \hspace{0.25in}\hspace{0.25in}r' = \frac{1}{{80\pi }}\,{\rm{ cm/min}}\]
+      </div>
+    </div>
+  </div>
+    
+    <p>We can get the units of the derivative by recalling that,</p>
+    
+        \[r' = \frac{{dr}}{{dt}}\]
+
+    <p>The units of the derivative will be the units of the numerator (cm in the previous example) divided by the units of the denominator (min in the previous example).</p>
+    
+    <p>Let’s work some more examples.</p>
+    <a class="anchor" name="Deriv_Rates_Ex2"></a>
+
+  <div class="example">
+    <span class="example-title">Example 2</span> A 15 foot ladder is resting against the wall.  The bottom is initially 10 feet away from the wall and is being pushed towards the wall at a rate of \({\textstyle{1 \over 4}}\) ft/sec.  How fast is the top of the ladder moving up the wall 12 seconds after we start pushing?
+    <div class="example-content">
+      <span id="SHLink_Soln2" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln2" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln2" class="soln-content">
+        <p>The first thing to do in this case is to sketch picture that shows us what is going on.</p>
+          
+            <div class="center-div"><img height="141" src="http://tutorial.math.lamar.edu/Classes/CalcI/RelatedRates_Files/image001.png" width="291" /></div>
+
+          <p>We’ve defined the distance of the bottom of the ladder from the wall to be \(x\) and the distance of the top of the ladder from the floor to be \(y\).  Note as well that these are changing with time and so we really should write \(x\left( t \right)\) and \(y\left( t \right)\).  However, as is often the case with related rates/implicit differentiation problems we don’t write the \(\left( t \right)\) part just try to remember this in our heads as we proceed with the problem.</p>
+          
+          <p>Next, we need to identify what we know and what we want to find.  We know that the rate at which the bottom of the ladder is moving towards the wall.  This is,</p>
+          
+              \[x' =  - \frac{1}{4}\]
+          <p>Note as well that the rate is negative since the distance from the wall, \(x\), is decreasing.  We always need to be careful with signs with these problems.</p>
+          
+          <p>We want to find the rate at which the top of the ladder is moving away from the floor.  This is \(y'\).  Note as well that this quantity should be positive since \(y\) will be increasing.</p>
+          
+          <p>As with the first example we first need a relationship between \(x\) and \(y\).  We can get this using Pythagorean theorem.</p>
+          
+              \[{x^2} + {y^2} = {\left( {15} \right)^2} = 225\]
+          
+          <p>All that we need to do at this point is to differentiate both sides with respect to \(t\), remembering that \(x\) and \(y\) are really functions of \(t\) and so we’ll need to do implicit differentiation.  Doing this gives an equation that shows the relationship between the derivatives.</p>
+          \[\begin{equation}2xx' + 2yy' = 0\end{equation} \label{eq:eq1}\]  
+          
+          <p>Next, let’s see which of the various parts of this equation that we know and what we need to find.  We know \(x'\) and are being asked to determine \(y'\) so it’s okay that we don’t know that.  However, we still need to determine \(x\) and \(y\).</p>
+          
+          <p>Determining \(x\) and \(y\) is actually fairly simple.  We know that initially \(x = 10\) and the end is being pushed in towards the wall at a rate of \({\textstyle{1 \over 4}}\)ft/sec and that we are interested in what has happened after 12 seconds.  We know that,</p>
+          
+          \[\begin{align*}{\rm{distance}} = {\rm{rate}} \times {\rm{time}}\\ &amp;  = \left( {\frac{1}{4}} \right)\left( {12} \right) = 3\end{align*}\]
+          
+          <p>So, the end of the ladder has been pushed in 3 feet and so after 12 seconds we must have \(x = 7\).  Note that we could have computed this in one step as follows,</p>
+          
+              \[x = 10 - \frac{1}{4}\left( {12} \right) = 7\]
+          
+          <p>To find \(y\) (after 12 seconds) all that we need to do is reuse the Pythagorean Theorem with the values of \(x\) that we just found above.</p>
+          
+              \[y = \sqrt {225 - {x^2}}  = \sqrt {225 - 49}  = \sqrt {176} \]
+          
+          <p>Now all that we need to do is plug into \(\eqref{eq:eq1}\) and solve for \(y'\).</p>
+          
+              \[2\left( 7 \right)\left( -\frac{1}{4} \right)+2\left( \sqrt{176} \right){y}'=0\Rightarrow {y}'=\frac{{}^{7}/{}_{4}}{\sqrt{176}}=\frac{7}{4\sqrt{176}}=0.1319\,\,\text{ft/sec}\]
+          
+          <p>Notice that we got the correct sign for \(y'\).  If we’d gotten a negative value we’d have known that we had made a mistake and we could go back and look for it.</p>
+      </div>
+    </div>
+  </div>
+    
+    <p>Before working another example, we need to make a comment about the set up of the previous problem.  When we labeled our sketch, we acknowledged that the hypotenuse is constant and so just called it 15 ft.  A common mistake that students will sometimes make here is to also label the hypotenuse as a letter, say \(z\), in this case.</p>
+    
+    <p>Well, it’s not really a mistake to label with a letter, but it will often lead to problem down the road.  Had we labeled the hypotenuse \(z\) then the Pythagorean theorem and its derivative would have been,</p>
+    
+    
+        \[{x^2} + {y^2} = {z^2}\hspace{0.25in} \to \hspace{0.25in} 2xx' + 2yy' = 2zz'\]
+    
+    <p>Again, there is nothing wrong with doing this but it does require that we acknowledge the values of two more quantities, \(z\) and \(z'\).  Because \(z\) is just the hypotenuse that is clearly \(z = 15\).  The problem that some students then sometimes run into is determining the value of \(z'\).  In this case, we have to remember that because the ladder, and hence the hypotenuse has a fixed length, it’s length can’t be changing and so \(z' = 0\).</p>
+    
+    <p>Plugging both of these values into the derivative give us same equation that we got in the example but required a little more effort to get to.  It would have been easier to just label the hypotenuse 15 to start off with and not have to worry about remembering that \(z' = 0\).</p>
+    
+    <p>When labeling a fixed quantity (the length of the ladder in this example) with a letter it is sometimes easy to forget that it is a fixed quantity and so it’s derivative must be zero.  If you don’t remember this, the problem becomes impossible to finish as you will have two unknown quantities that you have to deal with.  In any problem were a quantity is fixed and will never over the course of the problem change it is always best to just acknowledge that and label it with its value rather than with a letter.</p>
+    
+    <p>Of course, if we’d had a sliding ladder that was allowed to change then we would have to label it with a letter.  However, for that kind of problem we would also need some more information in the problem statement in order to actually do the problem.  The practice problems in this section have several problems in which all three sides of a right triangle are changing.  You should check them out and see if you can work them.</p>
+
+    <a class="anchor" name="Deriv_Rates_Ex3"></a>
+  <div class="example">
+    <span class="example-title">Example 3</span> Two people are 50 feet apart.  One of them starts walking north at a rate so that the angle shown in the diagram below is changing at a constant rate of 0.01 rad/min.  At what rate is distance between the two people changing when \(\theta  = 0.5\) radians?
+          
+             <div class="center-div"><img alt="A right triangle with the hypotenuse labeled “x”.  The vertical side has no label and the bottom, horizontal side labeled “50”.  The angle between the bottom and hypotenuse is labeled $\theta$  At the far right is the notation that this where the stationary person is at and at the top left corner there is notation that is the current location of the moving person as well as an arrow pointing upwards." height="157" src="http://tutorial.math.lamar.edu/Classes/CalcI/RelatedRates_Files/image002.png" width="392" /></div>
+    <div class="example-content">
+      <span id="SHLink_Soln3" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln3" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln3" class="soln-content">
+        <p>This example is not as tricky as it might at first appear.  Let’s call the distance between them at any point in time \(x\) as noted above.  We can then relate all the known quantities by one of two trig formulas.</p>
+          
+            \[\cos \theta  = \frac{{50}}{x}\hspace{0.25in}\hspace{0.25in}\sec \theta  = \frac{x}{{50}}\]
+          
+          <p>We want to find \(x'\)and we could find \(x\) if we wanted to at the point in question using cosine since we also know the angle at that point in time.  However, if we use the second formula we won’t need to know \(x\) as you’ll see.  So, let’s differentiate that formula.</p>
+          
+              \[\sec \theta \tan \theta \,\,\theta ' = \frac{{x'}}{{50}}\]
+          
+          <p>As noted, there are no \(x\)’s in this formula.  We want to determine \(x'\) and we know that \(\theta  = 0.5\) and \(\theta ' = 0.01\) (do you agree with it being positive?).  So, just plug in and solve.</p>
+          
+            \[\left( {50} \right)\left( {0.01} \right)\sec \left( {0.5} \right)\tan \left( {0.5} \right) = x'\hspace{0.25in} \Rightarrow \hspace{0.25in}\hspace{0.25in}x' = 0.311254\,\,{\rm{ft}}/\min \]
+      </div>
+    </div>
+  </div>
+    
+    <p>So far we we’ve seen three related rates problems.  While each one was worked in a very different manner the process was essentially the same in each.  In each problem we identified what we were given and what we wanted to find.  We next wrote down a relationship between all the various quantities and used implicit differentiation to arrive at a relationship between the various derivatives in the problem.  Finally, we plugged the known quantities into the equation to find the value we were after.</p>
+    
+    <p>So, in a general sense each problem was worked in pretty much the same manner.  The only real difference between them was coming up with the relationship between the known and unknown quantities.  This is often the hardest part of the problem.  In many problems the best way to come up with the relationship is to sketch a diagram that shows the situation.  This often seems like a silly step but can make all the difference in whether we can find the relationship or not.</p>
+    
+    <p>Let’s work another problem that uses some different ideas and shows some of the different kinds of things that can show up in related rates problems.</p>
+
+    <a class="anchor" name="Deriv_Rates_Ex4"></a>
+  <div class="example">
+    <span class="example-title">Example 4</span> A tank of water in the shape of a cone is leaking water at a constant rate of \(2\,{\mbox{ft}}^{3}{\rm{/hour}}\).  The base radius of the tank is 5 ft and the height of the tank is 14 ft.
+    <ol class="example_parts_list">
+      <li>At what rate is the depth of the water in the tank changing when the depth of the water is 6 ft?</li>
+      <li>At what rate is the radius of the top of the water in the tank changing when the depth of the water is 6 ft?</li>
+    </ol>
+    <div class="center-div"><img height="186" src="http://tutorial.math.lamar.edu/Classes/CalcI/RelatedRates_Files/image003.gif" width="223" /></div>
+    <span id="SHALink_S_Soln4" class="SH-Link SH-All">Show All Solutions</span>&nbsp;<span id="SHALink_H_Soln4" class="SH-Link SH-All">Hide All Solutions</span>
+    <div class="example-content">
+
+      <span id="SHLink_DSoln4" class="SH-Link soln-title">Show Discussion</span> <span id="SHImg_DSoln4" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_DSoln4" class="soln-content">
+        <p>Okay, we should probably start off with a quick sketch (probably not to scale) of what is going on here.  We’ll also be doing the sketch as if we were looking at the tank from directly in front of it (and so the 3D of the tank will not be visible) as this will help a little with seeing what is going on.  Showing the 3D nature of the tank is liable to just get in the way.  So here is the sketch of the tank with some water in it.</p>
+          
+            <div class="center-div"><img alt="There are two triangles in this figure.  The larger represents the tank as if viewed from the front with the base of the triangle at the top and horizontal to the ground.  The radius of the tank is marked as half the base width of the larger triangle and the height of the larger tank is marked as the height of the triangle.  
+              
+              The smaller triangle is inside the lower portion of the larger triangle and represents the water in the tank.  The height of this triangle and hence the water is marked as “h” and half the base of the this triangle is marked as “r” which represents the radius of the tank at the top of the water." height="278" src="http://tutorial.math.lamar.edu/Classes/CalcI/RelatedRates_Files/image004.png" width="284" /></div>
+  
+          <p>As we can see, the water in the tank actually forms a smaller cone/triangle (depending on which image we are looking at) with the same central angle as the tank itself.  The radius of the “water” cone at any time is given by \(r\) and the height of the “water” cone at any time is given by \(h\).  The volume of water in the tank at any time \(t\) is given by,</p>
+          
+            \[V = \frac{1}{3}\pi {r^2}h\]
+          <p>and we’ve been given that \(V' =  - 2\).</p>
+      </div>
+      
+      <br />
+      <span class="soln-list-item soln-list-subitem">a</span> At what rate is the depth of the water in the tank changing when the depth of the water is 6 ft? <span id="SHLink_Soln4a" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln4a" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln4a" class="soln-content">
+        <p>For this part we need to determine \(h'\) when \(h = 6\) and now we have a problem.  The only formula that we’ve got that will relate the volume to the height also includes the radius and so if we were to differentiate this with respect to \(t\) we would get,</p>
+
+          \[V' = \frac{2}{3}\pi rr'h + \frac{1}{3}\pi {r^2}h'\]
+          
+          <p>So, in this equation we know \(V'\) and \(h\) and want to find \(h'\), but we don’t know \(r\) and \(r'\).  As we’ll see finding \(r\) isn’t too bad, but we just don’t have enough information, at this point, that will allow us to find \(r'\) and \(h'\) simultaneously.</p>
+          
+          <p>To fix this we’ll need to eliminate the \(r\) from the volume formula in some way.  This is actually easier than it might at first look.  If we go back to our sketch above and look at just the right half of the tank we see that we have two similar triangles and when we say similar we mean similar in the geometric sense.  Recall that two triangles are called similar if their angles are identical, which is the case here.  When we have two similar triangles then ratios of any two sides will be equal.  For our set this means that we have,</p>
+          
+            \[\frac{r}{h} = \frac{5}{{14}}\hspace{0.25in}\hspace{0.25in} \Rightarrow \hspace{0.25in}\hspace{0.25in}r = \frac{5}{{14}}h\]
+          
+          <p>If we take this and plug it into our volume formula we have,</p>
+
+          \[V = \frac{1}{3}\pi {r^2}h = \frac{1}{3}\pi {\left( {\frac{5}{{14}}h} \right)^2}h = \frac{{25}}{{588}}\pi {h^3}\]
+          
+          <p>This gives us a volume formula that only involved the volume and the height of the water.  Note however that this volume formula is only valid for our cone, so don’t be tempted to use it for other cones!  If we now differentiate this we have,</p>
+
+          \[V'\, = \frac{{25}}{{196}}\pi {h^2}h'\]
+          
+          <p>At this point all we need to do is plug in what we know and solve for \(h'\).</p>
+          \[ - 2 = \frac{{25}}{{196}}\pi \left( {{6^2}} \right)h'\hspace{0.25in}\hspace{0.25in} \Rightarrow \hspace{0.25in}\hspace{0.25in}h' = \frac{{ - 98}}{{225\pi }} =  - 0.1386\]
+          
+          <p>So, it looks like the height is decreasing at a rate of 0.1386 ft/hr.</p>
+      </div>
+
+      <br />
+      <span class="soln-list-item soln-list-subitem">b</span> At what rate is the radius of the top of the water in the tank changing when the depth of the water is 6 ft? <span id="SHLink_Soln4b" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln4b" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln4b" class="soln-content">
+        <p>In this case we are asking for \(r'\) and there is an easy way to do this part and a difficult (well, more difficult than the easy way anyway….) way to do it.  The “difficult” way is to redo the work in part (a) above only this time use,</p>
+          \[\frac{h}{r} = \frac{{14}}{5}\hspace{0.25in}\hspace{0.25in} \Rightarrow \hspace{0.25in}\hspace{0.25in}h = \frac{{14}}{5}r\]
+          <p>to get the volume in terms of \(V\) and \(r\) and then proceed as before.</p>
+          
+          <p>That’s not terribly difficult, but it is more work that we need to so.  Recall from the first part that we have,</p>
+          \[r = \frac{5}{{14}}h\hspace{0.25in}\hspace{0.25in} \Rightarrow \hspace{0.25in}\hspace{0.25in}r' = \frac{5}{{14}}h'\]
+          
+          <p>So, as we can see if we take the relationship that relates \(r\) and \(h\) that we used in the first part and differentiate it we get a relationship between \(r'\) and \(h'\).  At this point all we need to do here is use the result from the first part to get,</p>
+          \[r' = \frac{5}{{14}}\left( {\frac{{ - 98}}{{225\pi }}} \right) =  - \frac{7}{{45\pi }} =  - 0.04951\]
+          
+          <p>Much easier that redoing all of the first part.  Note however, that we were only able to do this the “easier” way because it was asking for \(r'\)at exactly the same time that we asked for \(h'\) in the first part.  If we hadn’t been using the same time then we would have had no choice but to do this the “difficult” way.</p>
+      </div>
+    </div>
+  </div>
+    
+    <p>In the second part of the previous problem we saw an important idea in dealing with related rates.  In order to find the asked for rate all we need is an equation that relates the rate we’re looking for to a rate that we already know.  Sometimes there are multiple equations that we can use and sometimes one will be easier than another.</p>
+    
+    <p>Also, this problem showed us that we will often have an equation that contains more variables that we have information about and so, in these cases, we will need to eliminate one (or more) of the variables.  In this problem we eliminated the extra variable using the idea of similar triangles.  This will not always be how we do this, but many of these problems do use similar triangles so make sure you can use that idea.</p>
+    
+    <p>Let’s work some more problems.</p>
+
+    <a class="anchor" name="Deriv_Rates_Ex5"></a>
+  <div class="example">
+    <span class="example-title">Example 5</span> A trough of water is 8 meters in length and its ends are in the shape of isosceles triangles whose width is 5 meters and height is 2 meters.  If water is being pumped in at a constant rate of \(6 \mbox{m}^{3}\mbox{/sec}\).  At what rate is the height of the water changing when the water has a height of 120 cm?  At what rate is the width of the water changing when the water has a height of 120cm?
+          
+            <div class="center-div"><img height="253" src="http://tutorial.math.lamar.edu/Classes/CalcI/RelatedRates_Files/image005.gif" width="268" /></div>
+    <div class="example-content">
+      <span id="SHLink_Soln5" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln5" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln5" class="soln-content">
+        <p>Note that an isosceles triangle is just a triangle in which two of the sides are the same length.  In our case sides of the tank have the same length.</p>
+          
+          <p>Let’s add in some dimensions for the water to the sketch from above.</p>
+          
+            <div class="center-div"><img alt="This is a sketch of the tank.  In the front there two triangles.  The larger represents the tank whose height is shown at 2.  The smaller represents the water in the tank and its height is shown as “h”.  In the back of the tank there are two similar triangles.  The width of the larger (i.e. the tank) is shown as 5 and the width of the smaller (i.e. the water in the tank) is shown as “w”.  The depth of the tank is shown as 8." height="253" src="http://tutorial.math.lamar.edu/Classes/CalcI/RelatedRates_Files/image006.png" width="268" /></div>
+
+          <p>Now, in this problem we know that \(V' = 6 \mbox{m}^{3}\mbox{/sec}\) and we want to determine \(h'\) when \(h = 1.2\,{\rm{m}}\).  Note that because \(V'\) is in terms of meters we need to convert \(h\) into meters as well.  So, we need an equation that will relate these two quantities and the volume of the tank will do it.</p>
+          
+          <p>The volume of this kind of tank is simple to compute.  The volume is the area of the end times the depth.  For our case the volume of the water in the tank is,</p>
+          
+          \[\begin{align*}V &= \left( {{\mbox{Area of End}}} \right)\left( {{\rm{depth}}} \right)\\ &amp;  = \left( {{\textstyle{1 \over 2}}{\rm{base}} \times {\rm{height}}} \right)\left( {{\rm{depth}}} \right)\\ &amp;  = {\textstyle{1 \over 2}}hw\left( 8 \right)\\ &amp;  = 4hw\end{align*}\]
+          
+          <p>As with the previous example we’ve got an extra quantity here, \(w\), that is also changing with time and so we need to eliminate it from the problem.  To do this we’ll again make use of the idea of similar triangles.  If we look at the end of the tank we’ll see that we again have two similar triangles.  One for the tank itself and one formed by the water in the tank.  Again, remember that with similar triangles ratios of sides must be equal.  In our case we’ll use,</p>
+          
+            \[\frac{w}{5} = \frac{h}{2}\hspace{0.25in}\hspace{0.25in} \Rightarrow \hspace{0.25in}\hspace{0.25in}w = \frac{5}{2}h\]
+          
+          <p>Plugging this into the volume gives a formula for the volume (and only for this tank) that only involved the height of the water.</p>
+          \[V = 4hw = 4h\left( {\frac{5}{2}h} \right) = 10{h^2}\]
+          
+          <p>We can now differentiate this to get,</p>
+          \[V' = 20hh'\]
+          
+          <p>Finally, all we need to do is plug in and solve for \(h'\).</p>
+          \[6 = 20\left( {1.2} \right)h'\hspace{0.25in}\hspace{0.25in} \Rightarrow \hspace{0.25in}\hspace{0.25in}h' = 0.25\,\,{\rm{m/sec}}\]
+          
+          <p>So, the height of the water is rising at a rate of 0.25 m/sec.</p>
+
+          <p>In order to answer the second part of this question is not all that difficult.</p>
+
+          <p>We will need \(w'\) to answer this part and we have the following equation from the similar triangle that relate the width to the height and we can quickly differentiate it to get a relationship between \(w'\) and \(h'\).</p>
+
+	        \[w = \frac{5}{2}h\hspace{0.25in}\hspace{0.25in} \Rightarrow \hspace{0.25in}\hspace{0.25in}w' = \frac{5}{2}h'\]
+
+          <p>From the first part we know the value of \(h'\) and so all wee need to do is plug that into this equation and we’ll have the answer.</p>
+
+	        \[w' = \frac{5}{2}\left( {0.25} \right) = 0.625\,\,{\rm{m/sec}}\]
+
+          <p>Therefore the width is increasing at a rate of 0.625 m/sec.</p>
+
+      </div>
+    </div>
+  </div>
+
+    <a class="anchor" name="Deriv_Rates_Ex6"></a>
+  <div class="example">
+    <span class="example-title">Example 6</span> A light is on the top of a 12 ft tall pole and a 5ft 6in tall person is walking away from the pole at a rate of 2 ft/sec.
+    <ol class="example_parts_list">
+      <li>At what rate is the tip of the shadow moving away from the pole when the person is 25 ft from the pole?</li>
+      <li>At what rate is the tip of the shadow moving away from the person when the person is 25 ft from the pole?</li>
+    </ol>
+    <div class="center-div"><img height="143" src="http://tutorial.math.lamar.edu/Classes/CalcI/RelatedRates_Files/image007.gif" width="269" /></div>
+    <span id="SHALink_S_Soln6" class="SH-Link SH-All">Show All Solutions</span>&nbsp;<span id="SHALink_H_Soln6" class="SH-Link SH-All">Hide All Solutions</span>
+    <div class="example-content">
+      <span id="SHLink_DSoln6" class="SH-Link soln-title">Show Discussion</span> <span id="SHImg_DSoln6" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_DSoln6" class="soln-content">
+        <p>Let’s start off with putting all the relevant quantities into the sketch from above.</p>
+          
+            <div class="center-div"><img alt="There are two triangles in this figure.  The smaller triangle fits inside the larger triangle with the base/hypotenuse of the smaller triangle on the base/hypotenuse of the larger triangle.  The height of the smaller triangle represents the person and is marked as “5.5”.  There is also an arrow here pointing right and marked \({{{x}'}_{p}}\) = 2 ft/sec showing the direction of motion away from the lamp.  The base of the smaller triangle represents the shadow the person casts and is labeled \(x_{s}\).  The height of the larger triangle represents the lamp and is marked as “12”.  The base of the larger triangle represents the distance from the lamp to the person, labeled  \(x{p}\), and the length of the shadow, again labeled \(x_{s}\).  The total length of the base of the larger triangle is labeled x." height="211" src="http://tutorial.math.lamar.edu/Classes/CalcI/RelatedRates_Files/image008.png" width="275" /></div>
+
+          
+          <p>Here \(x\) is the distance of the tip of the shadow from the pole, \({x_p}\) is the distance of the person from the pole and \({x_s}\) is the length of the shadow.  Also note that we converted the persons height over to 5.5 feet since all the other measurements are in feet.</p>
+          
+          <p>The tip of the shadow is defined by the rays of light just getting past the person and so we can see they form a set of similar triangles.  This will be useful down the road.</p>
+      </div>
+  
+      <br />
+      <span class="soln-list-item soln-list-subitem">a</span> At what rate is the tip of the shadow moving away from the pole when the person is 25 ft from the pole? <span id="SHLink_Soln6a" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln6a" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln6a" class="soln-content">
+        <p>In this case we want to determine \(x'\) when \({x_p} = 25\) given that \({x'_p} = 2\).</p>
+          
+          <p>The equation we’ll need here is,</p>
+          \[x = {x_p} + {x_s}\]
+          <p>but we’ll need to eliminate \({x_s}\) from the equation in order to get an answer.  To do this we can again make use of the fact that the two triangles are similar to get,</p>
+          \[\frac{{5.5}}{{12}} = \frac{{{x_s}}}{x}\hspace{0.25in}\hspace{0.25in}{\rm{Note : }}\frac{{5.5}}{{12}} = \frac{{{\textstyle{{11} \over 2}}}}{{12}} = \frac{{11}}{{24}}\]
+          
+          <p>From this we can quickly see that,</p>
+          \[{x_s} = \frac{{11}}{{24}}x\]
+          
+          <p>We can then plug this into the equation above and solve for \(x\) as follows.</p>
+          
+          \[x = {x_p} + {x_s} = {x_p} + \frac{{11}}{{24}}x\hspace{0.25in} \Rightarrow \hspace{0.25in} x = \frac{{24}}{{13}}{x_p}\]
+          
+          <p>Now all that we need to do is differentiate this, plug in and solve for \(x'\).</p>
+          \[x' = \frac{{24}}{{13}}{x'_p}\hspace{0.25in}\hspace{0.25in} \Rightarrow \hspace{0.25in}\hspace{0.25in}x' = \frac{{24}}{{13}}\left( 2 \right) = 3.6923{\rm{ ft/sec}}\]
+          
+          <p>The tip of the shadow is then moving away from the pole at a rate of 3.6923 ft/sec.  Notice as well that we never actually had to use the fact that \({x_p} = 25\) for this problem.  That will happen on rare occasions.</p>
+      </div>
+
+      <br />
+      <span class="soln-list-item soln-list-subitem">b</span> At what rate is the tip of the shadow moving away from the person when the person is 25 ft from the pole? <span id="SHLink_Soln6b" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln6b" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln6b" class="soln-content">
+        <p>This part is actually quite simple if we have the answer from (a) in hand, which we do of course.  In this case we know that \({x_s}\) represents the length of the shadow, or the distance of the tip of the shadow from the person so it looks like we want to determine \({x'_s}\) when \({x_p} = 25\).</p>
+          
+          <p>Again, we can use \(x = {x_p} + {x_s}\), however unlike the first part we now know that \({x'_p} = 2\) and \(x' = 3.6923{\rm{ ft/sec}}\) so in this case all we need to do is differentiate the equation and plug in for all the known quantities.</p>
+          
+        \[\begin{align*}x' &= {{x'}_p} + {{x'}_s}\\ 3.6923 &= 2 + {{x'}_s}\hspace{0.5in}{{x'}_s} = 1.6923{\rm{ ft/sec}}\end{align*}\]
+          
+          <p>The tip of the shadow is then moving away from the person at a rate of 1.6923 ft/sec.</p>
+      </div>
+    </div>
+  </div>
+
+    <a class="anchor" name="Deriv_Rates_Ex7"></a>
+  <div class="example">
+    <span class="example-title">Example 7</span> A spot light is on the ground 20 ft away from a wall and a 6 ft tall person is walking towards the wall at a rate of 2.5 ft/sec.  How fast is the height of the shadow changing when the person is 8 feet from the wall?  Is the shadow increasing or decreasing in height at this time?
+          
+            <div class="center-div"><img height="212" src="http://tutorial.math.lamar.edu/Classes/CalcI/RelatedRates_Files/image009.gif" width="321" /></div>
+    <div class="example-content">
+      <span id="SHLink_Soln7" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln7" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln7" class="soln-content">
+        <p>Below is a copy of the sketch in the problem statement with all the relevant quantities added in.  The top of the shadow will be defined by the light rays going over the head of the person and so we again get yet another set of similar triangles.</p>
+          
+            <div class="center-div"><img alt="There are two triangles in this figure.  The smaller triangle fits inside the larger triangle with the base/hypotenuse of the smaller triangle on the base/hypotenuse of the larger triangle.  The height of the smaller triangle represents the person and is marked as “5.5”.  There is also an arrow here pointing left and marked \({{x}'\) = 2.5 ft/sec showing the direction of motion away from the spotlight.  The base of the smaller triangle represents the distance of the person from the spotlight and is labeled x.  The height of the larger triangle represents the shadow the person casts on the wall and is labeled y.  The base of the larger triangle represents the distance from the wall to the person, labeled  \(20-x\), and the distance of the person from the spotlight, again labeled x$.  The total length of the base of the larger triangle is  marked as 20." height="212" src="http://tutorial.math.lamar.edu/Classes/CalcI/RelatedRates_Files/image010.png" width="321" /></div>
+
+          
+          <p>In this case we want to determine \(y'\) when the person is 8 ft from wall or \(x = 12{\rm{ ft}}\).  Also, if the person is moving towards the wall at 2.5 ft/sec then the person must be moving away from the spotlight at 2.5 ft/sec and so we also know that \(x' = 2.5\).</p>
+          
+          <p>In all the previous problems that used similar triangles we used the similar triangles to eliminate one of the variables from the equation we were working with.  In this case however, we can get the equation that relates \(x\) and \(y\) directly from the two similar triangles.  In this case the equation we’re going to work with is,</p>
+          
+            \[\frac{y}{6} = \frac{{20}}{x}\hspace{0.25in}\hspace{0.25in}\hspace{0.25in} \Rightarrow \hspace{0.25in}\hspace{0.25in}y = \frac{{120}}{x}\]
+          
+          <p>Now all that we need to do is differentiate and plug values into solve to get \(y'\).</p>
+          \[y' =  - \frac{{120}}{{{x^2}}}x'\hspace{0.25in}\hspace{0.25in} \Rightarrow \hspace{0.25in}\hspace{0.25in}y' =  - \frac{{120}}{{{{12}^2}}}\left( {2.5} \right) =  - 2.0833{\rm{ ft/sec}}\]
+          
+          <p>The height of the shadow is then decreasing at a rate of 2.0833 ft/sec.</p>
+      </div>
+    </div>
+  </div>
+    
+    <p>Okay, we’ve worked quite a few problems now that involved similar triangles in one form or another so make sure you can do these kinds of problems.</p>
+    
+    <p>It’s now time to do a problem that while similar to some of the problems we’ve done to this point is also sufficiently different that it can cause problems until you’ve seen how to do it.</p>
+
+    <a class="anchor" name="Deriv_Rates_Ex8"></a>
+  <div class="example">
+    <span class="example-title">Example 8</span> Two people on bikes are separated by 350 meters.  Person A starts riding north at a rate of 5 m/sec and 7 minutes later Person B starts riding south at 3 m/sec.  At what rate is the distance separating the two people changing 25 minutes after Person A starts riding?
+          
+            <div class="center-div"><img height="120" src="http://tutorial.math.lamar.edu/Classes/CalcI/RelatedRates_Files/image011.gif" width="470" /></div>
+    <div class="example-content">
+      <span id="SHLink_Soln8" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln8" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln8" class="soln-content">
+        <p>There is a lot to digest here with this problem.  Let’s start off with a sketch of the situation that shows each person’s location sometime after both people start riding.</p>
+          
+          
+            <div class="center-div"><img alt="In the upper left corner of this sketch is the label for Person A and an arrow pointing upwards labeled ${x}'$ = 5 m/sec indicated the direction of motion for Person A.  In the lower right corner of this sketch is the label for Person B and an arrow pointing downwards labeled ${y}'$ = 3 m/sec indicated the direction of motion for Person B.   The two labels are connected with a line whose distance is given as z.  In the middle of the two Person labels is a horizontal line that represents where the two people both started.  It’s distance is given as 350.  From the left end of this line up towards the Person A label is a line whose distance is given as x.  From the right end of this line down towards the Person B label is a line whose distance is given as y.    The figure also notes that the total horizontal distance separating the two person labels is x+y." height="321" src="http://tutorial.math.lamar.edu/Classes/CalcI/RelatedRates_Files/image012.png" width="425" /></div>
+
+          
+          <p>Now we are after \(z'\) and we know that \(x' = 5\) and \(y' = 3\).  We want to know \(z'\) after Person A had been riding for 25 minutes and Person B has been riding for \(25 - 7 = 18\) minutes.  After converting these times to seconds (because our rates are all in m/sec) this means that at the time we’re interested in each of the bike riders has rode,</p>
+          \[x = 5\left( {25 \times 60} \right) = 7500{\rm{ m}}\hspace{0.25in}\hspace{0.25in}y = 3\left( {18 \times 60} \right) = 3240{\rm{ m}}\]
+          
+          <p>Next, the Pythagorean theorem tells us that,</p>
+          \[\begin{equation}{z^2} = {\left( {x + y} \right)^2} + {350^2}\label{eq:eq2}\end{equation}\] 
+          
+          <p>Therefore, 25 minutes after Person A starts riding the two bike riders are</p>
+          \[z = \sqrt {{{\left( {x + y} \right)}^2} + {{350}^2}}  = \sqrt {{{\left( {7500 + 3240} \right)}^2} + {{350}^2}}  = 10745.7015\,\,{\rm{m}}\]
+          <p>apart.</p>
+          
+          <p>To determine the rate at which the two riders are moving apart all we need to do then is differentiate \(\eqref{eq:eq2}\) and plug in all the quantities that we know to find \(z'\).</p>
+
+          \[\begin{align*}2zz' & = 2\left( {x + y} \right)\left( {x' + y'} \right)\\ 2\left( {10745.7015} \right)z' & = 2\left( {7500 + 3240} \right)\left( {5 + 3} \right)\\ z' & = 7.9958{\rm{ m/sec}}\end{align*}\]
+          
+          <p>So, the two riders are moving apart at a rate of 7.9958 m/sec.</p>
+      </div>
+    </div>
+  </div>
+   
+    <p>Every problem that we’ve worked to this point has come down to needing a geometric formula and we should probably work a quick problem that is not geometric in nature.</p>
+    <a class="anchor" name="Deriv_Rates_Ex9"></a>
+   <div class="example">
+    <span class="example-title">Example 9</span> Suppose that we have two resistors connected in parallel with resistances \({R_{\,1}}\) and \({R_{\,2}}\) measured in ohms (\(\Omega \)).  The total resistance, \(R\), is then given by,
+
+          \[\frac{1}{R} = \frac{1}{{{R_{\,1}}}} + \frac{1}{{{R_{\,2}}}}\]
+          
+          <p>Suppose that \({R_{\,1}}\) is increasing at a rate of 0.4 \(\Omega \)/min and \({R_{\,2}}\) is decreasing at a rate of 0.7\(\Omega \)/min.  At what rate is \(R\) changing when \({R_{\,1}} = 80\,\Omega \) and \({R_{\,2}} = 105\,\Omega \)?</p>
+    <div class="example-content">
+      <span id="SHLink_Soln9" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln9" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln9" class="soln-content">
+        <p>Okay, unlike the previous problems there really isn’t a whole lot to do here.  First, let’s note that we’re looking for \(R'\) and that we know \({R'_{\,1}} = 0.4\) and \({R'_{\,2}} =  - 0.7\).  Be careful with the signs here.</p>
+          
+          <p>Also, since we’ll eventually need it let’s determine \(R\) at the time we’re interested in.</p>
+          \[\frac{1}{R} = \frac{1}{{80}} + \frac{1}{{105}} = \frac{{37}}{{1680}}\hspace{0.25in}\hspace{0.25in} \Rightarrow \hspace{0.25in}\hspace{0.25in}R = \frac{{1680}}{{37}} = 45.4054\,\Omega \]
+          
+          
+          <p>Next, we need to differentiate the equation given in the problem statement.</p>
+
+          \[\begin{align*} - \frac{1}{{{R^2}}}R' & =  - \frac{1}{{{{\left( {{R_{\,1}}} \right)}^2}}}{{R'}_{\,1}} - \frac{1}{{{{\left( {{R_{\,2}}} \right)}^2}}}{{R'}_{\,2}}\\ R' &= {R^2}\left( {\frac{1}{{{{\left( {{R_{\,1}}} \right)}^2}}}{{R'}_{\,1}} + \frac{1}{{{{\left( {{R_{\,2}}} \right)}^2}}}{{R'}_{\,2}}} \right)\end{align*}\]
+          
+          <p>Finally, all we need to do is plug into this and do some quick computations.</p>
+
+          \[R' = {\left( {45.4054} \right)^2}\left( {\frac{1}{{{{80}^2}}}\left( {0.4} \right) + \frac{1}{{{{105}^2}}}\left( { - 0.7} \right)} \right) =  - 0.002045\]
+          
+        <p>So, it looks like \(R\) is decreasing at a rate of 0.002045\(\Omega \)/min.</p>
+      </div>
+    </div>
+  </div>
+    
+    <p>We’ve seen quite a few related rates problems in this section that cover a wide variety of possible problems.  There are still many more different kinds of related rates problems out there in the world, but the ones that we’ve worked here should give you a pretty good idea on how to at least start most of the problems that you’re liable to run into.</p>
+
+  
+
+
+      
+
+
+
+    </div>
+    <!-- End of content div -->
+
+
+    <div class="footer">
+      <div class="footer-links">
+        [<a href="http://tutorial.math.lamar.edu/Contact.aspx">Contact Me</a>]&nbsp;[<a href="../../MyStudents-2.html">My Students</a>]&nbsp;[<a href="http://tutorial.math.lamar.edu/Privacy.aspx">Privacy Statement</a>]&nbsp;[<a href="../../Help-2.html">Site Help &amp; FAQ</a>]&nbsp;[<a href="http://tutorial.math.lamar.edu/Terms.aspx">Terms of Use</a>]
+      </div>
+      <div class="footer-dates">
+        <div class="footer-copyright"><span id="lblCopyRight">&copy; 2003 - 2019 Paul Dawkins</span></div>
+        <div class="footer-spacer"></div>
+        <div class="footer-modified-date">Page Last Modified : <span id="lblModified">5/30/2018</span></div>
+      </div>
+      
+
+    </div>
+  </div>
+  <!-- End of page div...  -->
+</body>
+
+<!-- Mirrored from tutorial.math.lamar.edu/Classes/CalcI/RelatedRates.aspx by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 27 Feb 2019 06:15:35 GMT -->
+</html>

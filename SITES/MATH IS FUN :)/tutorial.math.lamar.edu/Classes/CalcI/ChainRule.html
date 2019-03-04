@@ -1,0 +1,1284 @@
+
+
+<!DOCTYPE html>
+
+<html>
+
+<!-- Mirrored from tutorial.math.lamar.edu/Classes/CalcI/ChainRule.aspx by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 27 Feb 2019 06:15:35 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=yes" /><meta http-equiv="X-UA-Compatible" content="IE=edge" />  <!-- For best MathJax performance on IE  -->
+
+  <meta name="google-site-verification" content="uLoA31CJfOhIVMJWBjCmQL8xNMmmLybZU3LRKavy9WQ" /><title>
+	Calculus I - Chain Rule
+</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="../../../www.googletagmanager.com/gtag/js1872?id=UA-331594-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-331594-1');
+  </script>
+
+  <link type="text/css" href="../../css/jquery.mmenu.all.css" rel="stylesheet" /><link type="text/css" href="../../css/jquery.dropdown.css" rel="stylesheet" /><link href="../../FA/css/fontawesome-all.min.css" rel="stylesheet" /><link type="text/css" href="../../css/notes-all.css" rel="stylesheet" /><link type="text/css" href="../../css/notes-google.css" rel="stylesheet" /><link type="text/css" href="../../css/notes-mmenu.css" rel="stylesheet" /><link type="text/css" href="../../css/notes-dropdown.css" rel="stylesheet" />
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+     TeX: { equationNumbers: { autoNumber: "AMS" } }
+    });
+  </script>
+  <script type="text/javascript" async src="../../../cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax2ba6.js?config=TeX-AMS_CHTML-full"></script>
+  <script type="text/javascript" src="../../../code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="../../js/jquery.mmenu.all.js"></script>
+  <script type="text/javascript" src="../../js/jquery.dropdown.js"></script>
+  <script type="text/javascript" src="../../js/notes-all.js"></script>  
+
+  <script>
+    (function () {
+      var cx = '001004262401526223570:11yv6vpcqvy';
+      var gcse = document.createElement('script');
+      gcse.type = 'text/javascript';
+      gcse.async = true;
+      gcse.src = '../../../cse.google.com/cse07b6.html?cx=' + cx;
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(gcse, s);
+    })();
+  </script>
+
+<meta http-equiv="keywords" name="keywords" content="chain rule, use of the chain rule, chain rule in calculus" /><meta http-equiv="description" name="description" content="In this section we discuss one of the more useful and important differentiation formulas, The Chain Rule.  With the chain rule in hand we will be able to differentiate a much wider variety of functions.  As you will see throughout the rest of your Calculus courses a great many of derivatives you take will involve the chain rule!" /></head>
+<body onload="init({Notes: 'NoteMobile;8/21/2018;true'})">
+
+  <div id="page">
+
+    <div class="header">
+      <div class="header-row">
+        <!--<a href="#menu"><span></span></a>-->
+        <div id="side-menu-icon" class="header-side-menu-icon"><a href="#menu"><span class="fas fa-bars fa-lg" aria-hidden="true" title="Main Menu - Change between topics, chapters and sections as well as a few extra pages."></span></a></div>
+        <span class="header-title"><a href="../../index.html" class="header-title-link">Paul's Online Notes</a></span>
+        <div class="header-spacer"></div>
+
+        <div id="content-top-menu" class="top-menu">
+          <button id="content-type-menu" class="top-menu-button" data-jq-dropdown="#jq-dropdown-type" title="View (Notes, Practice Problems or Assignment Problems, Show/Hide Solutions and/or Steps) Menu">
+            <span id="tab_top_menu_notes" class="top-menu-item-title">Notes</span> <span class="far fa-eye fa-lg" aria-hidden="true"></span>
+          </button>
+
+          <button id="quicknav-menu" class="top-menu-button" data-jq-dropdown="#jq-dropdown-quicknav" title="Quick Navigation (Previous/Next Sections and Problems and Full Problem List) Menu">
+            <span class="top-menu-item-title">Quick Nav</span> <span class="fas fa-exchange fa-lg" aria-hidden="true"></span>
+          </button>
+          
+          <button id="download-menu" class="top-menu-button" data-jq-dropdown="#jq-dropdown-download" title="Download pdf Menu">
+            <span class="top-menu-item-title">Download</span> <span class="far fa-download fa-lg" aria-hidden="true"></span>
+          </button>
+
+          <button id="print-menu" class="top-menu-button top-menu-button-icon-only" data-jq-dropdown="#jq-print-download" title="Print Menu">
+            <span class="far fa-print fa-lg" aria-hidden="true"></span>
+          </button>
+        </div>
+
+        <div id="header-google-search" class="header-search">
+          <gcse:search></gcse:search>
+        </div>
+        <div id="header-search-icon" title="Site Search" class="header-menu-icon"><span id="search-icon" class="fas fa-search" aria-hidden="true"></span></div>
+
+      </div>
+    </div>
+
+     <div id="jq-dropdown-type" class="jq-dropdown jq-dropdown-tip">
+      <ul class="jq-dropdown-menu">
+        
+        <li id="li_type_menu_goto" class="top-menu-nav-title">Go To</li>
+        <li id="li_type_menu_notes">
+          <span id="type_menu_notes_span" title="Viewing the Notes for the current topic." class="top-menu-current">Notes</span>
+          
+        </li>
+        <li id="li_type_menu_practice">
+          
+          
+          <a href="http://tutorial.math.lamar.edu/Problems/CalcI/ChainRule.aspx" id="type_menu_practice_link" title="Go to Practice Problems for current topic.">Practice Problems</a>
+        </li>
+        <li id="li_type_menu_asgn">
+          
+          <a href="http://tutorial.math.lamar.edu/ProblemsNS/CalcI/ChainRule.aspx" id="type_menu_asgn_link" title="Go to Assignment Problems for current topic.">Assignment Problems</a>
+        </li>
+        <li id="li_type_menu_sh" class="top-menu-nav-title">Show/Hide</li>
+        <li id="li_type_menu_show" title="Show any hidden solutions and/or steps that may be present on the page."><a href="javascript:SHPrintPage(1,0)" id="view_menu_show">Show all Solutions/Steps/<em>etc.</em></a></li>
+        <li id="li_type_menu_hide" title="Hide any visible solutions and/or steps that may be present on the page."><a href="javascript:SHPrintPage(0,0)" id="view_menu_hide">Hide all Solutions/Steps/<em>etc.</em></a></li>
+      </ul>
+    </div>
+
+    <div id="jq-dropdown-quicknav" class="jq-dropdown jq-dropdown-tip">
+      <ul class="jq-dropdown-menu">
+        <li id="li_nav_menu_sections" class="top-menu-nav-title">Sections</li>
+        <li id="li_nav_menu_prev_section"><a href="DiffHyperFcns.html" id="a_nav_menu_prev_section" class="top-menu-nav-link" title="Previous Section : Derivatives of Hyperbolic Functions"><span class="top-menu-prev fas fa-chevron-left"></span> Derivatives of Hyperbolic Functions</a></li>
+        <li id="li_nav_menu_next_section"><a href="ImplicitDIff.html" id="a_nav_menu_next_section" class="top-menu-nav-link" title="Next Section : Implicit Differentiation"><span class="top-menu-prev-hidden fas fa-chevron-left"></span> Implicit Differentiation <span class="top-menu-next fas fa-chevron-right"></span></a></li>
+        <li id="li_nav_menu_chapters" class="top-menu-nav-title">Chapters</li>
+        <li id="li_nav_menu_prev_chapter"><a href="limitsIntro.html" id="a_nav_menu_prev_chapter" class="top-menu-nav-link" title="Previous Chapter : Limits"><span class="top-menu-prev fas fa-chevron-left"></span><span class="top-menu-prev fas fa-chevron-left"></span> Limits</a></li>
+        <li id="li_nav_menu_next_chapter"><a href="DerivAppsIntro.html" id="a_nav_menu_next_chapter" class="top-menu-nav-link" title="Next Chapter : Applications of Derivatives"><span class="top-menu-prev-hidden fas fa-chevron-left"></span><span class="top-menu-prev-hidden fas fa-chevron-left"></span> Applications of Derivatives <span class="top-menu-next fas fa-chevron-right"></span><span class="top-menu-next fas fa-chevron-right"></span></a></li>
+        
+        
+        
+        
+        <li id="li_nav_menu_classes" class="top-menu-nav-title">Classes</li>
+        <li>
+          
+          <a href="../Alg/Alg.html" id="nav_menu_alg_link" title="Go To Algebra Notes">Algebra</a>
+        </li>
+        <li>
+          <span id="nav_menu_calci_span" title="Currently Viewing Calculus I Material" class="top-menu-current">Calculus I</span>
+          
+        </li>
+        <li>
+          
+          <a href="../CalcII/CalcII.html" id="nav_menu_calcii_link" title="Go To Calculus II Notes">Calculus II</a>
+        </li>
+        <li>
+          
+          <a href="../CalcIII/CalcIII.html" id="nav_menu_calciii_link" title="Go To Calculus III Notes">Calculus III</a>
+        </li>
+        <li>
+          
+          <a href="../DE/DE.html" id="nav_menu_de_link" title="Go To Differential Equations Notes">Differential Equations</a>
+        </li>
+        <li id="li_nav_menu_extras" class="top-menu-nav-title">Extras</li>
+        <li>
+          
+          <a href="../../Extras/AlgebraTrigReview/AlgebraTrig.html" id="nav_menu_algtrig_link" title="Go To Algebra &amp; Trig Review">Algebra &amp; Trig Review</a>
+        </li>
+        <li>
+          
+          <a href="../../Extras/CommonErrors/CommonMathErrors.html" id="nav_menu_commonerrors_link" title="Go To Common Math Errors">Common Math Errors</a>
+        </li>
+        <li>
+          
+          <a href="../../Extras/ComplexPrimer/ComplexNumbers.html" id="nav_menu_complexnumbers_link" title="Go To Complex Numbers Primer">Complex Number Primer</a>
+        </li>
+        <li>
+          
+          <a href="../../Extras/StudyMath/HowToStudyMath.html" id="nav_menu_studymath_link" title="Go To How To Study Math">How To Study Math</a>
+        </li>
+        <li>
+          
+          <a href="../../Extras/CheatSheets_Tables.html" id="nav_menu_cheattables_link" title="Go To List of Cheat Sheets and Tables">Cheat Sheets &amp; Tables</a>
+        </li>
+        <li id="li_nav_menu_misc" class="top-menu-nav-title">Misc</li>
+        <li><a href="http://tutorial.math.lamar.edu/contact.aspx" id="nav_menu_contact" title="Contact Me!">Contact Me</a></li>
+        <li><a href="../../mathjax.html" id="nav_menu_mathjax" title="Info on MathJax and MathJax Configuration Menu">MathJax Help and Configuration</a></li>
+        <li><a href="../../mystudents.html" id="nav_menu_students" title="Go here if you are currently taking a class from me!">My Students</a></li>
+      </ul>
+    </div>
+
+    <div id="jq-dropdown-download" class="jq-dropdown jq-dropdown-anchor-right jq-dropdown-tip">
+      <ul class="jq-dropdown-menu">
+        
+        <li id="li_download_menu_notes" class="top-menu-nav-title">Notes Downloads</li>
+        <li id="li_download_menu_notes_book"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=B,8,N" id="download_menu_notes_book" data-PDF="Download - Menu$Notes - Book$Calculus I$/Downloads/CalcI/Notes/Complete.pdf">Complete Book</a></li>
+        
+        <li id="li_download_menu_notes_chapter"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=C,27,N" id="download_menu_notes_chapter" data-PDF="Download - Menu$Notes - Chapter$Calculus I - Derivatives$/Downloads/CalcI/Notes/Derivatives.pdf">Current Chapter</a></li>
+        <li id="li_download_menu_notes_section"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=S,200,N" id="download_menu_notes_section" data-PDF="Download - Menu$Notes - Section$Calculus I - Chain Rule$/Downloads/CalcI/Notes/ChainRule.pdf">Current Section</a></li>
+        <li id="li_download_menu_practice" class="top-menu-nav-title">Practice Problems Downloads</li>
+        
+        <li id="li_download_menu_practice_book"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=B,8,P" id="download_menu_practice_book" data-PDF="Download - Menu$Practice Problems - Book$Calculus I$/Downloads/CalcI/Practice Problems/Complete.pdf">Complete Book - Problems Only</a></li>
+        <li id="li_download_menu_solutions_book"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=B,8,S" id="download_menu_solutions_book" data-PDF="Download - Menu$Practice Problems Solutions - Book$Calculus I$/Downloads/CalcI/Practice Problems Solutions/Complete.pdf">Complete Book - Solutions</a></li>
+        <li id="li_download_menu_b_c" class="top-menu-divider"></li>
+        <li id="li_download_menu_practice_chapter"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=C,27,P" id="download_menu_practice_chapter" data-PDF="Download - Menu$Practice Problems - Chapter$Calculus I - Derivatives$/Downloads/CalcI/Practice Problems/Derivatives.pdf">Current Chapter - Problems Only</a></li>
+        <li id="li_download_menu_solutions_chapter"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=C,27,S" id="download_menu_solutions_chapter" data-PDF="Download - Menu$Practice Problems Solutions - Chapter$Calculus I - Derivatives$/Downloads/CalcI/Practice Problems Solutions/Derivatives.pdf">Current Chapter - Solutions</a></li>
+        <li id="li_download_menu_c_s" class="top-menu-divider"></li>
+        <li id="li_download_menu_practice_section"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=S,200,P" id="download_menu_practice_section" data-PDF="Download - Menu$Practice Problems - Section$Calculus I - Chain Rule$/Downloads/CalcI/Practice Problems/ChainRule.pdf">Current Section - Problems Only</a></li>
+        <li id="li_download_menu_solutions_section"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=S,200,S" id="download_menu_solutions_section" data-PDF="Download - Menu$Practice Problems Solutions - Section$Calculus I - Chain Rule$/Downloads/CalcI/Practice Problems Solutions/ChainRule.pdf">Current Section - Solutions</a></li>
+        <li id="li_download_menu_asgn" class="top-menu-nav-title">Assignment Problems Downloads</li>
+        
+        <li id="li_download_menu_asgn_book"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=B,8,A" id="download_menu_asgn_book" data-PDF="Download - Menu$Assignment Problems - Book$Calculus I$/Downloads/CalcI/Assignment Problems/Complete.pdf">Complete Book</a></li>
+        <li id="li_download_menu_asgn_chapter"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=C,27,A" id="download_menu_asgn_chapter" data-PDF="Download - Menu$Assignment Problems - Chapter$Calculus I - Derivatives$/Downloads/CalcI/Assignment Problems/Derivatives.pdf">Current Chapter</a></li>
+        <li id="li_download_menu_asgn_section"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=S,200,A" id="download_menu_asgn_section" data-PDF="Download - Menu$Assignment Problems - Section$Calculus I - Chain Rule$/Downloads/CalcI/Assignment Problems/ChainRule.pdf">Current Section</a></li>
+        <li id="li_download_menu_other" class="top-menu-nav-title">Other Items</li>
+        <li id="li_download_menu_urls">
+          <a href="http://tutorial.math.lamar.edu/DownloadURLs.aspx?bi=8&amp;ci=27&amp;si=200" id="download_menu_urls">Get URL's for Download Items</a>
+        </li>
+      </ul>
+    </div>
+
+    <div id="jq-print-download" class="jq-dropdown jq-dropdown-anchor-right jq-dropdown-tip">
+      <ul class="jq-dropdown-menu">
+        <li id="li_print_menu_default"><a href="javascript:SHPrintPage()" id="print_menu_default">Print Page in Current Form (Default)</a></li>
+        <li id="li_print_menu_show"><a href="javascript:SHPrintPage(1,1)" id="print_menu_show">Show all Solutions/Steps and Print Page</a></li>
+        <li id="li_print_menu_hide"><a href="javascript:SHPrintPage(0,1)" id="print_menu_hide">Hide all Solutions/Steps and Print Page</a></li>
+      </ul>
+    </div>
+
+
+
+   
+
+    <nav id="menu" class="notes-nav">
+      <ul>
+        <li><a href="../../index.html" class="mm-link">Home</a></li>
+        <li><span>Classes</span></li>
+        <li><a href="../Alg/Alg.html" class="mm-link">Algebra</a>
+          <ul>
+            <li><a href="../Alg/Preliminaries.html" class="mm-link">Preliminaries</a>
+              <ul>
+                <li><a href="../Alg/IntegerExponents.html" class="mm-link">Integer Exponents</a></li>
+                <li><a href="../Alg/RationalExponents.html" class="mm-link">Rational Exponents</a></li>
+                <li><a href="../Alg/Radicals.html" class="mm-link">Radicals</a></li>
+                <li><a href="../Alg/Polynomials.html" class="mm-link">Polynomials</a></li>
+                <li><a href="../Alg/Factoring.html" class="mm-link">Factoring Polynomials</a></li>
+                <li><a href="../Alg/RationalExpressions.html" class="mm-link">Rational Expressions</a></li>
+                <li><a href="../Alg/ComplexNumbers.html" class="mm-link">Complex Numbers</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/Solving.html" class="mm-link">Solving Equations and Inequalities</a>
+              <ul>
+                <li><a href="../Alg/SolutionSets.html" class="mm-link">Solutions and Solution Sets</a></li>
+                <li><a href="../Alg/SolveLinearEqns.html" class="mm-link">Linear Equations</a></li>
+                <li><a href="../Alg/LinearApps.html" class="mm-link">Applications of Linear Equations</a></li>
+                <li><a href="../Alg/SolveMultiVariable.html" class="mm-link">Equations With More Than One Variable</a></li>
+                <li><a href="../Alg/SolveQuadraticEqnsI.html" class="mm-link">Quadratic Equations - Part I</a></li>
+                <li><a href="../Alg/SolveQuadraticEqnsII.html" class="mm-link">Quadratic Equations - Part II</a></li>
+                <li><a href="../Alg/SolveQuadraticEqnSummary.html" class="mm-link">Quadratic Equations : A Summary</a></li>
+                <li><a href="../Alg/QuadraticApps.html" class="mm-link">Applications of Quadratic Equations</a></li>
+                <li><a href="../Alg/ReducibleToQuadratic.html" class="mm-link">Equations Reducible to Quadratic in Form</a></li>
+                <li><a href="../Alg/SolveRadicalEqns.html" class="mm-link">Equations with Radicals</a></li>
+                <li><a href="../Alg/SolveLinearInequalities.html" class="mm-link">Linear Inequalities</a></li>
+                <li><a href="../Alg/SolvePolyInequalities.html" class="mm-link">Polynomial Inequalities</a></li>
+                <li><a href="../Alg/SolveRationalInequalities.html" class="mm-link">Rational Inequalities</a></li>
+                <li><a href="../Alg/SolveAbsValueEqns.html" class="mm-link">Absolute Value Equations</a></li>
+                <li><a href="../Alg/SolveAbsValueIneq.html" class="mm-link">Absolute Value Inequalities</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/Graphing_Functions.html" class="mm-link">Graphing and Functions</a>
+              <ul>
+                <li><a href="../Alg/Graphing.html" class="mm-link">Graphing</a></li>
+                <li><a href="../Alg/Lines.html" class="mm-link">Lines</a></li>
+                <li><a href="../Alg/Circles.html" class="mm-link">Circles</a></li>
+                <li><a href="../Alg/FunctionDefn.html" class="mm-link">The Definition of a Function</a></li>
+                <li><a href="../Alg/GraphFunctions.html" class="mm-link">Graphing Functions</a></li>
+                <li><a href="../Alg/CombineFunctions.html" class="mm-link">Combining Functions</a></li>
+                <li><a href="../Alg/InverseFunctions.html" class="mm-link">Inverse Functions</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/CommonGraphs.html" class="mm-link">Common Graphs</a>
+              <ul>
+                <li><a href="../Alg/Lines_Circles_PWF.html" class="mm-link">Lines, Circles and Piecewise Functions</a></li>
+                <li><a href="../Alg/Parabolas.html" class="mm-link">Parabolas</a></li>
+                <li><a href="../Alg/Ellipses.html" class="mm-link">Ellipses</a></li>
+                <li><a href="../Alg/Hyperbolas.html" class="mm-link">Hyperbolas</a></li>
+                <li><a href="../Alg/MiscFunctions.html" class="mm-link">Miscellaneous Functions</a></li>
+                <li><a href="../Alg/Transformations.html" class="mm-link">Transformations</a></li>
+                <li><a href="../Alg/Symmetry.html" class="mm-link">Symmetry</a></li>
+                <li><a href="../Alg/GraphRationalFcns.html" class="mm-link">Rational Functions</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/PolynomialFunctions.html" class="mm-link">Polynomial Functions</a>
+              <ul>
+                <li><a href="../Alg/DividingPolynomials.html" class="mm-link">Dividing Polynomials</a></li>
+                <li><a href="../Alg/ZeroesOfPolynomials.html" class="mm-link">Zeroes/Roots of Polynomials</a></li>
+                <li><a href="../Alg/GraphingPolynomials.html" class="mm-link">Graphing Polynomials</a></li>
+                <li><a href="../Alg/FindingZeroesOfPolynomials.html" class="mm-link">Finding Zeroes of Polynomials</a></li>
+                <li><a href="../Alg/PartialFractions.html" class="mm-link">Partial Fractions</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/ExpAndLog.html" class="mm-link">Exponential and Logarithm Functions</a>
+              <ul>
+                <li><a href="../Alg/ExpFunctions.html" class="mm-link">Exponential Functions</a></li>
+                <li><a href="../Alg/LogFunctions.html" class="mm-link">Logarithm Functions</a></li>
+                <li><a href="../Alg/SolveExpEqns.html" class="mm-link">Solving Exponential Equations</a></li>
+                <li><a href="../Alg/SolveLogEqns.html" class="mm-link">Solving Logarithm Equations</a></li>
+                <li><a href="../Alg/ExpLogApplications.html" class="mm-link">Applications</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/Systems.html" class="mm-link">Systems of Equations</a>
+              <ul>
+                <li><a href="../Alg/SystemsTwoVrble.html" class="mm-link">Linear Systems with Two Variables</a></li>
+                <li><a href="../Alg/SystemsThreeVrble.html" class="mm-link">Linear Systems with Three Variables</a></li>
+                <li><a href="../Alg/AugmentedMatrix.html" class="mm-link">Augmented Matrices</a></li>
+                <li><a href="../Alg/AugmentedMatrixII.html" class="mm-link">More on the Augmented Matrix</a></li>
+                <li><a href="../Alg/NonlinearSystems.html" class="mm-link">Nonlinear Systems</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="CalcI.html" class="mm-link">Calculus I</a>
+          <ul>
+            <li><a href="ReviewIntro.html" class="mm-link">Review</a>
+              <ul>
+                <li><a href="Functions.html" class="mm-link">Functions</a></li>
+                <li><a href="InverseFunctions.html" class="mm-link">Inverse Functions</a></li>
+                <li><a href="TrigFcns.html" class="mm-link">Trig Functions</a></li>
+                <li><a href="TrigEquations.html" class="mm-link">Solving Trig Equations</a></li>
+                <li><a href="TrigEquations_CalcI.html" class="mm-link">Trig Equations with Calculators, Part I</a></li>
+                <li><a href="TrigEquations_CalcII.html" class="mm-link">Trig Equations with Calculators, Part II</a></li>
+                <li><a href="ExpFunctions.html" class="mm-link">Exponential Functions</a></li>
+                <li><a href="LogFcns.html" class="mm-link">Logarithm Functions</a></li>
+                <li><a href="ExpLogEqns.html" class="mm-link">Exponential and Logarithm Equations</a></li>
+                <li><a href="CommonGraphs.html" class="mm-link">Common Graphs</a></li>
+              </ul>
+            </li>
+            <li><a href="limitsIntro.html" class="mm-link">Limits</a>
+              <ul>
+                <li><a href="Tangents_Rates.html" class="mm-link">Tangent Lines and Rates of Change</a></li>
+                <li><a href="TheLimit.html" class="mm-link">The Limit</a></li>
+                <li><a href="OneSidedLimits.html" class="mm-link">One-Sided Limits</a></li>
+                <li><a href="LimitsProperties.html" class="mm-link">Limit Properties</a></li>
+                <li><a href="ComputingLimits.html" class="mm-link">Computing Limits</a></li>
+                <li><a href="InfiniteLimits.html" class="mm-link">Infinite Limits</a></li>
+                <li><a href="LimitsAtInfinityI.html" class="mm-link">Limits At Infinity, Part I</a></li>
+                <li><a href="LimitsAtInfinityII.html" class="mm-link">Limits At Infinity, Part II</a></li>
+                <li><a href="Continuity.html" class="mm-link">Continuity</a></li>
+                <li><a href="DefnOfLimit.html" class="mm-link">The Definition of the Limit</a></li>
+              </ul>
+            </li>
+            <li><a href="DerivativeIntro.html" class="mm-link">Derivatives</a>
+              <ul>
+                <li><a href="DefnOfDerivative.html" class="mm-link">The Definition of the Derivative</a></li>
+                <li><a href="DerivativeInterp.html" class="mm-link">Interpretation of the Derivative</a></li>
+                <li><a href="DiffFormulas.html" class="mm-link">Differentiation Formulas</a></li>
+                <li><a href="ProductQuotientRule.html" class="mm-link">Product and Quotient Rule</a></li>
+                <li><a href="DiffTrigFcns.html" class="mm-link">Derivatives of Trig Functions</a></li>
+                <li><a href="DiffExpLogFcns.html" class="mm-link">Derivatives of Exponential and Logarithm Functions</a></li>
+                <li><a href="DiffInvTrigFcns.html" class="mm-link">Derivatives of Inverse Trig Functions</a></li>
+                <li><a href="DiffHyperFcns.html" class="mm-link">Derivatives of Hyperbolic Functions</a></li>
+                <li><a href="ChainRule.html" class="mm-link">Chain Rule</a></li>
+                <li><a href="ImplicitDIff.html" class="mm-link">Implicit Differentiation</a></li>
+                <li><a href="RelatedRates.html" class="mm-link">Related Rates</a></li>
+                <li><a href="HigherOrderDerivatives.html" class="mm-link">Higher Order Derivatives</a></li>
+                <li><a href="LogDiff.html" class="mm-link">Logarithmic Differentiation</a></li>
+              </ul>
+            </li>
+            <li><a href="DerivAppsIntro.html" class="mm-link">Applications of Derivatives</a>
+              <ul>
+                <li><a href="RateOfChange.html" class="mm-link">Rates of Change</a></li>
+                <li><a href="CriticalPoints.html" class="mm-link">Critical Points</a></li>
+                <li><a href="MinMaxValues.html" class="mm-link">Minimum and Maximum Values</a></li>
+                <li><a href="AbsExtrema.html" class="mm-link">Finding Absolute Extrema</a></li>
+                <li><a href="ShapeofGraphPtI.html" class="mm-link">The Shape of a Graph, Part I</a></li>
+                <li><a href="ShapeofGraphPtII.html" class="mm-link">The Shape of a Graph, Part II</a></li>
+                <li><a href="MeanValueTheorem.html" class="mm-link">The Mean Value Theorem</a></li>
+                <li><a href="Optimization.html" class="mm-link">Optimization</a></li>
+                <li><a href="MoreOptimization.html" class="mm-link">More Optimization Problems</a></li>
+                <li><a href="LHospitalsRule.html" class="mm-link">L'Hospital's Rule and Indeterminate Forms</a></li>
+                <li><a href="LinearApproximations.html" class="mm-link">Linear Approximations</a></li>
+                <li><a href="Differentials.html" class="mm-link">Differentials</a></li>
+                <li><a href="NewtonsMethod.html" class="mm-link">Newton's Method</a></li>
+                <li><a href="BusinessApps.html" class="mm-link">Business Applications</a></li>
+              </ul>
+            </li>
+            <li><a href="IntegralsIntro.html" class="mm-link">Integrals</a>
+              <ul>
+                <li><a href="IndefiniteIntegrals.html" class="mm-link">Indefinite Integrals</a></li>
+                <li><a href="ComputingIndefiniteIntegrals.html" class="mm-link">Computing Indefinite Integrals</a></li>
+                <li><a href="SubstitutionRuleIndefinite.html" class="mm-link">Substitution Rule for Indefinite Integrals</a></li>
+                <li><a href="SubstitutionRuleIndefinitePtII.html" class="mm-link">More Substitution Rule</a></li>
+                <li><a href="AreaProblem.html" class="mm-link">Area Problem</a></li>
+                <li><a href="DefnOfDefiniteIntegral.html" class="mm-link">Definition of the Definite Integral</a></li>
+                <li><a href="ComputingDefiniteIntegrals.html" class="mm-link">Computing Definite Integrals</a></li>
+                <li><a href="SubstitutionRuleDefinite.html" class="mm-link">Substitution Rule for Definite Integrals</a></li>
+              </ul>
+            </li>
+            <li><a href="IntAppsIntro.html" class="mm-link">Applications of Integrals</a>
+              <ul>
+                <li><a href="AvgFcnValue.html" class="mm-link">Average Function Value</a></li>
+                <li><a href="AreaBetweenCurves.html" class="mm-link">Area Between Curves</a></li>
+                <li><a href="VolumeWithRings.html" class="mm-link">Volumes of Solids of Revolution / Method of Rings</a></li>
+                <li><a href="VolumeWithCylinder.html" class="mm-link">Volumes of Solids of Revolution/Method of Cylinders</a></li>
+                <li><a href="MoreVolume.html" class="mm-link">More Volume Problems</a></li>
+                <li><a href="Work.html" class="mm-link">Work</a></li>
+              </ul>
+            </li>
+            <li><a href="ExtrasIntro.html" class="mm-link">Extras</a>
+              <ul>
+                <li><a href="LimitProofs.html" class="mm-link">Proof of Various Limit Properties</a></li>
+                <li><a href="DerivativeProofs.html" class="mm-link">Proof of Various Derivative Properties</a></li>
+                <li><a href="ProofTrigDeriv.html" class="mm-link">Proof of Trig Limits</a></li>
+                <li><a href="DerivativeAppsProofs.html" class="mm-link">Proofs of Derivative Applications Facts</a></li>
+                <li><a href="ProofIntProp.html" class="mm-link">Proof of Various Integral Properties </a></li>
+                <li><a href="Area_Volume_Formulas.html" class="mm-link">Area and Volume Formulas</a></li>
+                <li><a href="TypesOfInfinity.html" class="mm-link">Types of Infinity</a></li>
+                <li><a href="SummationNotation.html" class="mm-link">Summation Notation</a></li>
+                <li><a href="ConstantofIntegration.html" class="mm-link">Constant of Integration</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../CalcII/CalcII.html" class="mm-link">Calculus II</a>
+          <ul>
+            <li><a href="../CalcII/IntTechIntro.html" class="mm-link">Integration Techniques</a>
+              <ul>
+                <li><a href="../CalcII/IntegrationByParts.html" class="mm-link">Integration by Parts</a></li>
+                <li><a href="../CalcII/IntegralsWithTrig.html" class="mm-link">Integrals Involving Trig Functions</a></li>
+                <li><a href="../CalcII/TrigSubstitutions.html" class="mm-link">Trig Substitutions</a></li>
+                <li><a href="../CalcII/PartialFractions.html" class="mm-link">Partial Fractions</a></li>
+                <li><a href="../CalcII/IntegralsWithRoots.html" class="mm-link">Integrals Involving Roots</a></li>
+                <li><a href="../CalcII/IntegralsWithQuadratics.html" class="mm-link">Integrals Involving Quadratics</a></li>
+                <li><a href="../CalcII/IntegrationStrategy.html" class="mm-link">Integration Strategy</a></li>
+                <li><a href="../CalcII/ImproperIntegrals.html" class="mm-link">Improper Integrals</a></li>
+                <li><a href="../CalcII/ImproperIntegralsCompTest.html" class="mm-link">Comparison Test for Improper Integrals</a></li>
+                <li><a href="../CalcII/ApproximatingDefIntegrals.html" class="mm-link">Approximating Definite Integrals</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/IntAppsIntro.html" class="mm-link">Applications of Integrals</a>
+              <ul>
+                <li><a href="../CalcII/ArcLength.html" class="mm-link">Arc Length</a></li>
+                <li><a href="../CalcII/SurfaceArea.html" class="mm-link">Surface Area</a></li>
+                <li><a href="../CalcII/CenterOfMass.html" class="mm-link">Center of Mass</a></li>
+                <li><a href="../CalcII/HydrostaticPressure.html" class="mm-link">Hydrostatic Pressure</a></li>
+                <li><a href="../CalcII/Probability.html" class="mm-link">Probability</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/ParametricIntro.html" class="mm-link">Parametric Equations and Polar Coordinates</a>
+              <ul>
+                <li><a href="../CalcII/ParametricEqn.html" class="mm-link">Parametric Equations and Curves</a></li>
+                <li><a href="../CalcII/ParaTangent.html" class="mm-link">Tangents with Parametric Equations</a></li>
+                <li><a href="../CalcII/ParaArea.html" class="mm-link">Area with Parametric Equations</a></li>
+                <li><a href="../CalcII/ParaArcLength.html" class="mm-link">Arc Length with Parametric Equations</a></li>
+                <li><a href="../CalcII/ParaSurfaceArea.html" class="mm-link">Surface Area with Parametric Equations</a></li>
+                <li><a href="../CalcII/PolarCoordinates.html" class="mm-link">Polar Coordinates</a></li>
+                <li><a href="../CalcII/PolarTangents.html" class="mm-link">Tangents with Polar Coordinates</a></li>
+                <li><a href="../CalcII/PolarArea.html" class="mm-link">Area with Polar Coordinates</a></li>
+                <li><a href="../CalcII/PolarArcLength.html" class="mm-link">Arc Length with Polar Coordinates</a></li>
+                <li><a href="../CalcII/PolarSurfaceArea.html" class="mm-link">Surface Area with Polar Coordinates</a></li>
+                <li><a href="../CalcII/ArcLength_SurfaceArea.html" class="mm-link">Arc Length and Surface Area Revisited</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/SeriesIntro.html" class="mm-link">Series & Sequences</a>
+              <ul>
+                <li><a href="../CalcII/Sequences.html" class="mm-link">Sequences</a></li>
+                <li><a href="../CalcII/MoreSequences.html" class="mm-link">More on Sequences</a></li>
+                <li><a href="../CalcII/Series_Basics.html" class="mm-link">Series - The Basics</a></li>
+                <li><a href="../CalcII/ConvergenceOfSeries.html" class="mm-link">Convergence/Divergence of Series</a></li>
+                <li><a href="../CalcII/Series_Special.html" class="mm-link">Special Series</a></li>
+                <li><a href="../CalcII/IntegralTest.html" class="mm-link">Integral Test</a></li>
+                <li><a href="../CalcII/SeriesCompTest.html" class="mm-link">Comparison Test/Limit Comparison Test</a></li>
+                <li><a href="../CalcII/AlternatingSeries.html" class="mm-link">Alternating Series Test</a></li>
+                <li><a href="../CalcII/AbsoluteConvergence.html" class="mm-link">Absolute Convergence</a></li>
+                <li><a href="../CalcII/RatioTest.html" class="mm-link">Ratio Test</a></li>
+                <li><a href="../CalcII/RootTest.html" class="mm-link">Root Test</a></li>
+                <li><a href="../CalcII/SeriesStrategy.html" class="mm-link">Strategy for Series</a></li>
+                <li><a href="../CalcII/EstimatingSeries.html" class="mm-link">Estimating the Value of a Series</a></li>
+                <li><a href="../CalcII/PowerSeries.html" class="mm-link">Power Series</a></li>
+                <li><a href="../CalcII/PowerSeriesandFunctions.html" class="mm-link">Power Series and Functions</a></li>
+                <li><a href="../CalcII/TaylorSeries.html" class="mm-link">Taylor Series</a></li>
+                <li><a href="../CalcII/TaylorSeriesApps.html" class="mm-link">Applications of Series</a></li>
+                <li><a href="../CalcII/BinomialSeries.html" class="mm-link">Binomial Series</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/VectorsIntro.html" class="mm-link">Vectors</a>
+              <ul>
+                <li><a href="../CalcII/Vectors_Basics.html" class="mm-link">Vectors - The Basics</a></li>
+                <li><a href="../CalcII/VectorArithmetic.html" class="mm-link">Vector Arithmetic</a></li>
+                <li><a href="../CalcII/DotProduct.html" class="mm-link">Dot Product</a></li>
+                <li><a href="../CalcII/CrossProduct.html" class="mm-link">Cross Product</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/3DSpace.html" class="mm-link">3-Dimensional Space</a>
+              <ul>
+                <li><a href="../CalcII/3DCoords.html" class="mm-link">The 3-D Coordinate System</a></li>
+                <li><a href="../CalcII/EqnsOfLines.html" class="mm-link">Equations of Lines</a></li>
+                <li><a href="../CalcII/EqnsOfPlanes.html" class="mm-link">Equations of Planes</a></li>
+                <li><a href="../CalcII/QuadricSurfaces.html" class="mm-link">Quadric Surfaces</a></li>
+                <li><a href="../CalcII/MultiVrbleFcns.html" class="mm-link">Functions of Several Variables</a></li>
+                <li><a href="../CalcII/VectorFunctions.html" class="mm-link">Vector Functions</a></li>
+                <li><a href="../CalcII/VectorFcnsCalculus.html" class="mm-link">Calculus with Vector Functions</a></li>
+                <li><a href="../CalcII/TangentNormalVectors.html" class="mm-link">Tangent, Normal and Binormal Vectors</a></li>
+                <li><a href="../CalcII/VectorArcLength.html" class="mm-link">Arc Length with Vector Functions</a></li>
+                <li><a href="../CalcII/Curvature.html" class="mm-link">Curvature</a></li>
+                <li><a href="../CalcII/Velocity_Acceleration.html" class="mm-link">Velocity and Acceleration</a></li>
+                <li><a href="../CalcII/CylindricalCoords.html" class="mm-link">Cylindrical Coordinates</a></li>
+                <li><a href="../CalcII/SphericalCoords.html" class="mm-link">Spherical Coordinates</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../CalcIII/CalcIII.html" class="mm-link">Calculus III</a>
+          <ul>
+            <li><a href="../CalcIII/3DSpace.html" class="mm-link">3-Dimensional Space</a>
+              <ul>
+                <li><a href="../CalcIII/3DCoords.html" class="mm-link">The 3-D Coordinate System</a></li>
+                <li><a href="../CalcIII/EqnsOfLines.html" class="mm-link">Equations of Lines</a></li>
+                <li><a href="../CalcIII/EqnsOfPlanes.html" class="mm-link">Equations of Planes</a></li>
+                <li><a href="../CalcIII/QuadricSurfaces.html" class="mm-link">Quadric Surfaces</a></li>
+                <li><a href="../CalcIII/MultiVrbleFcns.html" class="mm-link">Functions of Several Variables</a></li>
+                <li><a href="../CalcIII/VectorFunctions.html" class="mm-link">Vector Functions</a></li>
+                <li><a href="../CalcIII/VectorFcnsCalculus.html" class="mm-link">Calculus with Vector Functions</a></li>
+                <li><a href="../CalcIII/TangentNormalVectors.html" class="mm-link">Tangent, Normal and Binormal Vectors</a></li>
+                <li><a href="../CalcIII/VectorArcLength.html" class="mm-link">Arc Length with Vector Functions</a></li>
+                <li><a href="../CalcIII/Curvature.html" class="mm-link">Curvature</a></li>
+                <li><a href="../CalcIII/Velocity_Acceleration.html" class="mm-link">Velocity and Acceleration</a></li>
+                <li><a href="../CalcIII/CylindricalCoords.html" class="mm-link">Cylindrical Coordinates</a></li>
+                <li><a href="../CalcIII/SphericalCoords.html" class="mm-link">Spherical Coordinates</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/PartialDerivsIntro.html" class="mm-link">Partial Derivatives</a>
+              <ul>
+                <li><a href="../CalcIII/Limits.html" class="mm-link">Limits</a></li>
+                <li><a href="../CalcIII/PartialDerivatives.html" class="mm-link">Partial Derivatives</a></li>
+                <li><a href="../CalcIII/PartialDerivInterp.html" class="mm-link">Interpretations of Partial Derivatives</a></li>
+                <li><a href="../CalcIII/HighOrderPartialDerivs.html" class="mm-link">Higher Order Partial Derivatives</a></li>
+                <li><a href="../CalcIII/Differentials.html" class="mm-link">Differentials</a></li>
+                <li><a href="../CalcIII/ChainRule.html" class="mm-link">Chain Rule</a></li>
+                <li><a href="../CalcIII/DirectionalDeriv.html" class="mm-link">Directional Derivatives</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/PartialDerivAppsIntro.html" class="mm-link">Applications of Partial Derivatives</a>
+              <ul>
+                <li><a href="../CalcIII/TangentPlanes.html" class="mm-link">Tangent Planes and Linear Approximations</a></li>
+                <li><a href="../CalcIII/GradientVectorTangentPlane.html" class="mm-link">Gradient Vector, Tangent Planes and Normal Lines</a></li>
+                <li><a href="../CalcIII/RelativeExtrema.html" class="mm-link">Relative Minimums and Maximums</a></li>
+                <li><a href="../CalcIII/AbsoluteExtrema.html" class="mm-link">Absolute Minimums and Maximums</a></li>
+                <li><a href="../CalcIII/LagrangeMultipliers.html" class="mm-link">Lagrange Multipliers</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/MultipleIntegralsIntro.html" class="mm-link">Multiple Integrals</a>
+              <ul>
+                <li><a href="../CalcIII/DoubleIntegrals.html" class="mm-link">Double Integrals</a></li>
+                <li><a href="../CalcIII/IteratedIntegrals.html" class="mm-link">Iterated Integrals</a></li>
+                <li><a href="../CalcIII/DIGeneralRegion.html" class="mm-link">Double Integrals over General Regions</a></li>
+                <li><a href="../CalcIII/DIPolarCoords.html" class="mm-link">Double Integrals in Polar Coordinates</a></li>
+                <li><a href="../CalcIII/TripleIntegrals.html" class="mm-link">Triple Integrals</a></li>
+                <li><a href="../CalcIII/TICylindricalCoords.html" class="mm-link">Triple Integrals in Cylindrical Coordinates</a></li>
+                <li><a href="../CalcIII/TISphericalCoords.html" class="mm-link">Triple Integrals in Spherical Coordinates</a></li>
+                <li><a href="../CalcIII/ChangeOfVariables.html" class="mm-link">Change of Variables</a></li>
+                <li><a href="../CalcIII/SurfaceArea.html" class="mm-link">Surface Area</a></li>
+                <li><a href="../CalcIII/Area_Volume.html" class="mm-link">Area and Volume Revisited</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/LineIntegralsIntro.html" class="mm-link">Line Integrals</a>
+              <ul>
+                <li><a href="../CalcIII/VectorFields.html" class="mm-link">Vector Fields</a></li>
+                <li><a href="../CalcIII/LineIntegralsPtI.html" class="mm-link">Line Integrals - Part I</a></li>
+                <li><a href="../CalcIII/LineIntegralsPtII.html" class="mm-link">Line Integrals - Part II</a></li>
+                <li><a href="../CalcIII/LineIntegralsVectorFields.html" class="mm-link">Line Integrals of Vector Fields</a></li>
+                <li><a href="../CalcIII/FundThmLineIntegrals.html" class="mm-link">Fundamental Theorem for Line Integrals</a></li>
+                <li><a href="../CalcIII/ConservativeVectorField.html" class="mm-link">Conservative Vector Fields</a></li>
+                <li><a href="../CalcIII/GreensTheorem.html" class="mm-link">Green's Theorem</a></li>
+                <li><a href="../CalcIII/CurlDivergence.html" class="mm-link">Curl and Divergence</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/SurfaceIntegralsIntro.html" class="mm-link">Surface Integrals</a>
+              <ul>
+                <li><a href="../CalcIII/ParametricSurfaces.html" class="mm-link">Parametric Surfaces</a></li>
+                <li><a href="../CalcIII/SurfaceIntegrals.html" class="mm-link">Surface Integrals</a></li>
+                <li><a href="../CalcIII/SurfIntVectorField.html" class="mm-link">Surface Integrals of Vector Fields</a></li>
+                <li><a href="../CalcIII/StokesTheorem.html" class="mm-link">Stokes' Theorem</a></li>
+                <li><a href="../CalcIII/DivergenceTheorem.html" class="mm-link">Divergence Theorem</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../DE/DE.html" class="mm-link">Differential Equations</a>
+          <ul>
+            <li><a href="../DE/IntroBasic.html" class="mm-link">Basic Concepts</a>
+              <ul>
+                <li><a href="../DE/Definitions.html" class="mm-link">Definitions</a></li>
+                <li><a href="../DE/DirectionFields.html" class="mm-link">Direction Fields</a></li>
+                <li><a href="../DE/FinalThoughts.html" class="mm-link">Final Thoughts</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/IntroFirstOrder.html" class="mm-link">First Order DE's</a>
+              <ul>
+                <li><a href="../DE/Linear.html" class="mm-link">Linear Equations</a></li>
+                <li><a href="../DE/Separable.html" class="mm-link">Separable Equations</a></li>
+                <li><a href="../DE/Exact.html" class="mm-link">Exact Equations</a></li>
+                <li><a href="../DE/Bernoulli.html" class="mm-link">Bernoulli Differential Equations</a></li>
+                <li><a href="../DE/Substitutions.html" class="mm-link">Substitutions</a></li>
+                <li><a href="../DE/IoV.html" class="mm-link">Intervals of Validity</a></li>
+                <li><a href="../DE/Modeling.html" class="mm-link">Modeling with First Order DE's</a></li>
+                <li><a href="../DE/EquilibriumSolutions.html" class="mm-link">Equilibrium Solutions</a></li>
+                <li><a href="../DE/EulersMethod.html" class="mm-link">Euler's Method</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/IntroSecondOrder.html" class="mm-link">Second Order DE's</a>
+              <ul>
+                <li><a href="../DE/SecondOrderConcepts.html" class="mm-link">Basic Concepts</a></li>
+                <li><a href="../DE/RealRoots.html" class="mm-link">Real & Distinct Roots</a></li>
+                <li><a href="../DE/ComplexRoots.html" class="mm-link">Complex Roots</a></li>
+                <li><a href="../DE/RepeatedRoots.html" class="mm-link">Repeated Roots</a></li>
+                <li><a href="../DE/ReductionofOrder.html" class="mm-link">Reduction of Order</a></li>
+                <li><a href="../DE/FundamentalSetsofSolutions.html" class="mm-link">Fundamental Sets of Solutions</a></li>
+                <li><a href="../DE/Wronskian.html" class="mm-link">More on the  Wronskian</a></li>
+                <li><a href="../DE/NonhomogeneousDE.html" class="mm-link">Nonhomogeneous Differential Equations</a></li>
+                <li><a href="../DE/UndeterminedCoefficients.html" class="mm-link">Undetermined Coefficients</a></li>
+                <li><a href="../DE/VariationofParameters.html" class="mm-link">Variation of Parameters</a></li>
+                <li><a href="../DE/Vibrations.html" class="mm-link">Mechanical Vibrations</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/LaplaceIntro.html" class="mm-link">Laplace Transforms</a>
+              <ul>
+                <li><a href="../DE/LaplaceDefinition.html" class="mm-link">The Definition</a></li>
+                <li><a href="../DE/LaplaceTransforms.html" class="mm-link">Laplace Transforms</a></li>
+                <li><a href="../DE/InverseTransforms.html" class="mm-link">Inverse Laplace Transforms</a></li>
+                <li><a href="../DE/StepFunctions.html" class="mm-link">Step Functions</a></li>
+                <li><a href="../DE/IVPWithLaplace.html" class="mm-link">Solving IVP's with Laplace Transforms</a></li>
+                <li><a href="../DE/IVPWithNonConstantCoefficient.html" class="mm-link">Nonconstant Coefficient IVP's</a></li>
+                <li><a href="../DE/IVPWithStepFunction.html" class="mm-link">IVP's With Step Functions</a></li>
+                <li><a href="../DE/DiracDeltaFunction.html" class="mm-link">Dirac Delta Function</a></li>
+                <li><a href="../DE/ConvolutionIntegrals.html" class="mm-link">Convolution Integrals</a></li>
+                <li><a href="../DE/Laplace_Table.html" class="mm-link">Table Of Laplace Transforms</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/SystemsIntro.html" class="mm-link">Systems of DE's</a>
+              <ul>
+                <li><a href="../DE/LA_Systems.html" class="mm-link">Review : Systems of Equations</a></li>
+                <li><a href="../DE/LA_Matrix.html" class="mm-link">Review : Matrices & Vectors</a></li>
+                <li><a href="../DE/LA_Eigen.html" class="mm-link">Review : Eigenvalues & Eigenvectors</a></li>
+                <li><a href="../DE/SystemsDE.html" class="mm-link">Systems of Differential Equations</a></li>
+                <li><a href="../DE/SolutionsToSystems.html" class="mm-link">Solutions to Systems</a></li>
+                <li><a href="../DE/PhasePlane.html" class="mm-link">Phase Plane</a></li>
+                <li><a href="../DE/RealEigenvalues.html" class="mm-link">Real Eigenvalues</a></li>
+                <li><a href="../DE/ComplexEigenvalues.html" class="mm-link">Complex Eigenvalues</a></li>
+                <li><a href="../DE/RepeatedEigenvalues.html" class="mm-link">Repeated Eigenvalues</a></li>
+                <li><a href="../DE/NonhomogeneousSystems.html" class="mm-link">Nonhomogeneous Systems</a></li>
+                <li><a href="../DE/SystemsLaplace.html" class="mm-link">Laplace Transforms</a></li>
+                <li><a href="../DE/SystemsModeling.html" class="mm-link">Modeling</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/SeriesIntro.html" class="mm-link">Series Solutions to DE's</a>
+              <ul>
+                <li><a href="../DE/PowerSeries.html" class="mm-link">Review : Power Series</a></li>
+                <li><a href="../DE/TaylorSeries.html" class="mm-link">Review : Taylor Series</a></li>
+                <li><a href="../DE/SeriesSolutions.html" class="mm-link">Series Solutions</a></li>
+                <li><a href="../DE/EulerEquations.html" class="mm-link">Euler Equations</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/IntroHigherOrder.html" class="mm-link">Higher Order Differential Equations</a>
+              <ul>
+                <li><a href="../DE/HOBasicConcepts.html" class="mm-link">Basic Concepts for <em>n</em><sup>th</sup> Order Linear Equations</a></li>
+                <li><a href="../DE/HOHomogeneousDE.html" class="mm-link">Linear Homogeneous Differential Equations</a></li>
+                <li><a href="../DE/HOUndeterminedCoeff.html" class="mm-link">Undetermined Coefficients</a></li>
+                <li><a href="../DE/HOVariationOfParam.html" class="mm-link">Variation of Parameters</a></li>
+                <li><a href="../DE/HOLaplaceTransforms.html" class="mm-link">Laplace Transforms</a></li>
+                <li><a href="../DE/HOSystems.html" class="mm-link">Systems of Differential Equations</a></li>
+                <li><a href="../DE/HOSeries.html" class="mm-link">Series Solutions</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/IntroBVP.html" class="mm-link">Boundary Value Problems &amp; Fourier Series</a>
+              <ul>
+                <li><a href="../DE/BoundaryValueProblem.html" class="mm-link">Boundary Value Problems</a></li>
+                <li><a href="../DE/BVPEvals.html" class="mm-link">Eigenvalues and Eigenfunctions</a></li>
+                <li><a href="../DE/PeriodicOrthogonal.html" class="mm-link">Periodic Functions &amp; Orthogonal Functions</a></li>
+                <li><a href="../DE/FourierSineSeries.html" class="mm-link">Fourier Sine Series</a></li>
+                <li><a href="../DE/FourierCosineSeries.html" class="mm-link">Fourier Cosine Series</a></li>
+                <li><a href="../DE/FourierSeries.html" class="mm-link">Fourier Series</a></li>
+                <li><a href="../DE/ConvergenceFourierSeries.html" class="mm-link">Convergence of Fourier Series</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/IntroPDE.html" class="mm-link">Partial Differential Equations </a>
+              <ul>
+                <li><a href="../DE/TheHeatEquation.html" class="mm-link">The Heat Equation</a></li>
+                <li><a href="../DE/TheWaveEquation.html" class="mm-link">The Wave Equation</a></li>
+                <li><a href="../DE/PDETerminology.html" class="mm-link">Terminology</a></li>
+                <li><a href="../DE/SeparationofVariables.html" class="mm-link">Separation of Variables</a></li>
+                <li><a href="../DE/SolvingHeatEquation.html" class="mm-link">Solving the Heat Equation</a></li>
+                <li><a href="../DE/HeatEqnNonZero.html" class="mm-link">Heat Equation with Non-Zero Temperature Boundaries</a></li>
+                <li><a href="../DE/LaplacesEqn.html" class="mm-link">Laplace's Equation</a></li>
+                <li><a href="../DE/VibratingString.html" class="mm-link">Vibrating String</a></li>
+                <li><a href="../DE/PDESummary.html" class="mm-link">Summary of Separation of Variables</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><span>Extras</span></li>
+        <li><a href="../../Extras/AlgebraTrigReview/AlgebraTrig.html" class="mm-link">Algebra &amp; Trig Review</a>
+          <ul>
+            <li><a href="../../Extras/AlgebraTrigReview/AlgebraIntro.html" class="mm-link">Algebra</a>
+              <ul>
+                <li><a href="../../Extras/AlgebraTrigReview/Exponents.html" class="mm-link">Exponents </a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/AbsoluteValue.html" class="mm-link">Absolute Value</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Radicals.html" class="mm-link">Radicals</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Rationalizing.html" class="mm-link">Rationalizing </a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Functions.html" class="mm-link">Functions </a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/MultPoly.html" class="mm-link">Multiplying Polynomials</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Factoring.html" class="mm-link">Factoring</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SimpRatExp.html" class="mm-link">Simplifying Rational Expressions</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Graphing.html" class="mm-link">Graphing and Common Graphs</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveEqnPtI.html" class="mm-link">Solving Equations, Part I</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveEqnPtII.html" class="mm-link">Solving Equations, Part II</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveSystems.html" class="mm-link">Solving Systems of Equations</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveIneq.html" class="mm-link">Solving Inequalities</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveAbsValue.html" class="mm-link">Absolute Value Equations and Inequalities</a></li>
+              </ul>
+            </li>
+            <li><a href="../../Extras/AlgebraTrigReview/TrigIntro.html" class="mm-link">Trigonometry</a>
+              <ul>
+                <li><a href="../../Extras/AlgebraTrigReview/TrigFunctions.html" class="mm-link">Trig Function Evaluation</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/TrigGraphs.html" class="mm-link">Graphs of Trig Functions</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/TrigFormulas.html" class="mm-link">Trig Formulas</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveTrigEqn.html" class="mm-link">Solving Trig Equations</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/InverseTrig.html" class="mm-link">Inverse Trig Functions</a></li>
+              </ul>
+            </li>
+            <li><a href="../../Extras/AlgebraTrigReview/ExpLogIntro.html" class="mm-link">Exponentials & Logarithms</a>
+              <ul>
+                <li><a href="../../Extras/AlgebraTrigReview/ExponentialFcns.html" class="mm-link">Basic Exponential Functions</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/LogarithmFcns.html" class="mm-link">Basic Logarithm Functions</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/LogProperties.html" class="mm-link">Logarithm Properties</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SimpLogs.html" class="mm-link">Simplifying Logarithms</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveExpEqn.html" class="mm-link">Solving Exponential Equations</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveLogEqn.html" class="mm-link">Solving Logarithm Equations</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../../Extras/CommonErrors/CommonMathErrors.html" class="mm-link">Common Math Errors</a>
+          <ul>
+            <li><a href="../../Extras/CommonErrors/GeneralErrors.html" class="mm-link">General Errors</a>
+            </li>
+            <li><a href="../../Extras/CommonErrors/AlgebraErrors.html" class="mm-link">Algebra Errors</a>
+            </li>
+            <li><a href="../../Extras/CommonErrors/TrigErrors.html" class="mm-link">Trig Errors</a>
+            </li>
+            <li><a href="../../Extras/CommonErrors/CommonErrors.html" class="mm-link">Common Errors</a>
+            </li>
+            <li><a href="../../Extras/CommonErrors/CalculusErrors.html" class="mm-link">Calculus Errors</a>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../../Extras/ComplexPrimer/ComplexNumbers.html" class="mm-link">Complex Number Primer</a>
+          <ul>
+            <li><a href="../../Extras/ComplexPrimer/Definition.html" class="mm-link">The Definition</a>
+            </li>
+            <li><a href="../../Extras/ComplexPrimer/Arithmetic.html" class="mm-link">Arithmetic</a>
+            </li>
+            <li><a href="../../Extras/ComplexPrimer/ConjugateModulus.html" class="mm-link">Conjugate and Modulus</a>
+            </li>
+            <li><a href="../../Extras/ComplexPrimer/Forms.html" class="mm-link">Polar and Exponential Forms</a>
+            </li>
+            <li><a href="../../Extras/ComplexPrimer/Roots.html" class="mm-link">Powers and Roots</a>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../../Extras/StudyMath/HowToStudyMath.html" class="mm-link">How To Study Math</a>
+          <ul>
+            <li><a href="../../Extras/StudyMath/GeneralTips.html" class="mm-link">General Tips</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/TakingNotes.html" class="mm-link">Taking Notes</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/GettingHelp.html" class="mm-link">Getting Help</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/Homework.html" class="mm-link">Doing Homework</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/ProblemSolving.html" class="mm-link">Problem Solving</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/StudyForExam.html" class="mm-link">Studying For an Exam</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/TakingExam.html" class="mm-link">Taking an Exam</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/Errors.html" class="mm-link">Learn From Your Errors</a>
+            </li>
+          </ul>
+        </li>
+
+        <li><span>Misc Links</span></li>
+        <li><a href="http://tutorial.math.lamar.edu/contact.aspx" class="mm-link">Contact Me</a></li>
+        <li><a href="../../links.html" class="mm-link">Links</a></li>
+        <li><a href="../../mathjax.html" class="mm-link">MathJax Help and Configuration</a></li>
+        <li><a href="../../mystudents.html" class="mm-link">My Students</a></li>
+        <li><a href="http://tutorial.math.lamar.edu/privacy.aspx" class="mm-link">Privacy Statement</a></li>
+        <li><a href="../../help.html" class="mm-link">Site Help & FAQ</a></li>
+        <li><a href="http://tutorial.math.lamar.edu/terms.aspx" class="mm-link">Terms of Use</a></li>
+      </ul>
+    </nav>
+
+
+
+    <div class="top-info-bar">
+      <span id="mobile-title" class="mobile-header-title header-title">Paul's Online Notes</span>
+      <br />
+      <span class="top-menu-breadcrumb">
+        <a href="../../index.html" id="breadcrumb_home_link" title="Go to Main Page">Home</a>
+        <span id="breadcrumb_h_b_sep_span">/ </span>
+        <a href="CalcI.html" id="breadcrumb_book_link" title="Go to Book Introduction">Calculus I</a>
+        
+        <span id="breadcrumb_b_c_sep_span">/ </span>
+        <a href="DerivativeIntro.html" id="breadcrumb_chapter_link" title="Go to Chapter Introduction">Derivatives</a>
+        
+        <span id="breadcrumb_section_span"> / Chain Rule</span>
+      </span>
+
+    </div>
+
+    <div id="nav_links" class="top-nav-bar">
+      
+      <span id="nav_current_notes">Notes</span>
+      <a href="http://tutorial.math.lamar.edu/Problems/CalcI/ChainRule.aspx" id="nav_links_practice" title="Go to Practice Problems for current topic.">Practice<span class="nav_desktop_extra"> Problems</span></a>
+      
+      <a href="http://tutorial.math.lamar.edu/ProblemsNS/CalcI/ChainRule.aspx" id="nav_links_asgn" title="Go to Assignment Problems for current topic.">Assignment<span class="nav_desktop_extra">  Problems</span></a>
+      
+    </div>
+
+    <div class="header-divider"></div>
+
+    <div class="content">  
+      
+      
+      <span id="SHLink_NoteMobile" class="SH-Link content-note-link-mobile">Show Mobile Notice</span>
+      <span id="SHImg_NoteMobile" class="fas fa-caret-right SH-padding content-note-link-mobile" aria-hidden="true"></span>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+
+      <span id="SHALink_S_Note" class="SH-Link SH-Hide SH-Bracket">Show All Notes</span>&nbsp;<span id="SHALink_H_Note" class="SH-Link SH-Hide SH-Bracket">Hide All Notes</span>
+      
+      
+      <div id="SHObj_NoteMobile" class="content-note-container content-note-container-mobile">
+        <div class="content-note-header">Mobile Notice</div>
+        <div class="content-note">You appear to be on a device with a "narrow" screen width (<em>i.e.</em> you are probably on a mobile phone).  Due to the nature of the mathematics on this site it is best views in landscape mode.  If your device is not in landscape mode many of the equations will run off the side of your device (should be able to scroll to see them) and some of the menu items will be cut off due to the narrow screen width.</div>
+      </div>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+
+      
+
+
+  <form method="post" action="http://tutorial.math.lamar.edu/Classes/CalcI/ChainRule.aspx" id="ctl00">
+<div class="aspNetHidden">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+</div>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="962368EA" />
+</div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </form>
+
+  <h3>Section 3-9 : Chain Rule</h3>
+
+    <p>We’ve taken a lot of derivatives over the course of the last few sections.  However, if you look back they have all been functions similar to the following kinds of functions.</p>
+    
+      \[R\left( z \right) = \sqrt z \hspace{0.25in}f\left( t \right) = {t^{50}}\hspace{0.25in}y = \tan \left( x \right)\hspace{0.25in}\,\,\,h\left( w \right) = {{\bf{e}}^w}\hspace{0.25in}\,\,\,g\left( x \right) = \,\ln x\]
+    
+    <p>These are all fairly simple functions in that wherever the variable appears it is by itself.  What about functions like the following,</p>
+    
+      \[\begin{array}{ll}R\left( z \right) = \sqrt {5z - 8} & \hspace{0.5in}f\left( t \right) = {\left( {2{t^3} + \cos \left( t \right)} \right)^{50}} \hspace{0.5in}\hspace{0.25in}y = \tan \left( {\sqrt[3]{{3{x^2}}} + \tan \left( {5x} \right)} \right)\\ h\left( w \right) = {{\bf{e}}^{{w^4} - 3{w^2} + 9}} & \hspace{0.5in}\,\,\,g\left( x \right) = \,\ln \left( {{x^{ - 4}} + {x^4}} \right)\end{array}\]
+    
+    <p>None of our rules will work on these functions and yet some of these functions are closer to the derivatives that we’re liable to run into than the functions in the first set.</p>
+    
+    <p>Let’s take the first one for example.  Back in the <a href="DefnOfDerivative.html#Deriv_Defn_Ex3">section</a> on the definition of the derivative we actually used the definition to compute this derivative.  In that section we found that,</p>
+    
+        \[R'\left( z \right) = \frac{5}{{2\sqrt {5z - 8} }}\]
+    
+    <p>If we were to just use the power rule on this we would get,</p>
+    
+        \[\frac{1}{2}{\left( {5z - 8} \right)^{ - \frac{1}{2}}} = \frac{1}{{2\sqrt {5z - 8} }}\]
+    <p>which is not the derivative that we computed using the definition.  It is close, but it’s not the same.  So, the power rule alone simply won’t work to get the derivative here.</p>
+    
+    <p>Let’s keep looking at this function and note that if we define,</p>
+    
+        \[f\left( z \right) = \sqrt z \hspace{0.25in}\hspace{0.25in}g\left( z \right) = 5z - 8\]
+    <p>then we can write the function as a composition.</p>
+    
+      \[R\left( z \right) = \left( {f \circ g} \right)\left( z \right) = f\left( {g\left( z \right)} \right) = \sqrt {5z - 8} \]
+    <p>and it turns out that it’s actually fairly simple to differentiate a function composition using the <strong>Chain Rule</strong>.  There are two forms of the chain rule.  Here they are.</p>
+    
+    <h4>Chain Rule</h4>
+  <div class="fact">
+    <p>Suppose that we have two functions \(f\left( x \right)\) and \(g\left( x \right)\) and they are both differentiable.</p>
+          <ol>
+            <li>If we define \(F\left( x \right) = \left( {f \circ g} \right)\left( x \right)\) then the derivative of \(F\left( x \right)\) is,
+          
+              \[F'\left( x \right) = f'\left( {g\left( x \right)} \right)\,\,\,g'\left( x \right)\]
+            </li>
+            <li>If we have \(y = f\left( u \right)\) and \(u = g\left( x \right)\) then the derivative of \(y\) is,
+          
+              \[\frac{{dy}}{{dx}} = \frac{{dy}}{{du}}\,\,\frac{{du}}{{dx}}\]
+              </li>
+          </ol>
+  </div>
+    
+    <p>Each of these forms have their uses, however we will work mostly with the first form in this class.  To see the proof of the Chain Rule see the <a href="DerivativeProofs.html#Extras_DerPf_ChainRule">Proof of Various Derivative Formulas</a> section of the Extras chapter.</p>
+    
+    <p>Now, let’s go back and use the Chain Rule on the function that we used when we opened this section.</p>
+    <a class="anchor" name="Deriv_Chain_Ex1"></a>
+  <div class="example">
+    <span class="example-title">Example 1</span> Use the Chain Rule to differentiate \(R\left( z \right) = \sqrt {5z - 8} \).
+    <div class="example-content">
+      <span id="SHLink_Soln1" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln1" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln1" class="soln-content">
+        <p>We’ve already identified the two functions that we needed for the composition, but let’s write them back down anyway and take their derivatives.</p>
+          
+            \[\begin{array}{ll}f\left( z \right) = \sqrt z & \hspace{0.5in}g\left( z \right) = 5z - 8\\ f'\left( z \right) = \displaystyle \frac{1}{{2\sqrt z }} & \hspace{0.5in}g'\left( z \right) = 5\end{array}\]
+          
+          <p>So, using the chain rule we get,</p>
+          
+            \[\begin{align*}R'\left( z \right) & = f'\left( {g\left( z \right)} \right)\,\,g'\left( z \right)\\ &amp;  = f'\left( {5z - 8} \right)\,\,g'\left( z \right)\\ &amp;  = \frac{1}{2}{\left( {5z - 8} \right)^{ - \frac{1}{2}}}\,\left( 5 \right)\\ &amp;  = \frac{1}{{2\sqrt {5z - 8} }}\,\,\left( 5 \right)\\ &amp;  = \frac{5}{{2\sqrt {5z - 8} }}\end{align*}\]
+          
+          <p>And this is what we got using the definition of the derivative.</p>
+      </div>
+    </div>
+  </div>
+    
+    <p>In general, we don’t really do all the composition stuff in using the Chain Rule.  That can get a little complicated and in fact obscures the fact that there is a quick and easy way of remembering the chain rule that doesn’t require us to think in terms of function composition.</p>
+    
+    <p>Let’s take the function from the previous example and rewrite it slightly.</p>
+    
+      \[R\left( z \right) = \underbrace {\left( {5z - 8} \right)}_{{\mbox{inside function}}}\,\,\underbrace {^{\,\,\,\,\,\,\frac{1}{2}\,\,\,\,\,\,\,\,}}_{{\mbox{ outside }}\atop {\mbox{function}}}\]
+    
+    <p>This function has an “inside function” and an “outside function”.  The outside function is the square root or the exponent of \({\textstyle{1 \over 2}}\) depending on how you want to think of it and the inside function is the stuff that we’re taking the square root of or raising to the \({\textstyle{1 \over 2}}\), again depending on how you want to look at it.</p>
+    
+    <p>The derivative is then,</p>
+    
+      \[R'\left( z \right) = \overbrace {\frac{1}{2}{{\underbrace {\left( {5z - 8} \right)}_{{\mbox{inside function}}\atop{\mbox{left alone}}}}^{ - \frac{1}{2}}}}^{{\mbox{derivative of}}\atop{\mbox{outside function}}}\,\,\,\underbrace {\,\,\,\,\left( 5 \right)\,\,\,\,}_{{\mbox{derivative of}}\atop{\mbox{inside function}}}\]
+    
+    <p>In general, this is how we think of the chain rule.  We identify the “inside function” and the “outside function”.  We then differentiate the outside function leaving the inside function alone and multiply all of this by the derivative of the inside function.  In its general form this is,</p>
+    
+        \[F'\left( x \right) = \underbrace {\,\,\,\,\,f'\,\,\,\,\,}_{{\mbox{derivative of}}\atop{\mbox{outside function}}}\,\,\,\,\underbrace {\,\,\left( {g\left( x \right)} \right)\,\,}_{{\mbox{inside function}}\atop{\mbox{left alone}}}\,\,\,\,\,\underbrace {\,\,\,g'\left( x \right)\,\,\,}_{{\mbox{times derivative}}\atop{\mbox{of inside function}}}\]
+    
+    <p>We can always identify the “outside function” in the examples below by asking ourselves how we would evaluate the function.  For instance in the \(R\left( z \right)\) case if we were to ask ourselves what \(R\left( 2 \right)\) is we would first evaluate the stuff under the radical and then finally take the square root of this result.  The square root is the last operation that we perform in the evaluation and this is also the outside function.  The outside function will always be the last operation you would perform if you were going to evaluate the function.</p>
+    
+    <p>Let’s take a look at some examples of the Chain Rule.</p>
+    <a class="anchor" name="Deriv_Chain_Ex2"></a>
+  <div class="example">
+    <span class="example-title">Example 2</span> Differentiate each of the following. 
+    <ol class="example_parts_list">
+      <li>\(f\left( x \right) = \sin \left( {3{x^2} + x} \right)\)</li>
+      <li>\(f\left( t \right) = {\left( {2{t^3} + \cos \left( t \right)} \right)^{50}}\)</li>
+      <li>\(h\left( w \right) = {{\bf{e}}^{{w^4} - 3{w^2} + 9}}\)</li>
+      <li>\(g\left( x \right) = \,\ln \left( {{x^{ - 4}} + {x^4}} \right)\)</li>
+      <li>\(y = \sec \left( {1 - 5x} \right)\)</li>
+      <li>\(P\left( t \right) = {\cos ^4}\left( t \right) + \cos \left( {{t^4}} \right)\)</li>
+    </ol>
+    <span id="SHALink_S_Soln2" class="SH-Link SH-All">Show All Solutions</span>&nbsp;<span id="SHALink_H_Soln2" class="SH-Link SH-All">Hide All Solutions</span>
+    <div class="example-content">
+      <span class="soln-list-item soln-list-subitem">a</span> \(f\left( x \right) = \sin \left( {3{x^2} + x} \right)\) <span id="SHLink_Soln2a" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln2a" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln2a" class="soln-content">
+        <p>It looks like the outside function is the sine and the inside function is 3<em>x<sup>2</sup>+x</em>.  The derivative is then.</p>
+          
+              \[f'\left( x \right) = \underbrace {\,\,\,\,\,\,\cos \,\,\,\,\,\,}_{{\mbox{derivative of}}\atop{\mbox{outside function}}}\,\,\,\,\,\underbrace {\left( {3{x^2} + x} \right)}_{{\mbox{leave inside}}\atop{\mbox{function alone}}}\,\,\,\,\underbrace {\,\,\left( {6x + 1} \right)\,\,}_{{\mbox{times derivative}}\atop{\mbox{of inside function}}}\]
+          
+          <p>Or with a little rewriting,</p>
+          
+              \[f'\left( x \right) = \left( {6x + 1} \right)\cos \left( {3{x^2} + x} \right)\]
+      </div>
+
+      <br />
+      <span class="soln-list-item soln-list-subitem">b</span> \(f\left( t \right) = {\left( {2{t^3} + \cos \left( t \right)} \right)^{50}}\) <span id="SHLink_Soln2b" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln2b" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln2b" class="soln-content">
+        <p>In this case the outside function is the exponent of 50 and the inside function is all the stuff on the inside of the parenthesis.  The derivative is then.</p>
+          
+            \[\begin{align*}f'\left( t \right) & = 50{\left( {2{t^3} + \cos \left( t \right)} \right)^{49}}\left( {6{t^2} - \sin \left( t \right)} \right)\\ &amp;  = 50\left( {6{t^2} - \sin \left( t \right)} \right){\left( {2{t^3} + \cos \left( t \right)} \right)^{49}}\end{align*}\]
+      </div>
+
+      <br />
+      <span class="soln-list-item soln-list-subitem">c</span> \(h\left( w \right) = {{\bf{e}}^{{w^4} - 3{w^2} + 9}}\) <span id="SHLink_Soln2c" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln2c" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln2c" class="soln-content">
+        <p>Identifying the outside function in the previous two was fairly simple since it really was the “outside” function in some sense.  In this case we need to be a little careful.  Recall that the outside function is the last operation that we would perform in an evaluation.  In this case if we were to evaluate this function the last operation would be the exponential.  Therefore, the outside function is the exponential function and the inside function is its exponent.</p>
+          
+          <p>Here’s the derivative.</p>
+          
+            \[\begin{align*}h'\left( w \right) & = {{\bf{e}}^{{w^4} - 3{w^2} + 9}}\left( {4{w^3} - 6w} \right)\\ &amp;  = \left( {4{w^3} - 6w} \right){{\bf{e}}^{{w^4} - 3{w^2} + 9}}\end{align*}\]
+          
+          <p>Remember, we leave the inside function alone when we differentiate the outside function.  So, the derivative of the exponential function (with the inside left alone) is just the original function.</p>
+      </div>
+
+      <br />
+      <span class="soln-list-item soln-list-subitem">d</span> \(g\left( x \right) = \,\ln \left( {{x^{ - 4}} + {x^4}} \right)\) <span id="SHLink_Soln2d" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln2d" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln2d" class="soln-content">
+        <p>Here the outside function is the natural logarithm and the inside function is stuff on the inside of the logarithm.</p>
+          
+            \[g'\left( x \right) = \,\frac{1}{{{x^{ - 4}} + {x^4}}}\left( { - 4{x^{ - 5}} + 4{x^3}} \right) = \frac{{ - 4{x^{ - 5}} + 4{x^3}}}{{{x^{ - 4}} + {x^4}}}\]
+          
+          <p>Again remember to leave the inside function alone when differentiating the outside function.  So, upon differentiating the logarithm we end up not with 1/\(x\) but instead with 1/(inside function).</p>
+      </div>
+
+      <br />
+      <span class="soln-list-item soln-list-subitem">e</span> \(y = \sec \left( {1 - 5x} \right)\) <span id="SHLink_Soln2e" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln2e" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln2e" class="soln-content">
+        <p>In this case the outside function is the secant and the inside is the \(1 - 5x\).</p>
+          
+            \[\begin{align*}y' & = \sec \left( {1 - 5x} \right)\tan \left( {1 - 5x} \right)\left( { - 5} \right)\\ &amp;  =  - 5\sec \left( {1 - 5x} \right)\tan \left( {1 - 5x} \right)\end{align*}\]
+          
+          <p>In this case the derivative of the outside function is \(\sec \left( x \right)\tan \left( x \right)\).  However, since we leave the inside function alone we don’t get \(x\)’s in both.  Instead we get \(1 - 5x\) in both.</p>
+      </div>
+
+      <br />
+      <span class="soln-list-item soln-list-subitem">f</span> \(P\left( t \right) = {\cos ^4}\left( t \right) + \cos \left( {{t^4}} \right)\) <span id="SHLink_Soln2f" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln2f" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln2f" class="soln-content">
+        <p>There are two points to this problem.  First, there are two terms and each will require a different application of the chain rule.  That will often be the case so don’t expect just a single chain rule when doing these problems.  Second, we need to be very careful in choosing the outside and inside function for each term.</p>
+          
+          <p>Recall that the first term can actually be written as,</p>
+          
+              \[{\cos ^4}\left( t \right) = {\left( {\cos \left( t \right)} \right)^4}\]
+          
+          <p>So, in the first term the outside function is the exponent of 4 and the inside function is the cosine.  In the second term it’s exactly the opposite.  In the second term the outside function is the cosine and the inside function is \({t^4}\).  Here’s the derivative for this function.</p>
+          
+            \[\begin{align*}P'\left( t \right) & = 4{\cos ^3}\left( t \right)\left( { - \sin \left( t \right)} \right) - \sin \left( {{t^4}} \right)\left( {4{t^3}} \right)\\ &amp;  =  - 4\sin \left( t \right){\cos ^3}\left( t \right) - 4{t^3}\sin \left( {{t^4}} \right)\end{align*}\]
+      </div>
+    </div>
+  </div>
+    
+    <p>There are a couple of general formulas that we can get for some special cases of the chain rule.  Let’s take a quick look at those.</p>
+    <a class="anchor" name="Deriv_Chain_Ex3"></a>
+
+  <div class="example">
+    <span class="example-title">Example 3</span> Differentiate each of the following.
+    <ol class="example_parts_list">
+      <li>\(f\left( x \right) = {\left[ {g\left( x \right)} \right]^n}\)</li>
+      <li>\(f\left( x \right) = {{\bf{e}}^{g\left( x \right)}}\)</li>
+      <li>\(f\left( x \right) = \ln \left( {g\left( x \right)} \right)\)</li>
+    </ol>
+     <div class="example-content">
+       <span id="SHLink_Soln3" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln3" class="fas fa-caret-right" aria-hidden="true"></span>
+       <div id="SHObj_Soln3" class="soln-content">
+
+         <p><span class="soln-list-item">a</span> The outside function is the exponent and the inside is \(g\left( x \right)\).</p>
+          
+              \[f'\left( x \right) = n{\left[ {g\left( x \right)} \right]^{n - 1}}g'\left( x \right)\]
+
+         <p><span class="soln-list-item">b</span> The outside function is the exponential function and the inside is \(g\left( x \right)\).</p>
+          
+              \[f'\left( x \right) = g'\left( x \right){{\bf{e}}^{g\left( x \right)}}\]
+
+         <p><span class="soln-list-item">c</span> The outside function is the logarithm and the inside is \(g\left( x \right)\).</p>
+          
+            \[f'\left( x \right) = \frac{1}{{g\left( x \right)}}g'\left( x \right) = \frac{{g'\left( x \right)}}{{g\left( x \right)}}\]
+       </div>
+     </div>
+  </div>
+    
+    <p>The formulas in this example are really just special cases of the Chain Rule but may be useful to remember in order to quickly do some of these derivatives.</p>
+    
+    <p>Now, let’s also not forget the other rules that we’ve got for doing derivatives.  For the most part we’ll not be explicitly identifying the inside and outside functions for the remainder of the problems in this section.  We will be assuming that you can see our choices based on the previous examples and the work that we have shown.</p>
+    <a class="anchor" name="Deriv_Chain_Ex4"></a>
+
+  <div class="example">
+    <span class="example-title">Example 4</span> Differentiate each of the following.
+    <ol class="example_parts_list">
+      <li>\(T\left( x \right) = {\tan ^{ - 1}}\left( {2x} \right)\,\,\sqrt[3]{{1 - 3{x^2}}}\)</li>
+      <li>\(f\left( z \right) = \sin \left( {z{{\bf{e}}^z}} \right)\)</li>
+      <li>\(\displaystyle y = \frac{{{{\left( {{x^3} + 4} \right)}^5}}}{{{{\left( {1 - 2{x^2}} \right)}^3}}}\)</li>
+      <li>\(\displaystyle h\left( t \right) = {\left( {\frac{{2t + 3}}{{6 - {t^2}}}} \right)^3}\)</li>
+    </ol>
+    <span id="SHALink_S_Soln4" class="SH-Link SH-All">Show All Solutions</span>&nbsp;<span id="SHALink_H_Soln4" class="SH-Link SH-All">Hide All Solutions</span>
+    <div class="example-content">
+      <span class="soln-list-item soln-list-subitem">a</span> \(T\left( x \right) = {\tan ^{ - 1}}\left( {2x} \right)\,\,\sqrt[3]{{1 - 3{x^2}}}\) <span id="SHLink_Soln4a" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln4a" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln4a" class="soln-content">
+        <p>Let’s first notice that this problem is first and foremost a product rule problem.  This is  a product of two functions, the inverse tangent and the root and so the first thing we’ll need to do in taking the derivative is use the product rule.  However, in using the product rule and each derivative will require a chain rule application as well.</p>
+          
+          
+            \[\begin{align*}T'\left( x \right) & = \frac{1}{{1 + {{\left( {2x} \right)}^2}}}\left( 2 \right)\,\,{\left( {1 - 3{x^2}} \right)^{\frac{1}{3}}} + {\tan ^{ - 1}}\left( {2x} \right)\left( {\frac{1}{3}} \right){\left( {1 - 3{x^2}} \right)^{ - \frac{2}{3}}}\left( { - 6x} \right)\\ &amp;  = \frac{{2{{\left( {1 - 3{x^2}} \right)}^{\frac{1}{3}}}}}{{1 + {{\left( {2x} \right)}^2}}} - 2x{\left( {1 - 3{x^2}} \right)^{ - \frac{2}{3}}}{\tan ^{ - 1}}\left( {2x} \right)\end{align*}\]
+          
+          <p>In this part be careful with the inverse tangent.  We know that,</p>
+          
+            \[\frac{d}{{dx}}\left( {{{\tan }^{ - 1}}x} \right) = \frac{1}{{1 + {x^2}}}\]
+          
+          <p>When doing the chain rule with this we remember that we’ve got to leave the inside function alone.  That means that where we have the \({x^2}\) in the derivative of \({\tan ^{ - 1}}x\) we will need to have \({\left( {{\mbox{inside function}}} \right)^2}\).</p>
+      </div>
+
+      <br />
+      <span class="soln-list-item soln-list-subitem">b</span> \(f\left( z \right) = \sin \left( {z{{\bf{e}}^z}} \right)\) <span id="SHLink_Soln4b" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln4b" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln4b" class="soln-content">
+        <p>Now contrast this with the previous problem.  In the previous problem we had a product that required us to use the chain rule in applying the product rule.  In this problem we will first need to apply the chain rule and when we go to integrate the inside function we’ll need to use the product rule.</p>
+          
+          <p>Here is the chain rule portion of the problem.</p>
+          
+            \[f'\left( z \right) = \cos \left( {z{{\bf{e}}^z}} \right)\frac{d}{{dx}}\left[ {z{{\bf{e}}^z}} \right]\]
+          
+          <p>In this case we did not actually do the derivative of the inside yet.  We just left it in the derivative notation to make it clear that in order to do the derivative of the inside function we now have a product rule.</p>
+          
+          <p>Here is the rest of the work for this problem.</p>
+          
+          \[f'\left( z \right) = \cos \left( {z{{\bf{e}}^z}} \right)\left( {{{\bf{e}}^z} + z{{\bf{e}}^z}} \right)\]
+      </div>
+
+      <br />
+      <span class="soln-list-item soln-list-subitem soln-list-subitem-padding-20">c</span> \(\displaystyle y = \frac{{{{\left( {{x^3} + 4} \right)}^5}}}{{{{\left( {1 - 2{x^2}} \right)}^3}}}\) <span id="SHLink_Soln4c" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln4c" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln4c" class="soln-content">
+        <p>For this problem we clearly have a rational expression and so the first thing that we’ll need to do is apply the quotient rule.  In the process of using the quotient rule we’ll need to use the chain rule when differentiating the numerator and denominator.</p>
+          
+          
+            \[y' = \frac{{5{{\left( {{x^3} + 4} \right)}^4}\left( {3{x^2}} \right){{\left( {1 - 2{x^2}} \right)}^3} - {{\left( {{x^3} + 4} \right)}^5}\left( 3 \right){{\left( {1 - 2{x^2}} \right)}^2}\left( { - 4x} \right)}}{{{{\left( {{{\left( {1 - 2{x^2}} \right)}^3}} \right)}^2}}}\]
+          
+          <p>These tend to be a little messy.  Notice that when we go to simplify that we’ll be able to a fair amount of factoring in the numerator and this will often greatly simplify the derivative.</p>
+          
+            \[\begin{align*}y' & = \frac{{{{\left( {{x^3} + 4} \right)}^4}{{\left( {1 - 2{x^2}} \right)}^2}\left( {5\left( {3{x^2}} \right)\left( {1 - 2{x^2}} \right) - \left( {{x^3} + 4} \right)\left( 3 \right)\left( { - 4x} \right)} \right)}}{{{{\left( {1 - 2{x^2}} \right)}^6}}}\\ &amp;  = \frac{{3x{{\left( {{x^3} + 4} \right)}^4}\left( {5x - 6{x^3} + 16} \right)}}{{{{\left( {1 - 2{x^2}} \right)}^4}}}\end{align*}\]
+          
+          <p>After factoring we were able to cancel some of the terms in the numerator against the denominator.  So even though the initial chain rule was fairly messy the final answer is significantly simpler because of the factoring.</p>
+      </div>
+
+      <br />
+      <span class="soln-list-item soln-list-subitem">d</span> \(\displaystyle h\left( t \right) = {\left( {\frac{{2t + 3}}{{6 - {t^2}}}} \right)^3}\) <span id="SHLink_Soln4d" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln4d" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln4d" class="soln-content">
+        <p>Unlike the previous problem the first step for derivative is to use the chain rule and then once we go to differentiate the inside function we’ll need to do the quotient rule.</p>
+          
+          <p>Here is the work for this problem.</p>
+          
+          \[\begin{align*}h'\left( t \right) & = 3{\left( {\frac{{2t + 3}}{{6 - {t^2}}}} \right)^2}\frac{d}{{dt}}\left[ {\frac{{2t + 3}}{{6 - {t^2}}}} \right]\\ &amp;  = 3{\left( {\frac{{2t + 3}}{{6 - {t^2}}}} \right)^2}\left[ {\frac{{2\left( {6 - {t^2}} \right) - \left( {2t + 3} \right)\left( { - 2t} \right)}}{{{{\left( {6 - {t^2}} \right)}^2}}}} \right]\\ &amp;  = 3{\left( {\frac{{2t + 3}}{{6 - {t^2}}}} \right)^2}\left[ {\frac{{2{t^2} + 6t + 12}}{{{{\left( {6 - {t^2}} \right)}^2}}}} \right]\end{align*}\]
+          
+          <p>As with the second part above we did not initially differentiate the inside function in the first step to make it clear that it would be quotient rule from that point on.</p>
+      </div>
+    </div>
+  </div>
+    
+    <p>There were several points in the last example.  First is to not forget that we’ve still got other derivatives rules that are still needed on occasion.  Just because we now have the chain rule does not mean that the product and quotient rule will no longer be needed.</p>
+    
+    <p>In addition, as the last example illustrated, the order in which they are done will vary as well.  Some problems will be product or quotient rule problems that involve the chain rule.  Other problems however, will first require the use the chain rule and in the process of doing that we’ll need to use the product and/or quotient rule.</p>
+    
+    <p>Most of the examples in this section won’t involve the product or quotient rule to make the problems a little shorter.  However, in practice they will often be in the same problem so you need to be prepared for these kinds of problems.</p>
+    
+    <p>Now, let’s take a look at some more complicated examples.</p>
+    <a class="anchor" name="Deriv_Chain_Ex5"></a>
+  <div class="example">
+    <span class="example-title">Example 5</span> Differentiate each of the following.
+    <ol class="example_parts_list">
+      <li>\(\displaystyle h\left( z \right) = \frac{2}{{{{\left( {4z + {{\bf{e}}^{ - 9z}}} \right)}^{10}}}}\)</li>
+      <li>\(f\left( y \right) = \sqrt {2y + {{\left( {3y + 4{y^2}} \right)}^3}} \)</li>
+      <li>\(y = \tan \left( {\sqrt[3]{{3{x^2}}} + \ln \left( {5{x^4}} \right)} \right)\)</li>
+      <li>\(g\left( t \right) = {\sin ^3}\left( {{{\bf{e}}^{1 - t}} + 3\sin \left( {6t} \right)} \right)\)</li>
+    </ol>
+    <span id="SHALink_S_Soln5" class="SH-Link SH-All">Show All Solutions</span>&nbsp;<span id="SHALink_H_Soln5" class="SH-Link SH-All">Hide All Solutions</span>
+    <div class="example-content">
+      <span class="soln-list-item soln-list-subitem soln-list-subitem-padding-20">a</span> \(\displaystyle h\left( z \right) = \frac{2}{{{{\left( {4z + {{\bf{e}}^{ - 9z}}} \right)}^{10}}}}\) <span id="SHLink_Soln5a" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln5a" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln5a" class="soln-content">
+        <p>In this case let’s first rewrite the function in a form that will be a little easier to deal with.</p>
+          
+              \[h\left( z \right) = 2{\left( {4z + {{\bf{e}}^{ - 9z}}} \right)^{ - 10}}\]
+          <p>Now, let’s start the derivative.</p>
+          
+            \[h'\left( z \right) =  - 20{\left( {4z + {{\bf{e}}^{ - 9z}}} \right)^{ - 11}}\frac{d}{{dz}}\left( {4z + {{\bf{e}}^{ - 9z}}} \right)\]
+          
+          <p>Notice that we didn’t actually do the derivative of the inside function yet.  This is to allow us to notice that when we do differentiate the second term we will require the chain rule again.  Notice as well that we will only need the chain rule on the exponential and not the first term.  In many functions we will be using the chain rule more than once so don’t get excited about this when it happens.</p>
+          
+          <p>Let’s go ahead and finish this example out.</p>
+          
+            \[h'\left( z \right) =  - 20{\left( {4z + {{\bf{e}}^{ - 9z}}} \right)^{ - 11}}\left( {4 - 9{{\bf{e}}^{ - 9z}}} \right)\]
+          
+          <p>Be careful with the second application of the chain rule.  Only the exponential gets multiplied by the “-9” since that’s the derivative of the inside function for that term only.  One of the more common mistakes in these kinds of problems is to multiply the whole thing by the “-9” and not just the second term.</p>
+      </div>
+
+      <br />
+      <span class="soln-list-item soln-list-subitem">b</span> \(f\left( y \right) = \sqrt {2y + {{\left( {3y + 4{y^2}} \right)}^3}} \) <span id="SHLink_Soln5b" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln5b" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln5b" class="soln-content">
+        <p>We’ll not put as many words into this example, but we’re still going to be careful with this derivative so make sure you can follow each of the steps here.</p>
+          
+            \[\begin{align*}f'\left( y \right) & = \frac{1}{2}{\left( {2y + {{\left( {3y + 4{y^2}} \right)}^3}} \right)^{ - \frac{1}{2}}}\frac{d}{{dy}}\left( {2y + {{\left( {3y + 4{y^2}} \right)}^3}} \right)\\ &amp;  = \frac{1}{2}{\left( {2y + {{\left( {3y + 4{y^2}} \right)}^3}} \right)^{ - \frac{1}{2}}}\left( {2 + 3{{\left( {3y + 4{y^2}} \right)}^2}\left( {3 + 8y} \right)} \right)\\ &amp;  = \frac{1}{2}{\left( {2y + {{\left( {3y + 4{y^2}} \right)}^3}} \right)^{ - \frac{1}{2}}}\left( {2 + \left( {9 + 24y} \right){{\left( {3y + 4{y^2}} \right)}^2}} \right)\end{align*}\]
+          
+          <p>As with the first example the second term of the inside function required the chain rule to differentiate it.  Also note that again we need to be careful when multiplying by the derivative of the inside function when doing the chain rule on the second term.</p>
+      </div>
+
+      <br />
+      <span class="soln-list-item soln-list-subitem">c</span> \(y = \tan \left( {\sqrt[3]{{3{x^2}}} + \ln \left( {5{x^4}} \right)} \right)\) <span id="SHLink_Soln5c" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln5c" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln5c" class="soln-content">
+        <p>Let’s jump right into this one.</p>
+          
+              \[\begin{align*}y' & = {\sec ^2}\left( {\sqrt[3]{{3{x^2}}} + \ln \left( {5{x^4}} \right)} \right)\frac{d}{{dx}}\left( {{{\left( {3{x^2}} \right)}^{\frac{1}{3}}} + \ln \left( {5{x^4}} \right)} \right)\\ &amp;  = {\sec ^2}\left( {\sqrt[3]{{3{x^2}}} + \ln \left( {5{x^4}} \right)} \right)\left( {\frac{1}{3}{{\left( {3{x^2}} \right)}^{ - \frac{2}{3}}}\left( {6x} \right) + \frac{{20{x^3}}}{{5{x^4}}}} \right)\\ &amp;  = \left( {2x{{\left( {3{x^2}} \right)}^{ - \frac{2}{3}}} + \frac{4}{x}} \right){\sec ^2}\left( {\sqrt[3]{{3{x^2}}} + \ln \left( {5{x^4}} \right)} \right)\end{align*}\]
+          
+          <p>In this example both of the terms in the inside function required a separate application of the chain rule.</p>
+      </div>
+
+      <br />
+      <span class="soln-list-item soln-list-subitem">d</span> \(g\left( t \right) = {\sin ^3}\left( {{{\bf{e}}^{1 - t}} + 3\sin \left( {6t} \right)} \right)\) <span id="SHLink_Soln5d" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln5d" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln5d" class="soln-content">
+        <p>We’ll need to be a little careful with this one.</p>
+          
+            \[\begin{align*}g'\left( t \right) & = 3{\sin ^2}\left( {{{\bf{e}}^{1 - t}} + 3\sin \left( {6t} \right)} \right)\frac{d}{{dt}}\sin \left( {{{\bf{e}}^{1 - t}} + 3\sin \left( {6t} \right)} \right)\\ &amp;  = 3{\sin ^2}\left( {{{\bf{e}}^{1 - t}} + 3\sin \left( {6t} \right)} \right)\cos \left( {{{\bf{e}}^{1 - t}} + 3\sin \left( {6t} \right)} \right)\frac{d}{{dt}}\left( {{{\bf{e}}^{1 - t}} + 3\sin \left( {6t} \right)} \right)\\ &amp;  = 3{\sin ^2}\left( {{{\bf{e}}^{1 - t}} + 3\sin \left( {6t} \right)} \right)\cos \left( {{{\bf{e}}^{1 - t}} + 3\sin \left( {6t} \right)} \right)\left( {{{\bf{e}}^{1 - t}}\left( { - 1} \right) + 3\cos \left( {6t} \right)\left( 6 \right)} \right)\\ &amp;  = 3\left( { - {{\bf{e}}^{1 - t}} + 18\cos \left( {6t} \right)} \right){\sin ^2}\left( 
+            {{{\bf{e}}^{1 - t}} + 3\sin \left( {6t} \right)} \right)\cos \left( {{{\bf{e}}^{1 - t}} + 3\sin \left( {6t} \right)} \right)\end{align*}\]
+          
+          <p>This problem required a total of 4 chain rules to complete.</p>
+      </div>
+    </div>
+  </div>
+    
+    <p>Sometimes these can get quite unpleasant and require many applications of the chain rule.  Initially, in these cases it’s usually best to be careful as we did in this previous set of examples and write out a couple of extra steps rather than trying to do it all in one step in your head.  Once you get better at the chain rule you’ll find that you can do these fairly quickly in your head.</p>
+    <a class="anchor" name="Deriv_Chain_ax"></a>
+    <p>Finally, before we move onto the next section there is one more issue that we need to address.  In the <a href="DiffExpLogFcns.html">Derivatives of Exponential and Logarithm Functions</a> section we claimed that,</p>
+    
+      \[f\left( x \right) = {a^x}\hspace{0.25in}\hspace{0.25in} \Rightarrow \hspace{0.25in}\hspace{0.25in}f'\left( x \right) = {a^x}\ln \left( a \right)\]
+    <p>but at the time we didn’t have the knowledge to do this.  We now do.  What we needed was the chain rule.</p>
+    
+    <p>First, notice that using a property of logarithms we can write \(a\) as,</p>
+    
+        \[a = {{\bf{e}}^{\ln a}}\]
+    
+    <p>This may seem kind of silly, but it is needed to compute the derivative.  Now, using this we can write the function as,</p>
+    
+      \[\begin{align*}f\left( x \right) & = {a^x}\\ &amp;  = {\left( a \right)^x}\\ &amp;  = {\left( {{{\bf{e}}^{\ln a}}} \right)^x}\\ &amp;  = {{\bf{e}}^{\left( {\ln a} \right)x}}\\ &amp;  = {{\bf{e}}^{x\,\,\ln a}}\end{align*}\]
+    
+    <p>Okay, now that we’ve gotten that taken care of all we need to remember is that \(a\) is a constant and so \(\ln a\) is also a constant.  Now, differentiating the final version of this function is a (hopefully) fairly simple Chain Rule problem.</p>
+    
+        \[f'\left( x \right) = {{\bf{e}}^{x\,\,\ln a}}\left( {\ln a} \right)\]
+    
+    <p>Now, all we need to do is rewrite the first term back as \({a^x}\) to get,</p>
+    
+        \[f'\left( x \right) = {a^x}\ln \left( a \right)\]
+    
+    <p>So, not too bad if you can see the trick to rewriting the \(a\) and with using the Chain Rule.</p>
+  
+
+
+      
+
+
+
+    </div>
+    <!-- End of content div -->
+
+
+    <div class="footer">
+      <div class="footer-links">
+        [<a href="http://tutorial.math.lamar.edu/Contact.aspx">Contact Me</a>]&nbsp;[<a href="../../MyStudents-2.html">My Students</a>]&nbsp;[<a href="http://tutorial.math.lamar.edu/Privacy.aspx">Privacy Statement</a>]&nbsp;[<a href="../../Help-2.html">Site Help &amp; FAQ</a>]&nbsp;[<a href="http://tutorial.math.lamar.edu/Terms.aspx">Terms of Use</a>]
+      </div>
+      <div class="footer-dates">
+        <div class="footer-copyright"><span id="lblCopyRight">&copy; 2003 - 2019 Paul Dawkins</span></div>
+        <div class="footer-spacer"></div>
+        <div class="footer-modified-date">Page Last Modified : <span id="lblModified">5/30/2018</span></div>
+      </div>
+      
+
+    </div>
+  </div>
+  <!-- End of page div...  -->
+</body>
+
+<!-- Mirrored from tutorial.math.lamar.edu/Classes/CalcI/ChainRule.aspx by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 27 Feb 2019 06:15:35 GMT -->
+</html>

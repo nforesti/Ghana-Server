@@ -1,0 +1,1420 @@
+
+
+<!DOCTYPE html>
+
+<html>
+
+<!-- Mirrored from tutorial.math.lamar.edu/Classes/CalcI/LimitProofs.aspx by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 27 Feb 2019 06:15:35 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=yes" /><meta http-equiv="X-UA-Compatible" content="IE=edge" />  <!-- For best MathJax performance on IE  -->
+
+  <meta name="google-site-verification" content="uLoA31CJfOhIVMJWBjCmQL8xNMmmLybZU3LRKavy9WQ" /><title>
+	Calculus I - Proof of Various Limit Properties
+</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="../../../www.googletagmanager.com/gtag/js1872?id=UA-331594-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-331594-1');
+  </script>
+
+  <link type="text/css" href="../../css/jquery.mmenu.all.css" rel="stylesheet" /><link type="text/css" href="../../css/jquery.dropdown.css" rel="stylesheet" /><link href="../../FA/css/fontawesome-all.min.css" rel="stylesheet" /><link type="text/css" href="../../css/notes-all.css" rel="stylesheet" /><link type="text/css" href="../../css/notes-google.css" rel="stylesheet" /><link type="text/css" href="../../css/notes-mmenu.css" rel="stylesheet" /><link type="text/css" href="../../css/notes-dropdown.css" rel="stylesheet" />
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+     TeX: { equationNumbers: { autoNumber: "AMS" } }
+    });
+  </script>
+  <script type="text/javascript" async src="../../../cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax2ba6.js?config=TeX-AMS_CHTML-full"></script>
+  <script type="text/javascript" src="../../../code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="../../js/jquery.mmenu.all.js"></script>
+  <script type="text/javascript" src="../../js/jquery.dropdown.js"></script>
+  <script type="text/javascript" src="../../js/notes-all.js"></script>  
+
+  <script>
+    (function () {
+      var cx = '001004262401526223570:11yv6vpcqvy';
+      var gcse = document.createElement('script');
+      gcse.type = 'text/javascript';
+      gcse.async = true;
+      gcse.src = '../../../cse.google.com/cse07b6.html?cx=' + cx;
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(gcse, s);
+    })();
+  </script>
+
+<meta http-equiv="keywords" name="keywords" content="proof of limit properties" /><meta http-equiv="description" name="description" content="In this section we prove several of the limit properties and facts that were given in various sections of the Limits chapter." /></head>
+<body onload="init({Notes: 'NoteMobile;8/21/2018;true'})">
+
+  <div id="page">
+
+    <div class="header">
+      <div class="header-row">
+        <!--<a href="#menu"><span></span></a>-->
+        <div id="side-menu-icon" class="header-side-menu-icon"><a href="#menu"><span class="fas fa-bars fa-lg" aria-hidden="true" title="Main Menu - Change between topics, chapters and sections as well as a few extra pages."></span></a></div>
+        <span class="header-title"><a href="../../index.html" class="header-title-link">Paul's Online Notes</a></span>
+        <div class="header-spacer"></div>
+
+        <div id="content-top-menu" class="top-menu">
+          <button id="content-type-menu" class="top-menu-button" data-jq-dropdown="#jq-dropdown-type" title="View (Notes, Practice Problems or Assignment Problems, Show/Hide Solutions and/or Steps) Menu">
+            <span id="tab_top_menu_notes" class="top-menu-item-title">Notes</span> <span class="far fa-eye fa-lg" aria-hidden="true"></span>
+          </button>
+
+          <button id="quicknav-menu" class="top-menu-button" data-jq-dropdown="#jq-dropdown-quicknav" title="Quick Navigation (Previous/Next Sections and Problems and Full Problem List) Menu">
+            <span class="top-menu-item-title">Quick Nav</span> <span class="fas fa-exchange fa-lg" aria-hidden="true"></span>
+          </button>
+          
+          <button id="download-menu" class="top-menu-button" data-jq-dropdown="#jq-dropdown-download" title="Download pdf Menu">
+            <span class="top-menu-item-title">Download</span> <span class="far fa-download fa-lg" aria-hidden="true"></span>
+          </button>
+
+          <button id="print-menu" class="top-menu-button top-menu-button-icon-only" data-jq-dropdown="#jq-print-download" title="Print Menu">
+            <span class="far fa-print fa-lg" aria-hidden="true"></span>
+          </button>
+        </div>
+
+        <div id="header-google-search" class="header-search">
+          <gcse:search></gcse:search>
+        </div>
+        <div id="header-search-icon" title="Site Search" class="header-menu-icon"><span id="search-icon" class="fas fa-search" aria-hidden="true"></span></div>
+
+      </div>
+    </div>
+
+     <div id="jq-dropdown-type" class="jq-dropdown jq-dropdown-tip">
+      <ul class="jq-dropdown-menu">
+        
+        <li id="li_type_menu_goto" class="top-menu-nav-title">Go To</li>
+        <li id="li_type_menu_notes">
+          <span id="type_menu_notes_span" title="Viewing the Notes for the current topic." class="top-menu-current">Notes</span>
+          
+        </li>
+        <li id="li_type_menu_practice">
+          
+          
+          <a href="http://tutorial.math.lamar.edu/Problems/CalcI/LimitProofs.aspx" id="type_menu_practice_link" title="Go to Practice Problems for current topic.">Practice Problems</a>
+        </li>
+        <li id="li_type_menu_asgn">
+          
+          <a href="http://tutorial.math.lamar.edu/ProblemsNS/CalcI/LimitProofs.aspx" id="type_menu_asgn_link" title="Go to Assignment Problems for current topic.">Assignment Problems</a>
+        </li>
+        <li id="li_type_menu_sh" class="top-menu-nav-title">Show/Hide</li>
+        <li id="li_type_menu_show" title="Show any hidden solutions and/or steps that may be present on the page."><a href="javascript:SHPrintPage(1,0)" id="view_menu_show">Show all Solutions/Steps/<em>etc.</em></a></li>
+        <li id="li_type_menu_hide" title="Hide any visible solutions and/or steps that may be present on the page."><a href="javascript:SHPrintPage(0,0)" id="view_menu_hide">Hide all Solutions/Steps/<em>etc.</em></a></li>
+      </ul>
+    </div>
+
+    <div id="jq-dropdown-quicknav" class="jq-dropdown jq-dropdown-tip">
+      <ul class="jq-dropdown-menu">
+        <li id="li_nav_menu_sections" class="top-menu-nav-title">Sections</li>
+        <li id="li_nav_menu_prev_section"><a href="ExtrasIntro.html" id="a_nav_menu_prev_section" class="top-menu-nav-link" title="Previous Section : Extras Introduction"><span class="top-menu-prev fas fa-chevron-left"></span> Extras Introduction</a></li>
+        <li id="li_nav_menu_next_section"><a href="DerivativeProofs.html" id="a_nav_menu_next_section" class="top-menu-nav-link" title="Next Section : Proof of Various Derivative Properties"><span class="top-menu-prev-hidden fas fa-chevron-left"></span> Proof of Various Derivative Properties <span class="top-menu-next fas fa-chevron-right"></span></a></li>
+        <li id="li_nav_menu_chapters" class="top-menu-nav-title">Chapters</li>
+        <li id="li_nav_menu_prev_chapter"><a href="IntAppsIntro.html" id="a_nav_menu_prev_chapter" class="top-menu-nav-link" title="Previous Chapter : Applications of Integrals"><span class="top-menu-prev fas fa-chevron-left"></span><span class="top-menu-prev fas fa-chevron-left"></span> Applications of Integrals</a></li>
+        
+        
+        
+        
+        
+        <li id="li_nav_menu_classes" class="top-menu-nav-title">Classes</li>
+        <li>
+          
+          <a href="../Alg/Alg.html" id="nav_menu_alg_link" title="Go To Algebra Notes">Algebra</a>
+        </li>
+        <li>
+          <span id="nav_menu_calci_span" title="Currently Viewing Calculus I Material" class="top-menu-current">Calculus I</span>
+          
+        </li>
+        <li>
+          
+          <a href="../CalcII/CalcII.html" id="nav_menu_calcii_link" title="Go To Calculus II Notes">Calculus II</a>
+        </li>
+        <li>
+          
+          <a href="../CalcIII/CalcIII.html" id="nav_menu_calciii_link" title="Go To Calculus III Notes">Calculus III</a>
+        </li>
+        <li>
+          
+          <a href="../DE/DE.html" id="nav_menu_de_link" title="Go To Differential Equations Notes">Differential Equations</a>
+        </li>
+        <li id="li_nav_menu_extras" class="top-menu-nav-title">Extras</li>
+        <li>
+          
+          <a href="../../Extras/AlgebraTrigReview/AlgebraTrig.html" id="nav_menu_algtrig_link" title="Go To Algebra &amp; Trig Review">Algebra &amp; Trig Review</a>
+        </li>
+        <li>
+          
+          <a href="../../Extras/CommonErrors/CommonMathErrors.html" id="nav_menu_commonerrors_link" title="Go To Common Math Errors">Common Math Errors</a>
+        </li>
+        <li>
+          
+          <a href="../../Extras/ComplexPrimer/ComplexNumbers.html" id="nav_menu_complexnumbers_link" title="Go To Complex Numbers Primer">Complex Number Primer</a>
+        </li>
+        <li>
+          
+          <a href="../../Extras/StudyMath/HowToStudyMath.html" id="nav_menu_studymath_link" title="Go To How To Study Math">How To Study Math</a>
+        </li>
+        <li>
+          
+          <a href="../../Extras/CheatSheets_Tables.html" id="nav_menu_cheattables_link" title="Go To List of Cheat Sheets and Tables">Cheat Sheets &amp; Tables</a>
+        </li>
+        <li id="li_nav_menu_misc" class="top-menu-nav-title">Misc</li>
+        <li><a href="http://tutorial.math.lamar.edu/contact.aspx" id="nav_menu_contact" title="Contact Me!">Contact Me</a></li>
+        <li><a href="../../mathjax.html" id="nav_menu_mathjax" title="Info on MathJax and MathJax Configuration Menu">MathJax Help and Configuration</a></li>
+        <li><a href="../../mystudents.html" id="nav_menu_students" title="Go here if you are currently taking a class from me!">My Students</a></li>
+      </ul>
+    </div>
+
+    <div id="jq-dropdown-download" class="jq-dropdown jq-dropdown-anchor-right jq-dropdown-tip">
+      <ul class="jq-dropdown-menu">
+        
+        <li id="li_download_menu_notes" class="top-menu-nav-title">Notes Downloads</li>
+        <li id="li_download_menu_notes_book"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=B,8,N" id="download_menu_notes_book" data-PDF="Download - Menu$Notes - Book$Calculus I$/Downloads/CalcI/Notes/Complete.pdf">Complete Book</a></li>
+        
+        <li id="li_download_menu_notes_chapter"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=C,31,N" id="download_menu_notes_chapter" data-PDF="Download - Menu$Notes - Chapter$Calculus I - Extras$/Downloads/CalcI/Notes/Extras.pdf">Current Chapter</a></li>
+        <li id="li_download_menu_notes_section"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=S,229,N" id="download_menu_notes_section" data-PDF="Download - Menu$Notes - Section$Calculus I - Proof of Various Limit Properties$/Downloads/CalcI/Notes/ProofsLimits.pdf">Current Section</a></li>
+        <li id="li_download_menu_practice" class="top-menu-nav-title">Practice Problems Downloads</li>
+        
+        <li id="li_download_menu_practice_book"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=B,8,P" id="download_menu_practice_book" data-PDF="Download - Menu$Practice Problems - Book$Calculus I$/Downloads/CalcI/Practice Problems/Complete.pdf">Complete Book - Problems Only</a></li>
+        <li id="li_download_menu_solutions_book"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=B,8,S" id="download_menu_solutions_book" data-PDF="Download - Menu$Practice Problems Solutions - Book$Calculus I$/Downloads/CalcI/Practice Problems Solutions/Complete.pdf">Complete Book - Solutions</a></li>
+        
+        
+        
+        
+        
+        
+        <li id="li_download_menu_asgn" class="top-menu-nav-title">Assignment Problems Downloads</li>
+        
+        <li id="li_download_menu_asgn_book"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=B,8,A" id="download_menu_asgn_book" data-PDF="Download - Menu$Assignment Problems - Book$Calculus I$/Downloads/CalcI/Assignment Problems/Complete.pdf">Complete Book</a></li>
+        
+        
+        <li id="li_download_menu_other" class="top-menu-nav-title">Other Items</li>
+        <li id="li_download_menu_urls">
+          <a href="http://tutorial.math.lamar.edu/DownloadURLs.aspx?bi=8&amp;ci=31&amp;si=229" id="download_menu_urls">Get URL's for Download Items</a>
+        </li>
+      </ul>
+    </div>
+
+    <div id="jq-print-download" class="jq-dropdown jq-dropdown-anchor-right jq-dropdown-tip">
+      <ul class="jq-dropdown-menu">
+        <li id="li_print_menu_default"><a href="javascript:SHPrintPage()" id="print_menu_default">Print Page in Current Form (Default)</a></li>
+        <li id="li_print_menu_show"><a href="javascript:SHPrintPage(1,1)" id="print_menu_show">Show all Solutions/Steps and Print Page</a></li>
+        <li id="li_print_menu_hide"><a href="javascript:SHPrintPage(0,1)" id="print_menu_hide">Hide all Solutions/Steps and Print Page</a></li>
+      </ul>
+    </div>
+
+
+
+   
+
+    <nav id="menu" class="notes-nav">
+      <ul>
+        <li><a href="../../index.html" class="mm-link">Home</a></li>
+        <li><span>Classes</span></li>
+        <li><a href="../Alg/Alg.html" class="mm-link">Algebra</a>
+          <ul>
+            <li><a href="../Alg/Preliminaries.html" class="mm-link">Preliminaries</a>
+              <ul>
+                <li><a href="../Alg/IntegerExponents.html" class="mm-link">Integer Exponents</a></li>
+                <li><a href="../Alg/RationalExponents.html" class="mm-link">Rational Exponents</a></li>
+                <li><a href="../Alg/Radicals.html" class="mm-link">Radicals</a></li>
+                <li><a href="../Alg/Polynomials.html" class="mm-link">Polynomials</a></li>
+                <li><a href="../Alg/Factoring.html" class="mm-link">Factoring Polynomials</a></li>
+                <li><a href="../Alg/RationalExpressions.html" class="mm-link">Rational Expressions</a></li>
+                <li><a href="../Alg/ComplexNumbers.html" class="mm-link">Complex Numbers</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/Solving.html" class="mm-link">Solving Equations and Inequalities</a>
+              <ul>
+                <li><a href="../Alg/SolutionSets.html" class="mm-link">Solutions and Solution Sets</a></li>
+                <li><a href="../Alg/SolveLinearEqns.html" class="mm-link">Linear Equations</a></li>
+                <li><a href="../Alg/LinearApps.html" class="mm-link">Applications of Linear Equations</a></li>
+                <li><a href="../Alg/SolveMultiVariable.html" class="mm-link">Equations With More Than One Variable</a></li>
+                <li><a href="../Alg/SolveQuadraticEqnsI.html" class="mm-link">Quadratic Equations - Part I</a></li>
+                <li><a href="../Alg/SolveQuadraticEqnsII.html" class="mm-link">Quadratic Equations - Part II</a></li>
+                <li><a href="../Alg/SolveQuadraticEqnSummary.html" class="mm-link">Quadratic Equations : A Summary</a></li>
+                <li><a href="../Alg/QuadraticApps.html" class="mm-link">Applications of Quadratic Equations</a></li>
+                <li><a href="../Alg/ReducibleToQuadratic.html" class="mm-link">Equations Reducible to Quadratic in Form</a></li>
+                <li><a href="../Alg/SolveRadicalEqns.html" class="mm-link">Equations with Radicals</a></li>
+                <li><a href="../Alg/SolveLinearInequalities.html" class="mm-link">Linear Inequalities</a></li>
+                <li><a href="../Alg/SolvePolyInequalities.html" class="mm-link">Polynomial Inequalities</a></li>
+                <li><a href="../Alg/SolveRationalInequalities.html" class="mm-link">Rational Inequalities</a></li>
+                <li><a href="../Alg/SolveAbsValueEqns.html" class="mm-link">Absolute Value Equations</a></li>
+                <li><a href="../Alg/SolveAbsValueIneq.html" class="mm-link">Absolute Value Inequalities</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/Graphing_Functions.html" class="mm-link">Graphing and Functions</a>
+              <ul>
+                <li><a href="../Alg/Graphing.html" class="mm-link">Graphing</a></li>
+                <li><a href="../Alg/Lines.html" class="mm-link">Lines</a></li>
+                <li><a href="../Alg/Circles.html" class="mm-link">Circles</a></li>
+                <li><a href="../Alg/FunctionDefn.html" class="mm-link">The Definition of a Function</a></li>
+                <li><a href="../Alg/GraphFunctions.html" class="mm-link">Graphing Functions</a></li>
+                <li><a href="../Alg/CombineFunctions.html" class="mm-link">Combining Functions</a></li>
+                <li><a href="../Alg/InverseFunctions.html" class="mm-link">Inverse Functions</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/CommonGraphs.html" class="mm-link">Common Graphs</a>
+              <ul>
+                <li><a href="../Alg/Lines_Circles_PWF.html" class="mm-link">Lines, Circles and Piecewise Functions</a></li>
+                <li><a href="../Alg/Parabolas.html" class="mm-link">Parabolas</a></li>
+                <li><a href="../Alg/Ellipses.html" class="mm-link">Ellipses</a></li>
+                <li><a href="../Alg/Hyperbolas.html" class="mm-link">Hyperbolas</a></li>
+                <li><a href="../Alg/MiscFunctions.html" class="mm-link">Miscellaneous Functions</a></li>
+                <li><a href="../Alg/Transformations.html" class="mm-link">Transformations</a></li>
+                <li><a href="../Alg/Symmetry.html" class="mm-link">Symmetry</a></li>
+                <li><a href="../Alg/GraphRationalFcns.html" class="mm-link">Rational Functions</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/PolynomialFunctions.html" class="mm-link">Polynomial Functions</a>
+              <ul>
+                <li><a href="../Alg/DividingPolynomials.html" class="mm-link">Dividing Polynomials</a></li>
+                <li><a href="../Alg/ZeroesOfPolynomials.html" class="mm-link">Zeroes/Roots of Polynomials</a></li>
+                <li><a href="../Alg/GraphingPolynomials.html" class="mm-link">Graphing Polynomials</a></li>
+                <li><a href="../Alg/FindingZeroesOfPolynomials.html" class="mm-link">Finding Zeroes of Polynomials</a></li>
+                <li><a href="../Alg/PartialFractions.html" class="mm-link">Partial Fractions</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/ExpAndLog.html" class="mm-link">Exponential and Logarithm Functions</a>
+              <ul>
+                <li><a href="../Alg/ExpFunctions.html" class="mm-link">Exponential Functions</a></li>
+                <li><a href="../Alg/LogFunctions.html" class="mm-link">Logarithm Functions</a></li>
+                <li><a href="../Alg/SolveExpEqns.html" class="mm-link">Solving Exponential Equations</a></li>
+                <li><a href="../Alg/SolveLogEqns.html" class="mm-link">Solving Logarithm Equations</a></li>
+                <li><a href="../Alg/ExpLogApplications.html" class="mm-link">Applications</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/Systems.html" class="mm-link">Systems of Equations</a>
+              <ul>
+                <li><a href="../Alg/SystemsTwoVrble.html" class="mm-link">Linear Systems with Two Variables</a></li>
+                <li><a href="../Alg/SystemsThreeVrble.html" class="mm-link">Linear Systems with Three Variables</a></li>
+                <li><a href="../Alg/AugmentedMatrix.html" class="mm-link">Augmented Matrices</a></li>
+                <li><a href="../Alg/AugmentedMatrixII.html" class="mm-link">More on the Augmented Matrix</a></li>
+                <li><a href="../Alg/NonlinearSystems.html" class="mm-link">Nonlinear Systems</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="CalcI.html" class="mm-link">Calculus I</a>
+          <ul>
+            <li><a href="ReviewIntro.html" class="mm-link">Review</a>
+              <ul>
+                <li><a href="Functions.html" class="mm-link">Functions</a></li>
+                <li><a href="InverseFunctions.html" class="mm-link">Inverse Functions</a></li>
+                <li><a href="TrigFcns.html" class="mm-link">Trig Functions</a></li>
+                <li><a href="TrigEquations.html" class="mm-link">Solving Trig Equations</a></li>
+                <li><a href="TrigEquations_CalcI.html" class="mm-link">Trig Equations with Calculators, Part I</a></li>
+                <li><a href="TrigEquations_CalcII.html" class="mm-link">Trig Equations with Calculators, Part II</a></li>
+                <li><a href="ExpFunctions.html" class="mm-link">Exponential Functions</a></li>
+                <li><a href="LogFcns.html" class="mm-link">Logarithm Functions</a></li>
+                <li><a href="ExpLogEqns.html" class="mm-link">Exponential and Logarithm Equations</a></li>
+                <li><a href="CommonGraphs.html" class="mm-link">Common Graphs</a></li>
+              </ul>
+            </li>
+            <li><a href="limitsIntro.html" class="mm-link">Limits</a>
+              <ul>
+                <li><a href="Tangents_Rates.html" class="mm-link">Tangent Lines and Rates of Change</a></li>
+                <li><a href="TheLimit.html" class="mm-link">The Limit</a></li>
+                <li><a href="OneSidedLimits.html" class="mm-link">One-Sided Limits</a></li>
+                <li><a href="LimitsProperties.html" class="mm-link">Limit Properties</a></li>
+                <li><a href="ComputingLimits.html" class="mm-link">Computing Limits</a></li>
+                <li><a href="InfiniteLimits.html" class="mm-link">Infinite Limits</a></li>
+                <li><a href="LimitsAtInfinityI.html" class="mm-link">Limits At Infinity, Part I</a></li>
+                <li><a href="LimitsAtInfinityII.html" class="mm-link">Limits At Infinity, Part II</a></li>
+                <li><a href="Continuity.html" class="mm-link">Continuity</a></li>
+                <li><a href="DefnOfLimit.html" class="mm-link">The Definition of the Limit</a></li>
+              </ul>
+            </li>
+            <li><a href="DerivativeIntro.html" class="mm-link">Derivatives</a>
+              <ul>
+                <li><a href="DefnOfDerivative.html" class="mm-link">The Definition of the Derivative</a></li>
+                <li><a href="DerivativeInterp.html" class="mm-link">Interpretation of the Derivative</a></li>
+                <li><a href="DiffFormulas.html" class="mm-link">Differentiation Formulas</a></li>
+                <li><a href="ProductQuotientRule.html" class="mm-link">Product and Quotient Rule</a></li>
+                <li><a href="DiffTrigFcns.html" class="mm-link">Derivatives of Trig Functions</a></li>
+                <li><a href="DiffExpLogFcns.html" class="mm-link">Derivatives of Exponential and Logarithm Functions</a></li>
+                <li><a href="DiffInvTrigFcns.html" class="mm-link">Derivatives of Inverse Trig Functions</a></li>
+                <li><a href="DiffHyperFcns.html" class="mm-link">Derivatives of Hyperbolic Functions</a></li>
+                <li><a href="ChainRule.html" class="mm-link">Chain Rule</a></li>
+                <li><a href="ImplicitDIff.html" class="mm-link">Implicit Differentiation</a></li>
+                <li><a href="RelatedRates.html" class="mm-link">Related Rates</a></li>
+                <li><a href="HigherOrderDerivatives.html" class="mm-link">Higher Order Derivatives</a></li>
+                <li><a href="LogDiff.html" class="mm-link">Logarithmic Differentiation</a></li>
+              </ul>
+            </li>
+            <li><a href="DerivAppsIntro.html" class="mm-link">Applications of Derivatives</a>
+              <ul>
+                <li><a href="RateOfChange.html" class="mm-link">Rates of Change</a></li>
+                <li><a href="CriticalPoints.html" class="mm-link">Critical Points</a></li>
+                <li><a href="MinMaxValues.html" class="mm-link">Minimum and Maximum Values</a></li>
+                <li><a href="AbsExtrema.html" class="mm-link">Finding Absolute Extrema</a></li>
+                <li><a href="ShapeofGraphPtI.html" class="mm-link">The Shape of a Graph, Part I</a></li>
+                <li><a href="ShapeofGraphPtII.html" class="mm-link">The Shape of a Graph, Part II</a></li>
+                <li><a href="MeanValueTheorem.html" class="mm-link">The Mean Value Theorem</a></li>
+                <li><a href="Optimization.html" class="mm-link">Optimization</a></li>
+                <li><a href="MoreOptimization.html" class="mm-link">More Optimization Problems</a></li>
+                <li><a href="LHospitalsRule.html" class="mm-link">L'Hospital's Rule and Indeterminate Forms</a></li>
+                <li><a href="LinearApproximations.html" class="mm-link">Linear Approximations</a></li>
+                <li><a href="Differentials.html" class="mm-link">Differentials</a></li>
+                <li><a href="NewtonsMethod.html" class="mm-link">Newton's Method</a></li>
+                <li><a href="BusinessApps.html" class="mm-link">Business Applications</a></li>
+              </ul>
+            </li>
+            <li><a href="IntegralsIntro.html" class="mm-link">Integrals</a>
+              <ul>
+                <li><a href="IndefiniteIntegrals.html" class="mm-link">Indefinite Integrals</a></li>
+                <li><a href="ComputingIndefiniteIntegrals.html" class="mm-link">Computing Indefinite Integrals</a></li>
+                <li><a href="SubstitutionRuleIndefinite.html" class="mm-link">Substitution Rule for Indefinite Integrals</a></li>
+                <li><a href="SubstitutionRuleIndefinitePtII.html" class="mm-link">More Substitution Rule</a></li>
+                <li><a href="AreaProblem.html" class="mm-link">Area Problem</a></li>
+                <li><a href="DefnOfDefiniteIntegral.html" class="mm-link">Definition of the Definite Integral</a></li>
+                <li><a href="ComputingDefiniteIntegrals.html" class="mm-link">Computing Definite Integrals</a></li>
+                <li><a href="SubstitutionRuleDefinite.html" class="mm-link">Substitution Rule for Definite Integrals</a></li>
+              </ul>
+            </li>
+            <li><a href="IntAppsIntro.html" class="mm-link">Applications of Integrals</a>
+              <ul>
+                <li><a href="AvgFcnValue.html" class="mm-link">Average Function Value</a></li>
+                <li><a href="AreaBetweenCurves.html" class="mm-link">Area Between Curves</a></li>
+                <li><a href="VolumeWithRings.html" class="mm-link">Volumes of Solids of Revolution / Method of Rings</a></li>
+                <li><a href="VolumeWithCylinder.html" class="mm-link">Volumes of Solids of Revolution/Method of Cylinders</a></li>
+                <li><a href="MoreVolume.html" class="mm-link">More Volume Problems</a></li>
+                <li><a href="Work.html" class="mm-link">Work</a></li>
+              </ul>
+            </li>
+            <li><a href="ExtrasIntro.html" class="mm-link">Extras</a>
+              <ul>
+                <li><a href="LimitProofs.html" class="mm-link">Proof of Various Limit Properties</a></li>
+                <li><a href="DerivativeProofs.html" class="mm-link">Proof of Various Derivative Properties</a></li>
+                <li><a href="ProofTrigDeriv.html" class="mm-link">Proof of Trig Limits</a></li>
+                <li><a href="DerivativeAppsProofs.html" class="mm-link">Proofs of Derivative Applications Facts</a></li>
+                <li><a href="ProofIntProp.html" class="mm-link">Proof of Various Integral Properties </a></li>
+                <li><a href="Area_Volume_Formulas.html" class="mm-link">Area and Volume Formulas</a></li>
+                <li><a href="TypesOfInfinity.html" class="mm-link">Types of Infinity</a></li>
+                <li><a href="SummationNotation.html" class="mm-link">Summation Notation</a></li>
+                <li><a href="ConstantofIntegration.html" class="mm-link">Constant of Integration</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../CalcII/CalcII.html" class="mm-link">Calculus II</a>
+          <ul>
+            <li><a href="../CalcII/IntTechIntro.html" class="mm-link">Integration Techniques</a>
+              <ul>
+                <li><a href="../CalcII/IntegrationByParts.html" class="mm-link">Integration by Parts</a></li>
+                <li><a href="../CalcII/IntegralsWithTrig.html" class="mm-link">Integrals Involving Trig Functions</a></li>
+                <li><a href="../CalcII/TrigSubstitutions.html" class="mm-link">Trig Substitutions</a></li>
+                <li><a href="../CalcII/PartialFractions.html" class="mm-link">Partial Fractions</a></li>
+                <li><a href="../CalcII/IntegralsWithRoots.html" class="mm-link">Integrals Involving Roots</a></li>
+                <li><a href="../CalcII/IntegralsWithQuadratics.html" class="mm-link">Integrals Involving Quadratics</a></li>
+                <li><a href="../CalcII/IntegrationStrategy.html" class="mm-link">Integration Strategy</a></li>
+                <li><a href="../CalcII/ImproperIntegrals.html" class="mm-link">Improper Integrals</a></li>
+                <li><a href="../CalcII/ImproperIntegralsCompTest.html" class="mm-link">Comparison Test for Improper Integrals</a></li>
+                <li><a href="../CalcII/ApproximatingDefIntegrals.html" class="mm-link">Approximating Definite Integrals</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/IntAppsIntro.html" class="mm-link">Applications of Integrals</a>
+              <ul>
+                <li><a href="../CalcII/ArcLength.html" class="mm-link">Arc Length</a></li>
+                <li><a href="../CalcII/SurfaceArea.html" class="mm-link">Surface Area</a></li>
+                <li><a href="../CalcII/CenterOfMass.html" class="mm-link">Center of Mass</a></li>
+                <li><a href="../CalcII/HydrostaticPressure.html" class="mm-link">Hydrostatic Pressure</a></li>
+                <li><a href="../CalcII/Probability.html" class="mm-link">Probability</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/ParametricIntro.html" class="mm-link">Parametric Equations and Polar Coordinates</a>
+              <ul>
+                <li><a href="../CalcII/ParametricEqn.html" class="mm-link">Parametric Equations and Curves</a></li>
+                <li><a href="../CalcII/ParaTangent.html" class="mm-link">Tangents with Parametric Equations</a></li>
+                <li><a href="../CalcII/ParaArea.html" class="mm-link">Area with Parametric Equations</a></li>
+                <li><a href="../CalcII/ParaArcLength.html" class="mm-link">Arc Length with Parametric Equations</a></li>
+                <li><a href="../CalcII/ParaSurfaceArea.html" class="mm-link">Surface Area with Parametric Equations</a></li>
+                <li><a href="../CalcII/PolarCoordinates.html" class="mm-link">Polar Coordinates</a></li>
+                <li><a href="../CalcII/PolarTangents.html" class="mm-link">Tangents with Polar Coordinates</a></li>
+                <li><a href="../CalcII/PolarArea.html" class="mm-link">Area with Polar Coordinates</a></li>
+                <li><a href="../CalcII/PolarArcLength.html" class="mm-link">Arc Length with Polar Coordinates</a></li>
+                <li><a href="../CalcII/PolarSurfaceArea.html" class="mm-link">Surface Area with Polar Coordinates</a></li>
+                <li><a href="../CalcII/ArcLength_SurfaceArea.html" class="mm-link">Arc Length and Surface Area Revisited</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/SeriesIntro.html" class="mm-link">Series & Sequences</a>
+              <ul>
+                <li><a href="../CalcII/Sequences.html" class="mm-link">Sequences</a></li>
+                <li><a href="../CalcII/MoreSequences.html" class="mm-link">More on Sequences</a></li>
+                <li><a href="../CalcII/Series_Basics.html" class="mm-link">Series - The Basics</a></li>
+                <li><a href="../CalcII/ConvergenceOfSeries.html" class="mm-link">Convergence/Divergence of Series</a></li>
+                <li><a href="../CalcII/Series_Special.html" class="mm-link">Special Series</a></li>
+                <li><a href="../CalcII/IntegralTest.html" class="mm-link">Integral Test</a></li>
+                <li><a href="../CalcII/SeriesCompTest.html" class="mm-link">Comparison Test/Limit Comparison Test</a></li>
+                <li><a href="../CalcII/AlternatingSeries.html" class="mm-link">Alternating Series Test</a></li>
+                <li><a href="../CalcII/AbsoluteConvergence.html" class="mm-link">Absolute Convergence</a></li>
+                <li><a href="../CalcII/RatioTest.html" class="mm-link">Ratio Test</a></li>
+                <li><a href="../CalcII/RootTest.html" class="mm-link">Root Test</a></li>
+                <li><a href="../CalcII/SeriesStrategy.html" class="mm-link">Strategy for Series</a></li>
+                <li><a href="../CalcII/EstimatingSeries.html" class="mm-link">Estimating the Value of a Series</a></li>
+                <li><a href="../CalcII/PowerSeries.html" class="mm-link">Power Series</a></li>
+                <li><a href="../CalcII/PowerSeriesandFunctions.html" class="mm-link">Power Series and Functions</a></li>
+                <li><a href="../CalcII/TaylorSeries.html" class="mm-link">Taylor Series</a></li>
+                <li><a href="../CalcII/TaylorSeriesApps.html" class="mm-link">Applications of Series</a></li>
+                <li><a href="../CalcII/BinomialSeries.html" class="mm-link">Binomial Series</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/VectorsIntro.html" class="mm-link">Vectors</a>
+              <ul>
+                <li><a href="../CalcII/Vectors_Basics.html" class="mm-link">Vectors - The Basics</a></li>
+                <li><a href="../CalcII/VectorArithmetic.html" class="mm-link">Vector Arithmetic</a></li>
+                <li><a href="../CalcII/DotProduct.html" class="mm-link">Dot Product</a></li>
+                <li><a href="../CalcII/CrossProduct.html" class="mm-link">Cross Product</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/3DSpace.html" class="mm-link">3-Dimensional Space</a>
+              <ul>
+                <li><a href="../CalcII/3DCoords.html" class="mm-link">The 3-D Coordinate System</a></li>
+                <li><a href="../CalcII/EqnsOfLines.html" class="mm-link">Equations of Lines</a></li>
+                <li><a href="../CalcII/EqnsOfPlanes.html" class="mm-link">Equations of Planes</a></li>
+                <li><a href="../CalcII/QuadricSurfaces.html" class="mm-link">Quadric Surfaces</a></li>
+                <li><a href="../CalcII/MultiVrbleFcns.html" class="mm-link">Functions of Several Variables</a></li>
+                <li><a href="../CalcII/VectorFunctions.html" class="mm-link">Vector Functions</a></li>
+                <li><a href="../CalcII/VectorFcnsCalculus.html" class="mm-link">Calculus with Vector Functions</a></li>
+                <li><a href="../CalcII/TangentNormalVectors.html" class="mm-link">Tangent, Normal and Binormal Vectors</a></li>
+                <li><a href="../CalcII/VectorArcLength.html" class="mm-link">Arc Length with Vector Functions</a></li>
+                <li><a href="../CalcII/Curvature.html" class="mm-link">Curvature</a></li>
+                <li><a href="../CalcII/Velocity_Acceleration.html" class="mm-link">Velocity and Acceleration</a></li>
+                <li><a href="../CalcII/CylindricalCoords.html" class="mm-link">Cylindrical Coordinates</a></li>
+                <li><a href="../CalcII/SphericalCoords.html" class="mm-link">Spherical Coordinates</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../CalcIII/CalcIII.html" class="mm-link">Calculus III</a>
+          <ul>
+            <li><a href="../CalcIII/3DSpace.html" class="mm-link">3-Dimensional Space</a>
+              <ul>
+                <li><a href="../CalcIII/3DCoords.html" class="mm-link">The 3-D Coordinate System</a></li>
+                <li><a href="../CalcIII/EqnsOfLines.html" class="mm-link">Equations of Lines</a></li>
+                <li><a href="../CalcIII/EqnsOfPlanes.html" class="mm-link">Equations of Planes</a></li>
+                <li><a href="../CalcIII/QuadricSurfaces.html" class="mm-link">Quadric Surfaces</a></li>
+                <li><a href="../CalcIII/MultiVrbleFcns.html" class="mm-link">Functions of Several Variables</a></li>
+                <li><a href="../CalcIII/VectorFunctions.html" class="mm-link">Vector Functions</a></li>
+                <li><a href="../CalcIII/VectorFcnsCalculus.html" class="mm-link">Calculus with Vector Functions</a></li>
+                <li><a href="../CalcIII/TangentNormalVectors.html" class="mm-link">Tangent, Normal and Binormal Vectors</a></li>
+                <li><a href="../CalcIII/VectorArcLength.html" class="mm-link">Arc Length with Vector Functions</a></li>
+                <li><a href="../CalcIII/Curvature.html" class="mm-link">Curvature</a></li>
+                <li><a href="../CalcIII/Velocity_Acceleration.html" class="mm-link">Velocity and Acceleration</a></li>
+                <li><a href="../CalcIII/CylindricalCoords.html" class="mm-link">Cylindrical Coordinates</a></li>
+                <li><a href="../CalcIII/SphericalCoords.html" class="mm-link">Spherical Coordinates</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/PartialDerivsIntro.html" class="mm-link">Partial Derivatives</a>
+              <ul>
+                <li><a href="../CalcIII/Limits.html" class="mm-link">Limits</a></li>
+                <li><a href="../CalcIII/PartialDerivatives.html" class="mm-link">Partial Derivatives</a></li>
+                <li><a href="../CalcIII/PartialDerivInterp.html" class="mm-link">Interpretations of Partial Derivatives</a></li>
+                <li><a href="../CalcIII/HighOrderPartialDerivs.html" class="mm-link">Higher Order Partial Derivatives</a></li>
+                <li><a href="../CalcIII/Differentials.html" class="mm-link">Differentials</a></li>
+                <li><a href="../CalcIII/ChainRule.html" class="mm-link">Chain Rule</a></li>
+                <li><a href="../CalcIII/DirectionalDeriv.html" class="mm-link">Directional Derivatives</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/PartialDerivAppsIntro.html" class="mm-link">Applications of Partial Derivatives</a>
+              <ul>
+                <li><a href="../CalcIII/TangentPlanes.html" class="mm-link">Tangent Planes and Linear Approximations</a></li>
+                <li><a href="../CalcIII/GradientVectorTangentPlane.html" class="mm-link">Gradient Vector, Tangent Planes and Normal Lines</a></li>
+                <li><a href="../CalcIII/RelativeExtrema.html" class="mm-link">Relative Minimums and Maximums</a></li>
+                <li><a href="../CalcIII/AbsoluteExtrema.html" class="mm-link">Absolute Minimums and Maximums</a></li>
+                <li><a href="../CalcIII/LagrangeMultipliers.html" class="mm-link">Lagrange Multipliers</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/MultipleIntegralsIntro.html" class="mm-link">Multiple Integrals</a>
+              <ul>
+                <li><a href="../CalcIII/DoubleIntegrals.html" class="mm-link">Double Integrals</a></li>
+                <li><a href="../CalcIII/IteratedIntegrals.html" class="mm-link">Iterated Integrals</a></li>
+                <li><a href="../CalcIII/DIGeneralRegion.html" class="mm-link">Double Integrals over General Regions</a></li>
+                <li><a href="../CalcIII/DIPolarCoords.html" class="mm-link">Double Integrals in Polar Coordinates</a></li>
+                <li><a href="../CalcIII/TripleIntegrals.html" class="mm-link">Triple Integrals</a></li>
+                <li><a href="../CalcIII/TICylindricalCoords.html" class="mm-link">Triple Integrals in Cylindrical Coordinates</a></li>
+                <li><a href="../CalcIII/TISphericalCoords.html" class="mm-link">Triple Integrals in Spherical Coordinates</a></li>
+                <li><a href="../CalcIII/ChangeOfVariables.html" class="mm-link">Change of Variables</a></li>
+                <li><a href="../CalcIII/SurfaceArea.html" class="mm-link">Surface Area</a></li>
+                <li><a href="../CalcIII/Area_Volume.html" class="mm-link">Area and Volume Revisited</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/LineIntegralsIntro.html" class="mm-link">Line Integrals</a>
+              <ul>
+                <li><a href="../CalcIII/VectorFields.html" class="mm-link">Vector Fields</a></li>
+                <li><a href="../CalcIII/LineIntegralsPtI.html" class="mm-link">Line Integrals - Part I</a></li>
+                <li><a href="../CalcIII/LineIntegralsPtII.html" class="mm-link">Line Integrals - Part II</a></li>
+                <li><a href="../CalcIII/LineIntegralsVectorFields.html" class="mm-link">Line Integrals of Vector Fields</a></li>
+                <li><a href="../CalcIII/FundThmLineIntegrals.html" class="mm-link">Fundamental Theorem for Line Integrals</a></li>
+                <li><a href="../CalcIII/ConservativeVectorField.html" class="mm-link">Conservative Vector Fields</a></li>
+                <li><a href="../CalcIII/GreensTheorem.html" class="mm-link">Green's Theorem</a></li>
+                <li><a href="../CalcIII/CurlDivergence.html" class="mm-link">Curl and Divergence</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/SurfaceIntegralsIntro.html" class="mm-link">Surface Integrals</a>
+              <ul>
+                <li><a href="../CalcIII/ParametricSurfaces.html" class="mm-link">Parametric Surfaces</a></li>
+                <li><a href="../CalcIII/SurfaceIntegrals.html" class="mm-link">Surface Integrals</a></li>
+                <li><a href="../CalcIII/SurfIntVectorField.html" class="mm-link">Surface Integrals of Vector Fields</a></li>
+                <li><a href="../CalcIII/StokesTheorem.html" class="mm-link">Stokes' Theorem</a></li>
+                <li><a href="../CalcIII/DivergenceTheorem.html" class="mm-link">Divergence Theorem</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../DE/DE.html" class="mm-link">Differential Equations</a>
+          <ul>
+            <li><a href="../DE/IntroBasic.html" class="mm-link">Basic Concepts</a>
+              <ul>
+                <li><a href="../DE/Definitions.html" class="mm-link">Definitions</a></li>
+                <li><a href="../DE/DirectionFields.html" class="mm-link">Direction Fields</a></li>
+                <li><a href="../DE/FinalThoughts.html" class="mm-link">Final Thoughts</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/IntroFirstOrder.html" class="mm-link">First Order DE's</a>
+              <ul>
+                <li><a href="../DE/Linear.html" class="mm-link">Linear Equations</a></li>
+                <li><a href="../DE/Separable.html" class="mm-link">Separable Equations</a></li>
+                <li><a href="../DE/Exact.html" class="mm-link">Exact Equations</a></li>
+                <li><a href="../DE/Bernoulli.html" class="mm-link">Bernoulli Differential Equations</a></li>
+                <li><a href="../DE/Substitutions.html" class="mm-link">Substitutions</a></li>
+                <li><a href="../DE/IoV.html" class="mm-link">Intervals of Validity</a></li>
+                <li><a href="../DE/Modeling.html" class="mm-link">Modeling with First Order DE's</a></li>
+                <li><a href="../DE/EquilibriumSolutions.html" class="mm-link">Equilibrium Solutions</a></li>
+                <li><a href="../DE/EulersMethod.html" class="mm-link">Euler's Method</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/IntroSecondOrder.html" class="mm-link">Second Order DE's</a>
+              <ul>
+                <li><a href="../DE/SecondOrderConcepts.html" class="mm-link">Basic Concepts</a></li>
+                <li><a href="../DE/RealRoots.html" class="mm-link">Real & Distinct Roots</a></li>
+                <li><a href="../DE/ComplexRoots.html" class="mm-link">Complex Roots</a></li>
+                <li><a href="../DE/RepeatedRoots.html" class="mm-link">Repeated Roots</a></li>
+                <li><a href="../DE/ReductionofOrder.html" class="mm-link">Reduction of Order</a></li>
+                <li><a href="../DE/FundamentalSetsofSolutions.html" class="mm-link">Fundamental Sets of Solutions</a></li>
+                <li><a href="../DE/Wronskian.html" class="mm-link">More on the  Wronskian</a></li>
+                <li><a href="../DE/NonhomogeneousDE.html" class="mm-link">Nonhomogeneous Differential Equations</a></li>
+                <li><a href="../DE/UndeterminedCoefficients.html" class="mm-link">Undetermined Coefficients</a></li>
+                <li><a href="../DE/VariationofParameters.html" class="mm-link">Variation of Parameters</a></li>
+                <li><a href="../DE/Vibrations.html" class="mm-link">Mechanical Vibrations</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/LaplaceIntro.html" class="mm-link">Laplace Transforms</a>
+              <ul>
+                <li><a href="../DE/LaplaceDefinition.html" class="mm-link">The Definition</a></li>
+                <li><a href="../DE/LaplaceTransforms.html" class="mm-link">Laplace Transforms</a></li>
+                <li><a href="../DE/InverseTransforms.html" class="mm-link">Inverse Laplace Transforms</a></li>
+                <li><a href="../DE/StepFunctions.html" class="mm-link">Step Functions</a></li>
+                <li><a href="../DE/IVPWithLaplace.html" class="mm-link">Solving IVP's with Laplace Transforms</a></li>
+                <li><a href="../DE/IVPWithNonConstantCoefficient.html" class="mm-link">Nonconstant Coefficient IVP's</a></li>
+                <li><a href="../DE/IVPWithStepFunction.html" class="mm-link">IVP's With Step Functions</a></li>
+                <li><a href="../DE/DiracDeltaFunction.html" class="mm-link">Dirac Delta Function</a></li>
+                <li><a href="../DE/ConvolutionIntegrals.html" class="mm-link">Convolution Integrals</a></li>
+                <li><a href="../DE/Laplace_Table.html" class="mm-link">Table Of Laplace Transforms</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/SystemsIntro.html" class="mm-link">Systems of DE's</a>
+              <ul>
+                <li><a href="../DE/LA_Systems.html" class="mm-link">Review : Systems of Equations</a></li>
+                <li><a href="../DE/LA_Matrix.html" class="mm-link">Review : Matrices & Vectors</a></li>
+                <li><a href="../DE/LA_Eigen.html" class="mm-link">Review : Eigenvalues & Eigenvectors</a></li>
+                <li><a href="../DE/SystemsDE.html" class="mm-link">Systems of Differential Equations</a></li>
+                <li><a href="../DE/SolutionsToSystems.html" class="mm-link">Solutions to Systems</a></li>
+                <li><a href="../DE/PhasePlane.html" class="mm-link">Phase Plane</a></li>
+                <li><a href="../DE/RealEigenvalues.html" class="mm-link">Real Eigenvalues</a></li>
+                <li><a href="../DE/ComplexEigenvalues.html" class="mm-link">Complex Eigenvalues</a></li>
+                <li><a href="../DE/RepeatedEigenvalues.html" class="mm-link">Repeated Eigenvalues</a></li>
+                <li><a href="../DE/NonhomogeneousSystems.html" class="mm-link">Nonhomogeneous Systems</a></li>
+                <li><a href="../DE/SystemsLaplace.html" class="mm-link">Laplace Transforms</a></li>
+                <li><a href="../DE/SystemsModeling.html" class="mm-link">Modeling</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/SeriesIntro.html" class="mm-link">Series Solutions to DE's</a>
+              <ul>
+                <li><a href="../DE/PowerSeries.html" class="mm-link">Review : Power Series</a></li>
+                <li><a href="../DE/TaylorSeries.html" class="mm-link">Review : Taylor Series</a></li>
+                <li><a href="../DE/SeriesSolutions.html" class="mm-link">Series Solutions</a></li>
+                <li><a href="../DE/EulerEquations.html" class="mm-link">Euler Equations</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/IntroHigherOrder.html" class="mm-link">Higher Order Differential Equations</a>
+              <ul>
+                <li><a href="../DE/HOBasicConcepts.html" class="mm-link">Basic Concepts for <em>n</em><sup>th</sup> Order Linear Equations</a></li>
+                <li><a href="../DE/HOHomogeneousDE.html" class="mm-link">Linear Homogeneous Differential Equations</a></li>
+                <li><a href="../DE/HOUndeterminedCoeff.html" class="mm-link">Undetermined Coefficients</a></li>
+                <li><a href="../DE/HOVariationOfParam.html" class="mm-link">Variation of Parameters</a></li>
+                <li><a href="../DE/HOLaplaceTransforms.html" class="mm-link">Laplace Transforms</a></li>
+                <li><a href="../DE/HOSystems.html" class="mm-link">Systems of Differential Equations</a></li>
+                <li><a href="../DE/HOSeries.html" class="mm-link">Series Solutions</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/IntroBVP.html" class="mm-link">Boundary Value Problems &amp; Fourier Series</a>
+              <ul>
+                <li><a href="../DE/BoundaryValueProblem.html" class="mm-link">Boundary Value Problems</a></li>
+                <li><a href="../DE/BVPEvals.html" class="mm-link">Eigenvalues and Eigenfunctions</a></li>
+                <li><a href="../DE/PeriodicOrthogonal.html" class="mm-link">Periodic Functions &amp; Orthogonal Functions</a></li>
+                <li><a href="../DE/FourierSineSeries.html" class="mm-link">Fourier Sine Series</a></li>
+                <li><a href="../DE/FourierCosineSeries.html" class="mm-link">Fourier Cosine Series</a></li>
+                <li><a href="../DE/FourierSeries.html" class="mm-link">Fourier Series</a></li>
+                <li><a href="../DE/ConvergenceFourierSeries.html" class="mm-link">Convergence of Fourier Series</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/IntroPDE.html" class="mm-link">Partial Differential Equations </a>
+              <ul>
+                <li><a href="../DE/TheHeatEquation.html" class="mm-link">The Heat Equation</a></li>
+                <li><a href="../DE/TheWaveEquation.html" class="mm-link">The Wave Equation</a></li>
+                <li><a href="../DE/PDETerminology.html" class="mm-link">Terminology</a></li>
+                <li><a href="../DE/SeparationofVariables.html" class="mm-link">Separation of Variables</a></li>
+                <li><a href="../DE/SolvingHeatEquation.html" class="mm-link">Solving the Heat Equation</a></li>
+                <li><a href="../DE/HeatEqnNonZero.html" class="mm-link">Heat Equation with Non-Zero Temperature Boundaries</a></li>
+                <li><a href="../DE/LaplacesEqn.html" class="mm-link">Laplace's Equation</a></li>
+                <li><a href="../DE/VibratingString.html" class="mm-link">Vibrating String</a></li>
+                <li><a href="../DE/PDESummary.html" class="mm-link">Summary of Separation of Variables</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><span>Extras</span></li>
+        <li><a href="../../Extras/AlgebraTrigReview/AlgebraTrig.html" class="mm-link">Algebra &amp; Trig Review</a>
+          <ul>
+            <li><a href="../../Extras/AlgebraTrigReview/AlgebraIntro.html" class="mm-link">Algebra</a>
+              <ul>
+                <li><a href="../../Extras/AlgebraTrigReview/Exponents.html" class="mm-link">Exponents </a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/AbsoluteValue.html" class="mm-link">Absolute Value</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Radicals.html" class="mm-link">Radicals</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Rationalizing.html" class="mm-link">Rationalizing </a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Functions.html" class="mm-link">Functions </a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/MultPoly.html" class="mm-link">Multiplying Polynomials</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Factoring.html" class="mm-link">Factoring</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SimpRatExp.html" class="mm-link">Simplifying Rational Expressions</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Graphing.html" class="mm-link">Graphing and Common Graphs</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveEqnPtI.html" class="mm-link">Solving Equations, Part I</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveEqnPtII.html" class="mm-link">Solving Equations, Part II</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveSystems.html" class="mm-link">Solving Systems of Equations</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveIneq.html" class="mm-link">Solving Inequalities</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveAbsValue.html" class="mm-link">Absolute Value Equations and Inequalities</a></li>
+              </ul>
+            </li>
+            <li><a href="../../Extras/AlgebraTrigReview/TrigIntro.html" class="mm-link">Trigonometry</a>
+              <ul>
+                <li><a href="../../Extras/AlgebraTrigReview/TrigFunctions.html" class="mm-link">Trig Function Evaluation</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/TrigGraphs.html" class="mm-link">Graphs of Trig Functions</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/TrigFormulas.html" class="mm-link">Trig Formulas</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveTrigEqn.html" class="mm-link">Solving Trig Equations</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/InverseTrig.html" class="mm-link">Inverse Trig Functions</a></li>
+              </ul>
+            </li>
+            <li><a href="../../Extras/AlgebraTrigReview/ExpLogIntro.html" class="mm-link">Exponentials & Logarithms</a>
+              <ul>
+                <li><a href="../../Extras/AlgebraTrigReview/ExponentialFcns.html" class="mm-link">Basic Exponential Functions</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/LogarithmFcns.html" class="mm-link">Basic Logarithm Functions</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/LogProperties.html" class="mm-link">Logarithm Properties</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SimpLogs.html" class="mm-link">Simplifying Logarithms</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveExpEqn.html" class="mm-link">Solving Exponential Equations</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveLogEqn.html" class="mm-link">Solving Logarithm Equations</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../../Extras/CommonErrors/CommonMathErrors.html" class="mm-link">Common Math Errors</a>
+          <ul>
+            <li><a href="../../Extras/CommonErrors/GeneralErrors.html" class="mm-link">General Errors</a>
+            </li>
+            <li><a href="../../Extras/CommonErrors/AlgebraErrors.html" class="mm-link">Algebra Errors</a>
+            </li>
+            <li><a href="../../Extras/CommonErrors/TrigErrors.html" class="mm-link">Trig Errors</a>
+            </li>
+            <li><a href="../../Extras/CommonErrors/CommonErrors.html" class="mm-link">Common Errors</a>
+            </li>
+            <li><a href="../../Extras/CommonErrors/CalculusErrors.html" class="mm-link">Calculus Errors</a>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../../Extras/ComplexPrimer/ComplexNumbers.html" class="mm-link">Complex Number Primer</a>
+          <ul>
+            <li><a href="../../Extras/ComplexPrimer/Definition.html" class="mm-link">The Definition</a>
+            </li>
+            <li><a href="../../Extras/ComplexPrimer/Arithmetic.html" class="mm-link">Arithmetic</a>
+            </li>
+            <li><a href="../../Extras/ComplexPrimer/ConjugateModulus.html" class="mm-link">Conjugate and Modulus</a>
+            </li>
+            <li><a href="../../Extras/ComplexPrimer/Forms.html" class="mm-link">Polar and Exponential Forms</a>
+            </li>
+            <li><a href="../../Extras/ComplexPrimer/Roots.html" class="mm-link">Powers and Roots</a>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../../Extras/StudyMath/HowToStudyMath.html" class="mm-link">How To Study Math</a>
+          <ul>
+            <li><a href="../../Extras/StudyMath/GeneralTips.html" class="mm-link">General Tips</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/TakingNotes.html" class="mm-link">Taking Notes</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/GettingHelp.html" class="mm-link">Getting Help</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/Homework.html" class="mm-link">Doing Homework</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/ProblemSolving.html" class="mm-link">Problem Solving</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/StudyForExam.html" class="mm-link">Studying For an Exam</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/TakingExam.html" class="mm-link">Taking an Exam</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/Errors.html" class="mm-link">Learn From Your Errors</a>
+            </li>
+          </ul>
+        </li>
+
+        <li><span>Misc Links</span></li>
+        <li><a href="http://tutorial.math.lamar.edu/contact.aspx" class="mm-link">Contact Me</a></li>
+        <li><a href="../../links.html" class="mm-link">Links</a></li>
+        <li><a href="../../mathjax.html" class="mm-link">MathJax Help and Configuration</a></li>
+        <li><a href="../../mystudents.html" class="mm-link">My Students</a></li>
+        <li><a href="http://tutorial.math.lamar.edu/privacy.aspx" class="mm-link">Privacy Statement</a></li>
+        <li><a href="../../help.html" class="mm-link">Site Help & FAQ</a></li>
+        <li><a href="http://tutorial.math.lamar.edu/terms.aspx" class="mm-link">Terms of Use</a></li>
+      </ul>
+    </nav>
+
+
+
+    <div class="top-info-bar">
+      <span id="mobile-title" class="mobile-header-title header-title">Paul's Online Notes</span>
+      <br />
+      <span class="top-menu-breadcrumb">
+        <a href="../../index.html" id="breadcrumb_home_link" title="Go to Main Page">Home</a>
+        <span id="breadcrumb_h_b_sep_span">/ </span>
+        <a href="CalcI.html" id="breadcrumb_book_link" title="Go to Book Introduction">Calculus I</a>
+        
+        <span id="breadcrumb_b_c_sep_span">/ </span>
+        <a href="ExtrasIntro.html" id="breadcrumb_chapter_link" title="Go to Chapter Introduction">Extras</a>
+        
+        <span id="breadcrumb_section_span"> / Proof of Various Limit Properties</span>
+      </span>
+
+    </div>
+
+    <div id="nav_links" class="top-nav-bar">
+      
+      <span id="nav_current_notes">Notes</span>
+      <a href="http://tutorial.math.lamar.edu/Problems/CalcI/LimitProofs.aspx" id="nav_links_practice" title="Go to Practice Problems for current topic.">Practice<span class="nav_desktop_extra"> Problems</span></a>
+      
+      <a href="http://tutorial.math.lamar.edu/ProblemsNS/CalcI/LimitProofs.aspx" id="nav_links_asgn" title="Go to Assignment Problems for current topic.">Assignment<span class="nav_desktop_extra">  Problems</span></a>
+      
+    </div>
+
+    <div class="header-divider"></div>
+
+    <div class="content">  
+      
+      
+      <span id="SHLink_NoteMobile" class="SH-Link content-note-link-mobile">Show Mobile Notice</span>
+      <span id="SHImg_NoteMobile" class="fas fa-caret-right SH-padding content-note-link-mobile" aria-hidden="true"></span>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+
+      <span id="SHALink_S_Note" class="SH-Link SH-Hide SH-Bracket">Show All Notes</span>&nbsp;<span id="SHALink_H_Note" class="SH-Link SH-Hide SH-Bracket">Hide All Notes</span>
+      
+      
+      <div id="SHObj_NoteMobile" class="content-note-container content-note-container-mobile">
+        <div class="content-note-header">Mobile Notice</div>
+        <div class="content-note">You appear to be on a device with a "narrow" screen width (<em>i.e.</em> you are probably on a mobile phone).  Due to the nature of the mathematics on this site it is best views in landscape mode.  If your device is not in landscape mode many of the equations will run off the side of your device (should be able to scroll to see them) and some of the menu items will be cut off due to the narrow screen width.</div>
+      </div>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+
+      
+
+
+  <form method="post" action="http://tutorial.math.lamar.edu/Classes/CalcI/LimitProofs.aspx" id="ctl00">
+<div class="aspNetHidden">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+</div>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="9AB52266" />
+</div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </form>
+
+  <h3>Section 7-1 : Proof of Various Limit Properties</h3>
+    
+    <p>In this section we are going to prove some of the basic properties and facts about limits that we saw in the <a href="http://tutorial.math.lamar.edu/Classes/CalcI/LimitsIntro.aspx">Limits</a> chapter.  Before proceeding with any of the proofs we should note that many of the proofs use the <a href="DefnOfLimit.html">precise definition</a> of the limit and it is assumed that not only have you read that section but that you have a fairly good feel for doing that kind of proof.  If you’re not very comfortable using the definition of the limit to prove limits you’ll find many of the proofs in this section difficult to follow.</p>
+    
+    <p>The proofs that we’ll be doing here will not be quite as detailed as those in the precise definition of the limit section.  The “proofs” that we did in that section first did some work to get a guess for the \(\delta \)and then we verified the guess.  The reality is that often the work to get the guess is not shown and the guess for \(\delta \)is just written down and then verified.  For the proofs in this section where a \(\delta \) is actually chosen we’ll do it that way.  To make matters worse, in some of the proofs in this section work very differently from those that were in the limit definition section.</p>
+    
+    <p>So, with that out of the way, let’s get to the proofs.</p>
+    
+  <div class="center-div"><img alt="Separator" height="14" src="http://tutorial.math.lamar.edu/Classes/CalcI/LimitProofs_Files/image001.gif" width="214" /></div>
+
+    <a class="anchor" name="Extras_Limit_LimitProp"></a>
+  <h4>Limit Properties</h4>
+
+  <p>In the <a href="LimitsProperties.html">Limit Properties</a> section we gave several properties of limits. We’ll prove most of them here.  First, let’s recall the properties here so we have them in front of us.  We’ll also be making a small change to the notation to make the proofs go a little easier.  Here are the properties for reference purposes.</p>
+
+  <div class="property">
+    <p>Assume that \(\mathop {\lim }\limits_{x \to a} f\left( x \right) = K\) and \(\mathop {\lim }\limits_{x \to a} g\left( x \right) = L\) exist and that \(c\) is any constant.  Then,</p>
+    <ol class="general-list">
+      <li>\(\mathop {\lim }\limits_{x \to a} \left[ {cf\left( x \right)} \right] = c\mathop {\lim }\limits_{x \to a} f\left( x \right) = cK\)<br /><br /></li>
+      <li>\(\mathop {\lim }\limits_{x \to a} \left[ {f\left( x \right) \pm g\left( x \right)} \right] = \mathop {\lim }\limits_{x \to a} f\left( x \right) \pm \mathop {\lim }\limits_{x \to a} g\left( x \right) = K \pm L\)<br /><br /></li>
+      <li>\(\mathop {\lim }\limits_{x \to a} \left[ {f\left( x \right)g\left( x \right)} \right] = \mathop {\lim }\limits_{x \to a} f\left( x \right)\,\,\,\mathop {\lim }\limits_{x \to a} g\left( x \right) = KL\)<br /><br /></li>
+      <li>\(\displaystyle \mathop {\lim }\limits_{x \to a} \left[ {\frac{{f\left( x \right)}}{{g\left( x \right)}}} \right] = \frac{{\mathop {\lim }\limits_{x \to a} f\left( x \right)}}{{\mathop {\lim }\limits_{x \to a} g\left( x \right)}} = \frac{K}{L},\hspace{0.25in}{\mbox{provided  }}\,L = \mathop {\lim }\limits_{x \to a} g\left( x \right) \ne 0\)<br /><br /></li>
+      <li>\(\mathop {\lim }\limits_{x \to a} {\left[ {f\left( x \right)} \right]^n} = {\left[ {\mathop {\lim }\limits_{x \to a} f\left( x \right)} \right]^n} = {K^n},\hspace{0.5in}{\mbox{where }}n{\mbox{ is any real number}}\)<br /><br /></li>
+      <li>\(\mathop {\lim }\limits_{x \to a} \left[ {\sqrt[n]{{f\left( x \right)}}} \right] = \sqrt[n]{{\mathop {\lim }\limits_{x \to a} f\left( x \right)}}\)<br /><br /></li>
+      <li>\(\mathop {\lim }\limits_{x \to a} c = c\)<br /><br /></li>
+      <li>\(\mathop {\lim }\limits_{x \to a} x = a\)<br /><br /></li>
+      <li>\(\mathop {\lim }\limits_{x \to a} {x^n} = {a^n}\)</li>
+    </ol>
+  </div>  
+
+    <p>Note that we added values (\(K\), \(L\), <em>etc</em>.) to each of the limits to make the proofs much easier.  In these proofs we’ll be using the fact that we know \(\mathop {\lim }\limits_{x \to a} f\left( x \right) = K\) and \(\mathop {\lim }\limits_{x \to a} g\left( x \right) = L\) we’ll use the definition of the limit to make a statement about \(\left| {f\left( x \right) - K} \right|\) and \(\left| {g\left( x \right) - L} \right|\) which will then be used to prove what we actually want to prove.  When you see these statements do not worry too much about why we chose them as we did.  The reason will become apparent once the proof is done.</p>
+    
+    <p>Also, we’re not going to be doing the proofs in the order they are written above.  Some of the proofs will be easier if we’ve got some of the others proved first.</p>
+    
+    <h4>Proof of 7</h4>
+  <div class="proof">
+    <p>This is a very simple proof.  To make the notation a little clearer let’s define the function \(f\left( x \right) = c\) then what we’re being asked to prove is that \(\mathop {\lim }\limits_{x \to a} f\left( x \right) = c\).  So let’s do that.</p>
+          <p><strong> </strong></p>
+          <p>Let \(\varepsilon  &gt; 0\) and we need to show that we can find a \(\delta  &gt; 0\) so that</p>
+          
+              \[\left| {f\left( x \right) - c} \right| &lt; \varepsilon \hspace{0.5in}{\mbox{whenever}}\hspace{0.5in}0 &lt; \left| {x - a} \right| &lt; \delta \]
+          
+          <p>The left inequality is trivially satisfied for any \(x\) however because we defined \(f\left( x \right) = c\).  So simply choose \(\delta  &gt; 0\) to be any number you want (you generally can’t do this with these proofs).  Then,</p>
+          
+              \[\left| {f\left( x \right) - c} \right| = \left| {c - c} \right| = 0 &lt; \varepsilon \]
+  </div>
+    
+    <h4>Proof of 1</h4>
+  <div class="proof">
+    <p>There are several ways to prove this part.  If you accept <strong>3</strong> And <strong>7</strong> then all you need to do is let \(g\left( x \right) = c\) and then this is a direct result of <strong>3</strong> and <strong>7.</strong>  However, we’d like to do a more rigorous mathematical proof.  So here is that proof.</p>
+          
+          <p>First, note that if \(c = 0\) then \(cf\left( x \right) = 0\) and so,</p>
+          
+            \[\mathop {\lim }\limits_{x \to a} \left[ {0f\left( x \right)} \right] = \mathop {\lim }\limits_{x \to a} 0 = 0 = 0f\left( x \right)\]
+          <p>The limit evaluation is a special case of <strong>7</strong> (with \(c = 0\)) which we just proved  Therefore we know <strong>1</strong> is true for \(c = 0\) and so we can assume that \(c \ne 0\) for the remainder of this proof.</p>
+          
+          <p>Let \(\varepsilon  &gt; 0\) then because \(\mathop {\lim }\limits_{x \to a} f\left( x \right) = K\) by the definition of the limit there is a \({\delta _{\,1}} &gt; 0\) such that,</p>
+          
+              \[\left| {f\left( x \right) - K} \right| &lt; \frac{\varepsilon }{{\left| c \right|}}\hspace{0.5in}{\mbox{whenever}}\hspace{0.5in}0 &lt; \left| {x - a} \right| &lt; {\delta _{\,1}}\]
+          
+          <p>Now choose \(\delta  = {\delta _{\,1}}\) and we need to show that</p>
+          
+              \[\left| {cf\left( x \right) - cK} \right| &lt; \varepsilon \hspace{0.5in}{\mbox{whenever}}\hspace{0.5in}0 &lt; \left| {x - a} \right| &lt; \delta \]
+          <p>and we’ll be done.  So, assume that \(0 &lt; \left| {x - a} \right| &lt; \delta \)and then,</p>
+          
+            \[\left| {cf\left( x \right) - cK} \right| = \left| c \right|\left| {f\left( x \right) - K} \right| &lt; \left| c \right|\frac{\varepsilon }{{\left| c \right|}} = \varepsilon \]
+  </div>
+    
+    <h4>Proof of 2</h4>
+    <p>Note that we’ll need something called the <strong>triangle inequality</strong> in this proof.  The triangle inequality states that,</p>
+    
+        \[\left| {a + b} \right| \le \left| a \right| + \left| b \right|\]
+  
+  <p>Here’s the actual proof.</p>
+
+  <div class="proof">
+    <p>We’ll be doing this proof in two parts.  First let’s prove \(\mathop {\lim }\limits_{x \to a} \left[ {f\left( x \right) + g\left( x \right)} \right] = K + L\).</p>
+          
+          <p>Let \(\varepsilon  &gt; 0\) then because \(\mathop {\lim }\limits_{x \to a} f\left( x \right) = K\) and \(\mathop {\lim }\limits_{x \to a} g\left( x \right) = L\) there is a \({\delta _{\,1}} &gt; 0\) and a \({\delta _2} &gt; 0\) such that,</p>
+          
+              \[\begin{align*}\left| {f\left( x \right) - K} \right| & &lt; \frac{\varepsilon }{2}\hspace{0.5in}{\mbox{whenever}}\hspace{0.5in}0 &lt; \left| {x - a} \right| &lt; \delta {\,_1}\\ \left| {g\left( x \right) - L} \right|&  &lt; \frac{\varepsilon }{2}\hspace{0.5in}{\mbox{whenever}}\hspace{0.5in}0 &lt; \left| {x - a} \right| &lt; {\delta _{\,2}}\end{align*}\]
+          
+          <p>Now choose \(\delta  = \min \left\{ {{\delta _{\,1}},{\delta _{\,2}}} \right\}\).  Then we need to show that</p>
+          
+              \[\left| {f\left( x \right) + g\left( x \right) - \left( {K + L} \right)} \right| &lt; \varepsilon \hspace{0.5in}{\mbox{whenever}}\hspace{0.5in}0 &lt; \left| {x - a} \right| &lt; \delta \]
+          
+          <p>Assume that \(0 &lt; \left| {x - a} \right| &lt; \delta \).  We then have,</p>
+          
+            \[\begin{align*}\left| {f\left( x \right) + g\left( x \right) - \left( {K + L} \right)} \right| & = \left| {\left( {f\left( x \right) - K} \right) + \left( {g\left( x \right) - L} \right)} \right|\\ &amp;  \le \left| {f\left( x \right) - K} \right| + \left| {g\left( x \right) - L} \right|\hspace{0.25in}{\mbox{by the triangle inequality}}\\ &amp;  &lt; \frac{\varepsilon }{2} + \frac{\varepsilon }{2}\\ &amp;  = \varepsilon \end{align*}\]
+          
+          <p>In the third step we used the fact that, by our choice of \(\delta \), we also have \(0 &lt; \left| {x - a} \right| &lt; {\delta _{\,1}}\) and \(0 &lt; \left| {x - a} \right| &lt; {\delta _{\,2}}\) and so we can use the initial statements in our proof.</p>
+          
+          <p>Next, we need to prove \(\mathop {\lim }\limits_{x \to a} \left[ {f\left( x \right) - g\left( x \right)} \right] = K - L\).  We could do a similar proof as we did above for the sum of two functions.  However, we might as well take advantage of the fact that we’ve proven this for a sum and that we’ve also proven <strong>1.</strong></p>
+          
+          
+            \[\begin{align*}\mathop {\lim }\limits_{x \to a} \left[ {f\left( x \right) - g\left( x \right)} \right] & = \mathop {\lim }\limits_{x \to a} \left[ {f\left( x \right) + \left( { - 1} \right)g\left( x \right)} \right]\\ &amp;  = \mathop {\lim }\limits_{x \to a} f\left( x \right) + \mathop {\lim }\limits_{x \to a} \left( { - 1} \right)g\left( x \right)\hspace{0.25in}{\mbox{by first part of }}{\bf{2}}{\mbox{.}}\\ &amp;  = \mathop {\lim }\limits_{x \to a} f\left( x \right) + \left( { - 1} \right)\mathop {\lim }\limits_{x \to a} g\left( x \right)\hspace{0.25in}{\mbox{by }}{\bf{1}}{\mbox{.}}\\ &amp;  = K + \left( { - 1} \right)L\\ &amp;  = K - L\end{align*}\]
+  </div>
+
+  
+  <h4>Proof of 3</h4>
+  <div class="proof">
+    <p>This one is a little tricky.  First, let’s note that because \(\mathop {\lim }\limits_{x \to a} f\left( x \right) = K\) and \(\mathop {\lim }\limits_{x \to a} g\left( x \right) = L\) we can use <strong>2</strong> and <strong>7</strong> to prove the following two limits.</p>
+          
+            \[\begin{align*}\mathop {\lim }\limits_{x \to a} \left[ {f\left( x \right) - K} \right] & = \mathop {\lim }\limits_{x \to a} f\left( x \right) - \mathop {\lim }\limits_{x \to a} K = K - K = 0\\ \mathop {\lim }\limits_{x \to a} \left[ {g\left( x \right) - L} \right] & = \mathop {\lim }\limits_{x \to a} g\left( x \right) - \mathop {\lim }\limits_{x \to a} L = L - L = 0\end{align*}\]
+          
+          <p>Now, let \(\varepsilon  &gt; 0\).  Then there is a \({\delta _{\,1}} &gt; 0\) and a \({\delta _2} &gt; 0\) such that,</p>
+          
+              \[\begin{align*}\left| {\left( {f\left( x \right) - K} \right) - 0} \right| & &lt; \sqrt \varepsilon  \hspace{0.5in}{\mbox{whenever}}\hspace{0.5in}0 &lt; \left| {x - a} \right| &lt; {\delta _{\,1}}\\ \left| {\left( {g\left( x \right) - L} \right) - 0} \right| & &lt; \sqrt \varepsilon  \hspace{0.5in}{\mbox{whenever}}\hspace{0.5in}0 &lt; \left| {x - a} \right| &lt; {\delta _{\,2}}\end{align*}\]
+          
+          <p>Choose \(\delta  = \min \left\{ {{\delta _{\,1}},{\delta _{\,2}}} \right\}\).  If \(0 &lt; \left| {x - a} \right| &lt; \delta \) we then get,</p>
+          
+            \[\begin{align*}\left| {\left[ {f\left( x \right) - K} \right]\left[ {g\left( x \right) - L} \right] - 0} \right| & = \left| {f\left( x \right) - K} \right|\left| {g\left( x \right) - L} \right|\\ &amp;  &lt; \sqrt \varepsilon  \sqrt \varepsilon  \\ &amp;  = \varepsilon \end{align*}\]
+          <p>So, we’ve managed to prove that,</p>
+          
+            \[\mathop {\lim }\limits_{x \to a} \left[ {f\left( x \right) - K} \right]\left[ {g\left( x \right) - L} \right] = 0\]
+          
+          <p>This apparently has nothing to do with what we actually want to prove, but as you’ll see in a bit it is needed.</p>
+          
+          <p>Before launching into the actual proof of <strong>3</strong> let’s do a little Algebra.  First, expand the following product.</p>
+          
+            \[\left[ {f\left( x \right) - K} \right]\left[ {g\left( x \right) - L} \right] = f\left( x \right)g\left( x \right) - Lf\left( x \right) - Kg\left( x \right) + KL\]
+          
+          <p>Rearranging this gives the following way to write the product of the two functions.</p>
+          
+            \[f\left( x \right)g\left( x \right) = \left[ {f\left( x \right) - K} \right]\left[ {g\left( x \right) - L} \right] + Lf\left( x \right) + Kg\left( x \right) - KL\]
+          
+          <p>With this we can now proceed with the proof of <strong>3</strong>.</p>
+          
+            \[\begin{align*}\mathop {\lim }\limits_{x \to a} f\left( x \right)g\left( x \right) & = \mathop {\lim }\limits_{x \to a} \left[ {\left[ {f\left( x \right) - K} \right]\left[ {g\left( x \right) - L} \right] + Lf\left( x \right) + Kg\left( x \right) - KL} \right]\\ &amp;  = \mathop {\lim }\limits_{x \to a} \left[ {f\left( x \right) - K} \right]\left[ {g\left( x \right) - L} \right] + \mathop {\lim }\limits_{x \to a} Lf\left( x \right) + \mathop {\lim }\limits_{x \to a} Kg\left( x \right) - \mathop {\lim }\limits_{x \to a} KL\\ &amp;  = 0 + \mathop {\lim }\limits_{x \to a} Lf\left( x \right) + \mathop {\lim }\limits_{x \to a} Kg\left( x \right) - \mathop {\lim }\limits_{x \to a} KL\hspace{0.5in}\hspace{0.5in}\\ &amp;  = LK + KL - KL\\ &amp;  = LK\end{align*}\]
+          
+          <p>Fairly simple proof really, once you see all the steps that you have to take before you even start.  The second step made multiple uses of property <strong>2.</strong>  In the third step we used the limit we initially proved.  In the fourth step we used properties <strong>1</strong> and <strong>7.</strong>  Finally, we just did some simplification.</p>
+  </div>
+    
+    <h4>Proof of 4</h4>
+  <div class="proof">
+    <p>This one is also a little tricky.  First, we’ll start of by proving,</p>
+          
+              \[\mathop {\lim }\limits_{x \to a} \frac{1}{{g\left( x \right)}} = \frac{1}{L}\]
+          
+          <p>Let \(\varepsilon  &gt; 0\) .  We’ll not need this right away, but these proofs always start off with this statement.  Now, because \(\mathop {\lim }\limits_{x \to a} g\left( x \right) = L\) there is a \({\delta _{\,1}} &gt; 0\) such that,</p>
+          
+              \[\left| {g\left( x \right) - L} \right| &lt; \frac{{\left| L \right|}}{2}\hspace{0.5in}{\mbox{whenever}}\hspace{0.5in}0 &lt; \left| {x - a} \right| &lt; {\delta _{\,1}}\]
+          
+          <p>Now, assuming that \(0 &lt; \left| {x - a} \right| &lt; {\delta _{\,1}}\) we have,</p>
+          
+              \[\begin{align*}\left| L \right| & = \left| {L - g\left( x \right) + g\left( x \right)} \right| & \hspace{0.5in} & {\mbox{just adding zero to }}L\\ &amp;  \le \left| {L - g\left( x \right)} \right| + \left| {g\left( x \right)} \right| & \hspace{0.5in} & {\mbox{using the triangle inequality}}\\ &amp;  = \left| {g\left( x \right) - L} \right| + \left| {g\left( x \right)} \right| & \hspace{0.5in} & \left| {L - g\left( x \right)} \right| = \left| {g\left( x \right) - L} \right|\\ &amp;  &lt; \frac{{\left| L \right|}}{2} + \left| {g\left( x \right)} \right| & \hspace{0.5in} & {\mbox{assuming that }}0 &lt; \left| {x - a} \right| &lt; 
+            {\delta _1}\end{align*}\]
+          <p>Rearranging this gives,</p>
+          
+            \[\left| L \right| &lt; \frac{{\left| L \right|}}{2} + \left| {g\left( x \right)} \right|\hspace{0.25in} \Rightarrow \hspace{0.25in}\frac{{\left| L \right|}}{2} &lt; \left| {g\left( x \right)} \right|\hspace{0.5in} \Rightarrow \hspace{0.25in}\frac{1}{{\left| {g\left( x \right)} \right|}} &lt; \frac{2}{{\left| L \right|}}\]
+          <p>Now, there is also a \({\delta _2} &gt; 0\) such that,</p>
+          
+              \[\left| {g\left( x \right) - L} \right| &lt; \frac{{{{\left| L \right|}^2}}}{2}\varepsilon \hspace{0.5in}{\mbox{whenever}}\hspace{0.5in}0 &lt; \left| {x - a} \right| &lt; {\delta _{\,2}}\]
+          <p>Choose \(\delta  = \min \left\{ {{\delta _{\,1}},{\delta _{\,2}}} \right\}\).  If \(0 &lt; \left| {x - a} \right| &lt; \delta \) we have,</p>
+          
+            \[\begin{align*}\left| {\frac{1}{{g\left( x \right)}} - \frac{1}{L}} \right| & = \left| {\frac{{L - g\left( x \right)}}{{Lg\left( x \right)}}} \right| & \hspace{0.5in} & {\mbox{common denominators}}\\ &amp;  = \frac{1}{{\left| {Lg\left( x \right)} \right|}}\left| {L - g\left( x \right)} \right| & \hspace{0.25in} & {\mbox{doing a little rewriting}}\\ &amp;  = \frac{1}{{\left| L \right|}}\frac{1}{{\left| {g\left( x \right)} \right|}}\left| {g\left( x \right) - L} \right| & \hspace{0.25in} & {\mbox{doing a little more rewriting}}\\ &amp;  &lt; \frac{1}{{\left| L \right|}}\frac{2}{{\left| L \right|}}\left| {g\left( x \right) - L} \right| & \hspace{0.25in} & {\mbox{assuming that }}0 &lt; \left| {x - a} \right| &lt; \delta  \le {\delta _1}\\ &amp;  &lt; 
+            \frac{2}{{{{\left| L \right|}^2}}}\frac{{{{\left| L \right|}^2}}}{2}\varepsilon & \hspace{0.5in} & {\mbox{assuming that }}0 &lt; \left| {x - a} \right| &lt; \delta  \le {\delta _2}\\ &amp;  = \varepsilon \end{align*}\]
+
+          <p>Now that we’ve proven \(\mathop {\lim }\limits_{x \to a} \frac{1}{{g\left( x \right)}} = \frac{1}{L}\) the more general fact is easy.</p>
+          
+            \[\begin{align*}\mathop {\lim }\limits_{x \to a} \left[ {\frac{{f\left( x \right)}}{{g\left( x \right)}}} \right] & = \mathop {\lim }\limits_{x \to a} \left[ {f\left( x \right)\frac{1}{{g\left( x \right)}}} \right]\\ &amp;  = \mathop {\lim }\limits_{x \to a} f\left( x \right)\mathop {\lim }\limits_{x \to a} \frac{1}{{g\left( x \right)}}\hspace{0.5in}{\mbox{using property }}{\bf{3}}{\mbox{.}}\\ &amp;  = K\frac{1}{L} = \frac{K}{L}\end{align*}\]
+  </div>
+    
+    <h4>Proof of 5. for \(n\) an integer</h4>
+  <div class="proof">
+    <p>As noted we’re only going to prove <strong>5</strong> for integer exponents.  This will also involve proof by induction so if you aren’t familiar with induction proofs you can skip this proof.</p>
+          
+          <p>So, we’re going to prove,</p>
+          
+            \[\mathop {\lim }\limits_{x \to a} {\left[ {f\left( x \right)} \right]^n} = {\left[ {\mathop {\lim }\limits_{x \to a} f\left( x \right)} \right]^n} = {K^n},\hspace{0.5in}n \ge 2,\,\,n{\mbox{ is an integer}}{\mbox{.}}\]
+          
+          <p>For \(n = 2\) we have nothing more than a special case of property <strong>3.</strong></p>
+          
+            \[\mathop {\lim }\limits_{x \to a} {\left[ {f\left( x \right)} \right]^2} = \mathop {\lim }\limits_{x \to a} f\left( x \right)f\left( x \right) = \mathop {\lim }\limits_{x \to a} f\left( x \right)\mathop {\lim }\limits_{x \to a} f\left( x \right) = KK = {K^2}\]
+          <p>So, <strong>5</strong> is proven for \(n = 2\).  Now assume that <strong>5</strong> is true for \(n - 1\), or \(\mathop {\lim }\limits_{x \to a} {\left[ {f\left( x \right)} \right]^{n - 1}} = {K^{n - 1}}\).  Then, again using property <strong>3</strong> we have,</p>
+          
+            \[\begin{align*}\mathop {\lim }\limits_{x \to a} {\left[ {f\left( x \right)} \right]^n} & = \mathop {\lim }\limits_{x \to a} \left( {{{\left[ {f\left( x \right)} \right]}^{n - 1}}f\left( x \right)} \right)\\ &amp;  = \mathop {\lim }\limits_{x \to a} {\left[ {f\left( x \right)} \right]^{n - 1}}\mathop {\lim }\limits_{x \to a} f\left( x \right)\\ &amp;  = {K^{n - 1}}K\\ &amp;  = {K^n}\end{align*}\]
+  </div>
+    
+    <h4>Proof of 6</h4>
+  <div class="proof">
+    <p>As pointed out in the <a href="LimitsProperties.html">Limit Properties</a> section this is nothing more than a special case of the full version of <strong>5</strong> and the proof is given there and so is the proof is not give here.</p>
+  </div>
+    
+    <h4>Proof of 8</h4>
+  <div class="proof">
+    <p>This is a simple proof.  If we define \(f\left( x \right) = x\) to make the notation a little easier, we’re being asked to prove that \(\mathop {\lim }\limits_{x \to a} f\left( x \right) = a\).</p>
+          
+          <p>Let \(\varepsilon  &gt; 0\) and let \(\delta  = \varepsilon \).  Then, if \(0 &lt; \left| {x - a} \right| &lt; \delta  = \varepsilon \) we have,</p>
+          
+              \[\left| {f\left( x \right) - a} \right| = \left| {x - a} \right| &lt; \delta  = \varepsilon \]
+          
+          <p>So, we’ve proved that \(\mathop {\lim }\limits_{x \to a} x = a\).</p>
+  </div>
+    
+    
+    <h4>Proof of 9</h4>
+  <div class="proof">
+    <p>This is just a special case of property <strong>5</strong> with \(f\left( x \right) = x\) and so we won’t prove it here.</p>
+  </div>
+    
+    <div class="center-div"><img alt="Separator" height="14" src="http://tutorial.math.lamar.edu/Classes/CalcI/LimitProofs_Files/image001.gif" width="214" /></div>
+    
+    <a class="anchor" name="Extras_Limit_InfLimitFacts"></a>
+  
+  <h4>Facts, Infinite Limits</h4>
+  <div class="fact">
+    <p>Given the functions \(f\left( x \right)\) and \(g\left( x \right)\) suppose we have,</p>
+          
+    \[\mathop {\lim }\limits_{x \to c} f\left( x \right) = \infty \hspace{0.5in}\hspace{0.25in}\mathop {\lim }\limits_{x \to c} g\left( x \right) = L\]
+          
+    <p>for some real numbers \(c\) and \(L\).  Then,</p>
+    
+    <ol class="general-list">
+      <li>\(\mathop {\lim }\limits_{x \to c} \left[ {f\left( x \right) \pm g\left( x \right)} \right] = \infty \)<br /><br /></li>
+      <li>If \(L &gt; 0\) then \(\mathop {\lim }\limits_{x \to c} \left[ {f\left( x \right)g\left( x \right)} \right] = \infty \)<br /><br /></li>
+      <li>If \(L &lt; 0\) then \(\mathop {\lim }\limits_{x \to c} \left[ {f\left( x \right)g\left( x \right)} \right] =  - \infty \)<br /><br /></li>
+      <li>\(\mathop {\lim }\limits_{x \to c} \frac{{g\left( x \right)}}{{f\left( x \right)}} = 0\)</li>
+    </ol>
+  </div>
+    
+    <h4>Partial Proof of 1</h4>
+  <div class="proof">
+    <p>We will prove \(\mathop {\lim }\limits_{x \to c} \left[ {f\left( x \right) + g\left( x \right)} \right] = \infty \) here.  The proof of \(\mathop {\lim }\limits_{x \to c} \left[ {f\left( x \right) - g\left( x \right)} \right] = \infty \) is nearly identical and is left to you.</p>
+          
+          <p>Let \(M &gt; 0\) then because we know \(\mathop {\lim }\limits_{x \to c} f\left( x \right) = \infty \) there exists a \({\delta _{\,1}} &gt; 0\) such that if \(0 &lt; \left| {x - c} \right| &lt; {\delta _{\,1}}\) we have,</p>
+          
+              \[f\left( x \right) &gt; M - L + 1\]
+          
+          <p>Also, because we know \(\mathop {\lim }\limits_{x \to c} g\left( x \right) = L\) there exists a \({\delta _{\,2}} &gt; 0\) such that if \(0 &lt; \left| {x - c} \right| &lt; {\delta _{\,2}}\) we have,</p>
+          
+            \[0 &lt; \left| {g\left( x \right) - L} \right| &lt; 1\hspace{0.25in}\,\, \to \hspace{0.25in} - 1 &lt; g\left( x \right) - L &lt; 1\hspace{0.25in} \to \,\,\,\,\,\,\,L - 1 &lt; g\left( x \right) &lt; L + 1\]
+          
+          <p>Now, let \(\delta  = \min \left\{ {{\delta _{\,1}},{\delta _{\,2}}} \right\}\) and so if \(0 &lt; \left| {x - c} \right| &lt; \delta \) we know from the above statements that we will have both,</p>
+          \[f\left( x \right) &gt; M - L + 1\hspace{0.5in}\hspace{0.25in}g\left( x \right) &gt; L - 1\]
+          
+          <p>This gives us,</p>
+          \[\begin{align*}f\left( x \right) + g\left( x \right) & &gt; M - L + 1 + L - 1\\ &amp;  = M\hspace{0.5in}\hspace{0.25in} \Rightarrow \hspace{0.5in}f\left( x \right) + g\left( x \right) &gt; M\end{align*}\]
+          
+          <p>So, we’ve proved that \(\mathop {\lim }\limits_{x \to c} \left[ {f\left( x \right) + g\left( x \right)} \right] = \infty \).</p>
+  </div>
+  
+    <h4>Proof of 2</h4>
+  <div class="proof">
+    <p>Let \(M &gt; 0\) then because we know \(\mathop {\lim }\limits_{x \to c} f\left( x \right) = \infty \) there exists a \({\delta _{\,1}} &gt; 0\) such that if \(0 &lt; \left| {x - c} \right| &lt; {\delta _{\,1}}\) we have,</p>
+          
+              \[f\left( x \right) &gt; \frac{{2M}}{L}\]
+          
+          <p>Also, because we know \(\mathop {\lim }\limits_{x \to c} g\left( x \right) = L\) there exists a \({\delta _{\,2}} &gt; 0\) such that if \(0 &lt; \left| {x - c} \right| &lt; {\delta _{\,2}}\) we have,</p>
+          
+            \[0 &lt; \left| {g\left( x \right) - L} \right| &lt; \frac{L}{2}\hspace{0.25in} \to \hspace{0.25in} - \frac{L}{2} &lt; g\left( x \right) - L &lt; \frac{L}{2}\hspace{0.25in} \to \hspace{0.25in} \frac{L}{2} &lt; g\left( x \right) &lt; \frac{{3L}}{2}\]
+          
+          <p>Note that because we know that \(L &gt; 0\) choosing \(\frac{L}{2}\) in the first inequality above is a valid choice because it will also be positive as required by the definition of the limit.</p>
+          
+          <p>Now, let \(\delta  = \min \left\{ {{\delta _{\,1}},{\delta _{\,2}}} \right\}\) and so if \(0 &lt; \left| {x - c} \right| &lt; \delta \) we know from the above statements that we will have both,</p>
+          \[f\left( x \right) &gt; \frac{{2M}}{L}\hspace{0.5in}\hspace{0.25in}g\left( x \right) &gt; \frac{L}{2}\]
+          
+          <p>This gives us,</p>
+          \[\begin{align*}f\left( x \right)g\left( x \right) & &gt; \left( {\frac{{2M}}{L}} \right)\left( {\frac{L}{2}} \right)\\ &amp;  = M\hspace{0.5in}\hspace{0.25in} \Rightarrow \hspace{0.5in}f\left( x \right)g\left( x \right) &gt; M\end{align*}\]
+          
+          <p>So, we’ve proved that \(\mathop {\lim }\limits_{x \to c} f\left( x \right)g\left( x \right) = \infty \).</p>
+  </div>
+
+    
+    <h4>Proof of 3</h4>
+  <div class="proof">
+    <p>Let \(M &gt; 0\) then because we know \(\mathop {\lim }\limits_{x \to c} f\left( x \right) = \infty \) there exists a \({\delta _{\,1}} &gt; 0\) such that if \(0 &lt; \left| {x - c} \right| &lt; {\delta _{\,1}}\) we have,</p>
+          
+              \[f\left( x \right) &gt; \frac{{ - 2M}}{L}\]
+          
+          <p>Note that because \(L &lt; 0\) in the case we will have \(\frac{{ - 2M}}{L} &gt; 0\) here.</p>
+          
+          <p>Next, because we know \(\mathop {\lim }\limits_{x \to c} g\left( x \right) = L\) there exists a \({\delta _{\,2}} &gt; 0\) such that if \(0 &lt; \left| {x - c} \right| &lt; {\delta _{\,2}}\) we have,</p>
+          
+            \[0 &lt; \left| {g\left( x \right) - L} \right| &lt;  - \frac{L}{2}\hspace{0.25in}\,\, \to \hspace{0.25in}\frac{L}{2} &lt; g\left( x \right) - L &lt;  - \frac{L}{2}\hspace{0.25in} \to \hspace{0.25in} \frac{{3L}}{2} &lt; g\left( x \right) &lt; \frac{L}{2}\]
+          
+          <p>Again, because we know that \(L &lt; 0\) we will have \( - \frac{L}{2} &gt; 0\).  Also, for reasons that will shortly be apparent, multiply the final inequality by a minus sign to get,</p>
+          \[\, - \frac{L}{2} &lt;  - g\left( x \right) &lt;  - \frac{{3L}}{2}\]
+          
+          <p>Now, let \(\delta  = \min \left\{ {{\delta _{\,1}},{\delta _{\,2}}} \right\}\) and so if \(0 &lt; \left| {x - c} \right| &lt; \delta \) we know from the above statements that we will have both,</p>
+          \[f\left( x \right) &gt; \frac{{ - 2M}}{L}\hspace{0.5in}\hspace{0.25in} - g\left( x \right) &gt;  - \frac{L}{2}\]
+          
+          <p>This gives us,</p>
+          \[\begin{align*} - f\left( x \right)g\left( x \right) & = f\left( x \right)\left[ { - g\left( x \right)} \right]\\ &amp;  &gt; \left( { - \frac{{2M}}{L}} \right)\left( { - \frac{L}{2}} \right)\\ &amp;  = M\hspace{0.5in}\hspace{0.25in} \Rightarrow \hspace{0.5in} - f\left( x \right)g\left( x \right) &gt; M\end{align*}\]
+          
+          <p>This may seem to not be what we needed however multiplying this by a minus sign gives,</p>
+          \[f\left( x \right)g\left( x \right) &lt;  - M\]
+          <p>and because we originally chose \(M &gt; 0\) we have now proven that \(\mathop {\lim }\limits_{x \to c} f\left( x \right)g\left( x \right) =  - \infty \).</p>
+  </div>
+    
+    <h4>Proof of 4</h4>
+  <div class="proof">
+    <p>We’ll need to do this in three cases.  Let’s start with the easiest case.</p>
+          
+          <p><strong>Case 1 : </strong>\(L = 0\)</p>
+          <p>Let \(\varepsilon  &gt; 0\) then because we know \(\mathop {\lim }\limits_{x \to c} f\left( x \right) = \infty \) there exists a \({\delta _{\,1}} &gt; 0\) such that if \(0 &lt; \left| {x - c} \right| &lt; {\delta _{\,1}}\) we have,</p>
+          
+              \[f\left( x \right) &gt; \frac{1}{{\sqrt \varepsilon  }} &gt; 0\]
+          
+          <p>Next, because we know \(\mathop {\lim }\limits_{x \to c} g\left( x \right) = 0\) there exists a \({\delta _{\,2}} &gt; 0\) such that if \(0 &lt; \left| {x - c} \right| &lt; {\delta _{\,2}}\) we have,</p>
+          
+              \[0 &lt; \left| {g\left( x \right)} \right| &lt; \sqrt \varepsilon  \]
+          
+          <p>Now, let \(\delta  = \min \left\{ {{\delta _{\,1}},{\delta _{\,2}}} \right\}\) and so if \(0 &lt; \left| {x - c} \right| &lt; \delta \) we know from the above statements that we will have both,</p>
+          \[f\left( x \right) &gt; \frac{1}{{\sqrt \varepsilon  }}\hspace{0.5in}\hspace{0.25in}\left| {g\left( x \right)} \right| &lt; \sqrt \varepsilon  \]
+          
+          <p>This gives us,</p>
+          \[\left| {\frac{{g\left( x \right)}}{{f\left( x \right)}}} \right| = \frac{{\left| {g\left( x \right)} \right|}}{{f\left( x \right)}} &lt; \frac{{\sqrt \varepsilon  }}{{f\left( x \right)}} &lt; \frac{{\sqrt \varepsilon  }}{{{}^{1}/{}_{{\sqrt \varepsilon  }}}} = \varepsilon \]
+          
+          <p>In the second step we could remove the absolute value bars from \(f\left( x \right)\) because we know it is positive.</p>
+          
+          <p>So, we proved that \(\mathop {\lim }\limits_{x \to c} \frac{{g\left( x \right)}}{{f\left( x \right)}} = 0\) if \(L = 0\).</p>
+          
+          <p><strong>Case 2 : </strong>\(L &gt; 0\)</p>
+          <p>Let \(\varepsilon  &gt; 0\) then because we know \(\mathop {\lim }\limits_{x \to c} f\left( x \right) = \infty \) there exists a \({\delta _{\,1}} &gt; 0\) such that if \(0 &lt; \left| {x - c} \right| &lt; {\delta _{\,1}}\) we have,</p>
+          
+              \[f\left( x \right) &gt; \frac{{3L}}{{2\varepsilon }} &gt; 0\]
+          
+          <p>Next, because we know \(\mathop {\lim }\limits_{x \to c} g\left( x \right) = L\) there exists a \({\delta _{\,2}} &gt; 0\) such that if \(0 &lt; \left| {x - c} \right| &lt; {\delta _{\,2}}\) we have,</p>
+          
+            \[0 &lt; \left| {g\left( x \right) - L} \right| &lt; \frac{L}{2}\hspace{0.25in}\, \to \,\,\,\,\,\,\, - \frac{L}{2} &lt; g\left( x \right) - L &lt; \frac{L}{2}\hspace{0.25in}\, \to \hspace{0.25in}\,\frac{L}{2} &lt; g\left( x \right) &lt; \frac{{3L}}{2}\]
+          
+          <p>Also, because we are assuming that \(L &gt; 0\) it is safe to assume that for \(0 &lt; \left| {x - c} \right| &lt; {\delta _{\,2}}\) we have \(g\left( x \right) &gt; 0\).</p>
+          
+          <p>Now, let \(\delta  = \min \left\{ {{\delta _{\,1}},{\delta _{\,2}}} \right\}\) and so if \(0 &lt; \left| {x - c} \right| &lt; \delta \) we know from the above statements that we will have both,</p>
+          \[f\left( x \right) &gt; \frac{{3L}}{{2\varepsilon }}\hspace{0.5in}\hspace{0.25in}g\left( x \right) &lt; \frac{{3L}}{2}\]
+          
+          <p>This gives us,</p>
+          \[\left| {\frac{{g\left( x \right)}}{{f\left( x \right)}}} \right| = \frac{{g\left( x \right)}}{{f\left( x \right)}} &lt; \frac{{{}^{{3L}}/{}_{2}}}{{\left| {f\left( x \right)} \right|}} &lt; \frac{{{}^{{3L}}/{}_{2}}}{{{}^{{3L}}/{}_{{2\varepsilon }}}} = \varepsilon \]
+          
+          <p>In the second step we could remove the absolute value bars because we know or can safely assume (as noted above) that both functions were positive.</p>
+          
+          <p>So, we proved that \(\mathop {\lim }\limits_{x \to c} \frac{{g\left( x \right)}}{{f\left( x \right)}} = 0\)<strong> </strong>if \(L &gt; 0\).</p>
+          
+          <p><strong>Case 3 : </strong>\(L &lt; 0\).</p>
+          <p>Let \(\varepsilon  &gt; 0\) then because we know \(\mathop {\lim }\limits_{x \to c} f\left( x \right) = \infty \) there exists a \({\delta _{\,1}} &gt; 0\) such that if \(0 &lt; \left| {x - c} \right| &lt; {\delta _{\,1}}\) we have,</p>
+          
+              \[f\left( x \right) &gt; \frac{{ - 3L}}{{2\varepsilon }} &gt; 0\]
+          
+          <p>Next, because we know \(\mathop {\lim }\limits_{x \to c} g\left( x \right) = L\) there exists a \({\delta _{\,2}} &gt; 0\) such that if \(0 &lt; \left| {x - c} \right| &lt; {\delta _{\,2}}\) we have,</p>
+          
+            \[0 &lt; \left| {g\left( x \right) - L} \right| &lt;  - \frac{L}{2}\hspace{0.25in}\, \to \,\,\,\,\,\,\,\frac{L}{2} &lt; g\left( x \right) - L &lt;  - \frac{L}{2}\hspace{0.25in}\, \to \hspace{0.25in}\,\frac{{3L}}{2} &lt; g\left( x \right) &lt; \frac{L}{2}\]
+          
+          <p>Next, multiply this be a negative sign to get,</p>
+          \[ - \frac{L}{2} &lt;  - g\left( x \right) &lt;  - \frac{{3L}}{2}\]
+          
+          <p>Also, because we are assuming that \(L &lt; 0\) it is safe to assume that for \(0 &lt; \left| {x - c} \right| &lt; {\delta _{\,2}}\) we have \(g\left( x \right) &lt; 0\).</p>
+          
+          <p>Now, let \(\delta  = \min \left\{ {{\delta _{\,1}},{\delta _{\,2}}} \right\}\) and so if \(0 &lt; \left| {x - c} \right| &lt; \delta \) we know from the above statements that we will have both,</p>
+          \[f\left( x \right) &gt; \frac{{ - 3L}}{{2\varepsilon }}\hspace{0.5in}\hspace{0.25in} - g\left( x \right) &lt; \frac{{ - 3L}}{2}\]
+          
+          <p>This gives us,</p>
+          \[\left| {\frac{{g\left( x \right)}}{{f\left( x \right)}}} \right| = \frac{{ - g\left( x \right)}}{{f\left( x \right)}} &lt; \frac{{{}^{{ - 3L}}/{}_{2}}}{{\left| {f\left( x \right)} \right|}} &lt; \frac{{{}^{{ - 3L}}/{}_{2}}}{{{}^{{ - 3L}}/{}_{{2\varepsilon }}}} = \varepsilon \]
+          
+          <p>In the second step we could remove the absolute value bars by adding in the negative because we know that \(f\left( x \right) &gt; 0\) and can safely assume that \(g\left( x \right) &lt; 0\) (as noted above).</p>
+          
+          <p>So, we proved that \(\mathop {\lim }\limits_{x \to c} \frac{{g\left( x \right)}}{{f\left( x \right)}} = 0\)<strong> </strong>if \(L &lt; 0\).</p>
+  </div>
+    
+    <div class="center-div"><img alt="Separator" height="14" src="http://tutorial.math.lamar.edu/Classes/CalcI/LimitProofs_Files/image001.gif" width="214" /></div>
+
+    <a class="anchor" name="Extras_Limit_InfRatLim"></a>
+    
+  <h4>Fact 1, Limits At Infinity, Part 1</h4>
+  <div class="fact">
+    <ol class="general-list">
+      <li>If \(r\) is a positive rational number and \(c\) is any real number then,</p>
+          
+              \[\mathop {\lim }\limits_{x \to \infty } \frac{c}{{{x^r}}} = 0\]</li>
+      <li>If \(r\) is a positive rational number, \(c\) is any real number and <em>x<sup>r</sup></em>  is defined for \(x &lt; 0\) then,</p>
+          
+            \[\mathop {\lim }\limits_{x \to  - \infty } \frac{c}{{{x^r}}} = 0\]</li>
+    </ol>
+  </div>
+
+   <h4>Proof of 1</h4>
+  <div class="proof">
+    <p>This is actually a fairly simple proof but we’ll need to do three separate cases.</p>
+          
+          <p><strong>Case 1 :</strong> Assume that \(c &gt; 0\). Next, let \(\varepsilon  &gt; 0\) and define</p>
+          
+            \[M = \sqrt[r]{{\frac{c}{\varepsilon }}}\]
+          
+            
+          <p>Note that because \(c\) and \(\varepsilon \) are both positive we know that this root will exist.  Now, assume that we have</p>
+          
+            \[x &gt; M = \sqrt[r]{{\frac{c}{\varepsilon }}}\]
+          
+          <p>Given this assumption we have,</p>
+          
+          
+              \[\begin{align*}x &gt; \sqrt[r]{{\frac{c}{\varepsilon }}} & & \\ {x^r} & &gt; \frac{c}{\varepsilon }& \hspace{0.5in} & {\mbox{get rid of the root}}\\ \frac{c}{{{x^r}}} & &lt; \varepsilon & \hspace{0.5in} & {\mbox{rearrange things a little}}\\ \left| {\frac{c}{{{x^r}}} - 0} \right| & &lt; \varepsilon & \hspace{0.5in} & {\mbox{everything is positive so we can add absolute value bars}}\end{align*}\]
+          
+          <p>So, provided \(c &gt; 0\) we’ve proven that \(\mathop {\lim }\limits_{x \to \infty } \frac{c}{{{x^r}}} = 0\).</p>
+          
+          <p><strong>Case 2 : </strong>Assume that \(c = 0\).  Here all we need to do is the following,</p>
+          
+          
+            \[\mathop {\lim }\limits_{x \to \infty } \frac{c}{{{x^r}}} = \mathop {\lim }\limits_{x \to \infty } \frac{0}{{{x^r}}} = \mathop {\lim }\limits_{x \to \infty } 0 = 0\]
+          
+          <p><strong>Case 3 : </strong>Finally, assume that \(c &lt; 0\).  In this case we can then write \(c =  - k\) where \(k &gt; 0\).  Then using Case 1 and the fact that we can factor constants out of a limit we get,</p>
+          
+          
+            \[\mathop {\lim }\limits_{x \to \infty } \frac{c}{{{x^r}}} = \mathop {\lim }\limits_{x \to \infty } \frac{{ - k}}{{{x^r}}} =  - \mathop {\lim }\limits_{x \to \infty } \frac{k}{{{x^r}}} =  - 0 = 0\]
+  </div>
+    
+    
+    <h4>Proof of 2</h4>
+  <div class="proof">
+    <p>This is very similar to the proof of <strong>1</strong> so we’ll just do the first case (as it’s the hardest) and leave the other two cases up to you to prove.</p>
+          
+          <p><strong>Case 1 :</strong> Assume that \(c &gt; 0\). Next, let \(\varepsilon  &gt; 0\) and define</p>
+          
+            \[N =  - \sqrt[r]{{\frac{c}{\varepsilon }}}\]
+          
+          <p>Note that because \(c\) and \(\varepsilon \) are both positive we know that this root will exist.  Now, assume that we have</p>
+          
+            \[x &lt; N =  - \sqrt[r]{{\frac{c}{\varepsilon }}}\]
+          
+            <o:p> </o:p></p>
+          <p>Note that this assumption also tells us that \(x\) will be negative. Give this assumption we have,</p>
+          
+          
+              \[\begin{align*}x & &lt;  - \sqrt[r]{{\frac{c}{\varepsilon }}} & & \\ \left| x \right| & &gt; \left| {\sqrt[r]{{\frac{c}{\varepsilon }}}} \right| & \hspace{0.25in} & {\mbox{take absolute value of both sides}}\\ \left| {{x^r}} \right| & &gt; \left| {\frac{c}{\varepsilon }} \right| & \hspace{0.25in} & {\mbox{get rid of the root}}\\ \left| {\frac{c}{{{x^r}}}} \right| & &lt; \left| \varepsilon  \right| = \varepsilon & \hspace{0.25in} & {\mbox{rearrange things a little and use the fact that }}\varepsilon  &gt; 0\\ \left| {\frac{c}{{{x^r}}} - 0} \right| & &lt; \varepsilon & \hspace{0.25in} & {\mbox{rewrite things a little}}\end{align*}\]
+          
+          <p>So, provided \(c &gt; 0\) we’ve proven that \(\mathop {\lim }\limits_{x \to \infty } \frac{c}{{{x^r}}} = 0\).  Note that the main difference here is that we need to take the absolute value first to deal with the minus sign.  Because both sides are negative we know that when we take the absolute value of both sides the direction of the inequality will have to switch as well.</p>
+          
+          <p><strong>Case 2, Case 3 :</strong> As noted above these are identical to the proof of the corresponding cases in the first proof and so are omitted here.</p>
+  </div>
+
+    <div class="center-div"><img alt="Separator" height="14" src="http://tutorial.math.lamar.edu/Classes/CalcI/LimitProofs_Files/image001.gif" width="214" /></div>
+
+    <a class="anchor" name="Extras_Limit_InfPolyLim"></a>
+    
+  <h4>Fact 2, Limits At Infinity, Part I</h4>
+  <div class="fact">
+    <p>If \(p\left( x \right) = {a_n}{x^n} + {a_{n - 1}}{x^{n - 1}} +  \cdots  + {a_1}x + {a_0}\) is a polynomial of degree \(n\) (<em>i.e.</em> \({a_n} \ne 0\)) then,</p>
+          \[\mathop {\lim }\limits_{x \to \infty } p\left( x \right) = \mathop {\lim }\limits_{x \to \infty } {a_n}{x^n}\hspace{0.75in}\mathop {\lim }\limits_{x \to  - \infty } p\left( x \right) = \mathop {\lim }\limits_{x \to  - \infty } {a_n}{x^n}\]
+  </div>
+
+    
+    <h4>Proof of \(\mathop {\lim }\limits_{x \to \infty } p\left( x \right) = \mathop {\lim }\limits_{x \to \infty } {a_n}{x^n}\)</h4>
+  <div class="proof">
+    <p>We’re going to prove this in an identical fashion to the problems that we worked in this section involving polynomials.  We’ll first factor out \({a_n}{x^n}\) from the polynomial and then make a giant use of <strong>Fact 1</strong> (which we just proved above) and the basic properties of limits.</p>
+          
+          
+            \[\begin{align*}\mathop {\lim }\limits_{x \to \infty } p\left( x \right) & = \mathop {\lim }\limits_{x \to \infty } \left( {{a_n}{x^n} + {a_{n - 1}}{x^{n - 1}} +  \cdots  + {a_1}x + {a_0}} \right)\\ &amp;  = \mathop {\lim }\limits_{x \to \infty } \left[ {{a_n}{x^n}\left( {1 + \frac{{{a_{n - 1}}}}{{{a_n}x}} +  \cdots  + \frac{{{a_1}}}{{{a_n}{x^{n - 1}}}} + \frac{{{a_0}}}{{{a_n}{x^n}}}} \right)} \right]\end{align*}\]
+          
+          <p>Now, clearly the limit of the second term is one and the limit of the first term will be either \(\infty \) or \( - \infty \) depending upon the sign of \({a_n}\).  Therefore by the <a href="InfiniteLimits.html#Limit_LimAtInt_InfFacts">Facts</a> from the Infinite Limits section we can see that the limit of the whole polynomial will be the same as the limit of the first term or,</p>
+
+          \[\mathop {\lim }\limits_{x \to \infty } p\left( x \right) = \mathop {\lim }\limits_{x \to \infty } \left( {{a_n}{x^n} + {a_{n - 1}}{x^{n - 1}} +  \cdots  + {a_1}x + {a_0}} \right) = \mathop {\lim }\limits_{x \to \infty } {a_n}{x^n}\]
+  </div>
+
+    
+    <h4>Proof of \(\mathop {\lim }\limits_{x \to  - \infty } p\left( x \right) = \mathop {\lim }\limits_{x \to  - \infty } {a_n}{x^n}\)</h4>
+  <div class="proof">
+    <p>The proof of this part is literally identical to the proof of the first part, with the exception that all \(\infty \)’s are changed to \( - \,\infty \), and so is omitted here.</p>
+  </div>
+    
+    
+      <div class="center-div"><img alt="Separator" height="14" src="http://tutorial.math.lamar.edu/Classes/CalcI/LimitProofs_Files/image001.gif" width="214" /></div>
+    
+  <a class="anchor" name="Extras_Limit_LimComp"></a>
+  <h4>Fact 2, Continuity</h4>
+  <div class="fact">
+    <p>If \(f\left( x \right)\) is continuous at \(x = b\) and \(\mathop {\lim }\limits_{x \to a} g\left( x \right) = b\) then,</p>
+          
+            \[\mathop {\lim }\limits_{x \to a} f\left( {g\left( x \right)} \right) = f\left( {\mathop {\lim }\limits_{x \to a} g\left( x \right)} \right) = f\left( b \right)\]
+  </div>
+    
+    <h4>Proof</h4>
+  <div class="proof">
+    <p>Let \(\varepsilon  &gt; 0\) then we need to show that there is a \(\delta  &gt; 0\) such that,</p>
+          
+              \[\left| {f\left( {g\left( x \right)} \right) - f\left( b \right)} \right| &lt; \varepsilon \hspace{0.5in}{\mbox{whenever}}\hspace{0.5in}0 &lt; \left| {x - a} \right| &lt; \delta \]
+          
+          <p>Let’s start with the fact that \(f\left( x \right)\) is continuous at \(x = b\).  Recall that this means that \(\mathop {\lim }\limits_{x \to b} f\left( x \right) = f\left( b \right)\) and so there must be a \({\delta _{\,1}} &gt; 0\) so that,</p>
+          
+              \[\left| {f\left( x \right) - f\left( b \right)} \right| &lt; \varepsilon \hspace{0.5in}{\mbox{whenever}}\hspace{0.5in}0 &lt; \left| {x - b} \right| &lt; {\delta _{\,1}}\]
+          
+          <p>Now, let’s recall that \(\mathop {\lim }\limits_{x \to a} g\left( x \right) = b\).  This means that there must be a \(\delta  &gt; 0\) so that,</p>
+          
+              \[\left| {g\left( x \right) - b} \right| &lt; {\delta _{\,1}}\hspace{0.5in}{\mbox{whenever}}\hspace{0.5in}0 &lt; \left| {x - a} \right| &lt; \delta \]
+          
+          <p>But all this means that we’re done.</p>
+          
+          <p>Let’s summarize up.  First assume that \(0 &lt; \left| {x - a} \right| &lt; \delta \).  This then tells us that,</p>
+          
+              \[\left| {g\left( x \right) - b} \right| &lt; {\delta _{\,1}}\]
+          
+          <p>But, we also know that if \(0 &lt; \left| {x - b} \right| &lt; {\delta _{\,1}}\) then we must also have \(\left| {f\left( x \right) - f\left( b \right)} \right| &lt; \varepsilon \).  What this is telling us is that if a number is within a distance of \({\delta _{\,1}}\) of \(b\) then we can plug that number into \(f\left( x \right)\) and we’ll be within a distance of \(\varepsilon \) of \(f\left( b \right)\).</p>
+          
+          <p>So,  \[\left| {g\left( x \right) - b} \right| &lt; {\delta _{\,1}}\] is telling us that \(g\left( x \right)\) is within a distance of \({\delta _{\,1}}\) of \(b\) and so if we plug it into \(f\left( x \right)\) we’ll get,</p>
+          
+              \[\left| {f\left( {g\left( x \right)} \right) - f\left( b \right)} \right| &lt; \varepsilon \]
+          <p>and this is exactly what we wanted to show.</p>
+  </div>
+  
+
+
+      
+
+
+
+    </div>
+    <!-- End of content div -->
+
+
+    <div class="footer">
+      <div class="footer-links">
+        [<a href="http://tutorial.math.lamar.edu/Contact.aspx">Contact Me</a>]&nbsp;[<a href="../../MyStudents-2.html">My Students</a>]&nbsp;[<a href="http://tutorial.math.lamar.edu/Privacy.aspx">Privacy Statement</a>]&nbsp;[<a href="../../Help-2.html">Site Help &amp; FAQ</a>]&nbsp;[<a href="http://tutorial.math.lamar.edu/Terms.aspx">Terms of Use</a>]
+      </div>
+      <div class="footer-dates">
+        <div class="footer-copyright"><span id="lblCopyRight">&copy; 2003 - 2019 Paul Dawkins</span></div>
+        <div class="footer-spacer"></div>
+        <div class="footer-modified-date">Page Last Modified : <span id="lblModified">5/30/2018</span></div>
+      </div>
+      
+
+    </div>
+  </div>
+  <!-- End of page div...  -->
+</body>
+
+<!-- Mirrored from tutorial.math.lamar.edu/Classes/CalcI/LimitProofs.aspx by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 27 Feb 2019 06:15:35 GMT -->
+</html>

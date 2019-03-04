@@ -1,0 +1,1118 @@
+
+
+<!DOCTYPE html>
+
+<html>
+
+<!-- Mirrored from tutorial.math.lamar.edu/Classes/DE/SystemsModeling.aspx by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 27 Feb 2019 06:15:36 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=yes" /><meta http-equiv="X-UA-Compatible" content="IE=edge" />  <!-- For best MathJax performance on IE  -->
+
+  <meta name="google-site-verification" content="uLoA31CJfOhIVMJWBjCmQL8xNMmmLybZU3LRKavy9WQ" /><title>
+	Differential Equations - Modeling
+</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="../../../www.googletagmanager.com/gtag/js1872?id=UA-331594-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-331594-1');
+  </script>
+
+  <link type="text/css" href="../../css/jquery.mmenu.all.css" rel="stylesheet" /><link type="text/css" href="../../css/jquery.dropdown.css" rel="stylesheet" /><link href="../../FA/css/fontawesome-all.min.css" rel="stylesheet" /><link type="text/css" href="../../css/notes-all.css" rel="stylesheet" /><link type="text/css" href="../../css/notes-google.css" rel="stylesheet" /><link type="text/css" href="../../css/notes-mmenu.css" rel="stylesheet" /><link type="text/css" href="../../css/notes-dropdown.css" rel="stylesheet" />
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+     TeX: { equationNumbers: { autoNumber: "AMS" } }
+    });
+  </script>
+  <script type="text/javascript" async src="../../../cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax2ba6.js?config=TeX-AMS_CHTML-full"></script>
+  <script type="text/javascript" src="../../../code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="../../js/jquery.mmenu.all.js"></script>
+  <script type="text/javascript" src="../../js/jquery.dropdown.js"></script>
+  <script type="text/javascript" src="../../js/notes-all.js"></script>  
+
+  <script>
+    (function () {
+      var cx = '001004262401526223570:11yv6vpcqvy';
+      var gcse = document.createElement('script');
+      gcse.type = 'text/javascript';
+      gcse.async = true;
+      gcse.src = '../../../cse.google.com/cse07b6.html?cx=' + cx;
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(gcse, s);
+    })();
+  </script>
+
+<meta http-equiv="keywords" name="keywords" content="modeling in differential equations, modeling with systems of differential equations, modeling with systems, differential equations modeling, differential equations modeling with systems" /><meta http-equiv="description" name="description" content="In this section we’ll take a quick look at some extensions of some of the modeling we did in previous chapters that lead to systems of differential equations.  In particular we will look at mixing problems in which we have two interconnected tanks of water, a predator-prey problem in which populations of both are taken into account and a mechanical vibration problem with two masses, connected with a spring and each connected to a wall with a spring." /></head>
+<body onload="init({Notes: 'NoteMobile;8/21/2018;true'})">
+
+  <div id="page">
+
+    <div class="header">
+      <div class="header-row">
+        <!--<a href="#menu"><span></span></a>-->
+        <div id="side-menu-icon" class="header-side-menu-icon"><a href="#menu"><span class="fas fa-bars fa-lg" aria-hidden="true" title="Main Menu - Change between topics, chapters and sections as well as a few extra pages."></span></a></div>
+        <span class="header-title"><a href="../../index.html" class="header-title-link">Paul's Online Notes</a></span>
+        <div class="header-spacer"></div>
+
+        <div id="content-top-menu" class="top-menu">
+          <button id="content-type-menu" class="top-menu-button" data-jq-dropdown="#jq-dropdown-type" title="View (Notes, Practice Problems or Assignment Problems, Show/Hide Solutions and/or Steps) Menu">
+            <span id="tab_top_menu_notes" class="top-menu-item-title">Notes</span> <span class="far fa-eye fa-lg" aria-hidden="true"></span>
+          </button>
+
+          <button id="quicknav-menu" class="top-menu-button" data-jq-dropdown="#jq-dropdown-quicknav" title="Quick Navigation (Previous/Next Sections and Problems and Full Problem List) Menu">
+            <span class="top-menu-item-title">Quick Nav</span> <span class="fas fa-exchange fa-lg" aria-hidden="true"></span>
+          </button>
+          
+          <button id="download-menu" class="top-menu-button" data-jq-dropdown="#jq-dropdown-download" title="Download pdf Menu">
+            <span class="top-menu-item-title">Download</span> <span class="far fa-download fa-lg" aria-hidden="true"></span>
+          </button>
+
+          <button id="print-menu" class="top-menu-button top-menu-button-icon-only" data-jq-dropdown="#jq-print-download" title="Print Menu">
+            <span class="far fa-print fa-lg" aria-hidden="true"></span>
+          </button>
+        </div>
+
+        <div id="header-google-search" class="header-search">
+          <gcse:search></gcse:search>
+        </div>
+        <div id="header-search-icon" title="Site Search" class="header-menu-icon"><span id="search-icon" class="fas fa-search" aria-hidden="true"></span></div>
+
+      </div>
+    </div>
+
+     <div id="jq-dropdown-type" class="jq-dropdown jq-dropdown-tip">
+      <ul class="jq-dropdown-menu">
+        
+        <li id="li_type_menu_goto" class="top-menu-nav-title">Go To</li>
+        <li id="li_type_menu_notes">
+          <span id="type_menu_notes_span" title="Viewing the Notes for the current topic." class="top-menu-current">Notes</span>
+          
+        </li>
+        <li id="li_type_menu_practice">
+          <span id="type_menu_problem_span_de" class="top-menu-item-text">Practice and Assignment problems are not yet written.  As time permits I am working on them, however I don't have the amount of free time that I used to so it will take a while before anything shows up here.</span>
+          
+          
+        </li>
+        <li id="li_type_menu_asgn">
+          
+          
+        </li>
+        <li id="li_type_menu_sh" class="top-menu-nav-title">Show/Hide</li>
+        <li id="li_type_menu_show" title="Show any hidden solutions and/or steps that may be present on the page."><a href="javascript:SHPrintPage(1,0)" id="view_menu_show">Show all Solutions/Steps/<em>etc.</em></a></li>
+        <li id="li_type_menu_hide" title="Hide any visible solutions and/or steps that may be present on the page."><a href="javascript:SHPrintPage(0,0)" id="view_menu_hide">Hide all Solutions/Steps/<em>etc.</em></a></li>
+      </ul>
+    </div>
+
+    <div id="jq-dropdown-quicknav" class="jq-dropdown jq-dropdown-tip">
+      <ul class="jq-dropdown-menu">
+        <li id="li_nav_menu_sections" class="top-menu-nav-title">Sections</li>
+        <li id="li_nav_menu_prev_section"><a href="SystemsLaplace.html" id="a_nav_menu_prev_section" class="top-menu-nav-link" title="Previous Section : Laplace Transforms"><span class="top-menu-prev fas fa-chevron-left"></span> Laplace Transforms</a></li>
+        <li id="li_nav_menu_next_section"><a href="SeriesIntro.html" id="a_nav_menu_next_section" class="top-menu-nav-link" title="Next Section : Series Solutions to DE&#39;s Introduction"><span class="top-menu-prev-hidden fas fa-chevron-left"></span> Series Solutions to DE's Introduction <span class="top-menu-next fas fa-chevron-right"></span></a></li>
+        <li id="li_nav_menu_chapters" class="top-menu-nav-title">Chapters</li>
+        <li id="li_nav_menu_prev_chapter"><a href="LaplaceIntro.html" id="a_nav_menu_prev_chapter" class="top-menu-nav-link" title="Previous Chapter : Laplace Transforms"><span class="top-menu-prev fas fa-chevron-left"></span><span class="top-menu-prev fas fa-chevron-left"></span> Laplace Transforms</a></li>
+        <li id="li_nav_menu_next_chapter"><a href="SeriesIntro.html" id="a_nav_menu_next_chapter" class="top-menu-nav-link" title="Next Chapter : Series Solutions to DE&#39;s"><span class="top-menu-prev-hidden fas fa-chevron-left"></span><span class="top-menu-prev-hidden fas fa-chevron-left"></span> Series Solutions to DE's <span class="top-menu-next fas fa-chevron-right"></span><span class="top-menu-next fas fa-chevron-right"></span></a></li>
+        
+        
+        
+        
+        <li id="li_nav_menu_classes" class="top-menu-nav-title">Classes</li>
+        <li>
+          
+          <a href="../Alg/Alg.html" id="nav_menu_alg_link" title="Go To Algebra Notes">Algebra</a>
+        </li>
+        <li>
+          
+          <a href="../CalcI/CalcI.html" id="nav_menu_calci_link" title="Go To Calculus I Notes">Calculus I</a>
+        </li>
+        <li>
+          
+          <a href="../CalcII/CalcII.html" id="nav_menu_calcii_link" title="Go To Calculus II Notes">Calculus II</a>
+        </li>
+        <li>
+          
+          <a href="../CalcIII/CalcIII.html" id="nav_menu_calciii_link" title="Go To Calculus III Notes">Calculus III</a>
+        </li>
+        <li>
+          <span id="nav_menu_de_span" title="Currently Viewing Differential Equations Material" class="top-menu-current">Differential Equations</span>
+          
+        </li>
+        <li id="li_nav_menu_extras" class="top-menu-nav-title">Extras</li>
+        <li>
+          
+          <a href="../../Extras/AlgebraTrigReview/AlgebraTrig.html" id="nav_menu_algtrig_link" title="Go To Algebra &amp; Trig Review">Algebra &amp; Trig Review</a>
+        </li>
+        <li>
+          
+          <a href="../../Extras/CommonErrors/CommonMathErrors.html" id="nav_menu_commonerrors_link" title="Go To Common Math Errors">Common Math Errors</a>
+        </li>
+        <li>
+          
+          <a href="../../Extras/ComplexPrimer/ComplexNumbers.html" id="nav_menu_complexnumbers_link" title="Go To Complex Numbers Primer">Complex Number Primer</a>
+        </li>
+        <li>
+          
+          <a href="../../Extras/StudyMath/HowToStudyMath.html" id="nav_menu_studymath_link" title="Go To How To Study Math">How To Study Math</a>
+        </li>
+        <li>
+          
+          <a href="../../Extras/CheatSheets_Tables.html" id="nav_menu_cheattables_link" title="Go To List of Cheat Sheets and Tables">Cheat Sheets &amp; Tables</a>
+        </li>
+        <li id="li_nav_menu_misc" class="top-menu-nav-title">Misc</li>
+        <li><a href="http://tutorial.math.lamar.edu/contact.aspx" id="nav_menu_contact" title="Contact Me!">Contact Me</a></li>
+        <li><a href="../../mathjax.html" id="nav_menu_mathjax" title="Info on MathJax and MathJax Configuration Menu">MathJax Help and Configuration</a></li>
+        <li><a href="../../mystudents.html" id="nav_menu_students" title="Go here if you are currently taking a class from me!">My Students</a></li>
+      </ul>
+    </div>
+
+    <div id="jq-dropdown-download" class="jq-dropdown jq-dropdown-anchor-right jq-dropdown-tip">
+      <ul class="jq-dropdown-menu">
+        
+        <li id="li_download_menu_notes" class="top-menu-nav-title">Notes Downloads</li>
+        <li id="li_download_menu_notes_book"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=B,1,N" id="download_menu_notes_book" data-PDF="Download - Menu$Notes - Book$Differential Equations$/Downloads/DE/Notes/Complete.pdf">Complete Book</a></li>
+        
+        <li id="li_download_menu_notes_chapter"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=C,21,N" id="download_menu_notes_chapter" data-PDF="Download - Menu$Notes - Chapter$Differential Equations - Systems of DE&#39;s$/Downloads/DE/Notes/Systems.pdf">Current Chapter</a></li>
+        <li id="li_download_menu_notes_section"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=S,456,N" id="download_menu_notes_section" data-PDF="Download - Menu$Notes - Section$Differential Equations - Modeling$/Downloads/DE/Notes/SystemsModeling.pdf">Current Section</a></li>
+        <li id="li_download_menu_practice" class="top-menu-nav-title">Practice Problems Downloads</li>
+        <li id="li_download_menu_practice_de"><span class="top-menu-item-text">Problems not yet written.</span></li>
+        
+        
+        
+        
+        
+        
+        
+        
+        <li id="li_download_menu_asgn" class="top-menu-nav-title">Assignment Problems Downloads</li>
+        <li id="li_download_menu_asgn_de"><span class="top-menu-item-text">Problems not yet written.</span></li>
+        
+        
+        
+        <li id="li_download_menu_other" class="top-menu-nav-title">Other Items</li>
+        <li id="li_download_menu_urls">
+          <a href="http://tutorial.math.lamar.edu/DownloadURLs.aspx?bi=1&amp;ci=21&amp;si=456" id="download_menu_urls">Get URL's for Download Items</a>
+        </li>
+      </ul>
+    </div>
+
+    <div id="jq-print-download" class="jq-dropdown jq-dropdown-anchor-right jq-dropdown-tip">
+      <ul class="jq-dropdown-menu">
+        <li id="li_print_menu_default"><a href="javascript:SHPrintPage()" id="print_menu_default">Print Page in Current Form (Default)</a></li>
+        <li id="li_print_menu_show"><a href="javascript:SHPrintPage(1,1)" id="print_menu_show">Show all Solutions/Steps and Print Page</a></li>
+        <li id="li_print_menu_hide"><a href="javascript:SHPrintPage(0,1)" id="print_menu_hide">Hide all Solutions/Steps and Print Page</a></li>
+      </ul>
+    </div>
+
+
+
+   
+
+    <nav id="menu" class="notes-nav">
+      <ul>
+        <li><a href="../../index.html" class="mm-link">Home</a></li>
+        <li><span>Classes</span></li>
+        <li><a href="../Alg/Alg.html" class="mm-link">Algebra</a>
+          <ul>
+            <li><a href="../Alg/Preliminaries.html" class="mm-link">Preliminaries</a>
+              <ul>
+                <li><a href="../Alg/IntegerExponents.html" class="mm-link">Integer Exponents</a></li>
+                <li><a href="../Alg/RationalExponents.html" class="mm-link">Rational Exponents</a></li>
+                <li><a href="../Alg/Radicals.html" class="mm-link">Radicals</a></li>
+                <li><a href="../Alg/Polynomials.html" class="mm-link">Polynomials</a></li>
+                <li><a href="../Alg/Factoring.html" class="mm-link">Factoring Polynomials</a></li>
+                <li><a href="../Alg/RationalExpressions.html" class="mm-link">Rational Expressions</a></li>
+                <li><a href="../Alg/ComplexNumbers.html" class="mm-link">Complex Numbers</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/Solving.html" class="mm-link">Solving Equations and Inequalities</a>
+              <ul>
+                <li><a href="../Alg/SolutionSets.html" class="mm-link">Solutions and Solution Sets</a></li>
+                <li><a href="../Alg/SolveLinearEqns.html" class="mm-link">Linear Equations</a></li>
+                <li><a href="../Alg/LinearApps.html" class="mm-link">Applications of Linear Equations</a></li>
+                <li><a href="../Alg/SolveMultiVariable.html" class="mm-link">Equations With More Than One Variable</a></li>
+                <li><a href="../Alg/SolveQuadraticEqnsI.html" class="mm-link">Quadratic Equations - Part I</a></li>
+                <li><a href="../Alg/SolveQuadraticEqnsII.html" class="mm-link">Quadratic Equations - Part II</a></li>
+                <li><a href="../Alg/SolveQuadraticEqnSummary.html" class="mm-link">Quadratic Equations : A Summary</a></li>
+                <li><a href="../Alg/QuadraticApps.html" class="mm-link">Applications of Quadratic Equations</a></li>
+                <li><a href="../Alg/ReducibleToQuadratic.html" class="mm-link">Equations Reducible to Quadratic in Form</a></li>
+                <li><a href="../Alg/SolveRadicalEqns.html" class="mm-link">Equations with Radicals</a></li>
+                <li><a href="../Alg/SolveLinearInequalities.html" class="mm-link">Linear Inequalities</a></li>
+                <li><a href="../Alg/SolvePolyInequalities.html" class="mm-link">Polynomial Inequalities</a></li>
+                <li><a href="../Alg/SolveRationalInequalities.html" class="mm-link">Rational Inequalities</a></li>
+                <li><a href="../Alg/SolveAbsValueEqns.html" class="mm-link">Absolute Value Equations</a></li>
+                <li><a href="../Alg/SolveAbsValueIneq.html" class="mm-link">Absolute Value Inequalities</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/Graphing_Functions.html" class="mm-link">Graphing and Functions</a>
+              <ul>
+                <li><a href="../Alg/Graphing.html" class="mm-link">Graphing</a></li>
+                <li><a href="../Alg/Lines.html" class="mm-link">Lines</a></li>
+                <li><a href="../Alg/Circles.html" class="mm-link">Circles</a></li>
+                <li><a href="../Alg/FunctionDefn.html" class="mm-link">The Definition of a Function</a></li>
+                <li><a href="../Alg/GraphFunctions.html" class="mm-link">Graphing Functions</a></li>
+                <li><a href="../Alg/CombineFunctions.html" class="mm-link">Combining Functions</a></li>
+                <li><a href="../Alg/InverseFunctions.html" class="mm-link">Inverse Functions</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/CommonGraphs.html" class="mm-link">Common Graphs</a>
+              <ul>
+                <li><a href="../Alg/Lines_Circles_PWF.html" class="mm-link">Lines, Circles and Piecewise Functions</a></li>
+                <li><a href="../Alg/Parabolas.html" class="mm-link">Parabolas</a></li>
+                <li><a href="../Alg/Ellipses.html" class="mm-link">Ellipses</a></li>
+                <li><a href="../Alg/Hyperbolas.html" class="mm-link">Hyperbolas</a></li>
+                <li><a href="../Alg/MiscFunctions.html" class="mm-link">Miscellaneous Functions</a></li>
+                <li><a href="../Alg/Transformations.html" class="mm-link">Transformations</a></li>
+                <li><a href="../Alg/Symmetry.html" class="mm-link">Symmetry</a></li>
+                <li><a href="../Alg/GraphRationalFcns.html" class="mm-link">Rational Functions</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/PolynomialFunctions.html" class="mm-link">Polynomial Functions</a>
+              <ul>
+                <li><a href="../Alg/DividingPolynomials.html" class="mm-link">Dividing Polynomials</a></li>
+                <li><a href="../Alg/ZeroesOfPolynomials.html" class="mm-link">Zeroes/Roots of Polynomials</a></li>
+                <li><a href="../Alg/GraphingPolynomials.html" class="mm-link">Graphing Polynomials</a></li>
+                <li><a href="../Alg/FindingZeroesOfPolynomials.html" class="mm-link">Finding Zeroes of Polynomials</a></li>
+                <li><a href="../Alg/PartialFractions.html" class="mm-link">Partial Fractions</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/ExpAndLog.html" class="mm-link">Exponential and Logarithm Functions</a>
+              <ul>
+                <li><a href="../Alg/ExpFunctions.html" class="mm-link">Exponential Functions</a></li>
+                <li><a href="../Alg/LogFunctions.html" class="mm-link">Logarithm Functions</a></li>
+                <li><a href="../Alg/SolveExpEqns.html" class="mm-link">Solving Exponential Equations</a></li>
+                <li><a href="../Alg/SolveLogEqns.html" class="mm-link">Solving Logarithm Equations</a></li>
+                <li><a href="../Alg/ExpLogApplications.html" class="mm-link">Applications</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/Systems.html" class="mm-link">Systems of Equations</a>
+              <ul>
+                <li><a href="../Alg/SystemsTwoVrble.html" class="mm-link">Linear Systems with Two Variables</a></li>
+                <li><a href="../Alg/SystemsThreeVrble.html" class="mm-link">Linear Systems with Three Variables</a></li>
+                <li><a href="../Alg/AugmentedMatrix.html" class="mm-link">Augmented Matrices</a></li>
+                <li><a href="../Alg/AugmentedMatrixII.html" class="mm-link">More on the Augmented Matrix</a></li>
+                <li><a href="../Alg/NonlinearSystems.html" class="mm-link">Nonlinear Systems</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../CalcI/CalcI.html" class="mm-link">Calculus I</a>
+          <ul>
+            <li><a href="../CalcI/ReviewIntro.html" class="mm-link">Review</a>
+              <ul>
+                <li><a href="../CalcI/Functions.html" class="mm-link">Functions</a></li>
+                <li><a href="../CalcI/InverseFunctions.html" class="mm-link">Inverse Functions</a></li>
+                <li><a href="../CalcI/TrigFcns.html" class="mm-link">Trig Functions</a></li>
+                <li><a href="../CalcI/TrigEquations.html" class="mm-link">Solving Trig Equations</a></li>
+                <li><a href="../CalcI/TrigEquations_CalcI.html" class="mm-link">Trig Equations with Calculators, Part I</a></li>
+                <li><a href="../CalcI/TrigEquations_CalcII.html" class="mm-link">Trig Equations with Calculators, Part II</a></li>
+                <li><a href="../CalcI/ExpFunctions.html" class="mm-link">Exponential Functions</a></li>
+                <li><a href="../CalcI/LogFcns.html" class="mm-link">Logarithm Functions</a></li>
+                <li><a href="../CalcI/ExpLogEqns.html" class="mm-link">Exponential and Logarithm Equations</a></li>
+                <li><a href="../CalcI/CommonGraphs.html" class="mm-link">Common Graphs</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcI/limitsIntro.html" class="mm-link">Limits</a>
+              <ul>
+                <li><a href="../CalcI/Tangents_Rates.html" class="mm-link">Tangent Lines and Rates of Change</a></li>
+                <li><a href="../CalcI/TheLimit.html" class="mm-link">The Limit</a></li>
+                <li><a href="../CalcI/OneSidedLimits.html" class="mm-link">One-Sided Limits</a></li>
+                <li><a href="../CalcI/LimitsProperties.html" class="mm-link">Limit Properties</a></li>
+                <li><a href="../CalcI/ComputingLimits.html" class="mm-link">Computing Limits</a></li>
+                <li><a href="../CalcI/InfiniteLimits.html" class="mm-link">Infinite Limits</a></li>
+                <li><a href="../CalcI/LimitsAtInfinityI.html" class="mm-link">Limits At Infinity, Part I</a></li>
+                <li><a href="../CalcI/LimitsAtInfinityII.html" class="mm-link">Limits At Infinity, Part II</a></li>
+                <li><a href="../CalcI/Continuity.html" class="mm-link">Continuity</a></li>
+                <li><a href="../CalcI/DefnOfLimit.html" class="mm-link">The Definition of the Limit</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcI/DerivativeIntro.html" class="mm-link">Derivatives</a>
+              <ul>
+                <li><a href="../CalcI/DefnOfDerivative.html" class="mm-link">The Definition of the Derivative</a></li>
+                <li><a href="../CalcI/DerivativeInterp.html" class="mm-link">Interpretation of the Derivative</a></li>
+                <li><a href="../CalcI/DiffFormulas.html" class="mm-link">Differentiation Formulas</a></li>
+                <li><a href="../CalcI/ProductQuotientRule.html" class="mm-link">Product and Quotient Rule</a></li>
+                <li><a href="../CalcI/DiffTrigFcns.html" class="mm-link">Derivatives of Trig Functions</a></li>
+                <li><a href="../CalcI/DiffExpLogFcns.html" class="mm-link">Derivatives of Exponential and Logarithm Functions</a></li>
+                <li><a href="../CalcI/DiffInvTrigFcns.html" class="mm-link">Derivatives of Inverse Trig Functions</a></li>
+                <li><a href="../CalcI/DiffHyperFcns.html" class="mm-link">Derivatives of Hyperbolic Functions</a></li>
+                <li><a href="../CalcI/ChainRule.html" class="mm-link">Chain Rule</a></li>
+                <li><a href="../CalcI/ImplicitDIff.html" class="mm-link">Implicit Differentiation</a></li>
+                <li><a href="../CalcI/RelatedRates.html" class="mm-link">Related Rates</a></li>
+                <li><a href="../CalcI/HigherOrderDerivatives.html" class="mm-link">Higher Order Derivatives</a></li>
+                <li><a href="../CalcI/LogDiff.html" class="mm-link">Logarithmic Differentiation</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcI/DerivAppsIntro.html" class="mm-link">Applications of Derivatives</a>
+              <ul>
+                <li><a href="../CalcI/RateOfChange.html" class="mm-link">Rates of Change</a></li>
+                <li><a href="../CalcI/CriticalPoints.html" class="mm-link">Critical Points</a></li>
+                <li><a href="../CalcI/MinMaxValues.html" class="mm-link">Minimum and Maximum Values</a></li>
+                <li><a href="../CalcI/AbsExtrema.html" class="mm-link">Finding Absolute Extrema</a></li>
+                <li><a href="../CalcI/ShapeofGraphPtI.html" class="mm-link">The Shape of a Graph, Part I</a></li>
+                <li><a href="../CalcI/ShapeofGraphPtII.html" class="mm-link">The Shape of a Graph, Part II</a></li>
+                <li><a href="../CalcI/MeanValueTheorem.html" class="mm-link">The Mean Value Theorem</a></li>
+                <li><a href="../CalcI/Optimization.html" class="mm-link">Optimization</a></li>
+                <li><a href="../CalcI/MoreOptimization.html" class="mm-link">More Optimization Problems</a></li>
+                <li><a href="../CalcI/LHospitalsRule.html" class="mm-link">L'Hospital's Rule and Indeterminate Forms</a></li>
+                <li><a href="../CalcI/LinearApproximations.html" class="mm-link">Linear Approximations</a></li>
+                <li><a href="../CalcI/Differentials.html" class="mm-link">Differentials</a></li>
+                <li><a href="../CalcI/NewtonsMethod.html" class="mm-link">Newton's Method</a></li>
+                <li><a href="../CalcI/BusinessApps.html" class="mm-link">Business Applications</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcI/IntegralsIntro.html" class="mm-link">Integrals</a>
+              <ul>
+                <li><a href="../CalcI/IndefiniteIntegrals.html" class="mm-link">Indefinite Integrals</a></li>
+                <li><a href="../CalcI/ComputingIndefiniteIntegrals.html" class="mm-link">Computing Indefinite Integrals</a></li>
+                <li><a href="../CalcI/SubstitutionRuleIndefinite.html" class="mm-link">Substitution Rule for Indefinite Integrals</a></li>
+                <li><a href="../CalcI/SubstitutionRuleIndefinitePtII.html" class="mm-link">More Substitution Rule</a></li>
+                <li><a href="../CalcI/AreaProblem.html" class="mm-link">Area Problem</a></li>
+                <li><a href="../CalcI/DefnOfDefiniteIntegral.html" class="mm-link">Definition of the Definite Integral</a></li>
+                <li><a href="../CalcI/ComputingDefiniteIntegrals.html" class="mm-link">Computing Definite Integrals</a></li>
+                <li><a href="../CalcI/SubstitutionRuleDefinite.html" class="mm-link">Substitution Rule for Definite Integrals</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcI/IntAppsIntro.html" class="mm-link">Applications of Integrals</a>
+              <ul>
+                <li><a href="../CalcI/AvgFcnValue.html" class="mm-link">Average Function Value</a></li>
+                <li><a href="../CalcI/AreaBetweenCurves.html" class="mm-link">Area Between Curves</a></li>
+                <li><a href="../CalcI/VolumeWithRings.html" class="mm-link">Volumes of Solids of Revolution / Method of Rings</a></li>
+                <li><a href="../CalcI/VolumeWithCylinder.html" class="mm-link">Volumes of Solids of Revolution/Method of Cylinders</a></li>
+                <li><a href="../CalcI/MoreVolume.html" class="mm-link">More Volume Problems</a></li>
+                <li><a href="../CalcI/Work.html" class="mm-link">Work</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcI/ExtrasIntro.html" class="mm-link">Extras</a>
+              <ul>
+                <li><a href="../CalcI/LimitProofs.html" class="mm-link">Proof of Various Limit Properties</a></li>
+                <li><a href="../CalcI/DerivativeProofs.html" class="mm-link">Proof of Various Derivative Properties</a></li>
+                <li><a href="../CalcI/ProofTrigDeriv.html" class="mm-link">Proof of Trig Limits</a></li>
+                <li><a href="../CalcI/DerivativeAppsProofs.html" class="mm-link">Proofs of Derivative Applications Facts</a></li>
+                <li><a href="../CalcI/ProofIntProp.html" class="mm-link">Proof of Various Integral Properties </a></li>
+                <li><a href="../CalcI/Area_Volume_Formulas.html" class="mm-link">Area and Volume Formulas</a></li>
+                <li><a href="../CalcI/TypesOfInfinity.html" class="mm-link">Types of Infinity</a></li>
+                <li><a href="../CalcI/SummationNotation.html" class="mm-link">Summation Notation</a></li>
+                <li><a href="../CalcI/ConstantofIntegration.html" class="mm-link">Constant of Integration</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../CalcII/CalcII.html" class="mm-link">Calculus II</a>
+          <ul>
+            <li><a href="../CalcII/IntTechIntro.html" class="mm-link">Integration Techniques</a>
+              <ul>
+                <li><a href="../CalcII/IntegrationByParts.html" class="mm-link">Integration by Parts</a></li>
+                <li><a href="../CalcII/IntegralsWithTrig.html" class="mm-link">Integrals Involving Trig Functions</a></li>
+                <li><a href="../CalcII/TrigSubstitutions.html" class="mm-link">Trig Substitutions</a></li>
+                <li><a href="../CalcII/PartialFractions.html" class="mm-link">Partial Fractions</a></li>
+                <li><a href="../CalcII/IntegralsWithRoots.html" class="mm-link">Integrals Involving Roots</a></li>
+                <li><a href="../CalcII/IntegralsWithQuadratics.html" class="mm-link">Integrals Involving Quadratics</a></li>
+                <li><a href="../CalcII/IntegrationStrategy.html" class="mm-link">Integration Strategy</a></li>
+                <li><a href="../CalcII/ImproperIntegrals.html" class="mm-link">Improper Integrals</a></li>
+                <li><a href="../CalcII/ImproperIntegralsCompTest.html" class="mm-link">Comparison Test for Improper Integrals</a></li>
+                <li><a href="../CalcII/ApproximatingDefIntegrals.html" class="mm-link">Approximating Definite Integrals</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/IntAppsIntro.html" class="mm-link">Applications of Integrals</a>
+              <ul>
+                <li><a href="../CalcII/ArcLength.html" class="mm-link">Arc Length</a></li>
+                <li><a href="../CalcII/SurfaceArea.html" class="mm-link">Surface Area</a></li>
+                <li><a href="../CalcII/CenterOfMass.html" class="mm-link">Center of Mass</a></li>
+                <li><a href="../CalcII/HydrostaticPressure.html" class="mm-link">Hydrostatic Pressure</a></li>
+                <li><a href="../CalcII/Probability.html" class="mm-link">Probability</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/ParametricIntro.html" class="mm-link">Parametric Equations and Polar Coordinates</a>
+              <ul>
+                <li><a href="../CalcII/ParametricEqn.html" class="mm-link">Parametric Equations and Curves</a></li>
+                <li><a href="../CalcII/ParaTangent.html" class="mm-link">Tangents with Parametric Equations</a></li>
+                <li><a href="../CalcII/ParaArea.html" class="mm-link">Area with Parametric Equations</a></li>
+                <li><a href="../CalcII/ParaArcLength.html" class="mm-link">Arc Length with Parametric Equations</a></li>
+                <li><a href="../CalcII/ParaSurfaceArea.html" class="mm-link">Surface Area with Parametric Equations</a></li>
+                <li><a href="../CalcII/PolarCoordinates.html" class="mm-link">Polar Coordinates</a></li>
+                <li><a href="../CalcII/PolarTangents.html" class="mm-link">Tangents with Polar Coordinates</a></li>
+                <li><a href="../CalcII/PolarArea.html" class="mm-link">Area with Polar Coordinates</a></li>
+                <li><a href="../CalcII/PolarArcLength.html" class="mm-link">Arc Length with Polar Coordinates</a></li>
+                <li><a href="../CalcII/PolarSurfaceArea.html" class="mm-link">Surface Area with Polar Coordinates</a></li>
+                <li><a href="../CalcII/ArcLength_SurfaceArea.html" class="mm-link">Arc Length and Surface Area Revisited</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/SeriesIntro.html" class="mm-link">Series & Sequences</a>
+              <ul>
+                <li><a href="../CalcII/Sequences.html" class="mm-link">Sequences</a></li>
+                <li><a href="../CalcII/MoreSequences.html" class="mm-link">More on Sequences</a></li>
+                <li><a href="../CalcII/Series_Basics.html" class="mm-link">Series - The Basics</a></li>
+                <li><a href="../CalcII/ConvergenceOfSeries.html" class="mm-link">Convergence/Divergence of Series</a></li>
+                <li><a href="../CalcII/Series_Special.html" class="mm-link">Special Series</a></li>
+                <li><a href="../CalcII/IntegralTest.html" class="mm-link">Integral Test</a></li>
+                <li><a href="../CalcII/SeriesCompTest.html" class="mm-link">Comparison Test/Limit Comparison Test</a></li>
+                <li><a href="../CalcII/AlternatingSeries.html" class="mm-link">Alternating Series Test</a></li>
+                <li><a href="../CalcII/AbsoluteConvergence.html" class="mm-link">Absolute Convergence</a></li>
+                <li><a href="../CalcII/RatioTest.html" class="mm-link">Ratio Test</a></li>
+                <li><a href="../CalcII/RootTest.html" class="mm-link">Root Test</a></li>
+                <li><a href="../CalcII/SeriesStrategy.html" class="mm-link">Strategy for Series</a></li>
+                <li><a href="../CalcII/EstimatingSeries.html" class="mm-link">Estimating the Value of a Series</a></li>
+                <li><a href="../CalcII/PowerSeries.html" class="mm-link">Power Series</a></li>
+                <li><a href="../CalcII/PowerSeriesandFunctions.html" class="mm-link">Power Series and Functions</a></li>
+                <li><a href="../CalcII/TaylorSeries.html" class="mm-link">Taylor Series</a></li>
+                <li><a href="../CalcII/TaylorSeriesApps.html" class="mm-link">Applications of Series</a></li>
+                <li><a href="../CalcII/BinomialSeries.html" class="mm-link">Binomial Series</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/VectorsIntro.html" class="mm-link">Vectors</a>
+              <ul>
+                <li><a href="../CalcII/Vectors_Basics.html" class="mm-link">Vectors - The Basics</a></li>
+                <li><a href="../CalcII/VectorArithmetic.html" class="mm-link">Vector Arithmetic</a></li>
+                <li><a href="../CalcII/DotProduct.html" class="mm-link">Dot Product</a></li>
+                <li><a href="../CalcII/CrossProduct.html" class="mm-link">Cross Product</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/3DSpace.html" class="mm-link">3-Dimensional Space</a>
+              <ul>
+                <li><a href="../CalcII/3DCoords.html" class="mm-link">The 3-D Coordinate System</a></li>
+                <li><a href="../CalcII/EqnsOfLines.html" class="mm-link">Equations of Lines</a></li>
+                <li><a href="../CalcII/EqnsOfPlanes.html" class="mm-link">Equations of Planes</a></li>
+                <li><a href="../CalcII/QuadricSurfaces.html" class="mm-link">Quadric Surfaces</a></li>
+                <li><a href="../CalcII/MultiVrbleFcns.html" class="mm-link">Functions of Several Variables</a></li>
+                <li><a href="../CalcII/VectorFunctions.html" class="mm-link">Vector Functions</a></li>
+                <li><a href="../CalcII/VectorFcnsCalculus.html" class="mm-link">Calculus with Vector Functions</a></li>
+                <li><a href="../CalcII/TangentNormalVectors.html" class="mm-link">Tangent, Normal and Binormal Vectors</a></li>
+                <li><a href="../CalcII/VectorArcLength.html" class="mm-link">Arc Length with Vector Functions</a></li>
+                <li><a href="../CalcII/Curvature.html" class="mm-link">Curvature</a></li>
+                <li><a href="../CalcII/Velocity_Acceleration.html" class="mm-link">Velocity and Acceleration</a></li>
+                <li><a href="../CalcII/CylindricalCoords.html" class="mm-link">Cylindrical Coordinates</a></li>
+                <li><a href="../CalcII/SphericalCoords.html" class="mm-link">Spherical Coordinates</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../CalcIII/CalcIII.html" class="mm-link">Calculus III</a>
+          <ul>
+            <li><a href="../CalcIII/3DSpace.html" class="mm-link">3-Dimensional Space</a>
+              <ul>
+                <li><a href="../CalcIII/3DCoords.html" class="mm-link">The 3-D Coordinate System</a></li>
+                <li><a href="../CalcIII/EqnsOfLines.html" class="mm-link">Equations of Lines</a></li>
+                <li><a href="../CalcIII/EqnsOfPlanes.html" class="mm-link">Equations of Planes</a></li>
+                <li><a href="../CalcIII/QuadricSurfaces.html" class="mm-link">Quadric Surfaces</a></li>
+                <li><a href="../CalcIII/MultiVrbleFcns.html" class="mm-link">Functions of Several Variables</a></li>
+                <li><a href="../CalcIII/VectorFunctions.html" class="mm-link">Vector Functions</a></li>
+                <li><a href="../CalcIII/VectorFcnsCalculus.html" class="mm-link">Calculus with Vector Functions</a></li>
+                <li><a href="../CalcIII/TangentNormalVectors.html" class="mm-link">Tangent, Normal and Binormal Vectors</a></li>
+                <li><a href="../CalcIII/VectorArcLength.html" class="mm-link">Arc Length with Vector Functions</a></li>
+                <li><a href="../CalcIII/Curvature.html" class="mm-link">Curvature</a></li>
+                <li><a href="../CalcIII/Velocity_Acceleration.html" class="mm-link">Velocity and Acceleration</a></li>
+                <li><a href="../CalcIII/CylindricalCoords.html" class="mm-link">Cylindrical Coordinates</a></li>
+                <li><a href="../CalcIII/SphericalCoords.html" class="mm-link">Spherical Coordinates</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/PartialDerivsIntro.html" class="mm-link">Partial Derivatives</a>
+              <ul>
+                <li><a href="../CalcIII/Limits.html" class="mm-link">Limits</a></li>
+                <li><a href="../CalcIII/PartialDerivatives.html" class="mm-link">Partial Derivatives</a></li>
+                <li><a href="../CalcIII/PartialDerivInterp.html" class="mm-link">Interpretations of Partial Derivatives</a></li>
+                <li><a href="../CalcIII/HighOrderPartialDerivs.html" class="mm-link">Higher Order Partial Derivatives</a></li>
+                <li><a href="../CalcIII/Differentials.html" class="mm-link">Differentials</a></li>
+                <li><a href="../CalcIII/ChainRule.html" class="mm-link">Chain Rule</a></li>
+                <li><a href="../CalcIII/DirectionalDeriv.html" class="mm-link">Directional Derivatives</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/PartialDerivAppsIntro.html" class="mm-link">Applications of Partial Derivatives</a>
+              <ul>
+                <li><a href="../CalcIII/TangentPlanes.html" class="mm-link">Tangent Planes and Linear Approximations</a></li>
+                <li><a href="../CalcIII/GradientVectorTangentPlane.html" class="mm-link">Gradient Vector, Tangent Planes and Normal Lines</a></li>
+                <li><a href="../CalcIII/RelativeExtrema.html" class="mm-link">Relative Minimums and Maximums</a></li>
+                <li><a href="../CalcIII/AbsoluteExtrema.html" class="mm-link">Absolute Minimums and Maximums</a></li>
+                <li><a href="../CalcIII/LagrangeMultipliers.html" class="mm-link">Lagrange Multipliers</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/MultipleIntegralsIntro.html" class="mm-link">Multiple Integrals</a>
+              <ul>
+                <li><a href="../CalcIII/DoubleIntegrals.html" class="mm-link">Double Integrals</a></li>
+                <li><a href="../CalcIII/IteratedIntegrals.html" class="mm-link">Iterated Integrals</a></li>
+                <li><a href="../CalcIII/DIGeneralRegion.html" class="mm-link">Double Integrals over General Regions</a></li>
+                <li><a href="../CalcIII/DIPolarCoords.html" class="mm-link">Double Integrals in Polar Coordinates</a></li>
+                <li><a href="../CalcIII/TripleIntegrals.html" class="mm-link">Triple Integrals</a></li>
+                <li><a href="../CalcIII/TICylindricalCoords.html" class="mm-link">Triple Integrals in Cylindrical Coordinates</a></li>
+                <li><a href="../CalcIII/TISphericalCoords.html" class="mm-link">Triple Integrals in Spherical Coordinates</a></li>
+                <li><a href="../CalcIII/ChangeOfVariables.html" class="mm-link">Change of Variables</a></li>
+                <li><a href="../CalcIII/SurfaceArea.html" class="mm-link">Surface Area</a></li>
+                <li><a href="../CalcIII/Area_Volume.html" class="mm-link">Area and Volume Revisited</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/LineIntegralsIntro.html" class="mm-link">Line Integrals</a>
+              <ul>
+                <li><a href="../CalcIII/VectorFields.html" class="mm-link">Vector Fields</a></li>
+                <li><a href="../CalcIII/LineIntegralsPtI.html" class="mm-link">Line Integrals - Part I</a></li>
+                <li><a href="../CalcIII/LineIntegralsPtII.html" class="mm-link">Line Integrals - Part II</a></li>
+                <li><a href="../CalcIII/LineIntegralsVectorFields.html" class="mm-link">Line Integrals of Vector Fields</a></li>
+                <li><a href="../CalcIII/FundThmLineIntegrals.html" class="mm-link">Fundamental Theorem for Line Integrals</a></li>
+                <li><a href="../CalcIII/ConservativeVectorField.html" class="mm-link">Conservative Vector Fields</a></li>
+                <li><a href="../CalcIII/GreensTheorem.html" class="mm-link">Green's Theorem</a></li>
+                <li><a href="../CalcIII/CurlDivergence.html" class="mm-link">Curl and Divergence</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/SurfaceIntegralsIntro.html" class="mm-link">Surface Integrals</a>
+              <ul>
+                <li><a href="../CalcIII/ParametricSurfaces.html" class="mm-link">Parametric Surfaces</a></li>
+                <li><a href="../CalcIII/SurfaceIntegrals.html" class="mm-link">Surface Integrals</a></li>
+                <li><a href="../CalcIII/SurfIntVectorField.html" class="mm-link">Surface Integrals of Vector Fields</a></li>
+                <li><a href="../CalcIII/StokesTheorem.html" class="mm-link">Stokes' Theorem</a></li>
+                <li><a href="../CalcIII/DivergenceTheorem.html" class="mm-link">Divergence Theorem</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="DE.html" class="mm-link">Differential Equations</a>
+          <ul>
+            <li><a href="IntroBasic.html" class="mm-link">Basic Concepts</a>
+              <ul>
+                <li><a href="Definitions.html" class="mm-link">Definitions</a></li>
+                <li><a href="DirectionFields.html" class="mm-link">Direction Fields</a></li>
+                <li><a href="FinalThoughts.html" class="mm-link">Final Thoughts</a></li>
+              </ul>
+            </li>
+            <li><a href="IntroFirstOrder.html" class="mm-link">First Order DE's</a>
+              <ul>
+                <li><a href="Linear.html" class="mm-link">Linear Equations</a></li>
+                <li><a href="Separable.html" class="mm-link">Separable Equations</a></li>
+                <li><a href="Exact.html" class="mm-link">Exact Equations</a></li>
+                <li><a href="Bernoulli.html" class="mm-link">Bernoulli Differential Equations</a></li>
+                <li><a href="Substitutions.html" class="mm-link">Substitutions</a></li>
+                <li><a href="IoV.html" class="mm-link">Intervals of Validity</a></li>
+                <li><a href="Modeling.html" class="mm-link">Modeling with First Order DE's</a></li>
+                <li><a href="EquilibriumSolutions.html" class="mm-link">Equilibrium Solutions</a></li>
+                <li><a href="EulersMethod.html" class="mm-link">Euler's Method</a></li>
+              </ul>
+            </li>
+            <li><a href="IntroSecondOrder.html" class="mm-link">Second Order DE's</a>
+              <ul>
+                <li><a href="SecondOrderConcepts.html" class="mm-link">Basic Concepts</a></li>
+                <li><a href="RealRoots.html" class="mm-link">Real & Distinct Roots</a></li>
+                <li><a href="ComplexRoots.html" class="mm-link">Complex Roots</a></li>
+                <li><a href="RepeatedRoots.html" class="mm-link">Repeated Roots</a></li>
+                <li><a href="ReductionofOrder.html" class="mm-link">Reduction of Order</a></li>
+                <li><a href="FundamentalSetsofSolutions.html" class="mm-link">Fundamental Sets of Solutions</a></li>
+                <li><a href="Wronskian.html" class="mm-link">More on the  Wronskian</a></li>
+                <li><a href="NonhomogeneousDE.html" class="mm-link">Nonhomogeneous Differential Equations</a></li>
+                <li><a href="UndeterminedCoefficients.html" class="mm-link">Undetermined Coefficients</a></li>
+                <li><a href="VariationofParameters.html" class="mm-link">Variation of Parameters</a></li>
+                <li><a href="Vibrations.html" class="mm-link">Mechanical Vibrations</a></li>
+              </ul>
+            </li>
+            <li><a href="LaplaceIntro.html" class="mm-link">Laplace Transforms</a>
+              <ul>
+                <li><a href="LaplaceDefinition.html" class="mm-link">The Definition</a></li>
+                <li><a href="LaplaceTransforms.html" class="mm-link">Laplace Transforms</a></li>
+                <li><a href="InverseTransforms.html" class="mm-link">Inverse Laplace Transforms</a></li>
+                <li><a href="StepFunctions.html" class="mm-link">Step Functions</a></li>
+                <li><a href="IVPWithLaplace.html" class="mm-link">Solving IVP's with Laplace Transforms</a></li>
+                <li><a href="IVPWithNonConstantCoefficient.html" class="mm-link">Nonconstant Coefficient IVP's</a></li>
+                <li><a href="IVPWithStepFunction.html" class="mm-link">IVP's With Step Functions</a></li>
+                <li><a href="DiracDeltaFunction.html" class="mm-link">Dirac Delta Function</a></li>
+                <li><a href="ConvolutionIntegrals.html" class="mm-link">Convolution Integrals</a></li>
+                <li><a href="Laplace_Table.html" class="mm-link">Table Of Laplace Transforms</a></li>
+              </ul>
+            </li>
+            <li><a href="SystemsIntro.html" class="mm-link">Systems of DE's</a>
+              <ul>
+                <li><a href="LA_Systems.html" class="mm-link">Review : Systems of Equations</a></li>
+                <li><a href="LA_Matrix.html" class="mm-link">Review : Matrices & Vectors</a></li>
+                <li><a href="LA_Eigen.html" class="mm-link">Review : Eigenvalues & Eigenvectors</a></li>
+                <li><a href="SystemsDE.html" class="mm-link">Systems of Differential Equations</a></li>
+                <li><a href="SolutionsToSystems.html" class="mm-link">Solutions to Systems</a></li>
+                <li><a href="PhasePlane.html" class="mm-link">Phase Plane</a></li>
+                <li><a href="RealEigenvalues.html" class="mm-link">Real Eigenvalues</a></li>
+                <li><a href="ComplexEigenvalues.html" class="mm-link">Complex Eigenvalues</a></li>
+                <li><a href="RepeatedEigenvalues.html" class="mm-link">Repeated Eigenvalues</a></li>
+                <li><a href="NonhomogeneousSystems.html" class="mm-link">Nonhomogeneous Systems</a></li>
+                <li><a href="SystemsLaplace.html" class="mm-link">Laplace Transforms</a></li>
+                <li><a href="SystemsModeling.html" class="mm-link">Modeling</a></li>
+              </ul>
+            </li>
+            <li><a href="SeriesIntro.html" class="mm-link">Series Solutions to DE's</a>
+              <ul>
+                <li><a href="PowerSeries.html" class="mm-link">Review : Power Series</a></li>
+                <li><a href="TaylorSeries.html" class="mm-link">Review : Taylor Series</a></li>
+                <li><a href="SeriesSolutions.html" class="mm-link">Series Solutions</a></li>
+                <li><a href="EulerEquations.html" class="mm-link">Euler Equations</a></li>
+              </ul>
+            </li>
+            <li><a href="IntroHigherOrder.html" class="mm-link">Higher Order Differential Equations</a>
+              <ul>
+                <li><a href="HOBasicConcepts.html" class="mm-link">Basic Concepts for <em>n</em><sup>th</sup> Order Linear Equations</a></li>
+                <li><a href="HOHomogeneousDE.html" class="mm-link">Linear Homogeneous Differential Equations</a></li>
+                <li><a href="HOUndeterminedCoeff.html" class="mm-link">Undetermined Coefficients</a></li>
+                <li><a href="HOVariationOfParam.html" class="mm-link">Variation of Parameters</a></li>
+                <li><a href="HOLaplaceTransforms.html" class="mm-link">Laplace Transforms</a></li>
+                <li><a href="HOSystems.html" class="mm-link">Systems of Differential Equations</a></li>
+                <li><a href="HOSeries.html" class="mm-link">Series Solutions</a></li>
+              </ul>
+            </li>
+            <li><a href="IntroBVP.html" class="mm-link">Boundary Value Problems &amp; Fourier Series</a>
+              <ul>
+                <li><a href="BoundaryValueProblem.html" class="mm-link">Boundary Value Problems</a></li>
+                <li><a href="BVPEvals.html" class="mm-link">Eigenvalues and Eigenfunctions</a></li>
+                <li><a href="PeriodicOrthogonal.html" class="mm-link">Periodic Functions &amp; Orthogonal Functions</a></li>
+                <li><a href="FourierSineSeries.html" class="mm-link">Fourier Sine Series</a></li>
+                <li><a href="FourierCosineSeries.html" class="mm-link">Fourier Cosine Series</a></li>
+                <li><a href="FourierSeries.html" class="mm-link">Fourier Series</a></li>
+                <li><a href="ConvergenceFourierSeries.html" class="mm-link">Convergence of Fourier Series</a></li>
+              </ul>
+            </li>
+            <li><a href="IntroPDE.html" class="mm-link">Partial Differential Equations </a>
+              <ul>
+                <li><a href="TheHeatEquation.html" class="mm-link">The Heat Equation</a></li>
+                <li><a href="TheWaveEquation.html" class="mm-link">The Wave Equation</a></li>
+                <li><a href="PDETerminology.html" class="mm-link">Terminology</a></li>
+                <li><a href="SeparationofVariables.html" class="mm-link">Separation of Variables</a></li>
+                <li><a href="SolvingHeatEquation.html" class="mm-link">Solving the Heat Equation</a></li>
+                <li><a href="HeatEqnNonZero.html" class="mm-link">Heat Equation with Non-Zero Temperature Boundaries</a></li>
+                <li><a href="LaplacesEqn.html" class="mm-link">Laplace's Equation</a></li>
+                <li><a href="VibratingString.html" class="mm-link">Vibrating String</a></li>
+                <li><a href="PDESummary.html" class="mm-link">Summary of Separation of Variables</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><span>Extras</span></li>
+        <li><a href="../../Extras/AlgebraTrigReview/AlgebraTrig.html" class="mm-link">Algebra &amp; Trig Review</a>
+          <ul>
+            <li><a href="../../Extras/AlgebraTrigReview/AlgebraIntro.html" class="mm-link">Algebra</a>
+              <ul>
+                <li><a href="../../Extras/AlgebraTrigReview/Exponents.html" class="mm-link">Exponents </a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/AbsoluteValue.html" class="mm-link">Absolute Value</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Radicals.html" class="mm-link">Radicals</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Rationalizing.html" class="mm-link">Rationalizing </a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Functions.html" class="mm-link">Functions </a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/MultPoly.html" class="mm-link">Multiplying Polynomials</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Factoring.html" class="mm-link">Factoring</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SimpRatExp.html" class="mm-link">Simplifying Rational Expressions</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Graphing.html" class="mm-link">Graphing and Common Graphs</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveEqnPtI.html" class="mm-link">Solving Equations, Part I</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveEqnPtII.html" class="mm-link">Solving Equations, Part II</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveSystems.html" class="mm-link">Solving Systems of Equations</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveIneq.html" class="mm-link">Solving Inequalities</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveAbsValue.html" class="mm-link">Absolute Value Equations and Inequalities</a></li>
+              </ul>
+            </li>
+            <li><a href="../../Extras/AlgebraTrigReview/TrigIntro.html" class="mm-link">Trigonometry</a>
+              <ul>
+                <li><a href="../../Extras/AlgebraTrigReview/TrigFunctions.html" class="mm-link">Trig Function Evaluation</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/TrigGraphs.html" class="mm-link">Graphs of Trig Functions</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/TrigFormulas.html" class="mm-link">Trig Formulas</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveTrigEqn.html" class="mm-link">Solving Trig Equations</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/InverseTrig.html" class="mm-link">Inverse Trig Functions</a></li>
+              </ul>
+            </li>
+            <li><a href="../../Extras/AlgebraTrigReview/ExpLogIntro.html" class="mm-link">Exponentials & Logarithms</a>
+              <ul>
+                <li><a href="../../Extras/AlgebraTrigReview/ExponentialFcns.html" class="mm-link">Basic Exponential Functions</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/LogarithmFcns.html" class="mm-link">Basic Logarithm Functions</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/LogProperties.html" class="mm-link">Logarithm Properties</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SimpLogs.html" class="mm-link">Simplifying Logarithms</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveExpEqn.html" class="mm-link">Solving Exponential Equations</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveLogEqn.html" class="mm-link">Solving Logarithm Equations</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../../Extras/CommonErrors/CommonMathErrors.html" class="mm-link">Common Math Errors</a>
+          <ul>
+            <li><a href="../../Extras/CommonErrors/GeneralErrors.html" class="mm-link">General Errors</a>
+            </li>
+            <li><a href="../../Extras/CommonErrors/AlgebraErrors.html" class="mm-link">Algebra Errors</a>
+            </li>
+            <li><a href="../../Extras/CommonErrors/TrigErrors.html" class="mm-link">Trig Errors</a>
+            </li>
+            <li><a href="../../Extras/CommonErrors/CommonErrors.html" class="mm-link">Common Errors</a>
+            </li>
+            <li><a href="../../Extras/CommonErrors/CalculusErrors.html" class="mm-link">Calculus Errors</a>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../../Extras/ComplexPrimer/ComplexNumbers.html" class="mm-link">Complex Number Primer</a>
+          <ul>
+            <li><a href="../../Extras/ComplexPrimer/Definition.html" class="mm-link">The Definition</a>
+            </li>
+            <li><a href="../../Extras/ComplexPrimer/Arithmetic.html" class="mm-link">Arithmetic</a>
+            </li>
+            <li><a href="../../Extras/ComplexPrimer/ConjugateModulus.html" class="mm-link">Conjugate and Modulus</a>
+            </li>
+            <li><a href="../../Extras/ComplexPrimer/Forms.html" class="mm-link">Polar and Exponential Forms</a>
+            </li>
+            <li><a href="../../Extras/ComplexPrimer/Roots.html" class="mm-link">Powers and Roots</a>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../../Extras/StudyMath/HowToStudyMath.html" class="mm-link">How To Study Math</a>
+          <ul>
+            <li><a href="../../Extras/StudyMath/GeneralTips.html" class="mm-link">General Tips</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/TakingNotes.html" class="mm-link">Taking Notes</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/GettingHelp.html" class="mm-link">Getting Help</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/Homework.html" class="mm-link">Doing Homework</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/ProblemSolving.html" class="mm-link">Problem Solving</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/StudyForExam.html" class="mm-link">Studying For an Exam</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/TakingExam.html" class="mm-link">Taking an Exam</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/Errors.html" class="mm-link">Learn From Your Errors</a>
+            </li>
+          </ul>
+        </li>
+
+        <li><span>Misc Links</span></li>
+        <li><a href="http://tutorial.math.lamar.edu/contact.aspx" class="mm-link">Contact Me</a></li>
+        <li><a href="../../links.html" class="mm-link">Links</a></li>
+        <li><a href="../../mathjax.html" class="mm-link">MathJax Help and Configuration</a></li>
+        <li><a href="../../mystudents.html" class="mm-link">My Students</a></li>
+        <li><a href="http://tutorial.math.lamar.edu/privacy.aspx" class="mm-link">Privacy Statement</a></li>
+        <li><a href="../../help.html" class="mm-link">Site Help & FAQ</a></li>
+        <li><a href="http://tutorial.math.lamar.edu/terms.aspx" class="mm-link">Terms of Use</a></li>
+      </ul>
+    </nav>
+
+
+
+    <div class="top-info-bar">
+      <span id="mobile-title" class="mobile-header-title header-title">Paul's Online Notes</span>
+      <br />
+      <span class="top-menu-breadcrumb">
+        <a href="../../index.html" id="breadcrumb_home_link" title="Go to Main Page">Home</a>
+        <span id="breadcrumb_h_b_sep_span">/ </span>
+        <a href="DE.html" id="breadcrumb_book_link" title="Go to Book Introduction">Differential Equations</a>
+        
+        <span id="breadcrumb_b_c_sep_span">/ </span>
+        <a href="SystemsIntro.html" id="breadcrumb_chapter_link" title="Go to Chapter Introduction">Systems of DE&#39;s</a>
+        
+        <span id="breadcrumb_section_span"> / Modeling</span>
+      </span>
+
+    </div>
+
+    
+
+    <div class="header-divider"></div>
+
+    <div class="content">  
+      
+      
+      <span id="SHLink_NoteMobile" class="SH-Link content-note-link-mobile">Show Mobile Notice</span>
+      <span id="SHImg_NoteMobile" class="fas fa-caret-right SH-padding content-note-link-mobile" aria-hidden="true"></span>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+
+      <span id="SHALink_S_Note" class="SH-Link SH-Hide SH-Bracket">Show All Notes</span>&nbsp;<span id="SHALink_H_Note" class="SH-Link SH-Hide SH-Bracket">Hide All Notes</span>
+      
+      
+      <div id="SHObj_NoteMobile" class="content-note-container content-note-container-mobile">
+        <div class="content-note-header">Mobile Notice</div>
+        <div class="content-note">You appear to be on a device with a "narrow" screen width (<em>i.e.</em> you are probably on a mobile phone).  Due to the nature of the mathematics on this site it is best views in landscape mode.  If your device is not in landscape mode many of the equations will run off the side of your device (should be able to scroll to see them) and some of the menu items will be cut off due to the narrow screen width.</div>
+      </div>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+
+      
+
+
+  <form method="post" action="http://tutorial.math.lamar.edu/Classes/DE/SystemsModeling.aspx" id="ctl00">
+<div class="aspNetHidden">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+</div>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="704416B6" />
+</div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </form>
+
+  <h3>Section 5-12 : Modeling</h3>
+
+    <p>In this section we’re going to go back and revisit the idea of modeling only this time we’re going to look at it in light of the fact that we now know how to solve systems of differential equations.</p>
+    
+    <p>We’re not actually going to be solving any differential equations in this section. Instead we’ll just be setting up a couple of problems that are extensions of some of the work that we’ve done in earlier modeling sections whether it is the <a href="Modeling.html">first order modeling</a> or the <a href="Vibrations.html">vibrations</a> work we did in the second order chapter. Almost all of the systems that we’ll be setting up here will be <a href="NonhomogeneousSystems.html">nonhomogeneous systems</a> (which we only briefly looked at), will be nonlinear (which we didn’t look at) and/or will involve systems with more than two differential 
+      equations (which we didn’t look at, although <em>most</em> of what we do know will still be true).</p>
+    
+    <h4>Mixing Problems</h4>
+    <p>Let’s start things by looking at a mixing problem. The last time we <a href="Modeling.html#First_Model_Mixing">saw</a> these was back in the first order chapter. In those problems we had a tank of liquid with some type of contaminate dissolved in it. Liquid, possibly with more contaminate dissolved in it, entered the tank and liquid left the tank. In this situation we want to extend things out to the following situation.</p>
+    
+      <div class="center-div"><img alt="This is a sketch of two tanks filled with some liquid.  The tank on the left is labeled “Tank 1” and the tank on the right is labeled “Tank 2”.  Above each tank is a pipe with an arrow pointing downwards indicating liquid is flowing out of the pipe and into the tank below it.  Near the top of each tank there is a pipe connecting them with an arrow pointing to the left indicating liquid is flowing from Tank 2 into Tank 1.  Below this is another pipe connecting the two tanks.  In the middle of this pipe there is a “T” connection with a pipe dropping vertically out of the “T” and the pipe coming out of the “T” to the right is smaller in radius than the pipe to the left of the “T”.  There are arrows indicating that liquid is flowing out of Tank 1 into Tank 2 with a portion of the liquid flowing out of the system via the vertical pipe coming out of the “T” connection." border="0" height="234" src="http://tutorial.math.lamar.edu/Classes/DE/SystemsModeling_Files/image001.png" width="450" /></div>
+    <p>We’ll now have two tanks that are interconnected with liquid potentially entering both and with an exit for some of the liquid if we need it (as illustrated by the lower connection). For this situation we’re going to make the following assumptions.</p>
+    
+    <ol class="general-list">
+      <li>The inflow and outflow from each tank are equal, or in other words the volume in each tank is constant. When we worked with a single tank we didn’t need to worry about this, but here if we don’t well end up with a system with nonconstant coefficients and those can be quite difficult to solve.<br/><br /></li>
+      <li>The concentration of the contaminate in each tank is the same at each point in the tank. In reality we know that this won’t be true but without this assumption we’d need to deal with partial differential equations.<br/><br /></li>
+      <li>The concentration of contaminate in the outflow from tank 1 (the lower connection in the figure above) is the same as the concentration in tank 1. Likewise, the concentration of contaminate in the outflow from tank 2 (the upper connection) is the same as the concentration in tank 2.<br/><br /></li>
+      <li>The outflow from tank 1 is split and only some of the liquid exiting tank 1 actually reaches tank 2. The remainder exits the system completely. Note that if we don’t want any liquid to completely exit the system we can think of the exit as having a value that is turned off. Also note that we could just as easily done the same thing for the outflow from tank 2 if we’d wanted to.</li>
+    </ol>
+    
+    <p>Let’s take a look at a quick example.</p>
+    <a class="anchor" name="Systems_Modeling_Ex1"></a>
+  <div class="example">
+    <span class="example-title">Example 1</span> Two 1000 liter tanks are with salt water. Tank 1 contains 800 liters of water initially containing 20 grams of salt dissolved in it and tank 2 contains 1000 liters of water and initially has 80 grams of salt dissolved in it. Salt water with a concentration of ½ gram/liter of salt enters tank 1 at a rate of 4 liters/hour. Fresh water enters tank 2 at a rate of 7 liters/hour. Through a connecting pipe water flows from tank 2 into tank 1 at a rate of 10 liters/hour. Through a different connecting pipe 14 liters/hour flows out of tank 1 and 11 liters/hour are drained out of 
+            the pipe (and hence out of the system completely) and only 3 liters/hour flows back into tank 2. Set up the system that will give the amount of salt in each tank at any given time.
+    <div class="example-content">
+      <span id="SHLink_Soln1" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln1" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln1" class="soln-content">
+        <p>Okay, let \({Q_1}\left( t \right)\) and \({Q_2}\left( t \right)\) be the amount of salt in tank 1 and tank 2 at any time \(t\) respectively. Now all we need to do is set up a differential equation for each tank just as we did back when we had a single tank. The only difference is that we now need to deal with the fact that we’ve got a second inflow to each tank and the concentration of the second inflow will be the concentration of the other tank.</p>
+          
+          <p>Recall that the basic differential equation is the rate of change of salt (\(Q'\)) equals the rate at which salt enters minus the rate at salt leaves. Each entering/leaving rate is found by multiplying the flow rate times the concentration.</p>
+          
+          <p>Here is the differential equation for tank 1.</p>
+          \[\begin{align*}{{Q'}_1} & = \left( 4 \right)\left( {\frac{1}{2}} \right) + \left( {10} \right)\left( {\frac{{{Q_2}}}{{1000}}} \right) - \left( {14} \right)\left( {\frac{{{Q_1}}}{{800}}} \right)\hspace{0.25in}{Q_1}\left( 0 \right) = 20\\ &amp; = 2 + \frac{{{Q_2}}}{{100}} - \frac{{7{Q_1}}}{{400}}\end{align*}\]
+          
+          <p>In this differential equation the first pair of numbers is the salt entering from the external inflow. The second set of numbers is the salt that entering into the tank from the water flowing in from tank 2. The third set is the salt leaving tank as water flows out.</p>
+          
+          <p>Here’s the second differential equation.</p>
+          \[\begin{align*}{{Q'}_2} & = \left( 7 \right)\left( 0 \right) + \left( 3 \right)\left( {\frac{{{Q_1}}}{{800}}} \right) - \left( {10} \right)\left( {\frac{{{Q_2}}}{{1000}}} \right)\hspace{0.25in}{Q_2}\left( 0 \right) = 80\\ &amp; = \frac{{3{Q_1}}}{{800}} - \frac{{{Q_2}}}{{100}}\end{align*}\]
+          
+          <p>Note that because the external inflow into tank 2 is fresh water the concentration of salt in this is zero.</p>
+          
+          <p>In summary here is the system we’d need to solve,</p>
+          \[\begin{align*}{{Q'}_1} & = 2 + \frac{{{Q_2}}}{{100}} - \frac{{7{Q_1}}}{{400}}\hspace{0.25in}{Q_1}\left( 0 \right) = 20\\ {{Q'}_2} & = \frac{{3{Q_1}}}{{800}} - \frac{{{Q_2}}}{{100}}\hspace{0.25in}{Q_2}\left( 0 \right) = 80\end{align*}\]
+          
+          <p>This is a nonhomogeneous system because of the first term in the first differential equation. If we had fresh water flowing into both of these we would in fact have a homogeneous system.</p>
+      </div>
+    </div>
+  </div>
+    
+    <h4>Population</h4>
+    <p>The next type of problem to look at is the population problem. Back in the first order <a href="Modeling.html">modeling</a> section we looked at some population problems. In those problems we looked at a single population and often included some form of predation. The problem in that section was we assumed that the amount of predation would be constant. This however clearly won’t be the case in most situations. The amount of predation will depend upon the population of the predators and the population of the predators will depend, as least partially, upon the population of the prey.</p>
+    
+    <p>So, in order to more accurately (well at least more accurate than what we originally did) we really need to set up a model that will cover both populations, both the predator and the prey. These types of problems are usually called <strong>predator-prey</strong> problems. Here are the assumptions that we’ll make when we build up this model.</p>
+    
+    <ol class="general-list">
+      <li>The prey will grow at a rate that is proportional to its current population if there are no predators.<br/><br /></li>
+      <li>The population of predators will decrease at a rate proportional to its current population if there is no prey.<br /><br /></li>
+      <li>The number of encounters between predator and prey will be proportional to the product of the populations. 
+        <br/><br /></li>
+      <li>Each encounter between the predator and prey will increase the population of the predator and decrease the population of the prey.</li>
+    </ol>
+    
+    <p>So, given these assumptions let’s write down the system for this case.</p>
+    <a class="anchor" name="Systems_Modeling_Ex2"></a>
+  <div class="example">
+    <span class="example-title">Example 2</span> Write down the system of differential equations for the population of predators and prey using the assumptions above.
+    <div class="example-content">
+      <span id="SHLink_Soln2" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln2" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln2" class="soln-content">
+        <p>We’ll start off by letting \(x\) represent the population of the predators and \(y\) represent the population of the prey.</p>
+          
+          <p>Now, the first assumption tells us that, in the absence of predators, the prey will grow at a rate of \(ay\) where \(a &gt; 0\). Likewise, the second assumption tells us that, in the absence of prey, the predators will decrease at a rate of \( - bx\) where \(b &gt; 0\).</p>
+          
+          <p>Next, the third and fourth assumptions tell us how the population is affected by encounters between predators and prey. So, with each encounter the population of the predators will increase at a rate of \(\alpha xy\) and the population of the prey will decrease at a rate of \( - \beta xy\) where \(\alpha &gt; 0\) and \(\beta &gt; 0\).</p>
+          
+          <p>Putting all of this together we arrive at the following system.</p>
+          
+          \[\begin{align*}x' & = - bx + \alpha xy = x\left( {\alpha y - b} \right)\\ y' & = ay - \beta xy = y\left( {a - \beta x} \right)\end{align*}\]
+          
+          <p>Note that this is a nonlinear system and we’ve not (nor will we here) discuss how to solve this kind of system. We simply wanted to give a “better” model for some population problems and to point out that not all systems will be nice and simple linear systems.</p>
+      </div>
+    </div>
+  </div>
+    
+    <h4>Mechanical Vibrations</h4>
+    <p>When we first looked at <a href="Vibrations.html">mechanical vibrations</a> we looked at a single mass hanging on a spring with the possibility of both a damper and/or an external force acting on the mass. Here we want to look at the following situation.</p>
+    
+      <div class="center-div"><img alt="This is a sketch of a horizontal surface with two vertical surfaces coming directly up out of the right and left ends.  Spaced at approximately 1/3 and 2/3 distance from the left vertical surface are objects.  The right object is labeled $m_{2}$ and has a vertical line dropping out of the bottom of it labeled $x_{2}=0$.  This vertical line has an arrow pointing right labeled “+ Displacement”.  The left object is labeled $m_{1}$ and has a vertical line dropping out of the bottom of it labeled $x_{1}=0$.  This vertical line has an arrow pointing right labeled “+ Displ.”.  There is a spring connecting the left vertical surface and the left object labeled $k_{1}$.  There is a spring connecting the two objects labeled $k_{2}$.  There is a spring connecting the right object and the right vertical surface labeled $k_{3}$." border="0" height="144" src="http://tutorial.math.lamar.edu/Classes/DE/SystemsModeling_Files/image002.png" width="378" /></div>
+    
+    <p>In the figure above we are assuming that the system is at rest. In other words, all three springs are currently at their natural lengths and are not exerting any forces on either of the two masses and that there are no currently any external forces acting on either mass.</p>
+    
+    <p>We will use the following assumptions about this situation once we start the system in motion.</p>
+    
+    <ol class="general-list">
+      <li>\({x_1}\) will measure the displacement of mass \({m_1}\) from its equilibrium (<em>i.e.</em> resting) position and \({x_2}\) will measure the displacement of mass \({m_2}\) from its equilibrium position.<br/><br /></li>
+      <li>As noted in the figure above all displacement will be assumed to be positive if it is to the right of equilibrium position and negative if to the left of the equilibrium position.<br/><br /></li>
+      <li>All forces acting to the right are positive forces and all forces acting to the left are negative forces.<br/><br /></li>
+      <li>The spring constants, \({k_1}\), \({k_2}\), and \({k_3}\), are all positive and may or may not be the same value.<br/><br /></li>
+      <li>The surface that the system is sitting on is frictionless and so the mass of each of the objects will not affect the system in any way.</li>
+    </ol>
+    
+    <p>Before writing down the system for this case recall that the force exerted by the spring on each mass is the spring constant times the amount that the spring has been compressed or stretched and we’ll need to be careful with signs to make sure that the force is acting in the correct direction.</p>
+    <a class="anchor" name="Systems_Modeling_Ex3"></a>
+  <div class="example">
+    <span class="example-title">Example 3</span> Write down the system of differential equations for the spring and mass system above.
+    <div class="example-content">
+      <span id="SHLink_Soln3" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln3" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln3" class="soln-content">
+        <p>To help us out let’s first take a quick look at a situation in which both of the masses have been moved. This is shown below.</p>
+          
+          
+            <div class="center-div"><img alt="This is a sketch of a horizontal surface with two vertical surfaces coming directly up out of the right and left ends.  Spaced at approximately 1/3 and 2/3 distance from the left vertical surface are two vertical lines dropping out of the horizontal surface.  
+
+The left vertical line is labeled $x{1}=0$ and to the right of this is an object labeled $m_{1}$ and out of the bottom of this object a dashed line drops straight down.  The distance between the dashed line and the left vertical line is shown as $x_{1}$.
+
+The right vertical line is labeled $x{s}=0$ and to the right of this is an object labeled $m_{s}$ and out of the bottom of this object a dashed line drops straight down.  The distance between the dashed line and the right vertical line is shown as $x_{2}$.
+
+There is a spring connecting the left vertical surface and the left object labeled $k_{1}$.  There is a spring connecting the two objects labeled $k_{2}$.  There is a spring connecting the right object and the right vertical surface labeled $k_{3}$.
+" border="0" height="155" src="http://tutorial.math.lamar.edu/Classes/DE/SystemsModeling_Files/image003.png" width="378" /></div>
+          <p>Before proceeding let’s note that this is only a representation of a typical case, but most definitely not all possible cases.</p>
+          
+          <p>In this case we’re assuming that both \({x_1}\) and \({x_2}\) are positive and that \({x_2} - {x_1} &lt; 0\), or in other words, both masses have been moved to the right of their respective equilibrium points and that \({m_1}\) has been moved farther than \({m_2}\). So, under these assumptions on \({x_1}\) and \({x_2}\) we know that the spring on the left (with spring constant \({k_1}\)) has been stretched past it’s natural length while the middle spring (spring constant \({k_2}\)) and the right spring (spring constant \({k_3}\)) are both under compression.</p>
+          
+          <p>Also, we’ve shown the external forces, \({F_1}\left( t \right)\) and \({F_2}\left( t \right)\), as present and acting in the positive direction. They do not, in practice, need to be present in every situation in which case we will assume that \({F_1}\left( t \right) = 0\) and/or \({F_2}\left( t \right) = 0\). Likewise, if the forces are in fact acting in the negative direction we will then assume that \({F_1}\left( t \right) &lt; 0\) and/or \({F_2}\left( t \right) &lt; 0\).</p>
+          
+          <p>Before proceeding we need to talk a little bit about how the middle spring will behave as the masses move. Here are all the possibilities that we can have and the affect each will have on \({x_2} - {x_1}\). Note that in each case the amount of compression/stretch in the spring is given by \(\left| {{x_2} - {x_1}} \right|\) although we won’t be using the absolute value bars when we set up the differential equations.</p>
+          
+        <ol class="general-list">
+          <li>If both mass move the same amount in the same direction then the middle spring will not have changed length and we’ll have \({x_2} - {x_1} = 0\). <br /><br /></li>
+          <li>If both masses move in the positive direction then the sign of \({x_2} - {x_1}\) will tell us which has moved more. If \({m_1}\) moves more than \({m_2}\) then the spring will be in compression and \({x_2} - {x_1} &lt; 0\). Likewise, if \({m_2}\) moves more than \({m_1}\) then the spring will have been stretched and \({x_2} - {x_1} &gt; 0\).<br /><br /></li>
+          <li>If both masses move in the negative direction we’ll have pretty much the opposite behavior as #2. If \({m_1}\) moves more than \({m_2}\) then the spring will have been stretched and \({x_2} - {x_1} &gt; 0\). Likewise, if \({m_2}\) moves more than \({m_1}\) then the spring will be in compression and \({x_2} - {x_1} &lt; 0\).<br /><br /></li>
+          <li>If \({m_1}\) moves in the positive direction and \({m_2}\) moves in the negative direction then the spring will be in compression and \({x_2} - {x_1} &lt; 0\).<br /><br /></li>
+          <li>Finally, if \({m_1}\) moves in the negative direction and \({m_2}\) moves in the positive direction then the spring will have been stretched and \({x_2} - {x_1} &gt; 0\).</li>
+        </ol>
+          
+          <p>Now, we’ll use the figure above to help us develop the differential equations (the figure corresponds to case 2 above…) and then make sure that they will also hold for the other cases as well.</p>
+          
+          <p>Let’s start off by getting the differential equation for the forces acting on \({m_1}\). Here is a quick sketch of the forces acting on \({m_1}\) for the figure above.</p>
+          
+            <div class="center-div"><img alt="Modeling_Vibration_G3" border="0" height="77" src="http://tutorial.math.lamar.edu/Classes/DE/SystemsModeling_Files/image004.png" width="241" /></div>
+
+          <p>In this case \({x_1} &gt; 0\) and so the first spring has been stretched and so will exert a negative (<em>i.e.</em> to the left) force on the mass. The force from the first spring is then\( - {k_1}{x_1}\) and the “-” is needed because the force is negative but both \({k_1}\) and \({x_1}\) are positive.</p>
+          
+          <p>Next, because we’re assuming that \({m_1}\) has moved more than \({m_2}\) and both have moved in the positive direction we also know that \({x_2} - {x_1} &lt; 0\). Because \({m_1}\) has moved more than \({m_2}\) we know that the second spring will be under compression and so the force should be acting in the negative direction on \({m_1}\) and so the force will be \({k_2}\left( {{x_2} - {x_1}} \right)\). Note that because \({k_2}\) is positive and \({x_2} - {x_1}\) is negative this force will have the correct sign (<em>i.e.</em> negative).</p>
+          
+          <p>The differential equation for \({m_1}\) is then,</p>
+          \[{m_1}{x''_1} = - \,{k_1}{x_1} + {k_2}\left( {{x_2} - {x_1}} \right) + {F_1}\left( t \right)\]
+          
+          <p>Note that this will also hold for all the other cases. If \({m_1}\) has been moved in the negative direction the force form the spring on the right that acts on the mass will be positive and \( - {k_1}{x_1}\) will be a positive quantity in this case. Next, if the middle mass has been stretched (<em>i.e.</em> \({x_2} - {x_1} &gt; 0\)) then the force from this spring on \({m_1}\) will be in the positive direction and \({k_2}\left( {{x_2} - {x_1}} \right)\) will be a positive quantity in this case. Therefore, this differential equation holds for all cases not just the one we illustrated at the start of this problem.</p>
+          
+          <p>Let’s now write down the differential equation for all the forces that are acting on \({m_2}\). Here is a sketch of the forces acting on this mass for the situation sketched out in the figure above.</p>
+          
+            <div class="center-div"><img alt="Modeling_Vibration_G4" border="0" height="77" src="http://tutorial.math.lamar.edu/Classes/DE/SystemsModeling_Files/image005.png" width="251" /></div>
+          <p>In this case \({x_2}\) is positive and so the spring on the right is under compression and will exert a negative force on \({m_2}\) and so this force should be \( - {k_3}{x_2}\), where the “-” is required because both \({k_3}\) and \({x_2}\) are positive. Also, the middle spring is still under compression but the force that it exerts on this mass is now a positive force, unlike in the case of \({m_1}\), and so is given by \( - {k_2}\left( {{x_2} - {x_1}} \right)\). The “-” on this force is required because \({x_2} - {x_1}\) is negative and the force must be positive.</p>
+          
+          <p>The differential equation for \({m_2}\) is then,</p>
+          \[{m_2}{x''_2} = - \,{k_3}{x_2} - {k_2}\left( {{x_2} - {x_1}} \right) + {F_2}\left( t \right)\]
+          
+          <p>We’ll leave it to you to verify that this differential equation does in fact hold for all the other cases.</p>
+          
+          <p>Putting all of this together and doing a little rewriting will then give the following system of differential equations for this situation.</p>
+          
+          \[\begin{align*}{m_1}{{x''}_1} & = - \left( {{k_1} + \,{k_2}} \right){x_1} + {k_2}{x_2} + {F_1}\left( t \right)\\ {m_2}{{x''}_2} & = {k_2}{x_1} - \left( {{k_2} + \,{k_3}} \right){x_2} + {F_2}\left( t \right)\end{align*}\]
+          
+          <p>This is a system to two linear second order differential equations that may or may not be nonhomogeneous depending whether there are any external forces, \({F_1}\left( t \right)\) and \({F_2}\left( t \right)\), acting on the masses.</p>
+      </div>
+    </div>
+  </div>
+
+    
+    <p>We have not talked about how to solve systems of second order differential equations. However, it can be converted to a system of first order differential equations as the next example shows and in many cases we could solve that.</p>
+    <a class="anchor" name="Systems_Modeling_Ex4"></a>
+  <div class="example">
+    <span class="example-title">Example 4</span> Convert the system from the previous example to a system of 1<sup>st</sup> order differential equations.
+    <div class="example-content">
+      <span id="SHLink_Soln4" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln4" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln4" class="soln-content">
+        <p>This isn’t too hard to do. <a href="SystemsDE.html#Systems_Systems_Ex1">Recall</a> that we did this for single higher order differential equations earlier in the chapter when we first started to look at systems. To convert this to a system of first order differential equations we can make the following definitions.</p>
+          
+          \[{u_1} = {x_1}\hspace{0.25in}{u_2} = {x'_1}\hspace{0.25in}{u_3} = {x_2}\hspace{0.25in}{u_4} = {x'_2}\]
+          
+          <p>We can then convert each of the differential equations as we did earlier in the chapter.</p>
+          
+          \[\begin{align*}{{u'}_1} & = {{x'}_1} = {u_2}\\ {{u'}_2} & = {{x''}_1} = \frac{1}{{{m_1}}}\left( { - \left( {{k_1} + \,{k_2}} \right){x_1} + {k_2}{x_2} + {F_1}\left( t \right)} \right) = \frac{1}{{{m_1}}}\left( { - \left( {{k_1} + \,{k_2}} \right){u_1} + {k_2}{u_3} + {F_1}\left( t \right)} \right)\\ {{u'}_3} & = {{x'}_2} = {u_4}\\  {{u'}_4} & = {{x''}_2} = \frac{1}{{{m_2}}}\left( {{k_2}{x_1} - \left( {{k_2} + \,{k_3}} \right){x_2} + {F_2}\left( t \right)} \right) = \frac{1}{{{m_2}}}\left( {{k_2}{u_1} - \left( {{k_2} + \,{k_3}} \right){u_3} + {F_2}\left( t \right)} \right)\end{align*}\]
+          
+          <p>Eliminating the “middle” step we get the following system of first order differential equations.</p>
+          
+          \[\begin{align*}{{u'}_1} & = {u_2}\\ {{u'}_2} & = \frac{1}{{{m_1}}}\left( { - \left( {{k_1} + \,{k_2}} \right){u_1} + {k_2}{u_3} + {F_1}\left( t \right)} \right)\\  {{u'}_3} & = {u_4}\\ {{u'}_4} & = \frac{1}{{{m_2}}}\left( {{k_2}{u_1} - \left( {{k_2} + \,{k_3}} \right){u_3} + {F_2}\left( t \right)} \right)\end{align*}\]
+          
+          <p>The matrix form of this system would be,</p>
+          
+          \[\vec u' = \left[ {\begin{array}{*{20}{c}}0&amp;1&amp;0&amp;0\\{\frac{{ - \left( {{k_1} + {k_2}} \right)}}{{{m_1}}}}&amp;0&amp;{\frac{{{k_2}}}{{{m_1}}}}&amp;0\\0&amp;0&amp;0&amp;1\\{\frac{{{k_2}}}{{{m_2}}}}&amp;0&amp;{\frac{{ - \left( {{k_2} + {k_3}} \right)}}{{{m_2}}}}&amp;0\end{array}} \right]\vec u + \left( {\begin{array}{*{20}{c}}0\\{\frac{{{F_1}\left( t \right)}}{{{m_1}}}}\\0\\{\frac{{{F_2}\left( t \right)}}{{{m_2}}}}\end{array}} \right)\hspace{0.25in}{\mbox{where, }}\vec u = \left( {\begin{array}{*{20}{c}}{{u_1}}\\{{u_2}}\\{{u_3}}\\{{u_4}}\end{array}} \right)\]
+          
+          <p>While we never discussed how to solve systems of more than two linear first order differential equations we know most of what we need to solve this.</p>
+          
+          <p>In an earlier <a href="NonhomogeneousSystems.html">section</a> we discussed briefly solving nonhomogeneous systems and all of that information is still valid here.</p>
+          
+          <p>For the homogenous system, that we’d still need to solve for the general solution to the nonhomogeneous system, we know most of what we need to know in order to solve this. The only issues that we haven’t dealt with are what to do with repeated complex eigenvalues (which are now a possibility) and what to do with eigenvalues of multiplicity greater than 2 (which are again now a possibility). Both of these topics will be briefly discussed in a later <a href="HOSystems.html">section</a>.</p>
+      </div>
+    </div>
+  </div>
+  
+
+
+      
+
+
+
+    </div>
+    <!-- End of content div -->
+
+
+    <div class="footer">
+      <div class="footer-links">
+        [<a href="http://tutorial.math.lamar.edu/Contact.aspx">Contact Me</a>]&nbsp;[<a href="../../MyStudents-2.html">My Students</a>]&nbsp;[<a href="http://tutorial.math.lamar.edu/Privacy.aspx">Privacy Statement</a>]&nbsp;[<a href="../../Help-2.html">Site Help &amp; FAQ</a>]&nbsp;[<a href="http://tutorial.math.lamar.edu/Terms.aspx">Terms of Use</a>]
+      </div>
+      <div class="footer-dates">
+        <div class="footer-copyright"><span id="lblCopyRight">&copy; 2003 - 2019 Paul Dawkins</span></div>
+        <div class="footer-spacer"></div>
+        <div class="footer-modified-date">Page Last Modified : <span id="lblModified">6/4/2018</span></div>
+      </div>
+      
+
+    </div>
+  </div>
+  <!-- End of page div...  -->
+</body>
+
+<!-- Mirrored from tutorial.math.lamar.edu/Classes/DE/SystemsModeling.aspx by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 27 Feb 2019 06:15:36 GMT -->
+</html>

@@ -1,0 +1,1456 @@
+
+
+<!DOCTYPE html>
+
+<html>
+
+<!-- Mirrored from tutorial.math.lamar.edu/Classes/DE/BVPEvals.aspx by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 27 Feb 2019 06:15:37 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=yes" /><meta http-equiv="X-UA-Compatible" content="IE=edge" />  <!-- For best MathJax performance on IE  -->
+
+  <meta name="google-site-verification" content="uLoA31CJfOhIVMJWBjCmQL8xNMmmLybZU3LRKavy9WQ" /><title>
+	Differential Equations - Eigenvalues and Eigenfunctions
+</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="../../../www.googletagmanager.com/gtag/js1872?id=UA-331594-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-331594-1');
+  </script>
+
+  <link type="text/css" href="../../css/jquery.mmenu.all.css" rel="stylesheet" /><link type="text/css" href="../../css/jquery.dropdown.css" rel="stylesheet" /><link href="../../FA/css/fontawesome-all.min.css" rel="stylesheet" /><link type="text/css" href="../../css/notes-all.css" rel="stylesheet" /><link type="text/css" href="../../css/notes-google.css" rel="stylesheet" /><link type="text/css" href="../../css/notes-mmenu.css" rel="stylesheet" /><link type="text/css" href="../../css/notes-dropdown.css" rel="stylesheet" />
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+     TeX: { equationNumbers: { autoNumber: "AMS" } }
+    });
+  </script>
+  <script type="text/javascript" async src="../../../cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax2ba6.js?config=TeX-AMS_CHTML-full"></script>
+  <script type="text/javascript" src="../../../code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="../../js/jquery.mmenu.all.js"></script>
+  <script type="text/javascript" src="../../js/jquery.dropdown.js"></script>
+  <script type="text/javascript" src="../../js/notes-all.js"></script>  
+
+  <script>
+    (function () {
+      var cx = '001004262401526223570:11yv6vpcqvy';
+      var gcse = document.createElement('script');
+      gcse.type = 'text/javascript';
+      gcse.async = true;
+      gcse.src = '../../../cse.google.com/cse07b6.html?cx=' + cx;
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(gcse, s);
+    })();
+  </script>
+
+<meta http-equiv="keywords" name="keywords" content="eigenvalue, eigenfunction, bvp, boundary value problem" /><meta http-equiv="description" name="description" content="In this section we will define eigenvalues and eigenfunctions for boundary value problems.  We will work quite a few examples illustrating how to find eigenvalues and eigenfunctions.  In one example the best we will be able to do is estimate the eigenvalues as that is something that will happen on a fairly regular basis with these kinds of problems." /></head>
+<body onload="init({Notes: 'NoteMobile;8/21/2018;true'})">
+
+  <div id="page">
+
+    <div class="header">
+      <div class="header-row">
+        <!--<a href="#menu"><span></span></a>-->
+        <div id="side-menu-icon" class="header-side-menu-icon"><a href="#menu"><span class="fas fa-bars fa-lg" aria-hidden="true" title="Main Menu - Change between topics, chapters and sections as well as a few extra pages."></span></a></div>
+        <span class="header-title"><a href="../../index.html" class="header-title-link">Paul's Online Notes</a></span>
+        <div class="header-spacer"></div>
+
+        <div id="content-top-menu" class="top-menu">
+          <button id="content-type-menu" class="top-menu-button" data-jq-dropdown="#jq-dropdown-type" title="View (Notes, Practice Problems or Assignment Problems, Show/Hide Solutions and/or Steps) Menu">
+            <span id="tab_top_menu_notes" class="top-menu-item-title">Notes</span> <span class="far fa-eye fa-lg" aria-hidden="true"></span>
+          </button>
+
+          <button id="quicknav-menu" class="top-menu-button" data-jq-dropdown="#jq-dropdown-quicknav" title="Quick Navigation (Previous/Next Sections and Problems and Full Problem List) Menu">
+            <span class="top-menu-item-title">Quick Nav</span> <span class="fas fa-exchange fa-lg" aria-hidden="true"></span>
+          </button>
+          
+          <button id="download-menu" class="top-menu-button" data-jq-dropdown="#jq-dropdown-download" title="Download pdf Menu">
+            <span class="top-menu-item-title">Download</span> <span class="far fa-download fa-lg" aria-hidden="true"></span>
+          </button>
+
+          <button id="print-menu" class="top-menu-button top-menu-button-icon-only" data-jq-dropdown="#jq-print-download" title="Print Menu">
+            <span class="far fa-print fa-lg" aria-hidden="true"></span>
+          </button>
+        </div>
+
+        <div id="header-google-search" class="header-search">
+          <gcse:search></gcse:search>
+        </div>
+        <div id="header-search-icon" title="Site Search" class="header-menu-icon"><span id="search-icon" class="fas fa-search" aria-hidden="true"></span></div>
+
+      </div>
+    </div>
+
+     <div id="jq-dropdown-type" class="jq-dropdown jq-dropdown-tip">
+      <ul class="jq-dropdown-menu">
+        
+        <li id="li_type_menu_goto" class="top-menu-nav-title">Go To</li>
+        <li id="li_type_menu_notes">
+          <span id="type_menu_notes_span" title="Viewing the Notes for the current topic." class="top-menu-current">Notes</span>
+          
+        </li>
+        <li id="li_type_menu_practice">
+          <span id="type_menu_problem_span_de" class="top-menu-item-text">Practice and Assignment problems are not yet written.  As time permits I am working on them, however I don't have the amount of free time that I used to so it will take a while before anything shows up here.</span>
+          
+          
+        </li>
+        <li id="li_type_menu_asgn">
+          
+          
+        </li>
+        <li id="li_type_menu_sh" class="top-menu-nav-title">Show/Hide</li>
+        <li id="li_type_menu_show" title="Show any hidden solutions and/or steps that may be present on the page."><a href="javascript:SHPrintPage(1,0)" id="view_menu_show">Show all Solutions/Steps/<em>etc.</em></a></li>
+        <li id="li_type_menu_hide" title="Hide any visible solutions and/or steps that may be present on the page."><a href="javascript:SHPrintPage(0,0)" id="view_menu_hide">Hide all Solutions/Steps/<em>etc.</em></a></li>
+      </ul>
+    </div>
+
+    <div id="jq-dropdown-quicknav" class="jq-dropdown jq-dropdown-tip">
+      <ul class="jq-dropdown-menu">
+        <li id="li_nav_menu_sections" class="top-menu-nav-title">Sections</li>
+        <li id="li_nav_menu_prev_section"><a href="BoundaryValueProblem.html" id="a_nav_menu_prev_section" class="top-menu-nav-link" title="Previous Section : Boundary Value Problems"><span class="top-menu-prev fas fa-chevron-left"></span> Boundary Value Problems</a></li>
+        <li id="li_nav_menu_next_section"><a href="PeriodicOrthogonal.html" id="a_nav_menu_next_section" class="top-menu-nav-link" title="Next Section : Periodic Functions &amp; Orthogonal Functions"><span class="top-menu-prev-hidden fas fa-chevron-left"></span> Periodic Functions & Orthogonal Functions <span class="top-menu-next fas fa-chevron-right"></span></a></li>
+        <li id="li_nav_menu_chapters" class="top-menu-nav-title">Chapters</li>
+        <li id="li_nav_menu_prev_chapter"><a href="IntroHigherOrder.html" id="a_nav_menu_prev_chapter" class="top-menu-nav-link" title="Previous Chapter : Higher Order Differential Equations"><span class="top-menu-prev fas fa-chevron-left"></span><span class="top-menu-prev fas fa-chevron-left"></span> Higher Order Differential Equations</a></li>
+        <li id="li_nav_menu_next_chapter"><a href="IntroPDE.html" id="a_nav_menu_next_chapter" class="top-menu-nav-link" title="Next Chapter : Partial Differential Equations "><span class="top-menu-prev-hidden fas fa-chevron-left"></span><span class="top-menu-prev-hidden fas fa-chevron-left"></span> Partial Differential Equations  <span class="top-menu-next fas fa-chevron-right"></span><span class="top-menu-next fas fa-chevron-right"></span></a></li>
+        
+        
+        
+        
+        <li id="li_nav_menu_classes" class="top-menu-nav-title">Classes</li>
+        <li>
+          
+          <a href="../Alg/Alg.html" id="nav_menu_alg_link" title="Go To Algebra Notes">Algebra</a>
+        </li>
+        <li>
+          
+          <a href="../CalcI/CalcI.html" id="nav_menu_calci_link" title="Go To Calculus I Notes">Calculus I</a>
+        </li>
+        <li>
+          
+          <a href="../CalcII/CalcII.html" id="nav_menu_calcii_link" title="Go To Calculus II Notes">Calculus II</a>
+        </li>
+        <li>
+          
+          <a href="../CalcIII/CalcIII.html" id="nav_menu_calciii_link" title="Go To Calculus III Notes">Calculus III</a>
+        </li>
+        <li>
+          <span id="nav_menu_de_span" title="Currently Viewing Differential Equations Material" class="top-menu-current">Differential Equations</span>
+          
+        </li>
+        <li id="li_nav_menu_extras" class="top-menu-nav-title">Extras</li>
+        <li>
+          
+          <a href="../../Extras/AlgebraTrigReview/AlgebraTrig.html" id="nav_menu_algtrig_link" title="Go To Algebra &amp; Trig Review">Algebra &amp; Trig Review</a>
+        </li>
+        <li>
+          
+          <a href="../../Extras/CommonErrors/CommonMathErrors.html" id="nav_menu_commonerrors_link" title="Go To Common Math Errors">Common Math Errors</a>
+        </li>
+        <li>
+          
+          <a href="../../Extras/ComplexPrimer/ComplexNumbers.html" id="nav_menu_complexnumbers_link" title="Go To Complex Numbers Primer">Complex Number Primer</a>
+        </li>
+        <li>
+          
+          <a href="../../Extras/StudyMath/HowToStudyMath.html" id="nav_menu_studymath_link" title="Go To How To Study Math">How To Study Math</a>
+        </li>
+        <li>
+          
+          <a href="../../Extras/CheatSheets_Tables.html" id="nav_menu_cheattables_link" title="Go To List of Cheat Sheets and Tables">Cheat Sheets &amp; Tables</a>
+        </li>
+        <li id="li_nav_menu_misc" class="top-menu-nav-title">Misc</li>
+        <li><a href="http://tutorial.math.lamar.edu/contact.aspx" id="nav_menu_contact" title="Contact Me!">Contact Me</a></li>
+        <li><a href="../../mathjax.html" id="nav_menu_mathjax" title="Info on MathJax and MathJax Configuration Menu">MathJax Help and Configuration</a></li>
+        <li><a href="../../mystudents.html" id="nav_menu_students" title="Go here if you are currently taking a class from me!">My Students</a></li>
+      </ul>
+    </div>
+
+    <div id="jq-dropdown-download" class="jq-dropdown jq-dropdown-anchor-right jq-dropdown-tip">
+      <ul class="jq-dropdown-menu">
+        
+        <li id="li_download_menu_notes" class="top-menu-nav-title">Notes Downloads</li>
+        <li id="li_download_menu_notes_book"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=B,1,N" id="download_menu_notes_book" data-PDF="Download - Menu$Notes - Book$Differential Equations$/Downloads/DE/Notes/Complete.pdf">Complete Book</a></li>
+        
+        <li id="li_download_menu_notes_chapter"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=C,77,N" id="download_menu_notes_chapter" data-PDF="Download - Menu$Notes - Chapter$Differential Equations - Boundary Value Problems &amp; Fourier Series$/Downloads/DE/Notes/BVP_Fourier.pdf">Current Chapter</a></li>
+        <li id="li_download_menu_notes_section"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=S,465,N" id="download_menu_notes_section" data-PDF="Download - Menu$Notes - Section$Differential Equations - Eigenvalues and Eigenfunctions$/Downloads/DE/Notes/BVPEvals.pdf">Current Section</a></li>
+        <li id="li_download_menu_practice" class="top-menu-nav-title">Practice Problems Downloads</li>
+        <li id="li_download_menu_practice_de"><span class="top-menu-item-text">Problems not yet written.</span></li>
+        
+        
+        
+        
+        
+        
+        
+        
+        <li id="li_download_menu_asgn" class="top-menu-nav-title">Assignment Problems Downloads</li>
+        <li id="li_download_menu_asgn_de"><span class="top-menu-item-text">Problems not yet written.</span></li>
+        
+        
+        
+        <li id="li_download_menu_other" class="top-menu-nav-title">Other Items</li>
+        <li id="li_download_menu_urls">
+          <a href="http://tutorial.math.lamar.edu/DownloadURLs.aspx?bi=1&amp;ci=77&amp;si=465" id="download_menu_urls">Get URL's for Download Items</a>
+        </li>
+      </ul>
+    </div>
+
+    <div id="jq-print-download" class="jq-dropdown jq-dropdown-anchor-right jq-dropdown-tip">
+      <ul class="jq-dropdown-menu">
+        <li id="li_print_menu_default"><a href="javascript:SHPrintPage()" id="print_menu_default">Print Page in Current Form (Default)</a></li>
+        <li id="li_print_menu_show"><a href="javascript:SHPrintPage(1,1)" id="print_menu_show">Show all Solutions/Steps and Print Page</a></li>
+        <li id="li_print_menu_hide"><a href="javascript:SHPrintPage(0,1)" id="print_menu_hide">Hide all Solutions/Steps and Print Page</a></li>
+      </ul>
+    </div>
+
+
+
+   
+
+    <nav id="menu" class="notes-nav">
+      <ul>
+        <li><a href="../../index.html" class="mm-link">Home</a></li>
+        <li><span>Classes</span></li>
+        <li><a href="../Alg/Alg.html" class="mm-link">Algebra</a>
+          <ul>
+            <li><a href="../Alg/Preliminaries.html" class="mm-link">Preliminaries</a>
+              <ul>
+                <li><a href="../Alg/IntegerExponents.html" class="mm-link">Integer Exponents</a></li>
+                <li><a href="../Alg/RationalExponents.html" class="mm-link">Rational Exponents</a></li>
+                <li><a href="../Alg/Radicals.html" class="mm-link">Radicals</a></li>
+                <li><a href="../Alg/Polynomials.html" class="mm-link">Polynomials</a></li>
+                <li><a href="../Alg/Factoring.html" class="mm-link">Factoring Polynomials</a></li>
+                <li><a href="../Alg/RationalExpressions.html" class="mm-link">Rational Expressions</a></li>
+                <li><a href="../Alg/ComplexNumbers.html" class="mm-link">Complex Numbers</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/Solving.html" class="mm-link">Solving Equations and Inequalities</a>
+              <ul>
+                <li><a href="../Alg/SolutionSets.html" class="mm-link">Solutions and Solution Sets</a></li>
+                <li><a href="../Alg/SolveLinearEqns.html" class="mm-link">Linear Equations</a></li>
+                <li><a href="../Alg/LinearApps.html" class="mm-link">Applications of Linear Equations</a></li>
+                <li><a href="../Alg/SolveMultiVariable.html" class="mm-link">Equations With More Than One Variable</a></li>
+                <li><a href="../Alg/SolveQuadraticEqnsI.html" class="mm-link">Quadratic Equations - Part I</a></li>
+                <li><a href="../Alg/SolveQuadraticEqnsII.html" class="mm-link">Quadratic Equations - Part II</a></li>
+                <li><a href="../Alg/SolveQuadraticEqnSummary.html" class="mm-link">Quadratic Equations : A Summary</a></li>
+                <li><a href="../Alg/QuadraticApps.html" class="mm-link">Applications of Quadratic Equations</a></li>
+                <li><a href="../Alg/ReducibleToQuadratic.html" class="mm-link">Equations Reducible to Quadratic in Form</a></li>
+                <li><a href="../Alg/SolveRadicalEqns.html" class="mm-link">Equations with Radicals</a></li>
+                <li><a href="../Alg/SolveLinearInequalities.html" class="mm-link">Linear Inequalities</a></li>
+                <li><a href="../Alg/SolvePolyInequalities.html" class="mm-link">Polynomial Inequalities</a></li>
+                <li><a href="../Alg/SolveRationalInequalities.html" class="mm-link">Rational Inequalities</a></li>
+                <li><a href="../Alg/SolveAbsValueEqns.html" class="mm-link">Absolute Value Equations</a></li>
+                <li><a href="../Alg/SolveAbsValueIneq.html" class="mm-link">Absolute Value Inequalities</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/Graphing_Functions.html" class="mm-link">Graphing and Functions</a>
+              <ul>
+                <li><a href="../Alg/Graphing.html" class="mm-link">Graphing</a></li>
+                <li><a href="../Alg/Lines.html" class="mm-link">Lines</a></li>
+                <li><a href="../Alg/Circles.html" class="mm-link">Circles</a></li>
+                <li><a href="../Alg/FunctionDefn.html" class="mm-link">The Definition of a Function</a></li>
+                <li><a href="../Alg/GraphFunctions.html" class="mm-link">Graphing Functions</a></li>
+                <li><a href="../Alg/CombineFunctions.html" class="mm-link">Combining Functions</a></li>
+                <li><a href="../Alg/InverseFunctions.html" class="mm-link">Inverse Functions</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/CommonGraphs.html" class="mm-link">Common Graphs</a>
+              <ul>
+                <li><a href="../Alg/Lines_Circles_PWF.html" class="mm-link">Lines, Circles and Piecewise Functions</a></li>
+                <li><a href="../Alg/Parabolas.html" class="mm-link">Parabolas</a></li>
+                <li><a href="../Alg/Ellipses.html" class="mm-link">Ellipses</a></li>
+                <li><a href="../Alg/Hyperbolas.html" class="mm-link">Hyperbolas</a></li>
+                <li><a href="../Alg/MiscFunctions.html" class="mm-link">Miscellaneous Functions</a></li>
+                <li><a href="../Alg/Transformations.html" class="mm-link">Transformations</a></li>
+                <li><a href="../Alg/Symmetry.html" class="mm-link">Symmetry</a></li>
+                <li><a href="../Alg/GraphRationalFcns.html" class="mm-link">Rational Functions</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/PolynomialFunctions.html" class="mm-link">Polynomial Functions</a>
+              <ul>
+                <li><a href="../Alg/DividingPolynomials.html" class="mm-link">Dividing Polynomials</a></li>
+                <li><a href="../Alg/ZeroesOfPolynomials.html" class="mm-link">Zeroes/Roots of Polynomials</a></li>
+                <li><a href="../Alg/GraphingPolynomials.html" class="mm-link">Graphing Polynomials</a></li>
+                <li><a href="../Alg/FindingZeroesOfPolynomials.html" class="mm-link">Finding Zeroes of Polynomials</a></li>
+                <li><a href="../Alg/PartialFractions.html" class="mm-link">Partial Fractions</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/ExpAndLog.html" class="mm-link">Exponential and Logarithm Functions</a>
+              <ul>
+                <li><a href="../Alg/ExpFunctions.html" class="mm-link">Exponential Functions</a></li>
+                <li><a href="../Alg/LogFunctions.html" class="mm-link">Logarithm Functions</a></li>
+                <li><a href="../Alg/SolveExpEqns.html" class="mm-link">Solving Exponential Equations</a></li>
+                <li><a href="../Alg/SolveLogEqns.html" class="mm-link">Solving Logarithm Equations</a></li>
+                <li><a href="../Alg/ExpLogApplications.html" class="mm-link">Applications</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/Systems.html" class="mm-link">Systems of Equations</a>
+              <ul>
+                <li><a href="../Alg/SystemsTwoVrble.html" class="mm-link">Linear Systems with Two Variables</a></li>
+                <li><a href="../Alg/SystemsThreeVrble.html" class="mm-link">Linear Systems with Three Variables</a></li>
+                <li><a href="../Alg/AugmentedMatrix.html" class="mm-link">Augmented Matrices</a></li>
+                <li><a href="../Alg/AugmentedMatrixII.html" class="mm-link">More on the Augmented Matrix</a></li>
+                <li><a href="../Alg/NonlinearSystems.html" class="mm-link">Nonlinear Systems</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../CalcI/CalcI.html" class="mm-link">Calculus I</a>
+          <ul>
+            <li><a href="../CalcI/ReviewIntro.html" class="mm-link">Review</a>
+              <ul>
+                <li><a href="../CalcI/Functions.html" class="mm-link">Functions</a></li>
+                <li><a href="../CalcI/InverseFunctions.html" class="mm-link">Inverse Functions</a></li>
+                <li><a href="../CalcI/TrigFcns.html" class="mm-link">Trig Functions</a></li>
+                <li><a href="../CalcI/TrigEquations.html" class="mm-link">Solving Trig Equations</a></li>
+                <li><a href="../CalcI/TrigEquations_CalcI.html" class="mm-link">Trig Equations with Calculators, Part I</a></li>
+                <li><a href="../CalcI/TrigEquations_CalcII.html" class="mm-link">Trig Equations with Calculators, Part II</a></li>
+                <li><a href="../CalcI/ExpFunctions.html" class="mm-link">Exponential Functions</a></li>
+                <li><a href="../CalcI/LogFcns.html" class="mm-link">Logarithm Functions</a></li>
+                <li><a href="../CalcI/ExpLogEqns.html" class="mm-link">Exponential and Logarithm Equations</a></li>
+                <li><a href="../CalcI/CommonGraphs.html" class="mm-link">Common Graphs</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcI/limitsIntro.html" class="mm-link">Limits</a>
+              <ul>
+                <li><a href="../CalcI/Tangents_Rates.html" class="mm-link">Tangent Lines and Rates of Change</a></li>
+                <li><a href="../CalcI/TheLimit.html" class="mm-link">The Limit</a></li>
+                <li><a href="../CalcI/OneSidedLimits.html" class="mm-link">One-Sided Limits</a></li>
+                <li><a href="../CalcI/LimitsProperties.html" class="mm-link">Limit Properties</a></li>
+                <li><a href="../CalcI/ComputingLimits.html" class="mm-link">Computing Limits</a></li>
+                <li><a href="../CalcI/InfiniteLimits.html" class="mm-link">Infinite Limits</a></li>
+                <li><a href="../CalcI/LimitsAtInfinityI.html" class="mm-link">Limits At Infinity, Part I</a></li>
+                <li><a href="../CalcI/LimitsAtInfinityII.html" class="mm-link">Limits At Infinity, Part II</a></li>
+                <li><a href="../CalcI/Continuity.html" class="mm-link">Continuity</a></li>
+                <li><a href="../CalcI/DefnOfLimit.html" class="mm-link">The Definition of the Limit</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcI/DerivativeIntro.html" class="mm-link">Derivatives</a>
+              <ul>
+                <li><a href="../CalcI/DefnOfDerivative.html" class="mm-link">The Definition of the Derivative</a></li>
+                <li><a href="../CalcI/DerivativeInterp.html" class="mm-link">Interpretation of the Derivative</a></li>
+                <li><a href="../CalcI/DiffFormulas.html" class="mm-link">Differentiation Formulas</a></li>
+                <li><a href="../CalcI/ProductQuotientRule.html" class="mm-link">Product and Quotient Rule</a></li>
+                <li><a href="../CalcI/DiffTrigFcns.html" class="mm-link">Derivatives of Trig Functions</a></li>
+                <li><a href="../CalcI/DiffExpLogFcns.html" class="mm-link">Derivatives of Exponential and Logarithm Functions</a></li>
+                <li><a href="../CalcI/DiffInvTrigFcns.html" class="mm-link">Derivatives of Inverse Trig Functions</a></li>
+                <li><a href="../CalcI/DiffHyperFcns.html" class="mm-link">Derivatives of Hyperbolic Functions</a></li>
+                <li><a href="../CalcI/ChainRule.html" class="mm-link">Chain Rule</a></li>
+                <li><a href="../CalcI/ImplicitDIff.html" class="mm-link">Implicit Differentiation</a></li>
+                <li><a href="../CalcI/RelatedRates.html" class="mm-link">Related Rates</a></li>
+                <li><a href="../CalcI/HigherOrderDerivatives.html" class="mm-link">Higher Order Derivatives</a></li>
+                <li><a href="../CalcI/LogDiff.html" class="mm-link">Logarithmic Differentiation</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcI/DerivAppsIntro.html" class="mm-link">Applications of Derivatives</a>
+              <ul>
+                <li><a href="../CalcI/RateOfChange.html" class="mm-link">Rates of Change</a></li>
+                <li><a href="../CalcI/CriticalPoints.html" class="mm-link">Critical Points</a></li>
+                <li><a href="../CalcI/MinMaxValues.html" class="mm-link">Minimum and Maximum Values</a></li>
+                <li><a href="../CalcI/AbsExtrema.html" class="mm-link">Finding Absolute Extrema</a></li>
+                <li><a href="../CalcI/ShapeofGraphPtI.html" class="mm-link">The Shape of a Graph, Part I</a></li>
+                <li><a href="../CalcI/ShapeofGraphPtII.html" class="mm-link">The Shape of a Graph, Part II</a></li>
+                <li><a href="../CalcI/MeanValueTheorem.html" class="mm-link">The Mean Value Theorem</a></li>
+                <li><a href="../CalcI/Optimization.html" class="mm-link">Optimization</a></li>
+                <li><a href="../CalcI/MoreOptimization.html" class="mm-link">More Optimization Problems</a></li>
+                <li><a href="../CalcI/LHospitalsRule.html" class="mm-link">L'Hospital's Rule and Indeterminate Forms</a></li>
+                <li><a href="../CalcI/LinearApproximations.html" class="mm-link">Linear Approximations</a></li>
+                <li><a href="../CalcI/Differentials.html" class="mm-link">Differentials</a></li>
+                <li><a href="../CalcI/NewtonsMethod.html" class="mm-link">Newton's Method</a></li>
+                <li><a href="../CalcI/BusinessApps.html" class="mm-link">Business Applications</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcI/IntegralsIntro.html" class="mm-link">Integrals</a>
+              <ul>
+                <li><a href="../CalcI/IndefiniteIntegrals.html" class="mm-link">Indefinite Integrals</a></li>
+                <li><a href="../CalcI/ComputingIndefiniteIntegrals.html" class="mm-link">Computing Indefinite Integrals</a></li>
+                <li><a href="../CalcI/SubstitutionRuleIndefinite.html" class="mm-link">Substitution Rule for Indefinite Integrals</a></li>
+                <li><a href="../CalcI/SubstitutionRuleIndefinitePtII.html" class="mm-link">More Substitution Rule</a></li>
+                <li><a href="../CalcI/AreaProblem.html" class="mm-link">Area Problem</a></li>
+                <li><a href="../CalcI/DefnOfDefiniteIntegral.html" class="mm-link">Definition of the Definite Integral</a></li>
+                <li><a href="../CalcI/ComputingDefiniteIntegrals.html" class="mm-link">Computing Definite Integrals</a></li>
+                <li><a href="../CalcI/SubstitutionRuleDefinite.html" class="mm-link">Substitution Rule for Definite Integrals</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcI/IntAppsIntro.html" class="mm-link">Applications of Integrals</a>
+              <ul>
+                <li><a href="../CalcI/AvgFcnValue.html" class="mm-link">Average Function Value</a></li>
+                <li><a href="../CalcI/AreaBetweenCurves.html" class="mm-link">Area Between Curves</a></li>
+                <li><a href="../CalcI/VolumeWithRings.html" class="mm-link">Volumes of Solids of Revolution / Method of Rings</a></li>
+                <li><a href="../CalcI/VolumeWithCylinder.html" class="mm-link">Volumes of Solids of Revolution/Method of Cylinders</a></li>
+                <li><a href="../CalcI/MoreVolume.html" class="mm-link">More Volume Problems</a></li>
+                <li><a href="../CalcI/Work.html" class="mm-link">Work</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcI/ExtrasIntro.html" class="mm-link">Extras</a>
+              <ul>
+                <li><a href="../CalcI/LimitProofs.html" class="mm-link">Proof of Various Limit Properties</a></li>
+                <li><a href="../CalcI/DerivativeProofs.html" class="mm-link">Proof of Various Derivative Properties</a></li>
+                <li><a href="../CalcI/ProofTrigDeriv.html" class="mm-link">Proof of Trig Limits</a></li>
+                <li><a href="../CalcI/DerivativeAppsProofs.html" class="mm-link">Proofs of Derivative Applications Facts</a></li>
+                <li><a href="../CalcI/ProofIntProp.html" class="mm-link">Proof of Various Integral Properties </a></li>
+                <li><a href="../CalcI/Area_Volume_Formulas.html" class="mm-link">Area and Volume Formulas</a></li>
+                <li><a href="../CalcI/TypesOfInfinity.html" class="mm-link">Types of Infinity</a></li>
+                <li><a href="../CalcI/SummationNotation.html" class="mm-link">Summation Notation</a></li>
+                <li><a href="../CalcI/ConstantofIntegration.html" class="mm-link">Constant of Integration</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../CalcII/CalcII.html" class="mm-link">Calculus II</a>
+          <ul>
+            <li><a href="../CalcII/IntTechIntro.html" class="mm-link">Integration Techniques</a>
+              <ul>
+                <li><a href="../CalcII/IntegrationByParts.html" class="mm-link">Integration by Parts</a></li>
+                <li><a href="../CalcII/IntegralsWithTrig.html" class="mm-link">Integrals Involving Trig Functions</a></li>
+                <li><a href="../CalcII/TrigSubstitutions.html" class="mm-link">Trig Substitutions</a></li>
+                <li><a href="../CalcII/PartialFractions.html" class="mm-link">Partial Fractions</a></li>
+                <li><a href="../CalcII/IntegralsWithRoots.html" class="mm-link">Integrals Involving Roots</a></li>
+                <li><a href="../CalcII/IntegralsWithQuadratics.html" class="mm-link">Integrals Involving Quadratics</a></li>
+                <li><a href="../CalcII/IntegrationStrategy.html" class="mm-link">Integration Strategy</a></li>
+                <li><a href="../CalcII/ImproperIntegrals.html" class="mm-link">Improper Integrals</a></li>
+                <li><a href="../CalcII/ImproperIntegralsCompTest.html" class="mm-link">Comparison Test for Improper Integrals</a></li>
+                <li><a href="../CalcII/ApproximatingDefIntegrals.html" class="mm-link">Approximating Definite Integrals</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/IntAppsIntro.html" class="mm-link">Applications of Integrals</a>
+              <ul>
+                <li><a href="../CalcII/ArcLength.html" class="mm-link">Arc Length</a></li>
+                <li><a href="../CalcII/SurfaceArea.html" class="mm-link">Surface Area</a></li>
+                <li><a href="../CalcII/CenterOfMass.html" class="mm-link">Center of Mass</a></li>
+                <li><a href="../CalcII/HydrostaticPressure.html" class="mm-link">Hydrostatic Pressure</a></li>
+                <li><a href="../CalcII/Probability.html" class="mm-link">Probability</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/ParametricIntro.html" class="mm-link">Parametric Equations and Polar Coordinates</a>
+              <ul>
+                <li><a href="../CalcII/ParametricEqn.html" class="mm-link">Parametric Equations and Curves</a></li>
+                <li><a href="../CalcII/ParaTangent.html" class="mm-link">Tangents with Parametric Equations</a></li>
+                <li><a href="../CalcII/ParaArea.html" class="mm-link">Area with Parametric Equations</a></li>
+                <li><a href="../CalcII/ParaArcLength.html" class="mm-link">Arc Length with Parametric Equations</a></li>
+                <li><a href="../CalcII/ParaSurfaceArea.html" class="mm-link">Surface Area with Parametric Equations</a></li>
+                <li><a href="../CalcII/PolarCoordinates.html" class="mm-link">Polar Coordinates</a></li>
+                <li><a href="../CalcII/PolarTangents.html" class="mm-link">Tangents with Polar Coordinates</a></li>
+                <li><a href="../CalcII/PolarArea.html" class="mm-link">Area with Polar Coordinates</a></li>
+                <li><a href="../CalcII/PolarArcLength.html" class="mm-link">Arc Length with Polar Coordinates</a></li>
+                <li><a href="../CalcII/PolarSurfaceArea.html" class="mm-link">Surface Area with Polar Coordinates</a></li>
+                <li><a href="../CalcII/ArcLength_SurfaceArea.html" class="mm-link">Arc Length and Surface Area Revisited</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/SeriesIntro.html" class="mm-link">Series & Sequences</a>
+              <ul>
+                <li><a href="../CalcII/Sequences.html" class="mm-link">Sequences</a></li>
+                <li><a href="../CalcII/MoreSequences.html" class="mm-link">More on Sequences</a></li>
+                <li><a href="../CalcII/Series_Basics.html" class="mm-link">Series - The Basics</a></li>
+                <li><a href="../CalcII/ConvergenceOfSeries.html" class="mm-link">Convergence/Divergence of Series</a></li>
+                <li><a href="../CalcII/Series_Special.html" class="mm-link">Special Series</a></li>
+                <li><a href="../CalcII/IntegralTest.html" class="mm-link">Integral Test</a></li>
+                <li><a href="../CalcII/SeriesCompTest.html" class="mm-link">Comparison Test/Limit Comparison Test</a></li>
+                <li><a href="../CalcII/AlternatingSeries.html" class="mm-link">Alternating Series Test</a></li>
+                <li><a href="../CalcII/AbsoluteConvergence.html" class="mm-link">Absolute Convergence</a></li>
+                <li><a href="../CalcII/RatioTest.html" class="mm-link">Ratio Test</a></li>
+                <li><a href="../CalcII/RootTest.html" class="mm-link">Root Test</a></li>
+                <li><a href="../CalcII/SeriesStrategy.html" class="mm-link">Strategy for Series</a></li>
+                <li><a href="../CalcII/EstimatingSeries.html" class="mm-link">Estimating the Value of a Series</a></li>
+                <li><a href="../CalcII/PowerSeries.html" class="mm-link">Power Series</a></li>
+                <li><a href="../CalcII/PowerSeriesandFunctions.html" class="mm-link">Power Series and Functions</a></li>
+                <li><a href="../CalcII/TaylorSeries.html" class="mm-link">Taylor Series</a></li>
+                <li><a href="../CalcII/TaylorSeriesApps.html" class="mm-link">Applications of Series</a></li>
+                <li><a href="../CalcII/BinomialSeries.html" class="mm-link">Binomial Series</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/VectorsIntro.html" class="mm-link">Vectors</a>
+              <ul>
+                <li><a href="../CalcII/Vectors_Basics.html" class="mm-link">Vectors - The Basics</a></li>
+                <li><a href="../CalcII/VectorArithmetic.html" class="mm-link">Vector Arithmetic</a></li>
+                <li><a href="../CalcII/DotProduct.html" class="mm-link">Dot Product</a></li>
+                <li><a href="../CalcII/CrossProduct.html" class="mm-link">Cross Product</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/3DSpace.html" class="mm-link">3-Dimensional Space</a>
+              <ul>
+                <li><a href="../CalcII/3DCoords.html" class="mm-link">The 3-D Coordinate System</a></li>
+                <li><a href="../CalcII/EqnsOfLines.html" class="mm-link">Equations of Lines</a></li>
+                <li><a href="../CalcII/EqnsOfPlanes.html" class="mm-link">Equations of Planes</a></li>
+                <li><a href="../CalcII/QuadricSurfaces.html" class="mm-link">Quadric Surfaces</a></li>
+                <li><a href="../CalcII/MultiVrbleFcns.html" class="mm-link">Functions of Several Variables</a></li>
+                <li><a href="../CalcII/VectorFunctions.html" class="mm-link">Vector Functions</a></li>
+                <li><a href="../CalcII/VectorFcnsCalculus.html" class="mm-link">Calculus with Vector Functions</a></li>
+                <li><a href="../CalcII/TangentNormalVectors.html" class="mm-link">Tangent, Normal and Binormal Vectors</a></li>
+                <li><a href="../CalcII/VectorArcLength.html" class="mm-link">Arc Length with Vector Functions</a></li>
+                <li><a href="../CalcII/Curvature.html" class="mm-link">Curvature</a></li>
+                <li><a href="../CalcII/Velocity_Acceleration.html" class="mm-link">Velocity and Acceleration</a></li>
+                <li><a href="../CalcII/CylindricalCoords.html" class="mm-link">Cylindrical Coordinates</a></li>
+                <li><a href="../CalcII/SphericalCoords.html" class="mm-link">Spherical Coordinates</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../CalcIII/CalcIII.html" class="mm-link">Calculus III</a>
+          <ul>
+            <li><a href="../CalcIII/3DSpace.html" class="mm-link">3-Dimensional Space</a>
+              <ul>
+                <li><a href="../CalcIII/3DCoords.html" class="mm-link">The 3-D Coordinate System</a></li>
+                <li><a href="../CalcIII/EqnsOfLines.html" class="mm-link">Equations of Lines</a></li>
+                <li><a href="../CalcIII/EqnsOfPlanes.html" class="mm-link">Equations of Planes</a></li>
+                <li><a href="../CalcIII/QuadricSurfaces.html" class="mm-link">Quadric Surfaces</a></li>
+                <li><a href="../CalcIII/MultiVrbleFcns.html" class="mm-link">Functions of Several Variables</a></li>
+                <li><a href="../CalcIII/VectorFunctions.html" class="mm-link">Vector Functions</a></li>
+                <li><a href="../CalcIII/VectorFcnsCalculus.html" class="mm-link">Calculus with Vector Functions</a></li>
+                <li><a href="../CalcIII/TangentNormalVectors.html" class="mm-link">Tangent, Normal and Binormal Vectors</a></li>
+                <li><a href="../CalcIII/VectorArcLength.html" class="mm-link">Arc Length with Vector Functions</a></li>
+                <li><a href="../CalcIII/Curvature.html" class="mm-link">Curvature</a></li>
+                <li><a href="../CalcIII/Velocity_Acceleration.html" class="mm-link">Velocity and Acceleration</a></li>
+                <li><a href="../CalcIII/CylindricalCoords.html" class="mm-link">Cylindrical Coordinates</a></li>
+                <li><a href="../CalcIII/SphericalCoords.html" class="mm-link">Spherical Coordinates</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/PartialDerivsIntro.html" class="mm-link">Partial Derivatives</a>
+              <ul>
+                <li><a href="../CalcIII/Limits.html" class="mm-link">Limits</a></li>
+                <li><a href="../CalcIII/PartialDerivatives.html" class="mm-link">Partial Derivatives</a></li>
+                <li><a href="../CalcIII/PartialDerivInterp.html" class="mm-link">Interpretations of Partial Derivatives</a></li>
+                <li><a href="../CalcIII/HighOrderPartialDerivs.html" class="mm-link">Higher Order Partial Derivatives</a></li>
+                <li><a href="../CalcIII/Differentials.html" class="mm-link">Differentials</a></li>
+                <li><a href="../CalcIII/ChainRule.html" class="mm-link">Chain Rule</a></li>
+                <li><a href="../CalcIII/DirectionalDeriv.html" class="mm-link">Directional Derivatives</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/PartialDerivAppsIntro.html" class="mm-link">Applications of Partial Derivatives</a>
+              <ul>
+                <li><a href="../CalcIII/TangentPlanes.html" class="mm-link">Tangent Planes and Linear Approximations</a></li>
+                <li><a href="../CalcIII/GradientVectorTangentPlane.html" class="mm-link">Gradient Vector, Tangent Planes and Normal Lines</a></li>
+                <li><a href="../CalcIII/RelativeExtrema.html" class="mm-link">Relative Minimums and Maximums</a></li>
+                <li><a href="../CalcIII/AbsoluteExtrema.html" class="mm-link">Absolute Minimums and Maximums</a></li>
+                <li><a href="../CalcIII/LagrangeMultipliers.html" class="mm-link">Lagrange Multipliers</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/MultipleIntegralsIntro.html" class="mm-link">Multiple Integrals</a>
+              <ul>
+                <li><a href="../CalcIII/DoubleIntegrals.html" class="mm-link">Double Integrals</a></li>
+                <li><a href="../CalcIII/IteratedIntegrals.html" class="mm-link">Iterated Integrals</a></li>
+                <li><a href="../CalcIII/DIGeneralRegion.html" class="mm-link">Double Integrals over General Regions</a></li>
+                <li><a href="../CalcIII/DIPolarCoords.html" class="mm-link">Double Integrals in Polar Coordinates</a></li>
+                <li><a href="../CalcIII/TripleIntegrals.html" class="mm-link">Triple Integrals</a></li>
+                <li><a href="../CalcIII/TICylindricalCoords.html" class="mm-link">Triple Integrals in Cylindrical Coordinates</a></li>
+                <li><a href="../CalcIII/TISphericalCoords.html" class="mm-link">Triple Integrals in Spherical Coordinates</a></li>
+                <li><a href="../CalcIII/ChangeOfVariables.html" class="mm-link">Change of Variables</a></li>
+                <li><a href="../CalcIII/SurfaceArea.html" class="mm-link">Surface Area</a></li>
+                <li><a href="../CalcIII/Area_Volume.html" class="mm-link">Area and Volume Revisited</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/LineIntegralsIntro.html" class="mm-link">Line Integrals</a>
+              <ul>
+                <li><a href="../CalcIII/VectorFields.html" class="mm-link">Vector Fields</a></li>
+                <li><a href="../CalcIII/LineIntegralsPtI.html" class="mm-link">Line Integrals - Part I</a></li>
+                <li><a href="../CalcIII/LineIntegralsPtII.html" class="mm-link">Line Integrals - Part II</a></li>
+                <li><a href="../CalcIII/LineIntegralsVectorFields.html" class="mm-link">Line Integrals of Vector Fields</a></li>
+                <li><a href="../CalcIII/FundThmLineIntegrals.html" class="mm-link">Fundamental Theorem for Line Integrals</a></li>
+                <li><a href="../CalcIII/ConservativeVectorField.html" class="mm-link">Conservative Vector Fields</a></li>
+                <li><a href="../CalcIII/GreensTheorem.html" class="mm-link">Green's Theorem</a></li>
+                <li><a href="../CalcIII/CurlDivergence.html" class="mm-link">Curl and Divergence</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/SurfaceIntegralsIntro.html" class="mm-link">Surface Integrals</a>
+              <ul>
+                <li><a href="../CalcIII/ParametricSurfaces.html" class="mm-link">Parametric Surfaces</a></li>
+                <li><a href="../CalcIII/SurfaceIntegrals.html" class="mm-link">Surface Integrals</a></li>
+                <li><a href="../CalcIII/SurfIntVectorField.html" class="mm-link">Surface Integrals of Vector Fields</a></li>
+                <li><a href="../CalcIII/StokesTheorem.html" class="mm-link">Stokes' Theorem</a></li>
+                <li><a href="../CalcIII/DivergenceTheorem.html" class="mm-link">Divergence Theorem</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="DE.html" class="mm-link">Differential Equations</a>
+          <ul>
+            <li><a href="IntroBasic.html" class="mm-link">Basic Concepts</a>
+              <ul>
+                <li><a href="Definitions.html" class="mm-link">Definitions</a></li>
+                <li><a href="DirectionFields.html" class="mm-link">Direction Fields</a></li>
+                <li><a href="FinalThoughts.html" class="mm-link">Final Thoughts</a></li>
+              </ul>
+            </li>
+            <li><a href="IntroFirstOrder.html" class="mm-link">First Order DE's</a>
+              <ul>
+                <li><a href="Linear.html" class="mm-link">Linear Equations</a></li>
+                <li><a href="Separable.html" class="mm-link">Separable Equations</a></li>
+                <li><a href="Exact.html" class="mm-link">Exact Equations</a></li>
+                <li><a href="Bernoulli.html" class="mm-link">Bernoulli Differential Equations</a></li>
+                <li><a href="Substitutions.html" class="mm-link">Substitutions</a></li>
+                <li><a href="IoV.html" class="mm-link">Intervals of Validity</a></li>
+                <li><a href="Modeling.html" class="mm-link">Modeling with First Order DE's</a></li>
+                <li><a href="EquilibriumSolutions.html" class="mm-link">Equilibrium Solutions</a></li>
+                <li><a href="EulersMethod.html" class="mm-link">Euler's Method</a></li>
+              </ul>
+            </li>
+            <li><a href="IntroSecondOrder.html" class="mm-link">Second Order DE's</a>
+              <ul>
+                <li><a href="SecondOrderConcepts.html" class="mm-link">Basic Concepts</a></li>
+                <li><a href="RealRoots.html" class="mm-link">Real & Distinct Roots</a></li>
+                <li><a href="ComplexRoots.html" class="mm-link">Complex Roots</a></li>
+                <li><a href="RepeatedRoots.html" class="mm-link">Repeated Roots</a></li>
+                <li><a href="ReductionofOrder.html" class="mm-link">Reduction of Order</a></li>
+                <li><a href="FundamentalSetsofSolutions.html" class="mm-link">Fundamental Sets of Solutions</a></li>
+                <li><a href="Wronskian.html" class="mm-link">More on the  Wronskian</a></li>
+                <li><a href="NonhomogeneousDE.html" class="mm-link">Nonhomogeneous Differential Equations</a></li>
+                <li><a href="UndeterminedCoefficients.html" class="mm-link">Undetermined Coefficients</a></li>
+                <li><a href="VariationofParameters.html" class="mm-link">Variation of Parameters</a></li>
+                <li><a href="Vibrations.html" class="mm-link">Mechanical Vibrations</a></li>
+              </ul>
+            </li>
+            <li><a href="LaplaceIntro.html" class="mm-link">Laplace Transforms</a>
+              <ul>
+                <li><a href="LaplaceDefinition.html" class="mm-link">The Definition</a></li>
+                <li><a href="LaplaceTransforms.html" class="mm-link">Laplace Transforms</a></li>
+                <li><a href="InverseTransforms.html" class="mm-link">Inverse Laplace Transforms</a></li>
+                <li><a href="StepFunctions.html" class="mm-link">Step Functions</a></li>
+                <li><a href="IVPWithLaplace.html" class="mm-link">Solving IVP's with Laplace Transforms</a></li>
+                <li><a href="IVPWithNonConstantCoefficient.html" class="mm-link">Nonconstant Coefficient IVP's</a></li>
+                <li><a href="IVPWithStepFunction.html" class="mm-link">IVP's With Step Functions</a></li>
+                <li><a href="DiracDeltaFunction.html" class="mm-link">Dirac Delta Function</a></li>
+                <li><a href="ConvolutionIntegrals.html" class="mm-link">Convolution Integrals</a></li>
+                <li><a href="Laplace_Table.html" class="mm-link">Table Of Laplace Transforms</a></li>
+              </ul>
+            </li>
+            <li><a href="SystemsIntro.html" class="mm-link">Systems of DE's</a>
+              <ul>
+                <li><a href="LA_Systems.html" class="mm-link">Review : Systems of Equations</a></li>
+                <li><a href="LA_Matrix.html" class="mm-link">Review : Matrices & Vectors</a></li>
+                <li><a href="LA_Eigen.html" class="mm-link">Review : Eigenvalues & Eigenvectors</a></li>
+                <li><a href="SystemsDE.html" class="mm-link">Systems of Differential Equations</a></li>
+                <li><a href="SolutionsToSystems.html" class="mm-link">Solutions to Systems</a></li>
+                <li><a href="PhasePlane.html" class="mm-link">Phase Plane</a></li>
+                <li><a href="RealEigenvalues.html" class="mm-link">Real Eigenvalues</a></li>
+                <li><a href="ComplexEigenvalues.html" class="mm-link">Complex Eigenvalues</a></li>
+                <li><a href="RepeatedEigenvalues.html" class="mm-link">Repeated Eigenvalues</a></li>
+                <li><a href="NonhomogeneousSystems.html" class="mm-link">Nonhomogeneous Systems</a></li>
+                <li><a href="SystemsLaplace.html" class="mm-link">Laplace Transforms</a></li>
+                <li><a href="SystemsModeling.html" class="mm-link">Modeling</a></li>
+              </ul>
+            </li>
+            <li><a href="SeriesIntro.html" class="mm-link">Series Solutions to DE's</a>
+              <ul>
+                <li><a href="PowerSeries.html" class="mm-link">Review : Power Series</a></li>
+                <li><a href="TaylorSeries.html" class="mm-link">Review : Taylor Series</a></li>
+                <li><a href="SeriesSolutions.html" class="mm-link">Series Solutions</a></li>
+                <li><a href="EulerEquations.html" class="mm-link">Euler Equations</a></li>
+              </ul>
+            </li>
+            <li><a href="IntroHigherOrder.html" class="mm-link">Higher Order Differential Equations</a>
+              <ul>
+                <li><a href="HOBasicConcepts.html" class="mm-link">Basic Concepts for <em>n</em><sup>th</sup> Order Linear Equations</a></li>
+                <li><a href="HOHomogeneousDE.html" class="mm-link">Linear Homogeneous Differential Equations</a></li>
+                <li><a href="HOUndeterminedCoeff.html" class="mm-link">Undetermined Coefficients</a></li>
+                <li><a href="HOVariationOfParam.html" class="mm-link">Variation of Parameters</a></li>
+                <li><a href="HOLaplaceTransforms.html" class="mm-link">Laplace Transforms</a></li>
+                <li><a href="HOSystems.html" class="mm-link">Systems of Differential Equations</a></li>
+                <li><a href="HOSeries.html" class="mm-link">Series Solutions</a></li>
+              </ul>
+            </li>
+            <li><a href="IntroBVP.html" class="mm-link">Boundary Value Problems &amp; Fourier Series</a>
+              <ul>
+                <li><a href="BoundaryValueProblem.html" class="mm-link">Boundary Value Problems</a></li>
+                <li><a href="BVPEvals.html" class="mm-link">Eigenvalues and Eigenfunctions</a></li>
+                <li><a href="PeriodicOrthogonal.html" class="mm-link">Periodic Functions &amp; Orthogonal Functions</a></li>
+                <li><a href="FourierSineSeries.html" class="mm-link">Fourier Sine Series</a></li>
+                <li><a href="FourierCosineSeries.html" class="mm-link">Fourier Cosine Series</a></li>
+                <li><a href="FourierSeries.html" class="mm-link">Fourier Series</a></li>
+                <li><a href="ConvergenceFourierSeries.html" class="mm-link">Convergence of Fourier Series</a></li>
+              </ul>
+            </li>
+            <li><a href="IntroPDE.html" class="mm-link">Partial Differential Equations </a>
+              <ul>
+                <li><a href="TheHeatEquation.html" class="mm-link">The Heat Equation</a></li>
+                <li><a href="TheWaveEquation.html" class="mm-link">The Wave Equation</a></li>
+                <li><a href="PDETerminology.html" class="mm-link">Terminology</a></li>
+                <li><a href="SeparationofVariables.html" class="mm-link">Separation of Variables</a></li>
+                <li><a href="SolvingHeatEquation.html" class="mm-link">Solving the Heat Equation</a></li>
+                <li><a href="HeatEqnNonZero.html" class="mm-link">Heat Equation with Non-Zero Temperature Boundaries</a></li>
+                <li><a href="LaplacesEqn.html" class="mm-link">Laplace's Equation</a></li>
+                <li><a href="VibratingString.html" class="mm-link">Vibrating String</a></li>
+                <li><a href="PDESummary.html" class="mm-link">Summary of Separation of Variables</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><span>Extras</span></li>
+        <li><a href="../../Extras/AlgebraTrigReview/AlgebraTrig.html" class="mm-link">Algebra &amp; Trig Review</a>
+          <ul>
+            <li><a href="../../Extras/AlgebraTrigReview/AlgebraIntro.html" class="mm-link">Algebra</a>
+              <ul>
+                <li><a href="../../Extras/AlgebraTrigReview/Exponents.html" class="mm-link">Exponents </a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/AbsoluteValue.html" class="mm-link">Absolute Value</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Radicals.html" class="mm-link">Radicals</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Rationalizing.html" class="mm-link">Rationalizing </a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Functions.html" class="mm-link">Functions </a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/MultPoly.html" class="mm-link">Multiplying Polynomials</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Factoring.html" class="mm-link">Factoring</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SimpRatExp.html" class="mm-link">Simplifying Rational Expressions</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Graphing.html" class="mm-link">Graphing and Common Graphs</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveEqnPtI.html" class="mm-link">Solving Equations, Part I</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveEqnPtII.html" class="mm-link">Solving Equations, Part II</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveSystems.html" class="mm-link">Solving Systems of Equations</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveIneq.html" class="mm-link">Solving Inequalities</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveAbsValue.html" class="mm-link">Absolute Value Equations and Inequalities</a></li>
+              </ul>
+            </li>
+            <li><a href="../../Extras/AlgebraTrigReview/TrigIntro.html" class="mm-link">Trigonometry</a>
+              <ul>
+                <li><a href="../../Extras/AlgebraTrigReview/TrigFunctions.html" class="mm-link">Trig Function Evaluation</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/TrigGraphs.html" class="mm-link">Graphs of Trig Functions</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/TrigFormulas.html" class="mm-link">Trig Formulas</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveTrigEqn.html" class="mm-link">Solving Trig Equations</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/InverseTrig.html" class="mm-link">Inverse Trig Functions</a></li>
+              </ul>
+            </li>
+            <li><a href="../../Extras/AlgebraTrigReview/ExpLogIntro.html" class="mm-link">Exponentials & Logarithms</a>
+              <ul>
+                <li><a href="../../Extras/AlgebraTrigReview/ExponentialFcns.html" class="mm-link">Basic Exponential Functions</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/LogarithmFcns.html" class="mm-link">Basic Logarithm Functions</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/LogProperties.html" class="mm-link">Logarithm Properties</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SimpLogs.html" class="mm-link">Simplifying Logarithms</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveExpEqn.html" class="mm-link">Solving Exponential Equations</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveLogEqn.html" class="mm-link">Solving Logarithm Equations</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../../Extras/CommonErrors/CommonMathErrors.html" class="mm-link">Common Math Errors</a>
+          <ul>
+            <li><a href="../../Extras/CommonErrors/GeneralErrors.html" class="mm-link">General Errors</a>
+            </li>
+            <li><a href="../../Extras/CommonErrors/AlgebraErrors.html" class="mm-link">Algebra Errors</a>
+            </li>
+            <li><a href="../../Extras/CommonErrors/TrigErrors.html" class="mm-link">Trig Errors</a>
+            </li>
+            <li><a href="../../Extras/CommonErrors/CommonErrors.html" class="mm-link">Common Errors</a>
+            </li>
+            <li><a href="../../Extras/CommonErrors/CalculusErrors.html" class="mm-link">Calculus Errors</a>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../../Extras/ComplexPrimer/ComplexNumbers.html" class="mm-link">Complex Number Primer</a>
+          <ul>
+            <li><a href="../../Extras/ComplexPrimer/Definition.html" class="mm-link">The Definition</a>
+            </li>
+            <li><a href="../../Extras/ComplexPrimer/Arithmetic.html" class="mm-link">Arithmetic</a>
+            </li>
+            <li><a href="../../Extras/ComplexPrimer/ConjugateModulus.html" class="mm-link">Conjugate and Modulus</a>
+            </li>
+            <li><a href="../../Extras/ComplexPrimer/Forms.html" class="mm-link">Polar and Exponential Forms</a>
+            </li>
+            <li><a href="../../Extras/ComplexPrimer/Roots.html" class="mm-link">Powers and Roots</a>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../../Extras/StudyMath/HowToStudyMath.html" class="mm-link">How To Study Math</a>
+          <ul>
+            <li><a href="../../Extras/StudyMath/GeneralTips.html" class="mm-link">General Tips</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/TakingNotes.html" class="mm-link">Taking Notes</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/GettingHelp.html" class="mm-link">Getting Help</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/Homework.html" class="mm-link">Doing Homework</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/ProblemSolving.html" class="mm-link">Problem Solving</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/StudyForExam.html" class="mm-link">Studying For an Exam</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/TakingExam.html" class="mm-link">Taking an Exam</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/Errors.html" class="mm-link">Learn From Your Errors</a>
+            </li>
+          </ul>
+        </li>
+
+        <li><span>Misc Links</span></li>
+        <li><a href="http://tutorial.math.lamar.edu/contact.aspx" class="mm-link">Contact Me</a></li>
+        <li><a href="../../links.html" class="mm-link">Links</a></li>
+        <li><a href="../../mathjax.html" class="mm-link">MathJax Help and Configuration</a></li>
+        <li><a href="../../mystudents.html" class="mm-link">My Students</a></li>
+        <li><a href="http://tutorial.math.lamar.edu/privacy.aspx" class="mm-link">Privacy Statement</a></li>
+        <li><a href="../../help.html" class="mm-link">Site Help & FAQ</a></li>
+        <li><a href="http://tutorial.math.lamar.edu/terms.aspx" class="mm-link">Terms of Use</a></li>
+      </ul>
+    </nav>
+
+
+
+    <div class="top-info-bar">
+      <span id="mobile-title" class="mobile-header-title header-title">Paul's Online Notes</span>
+      <br />
+      <span class="top-menu-breadcrumb">
+        <a href="../../index.html" id="breadcrumb_home_link" title="Go to Main Page">Home</a>
+        <span id="breadcrumb_h_b_sep_span">/ </span>
+        <a href="DE.html" id="breadcrumb_book_link" title="Go to Book Introduction">Differential Equations</a>
+        
+        <span id="breadcrumb_b_c_sep_span">/ </span>
+        <a href="IntroBVP.html" id="breadcrumb_chapter_link" title="Go to Chapter Introduction">Boundary Value Problems &amp; Fourier Series</a>
+        
+        <span id="breadcrumb_section_span"> / Eigenvalues and Eigenfunctions</span>
+      </span>
+
+    </div>
+
+    
+
+    <div class="header-divider"></div>
+
+    <div class="content">  
+      
+      
+      <span id="SHLink_NoteMobile" class="SH-Link content-note-link-mobile">Show Mobile Notice</span>
+      <span id="SHImg_NoteMobile" class="fas fa-caret-right SH-padding content-note-link-mobile" aria-hidden="true"></span>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+
+      <span id="SHALink_S_Note" class="SH-Link SH-Hide SH-Bracket">Show All Notes</span>&nbsp;<span id="SHALink_H_Note" class="SH-Link SH-Hide SH-Bracket">Hide All Notes</span>
+      
+      
+      <div id="SHObj_NoteMobile" class="content-note-container content-note-container-mobile">
+        <div class="content-note-header">Mobile Notice</div>
+        <div class="content-note">You appear to be on a device with a "narrow" screen width (<em>i.e.</em> you are probably on a mobile phone).  Due to the nature of the mathematics on this site it is best views in landscape mode.  If your device is not in landscape mode many of the equations will run off the side of your device (should be able to scroll to see them) and some of the menu items will be cut off due to the narrow screen width.</div>
+      </div>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+
+      
+
+
+  <form method="post" action="http://tutorial.math.lamar.edu/Classes/DE/BVPEvals.aspx" id="ctl00">
+<div class="aspNetHidden">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+</div>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="770A91B9" />
+</div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </form>
+
+  <h3>Section 8-2 : Eigenvalues and Eigenfunctions</h3>
+    
+    <p>As we did in the previous section we need to again note that we are only going to give a brief look at the topic of eigenvalues and eigenfunctions for boundary value problems.  There are quite a few ideas that we’ll not be looking at here.  The intent of this section is simply to give you an idea of the subject and to do enough work to allow us to solve some basic partial differential equations in the next chapter.</p>
+    
+    <p>Now, before we start talking about the actual subject of this section let’s recall a topic from Linear Algebra that we briefly discussed <a href="LA_Eigen.html">previously</a> in these notes.  For a given square matrix, \(A\), if we could find values of \(\lambda \) for which we could find nonzero solutions, <em>i.e.</em> \(\vec x \ne \vec 0\), to,</p>
+    
+        \[A\vec x = \lambda \vec x\]
+    <p>then we called \(\lambda \) an eigenvalue of \(A\) and \(\vec x\) was its corresponding eigenvector.</p>
+    
+    <p>It’s important to recall here that in order for \(\lambda \) to be an eigenvalue then we had to be able to find nonzero solutions to the equation.</p>
+    
+    <p>So, just what does this have to do with boundary value problems?  Well go back to the previous section and take a look at <a href="BoundaryValueProblem.html#BVPFourier_BVP_Ex7">Example 7</a> and <a href="BoundaryValueProblem.html#BVPFourier_BVP_Ex8">Example 8</a>.  In those two examples we solved homogeneous (and that’s important!) BVP’s in the form,</p>
+    
+      \[\begin{equation}y'' + \lambda y = 0\hspace{0.25in}y\left( 0 \right) = 0\,\,\,\,\,\,\,\,y\left( {2\pi } \right) = 0\label{eq:eq1}\end{equation}\]
+    
+    <p>In Example 7 we had \(\lambda  = 4\) and we found nontrivial (<em>i.e.</em> nonzero) solutions to the BVP.  In Example 8 we used \(\lambda  = 3\) and the only solution was the trivial solution (<em>i.e.</em> \(y\left( t \right) = 0\)).  So, this homogeneous BVP (recall this also means the boundary conditions are zero) seems to exhibit similar behavior to the behavior in the matrix equation above.  There are values of \(\lambda \) that will give nontrivial solutions to this BVP and values of \(\lambda \) that will only admit the trivial solution.</p>
+    
+    <p>So, for those values of \(\lambda \) that give nontrivial solutions we’ll call \(\lambda \) an <strong>eigenvalue</strong> for the BVP and the nontrivial solutions will be called <strong>eigenfunctions</strong> for the BVP corresponding to the given eigenvalue.</p>
+    
+    <p>We now know that for the homogeneous BVP given in \(\eqref{eq:eq1}\) \(\lambda  = 4\) is an eigenvalue (with eigenfunctions \(y\left( x \right) = {c_2}\sin \left( {2x} \right)\)) and that \(\lambda  = 3\) is not an eigenvalue.</p>
+    
+    <p>Eventually we’ll try to determine if there are any other eigenvalues for \(\eqref{eq:eq1}\), however before we do that let’s comment briefly on why it is so important for the BVP to be homogeneous in this discussion.  In <a href="BoundaryValueProblem.html#BVPFourier_BVP_Ex2">Example 2</a> and <a href="BoundaryValueProblem.html#BVPFourier_BVP_Ex3">Example 3</a> of the previous section we solved the homogeneous differential equation</p>
+    
+        \[y'' + 4y = 0\]
+    <p>with two different nonhomogeneous boundary conditions in the form,</p>
+    
+        \[y\left( 0 \right) = a\hspace{0.25in}y\left( {2\pi } \right) = b\]
+    
+    <p>In these two examples we saw that by simply changing the value of \(a\) and/or \(b\) we were able to get either nontrivial solutions or to force no solution at all.  In the discussion of eigenvalues/eigenfunctions we need solutions to exist and the only way to assure this behavior is to require that the boundary conditions also be homogeneous.  In other words, we need for the BVP to be homogeneous.</p>
+    
+    <p>There is one final topic that we need to discuss before we move into the topic of eigenvalues and eigenfunctions and this is more of a notational issue that will help us with some of the work that we’ll need to do.</p>
+    
+    <p>Let’s suppose that we have a second order differential equation and its characteristic polynomial has two real, distinct roots and that they are in the form</p>
+    
+        \[{r_1} = \alpha \hspace{0.25in}{r_2} =  - \,\alpha \]
+    
+    <p>Then we know that the solution is,</p>
+    
+      \[y\left( x \right) = {c_1}{{\bf{e}}^{{r_{\,1}}\,x}} + {c_2}{{\bf{e}}^{{r_{\,2}}\,\,x}} = {c_1}{{\bf{e}}^{\alpha \,x}} + {c_2}{{\bf{e}}^{ - \,\,\alpha \,\,x}}\]
+    
+    <p>While there is nothing wrong with this solution let’s do a little rewriting of this.  We’ll start by splitting up the terms as follows,</p>
+    
+      \[\begin{align*}y\left( x \right) & = {c_1}{{\bf{e}}^{\alpha \,x}} + {c_2}{{\bf{e}}^{ - \,\,\alpha \,\,x}}\\ &amp;  = \frac{{{c_1}}}{2}{{\bf{e}}^{\alpha \,x}} + \frac{{{c_1}}}{2}{{\bf{e}}^{\alpha \,x}} + \frac{{{c_2}}}{2}{{\bf{e}}^{ - \,\,\alpha \,\,x}} + \frac{{{c_2}}}{2}{{\bf{e}}^{ - \,\,\alpha \,\,x}}\end{align*}\]
+    
+    <p>Now we’ll add/subtract the following terms (note we’re “mixing” the \({c_i}\) and \( \pm \,\alpha \) up in the new terms) to get,</p>
+    
+      \[y\left( x \right) = \frac{{{c_1}}}{2}{{\bf{e}}^{\alpha \,x}} + \frac{{{c_1}}}{2}{{\bf{e}}^{\alpha \,x}} + \frac{{{c_2}}}{2}{{\bf{e}}^{ - \,\,\alpha \,\,x}} + \frac{{{c_2}}}{2}{{\bf{e}}^{ - \,\,\alpha \,\,x}} + \left( {\frac{{{c_1}}}{2}{{\bf{e}}^{ - \,\,\alpha \,\,x}} - \frac{{{c_1}}}{2}{{\bf{e}}^{ - \,\,\alpha \,\,x}}} \right) + \left( {\frac{{{c_2}}}{2}{{\bf{e}}^{\alpha \,x}} - \frac{{{c_2}}}{2}{{\bf{e}}^{\alpha \,x}}} \right)\]
+    
+    <p>Next, rearrange terms around a little,</p>
+    
+      \[y\left( x \right) = \frac{1}{2}\left( {{c_1}{{\bf{e}}^{\alpha \,x}} + {c_1}{{\bf{e}}^{ - \,\,\alpha \,\,x}} + {c_2}{{\bf{e}}^{\alpha \,x}} + {c_2}{{\bf{e}}^{ - \,\,\alpha \,\,x}}} \right) + \frac{1}{2}\left( {{c_1}{{\bf{e}}^{\alpha \,x}} - {c_1}{{\bf{e}}^{ - \,\,\alpha \,\,x}} - {c_2}{{\bf{e}}^{\alpha \,x}} + {c_2}{{\bf{e}}^{ - \,\,\alpha \,\,x}}} \right)\]
+    
+    <p>Finally, the quantities in parenthesis factor and we’ll move the location of the fraction as well.  Doing this, as well as renaming the new constants we get,</p>
+    
+      \[\begin{align*}y\left( x \right) & = \left( {{c_1} + {c_2}} \right)\frac{{{{\bf{e}}^{\alpha \,x}} + {{\bf{e}}^{ - \,\,\alpha \,\,x}}}}{2} + \left( {{c_1} - {c_2}} \right)\frac{{{{\bf{e}}^{\alpha \,x}} - {{\bf{e}}^{ - \,\,\alpha \,\,x}}}}{2}\\ &amp;  = {{\overline{c}}_1}\frac{{{{\bf{e}}^{\alpha \,x}} + {{\bf{e}}^{ - \,\,\alpha \,\,x}}}}{2} + {{\overline{c}}_2}\frac{{{{\bf{e}}^{\alpha \,x}} - {{\bf{e}}^{ - \,\,\alpha \,\,x}}}}{2}\end{align*}\]
+    
+    <p>All this work probably seems very mysterious and unnecessary.  However there really was a reason for it.  In fact, you may have already seen the reason, at least in part.  The two “new” functions that we have in our solution are in fact two of the hyperbolic functions.  In particular,</p>
+    
+        \[\cosh \left( x \right) = \frac{{{{\bf{e}}^x} + {{\bf{e}}^{ - x}}}}{2}\hspace{0.25in}\sinh \left( x \right) = \frac{{{{\bf{e}}^x} - {{\bf{e}}^{ - x}}}}{2}\]
+    
+    <p>So, another way to write the solution to a second order differential equation whose characteristic polynomial has two real, distinct roots in the form \({r_1} = \alpha ,\,\,{r_2} =  - \,\alpha \) is,</p>
+    
+      \[y\left( x \right) = {c_1}\cosh \left( {\alpha \,x} \right) + {c_2}\sinh \left( {\alpha \,x} \right)\]
+    
+    <p>Having the solution in this form for some (actually most) of the problems we’ll be looking will make our life a lot easier. The hyperbolic functions have some very nice properties that we can (and will) take advantage of.</p>
+    
+    <p>First, since we’ll be needing them later on, the derivatives are,</p>
+    
+        \[\frac{d}{{dx}}\left( {\cosh \left( x \right)} \right) = \sinh \left( x \right)\hspace{0.25in}\frac{d}{{dx}}\left( {\sinh \left( x \right)} \right) = \cosh \left( x \right)\]
+    
+    <p>Next let’s take a quick look at the graphs of these functions.</p>
+    
+    
+      <div class="center-div"><img alt="A graph with domain $-3 \le x \le 3$ and range $0 \le y \le 6$.  The graph is labeled $y=\cosh \left( x \right)$.  The graph looks an awful lot like a parabola with vertex at (0,1) and opens upwards.  The only real difference is that the vertex is a little more flattened out than we are used to seeing with most parabolas." border="0" height="200" src="http://tutorial.math.lamar.edu/Classes/DE/BVPEvals_FIles/image001.png" width="250" />
+        <span class="width-50"></span>
+      <img alt="A graph with domain $-3 \le x \le 3$ and range $0 \le y \le 6$.  The graph is labeled $y=\sinh \left( x \right)$.  The graph looks pretty much like the graph of $yh=x^{3}$ except that the vertical scale is not what we would expect for $x^{3}$.  Without the vertical scale however, it would not be clear that this was not the graph of $x^{3}$." border="0" height="200" src="http://tutorial.math.lamar.edu/Classes/DE/BVPEvals_FIles/image002.png" width="250" /></div>
+    
+    <p>Note that \(\cosh \left( 0 \right) = 1\) and \(\sinh \left( 0 \right) = 0\).  Because we’ll often be working with boundary conditions at \(x = 0\) these will be useful evaluations.</p>
+    
+    <p>Next, and possibly more importantly, let’s notice that \(\cosh \left( x \right) &gt; 0\) for all \(x\) and so the hyperbolic cosine will never be zero.  Likewise, we can see that \(\sinh \left( x \right) = 0\) only if \(x = 0\).  We will be using both of these facts in some of our work so we shouldn’t forget them.</p>
+    
+    <p>Okay, now that we’ve got all that out of the way let’s work an example to see how we go about finding eigenvalues/eigenfunctions for a BVP.</p>
+    
+    <a class="anchor" name="BVPFourier_Eval_Ex1"></a>
+  <div class="example">
+    <span class="example-title">Example 1</span> Find all the eigenvalues and eigenfunctions for the following BVP.
+          
+            \[y'' + \lambda y = 0\hspace{0.25in}y\left( 0 \right) = 0\hspace{0.25in}y\left( {2\pi } \right) = 0\]
+    <div class="example-content">
+      <span id="SHLink_Soln1" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln1" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln1" class="soln-content">
+        <p>We started off this section looking at this BVP and we already know one eigenvalue (\(\lambda  = 4\)) and we know one value of \(\lambda \) that is not an eigenvalue (\(\lambda  = 3\)).  As we go through the work here we need to remember that we will get an eigenvalue for a particular value of \(\lambda \) if we get non-trivial solutions of the BVP for that particular value of \(\lambda \).</p>
+          
+          <p>In order to know that we’ve found all the eigenvalues we can’t just start randomly trying values of \(\lambda \) to see if we get non-trivial solutions or not.  Luckily there is a way to do this that’s not too bad and will give us all the eigenvalues/eigenfunctions.  We are going to have to do some cases however.  The three cases that we will need to look at are : \(\lambda  &gt; 0\), \(\lambda  = 0\), and \(\lambda  &lt; 0\).  Each of these cases gives a specific form of the solution to the BVP to which we can then apply the boundary 
+            conditions to see if we’ll get non-trivial solutions or not.  So, let’s get started on the cases.</p>
+          
+          
+          <p>\(\underline {\lambda  &gt; 0} \)<br />
+            In this case the <a href="SecondOrderConcepts.html#Second_Concept_CharEqn">characteristic polynomial</a> we get from the differential equation is,</p>
+          \[{r^2} + \lambda  = 0\hspace{0.25in} \Rightarrow \hspace{0.25in}{r_{1,2}} =  \pm \sqrt { - \lambda } \]
+          
+          <p>In this case since we know that \(\lambda  &gt; 0\) these roots are complex and we can write them instead as,</p>
+          \[{r_{1,2}} =  \pm \sqrt \lambda  \,i\]
+          
+          <p>The general solution to the differential equation is then,</p>
+          \[y\left( x \right) = {c_1}\cos \left( {\sqrt \lambda  \,x} \right) + {c_2}\sin \left( {\sqrt \lambda  \,x} \right)\]
+          
+          <p>Applying the first boundary condition gives us,</p>
+          \[0 = y\left( 0 \right) = {c_1}\]
+          
+          <p>So, taking this into account and applying the second boundary condition we get,</p>
+          \[0 = y\left( {2\pi } \right) = {c_2}\sin \left( {2\pi \sqrt \lambda  } \right)\]
+          
+          <p>This means that we have to have one of the following,</p>
+          \[{c_2} = 0\hspace{0.25in}{\mbox{or}}\hspace{0.25in}\sin \left( {2\pi \sqrt \lambda  } \right) = 0\]
+          
+          <p>However, recall that we want non-trivial solutions and if we have the first possibility we will get the trivial solution for all values of \(\lambda  &gt; 0\).  Therefore, let’s assume that \({c_2} \ne 0\).  This means that we have,</p>
+          \[\sin \left( {2\pi \sqrt \lambda  } \right) = 0\hspace{0.25in} \Rightarrow \hspace{0.25in}2\pi \sqrt \lambda  = n\pi \hspace{0.25in}n = 1,2,3, \ldots \]
+          
+          <p>In other words, taking advantage of the fact that we know where sine is zero we can arrive at the second equation.  Also note that because we are assuming that \(\lambda  &gt; 0\) we know that \(2\pi \sqrt \lambda  &gt; 0\)and so \(n\) can only be a positive integer for this case.</p>
+          
+          <p>Now all we have to do is solve this for \(\lambda \) and we’ll have all the positive eigenvalues for this BVP.</p>
+          
+          <p>The positive eigenvalues are then,</p>
+          \[{\lambda _{\,n}} = {\left( {\frac{n}{2}} \right)^2} = \frac{{{n^2}}}{4}\hspace{0.25in}n = 1,2,3, \ldots \]
+          <p>and the eigenfunctions that correspond to these eigenvalues are,</p>
+          \[{y_n}\left( x \right) = \sin \left( {\frac{{n\,x}}{2}} \right)\hspace{0.25in}n = 1,2,3, \ldots \]
+          
+          <p>Note that we subscripted an \(n\) on the eigenvalues and eigenfunctions to denote the fact that there is one for each of the given values of \(n\).  Also note that we dropped the \({c_2}\) on the eigenfunctions.  For eigenfunctions we are only interested in the function itself and not the constant in front of it and so we generally drop that.</p>
+          
+          <p>Let’s now move into the second case.</p>
+          
+          
+          <p>\(\underline {\lambda  = 0} \)<br />
+            In this case the BVP becomes,</p>
+          \[y'' = 0\hspace{0.25in}y\left( 0 \right) = 0\hspace{0.25in}y\left( {2\pi } \right) = 0\]
+          <p>and integrating the differential equation a couple of times gives us the general solution,</p>
+          \[y\left( x \right) = {c_1} + {c_2}x\]
+          
+          <p>Applying the first boundary condition gives,</p>
+          \[0 = y\left( 0 \right) = {c_1}\]
+          
+          <p>Applying the second boundary condition as well as the results of the first boundary condition gives,</p>
+          \[0 = y\left( {2\pi } \right) = 2{c_2}\pi \]
+          
+          <p>Here, unlike the first case, we don’t have a choice on how to make this zero.  This will only be zero if \({c_2} = 0\).</p>
+          
+          <p>Therefore, for this BVP (and that’s important), if we have \(\lambda  = 0\) the only solution is the trivial solution and so \(\lambda  = 0\) cannot be an eigenvalue for this BVP.</p>
+          
+          <p>Now let’s look at the final case.</p>
+          
+          
+          <p>\(\underline {\lambda  &lt; 0} \)<br />
+            In this case the characteristic equation and its roots are the same as in the first case.  So, we know that,</p>
+          \[{r_{1,2}} =  \pm \sqrt { - \lambda } \]
+          
+          <p>However, because we are assuming \(\lambda  &lt; 0\) here these are now two real distinct roots and so using our work above for these kinds of real, distinct roots we know that the general solution will be,</p>
+          \[y\left( x \right) = {c_1}\cosh \left( {\sqrt { - \lambda } \,x} \right) + {c_2}\sinh \left( {\sqrt { - \lambda } \,x} \right)\]
+          
+          <p>Note that we could have used the exponential form of the solution here, but our work will be significantly easier if we use the hyperbolic form of the solution here.</p>
+          
+          <p>Now, applying the first boundary condition gives,</p>
+          \[0 = y\left( 0 \right) = {c_1}\cosh \left( 0 \right) + {c_2}\sinh \left( 0 \right) = {c_1}\left( 1 \right) + {c_2}\left( 0 \right) = {c_1}\hspace{0.25in} \Rightarrow \hspace{0.25in}{c_1} = 0\]
+          
+          <p>Applying the second boundary condition gives,</p>
+          \[0 = y\left( {2\pi } \right) = {c_2}\sinh \left( {2\pi \sqrt { - \lambda } } \right)\]
+          
+          <p>Because we are assuming \(\lambda  &lt; 0\) we know that \(2\pi \sqrt { - \lambda }  \ne 0\) and so we also know that \(\sinh \left( {2\pi \sqrt { - \lambda } } \right) \ne 0\).  Therefore, much like the second case, we must have \({c_2} = 0\).</p>
+          
+          <p>So, for this BVP (again that’s important), if we have \(\lambda  &lt; 0\) we only get the trivial solution and so there are no negative eigenvalues.</p>
+          
+          <p>In summary then we will have the following eigenvalues/eigenfunctions for this BVP.</p>
+          
+          \[{\lambda _{\,n}} = \frac{{{n^2}}}{4}\hspace{0.25in}{y_n}\left( x \right) = \sin \left( {\frac{{n\,x}}{2}} \right)\hspace{0.25in}n = 1,2,3, \ldots \]
+      </div>
+    </div>
+  </div>
+    
+    <p>Let’s take a look at another example with slightly different boundary conditions.</p>
+    <a class="anchor" name="BVPFourier_Eval_Ex2"></a>
+  <div class="example">
+    <span class="example-title">Example 2</span> Find all the eigenvalues and eigenfunctions for the following BVP.
+          
+            \[y'' + \lambda y = 0\hspace{0.25in}y'\left( 0 \right) = 0\hspace{0.25in}y'\left( {2\pi } \right) = 0\]
+    <div class="example-content">
+      <span id="SHLink_Soln2" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln2" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln2" class="soln-content">
+        <p>Here we are going to work with derivative boundary conditions.  The work is pretty much identical to the previous example however so we won’t put in quite as much detail here.  We’ll need to go through all three cases just as the previous example so let’s get started on that.</p>
+          
+          
+          
+          <p>\(\underline {\lambda  &gt; 0} \)<br />
+            The general solution to the differential equation is identical to the previous example and so we have,</p>
+          \[y\left( x \right) = {c_1}\cos \left( {\sqrt \lambda  \,x} \right) + {c_2}\sin \left( {\sqrt \lambda  \,x} \right)\]
+          
+          <p>Applying the first boundary condition gives us,</p>
+          \[0 = y'\left( 0 \right) = \sqrt \lambda  \,{c_2}\hspace{0.25in} \Rightarrow \hspace{0.25in}{c_2} = 0\]
+          
+          <p>Recall that we are assuming that \(\lambda  &gt; 0\) here and so this will only be zero if \({c_2} = 0\).  Now, the second boundary condition gives us,</p>
+          \[0 = y'\left( {2\pi } \right) =  - \sqrt \lambda  \,{c_1}\sin \left( {2\pi \sqrt \lambda  } \right)\]
+          
+          <p>Recall that we don’t want trivial solutions and that \(\lambda  &gt; 0\) so we will only get non-trivial solution if we require that,</p>
+          \[\sin \left( {2\pi \sqrt \lambda  } \right) = 0\hspace{0.25in} \Rightarrow \hspace{0.25in}2\pi \sqrt \lambda  = n\pi \hspace{0.25in}n = 1,2,3, \ldots \]
+          
+          <p>Solving for \(\lambda \) and we see that we get exactly the same positive eigenvalues for this BVP that we got in the previous example.</p>
+          \[{\lambda _{\,n}} = {\left( {\frac{n}{2}} \right)^2} = \frac{{{n^2}}}{4}\hspace{0.25in}n = 1,2,3, \ldots \]
+          
+          <p>The eigenfunctions that correspond to these eigenvalues however are,</p>
+          \[{y_n}\left( x \right) = \cos \left( {\frac{{n\,x}}{2}} \right)\hspace{0.25in}n = 1,2,3, \ldots \]
+          
+          <p>So, for this BVP we get cosines for eigenfunctions corresponding to positive eigenvalues.</p>
+          
+          <p>Now the second case.</p>
+          
+          
+          <p>\(\underline {\lambda  = 0} \)<br />
+            The general solution is,</p>
+          \[y\left( x \right) = {c_1} + {c_2}x\]
+          
+          <p>Applying the first boundary condition gives,</p>
+          \[0 = y'\left( 0 \right) = {c_2}\]
+          
+          <p>Using this the general solution is then,</p>
+          \[y\left( x \right) = {c_1}\]
+          <p>and note that this will trivially satisfy the second boundary condition,</p>
+          \[0 = y'\left( {2\pi } \right) = 0\]
+          
+          <p>Therefore, unlike the first example, \(\lambda  = 0\) is an eigenvalue for this BVP and the eigenfunctions corresponding to this eigenvalue is,</p>
+          \[y\left( x \right) = 1\]
+          
+          <p>Again, note that we dropped the arbitrary constant for the eigenfunctions.</p>
+          
+          <p>Finally let’s take care of the third case.</p>
+          
+          
+          <p>\(\underline {\lambda  &lt; 0} \)<br />
+            The general solution here is,</p>
+          \[y\left( x \right) = {c_1}\cosh \left( {\sqrt { - \lambda } \,x} \right) + {c_2}\sinh \left( {\sqrt { - \lambda } \,x} \right)\]
+          
+          <p>Applying the first boundary condition gives,</p>
+          \[0 = y'\left( 0 \right) = \sqrt { - \lambda } \,{c_1}\sinh \left( 0 \right) + \sqrt { - \lambda } \,{c_2}\cosh \left( 0 \right) = \sqrt { - \lambda } \,{c_2}\hspace{0.25in} \Rightarrow \hspace{0.25in}{c_2} = 0\]
+          
+          <p>Applying the second boundary condition gives,</p>
+          \[0 = y'\left( {2\pi } \right) = \sqrt { - \lambda } \,{c_1}\sinh \left( {2\pi \sqrt { - \lambda } } \right)\]
+          
+          <p>As with the previous example we again know that \(2\pi \sqrt { - \lambda }  \ne 0\) and so \(\sinh \left( {2\pi \sqrt { - \lambda } } \right) \ne 0\).  Therefore, we must have \({c_1} = 0\).</p>
+          
+          <p>So, for this BVP we again have no negative eigenvalues.</p>
+          
+          <p>In summary then we will have the following eigenvalues/eigenfunctions for this BVP.</p>
+          
+          \[\begin{align*}{\lambda _{\,n}} & = \frac{{{n^2}}}{4} & {y_n}\left( x \right) & = \cos \left( {\frac{{n\,x}}{2}} \right)\hspace{0.25in}n = 1,2,3, \ldots \\ {\lambda _{\,0}} & = 0 & {y_0}\left( x \right) & = 1\end{align*}\]
+          
+          <p>Notice as well that we can actually combine these if we allow the list of \(n\)’s for the first one to start at zero instead of one.  This will often not happen, but when it does we’ll take advantage of it.  So the “official” list of eigenvalues/eigenfunctions for this BVP is,</p>
+          \[{\lambda _{\,n}} = \frac{{{n^2}}}{4}\hspace{0.25in}{y_n}\left( x \right) = \cos \left( {\frac{{n\,x}}{2}} \right)\hspace{0.25in}n = 0,1,2,3, \ldots \]
+      </div>
+    </div>
+  </div>
+    
+    <p>So, in the previous two examples we saw that we generally need to consider different cases for \(\lambda \) as different values will often lead to different general solutions.  Do not get too locked into the cases we did here.  We will mostly be solving this particular differential equation and so it will be tempting to assume that these are always the cases that we’ll be looking at, but there are BVP’s that will require other/different cases.</p>
+    
+    <p>Also, as we saw in the two examples sometimes one or more of the cases will not yield any eigenvalues.  This will often happen, but again we shouldn’t read anything into the fact that we didn’t have negative eigenvalues for either of these two BVP’s.  There are BVP’s that will have negative eigenvalues.</p>
+    
+    <p>Let’s take a look at another example with a very different set of boundary conditions.  These are not the traditional boundary conditions that we’ve been looking at to this point, but we’ll see in the next chapter how these can arise from certain physical problems.</p>
+    
+  <a class="anchor" name="BVPFourier_Eval_Ex3"></a>
+  <div class="example">
+    <span class="example-title">Example 3</span> Find all the eigenvalues and eigenfunctions for the following BVP.
+          
+              \[y'' + \lambda y = 0\hspace{0.25in}y\left( { - \pi } \right) = y\left( \pi  \right)\,\,\,\,\,\,\,\,\,\,y'\left( { - \pi } \right) = y'\left( \pi  \right)\]
+    <div class="example-content">
+      <span id="SHLink_Soln3" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln3" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln3" class="soln-content">
+        <p>So, in this example we aren’t actually going to specify the solution or its derivative at the boundaries.  Instead we’ll simply specify that the solution must be the same at the two boundaries and the derivative of the solution must also be the same at the two boundaries.  Also, this type of boundary condition will typically be on an interval of the form [-L,L] instead of [0,L] as we’ve been working on to this point.</p>
+          
+          <p>As mentioned above these kind of boundary conditions arise very naturally in certain physical problems and we’ll see that in the next chapter.</p>
+          
+          <p>As with the previous two examples we still have the standard three cases to look at.</p>
+          
+          
+          <p>\(\underline {\lambda  &gt; 0} \)<br />
+            The general solution for this case is,</p>
+          \[y\left( x \right) = {c_1}\cos \left( {\sqrt \lambda  \,x} \right) + {c_2}\sin \left( {\sqrt \lambda  \,x} \right)\]
+          
+          <p>Applying the first boundary condition and using the fact that cosine is an even function (<em>i.e.</em>\(\cos \left( { - x} \right) = \cos \left( x \right)\)) and that sine is an odd function (<em>i.e.</em> \(\sin \left( { - x} \right) =  - \sin \left( x \right)\)).  gives us,</p>
+
+          \[\begin{align*}{c_1}\cos \left( { - \pi \sqrt \lambda  } \right) + {c_2}\sin \left( { - \pi \sqrt \lambda  } \right) & = {c_1}\cos \left( {\pi \sqrt \lambda  } \right) + {c_2}\sin \left( {\pi \sqrt \lambda  } \right)\\  {c_1}\cos \left( {\pi \sqrt \lambda  } \right) - {c_2}\sin \left( {\pi \sqrt \lambda  } \right) & = {c_1}\cos \left( {\pi \sqrt \lambda  } \right) + {c_2}\sin \left( {\pi \sqrt \lambda  } \right)\\   - {c_2}\sin \left( {\pi \sqrt \lambda  } \right) & = {c_2}\sin \left( {\pi \sqrt \lambda } \right)\\  0 & = 2{c_2}\sin \left( {\pi \sqrt \lambda  } \right)\end{align*}\]
+          
+          <p>This time, unlike the previous two examples this doesn’t really tell us anything.  We could have \(\sin \left( {\pi \sqrt \lambda  } \right) = 0\) but it is also completely possible, at this point in the problem anyway, for us to have \({c_2} = 0\) as well.</p>
+          
+          <p>So, let’s go ahead and apply the second boundary condition and see if we get anything out of that.</p>
+
+          \[\begin{align*} - \sqrt \lambda  \,{c_1}\sin \left( { - \pi \sqrt \lambda  } \right) + \sqrt \lambda  \,{c_2}\cos \left( { - \pi \sqrt \lambda  } \right) & =  - \sqrt \lambda  \,{c_1}\sin \left( {\pi \sqrt \lambda  } \right) + \sqrt \lambda  \,{c_2}\cos \left( {\pi \sqrt \lambda  } \right)\\  \sqrt \lambda  \,{c_1}\sin \left( {\pi \sqrt \lambda  } \right) + \sqrt \lambda  \,{c_2}\cos \left( {\pi \sqrt \lambda 
+            } \right) & =  - \sqrt \lambda  \,{c_1}\sin \left( {\pi \sqrt \lambda  } \right) + \sqrt \lambda  \,{c_2}\cos \left( {\pi \sqrt \lambda  } \right)\\  \sqrt \lambda  \,{c_1}\sin \left( {\pi \sqrt \lambda  } \right) & =  - \sqrt \lambda  \,{c_1}\sin \left( {\pi \sqrt \lambda  } \right)\\  2\sqrt \lambda  \,{c_1}\sin \left( {\pi \sqrt \lambda  } \right) & = 0\end{align*}\]
+          
+          <p>So, we get something very similar to what we got after applying the first boundary condition.  Since we are assuming that \(\lambda  &gt; 0\) this tells us that either \(\sin \left( {\pi \sqrt \lambda  } \right) = 0\) or \({c_1} = 0\).</p>
+          
+          <p>Note however that if \(\sin \left( {\pi \sqrt \lambda  } \right) \ne 0\) then we will have to have \({c_1} = {c_2} = 0\) and we’ll get the trivial solution.  We therefore need to require that \(\sin \left( {\pi \sqrt \lambda  } \right) = 0\) and so just as we’ve done for the previous two examples we can now get the eigenvalues,</p>
+          \[\pi \sqrt \lambda  = n\pi \hspace{0.25in} \Rightarrow \hspace{0.25in}\lambda  = {n^2}\,\,\,\,n = 1,2,3, \ldots \]
+          
+          <p>Recalling that \(\lambda  &gt; 0\) and we can see that we do need to start the list of possible \(n\)’s at one instead of zero.</p>
+          
+          <p>So, we now know the eigenvalues for this case, but what about the eigenfunctions.  The solution for a given eigenvalue is,</p>
+          \[y\left( x \right) = {c_1}\cos \left( {n\,x} \right) + {c_2}\sin \left( {n\,x} \right)\]
+          <p>and we’ve got no reason to believe that either of the two constants are zero or non-zero for that matter.  In cases like these we get two sets of eigenfunctions, one corresponding to each constant.  The two sets of eigenfunctions for this case are,</p>
+          \[{y_n}\left( x \right) = \cos \left( {n\,x} \right)\hspace{0.25in}{y_n}\left( x \right) = \sin \left( {n\,x} \right)\hspace{0.25in}n = 1,2,3, \ldots \]
+          
+          <p>Now the second case.</p>
+          
+          
+          <p>\(\underline {\lambda  = 0} \)<br />
+            The general solution is,</p>
+          \[y\left( x \right) = {c_1} + {c_2}x\]
+          
+          <p>Applying the first boundary condition gives,</p>
+          \[\begin{align*}{c_1} + {c_2}\left( { - \pi } \right) & = {c_1} + {c_2}\left( \pi  \right)\\  2\pi {c_2} & = 0\hspace{0.25in} \Rightarrow \hspace{0.25in}{c_2} = 0\end{align*}\]
+          
+          <p>Using this the general solution is then,</p>
+          \[y\left( x \right) = {c_1}\]
+          <p>and note that this will trivially satisfy the second boundary condition just as we saw in the second example above.  Therefore, we again have \(\lambda  = 0\) as an eigenvalue for this BVP and the eigenfunctions corresponding to this eigenvalue is,</p>
+          \[y\left( x \right) = 1\]
+          
+          <p>Finally let’s take care of the third case.</p>
+          
+          
+          <p>\(\underline {\lambda  &lt; 0} \)<br />
+            The general solution here is,</p>
+          \[y\left( x \right) = {c_1}\cosh \left( {\sqrt { - \lambda } \,x} \right) + {c_2}\sinh \left( {\sqrt { - \lambda } \,x} \right)\]
+          
+          <p>Applying the first boundary condition and using the fact that hyperbolic cosine is even and hyperbolic sine is odd gives,</p>
+          \[\begin{align*}{c_1}\cosh \left( { - \pi \sqrt { - \lambda } } \right) + {c_2}\sinh \left( { - \pi \sqrt { - \lambda } } \right) & = {c_1}\cosh \left( {\pi \sqrt { - \lambda } } \right) + {c_2}\sinh \left( {\pi \sqrt { - \lambda } } \right)\\  - {c_2}\sinh \left( { - \pi \sqrt { - \lambda } } \right) & = {c_2}\sinh \left( {\pi \sqrt { - \lambda } } \right)\\ 2{c_2}\sinh \left( {\pi \sqrt { - \lambda } } \right) & = 0\end{align*}\]
+          
+          <p>Now, in this case we are assuming that \(\lambda  &lt; 0\) and so we know that \(\pi \sqrt { - \lambda }  \ne 0\) which in turn tells us that \(\sinh \left( {\pi \sqrt { - \lambda } } \right) \ne 0\).  We therefore must have \({c_2} = 0\).</p>
+          
+          <p>Let’s now apply the second boundary condition to get,</p>
+          \[\begin{align*}\sqrt { - \lambda } \,{c_1}\sinh \left( { - \pi \sqrt { - \lambda } } \right) & = \sqrt { - \lambda } \,{c_1}\sinh \left( {\pi \sqrt { - \lambda } } \right)\\ 2\sqrt { - \lambda } \,{c_1}\sinh \left( {\pi \sqrt { - \lambda } } \right) & = 0\hspace{0.25in} \Rightarrow \hspace{0.25in}{c_1} = 0\end{align*}\]
+          
+          <p>By our assumption on \(\lambda \) we again have no choice here but to have \({c_1} = 0\).</p>
+          
+          <p>Therefore, in this case the only solution is the trivial solution and so, for this BVP we again have no negative eigenvalues.</p>
+          
+          <p>In summary then we will have the following eigenvalues/eigenfunctions for this BVP.</p>
+          
+          \[\begin{align*}{\lambda _{\,n}} & = {n^2} & {y_n}\left( x \right) & = \sin \left( {n\,x} \right) & n & = 1,2,3, \ldots \\ {\lambda _{\,n}} & = {n^2} & {y_n}\left( x \right) & = \cos \left( {n\,x} \right) & n & = 1,2,3, \ldots \\  {\lambda _{\,0}} & = 0 & {y_0}\left( x \right) & = 1\end{align*}\]
+          
+          <p>Note that we’ve acknowledged that for \(\lambda  &gt; 0\) we had two sets of eigenfunctions by listing them each separately.  Also, we can again combine the last two into one set of eigenvalues and eigenfunctions.  Doing so gives the following set of eigenvalues and eigenfunctions.</p>
+          \[\begin{align*}{\lambda _{\,n}} & = {n^2} & {y_n}\left( x \right) & = \sin \left( {n\,x} \right) & n & = 1,2,3, \ldots \\ {\lambda _{\,n}} & = {n^2} & {y_n}\left( x \right) & = \cos \left( {n\,x} \right) & n & = 0,1,2,3, \ldots \end{align*}\]
+      </div>
+    </div>
+  </div>
+
+    <p>Once again, we’ve got an example with no negative eigenvalues.  We can’t stress enough that this is more a function of the differential equation we’re working with than anything and there will be examples in which we may get negative eigenvalues.</p>
+    
+    <p>Now, to this point we’ve only worked with one differential equation so let’s work an example with a different differential equation just to make sure that we don’t get too locked into this one differential equation.</p>
+    
+    <p>Before working this example let’s note that we will still be working the vast majority of our examples with the one differential equation we’ve been using to this point.  We’re working with this other differential equation just to make sure that we don’t get too locked into using one single differential equation.</p>
+    <a class="anchor" name="BVPFourier_Eval_Ex4"></a>
+  <div class="example">
+    <span class="example-title">Example 4</span> Find all the eigenvalues and eigenfunctions for the following BVP.
+          
+              \[{x^2}y'' + 3xy' + \lambda y = 0\hspace{0.25in}y\left( 1 \right) = \hspace{0.25in}0\,\,\,\,\,\,\,\,\,\,y\left( 2 \right) = 0\]
+    <div class="example-content">
+      <span id="SHLink_Soln4" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln4" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln4" class="soln-content">
+        <p>This is an <a href="EulerEquations.html">Euler differential equation</a>  and so we know that we’ll need to find the roots of the following quadratic.</p>
+          \[r\left( {r - 1} \right) + 3r + \lambda  = {r^2} + 2r + \lambda  = 0\]
+          
+          <p>The roots to this quadratic are,</p>
+          \[{r_{1,2}} = \frac{{ - 2 \pm \sqrt {4 - 4\lambda } }}{2} =  - 1 \pm \sqrt {1 - \lambda } \]
+          
+          <p>Now, we are going to again have some cases to work with here, however they won’t be the same as the previous examples.  The solution will depend on whether or not the roots are real distinct, double or complex and these cases will depend upon the sign/value of \(1 - \lambda \).  So, let’s go through the cases.</p>
+          
+          
+          
+          
+          <p>\(\underline {1 - \lambda  &lt; 0,\,\,\lambda  &gt; 1} \)<br />
+            In this case the roots will be complex and we’ll need to write them as follows in order to write down the solution.</p>
+          \[{r_{1,2}} =  - 1 \pm \sqrt {1 - \lambda }  =  - 1 \pm \sqrt { - \left( {\lambda  - 1} \right)}  =  - 1 \pm i\,\sqrt {\lambda  - 1} \]
+          
+          <p>By writing the roots in this fashion we know that \(\lambda  - 1 &gt; 0\) and so \(\sqrt {\lambda  - 1} \) is now a real number, which we need in order to write the following solution,</p>
+          
+          \[y\left( x \right) = {c_1}{x^{ - 1}}\cos \left( {\ln \left( x \right)\sqrt {\lambda  - 1} } \right) + {c_2}{x^{ - 1}}\sin \left( {\ln \left( x \right)\sqrt {\lambda  - 1} } \right)\]
+          
+          <p>Applying the first boundary condition gives us,</p>
+          \[0 = y\left( 1 \right) = {c_1}\cos \left( 0 \right) + {c_2}\sin \left( 0 \right) = {c_1}\hspace{0.25in} \Rightarrow \hspace{0.25in}{c_1} = 0\]
+          
+          <p>The second boundary condition gives us,</p>
+          \[0 = y\left( 2 \right) = \frac{1}{2}{c_2}\sin \left( {\ln \left( 2 \right)\sqrt {\lambda  - 1} } \right)\]
+          
+          <p>In order to avoid the trivial solution for this case we’ll require,</p>
+          \[\sin \left( {\ln \left( 2 \right)\sqrt {\lambda  - 1} } \right) = 0\hspace{0.25in} \Rightarrow \hspace{0.25in}\ln \left( 2 \right)\sqrt {\lambda  - 1}  = n\pi \hspace{0.25in}n = 1,2,3, \ldots \]
+          
+          <p>This is much more complicated of a condition than we’ve seen to this point, but other than that we do the same thing.  So, solving for \(\lambda \) gives us the following set of eigenvalues for this case.</p>
+          \[{\lambda _{\,n}} = 1 + {\left( {\frac{{n\pi }}{{\ln 2}}} \right)^2}\hspace{0.25in}n = 1,2,3, \ldots \]
+          
+          <p>Note that we need to start the list of \(n\)’s off at one and not zero to make sure that we have \(\lambda  &gt; 1\) as we’re assuming for this case.</p>
+          
+          <p>The eigenfunctions that correspond to these eigenvalues are,</p>
+          \[{y_n}\left( x \right) = {x^{ - 1}}\sin \left( {\frac{{n\pi }}{{\ln 2}}\ln \left( x \right)} \right)\hspace{0.25in}n = 1,2,3, \ldots \]
+          
+          <p>Now the second case.</p>
+          
+          
+          
+          <p>\(\underline {1 - \lambda  = 0,\,\,\,\lambda  = 1} \)<br />
+            In this case we get a double root of \({r_{\,1,2}} =  - 1\) and so the solution is,</p>
+          \[y\left( x \right) = {c_1}{x^{ - 1}} + {c_2}{x^{ - 1}}\ln \left( x \right)\]
+          
+          <p>Applying the first boundary condition gives,</p>
+          \[0 = y\left( 1 \right) = {c_1}\]
+          
+          <p>The second boundary condition gives,</p>
+          \[0 = y\left( 2 \right) = \frac{1}{2}{c_2}\ln \left( 2 \right)\hspace{0.25in} \Rightarrow \hspace{0.25in}{c_2} = 0\]
+          
+          <p>We therefore have only the trivial solution for this case and so \(\lambda  = 1\) is not an eigenvalue.</p>
+          
+          <p>Let’s now take care of the third (and final) case.</p>
+          
+          
+          <p>\(\underline {1 - \lambda  &gt; 0,\,\,\lambda  &lt; 1} \)<br />
+            This case will have two real distinct roots and the solution is,</p>
+          \[y\left( x \right) = {c_1}{x^{ - 1 + \sqrt {1 - \lambda } }} + {c_2}{x^{ - 1 - \sqrt {1 - \lambda } }}\]
+          
+          <p>Applying the first boundary condition gives,</p>
+          \[0 = y\left( 1 \right) = \,{c_1} + \,{c_2}\hspace{0.25in} \Rightarrow \hspace{0.25in}{c_2} =  - {c_1}\]
+          
+          <p>Using this our solution becomes,</p>
+          \[y\left( x \right) = {c_1}{x^{ - 1 + \sqrt {1 - \lambda } }} - {c_1}{x^{ - 1 - \sqrt {1 - \lambda } }}\]
+          
+          <p>Applying the second boundary condition gives,</p>
+          \[0 = y\left( 2 \right) = {c_1}{2^{ - 1 + \sqrt {1 - \lambda } }} - {c_1}{2^{ - 1 - \sqrt {1 - \lambda } }} = {c_1}\left( {{2^{ - 1 + \sqrt {1 - \lambda } }} - {2^{ - 1 - \sqrt {1 - \lambda } }}} \right)\]
+          
+          <p>Now, because we know that \(\lambda  \ne 1\) for this case the exponents on the two terms in the parenthesis are not the same and so the term in the parenthesis is not the zero.  This means that we can only have,</p>
+          \[{c_1} = {c_2} = 0\]
+          <p>and so in this case we only have the trivial solution and there are no eigenvalues for which \(\lambda  &lt; 1\).</p>
+          
+          <p>The only eigenvalues for this BVP then come from the first case.</p>
+      </div>
+    </div>
+  </div>
+    
+    <p>So, we’ve now worked an example using a differential equation other than the “standard” one we’ve been using to this point.  As we saw in the work however, the basic process was pretty much the same.  We determined that there were a number of cases (three here, but it won’t always be three) that gave different solutions.  We examined each case to determine if non-trivial solutions were possible and if so found the eigenvalues and eigenfunctions corresponding to that case.</p>
+    
+    <p>We need to work one last example in this section before we leave this section for some new topics.  The four examples that we’ve worked to this point were all fairly simple (with simple being relative of course…), however we don’t want to leave without acknowledging that many eigenvalue/eigenfunctions problems are so easy.</p>
+    
+    <p>In many examples it is not even possible to get a complete list of all possible eigenvalues for a BVP.  Often the equations that we need to solve to get the eigenvalues are difficult if not impossible to solve exactly.  So, let’s take a look at one example like this to see what kinds of things can be done to at least get an idea of what the eigenvalues look like in these kinds of cases.</p>
+    <a class="anchor" name="BVPFourier_Eval_Ex5"></a>
+  <div class="example">
+    <span class="example-title">Example 5</span> Find all the eigenvalues and eigenfunctions for the following BVP.
+          
+            \[y'' + \lambda y = 0\hspace{0.25in}y\left( 0 \right) = \hspace{0.25in}0\,\,\,\,\,\,\,\,\,\,y'\left( 1 \right) + y\left( 1 \right) = 0\]
+    <div class="example-content">
+      <span id="SHLink_Soln5" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln5" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln5" class="soln-content">
+        <p>The boundary conditions for this BVP are fairly different from those that we’ve worked with to this point.  However, the basic process is the same.  So let’s start off with the first case.</p>
+          
+          
+          <p>\(\underline {\lambda  &gt; 0} \)<br />
+            The general solution to the differential equation is identical to the first few examples and so we have,</p>
+          \[y\left( x \right) = {c_1}\cos \left( {\sqrt \lambda  \,x} \right) + {c_2}\sin \left( {\sqrt \lambda  \,x} \right)\]
+          
+          <p>Applying the first boundary condition gives us,</p>
+          \[0 = y\left( 0 \right) = \,{c_1}\hspace{0.25in} \Rightarrow \hspace{0.25in}{c_1} = 0\]
+          
+          <p>The second boundary condition gives us,</p>
+          \[\begin{align*}0 = y\left( 1 \right) + y'\left( 1 \right) & = \,{c_2}\sin \left( {\sqrt \lambda  } \right) + \sqrt \lambda  \,{c_2}\cos \left( {\sqrt \lambda  } \right)\\ &amp;  = \,{c_2}\left( {\sin \left( {\sqrt \lambda  } \right) + \sqrt \lambda  \,\cos \left( {\sqrt \lambda  } \right)} \right)\end{align*}\]
+          
+          <p>So, if we let \({c_2} = 0\) we’ll get the trivial solution and so in order to satisfy this boundary condition we’ll need to require instead that,</p>
+          \[\begin{align*}0 = \sin \left( {\sqrt \lambda  } \right) + \sqrt \lambda  \,\cos \left( {\sqrt \lambda  } \right)\\ \sin \left( {\sqrt \lambda  } \right) & =  - \sqrt \lambda  \,\cos \left( {\sqrt \lambda  } \right)\\ \tan \left( {\sqrt \lambda  } \right) & =  - \sqrt \lambda  \end{align*}\]
+          
+          <p>Now, this equation has solutions but we’ll need to use some numerical techniques in order to get them.  In order to see what’s going on here let’s graph \(\tan \left( {\sqrt \lambda  } \right)\) and \( - \sqrt \lambda  \) on the same graph.  Here is that graph and note that the horizontal axis really is values of \(\sqrt \lambda  \) as that will make things a little easier to see and relate to values that we’re familiar with.</p>
+          
+          
+            <div class="center-div"><img alt="A graph on the domain $0 \le \sqrt{\lambda} \le \frac{9\pi}{2}$.  No vertical scale is given.  Also on the graph are dashed lines at $x=\frac{\pi}{2}$, $x=\frac{3\pi}{2}$, $x=\frac{5\pi}{2}$, $x=\frac{7\pi}{2}$ and $x=\frac{9\pi}{2}$.  Between each of these dashed lines are graphs of branches of $y=tan(x)$.  Also on the graph the line $y=-\sqrt{\lambda}x$.  At the points where the line intersects the graph of the tangent branches they are labeled (from the left) as $\sqrt{\lambda_{1}}$, $\sqrt{\lambda_{2}}$, $\sqrt{\lambda_{3}}$, $\sqrt{\lambda_{4}}$ and $\sqrt{\lambda_{5}}$." border="0" height="246" src="http://tutorial.math.lamar.edu/Classes/DE/BVPEvals_FIles/image003.png" width="402" /></div>
+          
+          <p>So, eigenvalues for this case will occur where the two curves intersect.  We’ve shown the first five on the graph and again what is showing on the graph is really the square root of the actual eigenvalue as we’ve noted.</p>
+          
+          <p>The interesting thing to note here is that the farther out on the graph the closer the eigenvalues come to the asymptotes of tangent and so we’ll take advantage of that and say that for large enough \(n\) we can approximate the eigenvalues with the (very well known) locations of the asymptotes of tangent.</p>
+          
+          <p>How large the value of \(n\) is before we start using the approximation will depend on how much accuracy we want, but since we know the location of the asymptotes and as \(n\) increases the accuracy of the approximation will increase so it will be easy enough to check for a given accuracy.</p>
+          
+          <p>For the purposes of this example we found the first five numerically and then we’ll use the approximation of the remaining eigenvalues.  Here are those values/approximations.</p>
+          
+          \[\begin{align*}\sqrt {{\lambda _{\,1}}} &  = 2.0288 & {\lambda _{\,1}} & = 4.1160 & & \left( {2.4674} \right)\\ \sqrt {{\lambda _{\,2}}} & = 4.9132 & {\lambda _{\,2}} & = 24.1395  & & \left( {22.2066} \right)\\ \sqrt {{\lambda _{\,3}}} &  = 7.9787 & {\lambda _{\,3}} & = 63.6597 & & \left( {61.6850} \right)\\ \sqrt {{\lambda _{\,4}}}  & = 11.0855 & {\lambda _{\,4}} & = 122.8883  & & \left( {120.9027} \right)\\ \sqrt {{\lambda _{\,5}}} & = 14.2074 & {\lambda _{\,5}} & = 201.8502 & & \left( {199.8595} 
+            \right)\\ \sqrt {{\lambda _{\,n}}} & \approx \frac{{2n - 1}}{2}\pi & {\lambda _{\,n}} & \approx \frac{{{{\left( {2n - 1} \right)}^2}}}{4}{\pi ^2} & & n = 6,7,8, \ldots \end{align*}\]
+          
+          <p>The number in parenthesis after the first five is the approximate value of the asymptote.  As we can see they are a little off, but by the time we get to \(n = 5\) the error in the approximation is 0.9862%.  So less than 1% error by the time we get to \(n = 5\) and it will only get better for larger value of \(n\).</p>
+          
+          <p>The eigenfunctions for this case are,</p>
+          \[{y_n}\left( x \right) = \sin \left( {\sqrt {{\lambda _{\,n}}} \,x} \right)\hspace{0.25in}n = 1,2,3, \ldots \]
+          <p>where the values of \({\lambda _{\,n}}\) are given above.</p>
+          
+          <p>So, now that all that work is out of the way let’s take a look at the second case.</p>
+          
+          
+          <p>\(\underline {\lambda  = 0} \)<br />
+            The general solution is,</p>
+          \[y\left( x \right) = {c_1} + {c_2}x\]
+          
+          <p>Applying the first boundary condition gives,</p>
+          \[0 = y\left( 0 \right) = {c_1}\]
+          
+          <p>Using this the general solution is then,</p>
+          \[y\left( x \right) = {c_2}x\]
+          
+          <p>Applying the second boundary condition to this gives,</p>
+          \[0 = y'\left( 1 \right) + y\left( 1 \right) = {c_2} + {c_2} = 2{c_2}\hspace{0.25in} \Rightarrow \hspace{0.25in}{c_2} = 0\]
+          
+          <p>Therefore, for this case we get only the trivial solution and so \(\lambda  = 0\) is not an eigenvalue.  Note however that had the second boundary condition been \(y'\left( 1 \right) - y\left( 1 \right) = 0\) then \(\lambda  = 0\) would have been an eigenvalue (with eigenfunctions \(y\left( x \right) = x\)) and so again we need to be careful about reading too much into our work here.</p>
+          
+          <p>Finally let’s take care of the third case.</p>
+          
+          
+          <p>\(\underline {\lambda  &lt; 0} \)<br />
+            The general solution here is,</p>
+          \[y\left( x \right) = {c_1}\cosh \left( {\sqrt { - \lambda } \,x} \right) + {c_2}\sinh \left( {\sqrt { - \lambda } \,x} \right)\]
+          
+          <p>Applying the first boundary condition gives,</p>
+          \[0 = y\left( 0 \right) = {c_1}\cosh \left( 0 \right) + {c_2}\sinh \left( 0 \right) = {c_1}\hspace{0.25in} \Rightarrow \hspace{0.25in}{c_1} = 0\]
+          
+          <p>Using this the general solution becomes,</p>
+          \[y\left( x \right) = {c_2}\sinh \left( {\sqrt { - \lambda } \,x} \right)\]
+          
+          <p>Applying the second boundary condition to this gives,</p>
+          \[\begin{align*}0 = y'\left( 1 \right) + y\left( 1 \right)  & = \sqrt { - \lambda } {c_2}\cosh \left( {\sqrt { - \lambda } } \right) + {c_2}\sinh \left( {\sqrt { - \lambda } } \right)\\ &amp;  = {c_2}\left( {\sqrt { - \lambda } \cosh \left( {\sqrt { - \lambda } } \right) + \sinh \left( {\sqrt { - \lambda } } \right)} \right)\end{align*}\]
+          
+          <p>Now, by assumption we know that \(\lambda  &lt; 0\) and so \(\sqrt { - \lambda }  &gt; 0\).  This in turn tells us that \(\sinh \left( {\sqrt { - \lambda } } \right) &gt; 0\) and we know that \(\cosh \left( x \right) &gt; 0\) for all \(x\).  Therefore,</p>
+          \[\sqrt { - \lambda } \cosh \left( {\sqrt { - \lambda } } \right) + \sinh \left( {\sqrt { - \lambda } } \right) \ne 0\]
+          <p>and so we must have \({c_2} = 0\) and once again in this third case we get the trivial solution and so this BVP will have no negative eigenvalues.</p>
+          
+          <p>In summary the only eigenvalues for this BVP come from assuming that \(\lambda  &gt; 0\) and they are given above.</p>
+      </div>
+    </div>
+  </div>
+
+    
+    <p>So, we’ve worked several eigenvalue/eigenfunctions examples in this section.  Before leaving this section we do need to note once again that there are a vast variety of different problems that we can work here and we’ve really only shown a bare handful of examples and so please do not walk away from this section believing that we’ve shown you everything.</p>
+    
+    <p>The whole purpose of this section is to prepare us for the types of problems that we’ll be seeing in the next chapter.  Also, in the next chapter we will again be restricting ourselves down to some pretty basic and simple problems in order to illustrate one of the more common methods for solving partial differential equations.</p>
+    
+  
+
+
+      
+
+
+
+    </div>
+    <!-- End of content div -->
+
+
+    <div class="footer">
+      <div class="footer-links">
+        [<a href="http://tutorial.math.lamar.edu/Contact.aspx">Contact Me</a>]&nbsp;[<a href="../../MyStudents-2.html">My Students</a>]&nbsp;[<a href="http://tutorial.math.lamar.edu/Privacy.aspx">Privacy Statement</a>]&nbsp;[<a href="../../Help-2.html">Site Help &amp; FAQ</a>]&nbsp;[<a href="http://tutorial.math.lamar.edu/Terms.aspx">Terms of Use</a>]
+      </div>
+      <div class="footer-dates">
+        <div class="footer-copyright"><span id="lblCopyRight">&copy; 2003 - 2019 Paul Dawkins</span></div>
+        <div class="footer-spacer"></div>
+        <div class="footer-modified-date">Page Last Modified : <span id="lblModified">6/4/2018</span></div>
+      </div>
+      
+
+    </div>
+  </div>
+  <!-- End of page div...  -->
+</body>
+
+<!-- Mirrored from tutorial.math.lamar.edu/Classes/DE/BVPEvals.aspx by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 27 Feb 2019 06:15:37 GMT -->
+</html>

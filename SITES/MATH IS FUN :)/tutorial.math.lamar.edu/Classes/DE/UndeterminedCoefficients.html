@@ -1,0 +1,1585 @@
+
+
+<!DOCTYPE html>
+
+<html>
+
+<!-- Mirrored from tutorial.math.lamar.edu/Classes/DE/UndeterminedCoefficients.aspx by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 27 Feb 2019 06:15:36 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=yes" /><meta http-equiv="X-UA-Compatible" content="IE=edge" />  <!-- For best MathJax performance on IE  -->
+
+  <meta name="google-site-verification" content="uLoA31CJfOhIVMJWBjCmQL8xNMmmLybZU3LRKavy9WQ" /><title>
+	Differential Equations - Undetermined Coefficients
+</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="../../../www.googletagmanager.com/gtag/js1872?id=UA-331594-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-331594-1');
+  </script>
+
+  <link type="text/css" href="../../css/jquery.mmenu.all.css" rel="stylesheet" /><link type="text/css" href="../../css/jquery.dropdown.css" rel="stylesheet" /><link href="../../FA/css/fontawesome-all.min.css" rel="stylesheet" /><link type="text/css" href="../../css/notes-all.css" rel="stylesheet" /><link type="text/css" href="../../css/notes-google.css" rel="stylesheet" /><link type="text/css" href="../../css/notes-mmenu.css" rel="stylesheet" /><link type="text/css" href="../../css/notes-dropdown.css" rel="stylesheet" />
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+     TeX: { equationNumbers: { autoNumber: "AMS" } }
+    });
+  </script>
+  <script type="text/javascript" async src="../../../cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax2ba6.js?config=TeX-AMS_CHTML-full"></script>
+  <script type="text/javascript" src="../../../code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="../../js/jquery.mmenu.all.js"></script>
+  <script type="text/javascript" src="../../js/jquery.dropdown.js"></script>
+  <script type="text/javascript" src="../../js/notes-all.js"></script>  
+
+  <script>
+    (function () {
+      var cx = '001004262401526223570:11yv6vpcqvy';
+      var gcse = document.createElement('script');
+      gcse.type = 'text/javascript';
+      gcse.async = true;
+      gcse.src = '../../../cse.google.com/cse07b6.html?cx=' + cx;
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(gcse, s);
+    })();
+  </script>
+
+<meta http-equiv="keywords" name="keywords" content="nonhomogeneous differential equations, solve nonhomogeneous differential equations, undetermined coefficients, solve second order differential equation" /><meta http-equiv="description" name="description" content="In this section we introduce the method of undetermined coefficients to find particular solutions to nonhomogeneous differential equation.  We work a wide variety of examples illustrating the many guidelines for making the initial guess of the form of the particular solution that is needed for the method." /></head>
+<body onload="init({Notes: 'NoteMobile;8/21/2018;true'})">
+
+  <div id="page">
+
+    <div class="header">
+      <div class="header-row">
+        <!--<a href="#menu"><span></span></a>-->
+        <div id="side-menu-icon" class="header-side-menu-icon"><a href="#menu"><span class="fas fa-bars fa-lg" aria-hidden="true" title="Main Menu - Change between topics, chapters and sections as well as a few extra pages."></span></a></div>
+        <span class="header-title"><a href="../../index.html" class="header-title-link">Paul's Online Notes</a></span>
+        <div class="header-spacer"></div>
+
+        <div id="content-top-menu" class="top-menu">
+          <button id="content-type-menu" class="top-menu-button" data-jq-dropdown="#jq-dropdown-type" title="View (Notes, Practice Problems or Assignment Problems, Show/Hide Solutions and/or Steps) Menu">
+            <span id="tab_top_menu_notes" class="top-menu-item-title">Notes</span> <span class="far fa-eye fa-lg" aria-hidden="true"></span>
+          </button>
+
+          <button id="quicknav-menu" class="top-menu-button" data-jq-dropdown="#jq-dropdown-quicknav" title="Quick Navigation (Previous/Next Sections and Problems and Full Problem List) Menu">
+            <span class="top-menu-item-title">Quick Nav</span> <span class="fas fa-exchange fa-lg" aria-hidden="true"></span>
+          </button>
+          
+          <button id="download-menu" class="top-menu-button" data-jq-dropdown="#jq-dropdown-download" title="Download pdf Menu">
+            <span class="top-menu-item-title">Download</span> <span class="far fa-download fa-lg" aria-hidden="true"></span>
+          </button>
+
+          <button id="print-menu" class="top-menu-button top-menu-button-icon-only" data-jq-dropdown="#jq-print-download" title="Print Menu">
+            <span class="far fa-print fa-lg" aria-hidden="true"></span>
+          </button>
+        </div>
+
+        <div id="header-google-search" class="header-search">
+          <gcse:search></gcse:search>
+        </div>
+        <div id="header-search-icon" title="Site Search" class="header-menu-icon"><span id="search-icon" class="fas fa-search" aria-hidden="true"></span></div>
+
+      </div>
+    </div>
+
+     <div id="jq-dropdown-type" class="jq-dropdown jq-dropdown-tip">
+      <ul class="jq-dropdown-menu">
+        
+        <li id="li_type_menu_goto" class="top-menu-nav-title">Go To</li>
+        <li id="li_type_menu_notes">
+          <span id="type_menu_notes_span" title="Viewing the Notes for the current topic." class="top-menu-current">Notes</span>
+          
+        </li>
+        <li id="li_type_menu_practice">
+          <span id="type_menu_problem_span_de" class="top-menu-item-text">Practice and Assignment problems are not yet written.  As time permits I am working on them, however I don't have the amount of free time that I used to so it will take a while before anything shows up here.</span>
+          
+          
+        </li>
+        <li id="li_type_menu_asgn">
+          
+          
+        </li>
+        <li id="li_type_menu_sh" class="top-menu-nav-title">Show/Hide</li>
+        <li id="li_type_menu_show" title="Show any hidden solutions and/or steps that may be present on the page."><a href="javascript:SHPrintPage(1,0)" id="view_menu_show">Show all Solutions/Steps/<em>etc.</em></a></li>
+        <li id="li_type_menu_hide" title="Hide any visible solutions and/or steps that may be present on the page."><a href="javascript:SHPrintPage(0,0)" id="view_menu_hide">Hide all Solutions/Steps/<em>etc.</em></a></li>
+      </ul>
+    </div>
+
+    <div id="jq-dropdown-quicknav" class="jq-dropdown jq-dropdown-tip">
+      <ul class="jq-dropdown-menu">
+        <li id="li_nav_menu_sections" class="top-menu-nav-title">Sections</li>
+        <li id="li_nav_menu_prev_section"><a href="NonhomogeneousDE.html" id="a_nav_menu_prev_section" class="top-menu-nav-link" title="Previous Section : Nonhomogeneous Differential Equations"><span class="top-menu-prev fas fa-chevron-left"></span> Nonhomogeneous Differential Equations</a></li>
+        <li id="li_nav_menu_next_section"><a href="VariationofParameters.html" id="a_nav_menu_next_section" class="top-menu-nav-link" title="Next Section : Variation of Parameters"><span class="top-menu-prev-hidden fas fa-chevron-left"></span> Variation of Parameters <span class="top-menu-next fas fa-chevron-right"></span></a></li>
+        <li id="li_nav_menu_chapters" class="top-menu-nav-title">Chapters</li>
+        <li id="li_nav_menu_prev_chapter"><a href="IntroFirstOrder.html" id="a_nav_menu_prev_chapter" class="top-menu-nav-link" title="Previous Chapter : First Order DE&#39;s"><span class="top-menu-prev fas fa-chevron-left"></span><span class="top-menu-prev fas fa-chevron-left"></span> First Order DE's</a></li>
+        <li id="li_nav_menu_next_chapter"><a href="LaplaceIntro.html" id="a_nav_menu_next_chapter" class="top-menu-nav-link" title="Next Chapter : Laplace Transforms"><span class="top-menu-prev-hidden fas fa-chevron-left"></span><span class="top-menu-prev-hidden fas fa-chevron-left"></span> Laplace Transforms <span class="top-menu-next fas fa-chevron-right"></span><span class="top-menu-next fas fa-chevron-right"></span></a></li>
+        
+        
+        
+        
+        <li id="li_nav_menu_classes" class="top-menu-nav-title">Classes</li>
+        <li>
+          
+          <a href="../Alg/Alg.html" id="nav_menu_alg_link" title="Go To Algebra Notes">Algebra</a>
+        </li>
+        <li>
+          
+          <a href="../CalcI/CalcI.html" id="nav_menu_calci_link" title="Go To Calculus I Notes">Calculus I</a>
+        </li>
+        <li>
+          
+          <a href="../CalcII/CalcII.html" id="nav_menu_calcii_link" title="Go To Calculus II Notes">Calculus II</a>
+        </li>
+        <li>
+          
+          <a href="../CalcIII/CalcIII.html" id="nav_menu_calciii_link" title="Go To Calculus III Notes">Calculus III</a>
+        </li>
+        <li>
+          <span id="nav_menu_de_span" title="Currently Viewing Differential Equations Material" class="top-menu-current">Differential Equations</span>
+          
+        </li>
+        <li id="li_nav_menu_extras" class="top-menu-nav-title">Extras</li>
+        <li>
+          
+          <a href="../../Extras/AlgebraTrigReview/AlgebraTrig.html" id="nav_menu_algtrig_link" title="Go To Algebra &amp; Trig Review">Algebra &amp; Trig Review</a>
+        </li>
+        <li>
+          
+          <a href="../../Extras/CommonErrors/CommonMathErrors.html" id="nav_menu_commonerrors_link" title="Go To Common Math Errors">Common Math Errors</a>
+        </li>
+        <li>
+          
+          <a href="../../Extras/ComplexPrimer/ComplexNumbers.html" id="nav_menu_complexnumbers_link" title="Go To Complex Numbers Primer">Complex Number Primer</a>
+        </li>
+        <li>
+          
+          <a href="../../Extras/StudyMath/HowToStudyMath.html" id="nav_menu_studymath_link" title="Go To How To Study Math">How To Study Math</a>
+        </li>
+        <li>
+          
+          <a href="../../Extras/CheatSheets_Tables.html" id="nav_menu_cheattables_link" title="Go To List of Cheat Sheets and Tables">Cheat Sheets &amp; Tables</a>
+        </li>
+        <li id="li_nav_menu_misc" class="top-menu-nav-title">Misc</li>
+        <li><a href="http://tutorial.math.lamar.edu/contact.aspx" id="nav_menu_contact" title="Contact Me!">Contact Me</a></li>
+        <li><a href="../../mathjax.html" id="nav_menu_mathjax" title="Info on MathJax and MathJax Configuration Menu">MathJax Help and Configuration</a></li>
+        <li><a href="../../mystudents.html" id="nav_menu_students" title="Go here if you are currently taking a class from me!">My Students</a></li>
+      </ul>
+    </div>
+
+    <div id="jq-dropdown-download" class="jq-dropdown jq-dropdown-anchor-right jq-dropdown-tip">
+      <ul class="jq-dropdown-menu">
+        
+        <li id="li_download_menu_notes" class="top-menu-nav-title">Notes Downloads</li>
+        <li id="li_download_menu_notes_book"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=B,1,N" id="download_menu_notes_book" data-PDF="Download - Menu$Notes - Book$Differential Equations$/Downloads/DE/Notes/Complete.pdf">Complete Book</a></li>
+        
+        <li id="li_download_menu_notes_chapter"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=C,18,N" id="download_menu_notes_chapter" data-PDF="Download - Menu$Notes - Chapter$Differential Equations - Second Order DE&#39;s$/Downloads/DE/Notes/Second_Order.pdf">Current Chapter</a></li>
+        <li id="li_download_menu_notes_section"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=S,104,N" id="download_menu_notes_section" data-PDF="Download - Menu$Notes - Section$Differential Equations - Undetermined Coefficients$/Downloads/DE/Notes/UndeterminedCoeff.pdf">Current Section</a></li>
+        <li id="li_download_menu_practice" class="top-menu-nav-title">Practice Problems Downloads</li>
+        <li id="li_download_menu_practice_de"><span class="top-menu-item-text">Problems not yet written.</span></li>
+        
+        
+        
+        
+        
+        
+        
+        
+        <li id="li_download_menu_asgn" class="top-menu-nav-title">Assignment Problems Downloads</li>
+        <li id="li_download_menu_asgn_de"><span class="top-menu-item-text">Problems not yet written.</span></li>
+        
+        
+        
+        <li id="li_download_menu_other" class="top-menu-nav-title">Other Items</li>
+        <li id="li_download_menu_urls">
+          <a href="http://tutorial.math.lamar.edu/DownloadURLs.aspx?bi=1&amp;ci=18&amp;si=104" id="download_menu_urls">Get URL's for Download Items</a>
+        </li>
+      </ul>
+    </div>
+
+    <div id="jq-print-download" class="jq-dropdown jq-dropdown-anchor-right jq-dropdown-tip">
+      <ul class="jq-dropdown-menu">
+        <li id="li_print_menu_default"><a href="javascript:SHPrintPage()" id="print_menu_default">Print Page in Current Form (Default)</a></li>
+        <li id="li_print_menu_show"><a href="javascript:SHPrintPage(1,1)" id="print_menu_show">Show all Solutions/Steps and Print Page</a></li>
+        <li id="li_print_menu_hide"><a href="javascript:SHPrintPage(0,1)" id="print_menu_hide">Hide all Solutions/Steps and Print Page</a></li>
+      </ul>
+    </div>
+
+
+
+   
+
+    <nav id="menu" class="notes-nav">
+      <ul>
+        <li><a href="../../index.html" class="mm-link">Home</a></li>
+        <li><span>Classes</span></li>
+        <li><a href="../Alg/Alg.html" class="mm-link">Algebra</a>
+          <ul>
+            <li><a href="../Alg/Preliminaries.html" class="mm-link">Preliminaries</a>
+              <ul>
+                <li><a href="../Alg/IntegerExponents.html" class="mm-link">Integer Exponents</a></li>
+                <li><a href="../Alg/RationalExponents.html" class="mm-link">Rational Exponents</a></li>
+                <li><a href="../Alg/Radicals.html" class="mm-link">Radicals</a></li>
+                <li><a href="../Alg/Polynomials.html" class="mm-link">Polynomials</a></li>
+                <li><a href="../Alg/Factoring.html" class="mm-link">Factoring Polynomials</a></li>
+                <li><a href="../Alg/RationalExpressions.html" class="mm-link">Rational Expressions</a></li>
+                <li><a href="../Alg/ComplexNumbers.html" class="mm-link">Complex Numbers</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/Solving.html" class="mm-link">Solving Equations and Inequalities</a>
+              <ul>
+                <li><a href="../Alg/SolutionSets.html" class="mm-link">Solutions and Solution Sets</a></li>
+                <li><a href="../Alg/SolveLinearEqns.html" class="mm-link">Linear Equations</a></li>
+                <li><a href="../Alg/LinearApps.html" class="mm-link">Applications of Linear Equations</a></li>
+                <li><a href="../Alg/SolveMultiVariable.html" class="mm-link">Equations With More Than One Variable</a></li>
+                <li><a href="../Alg/SolveQuadraticEqnsI.html" class="mm-link">Quadratic Equations - Part I</a></li>
+                <li><a href="../Alg/SolveQuadraticEqnsII.html" class="mm-link">Quadratic Equations - Part II</a></li>
+                <li><a href="../Alg/SolveQuadraticEqnSummary.html" class="mm-link">Quadratic Equations : A Summary</a></li>
+                <li><a href="../Alg/QuadraticApps.html" class="mm-link">Applications of Quadratic Equations</a></li>
+                <li><a href="../Alg/ReducibleToQuadratic.html" class="mm-link">Equations Reducible to Quadratic in Form</a></li>
+                <li><a href="../Alg/SolveRadicalEqns.html" class="mm-link">Equations with Radicals</a></li>
+                <li><a href="../Alg/SolveLinearInequalities.html" class="mm-link">Linear Inequalities</a></li>
+                <li><a href="../Alg/SolvePolyInequalities.html" class="mm-link">Polynomial Inequalities</a></li>
+                <li><a href="../Alg/SolveRationalInequalities.html" class="mm-link">Rational Inequalities</a></li>
+                <li><a href="../Alg/SolveAbsValueEqns.html" class="mm-link">Absolute Value Equations</a></li>
+                <li><a href="../Alg/SolveAbsValueIneq.html" class="mm-link">Absolute Value Inequalities</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/Graphing_Functions.html" class="mm-link">Graphing and Functions</a>
+              <ul>
+                <li><a href="../Alg/Graphing.html" class="mm-link">Graphing</a></li>
+                <li><a href="../Alg/Lines.html" class="mm-link">Lines</a></li>
+                <li><a href="../Alg/Circles.html" class="mm-link">Circles</a></li>
+                <li><a href="../Alg/FunctionDefn.html" class="mm-link">The Definition of a Function</a></li>
+                <li><a href="../Alg/GraphFunctions.html" class="mm-link">Graphing Functions</a></li>
+                <li><a href="../Alg/CombineFunctions.html" class="mm-link">Combining Functions</a></li>
+                <li><a href="../Alg/InverseFunctions.html" class="mm-link">Inverse Functions</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/CommonGraphs.html" class="mm-link">Common Graphs</a>
+              <ul>
+                <li><a href="../Alg/Lines_Circles_PWF.html" class="mm-link">Lines, Circles and Piecewise Functions</a></li>
+                <li><a href="../Alg/Parabolas.html" class="mm-link">Parabolas</a></li>
+                <li><a href="../Alg/Ellipses.html" class="mm-link">Ellipses</a></li>
+                <li><a href="../Alg/Hyperbolas.html" class="mm-link">Hyperbolas</a></li>
+                <li><a href="../Alg/MiscFunctions.html" class="mm-link">Miscellaneous Functions</a></li>
+                <li><a href="../Alg/Transformations.html" class="mm-link">Transformations</a></li>
+                <li><a href="../Alg/Symmetry.html" class="mm-link">Symmetry</a></li>
+                <li><a href="../Alg/GraphRationalFcns.html" class="mm-link">Rational Functions</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/PolynomialFunctions.html" class="mm-link">Polynomial Functions</a>
+              <ul>
+                <li><a href="../Alg/DividingPolynomials.html" class="mm-link">Dividing Polynomials</a></li>
+                <li><a href="../Alg/ZeroesOfPolynomials.html" class="mm-link">Zeroes/Roots of Polynomials</a></li>
+                <li><a href="../Alg/GraphingPolynomials.html" class="mm-link">Graphing Polynomials</a></li>
+                <li><a href="../Alg/FindingZeroesOfPolynomials.html" class="mm-link">Finding Zeroes of Polynomials</a></li>
+                <li><a href="../Alg/PartialFractions.html" class="mm-link">Partial Fractions</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/ExpAndLog.html" class="mm-link">Exponential and Logarithm Functions</a>
+              <ul>
+                <li><a href="../Alg/ExpFunctions.html" class="mm-link">Exponential Functions</a></li>
+                <li><a href="../Alg/LogFunctions.html" class="mm-link">Logarithm Functions</a></li>
+                <li><a href="../Alg/SolveExpEqns.html" class="mm-link">Solving Exponential Equations</a></li>
+                <li><a href="../Alg/SolveLogEqns.html" class="mm-link">Solving Logarithm Equations</a></li>
+                <li><a href="../Alg/ExpLogApplications.html" class="mm-link">Applications</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/Systems.html" class="mm-link">Systems of Equations</a>
+              <ul>
+                <li><a href="../Alg/SystemsTwoVrble.html" class="mm-link">Linear Systems with Two Variables</a></li>
+                <li><a href="../Alg/SystemsThreeVrble.html" class="mm-link">Linear Systems with Three Variables</a></li>
+                <li><a href="../Alg/AugmentedMatrix.html" class="mm-link">Augmented Matrices</a></li>
+                <li><a href="../Alg/AugmentedMatrixII.html" class="mm-link">More on the Augmented Matrix</a></li>
+                <li><a href="../Alg/NonlinearSystems.html" class="mm-link">Nonlinear Systems</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../CalcI/CalcI.html" class="mm-link">Calculus I</a>
+          <ul>
+            <li><a href="../CalcI/ReviewIntro.html" class="mm-link">Review</a>
+              <ul>
+                <li><a href="../CalcI/Functions.html" class="mm-link">Functions</a></li>
+                <li><a href="../CalcI/InverseFunctions.html" class="mm-link">Inverse Functions</a></li>
+                <li><a href="../CalcI/TrigFcns.html" class="mm-link">Trig Functions</a></li>
+                <li><a href="../CalcI/TrigEquations.html" class="mm-link">Solving Trig Equations</a></li>
+                <li><a href="../CalcI/TrigEquations_CalcI.html" class="mm-link">Trig Equations with Calculators, Part I</a></li>
+                <li><a href="../CalcI/TrigEquations_CalcII.html" class="mm-link">Trig Equations with Calculators, Part II</a></li>
+                <li><a href="../CalcI/ExpFunctions.html" class="mm-link">Exponential Functions</a></li>
+                <li><a href="../CalcI/LogFcns.html" class="mm-link">Logarithm Functions</a></li>
+                <li><a href="../CalcI/ExpLogEqns.html" class="mm-link">Exponential and Logarithm Equations</a></li>
+                <li><a href="../CalcI/CommonGraphs.html" class="mm-link">Common Graphs</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcI/limitsIntro.html" class="mm-link">Limits</a>
+              <ul>
+                <li><a href="../CalcI/Tangents_Rates.html" class="mm-link">Tangent Lines and Rates of Change</a></li>
+                <li><a href="../CalcI/TheLimit.html" class="mm-link">The Limit</a></li>
+                <li><a href="../CalcI/OneSidedLimits.html" class="mm-link">One-Sided Limits</a></li>
+                <li><a href="../CalcI/LimitsProperties.html" class="mm-link">Limit Properties</a></li>
+                <li><a href="../CalcI/ComputingLimits.html" class="mm-link">Computing Limits</a></li>
+                <li><a href="../CalcI/InfiniteLimits.html" class="mm-link">Infinite Limits</a></li>
+                <li><a href="../CalcI/LimitsAtInfinityI.html" class="mm-link">Limits At Infinity, Part I</a></li>
+                <li><a href="../CalcI/LimitsAtInfinityII.html" class="mm-link">Limits At Infinity, Part II</a></li>
+                <li><a href="../CalcI/Continuity.html" class="mm-link">Continuity</a></li>
+                <li><a href="../CalcI/DefnOfLimit.html" class="mm-link">The Definition of the Limit</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcI/DerivativeIntro.html" class="mm-link">Derivatives</a>
+              <ul>
+                <li><a href="../CalcI/DefnOfDerivative.html" class="mm-link">The Definition of the Derivative</a></li>
+                <li><a href="../CalcI/DerivativeInterp.html" class="mm-link">Interpretation of the Derivative</a></li>
+                <li><a href="../CalcI/DiffFormulas.html" class="mm-link">Differentiation Formulas</a></li>
+                <li><a href="../CalcI/ProductQuotientRule.html" class="mm-link">Product and Quotient Rule</a></li>
+                <li><a href="../CalcI/DiffTrigFcns.html" class="mm-link">Derivatives of Trig Functions</a></li>
+                <li><a href="../CalcI/DiffExpLogFcns.html" class="mm-link">Derivatives of Exponential and Logarithm Functions</a></li>
+                <li><a href="../CalcI/DiffInvTrigFcns.html" class="mm-link">Derivatives of Inverse Trig Functions</a></li>
+                <li><a href="../CalcI/DiffHyperFcns.html" class="mm-link">Derivatives of Hyperbolic Functions</a></li>
+                <li><a href="../CalcI/ChainRule.html" class="mm-link">Chain Rule</a></li>
+                <li><a href="../CalcI/ImplicitDIff.html" class="mm-link">Implicit Differentiation</a></li>
+                <li><a href="../CalcI/RelatedRates.html" class="mm-link">Related Rates</a></li>
+                <li><a href="../CalcI/HigherOrderDerivatives.html" class="mm-link">Higher Order Derivatives</a></li>
+                <li><a href="../CalcI/LogDiff.html" class="mm-link">Logarithmic Differentiation</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcI/DerivAppsIntro.html" class="mm-link">Applications of Derivatives</a>
+              <ul>
+                <li><a href="../CalcI/RateOfChange.html" class="mm-link">Rates of Change</a></li>
+                <li><a href="../CalcI/CriticalPoints.html" class="mm-link">Critical Points</a></li>
+                <li><a href="../CalcI/MinMaxValues.html" class="mm-link">Minimum and Maximum Values</a></li>
+                <li><a href="../CalcI/AbsExtrema.html" class="mm-link">Finding Absolute Extrema</a></li>
+                <li><a href="../CalcI/ShapeofGraphPtI.html" class="mm-link">The Shape of a Graph, Part I</a></li>
+                <li><a href="../CalcI/ShapeofGraphPtII.html" class="mm-link">The Shape of a Graph, Part II</a></li>
+                <li><a href="../CalcI/MeanValueTheorem.html" class="mm-link">The Mean Value Theorem</a></li>
+                <li><a href="../CalcI/Optimization.html" class="mm-link">Optimization</a></li>
+                <li><a href="../CalcI/MoreOptimization.html" class="mm-link">More Optimization Problems</a></li>
+                <li><a href="../CalcI/LHospitalsRule.html" class="mm-link">L'Hospital's Rule and Indeterminate Forms</a></li>
+                <li><a href="../CalcI/LinearApproximations.html" class="mm-link">Linear Approximations</a></li>
+                <li><a href="../CalcI/Differentials.html" class="mm-link">Differentials</a></li>
+                <li><a href="../CalcI/NewtonsMethod.html" class="mm-link">Newton's Method</a></li>
+                <li><a href="../CalcI/BusinessApps.html" class="mm-link">Business Applications</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcI/IntegralsIntro.html" class="mm-link">Integrals</a>
+              <ul>
+                <li><a href="../CalcI/IndefiniteIntegrals.html" class="mm-link">Indefinite Integrals</a></li>
+                <li><a href="../CalcI/ComputingIndefiniteIntegrals.html" class="mm-link">Computing Indefinite Integrals</a></li>
+                <li><a href="../CalcI/SubstitutionRuleIndefinite.html" class="mm-link">Substitution Rule for Indefinite Integrals</a></li>
+                <li><a href="../CalcI/SubstitutionRuleIndefinitePtII.html" class="mm-link">More Substitution Rule</a></li>
+                <li><a href="../CalcI/AreaProblem.html" class="mm-link">Area Problem</a></li>
+                <li><a href="../CalcI/DefnOfDefiniteIntegral.html" class="mm-link">Definition of the Definite Integral</a></li>
+                <li><a href="../CalcI/ComputingDefiniteIntegrals.html" class="mm-link">Computing Definite Integrals</a></li>
+                <li><a href="../CalcI/SubstitutionRuleDefinite.html" class="mm-link">Substitution Rule for Definite Integrals</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcI/IntAppsIntro.html" class="mm-link">Applications of Integrals</a>
+              <ul>
+                <li><a href="../CalcI/AvgFcnValue.html" class="mm-link">Average Function Value</a></li>
+                <li><a href="../CalcI/AreaBetweenCurves.html" class="mm-link">Area Between Curves</a></li>
+                <li><a href="../CalcI/VolumeWithRings.html" class="mm-link">Volumes of Solids of Revolution / Method of Rings</a></li>
+                <li><a href="../CalcI/VolumeWithCylinder.html" class="mm-link">Volumes of Solids of Revolution/Method of Cylinders</a></li>
+                <li><a href="../CalcI/MoreVolume.html" class="mm-link">More Volume Problems</a></li>
+                <li><a href="../CalcI/Work.html" class="mm-link">Work</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcI/ExtrasIntro.html" class="mm-link">Extras</a>
+              <ul>
+                <li><a href="../CalcI/LimitProofs.html" class="mm-link">Proof of Various Limit Properties</a></li>
+                <li><a href="../CalcI/DerivativeProofs.html" class="mm-link">Proof of Various Derivative Properties</a></li>
+                <li><a href="../CalcI/ProofTrigDeriv.html" class="mm-link">Proof of Trig Limits</a></li>
+                <li><a href="../CalcI/DerivativeAppsProofs.html" class="mm-link">Proofs of Derivative Applications Facts</a></li>
+                <li><a href="../CalcI/ProofIntProp.html" class="mm-link">Proof of Various Integral Properties </a></li>
+                <li><a href="../CalcI/Area_Volume_Formulas.html" class="mm-link">Area and Volume Formulas</a></li>
+                <li><a href="../CalcI/TypesOfInfinity.html" class="mm-link">Types of Infinity</a></li>
+                <li><a href="../CalcI/SummationNotation.html" class="mm-link">Summation Notation</a></li>
+                <li><a href="../CalcI/ConstantofIntegration.html" class="mm-link">Constant of Integration</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../CalcII/CalcII.html" class="mm-link">Calculus II</a>
+          <ul>
+            <li><a href="../CalcII/IntTechIntro.html" class="mm-link">Integration Techniques</a>
+              <ul>
+                <li><a href="../CalcII/IntegrationByParts.html" class="mm-link">Integration by Parts</a></li>
+                <li><a href="../CalcII/IntegralsWithTrig.html" class="mm-link">Integrals Involving Trig Functions</a></li>
+                <li><a href="../CalcII/TrigSubstitutions.html" class="mm-link">Trig Substitutions</a></li>
+                <li><a href="../CalcII/PartialFractions.html" class="mm-link">Partial Fractions</a></li>
+                <li><a href="../CalcII/IntegralsWithRoots.html" class="mm-link">Integrals Involving Roots</a></li>
+                <li><a href="../CalcII/IntegralsWithQuadratics.html" class="mm-link">Integrals Involving Quadratics</a></li>
+                <li><a href="../CalcII/IntegrationStrategy.html" class="mm-link">Integration Strategy</a></li>
+                <li><a href="../CalcII/ImproperIntegrals.html" class="mm-link">Improper Integrals</a></li>
+                <li><a href="../CalcII/ImproperIntegralsCompTest.html" class="mm-link">Comparison Test for Improper Integrals</a></li>
+                <li><a href="../CalcII/ApproximatingDefIntegrals.html" class="mm-link">Approximating Definite Integrals</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/IntAppsIntro.html" class="mm-link">Applications of Integrals</a>
+              <ul>
+                <li><a href="../CalcII/ArcLength.html" class="mm-link">Arc Length</a></li>
+                <li><a href="../CalcII/SurfaceArea.html" class="mm-link">Surface Area</a></li>
+                <li><a href="../CalcII/CenterOfMass.html" class="mm-link">Center of Mass</a></li>
+                <li><a href="../CalcII/HydrostaticPressure.html" class="mm-link">Hydrostatic Pressure</a></li>
+                <li><a href="../CalcII/Probability.html" class="mm-link">Probability</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/ParametricIntro.html" class="mm-link">Parametric Equations and Polar Coordinates</a>
+              <ul>
+                <li><a href="../CalcII/ParametricEqn.html" class="mm-link">Parametric Equations and Curves</a></li>
+                <li><a href="../CalcII/ParaTangent.html" class="mm-link">Tangents with Parametric Equations</a></li>
+                <li><a href="../CalcII/ParaArea.html" class="mm-link">Area with Parametric Equations</a></li>
+                <li><a href="../CalcII/ParaArcLength.html" class="mm-link">Arc Length with Parametric Equations</a></li>
+                <li><a href="../CalcII/ParaSurfaceArea.html" class="mm-link">Surface Area with Parametric Equations</a></li>
+                <li><a href="../CalcII/PolarCoordinates.html" class="mm-link">Polar Coordinates</a></li>
+                <li><a href="../CalcII/PolarTangents.html" class="mm-link">Tangents with Polar Coordinates</a></li>
+                <li><a href="../CalcII/PolarArea.html" class="mm-link">Area with Polar Coordinates</a></li>
+                <li><a href="../CalcII/PolarArcLength.html" class="mm-link">Arc Length with Polar Coordinates</a></li>
+                <li><a href="../CalcII/PolarSurfaceArea.html" class="mm-link">Surface Area with Polar Coordinates</a></li>
+                <li><a href="../CalcII/ArcLength_SurfaceArea.html" class="mm-link">Arc Length and Surface Area Revisited</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/SeriesIntro.html" class="mm-link">Series & Sequences</a>
+              <ul>
+                <li><a href="../CalcII/Sequences.html" class="mm-link">Sequences</a></li>
+                <li><a href="../CalcII/MoreSequences.html" class="mm-link">More on Sequences</a></li>
+                <li><a href="../CalcII/Series_Basics.html" class="mm-link">Series - The Basics</a></li>
+                <li><a href="../CalcII/ConvergenceOfSeries.html" class="mm-link">Convergence/Divergence of Series</a></li>
+                <li><a href="../CalcII/Series_Special.html" class="mm-link">Special Series</a></li>
+                <li><a href="../CalcII/IntegralTest.html" class="mm-link">Integral Test</a></li>
+                <li><a href="../CalcII/SeriesCompTest.html" class="mm-link">Comparison Test/Limit Comparison Test</a></li>
+                <li><a href="../CalcII/AlternatingSeries.html" class="mm-link">Alternating Series Test</a></li>
+                <li><a href="../CalcII/AbsoluteConvergence.html" class="mm-link">Absolute Convergence</a></li>
+                <li><a href="../CalcII/RatioTest.html" class="mm-link">Ratio Test</a></li>
+                <li><a href="../CalcII/RootTest.html" class="mm-link">Root Test</a></li>
+                <li><a href="../CalcII/SeriesStrategy.html" class="mm-link">Strategy for Series</a></li>
+                <li><a href="../CalcII/EstimatingSeries.html" class="mm-link">Estimating the Value of a Series</a></li>
+                <li><a href="../CalcII/PowerSeries.html" class="mm-link">Power Series</a></li>
+                <li><a href="../CalcII/PowerSeriesandFunctions.html" class="mm-link">Power Series and Functions</a></li>
+                <li><a href="../CalcII/TaylorSeries.html" class="mm-link">Taylor Series</a></li>
+                <li><a href="../CalcII/TaylorSeriesApps.html" class="mm-link">Applications of Series</a></li>
+                <li><a href="../CalcII/BinomialSeries.html" class="mm-link">Binomial Series</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/VectorsIntro.html" class="mm-link">Vectors</a>
+              <ul>
+                <li><a href="../CalcII/Vectors_Basics.html" class="mm-link">Vectors - The Basics</a></li>
+                <li><a href="../CalcII/VectorArithmetic.html" class="mm-link">Vector Arithmetic</a></li>
+                <li><a href="../CalcII/DotProduct.html" class="mm-link">Dot Product</a></li>
+                <li><a href="../CalcII/CrossProduct.html" class="mm-link">Cross Product</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/3DSpace.html" class="mm-link">3-Dimensional Space</a>
+              <ul>
+                <li><a href="../CalcII/3DCoords.html" class="mm-link">The 3-D Coordinate System</a></li>
+                <li><a href="../CalcII/EqnsOfLines.html" class="mm-link">Equations of Lines</a></li>
+                <li><a href="../CalcII/EqnsOfPlanes.html" class="mm-link">Equations of Planes</a></li>
+                <li><a href="../CalcII/QuadricSurfaces.html" class="mm-link">Quadric Surfaces</a></li>
+                <li><a href="../CalcII/MultiVrbleFcns.html" class="mm-link">Functions of Several Variables</a></li>
+                <li><a href="../CalcII/VectorFunctions.html" class="mm-link">Vector Functions</a></li>
+                <li><a href="../CalcII/VectorFcnsCalculus.html" class="mm-link">Calculus with Vector Functions</a></li>
+                <li><a href="../CalcII/TangentNormalVectors.html" class="mm-link">Tangent, Normal and Binormal Vectors</a></li>
+                <li><a href="../CalcII/VectorArcLength.html" class="mm-link">Arc Length with Vector Functions</a></li>
+                <li><a href="../CalcII/Curvature.html" class="mm-link">Curvature</a></li>
+                <li><a href="../CalcII/Velocity_Acceleration.html" class="mm-link">Velocity and Acceleration</a></li>
+                <li><a href="../CalcII/CylindricalCoords.html" class="mm-link">Cylindrical Coordinates</a></li>
+                <li><a href="../CalcII/SphericalCoords.html" class="mm-link">Spherical Coordinates</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../CalcIII/CalcIII.html" class="mm-link">Calculus III</a>
+          <ul>
+            <li><a href="../CalcIII/3DSpace.html" class="mm-link">3-Dimensional Space</a>
+              <ul>
+                <li><a href="../CalcIII/3DCoords.html" class="mm-link">The 3-D Coordinate System</a></li>
+                <li><a href="../CalcIII/EqnsOfLines.html" class="mm-link">Equations of Lines</a></li>
+                <li><a href="../CalcIII/EqnsOfPlanes.html" class="mm-link">Equations of Planes</a></li>
+                <li><a href="../CalcIII/QuadricSurfaces.html" class="mm-link">Quadric Surfaces</a></li>
+                <li><a href="../CalcIII/MultiVrbleFcns.html" class="mm-link">Functions of Several Variables</a></li>
+                <li><a href="../CalcIII/VectorFunctions.html" class="mm-link">Vector Functions</a></li>
+                <li><a href="../CalcIII/VectorFcnsCalculus.html" class="mm-link">Calculus with Vector Functions</a></li>
+                <li><a href="../CalcIII/TangentNormalVectors.html" class="mm-link">Tangent, Normal and Binormal Vectors</a></li>
+                <li><a href="../CalcIII/VectorArcLength.html" class="mm-link">Arc Length with Vector Functions</a></li>
+                <li><a href="../CalcIII/Curvature.html" class="mm-link">Curvature</a></li>
+                <li><a href="../CalcIII/Velocity_Acceleration.html" class="mm-link">Velocity and Acceleration</a></li>
+                <li><a href="../CalcIII/CylindricalCoords.html" class="mm-link">Cylindrical Coordinates</a></li>
+                <li><a href="../CalcIII/SphericalCoords.html" class="mm-link">Spherical Coordinates</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/PartialDerivsIntro.html" class="mm-link">Partial Derivatives</a>
+              <ul>
+                <li><a href="../CalcIII/Limits.html" class="mm-link">Limits</a></li>
+                <li><a href="../CalcIII/PartialDerivatives.html" class="mm-link">Partial Derivatives</a></li>
+                <li><a href="../CalcIII/PartialDerivInterp.html" class="mm-link">Interpretations of Partial Derivatives</a></li>
+                <li><a href="../CalcIII/HighOrderPartialDerivs.html" class="mm-link">Higher Order Partial Derivatives</a></li>
+                <li><a href="../CalcIII/Differentials.html" class="mm-link">Differentials</a></li>
+                <li><a href="../CalcIII/ChainRule.html" class="mm-link">Chain Rule</a></li>
+                <li><a href="../CalcIII/DirectionalDeriv.html" class="mm-link">Directional Derivatives</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/PartialDerivAppsIntro.html" class="mm-link">Applications of Partial Derivatives</a>
+              <ul>
+                <li><a href="../CalcIII/TangentPlanes.html" class="mm-link">Tangent Planes and Linear Approximations</a></li>
+                <li><a href="../CalcIII/GradientVectorTangentPlane.html" class="mm-link">Gradient Vector, Tangent Planes and Normal Lines</a></li>
+                <li><a href="../CalcIII/RelativeExtrema.html" class="mm-link">Relative Minimums and Maximums</a></li>
+                <li><a href="../CalcIII/AbsoluteExtrema.html" class="mm-link">Absolute Minimums and Maximums</a></li>
+                <li><a href="../CalcIII/LagrangeMultipliers.html" class="mm-link">Lagrange Multipliers</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/MultipleIntegralsIntro.html" class="mm-link">Multiple Integrals</a>
+              <ul>
+                <li><a href="../CalcIII/DoubleIntegrals.html" class="mm-link">Double Integrals</a></li>
+                <li><a href="../CalcIII/IteratedIntegrals.html" class="mm-link">Iterated Integrals</a></li>
+                <li><a href="../CalcIII/DIGeneralRegion.html" class="mm-link">Double Integrals over General Regions</a></li>
+                <li><a href="../CalcIII/DIPolarCoords.html" class="mm-link">Double Integrals in Polar Coordinates</a></li>
+                <li><a href="../CalcIII/TripleIntegrals.html" class="mm-link">Triple Integrals</a></li>
+                <li><a href="../CalcIII/TICylindricalCoords.html" class="mm-link">Triple Integrals in Cylindrical Coordinates</a></li>
+                <li><a href="../CalcIII/TISphericalCoords.html" class="mm-link">Triple Integrals in Spherical Coordinates</a></li>
+                <li><a href="../CalcIII/ChangeOfVariables.html" class="mm-link">Change of Variables</a></li>
+                <li><a href="../CalcIII/SurfaceArea.html" class="mm-link">Surface Area</a></li>
+                <li><a href="../CalcIII/Area_Volume.html" class="mm-link">Area and Volume Revisited</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/LineIntegralsIntro.html" class="mm-link">Line Integrals</a>
+              <ul>
+                <li><a href="../CalcIII/VectorFields.html" class="mm-link">Vector Fields</a></li>
+                <li><a href="../CalcIII/LineIntegralsPtI.html" class="mm-link">Line Integrals - Part I</a></li>
+                <li><a href="../CalcIII/LineIntegralsPtII.html" class="mm-link">Line Integrals - Part II</a></li>
+                <li><a href="../CalcIII/LineIntegralsVectorFields.html" class="mm-link">Line Integrals of Vector Fields</a></li>
+                <li><a href="../CalcIII/FundThmLineIntegrals.html" class="mm-link">Fundamental Theorem for Line Integrals</a></li>
+                <li><a href="../CalcIII/ConservativeVectorField.html" class="mm-link">Conservative Vector Fields</a></li>
+                <li><a href="../CalcIII/GreensTheorem.html" class="mm-link">Green's Theorem</a></li>
+                <li><a href="../CalcIII/CurlDivergence.html" class="mm-link">Curl and Divergence</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/SurfaceIntegralsIntro.html" class="mm-link">Surface Integrals</a>
+              <ul>
+                <li><a href="../CalcIII/ParametricSurfaces.html" class="mm-link">Parametric Surfaces</a></li>
+                <li><a href="../CalcIII/SurfaceIntegrals.html" class="mm-link">Surface Integrals</a></li>
+                <li><a href="../CalcIII/SurfIntVectorField.html" class="mm-link">Surface Integrals of Vector Fields</a></li>
+                <li><a href="../CalcIII/StokesTheorem.html" class="mm-link">Stokes' Theorem</a></li>
+                <li><a href="../CalcIII/DivergenceTheorem.html" class="mm-link">Divergence Theorem</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="DE.html" class="mm-link">Differential Equations</a>
+          <ul>
+            <li><a href="IntroBasic.html" class="mm-link">Basic Concepts</a>
+              <ul>
+                <li><a href="Definitions.html" class="mm-link">Definitions</a></li>
+                <li><a href="DirectionFields.html" class="mm-link">Direction Fields</a></li>
+                <li><a href="FinalThoughts.html" class="mm-link">Final Thoughts</a></li>
+              </ul>
+            </li>
+            <li><a href="IntroFirstOrder.html" class="mm-link">First Order DE's</a>
+              <ul>
+                <li><a href="Linear.html" class="mm-link">Linear Equations</a></li>
+                <li><a href="Separable.html" class="mm-link">Separable Equations</a></li>
+                <li><a href="Exact.html" class="mm-link">Exact Equations</a></li>
+                <li><a href="Bernoulli.html" class="mm-link">Bernoulli Differential Equations</a></li>
+                <li><a href="Substitutions.html" class="mm-link">Substitutions</a></li>
+                <li><a href="IoV.html" class="mm-link">Intervals of Validity</a></li>
+                <li><a href="Modeling.html" class="mm-link">Modeling with First Order DE's</a></li>
+                <li><a href="EquilibriumSolutions.html" class="mm-link">Equilibrium Solutions</a></li>
+                <li><a href="EulersMethod.html" class="mm-link">Euler's Method</a></li>
+              </ul>
+            </li>
+            <li><a href="IntroSecondOrder.html" class="mm-link">Second Order DE's</a>
+              <ul>
+                <li><a href="SecondOrderConcepts.html" class="mm-link">Basic Concepts</a></li>
+                <li><a href="RealRoots.html" class="mm-link">Real & Distinct Roots</a></li>
+                <li><a href="ComplexRoots.html" class="mm-link">Complex Roots</a></li>
+                <li><a href="RepeatedRoots.html" class="mm-link">Repeated Roots</a></li>
+                <li><a href="ReductionofOrder.html" class="mm-link">Reduction of Order</a></li>
+                <li><a href="FundamentalSetsofSolutions.html" class="mm-link">Fundamental Sets of Solutions</a></li>
+                <li><a href="Wronskian.html" class="mm-link">More on the  Wronskian</a></li>
+                <li><a href="NonhomogeneousDE.html" class="mm-link">Nonhomogeneous Differential Equations</a></li>
+                <li><a href="UndeterminedCoefficients.html" class="mm-link">Undetermined Coefficients</a></li>
+                <li><a href="VariationofParameters.html" class="mm-link">Variation of Parameters</a></li>
+                <li><a href="Vibrations.html" class="mm-link">Mechanical Vibrations</a></li>
+              </ul>
+            </li>
+            <li><a href="LaplaceIntro.html" class="mm-link">Laplace Transforms</a>
+              <ul>
+                <li><a href="LaplaceDefinition.html" class="mm-link">The Definition</a></li>
+                <li><a href="LaplaceTransforms.html" class="mm-link">Laplace Transforms</a></li>
+                <li><a href="InverseTransforms.html" class="mm-link">Inverse Laplace Transforms</a></li>
+                <li><a href="StepFunctions.html" class="mm-link">Step Functions</a></li>
+                <li><a href="IVPWithLaplace.html" class="mm-link">Solving IVP's with Laplace Transforms</a></li>
+                <li><a href="IVPWithNonConstantCoefficient.html" class="mm-link">Nonconstant Coefficient IVP's</a></li>
+                <li><a href="IVPWithStepFunction.html" class="mm-link">IVP's With Step Functions</a></li>
+                <li><a href="DiracDeltaFunction.html" class="mm-link">Dirac Delta Function</a></li>
+                <li><a href="ConvolutionIntegrals.html" class="mm-link">Convolution Integrals</a></li>
+                <li><a href="Laplace_Table.html" class="mm-link">Table Of Laplace Transforms</a></li>
+              </ul>
+            </li>
+            <li><a href="SystemsIntro.html" class="mm-link">Systems of DE's</a>
+              <ul>
+                <li><a href="LA_Systems.html" class="mm-link">Review : Systems of Equations</a></li>
+                <li><a href="LA_Matrix.html" class="mm-link">Review : Matrices & Vectors</a></li>
+                <li><a href="LA_Eigen.html" class="mm-link">Review : Eigenvalues & Eigenvectors</a></li>
+                <li><a href="SystemsDE.html" class="mm-link">Systems of Differential Equations</a></li>
+                <li><a href="SolutionsToSystems.html" class="mm-link">Solutions to Systems</a></li>
+                <li><a href="PhasePlane.html" class="mm-link">Phase Plane</a></li>
+                <li><a href="RealEigenvalues.html" class="mm-link">Real Eigenvalues</a></li>
+                <li><a href="ComplexEigenvalues.html" class="mm-link">Complex Eigenvalues</a></li>
+                <li><a href="RepeatedEigenvalues.html" class="mm-link">Repeated Eigenvalues</a></li>
+                <li><a href="NonhomogeneousSystems.html" class="mm-link">Nonhomogeneous Systems</a></li>
+                <li><a href="SystemsLaplace.html" class="mm-link">Laplace Transforms</a></li>
+                <li><a href="SystemsModeling.html" class="mm-link">Modeling</a></li>
+              </ul>
+            </li>
+            <li><a href="SeriesIntro.html" class="mm-link">Series Solutions to DE's</a>
+              <ul>
+                <li><a href="PowerSeries.html" class="mm-link">Review : Power Series</a></li>
+                <li><a href="TaylorSeries.html" class="mm-link">Review : Taylor Series</a></li>
+                <li><a href="SeriesSolutions.html" class="mm-link">Series Solutions</a></li>
+                <li><a href="EulerEquations.html" class="mm-link">Euler Equations</a></li>
+              </ul>
+            </li>
+            <li><a href="IntroHigherOrder.html" class="mm-link">Higher Order Differential Equations</a>
+              <ul>
+                <li><a href="HOBasicConcepts.html" class="mm-link">Basic Concepts for <em>n</em><sup>th</sup> Order Linear Equations</a></li>
+                <li><a href="HOHomogeneousDE.html" class="mm-link">Linear Homogeneous Differential Equations</a></li>
+                <li><a href="HOUndeterminedCoeff.html" class="mm-link">Undetermined Coefficients</a></li>
+                <li><a href="HOVariationOfParam.html" class="mm-link">Variation of Parameters</a></li>
+                <li><a href="HOLaplaceTransforms.html" class="mm-link">Laplace Transforms</a></li>
+                <li><a href="HOSystems.html" class="mm-link">Systems of Differential Equations</a></li>
+                <li><a href="HOSeries.html" class="mm-link">Series Solutions</a></li>
+              </ul>
+            </li>
+            <li><a href="IntroBVP.html" class="mm-link">Boundary Value Problems &amp; Fourier Series</a>
+              <ul>
+                <li><a href="BoundaryValueProblem.html" class="mm-link">Boundary Value Problems</a></li>
+                <li><a href="BVPEvals.html" class="mm-link">Eigenvalues and Eigenfunctions</a></li>
+                <li><a href="PeriodicOrthogonal.html" class="mm-link">Periodic Functions &amp; Orthogonal Functions</a></li>
+                <li><a href="FourierSineSeries.html" class="mm-link">Fourier Sine Series</a></li>
+                <li><a href="FourierCosineSeries.html" class="mm-link">Fourier Cosine Series</a></li>
+                <li><a href="FourierSeries.html" class="mm-link">Fourier Series</a></li>
+                <li><a href="ConvergenceFourierSeries.html" class="mm-link">Convergence of Fourier Series</a></li>
+              </ul>
+            </li>
+            <li><a href="IntroPDE.html" class="mm-link">Partial Differential Equations </a>
+              <ul>
+                <li><a href="TheHeatEquation.html" class="mm-link">The Heat Equation</a></li>
+                <li><a href="TheWaveEquation.html" class="mm-link">The Wave Equation</a></li>
+                <li><a href="PDETerminology.html" class="mm-link">Terminology</a></li>
+                <li><a href="SeparationofVariables.html" class="mm-link">Separation of Variables</a></li>
+                <li><a href="SolvingHeatEquation.html" class="mm-link">Solving the Heat Equation</a></li>
+                <li><a href="HeatEqnNonZero.html" class="mm-link">Heat Equation with Non-Zero Temperature Boundaries</a></li>
+                <li><a href="LaplacesEqn.html" class="mm-link">Laplace's Equation</a></li>
+                <li><a href="VibratingString.html" class="mm-link">Vibrating String</a></li>
+                <li><a href="PDESummary.html" class="mm-link">Summary of Separation of Variables</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><span>Extras</span></li>
+        <li><a href="../../Extras/AlgebraTrigReview/AlgebraTrig.html" class="mm-link">Algebra &amp; Trig Review</a>
+          <ul>
+            <li><a href="../../Extras/AlgebraTrigReview/AlgebraIntro.html" class="mm-link">Algebra</a>
+              <ul>
+                <li><a href="../../Extras/AlgebraTrigReview/Exponents.html" class="mm-link">Exponents </a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/AbsoluteValue.html" class="mm-link">Absolute Value</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Radicals.html" class="mm-link">Radicals</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Rationalizing.html" class="mm-link">Rationalizing </a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Functions.html" class="mm-link">Functions </a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/MultPoly.html" class="mm-link">Multiplying Polynomials</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Factoring.html" class="mm-link">Factoring</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SimpRatExp.html" class="mm-link">Simplifying Rational Expressions</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Graphing.html" class="mm-link">Graphing and Common Graphs</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveEqnPtI.html" class="mm-link">Solving Equations, Part I</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveEqnPtII.html" class="mm-link">Solving Equations, Part II</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveSystems.html" class="mm-link">Solving Systems of Equations</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveIneq.html" class="mm-link">Solving Inequalities</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveAbsValue.html" class="mm-link">Absolute Value Equations and Inequalities</a></li>
+              </ul>
+            </li>
+            <li><a href="../../Extras/AlgebraTrigReview/TrigIntro.html" class="mm-link">Trigonometry</a>
+              <ul>
+                <li><a href="../../Extras/AlgebraTrigReview/TrigFunctions.html" class="mm-link">Trig Function Evaluation</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/TrigGraphs.html" class="mm-link">Graphs of Trig Functions</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/TrigFormulas.html" class="mm-link">Trig Formulas</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveTrigEqn.html" class="mm-link">Solving Trig Equations</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/InverseTrig.html" class="mm-link">Inverse Trig Functions</a></li>
+              </ul>
+            </li>
+            <li><a href="../../Extras/AlgebraTrigReview/ExpLogIntro.html" class="mm-link">Exponentials & Logarithms</a>
+              <ul>
+                <li><a href="../../Extras/AlgebraTrigReview/ExponentialFcns.html" class="mm-link">Basic Exponential Functions</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/LogarithmFcns.html" class="mm-link">Basic Logarithm Functions</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/LogProperties.html" class="mm-link">Logarithm Properties</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SimpLogs.html" class="mm-link">Simplifying Logarithms</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveExpEqn.html" class="mm-link">Solving Exponential Equations</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveLogEqn.html" class="mm-link">Solving Logarithm Equations</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../../Extras/CommonErrors/CommonMathErrors.html" class="mm-link">Common Math Errors</a>
+          <ul>
+            <li><a href="../../Extras/CommonErrors/GeneralErrors.html" class="mm-link">General Errors</a>
+            </li>
+            <li><a href="../../Extras/CommonErrors/AlgebraErrors.html" class="mm-link">Algebra Errors</a>
+            </li>
+            <li><a href="../../Extras/CommonErrors/TrigErrors.html" class="mm-link">Trig Errors</a>
+            </li>
+            <li><a href="../../Extras/CommonErrors/CommonErrors.html" class="mm-link">Common Errors</a>
+            </li>
+            <li><a href="../../Extras/CommonErrors/CalculusErrors.html" class="mm-link">Calculus Errors</a>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../../Extras/ComplexPrimer/ComplexNumbers.html" class="mm-link">Complex Number Primer</a>
+          <ul>
+            <li><a href="../../Extras/ComplexPrimer/Definition.html" class="mm-link">The Definition</a>
+            </li>
+            <li><a href="../../Extras/ComplexPrimer/Arithmetic.html" class="mm-link">Arithmetic</a>
+            </li>
+            <li><a href="../../Extras/ComplexPrimer/ConjugateModulus.html" class="mm-link">Conjugate and Modulus</a>
+            </li>
+            <li><a href="../../Extras/ComplexPrimer/Forms.html" class="mm-link">Polar and Exponential Forms</a>
+            </li>
+            <li><a href="../../Extras/ComplexPrimer/Roots.html" class="mm-link">Powers and Roots</a>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../../Extras/StudyMath/HowToStudyMath.html" class="mm-link">How To Study Math</a>
+          <ul>
+            <li><a href="../../Extras/StudyMath/GeneralTips.html" class="mm-link">General Tips</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/TakingNotes.html" class="mm-link">Taking Notes</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/GettingHelp.html" class="mm-link">Getting Help</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/Homework.html" class="mm-link">Doing Homework</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/ProblemSolving.html" class="mm-link">Problem Solving</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/StudyForExam.html" class="mm-link">Studying For an Exam</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/TakingExam.html" class="mm-link">Taking an Exam</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/Errors.html" class="mm-link">Learn From Your Errors</a>
+            </li>
+          </ul>
+        </li>
+
+        <li><span>Misc Links</span></li>
+        <li><a href="http://tutorial.math.lamar.edu/contact.aspx" class="mm-link">Contact Me</a></li>
+        <li><a href="../../links.html" class="mm-link">Links</a></li>
+        <li><a href="../../mathjax.html" class="mm-link">MathJax Help and Configuration</a></li>
+        <li><a href="../../mystudents.html" class="mm-link">My Students</a></li>
+        <li><a href="http://tutorial.math.lamar.edu/privacy.aspx" class="mm-link">Privacy Statement</a></li>
+        <li><a href="../../help.html" class="mm-link">Site Help & FAQ</a></li>
+        <li><a href="http://tutorial.math.lamar.edu/terms.aspx" class="mm-link">Terms of Use</a></li>
+      </ul>
+    </nav>
+
+
+
+    <div class="top-info-bar">
+      <span id="mobile-title" class="mobile-header-title header-title">Paul's Online Notes</span>
+      <br />
+      <span class="top-menu-breadcrumb">
+        <a href="../../index.html" id="breadcrumb_home_link" title="Go to Main Page">Home</a>
+        <span id="breadcrumb_h_b_sep_span">/ </span>
+        <a href="DE.html" id="breadcrumb_book_link" title="Go to Book Introduction">Differential Equations</a>
+        
+        <span id="breadcrumb_b_c_sep_span">/ </span>
+        <a href="IntroSecondOrder.html" id="breadcrumb_chapter_link" title="Go to Chapter Introduction">Second Order DE&#39;s</a>
+        
+        <span id="breadcrumb_section_span"> / Undetermined Coefficients</span>
+      </span>
+
+    </div>
+
+    
+
+    <div class="header-divider"></div>
+
+    <div class="content">  
+      
+      
+      <span id="SHLink_NoteMobile" class="SH-Link content-note-link-mobile">Show Mobile Notice</span>
+      <span id="SHImg_NoteMobile" class="fas fa-caret-right SH-padding content-note-link-mobile" aria-hidden="true"></span>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+
+      <span id="SHALink_S_Note" class="SH-Link SH-Hide SH-Bracket">Show All Notes</span>&nbsp;<span id="SHALink_H_Note" class="SH-Link SH-Hide SH-Bracket">Hide All Notes</span>
+      
+      
+      <div id="SHObj_NoteMobile" class="content-note-container content-note-container-mobile">
+        <div class="content-note-header">Mobile Notice</div>
+        <div class="content-note">You appear to be on a device with a "narrow" screen width (<em>i.e.</em> you are probably on a mobile phone).  Due to the nature of the mathematics on this site it is best views in landscape mode.  If your device is not in landscape mode many of the equations will run off the side of your device (should be able to scroll to see them) and some of the menu items will be cut off due to the narrow screen width.</div>
+      </div>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+
+      
+
+
+  <form method="post" action="http://tutorial.math.lamar.edu/Classes/DE/UndeterminedCoefficients.aspx" id="ctl00">
+<div class="aspNetHidden">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="XWGoHmVzdHRrzehWMPrzskHl03w/ow9JWSgw3r2bsLJInRq6rO8iry4XBlrRWADxkQGh0qRWpEUEqIFUjWFcLkg+ZC/Fw3b8xaqkBhqsg/W3Mayuer0/CcRAIr6zQl8vtUrHUEv81+ftywy1vW03XolsT1S39G9pBRAIzPEJaSP0gD73lsfN5TN57ARyRjpNISJgvsocyh+GRq5O8UNnTQZ1CURr5TwBezHvxSGFEpHS4xB5FLcsUmW+Z4B0mCcdrCuryG9pG0OxL2XYi1H8JulVgb3dHEXLys/3CYLKikt5zSrhCEpaEwR39gdUnECWQcGIsvOWmRRQuGaJ9if+FMTWn4uOMKA9c2RgO6TEcJNExMdvLfGRPYhVnExFJZYSeNQ/LMPiPH7CiyUGUnKjD7nxWEqE92f7t9D2n9op+Qg93WuCegdk/tUbjg6vS/XRcGHwOCUumy2vsF0ju17aDvXTnv26+cuBPQPNATlzDRY60MeVwit41siVra8FiW2m9dIvu4SK+54owIIDaDryHVyWwUVhbjERETBUfoMIDjOohepypNERvpRBEsqIUXDqCFclEhST0yf4xbXC94tVoy0jJbakhlHxyyfRCwTksyX0v6o71c0gxQL4i4XplXLqqWupt0mPckHmUkVpGZhymdoh4ItyUyrIvrQD9SRgVsw0cqTL86J5cIdlwz+FGnpXokJf+PKivbvz53UTvhJ6angIDqe62KskttLkYnLzWOGNE25pC0h7MRy1JyZUAAW26Fn5G4EdgvjY9skN87eaOn0w23gbHQr4LKkfbypmOwhhtmApCQLMRT/y5vkoafAJVcwdyG/Hn1DbHLiamjwvQ7S1wfHfUfDscPx39bfLxrziZli+6EPRt+sXFCpLC+9RIDunh0yoJZBWDzmd9LkD9Y3ODEj0mBpoFv/3kC5k1RwX7S+EptKiKGX0xMgRKpI8mveW6AKrIsFn5g1e+3y2wDUBzyCaXUObGXMKdQ7lkjp2+pYS3nvmfQVmWEa63a7fiTvpTn5Mon/lXdm1j9SiDYvuxWg49MyzxBksi9IKn9UlLVlc228mOht6cMyQT9EajLNbIAbSApC6oVmg5p7uSqW7udVt7BBnI8gt+9Koh4WAmiiGHzrrTV965z4own1pwyYtAs8c8mC+z+1mJcr7kUhquktd1aX7ioQ8XRivIuHAFBcEIvew56YARFWlCovQSufE0oZEpMJobACY1LazdKCfeQ4khKB11FgAiSvimIEfW4fk52A5DHr7d+xMxiPS2Jd22oP57YuFAcgtFehFT64xY5tfOwbSwlwl/Ah3rXeBnlpuBJvRoMmHVdlJgGXG3BnxVX4oKa7FhFuxCgI2urlD7lqGfnDf2IRo165nY8AEMtmJswug2D7PYwZwDla+eYJKk6Ae0zLZbPYahJnEjW2M2onbfAENml8ZwaUgfUEh/6PVoq3rwNNvsF04ON9XUiaL5QopCk9vopi+1zBfxZYfhEyLkQISSBaRqYm7OalVghop9FN0KIGJ6oJD6ZpblTUmuLCHgK28j3FdSsfHV8H3en2NdbxPcbXAixq+Ooj9QCFXMtMMEOWlkadR3uDPFkTQEgYlnpJjs3pY/sKRSQHb3EejTG9hB5g7Z83L3h+GFeN8BqAeumckH1WBD70/ExXulc9Oj4BFjPhM9/6uqPnXeIVSKOGNMq9XJefPpmb+b6UxpN1LaI2527pgZO5xLrvmghPVGieKonGXvGGYzkfoTrtMmfu5z37RhD/YcRMfmOqPy1OmkLmfd8BmJg1I5qXq46IlktGiYK/DeV5MFQ1vG9bxeA1KWI8/r6YXZimBBu9SbYPevyfvy4Tm8Xqajco5BikmN/GeNdso5E4vxIqb0oX8pk4irFyUqYVIaR0PAjNc2165fMFuNIQlLtL9QcsTKcSZ71s5IKoW/ENPExG+8LkqV6/TnvY4bzZ7aUj+PeeP2dozxf1lP31XWauvnrlEOGdb2iwnxTHt778pgi++iBQN+5oSx9BMD2CvQIJZ4H4DlJpTKJbsF80OJyKuPZEPD7Vk2tOhx4g8xCEtar2hwkoHGKi/L4DwKlxBkdLytTv0Q+nUpNWS8qsOhIL+HjzqF3aEI/P7E2ZwNwJMmA4BBxjwaqmq7bJnmcNbsLFIQm3JKPWy2nhetWWJYl8NmB+DFUxLPv/KVsS/7+Ab6BefSaGSUrzm6Mlv/CGsWBzKlhzLZ/cgSoVeRrufTO8JzDQGKhxguCQzk/tuLeYIWmLd8GM3wc52jrgUm1hAddwY85bm4iWwFaqXDkikU5FmuzMNgbZ2HzuykEewn5z6TJvwycY5ir8/kGVntOncPp2P+Gr2lG59B7K1tqSTBwdJALwyL6bWpLr0KuQ/AnaeXp5F9x8+XylHKQHTJ2+e7QMmvr1VLmAlsbCvQEfDFYD/59nVSQcNE95npF1DpiNBOGg9H0VWaw5bu+PyIVoNiPituc764NIQyhFvxbOw7jfptHUZfnFFXT45jJrELw/HtZDuhot4FQdikKeo1EETYbgKNEEF6Jc8wZ4gQxTxjHFC/tTIzu6m9hLKspQ0vir6Vvw5ms683U5MuT9lISwUVqteRe8Mz5AdhSlJhHRln3fF7/PCsyiAKavzr7g5QQlqGLJO3vU9t3Rw5mu4cbhrVI52nV9/c4G0eFbf3wBFeZHbMN+hj71d279y//2hgtFrABNu+O3+IBUJ8ixmHEqhyvifc7BWLW9PSMMtXoZIoxT2Ibtb3gXhSGKjiwn7DNxkFcPifaLwDeA8WqFAtLkHRv5DnMSpYuUYZ0tdUTBhAb0Gu7Tm0/SH4yIadlvFb+LUTSs20QTZkiK9MGrzmIIPrxwGjeVlFpDB86kuyGggKnUnMxiyzHi6ko0lFuo/EaPbSX4lFv8a+FwNcQ7JEGujWbQWmx91uS20Nmt6A1IIuzKpkpn3WV/SjRXvSOKvF/sDuy9XgGaWXcGKOa5PXaICnlRqtNGH0J/D7CwkubSiU9lKidq+8lGTUK9vkYck1wdaxxku2HOt3sxbi8Q5pTIF60XEndaEJwWGSSMGgEgaQcXOW4ku3UnysmHFuDonGrW72ezykiPgSkfm/36hH1slMeuih3skFH42hvy3CXV2lKuK77d+gICrAfgn9W/TUAuqL5oV53wDZ5T2yOOGWjGLJUHdBX9PCOr3CAoimqrj901DJ6GkotcvLb3M/snbwZly1hseUsIWyq3oec60DC1sKZcZqKrKK52VHI6ehPWLa8DUL6qVRXjkOb6v/ZLjXrV82DKb+C/d9CmE7XGmadkkd+tKZ/rTiLWA+EtxU0/K9ZZvAhtCjO/ZZ/OuzuMxyvwCPm1osxAMcIkIaZFD62s6fjeWMJJtmFn0VrbmuJzZj465pYLtSom9+xWyLl4j29nlPnXW6DndYVRUBy5QUJM6k7bkul3bZF0PG5EAgPpvUANSf9dzDQUHyziIqH90w2iQ+j3Xmda19OX2wE1Wo8pOLuhC2RfXTTM9pu0uSCNT5AOX/u/+zbnRJuC215k1KqqGe7ODfwN4DpPWi2/UAr1FRZVp1UuHlIlNXDUkq8/ZqOyGVd2vWuE3O9quLTQeoQvqCGTBvt7HHoKGYAHzk3njfQ3w3CS+2WQQ6VY450wa+95J3keE3gpUWCuPZwL4MDHpxKUNof0dIdgrf6c/1/pHwqP83PUal6llqm4Cl3RsVdmrS/y0zSjOxhz8724Y5ATNXmhmYRULL3NEt4B5iLcgrfD5G43J3TuEjiu2zPb0gz6rdYSDqoLdAiE44YmylYVOf61iCqqjri3ynoNoPw3SHa3MkrVHiGlH1UFkHVJ5mt1XRCzKe52BUXKPiOrJRoGrTu1taJLs5Uw2skkpsHZ8PwiA6oYJf2h1N0aG8bL2bjUAI/SpYmOIEm/0nLA8P/KIqPHNNgrDjHSpAGOiGuLsxT6GwpJgfaJvGITWBZCwJ02qBmD7nghCpt9oMIxC4BOMHiOFbf5v1rcV3mRPHXZbxLvV9EKPDAcrL/OrkfpMzEcdS9GccO52TprLg3FqvapLSx3o/JdzE2eRYKP/QoZQfxnuvGzWGEZvRbFeHrwXmLf35cV2vlnKI79ef5mGjFwtG61DeneVHLu4pnCMwbaz+oh0Tymo6qo2FpgospEZhntJ2lRJdH2V+jbD61FUwDxejO+H7Pho1SRqviVa4U3ooFTlgNtIBccB/6Ok7p/R4AkrbMYGArbT5qkodIETARc8JGFEy2xyaybgnlGb85EL8P/iZp3MQyCDZW+xTMl4X4Qzs/7j4BxAdB1nIhi1/U79dSe6L5jJiOTPfQEyhpdHl4a8Ky5trpamAFDdIRE1RQR9zsrN8unW5FVqZAMuKNdYHTr8RH/p4fCZW8PKlPnvUj+1oIe6UVScwcWd/QtZ/BCHLGB5sasujffJUgFeEaKt7WK8KVDIgSA3YCB+4q/529xG8WjYv8C0diT2D7ausiAnALnCbiMGIEHAcpftZ6hsI1nQgAYJL5LWBbEqUw4RYq9IA30fcZQB32EGRk8ycBD29hKxe60b7rzPomd6VlOYRFB384SigzewctrwFudnB+8F88dfsWD5obTt6wJDz6GkPfUpRQwXflf/iTMc9Tv/Gw/aacYFsk9viqHLEHa479JCa4S1uFSsyXA4kWDdG6cFf5OmM9IdU8IK2/zb469adOh8B+PpaZVz+1yhH6KECcwkqb2vSwxl3aWXBTYbznGup0aXAsn4Wk7Bcm9EpzqljkP4HjZ4cOyGAmc7mEhC73DY8W+oWWLMpOakOLBeyy7FUy8m2BenExgh/T9C2S9po8N8Vsld7+oo2gcO9P2iXZqmrmW9szLTI8bJkTYfEhAZSoNhldWUfz2voXrxirA5EaN/fgg9i5kIopI3/iXCsHW80URfgXw5VJ0325BNhCqlEF44RrTlafb80V4rfkueQxk9mo8JuZagy7xVty/iBsxdueHZJToxm2C75fRyu3N6606IZ6GYEoZmLnXimxpVvwX3mRmZK3VoCHoq2ms1ihqCIOmfQie4bl+UzqTJ5LklJocibtzS5vociJjZ7mMmkSx4eiW5wy6FhWdUXOQxv+MgRnZZNo/sASdo1EjXYqKuAFpNLZmuBuXoTXwrc3qo/UjviC/l5kWOumruD+2vPY6oxDpo6g3/wVmYdRE2KRXAQNFZEgszcWKJ6P6ZceLG5Px8cN4ePLhxaqxsBm5wO5Ue9ZOAmnkJlGWYnBfWtXHPNtueibXmTcMUKCTRuOzlL7fUIv/amRVd9GYIE2TC+cFc20Vf4jcG955Od1U6wUg1tP1q7GTpGyVVvSsJP5gsvHkU/ZlrY9ySUmWsAtoxxf/smCpDK7DSqc008NgY/1YSYuBsfAmQsqGAVQiGi0C6pIGUqU4XvUBTKS1FUzhObdpZ83odafOkcd/h0k1zd9Infde7jgs2yAnl235ckwxEoQbGtroMqPR+iha8kPtKp4F7FQ7IexSsJPbSgOrcWmaLGLG3B5TWZrjaepyjpbseq9+dyE3ZkZU651oUY0jm2mA=" />
+</div>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="8BD77D34" />
+</div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </form>
+
+  <h3>Section 3-9 : Undetermined Coefficients</h3>
+    
+    <p>In this section we will take a look at the first method that can be used to find a particular solution to a nonhomogeneous differential equation.</p>
+    
+        \[y'' + p\left( t \right)y' + q\left( t \right)y = g\left( t \right)\]
+    
+    <p>One of the main advantages of this method is that it reduces the problem down to an algebra problem.  The algebra can get messy on occasion, but for most of the problems it will not be terribly difficult.  Another nice thing about this method is that the complementary solution will not be explicitly required, although as we will see knowledge of the complementary solution will be needed in some cases and so we’ll generally find that as well.</p>
+    
+    <p>There are two disadvantages to this method.  First, it will only work for a fairly small class of \(g(t)\)’s.  The class of \(g(t)\)’s for which the method works, does include some of the more common functions, however, there are many functions out there for which undetermined coefficients simply won’t work.  Second, it is generally only useful for constant coefficient differential equations.</p>
+    
+    <p>The method is quite simple.  All that we need to do is look at \(g(t)\) and make a guess as to the form of \(Y_{P}(t)\) leaving the coefficient(s) undetermined (and hence the name of the method).  Plug the guess into the differential equation and see if we can determine values of the coefficients.  If we can determine values for the coefficients then we guessed correctly, if we can’t find values for the coefficients then we guessed incorrectly.</p>
+    
+    <p>It’s usually easier to see this method in action rather than to try and describe it, so let’s jump into some examples.</p>
+    <a class="anchor" name="Second_UnderCoeff_Ex1"></a>
+  <div class="example">
+    <span class="example-title">Example 1</span> Determine a particular solution to
+          
+              \[y'' - 4y' - 12y = 3{{\bf{e}}^{5t}}\]
+    <div class="example-content">
+      <span id="SHLink_Soln1" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln1" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln1" class="soln-content">
+        <p>The point here is to find a particular solution, however the first thing that we’re going to do is find the complementary solution to this differential equation.  Recall that the complementary solution comes from solving,</p>
+          
+              \[y'' - 4y' - 12y = 0\]
+          
+          <p>The characteristic equation for this differential equation and its roots are.</p>
+          
+            \[{r^2} - 4r - 12 = \left( {r - 6} \right)\left( {r + 2} \right) = 0\hspace{0.25in} \Rightarrow \hspace{0.25in}\,\,{r_1} =  - 2,\,\,\,\,{r_2} = 6\]
+          
+          <p>The complementary solution is then,</p>
+          
+              \[{y_c}\left( t \right) = {c_1}{{\bf{e}}^{ - 2t}} + {c_2}{{\bf{e}}^{6t}}\]
+          
+          <p>At this point the reason for doing this first will not be apparent, however we want you in the habit of finding it before we start the work to find a particular solution.  Eventually, as we’ll see, having the complementary solution in hand will be helpful and so it’s best to be in the habit of finding it first prior to doing the work for undetermined coefficients.</p>
+          
+          <p>Now, let’s proceed with finding a particular solution.  As mentioned prior to the start of this example we need to make a guess as to the form of a particular solution to this differential equation.  Since \(g(t)\) is an exponential and we know that exponentials never just appear or disappear in the differentiation process it seems that a likely form of the particular solution would be</p>
+          
+              \[{Y_P}\left( t \right) = A{{\bf{e}}^{5t}}\]
+          
+          <p>Now, all that we need to do is do a couple of derivatives, plug this into the differential equation and see if we can determine what \(A\) needs to be.</p>
+          
+          <p>Plugging into the differential equation gives</p>
+          
+            \[\begin{align*}25A{{\bf{e}}^{5t}} - 4\left( {5A{{\bf{e}}^{5t}}} \right) - 12\left( {A{{\bf{e}}^{5t}}} \right) & = 3{{\bf{e}}^{5t}}\\   - 7A{{\bf{e}}^{5t}} & = 3{{\bf{e}}^{5t}}\end{align*}\]
+          
+          <p>So, in order for our guess to be a solution we will need to choose \(A\) so that the coefficients of the exponentials on either side of the equal sign are the same.  In other words we need to choose \(A\) so that,</p>
+          
+              \[ - 7A = 3\hspace{0.25in} \Rightarrow \hspace{0.25in}A =  - \frac{3}{7}\]
+          
+          <p>Okay, we found a value for the coefficient.  This means that we guessed correctly.  A particular solution to the differential equation is then,</p>
+          
+              \[{Y_P}\left( t \right) =  - \frac{3}{7}{{\bf{e}}^{5t}}\]
+      </div>
+    </div>
+  </div>
+    
+    <p>Before proceeding any further let’s again note that we started off the solution above by finding the complementary solution.  This is not technically part the method of Undetermined Coefficients however, as we’ll eventually see, having this in hand before we make our guess for the particular solution can save us a lot of work and/or headache.  Finding the complementary solution first is simply a good habit to have so we’ll try to get you in the habit over the course of the next few examples.  At this point do not worry about why it is a good habit.  We’ll eventually see why it is a good habit.</p>
+    
+    <p>Now, back to the work at hand.  Notice in the last example that we kept saying “a” particular solution, not “the” particular solution.  This is because there are other possibilities out there for the particular solution we’ve just managed to find one of them.  Any of them will work when it comes to writing down the general solution to the differential equation.</p>
+    
+    <p>Speaking of which…  This section is devoted to finding particular solutions and most of the examples will be finding only the particular solution.  However, we should do at least one full blown IVP to make sure that we can say that we’ve done one.</p>
+    <a class="anchor" name="Second_UnderCoeff_Ex2"></a>
+  <div class="example">
+    <span class="example-title">Example 2</span> Solve the following IVP
+          
+              \[y'' - 4y' - 12y = 3{{\bf{e}}^{5t}}\hspace{0.25in}\hspace{0.25in}y\left( 0 \right) = \frac{{18}}{7}\hspace{0.25in}y'\left( 0 \right) =  - \frac{1}{7}\]
+    <div class="example-content">
+      <span id="SHLink_Soln2" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln2" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln2" class="soln-content">
+        <p>We know that the general solution will be of the form,</p>
+          
+              \[y\left( t \right) = {y_c}\left( t \right) + {Y_P}\left( t \right)\]
+          <p>and we already have both the complementary and particular solution from the first example so we don’t really need to do any extra work for this problem.</p>
+          
+          <p>One of the more common mistakes in these problems is to find the complementary solution and then, because we’re probably in the habit of doing it, apply the initial conditions to the complementary solution to find the constants.  This however, is incorrect.  The complementary solution is only the solution to the homogeneous differential equation and we are after a solution to the nonhomogeneous differential equation and the initial conditions must satisfy that solution instead of the complementary solution.</p>
+          
+          <p>So, we need the general solution to the nonhomogeneous differential equation.  Taking the complementary solution and the particular solution that we found in the previous example we get the following for a general solution and its derivative.</p>
+          
+              \[\begin{align*}y\left( t \right) & = {c_1}{{\bf{e}}^{ - 2t}} + {c_2}{{\bf{e}}^{6t}} - \frac{3}{7}{{\bf{e}}^{5t}}\\ y'\left( t \right) & =  - 2{c_1}{{\bf{e}}^{ - 2t}} + 6{c_2}{{\bf{e}}^{6t}} - \frac{{15}}{7}{{\bf{e}}^{5t}}\end{align*}\]
+          
+          <p>Now, apply the initial conditions to these.</p>
+          
+            \[\begin{align*}\frac{{18}}{7} = y\left( 0 \right) & = {c_1} + {c_2} - \frac{3}{7}\\  - \frac{1}{7} = y'\left( 0 \right) & =  - 2{c_1} + 6{c_2} - \frac{{15}}{7}\end{align*}\]
+          
+          <p>Solving this system gives \(c_{1} = 2\) and \(c_{2} = 1\).  The actual solution is then.</p>
+          
+            \[y\left( t \right) = 2{{\bf{e}}^{ - 2t}} + {{\bf{e}}^{6t}} - \frac{3}{7}{{\bf{e}}^{5t}}\]
+      </div>
+    </div>
+  </div>
+
+    
+    <p>This will be the only IVP in this section so don’t forget how these are done for nonhomogeneous differential equations!</p>
+    
+    <p>Let’s take a look at another example that will give the second type of \(g(t)\) for which undetermined coefficients will work.</p>
+    <a class="anchor" name="Second_UnderCoeff_Ex3"></a>
+  <div class="example">
+    <span class="example-title">Example 3</span> Find a particular solution for the following differential equation.
+          
+              \[y'' - 4y' - 12y = \sin \left( {2t} \right)\]
+    <div class="example-content">
+      <span id="SHLink_Soln3" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln3" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln3" class="soln-content">
+        <p>Again, let’s note that we should probably find the complementary solution before we proceed onto the guess for a particular solution.  However, because the homogeneous differential equation for this example is the same as that for the first example we won’t bother with that here.</p>
+          
+            <p>Now, let’s take our experience from the first example and apply that here.  The first example had an exponential function in the \(g(t)\) and our guess was an exponential.  This differential equation has a sine so let’s try the following guess for the particular solution.</p>
+          
+              \[{Y_P}\left( t \right) = A\sin \left( {2t} \right)\]
+          
+          <p>Differentiating and plugging into the differential equation gives,</p>
+          
+            \[ - 4A\sin \left( {2t} \right) - 4\left( {2A\cos \left( {2t} \right)} \right) - 12\left( {A\sin \left( {2t} \right)} \right) = \sin \left( {2t} \right)\]
+          
+          <p>Collecting like terms yields</p>
+          
+              \[ - 16A\sin \left( {2t} \right) - 8A\cos \left( {2t} \right) = \sin \left( {2t} \right)\]
+          
+          <p>We need to pick \(A\) so that we get the same function on both sides of the equal sign.  This means that the coefficients of the sines and cosines must be equal.  Or,</p>
+          
+            \[\begin{align*}& \cos \left( {2t} \right)\,: &  - 8A & = 0\hspace{0.25in} \Rightarrow \hspace{0.25in}A = 0\\ &amp; \sin \left( {2t} \right)\,:&  - 16A & = 1\hspace{0.25in} \Rightarrow \hspace{0.25in}A =  - \frac{1}{{16}}\end{align*}\]
+          
+          <p>Notice two things.  First, since there is no cosine on the right hand side this means that the coefficient must be zero on that side.  More importantly we have a serious problem here.  In order for the cosine to drop out, as it must in order for the guess to satisfy the differential equation, we need to set \(A = 0\), but if \(A = 0\), the sine will also drop out and that can’t happen.  Likewise, choosing \(A\) to keep the sine around will also keep the cosine around.</p>
+          
+          <p>What this means is that our initial guess was wrong.  If we get multiple values of the same constant or are unable to find the value of a constant then we have guessed wrong.</p>
+          
+          <p>One of the nicer aspects of this method is that when we guess wrong our work will often suggest a fix.  In this case the problem was the cosine that cropped up.  So, to counter this let’s add a cosine to our guess.  Our new guess is</p>
+          
+              \[{Y_P}\left( t \right) = A\cos \left( {2t} \right) + B\sin \left( {2t} \right)\]
+          
+          <p>Plugging this into the differential equation and collecting like terms gives,</p>
+          
+            \[\begin{align*} - 4A\cos \left( {2t} \right) - 4B\sin \left( {2t} \right) - 4\left( { - 2A\sin \left( {2t} \right) + 2B\cos \left( {2t} \right)} \right) - \\ 12\left( {A\cos \left( {2t} \right) + B\sin \left( {2t} \right)} \right) &  = \sin \left( {2t} \right)\\ \left( { - 4A - 8B - 12A} \right)\cos \left( {2t} \right) + \left( { - 4B + 8A - 12B} \right)\sin \left( {2t} \right) & = \sin \left( {2t} \right)\\ \left( { - 16A - 8B} \right)\cos \left( {2t} \right) + \left( {8A - 16B} \right)\sin \left( {2t} \right) & = \sin \left( {2t} \right)\end{align*}\]
+          
+          <p>Now, set the coefficients equal</p>
+          
+            \[\begin{align*} & \cos \left( {2t} \right)\,: &- 16A - 8B & = 0\\ &amp; \sin \left( {2t} \right)\,: & 8A - 16B & = 1\end{align*}\]
+          <p>Solving this system gives us</p>
+          
+              \[A = \frac{1}{{40}}\hspace{0.25in}\hspace{0.25in}B =  - \frac{1}{{20}}\]
+          <p>We found constants and this time we guessed correctly.  A particular solution to the differential equation is then,</p>
+          
+            \[{Y_P}\left( t \right) = \frac{1}{{40}}\cos \left( {2t} \right) - \frac{1}{{20}}\sin \left( {2t} \right)\]
+      </div>
+    </div>
+  </div>
+    
+    <p>Notice that if we had had a cosine instead of a sine in the last example then our guess would have been the same.  In fact, if both a sine and a cosine had shown up we will see that the same guess will also work.</p>
+    
+    <p>Let’s take a look at the third and final type of basic \(g(t)\) that we can have.  There are other types of \(g(t)\) that we can have, but as we will see they will all come back to two types that we’ve already done as well as the next one.</p>
+    <a class="anchor" name="Second_UnderCoeff_Ex4"></a>
+  <div class="example">
+    <span class="example-title">Example 4</span> Find a particular solution for the following differential equation.
+          
+              \[y'' - 4y' - 12y = 2{t^3} - t + 3\]
+    <div class="example-content">
+      <span id="SHLink_Soln4" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln4" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln4" class="soln-content">
+        <p>Once, again we will generally want the complementary solution in hand first, but again we’re working with the same homogeneous differential equation (you’ll eventually see why we keep working with the same homogeneous problem) so we’ll again just refer to the first example.</p>
+          
+          <p>For this example, \(g(t)\) is a cubic polynomial.  For this we will need the following guess for the particular solution.</p>
+          
+              \[{Y_P}\left( t \right) = A{t^3} + B{t^2} + Ct + D\]
+          
+          <p>Notice that even though \(g(t)\) doesn’t have a \({t^2}\) in it our guess will still need one!  So, differentiate and plug into the differential equation.</p>
+          
+            \[\begin{align*}6At + 2B - 4\left( {3A{t^2} + 2Bt + C} \right) - 12\left( {A{t^3} + B{t^2} + Ct + D} \right) & = 2{t^3} - t + 3\\  - 12A{t^3} + \left( { - 12A - 12B} \right){t^2} + \left( {6A - 8B - 12C} \right)t + 2B - 4C - 12D & = 2{t^3} - t + 3\end{align*}\]
+          
+          <p>Now, as we’ve done in the previous examples we will need the coefficients of the terms on both sides of the equal sign to be the same so set coefficients equal and solve.</p>
+          
+            \[\begin{align*} & {t^3}\,: & - 12A & = 2  & \Rightarrow \hspace{0.25in}A & =  - \frac{1}{6}\\ 
+                             &amp; {t^2}\,: &  - 12A - 12B & = 0 & \Rightarrow \hspace{0.25in}B & = \frac{1}{6}\\ 
+                             &amp; {t^1}\,: &  6A - 8B - 12C & =  - 1 & \Rightarrow \hspace{0.25in}C & =  - \frac{1}{9}\\ 
+                             &amp; {t^0}\,: & 2B - 4C - 12D & = 3 &  \Rightarrow \hspace{0.25in}D & =  - \frac{5}{{27}}\end{align*}\]
+          
+          <p>Notice that in this case it was very easy to solve for the constants.  The first equation gave \(A\).  Then once we knew \(A\) the second equation gave \(B\), <em>etc</em>.  A particular solution for this differential equation is then</p>
+          
+            \[{Y_P}\left( t \right) =  - \frac{1}{6}{t^3} + \frac{1}{6}{t^2} - \frac{1}{9}t - \frac{5}{{27}}\]
+      </div>
+    </div>
+  </div>
+    
+    <p>Now that we’ve gone over the three basic kinds of functions that we can use undetermined coefficients on let’s summarize.</p>
+    
+      <table class="table-no-outer-border">
+        <tr>
+          <th>\(g(t)\)</th>
+          <th style="border-right:unset">\(Y_{P}(t)\) guess</th>
+        </tr>
+        <tr>
+          <td class="table-cell-center">\(a{{\bf{e}}^{\beta t}}\)</td>
+          <td class="table-cell-center" style="border-right:unset">\(A{{\bf{e}}^{\beta t}}\)</td>
+        </tr>
+        <tr>
+          <td class="table-cell-center">\(a\cos \left( {\beta t} \right)\)</td>
+          <td class="table-cell-center" style="border-right:unset">\(A\cos \left( {\beta t} \right) + B\sin \left( {\beta t} \right)\)</td>
+        </tr>
+        <tr>
+          <td class="table-cell-center">\(b\sin \left( {\beta t} \right)\)</td>
+          <td class="table-cell-center" style="border-right:unset">\(A\cos \left( {\beta t} \right) + B\sin \left( {\beta t} \right)\)</td>
+        </tr>
+        <tr>
+          <td class="table-cell-center">\(a\cos \left( {\beta t} \right) + b\sin \left( {\beta t} \right)\)</td>
+          <td class="table-cell-center" style="border-right:unset">\(A\cos \left( {\beta t} \right) + B\sin \left( {\beta t} \right)\)</td>
+        </tr>
+        <tr>
+          <td class="table-cell-center">\(n^{\mbox{th}}\) degree polynomial</td>
+          <td class="table-cell-center" style="border-right:unset">\({A_n}{t^n} + {A_{n - 1}}{t^{n - 1}} +  \cdots {A_1}t + {A_0}\)</td>
+        </tr>
+      </table>
+    
+    <p>Notice that there are really only three kinds of functions given above.  If you think about it the single cosine and single sine functions are really special cases of the case where both the sine and cosine are present.  Also, we have not yet justified the guess for the case where both a sine and a cosine show up.  We will justify this later.</p>
+    
+    <p>We now need move on to some more complicated functions.  The more complicated functions arise by taking products and sums of the basic kinds of functions.  Let’s first look at products.</p>
+    <a class="anchor" name="Second_UnderCoeff_Ex5"></a>
+  <div class="example">
+    <span class="example-title">Example 5</span> Find a particular solution for the following differential equation.
+          
+              \[y'' - 4y' - 12y = t{{\bf{e}}^{4t}}\]
+    <div class="example-content">
+      <span id="SHLink_Soln5" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln5" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln5" class="soln-content">
+        <p>You’re probably getting tired of the opening comment, but again finding the complementary solution first really a good idea but again we’ve already done the work in the first example so we won’t do it again here.  We promise that eventually you’ll see why we keep using the same homogeneous problem and why we say it’s a good idea to have the complementary solution in hand first.  At this point all we’re trying to do is reinforce the habit of finding the complementary solution first.</p>
+          
+          <p>Okay, let’s start off by writing down the guesses for the individual pieces of the function.  The guess for the \(t\) would be</p>
+          
+              \[At + B\]
+          <p>while the guess for the exponential would be</p>
+          
+              \[C{{\bf{e}}^{4t}}\]
+          
+          <p>Now, since we’ve got a product of two functions it seems like taking a product of the guesses for the individual pieces might work.  Doing this would give</p>
+          
+              \[C{{\bf{e}}^{4t}}\left( {At + B} \right)\]
+          
+          <p>However, we will have problems with this.  As we will see, when we plug our guess into the differential equation we will only get two equations out of this.  The problem is that with this guess we’ve got three unknown constants.  With only two equations we won’t be able to solve for all the constants.</p>
+          
+          <p>This is easy to fix however.  Let’s notice that we could do the following</p>
+          
+              \[C{{\bf{e}}^{4t}}\left( {At + B} \right) = {{\bf{e}}^{4t}}\left( {ACt + BC} \right)\]
+          
+          <p>If we multiply the \(C\) through, we can see that the guess can be written in such a way that there are really only two constants.  So, we will use the following for our guess.</p>
+          
+              \[{Y_P}\left( t \right) = {{\bf{e}}^{4t}}\left( {At + B} \right)\]
+          
+          <p>Notice that this is nothing more than the guess for the \(t\) with an exponential tacked on for good measure.</p>
+          
+          <p>Now that we’ve got our guess, let’s differentiate, plug into the differential equation and collect like terms.</p>
+          
+            \[\begin{align*}{{\bf{e}}^{4t}}\left( {16At + 16B + 8A} \right) - 4\left( {{{\bf{e}}^{4t}}\left( {4At + 4B + A} \right)} \right) - 12\left( {{{\bf{e}}^{4t}}\left( {At + B} \right)} \right) & = t{{\bf{e}}^{4t}}\\ \left( {16A - 16A - 12A} \right)t{{\bf{e}}^{4t}} + \left( {16B + 8A - 16B - 4A - 12B} \right){{\bf{e}}^{4t}} & = t{{\bf{e}}^{4t}}\\ - 12At{{\bf{e}}^{4t}} + \left( {4A - 12B} \right){{\bf{e}}^{4t}} & = t{{\bf{e}}^{4t}}\end{align*}\]
+          
+          <p>Note that when we’re collecting like terms we want the coefficient of each term to have only constants in it.  Following this rule we will get two terms when we collect like terms.  Now, set coefficients equal.</p>
+          
+              \[\begin{align*} & t{{\bf{e}}^{4t}}\,: & - 12A & = 1 & \Rightarrow  \hspace{0.25in}A & =  - \frac{1}{{12}}\\ 
+                               &amp; {{\bf{e}}^{4t}}\,: &  4A - 12B & = 0 & \Rightarrow \hspace{0.25in}B & =  - \frac{1}{{36}}\end{align*}\]
+          <p>A particular solution for this differential equation is then</p>
+          
+            \[{Y_P}\left( t \right) = {{\bf{e}}^{4t}}\left( { - \frac{t}{{12}} - \frac{1}{{36}}} \right) =  - \frac{1}{{36}}\left( {3t + 1} \right){{\bf{e}}^{4t}}\]
+      </div>
+    </div>
+  </div>
+    
+    <p>This last example illustrated the general rule that we will follow when products involve an exponential.  When a product involves an exponential we will first strip out the exponential and write down the guess for the portion of the function without the exponential, then we will go back and tack on the exponential without any leading coefficient.</p>
+    
+    <p>Let’s take a look at some more products.  In the interest of brevity we will just write down the guess for a particular solution and not go through all the details of finding the constants.  Also, because we aren’t going to give an actual differential equation we can’t deal with finding the complementary solution first.</p>
+    <a class="anchor" name="Second_UnderCoeff_Ex6"></a>
+  <div class="example">
+    <span class="example-title">Example 6</span> Write down the form of the particular solution to
+          
+              \[y'' + p\left( t \right)y' + q\left( t \right)y = g\left( t \right)\]
+    <ol class="example_parts_list">
+      <li>\(g\left( t \right) = 16{{\bf{e}}^{7t}}\sin \left( {10t} \right)\)</li>
+      <li>\(g\left( t \right) = \left( {9{t^2} - 103t} \right)\cos t\)</li>
+      <li>\(g\left( t \right) =  - {{\bf{e}}^{ - 2t}}\left( {3 - 5t} \right)\cos \left( {9t} \right)\)</li>
+    </ol>
+    <span id="SHALink_S_Soln6" class="SH-Link SH-All">Show All Solutions</span>&nbsp;<span id="SHALink_H_Soln6" class="SH-Link SH-All">Hide All Solutions</span>
+    <div class="example-content">
+      <span class="soln-list-item soln-list-subitem">a</span> \(g\left( t \right) = 16{{\bf{e}}^{7t}}\sin \left( {10t} \right)\) <span id="SHLink_Soln6a" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln6a" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln6a" class="soln-content">
+        <p>So, we have an exponential in the function.  Remember the rule.  We will ignore the exponential and write down a guess for \(16\sin \left( {10t} \right)\) then put the exponential back in.</p>
+          
+          <p>The guess for the sine is</p>
+          
+              \[A\cos \left( {10t} \right) + B\sin \left( {10t} \right)\]
+          
+          <p>Now, for the actual guess for the particular solution we’ll take the above guess and tack an exponential onto it.  This gives,</p>
+          
+            \[{Y_P}\left( t \right) = {{\bf{e}}^{7t}}\left( {A\cos \left( {10t} \right) + B\sin \left( {10t} \right)} \right)\]
+          
+          <p>One final note before we move onto the next part.  The 16 in front of the function has absolutely no bearing on our guess.  Any constants multiplying the whole function are ignored.</p>
+      </div>
+
+      <br />
+      <span class="soln-list-item soln-list-subitem">b</span> \(g\left( t \right) = \left( {9{t^2} - 103t} \right)\cos t\) <span id="SHLink_Soln6b" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln6b" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln6b" class="soln-content">
+        <p>We will start this one the same way that we initially started the previous example.  The guess for the polynomial is</p>
+          
+              \[A{t^2} + Bt + C\]
+          <p>and the guess for the cosine is</p>
+          
+              \[D\cos t + E\sin t\]
+          
+          <p>If we multiply the two guesses we get.</p>
+          
+              \[\left( {A{t^2} + Bt + C} \right)\left( {D\cos t + E\sin t} \right)\]
+          
+          <p>Let’s simplify things up a little.  First multiply the polynomial through as follows.</p>
+          
+            \[\begin{array}{c}\left( {A{t^2} + Bt + C} \right)\left( {D\cos t} \right) + \left( {A{t^2} + Bt + C} \right)\left( {E\sin t} \right)\\  \left( {AD{t^2} + BDt + CD} \right)\cos t + \left( {AE{t^2} + BEt + CE} \right)\sin t\end{array}\]
+          
+          <p>Notice that everywhere one of the unknown constants occurs it is in a product of unknown constants.  This means that if we went through and used this as our guess the system of equations that we would need to solve for the unknown constants would have products of the unknowns in them.  These types of systems are generally very difficult to solve.</p>
+          
+          <p>So, to avoid this we will do the same thing that we did in the previous example.  Everywhere we see a product of constants we will rename it and call it a single constant.  The guess that we’ll use for this function will be.</p>
+          
+            \[{Y_P}\left( t \right) = \left( {A{t^2} + Bt + C} \right)\cos t + \left( {D{t^2} + Et + F} \right)\sin t\]
+          
+          <p>This is a general rule that we will use when faced with a product of a polynomial and a trig function.  We write down the guess for the polynomial and then multiply that by a cosine.  We then write down the guess for the polynomial again, using different coefficients, and multiply this by a sine.</p>
+      </div>
+
+      <br />
+      <span class="soln-list-item soln-list-subitem">c</span> \(g\left( t \right) =  - {{\bf{e}}^{ - 2t}}\left( {3 - 5t} \right)\cos \left( {9t} \right)\) <span id="SHLink_Soln6c" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln6c" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln6c" class="soln-content">
+        <p>This final part has all three parts to it.  First, we will ignore the exponential and write down a guess for.</p>
+          
+              \[ - \left( {3 - 5t} \right)\cos \left( {9t} \right)\]
+          
+          <p>The minus sign can also be ignored.  The guess for this is</p>
+          
+            \[\left( {At + B} \right)\cos \left( {9t} \right) + \left( {Ct + D} \right)\sin \left( {9t} \right)\]
+          
+          <p>Now, tack an exponential back on and we’re done.</p>
+          
+            \[{Y_P}\left( t \right) = {{\bf{e}}^{ - 2t}}\left( {At + B} \right)\cos \left( {9t} \right) + {{\bf{e}}^{ - 2t}}\left( {Ct + D} \right)\sin \left( {9t} \right)\]
+          
+          <p>Notice that we put the exponential on both terms.</p>
+      </div>
+    </div>
+  </div>
+    
+    <p>There a couple of general rules that you need to remember for products.</p>
+    
+    <ol class="general-list">
+      <li>If \(g(t)\) contains an exponential, ignore it and write down the guess for the remainder.  Then tack the exponential back on without any leading coefficient.<br /><br /></li>
+      <li>For products of polynomials and trig functions you first write down the guess for just the polynomial and multiply that by the appropriate cosine.  Then add on a new guess for the polynomial with different coefficients and multiply that by the appropriate sine.</li>
+    </ol>
+    
+    <p>If you can remember these two rules you can’t go wrong with products.  Writing down the guesses for products is usually not that difficult.  The difficulty arises when you need to actually find the constants.</p>
+    
+    <p>Now, let’s take a look at sums of the basic components and/or products of the basic components.  To do this we’ll need the following fact.</p>
+    
+    <h4>Fact</h4>
+  <div class="fact">
+    <p>If \(Y_{P1}(t)\) is a particular solution for</p>
+          
+              \[y'' + p\left( t \right)y' + q\left( t \right)y = {g_1}\left( t \right)\]
+
+          <p>and if \(Y_{P2}(t)\) is a particular solution for</p>
+          
+              \[y'' + p\left( t \right)y' + q\left( t \right)y = {g_2}\left( t \right)\] 
+
+          <p>then \(Y_{P1}(t)\) + \(Y_{P2}(t)\) is a particular solution for</p>
+          
+            \[y'' + p\left( t \right)y' + q\left( t \right)y = {g_1}\left( t \right) + {g_2}\left( t \right)\]
+  </div>
+    
+    <p>This fact can be used to both find particular solutions to differential equations that have sums in them and to write down guess for functions that have sums in them.</p>
+    
+    <a class="anchor" name="Second_UnderCoeff_Ex7"></a>
+  <div class="example">
+    <span class="example-title">Example 7</span> Find a particular solution for the following differential equation.
+          
+              \[y'' - 4y' - 12y = 3{{\bf{e}}^{5t}} + \sin \left( {2t} \right) + t{{\bf{e}}^{4t}}\]
+    <div class="example-content">
+      <span id="SHLink_Soln7" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln7" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln7" class="soln-content">
+        <p>This example is the reason that we’ve been using the same homogeneous differential equation for all the previous examples.  There is nothing to do with this problem.  All that we need to do it go back to the appropriate examples above and get the particular solution from that example and add them all together.</p>
+          
+          <p>Doing this gives</p>
+          
+            \[{Y_P}\left( t \right) =  - \frac{3}{7}{{\bf{e}}^{5t}} + \frac{1}{{40}}\cos \left( {2t} \right) - \frac{1}{{20}}\sin \left( {2t} \right) - \frac{1}{{36}}\left( {3t + 1} \right){{\bf{e}}^{4t}}\]
+      </div>
+    </div>
+  </div>
+    
+    <p>Let’s take a look at a couple of other examples.  As with the products we’ll just get guesses here and not worry about actually finding the coefficients.</p>
+    <a class="anchor" name="Second_UnderCoeff_Ex8"></a>
+  <div class="example">
+    <span class="example-title">Example 8</span> Write down the form of the particular solution to
+          
+              \[y'' + p\left( t \right)y' + q\left( t \right)y = g\left( t \right)\]
+          <p>for the following \(g(t)\)’s.</p>
+    <ol class="example_parts_list">
+      <li>\(g\left( t \right) = 4\cos \left( {6t} \right) - 9\sin \left( {6t} \right)\)</li>
+      <li>\(g\left( t \right) =  - 2\sin t + \sin \left( {14t} \right) - 5\cos \left( {14t} \right)\)</li>
+      <li>\(g\left( t \right) = {{\bf{e}}^{7t}} + 6\)</li>
+      <li>\(g\left( t \right) = 6{t^2} - 7\sin \left( {3t} \right) + 9\)</li>
+      <li>\(g\left( t \right) = 10{{\bf{e}}^t} - 5t{{\bf{e}}^{ - 8t}} + 2{{\bf{e}}^{ - 8t}}\)</li>
+      <li>\(g\left( t \right) = {t^2}\cos t - 5t\sin t\)</li>
+      <li>\(g\left( t \right) = 5{{\bf{e}}^{ - 3t}} + {{\bf{e}}^{ - 3t}}\cos \left( {6t} \right) - \sin \left( {6t} \right)\)</li>
+    </ol>
+    <span id="SHALink_S_Soln8" class="SH-Link SH-All">Show All Solutions</span>&nbsp;<span id="SHALink_H_Soln8" class="SH-Link SH-All">Hide All Solutions</span>
+    <div class="example-content">
+      <span class="soln-list-item soln-list-subitem">a</span> \(g\left( t \right) = 4\cos \left( {6t} \right) - 9\sin \left( {6t} \right)\) <span id="SHLink_Soln8a" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln8a" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln8a" class="soln-content">
+        <p>This first one we’ve actually already told you how to do.  This is in the table of the basic functions.  However, we wanted to justify the guess that we put down there.  Using the fact on sums of function we would be tempted to write down a guess for the cosine and a guess for the sine. This would give.</p>
+          
+            \[\underbrace {A\cos \left( {6t} \right) + B\sin \left( {6t} \right)}_{{\mbox{guess for the cosine}}} + \underbrace {C\cos \left( {6t} \right) + D\sin \left( {6t} \right)}_{{\mbox{guess for the sine}}}\]
+          
+          <p>So, we would get a cosine from each guess and a sine from each guess.  The problem with this as a guess is that we are only going to get two equations to solve after plugging into the differential equation and yet we have 4 unknowns.  We will never be able to solve for each of the constants.</p>
+          
+          <p>To fix this notice that we can combine some terms as follows.</p>
+          
+            \[\left( {A + C} \right)\cos \left( {6t} \right) + \left( {B + D} \right)\sin \left( {6t} \right)\]
+          
+          <p>Upon doing this we can see that we’ve really got a single cosine with a coefficient and a single sine with a coefficient and so we may as well just use</p>
+          
+              \[{Y_P}\left( t \right) = A\cos \left( {6t} \right) + B\sin \left( {6t} \right)\]
+          
+          <p>The general rule of thumb for writing down guesses for functions that involve sums is to always combine like terms into single terms with single coefficients.  This will greatly simplify the work required to find the coefficients.</p>
+      </div>
+
+      <br />
+      <span class="soln-list-item soln-list-subitem">b</span> \(g\left( t \right) =  - 2\sin t + \sin \left( {14t} \right) - 5\cos \left( {14t} \right)\) <span id="SHLink_Soln8b" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln8b" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln8b" class="soln-content">
+        <p>For this one we will get two sets of sines and cosines.  This will arise because we have two different arguments in them.  We will get one set for the sine with just a \(t\) as its argument and we’ll get another set for the sine and cosine with the 14\(t\) as their arguments.</p>
+          
+          <p>The guess for this function is</p>
+          
+            \[{Y_P}\left( t \right) = A\cos t + B\sin t + C\cos \left( {14t} \right) + D\sin \left( {14t} \right)\]
+      </div>
+
+      <br />
+      <span class="soln-list-item soln-list-subitem">c</span> \(g\left( t \right) = {{\bf{e}}^{7t}} + 6\) <span id="SHLink_Soln8c" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln8c" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln8c" class="soln-content">
+        <p>The main point of this problem is dealing with the constant.  But that isn’t too bad.  We just wanted to make sure that an example of that is somewhere in the notes.  If you recall that a constant is nothing more than a zeroth degree polynomial the guess becomes clear.</p>
+          
+          <p>The guess for this function is</p>
+          
+              \[{Y_p}\left( t \right) = A{{\bf{e}}^{7t}} + B\]
+      </div>
+
+      <br />
+      <span class="soln-list-item soln-list-subitem">d</span> \(g\left( t \right) = 6{t^2} - 7\sin \left( {3t} \right) + 9\) <span id="SHLink_Soln8d" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln8d" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln8d" class="soln-content">
+        <p>This one can be a little tricky if you aren’t paying attention.  Let’s first rewrite the function</p>
+          
+            \[\begin{align*}g\left( t \right) & = 6{t^2} - 7\sin \left( {3t} \right) + 9\hspace{0.25in}{\mbox{as}}\\  g\left( t \right) & = 6{t^2} + 9 - 7\sin \left( {3t} \right)\end{align*}\]
+          
+          <p>All we did was move the 9.  However, upon doing that we see that the function is really a sum of a quadratic polynomial and a sine.  The guess for this is then</p>
+          
+            \[{Y_P}\left( t \right) = A{t^2} + Bt + C + D\cos \left( {3t} \right) + E\sin \left( {3t} \right)\]
+          
+          <p>If we don’t do this and treat the function as the sum of three terms we would get</p>
+          
+              \[A{t^2} + Bt + C + D\cos \left( {3t} \right) + E\sin \left( {3t} \right) + G\]
+          <p>and as with the first part in this example we would end up with two terms that are essentially the same (the \(C\) and the \(G\)) and so would need to be combined.  An added step that isn’t really necessary if we first rewrite the function.</p>
+          
+          <p>Look for problems where rearranging the function can simplify the initial guess.</p>
+      </div>
+
+      <br />
+      <span class="soln-list-item soln-list-subitem">e</span> \(g\left( t \right) = 10{{\bf{e}}^t} - 5t{{\bf{e}}^{ - 8t}} + 2{{\bf{e}}^{ - 8t}}\) <span id="SHLink_Soln8e" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln8e" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln8e" class="soln-content">
+        <p>So, this look like we’ve got a sum of three terms here.  Let’s write down a guess for that.</p>
+          
+              \[A{{\bf{e}}^t} + \left( {Bt + C} \right){{\bf{e}}^{ - 8t}} + D{{\bf{e}}^{ - 8t}}\]
+          
+          <p>Notice however that if we were to multiply the exponential in the second term through we would end up with two terms that are essentially the same and would need to be combined.  This is a case where the guess for one term is completely contained in the guess for a different term.  When this happens we just drop the guess that’s already included in the other term.</p>
+          
+          <p>So, the guess here is actually.</p>
+          
+              \[{Y_P}\left( t \right) = A{{\bf{e}}^t} + \left( {Bt + C} \right){{\bf{e}}^{ - 8t}}\]
+          
+          <p>Notice that this arose because we had two terms in our \(g(t)\) whose only difference was the polynomial that sat in front of them.  When this happens we look at the term that contains the largest degree polynomial, write down the guess for that and don’t bother writing down the guess for the other term as that guess will be completely contained in the first guess.</p>
+      </div>
+      
+      <br />
+      <span class="soln-list-item soln-list-subitem">f</span> \(g\left( t \right) = {t^2}\cos t - 5t\sin t\) <span id="SHLink_Soln8f" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln8f" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln8f" class="soln-content">
+        <p>In this case we’ve got two terms whose guess without the polynomials in front of them would be the same.  Therefore, we will take the one with the largest degree polynomial in front of it and write down the guess for that one and ignore the other term.  So, the guess for the function is</p>
+          
+            \[{Y_P}\left( t \right) = \left( {A{t^2} + Bt + C} \right)\cos t + \left( {D{t^2} + Et + F} \right)\sin t\]
+      </div>
+      
+      <br />
+      <span class="soln-list-item soln-list-subitem">g</span> \(g\left( t \right) = 5{{\bf{e}}^{ - 3t}} + {{\bf{e}}^{ - 3t}}\cos \left( {6t} \right) - \sin \left( {6t} \right)\) <span id="SHLink_Soln8g" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln8g" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln8g" class="soln-content">
+        <p>This last part is designed to make sure you understand the general rule that we used in the last two parts.  This time there really are three terms and we will need a guess for each term.  The guess here is</p>
+          
+            \[{Y_P}\left( t \right) = A{{\bf{e}}^{ - 3t}} + {{\bf{e}}^{ - 3t}}\left( {B\cos \left( {6t} \right) + C\sin \left( {6t} \right)} \right) + D\cos \left( {6t} \right) + E\sin \left( {6t} \right)\]
+          
+          <p>We can only combine guesses if they are identical up to the constant.  So, we can’t combine the first exponential with the second because the second is really multiplied by a cosine and a sine and so the two exponentials are in fact different functions.  Likewise, the last sine and cosine can’t be combined with those in the middle term because the sine and cosine in the middle term are in fact multiplied by an exponential and so are different.</p>
+      </div>
+    </div>
+  </div>
+
+    <p>So, when dealing with sums of functions make sure that you look for identical guesses that may or may not be contained in other guesses and combine them.  This will simplify your work later on.</p>
+    
+    <p>We have one last topic in this section that needs to be dealt with.  In the first few examples we were constantly harping on the usefulness of having the complementary solution in hand before making the guess for a particular solution.  We never gave any reason for this other that “trust us”.  It is now time to see why having the complementary solution in hand first is useful.  This is best shown with an example so let’s jump into one.</p>
+    <a class="anchor" name="Second_UnderCoeff_Ex9"></a>
+  <div class="example">
+    <span class="example-title">Example 9</span> Find a particular solution for the following differential equation.
+          
+              \[y'' - 4y' - 12y = {{\bf{e}}^{6t}}\]
+    <div class="example-content">
+      <span id="SHLink_Soln9" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln9" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln9" class="soln-content">
+        <p>This problem seems almost too simple to be given this late in the section.  This is especially true given the ease of finding a particular solution for \(g\)(\(t\))’s that are just exponential functions.  Also, because the point of this example is to illustrate why it is generally a good idea to have the complementary solution in hand first we’ll let’s go ahead and recall the complementary solution first.  Here it is,</p>
+          <p>\[{y_c}\left( t \right) = {c_1}{{\bf{e}}^{ - 2t}} + {c_2}{{\bf{e}}^{6t}}\]
+          
+          <p>Now, without worrying about the complementary solution for a couple more seconds let’s go ahead and get to work on the particular solution.  There is not much to the guess here.  From our previous work we know that the guess for the particular solution should be,</p>
+          
+              \[{Y_P}\left( t \right) = A{{\bf{e}}^{6t}}\]
+          
+          <p>Plugging this into the differential equation gives,</p>
+          
+            \[\begin{align*}36A{{\bf{e}}^{6t}} - 24A{{\bf{e}}^{6t}} - 12A{{\bf{e}}^{6t}} & = {{\bf{e}}^{6t}}\\  0 & = {{\bf{e}}^{6t}}\end{align*}\]
+          <p>Hmmmm….  Something seems wrong here.  Clearly an exponential can’t be zero.  So, what went wrong?  We finally need the complementary solution. Notice that the second term in the complementary solution (listed above) is exactly our guess for the form of the particular solution and now recall that both portions of the complementary solution are solutions to the homogeneous differential equation,</p>
+          
+              \[y'' - 4y' - 12y = 0\]
+          
+          <p>In other words, we had better have gotten zero by plugging our guess into the differential equation, it is a solution to the homogeneous differential equation!</p>
+          
+          <p>So, how do we fix this?  The way that we fix this is to add a \(t\) to our guess as follows.</p>
+          
+              \[{Y_P}\left( t \right) = At{{\bf{e}}^{6t}}\]
+          
+          <p>Plugging this into our differential equation gives,</p>
+          
+            \[\begin{align*}\left( {12A{{\bf{e}}^{6t}} + 36At{{\bf{e}}^{6t}}} \right) - 4\left( {A{{\bf{e}}^{6t}} + 6At{{\bf{e}}^{6t}}} \right) - 12At{{\bf{e}}^{6t}} & = {{\bf{e}}^{6t}}\\ \left( {36A - 24A - 12A} \right)t{{\bf{e}}^{6t}} + \left( {12A - 4A} \right){{\bf{e}}^{6t}} & = {{\bf{e}}^{6t}}\\  8A{{\bf{e}}^{6t}} & = {{\bf{e}}^{6t}}\end{align*}\]
+          
+          <p>Now, we can set coefficients equal.</p>
+          
+            \[8A = 1\hspace{0.25in}\hspace{0.25in} \Rightarrow \hspace{0.25in}\,\,\,\,\,A = \frac{1}{8}\]
+          <p>So, the particular solution in this case is,</p>
+          
+              \[{Y_P}\left( t \right) = \frac{t}{8}{{\bf{e}}^{6t}}\]
+      </div>
+    </div>
+  </div>
+
+    
+    <p>So, what did we learn from this last example.  While technically we don’t need the complementary solution to do undetermined coefficients, you can go through a lot of work only to figure out at the end that you needed to add in a \(t\) to the guess because it appeared in the complementary solution.  This work is avoidable if we first find the complementary solution and comparing our guess to the complementary solution and seeing if any portion of your guess shows up in the complementary solution.</p>
+    
+    <p>If a portion of your guess does show up in the complementary solution then we’ll need to modify that portion of the guess by adding in a \(t\) to the portion of the guess that is causing the problems.  We do need to be a little careful and make sure that we add the \(t\) in the correct place however.  The following set of examples will show you how to do this.</p>
+    <a class="anchor" name="Second_UnderCoeff_Ex10"></a>
+  <div class="example">
+    <span class="example-title">Example 10</span> Write down the guess for the particular solution to the given differential equation.  Do not find the coefficients.
+    <ol class="example_parts_list">
+      <li>\(y'' + 3y' - 28y = 7t + {{\bf{e}}^{ - 7t}} - 1\)</li>
+      <li>\(y'' - 100y = 9{t^2}{{\bf{e}}^{10t}} + \cos t - t\sin t\)</li>
+      <li>\(4y'' + y = {{\bf{e}}^{ - 2t}}\sin \left( {\frac{t}{2}} \right) + 6t\cos \left( {\frac{t}{2}} \right)\)</li>
+      <li>\(4y'' + 16y' + 17y = {{\bf{e}}^{ - 2t}}\sin \left( {\frac{t}{2}} \right) + 6t\cos \left( {\frac{t}{2}} \right)\)</li>
+      <li>\(y'' + 8y' + 16y = {{\bf{e}}^{ - 4t}} + \left( {{t^2} + 5} \right){{\bf{e}}^{ - 4t}}\)</li>
+    </ol>
+    <span id="SHALink_S_Soln10" class="SH-Link SH-All">Show All Solutions</span>&nbsp;<span id="SHALink_H_Soln10" class="SH-Link SH-All">Hide All Solutions</span>
+    <div class="example-content">
+      <span id="SHLink_DSoln10" class="SH-Link soln-title">Show Discussion</span> <span id="SHImg_DSoln10" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_DSoln10" class="soln-content">
+        <p>In these solutions we’ll leave the details of checking the complementary solution to you.</p>
+      </div>
+      
+      <br />
+      <span class="soln-list-item soln-list-subitem">a</span> \(y'' + 3y' - 28y = 7t + {{\bf{e}}^{ - 7t}} - 1\) <span id="SHLink_Soln10a" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln10a" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln10a" class="soln-content">
+        <p>The complementary solution is</p>
+          
+              \[{y_c}\left( t \right) = {c_1}{{\bf{e}}^{4t}} + {c_2}{{\bf{e}}^{ - 7t}}\]
+          
+          <p>Remembering to put the “-1” with the 7\(t\) gives a first guess for the particular solution.</p>
+          
+              \[{Y_P}\left( t \right) = At + B + C{{\bf{e}}^{ - 7t}}\]
+          
+          <p>Notice that the last term in the guess is the last term in the complementary solution.  The first two terms however aren’t a problem and don’t appear in the complementary solution.  Therefore, we will only add a \(t\) onto the last term.</p>
+          
+          <p>The correct guess for the form of the particular solution is.</p>
+          
+              \[{Y_P}\left( t \right) = At + B + Ct{{\bf{e}}^{ - 7t}}\]
+      </div>
+
+      <br />
+      <span class="soln-list-item soln-list-subitem">b</span> \(y'' - 100y = 9{t^2}{{\bf{e}}^{10t}} + \cos t - t\sin t\) <span id="SHLink_Soln10b" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln10b" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln10b" class="soln-content">
+        <p>The complementary solution is</p>
+          
+              \[{y_c}\left( t \right) = {c_1}{{\bf{e}}^{10t}} + {c_2}{{\bf{e}}^{ - 10t}}\]
+          
+          <p>A first guess for the particular solution is</p>
+          
+            \[{Y_P}\left( t \right) = \left( {A{t^2} + Bt + C} \right){{\bf{e}}^{10t}} + \left( {Et + F} \right)\cos t + \left( {Gt + H} \right)\sin t\]
+          
+          <p>Notice that if we multiplied the exponential term through the parenthesis that we would end up getting part of the complementary solution showing up.  Since the problem part arises from the first term the <em>whole</em> first term will get multiplied by \(t\).  The second and third terms are okay as they are.</p>
+          
+          <p>The correct guess for the form of the particular solution in this case is.</p>
+          
+            \[{Y_P}\left( t \right) = t\left( {A{t^2} + Bt + C} \right){{\bf{e}}^{10t}} + \left( {Et + F} \right)\cos t + \left( {Gt + H} \right)\sin t\]
+          
+          <p>So, in general, if you were to multiply out a guess and if any term in the result shows up in the complementary solution, then the whole term will get a \(t\) not just the problem portion of the term.</p>
+      </div>
+
+      <br />
+      <span class="soln-list-item soln-list-subitem">c</span> \(4y'' + y = {{\bf{e}}^{ - 2t}}\sin \left( {\frac{t}{2}} \right) + 6t\cos \left( {\frac{t}{2}} \right)\) <span id="SHLink_Soln10c" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln10c" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln10c" class="soln-content">
+        <p>The complementary solution is</p>
+          
+            \[{y_c}\left( t \right) = {c_1}\cos \left( {\frac{t}{2}} \right) + {c_2}\sin \left( {\frac{t}{2}} \right)\]
+          
+          <p>A first guess for the particular solution is</p>
+          
+            \[{Y_P}\left( t \right) = {{\bf{e}}^{ - 2t}}\left( {A\cos \left( {\frac{t}{2}} \right) + B\sin \left( {\frac{t}{2}} \right)} \right) + \left( {Ct + D} \right)\cos \left( {\frac{t}{2}} \right) + \left( {Et + F} \right)\sin \left( {\frac{t}{2}} \right)\]
+          
+          <p>In this case both the second and third terms contain portions of the complementary solution.  The first term doesn’t however, since upon multiplying out, both the sine and the cosine would have an exponential with them and that isn’t part of the complementary solution.  We only need to worry about terms showing up in the complementary solution if the only difference between the complementary solution term and the particular guess term is the constant in front of them.</p>
+          
+          <p>So, in this case the second and third terms will get a \(t\) while the first won’t</p>
+          
+          <p>The correct guess for the form of the particular solution is.</p>
+          
+            \[{Y_P}\left( t \right) = {{\bf{e}}^{ - 2t}}\left( {A\cos \left( {\frac{t}{2}} \right) + B\sin \left( {\frac{t}{2}} \right)} \right) + t\left( {Ct + D} \right)\cos \left( {\frac{t}{2}} \right) + t\left( {Et + F} \right)\sin \left( {\frac{t}{2}} \right)\]
+      </div>
+
+      <br />
+      <span class="soln-list-item soln-list-subitem">d</span> \(4y'' + 16y' + 17y = {{\bf{e}}^{ - 2t}}\sin \left( {\frac{t}{2}} \right) + 6t\cos \left( {\frac{t}{2}} \right)\) <span id="SHLink_Soln10d" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln10d" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln10d" class="soln-content">
+        <p>To get this problem we changed the differential equation from the last example and left the \(g(t)\) alone.  The complementary solution this time is</p>
+          
+            \[{y_c}\left( t \right) = {c_1}{{\bf{e}}^{ - 2t}}\cos \left( {\frac{t}{2}} \right) + {c_2}{{\bf{e}}^{ - 2t}}\sin \left( {\frac{t}{2}} \right)\]
+          
+          <p>As with the last part, a first guess for the particular solution is</p>
+          
+            \[{Y_P}\left( t \right) = {{\bf{e}}^{ - 2t}}\left( {A\cos \left( {\frac{t}{2}} \right) + B\sin \left( {\frac{t}{2}} \right)} \right) + \left( {Ct + D} \right)\cos \left( {\frac{t}{2}} \right) + \left( {Et + F} \right)\sin \left( {\frac{t}{2}} \right)\]
+          
+          <p>This time however it is the first term that causes problems and not the second or third.  In fact, the first term is exactly the complementary solution and so it will need a \(t\).  Recall that we will only have a problem with a term in our guess if it only differs from the complementary solution by a constant.  The second and third terms in our guess don’t have the exponential in them and so they don’t differ from the complementary solution by only a constant.</p>
+          
+          <p>The correct guess for the form of the particular solution is.</p>
+          
+            \[{Y_P}\left( t \right) = t{{\bf{e}}^{ - 2t}}\left( {A\cos \left( {\frac{t}{2}} \right) + B\sin \left( {\frac{t}{2}} \right)} \right) + \left( {Ct + D} \right)\cos \left( {\frac{t}{2}} \right) + \left( {Et + F} \right)\sin \left( {\frac{t}{2}} \right)\]
+      </div>
+
+      <br />
+      <span class="soln-list-item soln-list-subitem">e</span> \(y'' + 8y' + 16y = {{\bf{e}}^{ - 4t}} + \left( {{t^2} + 5} \right){{\bf{e}}^{ - 4t}}\) <span id="SHLink_Soln10e" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln10e" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln10e" class="soln-content">
+        <p>The complementary solution is</p>
+          
+              \[{y_c}\left( t \right) = {c_1}{{\bf{e}}^{ - 4t}} + {c_2}t{{\bf{e}}^{ - 4t}}\]
+          <p>The two terms in \(g(t)\) are identical with the exception of a polynomial in front of them.  So this means that we only need to look at the term with the highest degree polynomial in front of it.  A first guess for the particular solution is</p>
+          
+              \[{Y_P}\left( t \right) = \left( {A{t^2} + Bt + C} \right){{\bf{e}}^{ - 4t}}\]
+          
+          <p>Notice that if we multiplied the exponential term through the parenthesis the last two terms would be the complementary solution.  Therefore, we will need to multiply this whole thing by a \(t\).</p>
+          
+          <p>The next guess for the particular solution is then.</p>
+          
+              \[{Y_P}\left( t \right) = t\left( {A{t^2} + Bt + C} \right){{\bf{e}}^{ - 4t}}\]
+          
+          <p>This still causes problems however.  If we multiplied the \(t\) and the exponential through, the last term will still be in the complementary solution.  In this case, unlike the previous ones, a \(t\) wasn’t sufficient to fix the problem.  So, we will add in another \(t\) to our guess.</p>
+          
+          <p>The correct guess for the form of the particular solution is.</p>
+          
+              \[{Y_P}\left( t \right) = {t^2}\left( {A{t^2} + Bt + C} \right){{\bf{e}}^{ - 4t}}\]
+          
+          <p>Upon multiplying this out none of the terms are in the complementary solution and so it will be okay.</p>
+      </div>
+    </div>
+  </div>
+    
+    <p>As this last set of examples has shown, we really should have the complementary solution in hand before even writing down the first guess for the particular solution.  By doing this we can compare our guess to the complementary solution and if any of the terms from your particular solution show up we will know that we’ll have problems.  Once the problem is identified we can add a \(t\) to the problem term(s) and compare our new guess to the complementary solution.  If there are no problems we can proceed with the problem, if there are problems add in another \(t\) and compare again.</p>
+    
+    <p>Can you see a general rule as to when a \(t\) will be needed and when a <em>t<sup>2</sup></em> will be needed for second order differential equations?</p>
+    
+  
+  
+
+
+      
+
+
+
+    </div>
+    <!-- End of content div -->
+
+
+    <div class="footer">
+      <div class="footer-links">
+        [<a href="http://tutorial.math.lamar.edu/Contact.aspx">Contact Me</a>]&nbsp;[<a href="../../MyStudents-2.html">My Students</a>]&nbsp;[<a href="http://tutorial.math.lamar.edu/Privacy.aspx">Privacy Statement</a>]&nbsp;[<a href="../../Help-2.html">Site Help &amp; FAQ</a>]&nbsp;[<a href="http://tutorial.math.lamar.edu/Terms.aspx">Terms of Use</a>]
+      </div>
+      <div class="footer-dates">
+        <div class="footer-copyright"><span id="lblCopyRight">&copy; 2003 - 2019 Paul Dawkins</span></div>
+        <div class="footer-spacer"></div>
+        <div class="footer-modified-date">Page Last Modified : <span id="lblModified">6/3/2018</span></div>
+      </div>
+      
+
+    </div>
+  </div>
+  <!-- End of page div...  -->
+</body>
+
+<!-- Mirrored from tutorial.math.lamar.edu/Classes/DE/UndeterminedCoefficients.aspx by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 27 Feb 2019 06:15:36 GMT -->
+</html>

@@ -1,0 +1,1135 @@
+
+
+<!DOCTYPE html>
+
+<html>
+
+<!-- Mirrored from tutorial.math.lamar.edu/Classes/CalcI/MeanValueTheorem.aspx by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 27 Feb 2019 06:15:35 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=yes" /><meta http-equiv="X-UA-Compatible" content="IE=edge" />  <!-- For best MathJax performance on IE  -->
+
+  <meta name="google-site-verification" content="uLoA31CJfOhIVMJWBjCmQL8xNMmmLybZU3LRKavy9WQ" /><title>
+	Calculus I - The Mean Value Theorem
+</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="../../../www.googletagmanager.com/gtag/js1872?id=UA-331594-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-331594-1');
+  </script>
+
+  <link type="text/css" href="../../css/jquery.mmenu.all.css" rel="stylesheet" /><link type="text/css" href="../../css/jquery.dropdown.css" rel="stylesheet" /><link href="../../FA/css/fontawesome-all.min.css" rel="stylesheet" /><link type="text/css" href="../../css/notes-all.css" rel="stylesheet" /><link type="text/css" href="../../css/notes-google.css" rel="stylesheet" /><link type="text/css" href="../../css/notes-mmenu.css" rel="stylesheet" /><link type="text/css" href="../../css/notes-dropdown.css" rel="stylesheet" />
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+     TeX: { equationNumbers: { autoNumber: "AMS" } }
+    });
+  </script>
+  <script type="text/javascript" async src="../../../cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax2ba6.js?config=TeX-AMS_CHTML-full"></script>
+  <script type="text/javascript" src="../../../code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="../../js/jquery.mmenu.all.js"></script>
+  <script type="text/javascript" src="../../js/jquery.dropdown.js"></script>
+  <script type="text/javascript" src="../../js/notes-all.js"></script>  
+
+  <script>
+    (function () {
+      var cx = '001004262401526223570:11yv6vpcqvy';
+      var gcse = document.createElement('script');
+      gcse.type = 'text/javascript';
+      gcse.async = true;
+      gcse.src = '../../../cse.google.com/cse07b6.html?cx=' + cx;
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(gcse, s);
+    })();
+  </script>
+
+<meta http-equiv="keywords" name="keywords" content="rolles theorem, mean value theorem" /><meta http-equiv="description" name="description" content="In this section we will give Rolle&#39;s Theorem and the Mean Value Theorem.  With the Mean Value Theorem we will prove a couple of very nice facts, one of which will be very useful in the next chapter." /></head>
+<body onload="init({Notes: 'NoteMobile;8/21/2018;true'})">
+
+  <div id="page">
+
+    <div class="header">
+      <div class="header-row">
+        <!--<a href="#menu"><span></span></a>-->
+        <div id="side-menu-icon" class="header-side-menu-icon"><a href="#menu"><span class="fas fa-bars fa-lg" aria-hidden="true" title="Main Menu - Change between topics, chapters and sections as well as a few extra pages."></span></a></div>
+        <span class="header-title"><a href="../../index.html" class="header-title-link">Paul's Online Notes</a></span>
+        <div class="header-spacer"></div>
+
+        <div id="content-top-menu" class="top-menu">
+          <button id="content-type-menu" class="top-menu-button" data-jq-dropdown="#jq-dropdown-type" title="View (Notes, Practice Problems or Assignment Problems, Show/Hide Solutions and/or Steps) Menu">
+            <span id="tab_top_menu_notes" class="top-menu-item-title">Notes</span> <span class="far fa-eye fa-lg" aria-hidden="true"></span>
+          </button>
+
+          <button id="quicknav-menu" class="top-menu-button" data-jq-dropdown="#jq-dropdown-quicknav" title="Quick Navigation (Previous/Next Sections and Problems and Full Problem List) Menu">
+            <span class="top-menu-item-title">Quick Nav</span> <span class="fas fa-exchange fa-lg" aria-hidden="true"></span>
+          </button>
+          
+          <button id="download-menu" class="top-menu-button" data-jq-dropdown="#jq-dropdown-download" title="Download pdf Menu">
+            <span class="top-menu-item-title">Download</span> <span class="far fa-download fa-lg" aria-hidden="true"></span>
+          </button>
+
+          <button id="print-menu" class="top-menu-button top-menu-button-icon-only" data-jq-dropdown="#jq-print-download" title="Print Menu">
+            <span class="far fa-print fa-lg" aria-hidden="true"></span>
+          </button>
+        </div>
+
+        <div id="header-google-search" class="header-search">
+          <gcse:search></gcse:search>
+        </div>
+        <div id="header-search-icon" title="Site Search" class="header-menu-icon"><span id="search-icon" class="fas fa-search" aria-hidden="true"></span></div>
+
+      </div>
+    </div>
+
+     <div id="jq-dropdown-type" class="jq-dropdown jq-dropdown-tip">
+      <ul class="jq-dropdown-menu">
+        
+        <li id="li_type_menu_goto" class="top-menu-nav-title">Go To</li>
+        <li id="li_type_menu_notes">
+          <span id="type_menu_notes_span" title="Viewing the Notes for the current topic." class="top-menu-current">Notes</span>
+          
+        </li>
+        <li id="li_type_menu_practice">
+          
+          
+          <a href="http://tutorial.math.lamar.edu/Problems/CalcI/MeanValueTheorem.aspx" id="type_menu_practice_link" title="Go to Practice Problems for current topic.">Practice Problems</a>
+        </li>
+        <li id="li_type_menu_asgn">
+          
+          <a href="http://tutorial.math.lamar.edu/ProblemsNS/CalcI/MeanValueTheorem.aspx" id="type_menu_asgn_link" title="Go to Assignment Problems for current topic.">Assignment Problems</a>
+        </li>
+        <li id="li_type_menu_sh" class="top-menu-nav-title">Show/Hide</li>
+        <li id="li_type_menu_show" title="Show any hidden solutions and/or steps that may be present on the page."><a href="javascript:SHPrintPage(1,0)" id="view_menu_show">Show all Solutions/Steps/<em>etc.</em></a></li>
+        <li id="li_type_menu_hide" title="Hide any visible solutions and/or steps that may be present on the page."><a href="javascript:SHPrintPage(0,0)" id="view_menu_hide">Hide all Solutions/Steps/<em>etc.</em></a></li>
+      </ul>
+    </div>
+
+    <div id="jq-dropdown-quicknav" class="jq-dropdown jq-dropdown-tip">
+      <ul class="jq-dropdown-menu">
+        <li id="li_nav_menu_sections" class="top-menu-nav-title">Sections</li>
+        <li id="li_nav_menu_prev_section"><a href="ShapeofGraphPtII.html" id="a_nav_menu_prev_section" class="top-menu-nav-link" title="Previous Section : The Shape of a Graph, Part II"><span class="top-menu-prev fas fa-chevron-left"></span> The Shape of a Graph, Part II</a></li>
+        <li id="li_nav_menu_next_section"><a href="Optimization.html" id="a_nav_menu_next_section" class="top-menu-nav-link" title="Next Section : Optimization"><span class="top-menu-prev-hidden fas fa-chevron-left"></span> Optimization <span class="top-menu-next fas fa-chevron-right"></span></a></li>
+        <li id="li_nav_menu_chapters" class="top-menu-nav-title">Chapters</li>
+        <li id="li_nav_menu_prev_chapter"><a href="DerivativeIntro.html" id="a_nav_menu_prev_chapter" class="top-menu-nav-link" title="Previous Chapter : Derivatives"><span class="top-menu-prev fas fa-chevron-left"></span><span class="top-menu-prev fas fa-chevron-left"></span> Derivatives</a></li>
+        <li id="li_nav_menu_next_chapter"><a href="IntegralsIntro.html" id="a_nav_menu_next_chapter" class="top-menu-nav-link" title="Next Chapter : Integrals"><span class="top-menu-prev-hidden fas fa-chevron-left"></span><span class="top-menu-prev-hidden fas fa-chevron-left"></span> Integrals <span class="top-menu-next fas fa-chevron-right"></span><span class="top-menu-next fas fa-chevron-right"></span></a></li>
+        
+        
+        
+        
+        <li id="li_nav_menu_classes" class="top-menu-nav-title">Classes</li>
+        <li>
+          
+          <a href="../Alg/Alg.html" id="nav_menu_alg_link" title="Go To Algebra Notes">Algebra</a>
+        </li>
+        <li>
+          <span id="nav_menu_calci_span" title="Currently Viewing Calculus I Material" class="top-menu-current">Calculus I</span>
+          
+        </li>
+        <li>
+          
+          <a href="../CalcII/CalcII.html" id="nav_menu_calcii_link" title="Go To Calculus II Notes">Calculus II</a>
+        </li>
+        <li>
+          
+          <a href="../CalcIII/CalcIII.html" id="nav_menu_calciii_link" title="Go To Calculus III Notes">Calculus III</a>
+        </li>
+        <li>
+          
+          <a href="../DE/DE.html" id="nav_menu_de_link" title="Go To Differential Equations Notes">Differential Equations</a>
+        </li>
+        <li id="li_nav_menu_extras" class="top-menu-nav-title">Extras</li>
+        <li>
+          
+          <a href="../../Extras/AlgebraTrigReview/AlgebraTrig.html" id="nav_menu_algtrig_link" title="Go To Algebra &amp; Trig Review">Algebra &amp; Trig Review</a>
+        </li>
+        <li>
+          
+          <a href="../../Extras/CommonErrors/CommonMathErrors.html" id="nav_menu_commonerrors_link" title="Go To Common Math Errors">Common Math Errors</a>
+        </li>
+        <li>
+          
+          <a href="../../Extras/ComplexPrimer/ComplexNumbers.html" id="nav_menu_complexnumbers_link" title="Go To Complex Numbers Primer">Complex Number Primer</a>
+        </li>
+        <li>
+          
+          <a href="../../Extras/StudyMath/HowToStudyMath.html" id="nav_menu_studymath_link" title="Go To How To Study Math">How To Study Math</a>
+        </li>
+        <li>
+          
+          <a href="../../Extras/CheatSheets_Tables.html" id="nav_menu_cheattables_link" title="Go To List of Cheat Sheets and Tables">Cheat Sheets &amp; Tables</a>
+        </li>
+        <li id="li_nav_menu_misc" class="top-menu-nav-title">Misc</li>
+        <li><a href="http://tutorial.math.lamar.edu/contact.aspx" id="nav_menu_contact" title="Contact Me!">Contact Me</a></li>
+        <li><a href="../../mathjax.html" id="nav_menu_mathjax" title="Info on MathJax and MathJax Configuration Menu">MathJax Help and Configuration</a></li>
+        <li><a href="../../mystudents.html" id="nav_menu_students" title="Go here if you are currently taking a class from me!">My Students</a></li>
+      </ul>
+    </div>
+
+    <div id="jq-dropdown-download" class="jq-dropdown jq-dropdown-anchor-right jq-dropdown-tip">
+      <ul class="jq-dropdown-menu">
+        
+        <li id="li_download_menu_notes" class="top-menu-nav-title">Notes Downloads</li>
+        <li id="li_download_menu_notes_book"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=B,8,N" id="download_menu_notes_book" data-PDF="Download - Menu$Notes - Book$Calculus I$/Downloads/CalcI/Notes/Complete.pdf">Complete Book</a></li>
+        
+        <li id="li_download_menu_notes_chapter"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=C,28,N" id="download_menu_notes_chapter" data-PDF="Download - Menu$Notes - Chapter$Calculus I - Applications of Derivatives$/Downloads/CalcI/Notes/Derivatives_Apps.pdf">Current Chapter</a></li>
+        <li id="li_download_menu_notes_section"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=S,209,N" id="download_menu_notes_section" data-PDF="Download - Menu$Notes - Section$Calculus I - The Mean Value Theorem$/Downloads/CalcI/Notes/MeanValueTheorem.pdf">Current Section</a></li>
+        <li id="li_download_menu_practice" class="top-menu-nav-title">Practice Problems Downloads</li>
+        
+        <li id="li_download_menu_practice_book"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=B,8,P" id="download_menu_practice_book" data-PDF="Download - Menu$Practice Problems - Book$Calculus I$/Downloads/CalcI/Practice Problems/Complete.pdf">Complete Book - Problems Only</a></li>
+        <li id="li_download_menu_solutions_book"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=B,8,S" id="download_menu_solutions_book" data-PDF="Download - Menu$Practice Problems Solutions - Book$Calculus I$/Downloads/CalcI/Practice Problems Solutions/Complete.pdf">Complete Book - Solutions</a></li>
+        <li id="li_download_menu_b_c" class="top-menu-divider"></li>
+        <li id="li_download_menu_practice_chapter"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=C,28,P" id="download_menu_practice_chapter" data-PDF="Download - Menu$Practice Problems - Chapter$Calculus I - Applications of Derivatives$/Downloads/CalcI/Practice Problems/Derivatives_Apps.pdf">Current Chapter - Problems Only</a></li>
+        <li id="li_download_menu_solutions_chapter"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=C,28,S" id="download_menu_solutions_chapter" data-PDF="Download - Menu$Practice Problems Solutions - Chapter$Calculus I - Applications of Derivatives$/Downloads/CalcI/Practice Problems Solutions/Derivatives_Apps.pdf">Current Chapter - Solutions</a></li>
+        <li id="li_download_menu_c_s" class="top-menu-divider"></li>
+        <li id="li_download_menu_practice_section"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=S,209,P" id="download_menu_practice_section" data-PDF="Download - Menu$Practice Problems - Section$Calculus I - The Mean Value Theorem$/Downloads/CalcI/Practice Problems/MeanValueTheorem.pdf">Current Section - Problems Only</a></li>
+        <li id="li_download_menu_solutions_section"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=S,209,S" id="download_menu_solutions_section" data-PDF="Download - Menu$Practice Problems Solutions - Section$Calculus I - The Mean Value Theorem$/Downloads/CalcI/Practice Problems Solutions/MeanValueTheorem.pdf">Current Section - Solutions</a></li>
+        <li id="li_download_menu_asgn" class="top-menu-nav-title">Assignment Problems Downloads</li>
+        
+        <li id="li_download_menu_asgn_book"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=B,8,A" id="download_menu_asgn_book" data-PDF="Download - Menu$Assignment Problems - Book$Calculus I$/Downloads/CalcI/Assignment Problems/Complete.pdf">Complete Book</a></li>
+        <li id="li_download_menu_asgn_chapter"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=C,28,A" id="download_menu_asgn_chapter" data-PDF="Download - Menu$Assignment Problems - Chapter$Calculus I - Applications of Derivatives$/Downloads/CalcI/Assignment Problems/Derivatives_Apps.pdf">Current Chapter</a></li>
+        <li id="li_download_menu_asgn_section"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=S,209,A" id="download_menu_asgn_section" data-PDF="Download - Menu$Assignment Problems - Section$Calculus I - The Mean Value Theorem$/Downloads/CalcI/Assignment Problems/MeanValueTheorem.pdf">Current Section</a></li>
+        <li id="li_download_menu_other" class="top-menu-nav-title">Other Items</li>
+        <li id="li_download_menu_urls">
+          <a href="http://tutorial.math.lamar.edu/DownloadURLs.aspx?bi=8&amp;ci=28&amp;si=209" id="download_menu_urls">Get URL's for Download Items</a>
+        </li>
+      </ul>
+    </div>
+
+    <div id="jq-print-download" class="jq-dropdown jq-dropdown-anchor-right jq-dropdown-tip">
+      <ul class="jq-dropdown-menu">
+        <li id="li_print_menu_default"><a href="javascript:SHPrintPage()" id="print_menu_default">Print Page in Current Form (Default)</a></li>
+        <li id="li_print_menu_show"><a href="javascript:SHPrintPage(1,1)" id="print_menu_show">Show all Solutions/Steps and Print Page</a></li>
+        <li id="li_print_menu_hide"><a href="javascript:SHPrintPage(0,1)" id="print_menu_hide">Hide all Solutions/Steps and Print Page</a></li>
+      </ul>
+    </div>
+
+
+
+   
+
+    <nav id="menu" class="notes-nav">
+      <ul>
+        <li><a href="../../index.html" class="mm-link">Home</a></li>
+        <li><span>Classes</span></li>
+        <li><a href="../Alg/Alg.html" class="mm-link">Algebra</a>
+          <ul>
+            <li><a href="../Alg/Preliminaries.html" class="mm-link">Preliminaries</a>
+              <ul>
+                <li><a href="../Alg/IntegerExponents.html" class="mm-link">Integer Exponents</a></li>
+                <li><a href="../Alg/RationalExponents.html" class="mm-link">Rational Exponents</a></li>
+                <li><a href="../Alg/Radicals.html" class="mm-link">Radicals</a></li>
+                <li><a href="../Alg/Polynomials.html" class="mm-link">Polynomials</a></li>
+                <li><a href="../Alg/Factoring.html" class="mm-link">Factoring Polynomials</a></li>
+                <li><a href="../Alg/RationalExpressions.html" class="mm-link">Rational Expressions</a></li>
+                <li><a href="../Alg/ComplexNumbers.html" class="mm-link">Complex Numbers</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/Solving.html" class="mm-link">Solving Equations and Inequalities</a>
+              <ul>
+                <li><a href="../Alg/SolutionSets.html" class="mm-link">Solutions and Solution Sets</a></li>
+                <li><a href="../Alg/SolveLinearEqns.html" class="mm-link">Linear Equations</a></li>
+                <li><a href="../Alg/LinearApps.html" class="mm-link">Applications of Linear Equations</a></li>
+                <li><a href="../Alg/SolveMultiVariable.html" class="mm-link">Equations With More Than One Variable</a></li>
+                <li><a href="../Alg/SolveQuadraticEqnsI.html" class="mm-link">Quadratic Equations - Part I</a></li>
+                <li><a href="../Alg/SolveQuadraticEqnsII.html" class="mm-link">Quadratic Equations - Part II</a></li>
+                <li><a href="../Alg/SolveQuadraticEqnSummary.html" class="mm-link">Quadratic Equations : A Summary</a></li>
+                <li><a href="../Alg/QuadraticApps.html" class="mm-link">Applications of Quadratic Equations</a></li>
+                <li><a href="../Alg/ReducibleToQuadratic.html" class="mm-link">Equations Reducible to Quadratic in Form</a></li>
+                <li><a href="../Alg/SolveRadicalEqns.html" class="mm-link">Equations with Radicals</a></li>
+                <li><a href="../Alg/SolveLinearInequalities.html" class="mm-link">Linear Inequalities</a></li>
+                <li><a href="../Alg/SolvePolyInequalities.html" class="mm-link">Polynomial Inequalities</a></li>
+                <li><a href="../Alg/SolveRationalInequalities.html" class="mm-link">Rational Inequalities</a></li>
+                <li><a href="../Alg/SolveAbsValueEqns.html" class="mm-link">Absolute Value Equations</a></li>
+                <li><a href="../Alg/SolveAbsValueIneq.html" class="mm-link">Absolute Value Inequalities</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/Graphing_Functions.html" class="mm-link">Graphing and Functions</a>
+              <ul>
+                <li><a href="../Alg/Graphing.html" class="mm-link">Graphing</a></li>
+                <li><a href="../Alg/Lines.html" class="mm-link">Lines</a></li>
+                <li><a href="../Alg/Circles.html" class="mm-link">Circles</a></li>
+                <li><a href="../Alg/FunctionDefn.html" class="mm-link">The Definition of a Function</a></li>
+                <li><a href="../Alg/GraphFunctions.html" class="mm-link">Graphing Functions</a></li>
+                <li><a href="../Alg/CombineFunctions.html" class="mm-link">Combining Functions</a></li>
+                <li><a href="../Alg/InverseFunctions.html" class="mm-link">Inverse Functions</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/CommonGraphs.html" class="mm-link">Common Graphs</a>
+              <ul>
+                <li><a href="../Alg/Lines_Circles_PWF.html" class="mm-link">Lines, Circles and Piecewise Functions</a></li>
+                <li><a href="../Alg/Parabolas.html" class="mm-link">Parabolas</a></li>
+                <li><a href="../Alg/Ellipses.html" class="mm-link">Ellipses</a></li>
+                <li><a href="../Alg/Hyperbolas.html" class="mm-link">Hyperbolas</a></li>
+                <li><a href="../Alg/MiscFunctions.html" class="mm-link">Miscellaneous Functions</a></li>
+                <li><a href="../Alg/Transformations.html" class="mm-link">Transformations</a></li>
+                <li><a href="../Alg/Symmetry.html" class="mm-link">Symmetry</a></li>
+                <li><a href="../Alg/GraphRationalFcns.html" class="mm-link">Rational Functions</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/PolynomialFunctions.html" class="mm-link">Polynomial Functions</a>
+              <ul>
+                <li><a href="../Alg/DividingPolynomials.html" class="mm-link">Dividing Polynomials</a></li>
+                <li><a href="../Alg/ZeroesOfPolynomials.html" class="mm-link">Zeroes/Roots of Polynomials</a></li>
+                <li><a href="../Alg/GraphingPolynomials.html" class="mm-link">Graphing Polynomials</a></li>
+                <li><a href="../Alg/FindingZeroesOfPolynomials.html" class="mm-link">Finding Zeroes of Polynomials</a></li>
+                <li><a href="../Alg/PartialFractions.html" class="mm-link">Partial Fractions</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/ExpAndLog.html" class="mm-link">Exponential and Logarithm Functions</a>
+              <ul>
+                <li><a href="../Alg/ExpFunctions.html" class="mm-link">Exponential Functions</a></li>
+                <li><a href="../Alg/LogFunctions.html" class="mm-link">Logarithm Functions</a></li>
+                <li><a href="../Alg/SolveExpEqns.html" class="mm-link">Solving Exponential Equations</a></li>
+                <li><a href="../Alg/SolveLogEqns.html" class="mm-link">Solving Logarithm Equations</a></li>
+                <li><a href="../Alg/ExpLogApplications.html" class="mm-link">Applications</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/Systems.html" class="mm-link">Systems of Equations</a>
+              <ul>
+                <li><a href="../Alg/SystemsTwoVrble.html" class="mm-link">Linear Systems with Two Variables</a></li>
+                <li><a href="../Alg/SystemsThreeVrble.html" class="mm-link">Linear Systems with Three Variables</a></li>
+                <li><a href="../Alg/AugmentedMatrix.html" class="mm-link">Augmented Matrices</a></li>
+                <li><a href="../Alg/AugmentedMatrixII.html" class="mm-link">More on the Augmented Matrix</a></li>
+                <li><a href="../Alg/NonlinearSystems.html" class="mm-link">Nonlinear Systems</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="CalcI.html" class="mm-link">Calculus I</a>
+          <ul>
+            <li><a href="ReviewIntro.html" class="mm-link">Review</a>
+              <ul>
+                <li><a href="Functions.html" class="mm-link">Functions</a></li>
+                <li><a href="InverseFunctions.html" class="mm-link">Inverse Functions</a></li>
+                <li><a href="TrigFcns.html" class="mm-link">Trig Functions</a></li>
+                <li><a href="TrigEquations.html" class="mm-link">Solving Trig Equations</a></li>
+                <li><a href="TrigEquations_CalcI.html" class="mm-link">Trig Equations with Calculators, Part I</a></li>
+                <li><a href="TrigEquations_CalcII.html" class="mm-link">Trig Equations with Calculators, Part II</a></li>
+                <li><a href="ExpFunctions.html" class="mm-link">Exponential Functions</a></li>
+                <li><a href="LogFcns.html" class="mm-link">Logarithm Functions</a></li>
+                <li><a href="ExpLogEqns.html" class="mm-link">Exponential and Logarithm Equations</a></li>
+                <li><a href="CommonGraphs.html" class="mm-link">Common Graphs</a></li>
+              </ul>
+            </li>
+            <li><a href="limitsIntro.html" class="mm-link">Limits</a>
+              <ul>
+                <li><a href="Tangents_Rates.html" class="mm-link">Tangent Lines and Rates of Change</a></li>
+                <li><a href="TheLimit.html" class="mm-link">The Limit</a></li>
+                <li><a href="OneSidedLimits.html" class="mm-link">One-Sided Limits</a></li>
+                <li><a href="LimitsProperties.html" class="mm-link">Limit Properties</a></li>
+                <li><a href="ComputingLimits.html" class="mm-link">Computing Limits</a></li>
+                <li><a href="InfiniteLimits.html" class="mm-link">Infinite Limits</a></li>
+                <li><a href="LimitsAtInfinityI.html" class="mm-link">Limits At Infinity, Part I</a></li>
+                <li><a href="LimitsAtInfinityII.html" class="mm-link">Limits At Infinity, Part II</a></li>
+                <li><a href="Continuity.html" class="mm-link">Continuity</a></li>
+                <li><a href="DefnOfLimit.html" class="mm-link">The Definition of the Limit</a></li>
+              </ul>
+            </li>
+            <li><a href="DerivativeIntro.html" class="mm-link">Derivatives</a>
+              <ul>
+                <li><a href="DefnOfDerivative.html" class="mm-link">The Definition of the Derivative</a></li>
+                <li><a href="DerivativeInterp.html" class="mm-link">Interpretation of the Derivative</a></li>
+                <li><a href="DiffFormulas.html" class="mm-link">Differentiation Formulas</a></li>
+                <li><a href="ProductQuotientRule.html" class="mm-link">Product and Quotient Rule</a></li>
+                <li><a href="DiffTrigFcns.html" class="mm-link">Derivatives of Trig Functions</a></li>
+                <li><a href="DiffExpLogFcns.html" class="mm-link">Derivatives of Exponential and Logarithm Functions</a></li>
+                <li><a href="DiffInvTrigFcns.html" class="mm-link">Derivatives of Inverse Trig Functions</a></li>
+                <li><a href="DiffHyperFcns.html" class="mm-link">Derivatives of Hyperbolic Functions</a></li>
+                <li><a href="ChainRule.html" class="mm-link">Chain Rule</a></li>
+                <li><a href="ImplicitDIff.html" class="mm-link">Implicit Differentiation</a></li>
+                <li><a href="RelatedRates.html" class="mm-link">Related Rates</a></li>
+                <li><a href="HigherOrderDerivatives.html" class="mm-link">Higher Order Derivatives</a></li>
+                <li><a href="LogDiff.html" class="mm-link">Logarithmic Differentiation</a></li>
+              </ul>
+            </li>
+            <li><a href="DerivAppsIntro.html" class="mm-link">Applications of Derivatives</a>
+              <ul>
+                <li><a href="RateOfChange.html" class="mm-link">Rates of Change</a></li>
+                <li><a href="CriticalPoints.html" class="mm-link">Critical Points</a></li>
+                <li><a href="MinMaxValues.html" class="mm-link">Minimum and Maximum Values</a></li>
+                <li><a href="AbsExtrema.html" class="mm-link">Finding Absolute Extrema</a></li>
+                <li><a href="ShapeofGraphPtI.html" class="mm-link">The Shape of a Graph, Part I</a></li>
+                <li><a href="ShapeofGraphPtII.html" class="mm-link">The Shape of a Graph, Part II</a></li>
+                <li><a href="MeanValueTheorem.html" class="mm-link">The Mean Value Theorem</a></li>
+                <li><a href="Optimization.html" class="mm-link">Optimization</a></li>
+                <li><a href="MoreOptimization.html" class="mm-link">More Optimization Problems</a></li>
+                <li><a href="LHospitalsRule.html" class="mm-link">L'Hospital's Rule and Indeterminate Forms</a></li>
+                <li><a href="LinearApproximations.html" class="mm-link">Linear Approximations</a></li>
+                <li><a href="Differentials.html" class="mm-link">Differentials</a></li>
+                <li><a href="NewtonsMethod.html" class="mm-link">Newton's Method</a></li>
+                <li><a href="BusinessApps.html" class="mm-link">Business Applications</a></li>
+              </ul>
+            </li>
+            <li><a href="IntegralsIntro.html" class="mm-link">Integrals</a>
+              <ul>
+                <li><a href="IndefiniteIntegrals.html" class="mm-link">Indefinite Integrals</a></li>
+                <li><a href="ComputingIndefiniteIntegrals.html" class="mm-link">Computing Indefinite Integrals</a></li>
+                <li><a href="SubstitutionRuleIndefinite.html" class="mm-link">Substitution Rule for Indefinite Integrals</a></li>
+                <li><a href="SubstitutionRuleIndefinitePtII.html" class="mm-link">More Substitution Rule</a></li>
+                <li><a href="AreaProblem.html" class="mm-link">Area Problem</a></li>
+                <li><a href="DefnOfDefiniteIntegral.html" class="mm-link">Definition of the Definite Integral</a></li>
+                <li><a href="ComputingDefiniteIntegrals.html" class="mm-link">Computing Definite Integrals</a></li>
+                <li><a href="SubstitutionRuleDefinite.html" class="mm-link">Substitution Rule for Definite Integrals</a></li>
+              </ul>
+            </li>
+            <li><a href="IntAppsIntro.html" class="mm-link">Applications of Integrals</a>
+              <ul>
+                <li><a href="AvgFcnValue.html" class="mm-link">Average Function Value</a></li>
+                <li><a href="AreaBetweenCurves.html" class="mm-link">Area Between Curves</a></li>
+                <li><a href="VolumeWithRings.html" class="mm-link">Volumes of Solids of Revolution / Method of Rings</a></li>
+                <li><a href="VolumeWithCylinder.html" class="mm-link">Volumes of Solids of Revolution/Method of Cylinders</a></li>
+                <li><a href="MoreVolume.html" class="mm-link">More Volume Problems</a></li>
+                <li><a href="Work.html" class="mm-link">Work</a></li>
+              </ul>
+            </li>
+            <li><a href="ExtrasIntro.html" class="mm-link">Extras</a>
+              <ul>
+                <li><a href="LimitProofs.html" class="mm-link">Proof of Various Limit Properties</a></li>
+                <li><a href="DerivativeProofs.html" class="mm-link">Proof of Various Derivative Properties</a></li>
+                <li><a href="ProofTrigDeriv.html" class="mm-link">Proof of Trig Limits</a></li>
+                <li><a href="DerivativeAppsProofs.html" class="mm-link">Proofs of Derivative Applications Facts</a></li>
+                <li><a href="ProofIntProp.html" class="mm-link">Proof of Various Integral Properties </a></li>
+                <li><a href="Area_Volume_Formulas.html" class="mm-link">Area and Volume Formulas</a></li>
+                <li><a href="TypesOfInfinity.html" class="mm-link">Types of Infinity</a></li>
+                <li><a href="SummationNotation.html" class="mm-link">Summation Notation</a></li>
+                <li><a href="ConstantofIntegration.html" class="mm-link">Constant of Integration</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../CalcII/CalcII.html" class="mm-link">Calculus II</a>
+          <ul>
+            <li><a href="../CalcII/IntTechIntro.html" class="mm-link">Integration Techniques</a>
+              <ul>
+                <li><a href="../CalcII/IntegrationByParts.html" class="mm-link">Integration by Parts</a></li>
+                <li><a href="../CalcII/IntegralsWithTrig.html" class="mm-link">Integrals Involving Trig Functions</a></li>
+                <li><a href="../CalcII/TrigSubstitutions.html" class="mm-link">Trig Substitutions</a></li>
+                <li><a href="../CalcII/PartialFractions.html" class="mm-link">Partial Fractions</a></li>
+                <li><a href="../CalcII/IntegralsWithRoots.html" class="mm-link">Integrals Involving Roots</a></li>
+                <li><a href="../CalcII/IntegralsWithQuadratics.html" class="mm-link">Integrals Involving Quadratics</a></li>
+                <li><a href="../CalcII/IntegrationStrategy.html" class="mm-link">Integration Strategy</a></li>
+                <li><a href="../CalcII/ImproperIntegrals.html" class="mm-link">Improper Integrals</a></li>
+                <li><a href="../CalcII/ImproperIntegralsCompTest.html" class="mm-link">Comparison Test for Improper Integrals</a></li>
+                <li><a href="../CalcII/ApproximatingDefIntegrals.html" class="mm-link">Approximating Definite Integrals</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/IntAppsIntro.html" class="mm-link">Applications of Integrals</a>
+              <ul>
+                <li><a href="../CalcII/ArcLength.html" class="mm-link">Arc Length</a></li>
+                <li><a href="../CalcII/SurfaceArea.html" class="mm-link">Surface Area</a></li>
+                <li><a href="../CalcII/CenterOfMass.html" class="mm-link">Center of Mass</a></li>
+                <li><a href="../CalcII/HydrostaticPressure.html" class="mm-link">Hydrostatic Pressure</a></li>
+                <li><a href="../CalcII/Probability.html" class="mm-link">Probability</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/ParametricIntro.html" class="mm-link">Parametric Equations and Polar Coordinates</a>
+              <ul>
+                <li><a href="../CalcII/ParametricEqn.html" class="mm-link">Parametric Equations and Curves</a></li>
+                <li><a href="../CalcII/ParaTangent.html" class="mm-link">Tangents with Parametric Equations</a></li>
+                <li><a href="../CalcII/ParaArea.html" class="mm-link">Area with Parametric Equations</a></li>
+                <li><a href="../CalcII/ParaArcLength.html" class="mm-link">Arc Length with Parametric Equations</a></li>
+                <li><a href="../CalcII/ParaSurfaceArea.html" class="mm-link">Surface Area with Parametric Equations</a></li>
+                <li><a href="../CalcII/PolarCoordinates.html" class="mm-link">Polar Coordinates</a></li>
+                <li><a href="../CalcII/PolarTangents.html" class="mm-link">Tangents with Polar Coordinates</a></li>
+                <li><a href="../CalcII/PolarArea.html" class="mm-link">Area with Polar Coordinates</a></li>
+                <li><a href="../CalcII/PolarArcLength.html" class="mm-link">Arc Length with Polar Coordinates</a></li>
+                <li><a href="../CalcII/PolarSurfaceArea.html" class="mm-link">Surface Area with Polar Coordinates</a></li>
+                <li><a href="../CalcII/ArcLength_SurfaceArea.html" class="mm-link">Arc Length and Surface Area Revisited</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/SeriesIntro.html" class="mm-link">Series & Sequences</a>
+              <ul>
+                <li><a href="../CalcII/Sequences.html" class="mm-link">Sequences</a></li>
+                <li><a href="../CalcII/MoreSequences.html" class="mm-link">More on Sequences</a></li>
+                <li><a href="../CalcII/Series_Basics.html" class="mm-link">Series - The Basics</a></li>
+                <li><a href="../CalcII/ConvergenceOfSeries.html" class="mm-link">Convergence/Divergence of Series</a></li>
+                <li><a href="../CalcII/Series_Special.html" class="mm-link">Special Series</a></li>
+                <li><a href="../CalcII/IntegralTest.html" class="mm-link">Integral Test</a></li>
+                <li><a href="../CalcII/SeriesCompTest.html" class="mm-link">Comparison Test/Limit Comparison Test</a></li>
+                <li><a href="../CalcII/AlternatingSeries.html" class="mm-link">Alternating Series Test</a></li>
+                <li><a href="../CalcII/AbsoluteConvergence.html" class="mm-link">Absolute Convergence</a></li>
+                <li><a href="../CalcII/RatioTest.html" class="mm-link">Ratio Test</a></li>
+                <li><a href="../CalcII/RootTest.html" class="mm-link">Root Test</a></li>
+                <li><a href="../CalcII/SeriesStrategy.html" class="mm-link">Strategy for Series</a></li>
+                <li><a href="../CalcII/EstimatingSeries.html" class="mm-link">Estimating the Value of a Series</a></li>
+                <li><a href="../CalcII/PowerSeries.html" class="mm-link">Power Series</a></li>
+                <li><a href="../CalcII/PowerSeriesandFunctions.html" class="mm-link">Power Series and Functions</a></li>
+                <li><a href="../CalcII/TaylorSeries.html" class="mm-link">Taylor Series</a></li>
+                <li><a href="../CalcII/TaylorSeriesApps.html" class="mm-link">Applications of Series</a></li>
+                <li><a href="../CalcII/BinomialSeries.html" class="mm-link">Binomial Series</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/VectorsIntro.html" class="mm-link">Vectors</a>
+              <ul>
+                <li><a href="../CalcII/Vectors_Basics.html" class="mm-link">Vectors - The Basics</a></li>
+                <li><a href="../CalcII/VectorArithmetic.html" class="mm-link">Vector Arithmetic</a></li>
+                <li><a href="../CalcII/DotProduct.html" class="mm-link">Dot Product</a></li>
+                <li><a href="../CalcII/CrossProduct.html" class="mm-link">Cross Product</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/3DSpace.html" class="mm-link">3-Dimensional Space</a>
+              <ul>
+                <li><a href="../CalcII/3DCoords.html" class="mm-link">The 3-D Coordinate System</a></li>
+                <li><a href="../CalcII/EqnsOfLines.html" class="mm-link">Equations of Lines</a></li>
+                <li><a href="../CalcII/EqnsOfPlanes.html" class="mm-link">Equations of Planes</a></li>
+                <li><a href="../CalcII/QuadricSurfaces.html" class="mm-link">Quadric Surfaces</a></li>
+                <li><a href="../CalcII/MultiVrbleFcns.html" class="mm-link">Functions of Several Variables</a></li>
+                <li><a href="../CalcII/VectorFunctions.html" class="mm-link">Vector Functions</a></li>
+                <li><a href="../CalcII/VectorFcnsCalculus.html" class="mm-link">Calculus with Vector Functions</a></li>
+                <li><a href="../CalcII/TangentNormalVectors.html" class="mm-link">Tangent, Normal and Binormal Vectors</a></li>
+                <li><a href="../CalcII/VectorArcLength.html" class="mm-link">Arc Length with Vector Functions</a></li>
+                <li><a href="../CalcII/Curvature.html" class="mm-link">Curvature</a></li>
+                <li><a href="../CalcII/Velocity_Acceleration.html" class="mm-link">Velocity and Acceleration</a></li>
+                <li><a href="../CalcII/CylindricalCoords.html" class="mm-link">Cylindrical Coordinates</a></li>
+                <li><a href="../CalcII/SphericalCoords.html" class="mm-link">Spherical Coordinates</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../CalcIII/CalcIII.html" class="mm-link">Calculus III</a>
+          <ul>
+            <li><a href="../CalcIII/3DSpace.html" class="mm-link">3-Dimensional Space</a>
+              <ul>
+                <li><a href="../CalcIII/3DCoords.html" class="mm-link">The 3-D Coordinate System</a></li>
+                <li><a href="../CalcIII/EqnsOfLines.html" class="mm-link">Equations of Lines</a></li>
+                <li><a href="../CalcIII/EqnsOfPlanes.html" class="mm-link">Equations of Planes</a></li>
+                <li><a href="../CalcIII/QuadricSurfaces.html" class="mm-link">Quadric Surfaces</a></li>
+                <li><a href="../CalcIII/MultiVrbleFcns.html" class="mm-link">Functions of Several Variables</a></li>
+                <li><a href="../CalcIII/VectorFunctions.html" class="mm-link">Vector Functions</a></li>
+                <li><a href="../CalcIII/VectorFcnsCalculus.html" class="mm-link">Calculus with Vector Functions</a></li>
+                <li><a href="../CalcIII/TangentNormalVectors.html" class="mm-link">Tangent, Normal and Binormal Vectors</a></li>
+                <li><a href="../CalcIII/VectorArcLength.html" class="mm-link">Arc Length with Vector Functions</a></li>
+                <li><a href="../CalcIII/Curvature.html" class="mm-link">Curvature</a></li>
+                <li><a href="../CalcIII/Velocity_Acceleration.html" class="mm-link">Velocity and Acceleration</a></li>
+                <li><a href="../CalcIII/CylindricalCoords.html" class="mm-link">Cylindrical Coordinates</a></li>
+                <li><a href="../CalcIII/SphericalCoords.html" class="mm-link">Spherical Coordinates</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/PartialDerivsIntro.html" class="mm-link">Partial Derivatives</a>
+              <ul>
+                <li><a href="../CalcIII/Limits.html" class="mm-link">Limits</a></li>
+                <li><a href="../CalcIII/PartialDerivatives.html" class="mm-link">Partial Derivatives</a></li>
+                <li><a href="../CalcIII/PartialDerivInterp.html" class="mm-link">Interpretations of Partial Derivatives</a></li>
+                <li><a href="../CalcIII/HighOrderPartialDerivs.html" class="mm-link">Higher Order Partial Derivatives</a></li>
+                <li><a href="../CalcIII/Differentials.html" class="mm-link">Differentials</a></li>
+                <li><a href="../CalcIII/ChainRule.html" class="mm-link">Chain Rule</a></li>
+                <li><a href="../CalcIII/DirectionalDeriv.html" class="mm-link">Directional Derivatives</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/PartialDerivAppsIntro.html" class="mm-link">Applications of Partial Derivatives</a>
+              <ul>
+                <li><a href="../CalcIII/TangentPlanes.html" class="mm-link">Tangent Planes and Linear Approximations</a></li>
+                <li><a href="../CalcIII/GradientVectorTangentPlane.html" class="mm-link">Gradient Vector, Tangent Planes and Normal Lines</a></li>
+                <li><a href="../CalcIII/RelativeExtrema.html" class="mm-link">Relative Minimums and Maximums</a></li>
+                <li><a href="../CalcIII/AbsoluteExtrema.html" class="mm-link">Absolute Minimums and Maximums</a></li>
+                <li><a href="../CalcIII/LagrangeMultipliers.html" class="mm-link">Lagrange Multipliers</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/MultipleIntegralsIntro.html" class="mm-link">Multiple Integrals</a>
+              <ul>
+                <li><a href="../CalcIII/DoubleIntegrals.html" class="mm-link">Double Integrals</a></li>
+                <li><a href="../CalcIII/IteratedIntegrals.html" class="mm-link">Iterated Integrals</a></li>
+                <li><a href="../CalcIII/DIGeneralRegion.html" class="mm-link">Double Integrals over General Regions</a></li>
+                <li><a href="../CalcIII/DIPolarCoords.html" class="mm-link">Double Integrals in Polar Coordinates</a></li>
+                <li><a href="../CalcIII/TripleIntegrals.html" class="mm-link">Triple Integrals</a></li>
+                <li><a href="../CalcIII/TICylindricalCoords.html" class="mm-link">Triple Integrals in Cylindrical Coordinates</a></li>
+                <li><a href="../CalcIII/TISphericalCoords.html" class="mm-link">Triple Integrals in Spherical Coordinates</a></li>
+                <li><a href="../CalcIII/ChangeOfVariables.html" class="mm-link">Change of Variables</a></li>
+                <li><a href="../CalcIII/SurfaceArea.html" class="mm-link">Surface Area</a></li>
+                <li><a href="../CalcIII/Area_Volume.html" class="mm-link">Area and Volume Revisited</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/LineIntegralsIntro.html" class="mm-link">Line Integrals</a>
+              <ul>
+                <li><a href="../CalcIII/VectorFields.html" class="mm-link">Vector Fields</a></li>
+                <li><a href="../CalcIII/LineIntegralsPtI.html" class="mm-link">Line Integrals - Part I</a></li>
+                <li><a href="../CalcIII/LineIntegralsPtII.html" class="mm-link">Line Integrals - Part II</a></li>
+                <li><a href="../CalcIII/LineIntegralsVectorFields.html" class="mm-link">Line Integrals of Vector Fields</a></li>
+                <li><a href="../CalcIII/FundThmLineIntegrals.html" class="mm-link">Fundamental Theorem for Line Integrals</a></li>
+                <li><a href="../CalcIII/ConservativeVectorField.html" class="mm-link">Conservative Vector Fields</a></li>
+                <li><a href="../CalcIII/GreensTheorem.html" class="mm-link">Green's Theorem</a></li>
+                <li><a href="../CalcIII/CurlDivergence.html" class="mm-link">Curl and Divergence</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/SurfaceIntegralsIntro.html" class="mm-link">Surface Integrals</a>
+              <ul>
+                <li><a href="../CalcIII/ParametricSurfaces.html" class="mm-link">Parametric Surfaces</a></li>
+                <li><a href="../CalcIII/SurfaceIntegrals.html" class="mm-link">Surface Integrals</a></li>
+                <li><a href="../CalcIII/SurfIntVectorField.html" class="mm-link">Surface Integrals of Vector Fields</a></li>
+                <li><a href="../CalcIII/StokesTheorem.html" class="mm-link">Stokes' Theorem</a></li>
+                <li><a href="../CalcIII/DivergenceTheorem.html" class="mm-link">Divergence Theorem</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../DE/DE.html" class="mm-link">Differential Equations</a>
+          <ul>
+            <li><a href="../DE/IntroBasic.html" class="mm-link">Basic Concepts</a>
+              <ul>
+                <li><a href="../DE/Definitions.html" class="mm-link">Definitions</a></li>
+                <li><a href="../DE/DirectionFields.html" class="mm-link">Direction Fields</a></li>
+                <li><a href="../DE/FinalThoughts.html" class="mm-link">Final Thoughts</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/IntroFirstOrder.html" class="mm-link">First Order DE's</a>
+              <ul>
+                <li><a href="../DE/Linear.html" class="mm-link">Linear Equations</a></li>
+                <li><a href="../DE/Separable.html" class="mm-link">Separable Equations</a></li>
+                <li><a href="../DE/Exact.html" class="mm-link">Exact Equations</a></li>
+                <li><a href="../DE/Bernoulli.html" class="mm-link">Bernoulli Differential Equations</a></li>
+                <li><a href="../DE/Substitutions.html" class="mm-link">Substitutions</a></li>
+                <li><a href="../DE/IoV.html" class="mm-link">Intervals of Validity</a></li>
+                <li><a href="../DE/Modeling.html" class="mm-link">Modeling with First Order DE's</a></li>
+                <li><a href="../DE/EquilibriumSolutions.html" class="mm-link">Equilibrium Solutions</a></li>
+                <li><a href="../DE/EulersMethod.html" class="mm-link">Euler's Method</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/IntroSecondOrder.html" class="mm-link">Second Order DE's</a>
+              <ul>
+                <li><a href="../DE/SecondOrderConcepts.html" class="mm-link">Basic Concepts</a></li>
+                <li><a href="../DE/RealRoots.html" class="mm-link">Real & Distinct Roots</a></li>
+                <li><a href="../DE/ComplexRoots.html" class="mm-link">Complex Roots</a></li>
+                <li><a href="../DE/RepeatedRoots.html" class="mm-link">Repeated Roots</a></li>
+                <li><a href="../DE/ReductionofOrder.html" class="mm-link">Reduction of Order</a></li>
+                <li><a href="../DE/FundamentalSetsofSolutions.html" class="mm-link">Fundamental Sets of Solutions</a></li>
+                <li><a href="../DE/Wronskian.html" class="mm-link">More on the  Wronskian</a></li>
+                <li><a href="../DE/NonhomogeneousDE.html" class="mm-link">Nonhomogeneous Differential Equations</a></li>
+                <li><a href="../DE/UndeterminedCoefficients.html" class="mm-link">Undetermined Coefficients</a></li>
+                <li><a href="../DE/VariationofParameters.html" class="mm-link">Variation of Parameters</a></li>
+                <li><a href="../DE/Vibrations.html" class="mm-link">Mechanical Vibrations</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/LaplaceIntro.html" class="mm-link">Laplace Transforms</a>
+              <ul>
+                <li><a href="../DE/LaplaceDefinition.html" class="mm-link">The Definition</a></li>
+                <li><a href="../DE/LaplaceTransforms.html" class="mm-link">Laplace Transforms</a></li>
+                <li><a href="../DE/InverseTransforms.html" class="mm-link">Inverse Laplace Transforms</a></li>
+                <li><a href="../DE/StepFunctions.html" class="mm-link">Step Functions</a></li>
+                <li><a href="../DE/IVPWithLaplace.html" class="mm-link">Solving IVP's with Laplace Transforms</a></li>
+                <li><a href="../DE/IVPWithNonConstantCoefficient.html" class="mm-link">Nonconstant Coefficient IVP's</a></li>
+                <li><a href="../DE/IVPWithStepFunction.html" class="mm-link">IVP's With Step Functions</a></li>
+                <li><a href="../DE/DiracDeltaFunction.html" class="mm-link">Dirac Delta Function</a></li>
+                <li><a href="../DE/ConvolutionIntegrals.html" class="mm-link">Convolution Integrals</a></li>
+                <li><a href="../DE/Laplace_Table.html" class="mm-link">Table Of Laplace Transforms</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/SystemsIntro.html" class="mm-link">Systems of DE's</a>
+              <ul>
+                <li><a href="../DE/LA_Systems.html" class="mm-link">Review : Systems of Equations</a></li>
+                <li><a href="../DE/LA_Matrix.html" class="mm-link">Review : Matrices & Vectors</a></li>
+                <li><a href="../DE/LA_Eigen.html" class="mm-link">Review : Eigenvalues & Eigenvectors</a></li>
+                <li><a href="../DE/SystemsDE.html" class="mm-link">Systems of Differential Equations</a></li>
+                <li><a href="../DE/SolutionsToSystems.html" class="mm-link">Solutions to Systems</a></li>
+                <li><a href="../DE/PhasePlane.html" class="mm-link">Phase Plane</a></li>
+                <li><a href="../DE/RealEigenvalues.html" class="mm-link">Real Eigenvalues</a></li>
+                <li><a href="../DE/ComplexEigenvalues.html" class="mm-link">Complex Eigenvalues</a></li>
+                <li><a href="../DE/RepeatedEigenvalues.html" class="mm-link">Repeated Eigenvalues</a></li>
+                <li><a href="../DE/NonhomogeneousSystems.html" class="mm-link">Nonhomogeneous Systems</a></li>
+                <li><a href="../DE/SystemsLaplace.html" class="mm-link">Laplace Transforms</a></li>
+                <li><a href="../DE/SystemsModeling.html" class="mm-link">Modeling</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/SeriesIntro.html" class="mm-link">Series Solutions to DE's</a>
+              <ul>
+                <li><a href="../DE/PowerSeries.html" class="mm-link">Review : Power Series</a></li>
+                <li><a href="../DE/TaylorSeries.html" class="mm-link">Review : Taylor Series</a></li>
+                <li><a href="../DE/SeriesSolutions.html" class="mm-link">Series Solutions</a></li>
+                <li><a href="../DE/EulerEquations.html" class="mm-link">Euler Equations</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/IntroHigherOrder.html" class="mm-link">Higher Order Differential Equations</a>
+              <ul>
+                <li><a href="../DE/HOBasicConcepts.html" class="mm-link">Basic Concepts for <em>n</em><sup>th</sup> Order Linear Equations</a></li>
+                <li><a href="../DE/HOHomogeneousDE.html" class="mm-link">Linear Homogeneous Differential Equations</a></li>
+                <li><a href="../DE/HOUndeterminedCoeff.html" class="mm-link">Undetermined Coefficients</a></li>
+                <li><a href="../DE/HOVariationOfParam.html" class="mm-link">Variation of Parameters</a></li>
+                <li><a href="../DE/HOLaplaceTransforms.html" class="mm-link">Laplace Transforms</a></li>
+                <li><a href="../DE/HOSystems.html" class="mm-link">Systems of Differential Equations</a></li>
+                <li><a href="../DE/HOSeries.html" class="mm-link">Series Solutions</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/IntroBVP.html" class="mm-link">Boundary Value Problems &amp; Fourier Series</a>
+              <ul>
+                <li><a href="../DE/BoundaryValueProblem.html" class="mm-link">Boundary Value Problems</a></li>
+                <li><a href="../DE/BVPEvals.html" class="mm-link">Eigenvalues and Eigenfunctions</a></li>
+                <li><a href="../DE/PeriodicOrthogonal.html" class="mm-link">Periodic Functions &amp; Orthogonal Functions</a></li>
+                <li><a href="../DE/FourierSineSeries.html" class="mm-link">Fourier Sine Series</a></li>
+                <li><a href="../DE/FourierCosineSeries.html" class="mm-link">Fourier Cosine Series</a></li>
+                <li><a href="../DE/FourierSeries.html" class="mm-link">Fourier Series</a></li>
+                <li><a href="../DE/ConvergenceFourierSeries.html" class="mm-link">Convergence of Fourier Series</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/IntroPDE.html" class="mm-link">Partial Differential Equations </a>
+              <ul>
+                <li><a href="../DE/TheHeatEquation.html" class="mm-link">The Heat Equation</a></li>
+                <li><a href="../DE/TheWaveEquation.html" class="mm-link">The Wave Equation</a></li>
+                <li><a href="../DE/PDETerminology.html" class="mm-link">Terminology</a></li>
+                <li><a href="../DE/SeparationofVariables.html" class="mm-link">Separation of Variables</a></li>
+                <li><a href="../DE/SolvingHeatEquation.html" class="mm-link">Solving the Heat Equation</a></li>
+                <li><a href="../DE/HeatEqnNonZero.html" class="mm-link">Heat Equation with Non-Zero Temperature Boundaries</a></li>
+                <li><a href="../DE/LaplacesEqn.html" class="mm-link">Laplace's Equation</a></li>
+                <li><a href="../DE/VibratingString.html" class="mm-link">Vibrating String</a></li>
+                <li><a href="../DE/PDESummary.html" class="mm-link">Summary of Separation of Variables</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><span>Extras</span></li>
+        <li><a href="../../Extras/AlgebraTrigReview/AlgebraTrig.html" class="mm-link">Algebra &amp; Trig Review</a>
+          <ul>
+            <li><a href="../../Extras/AlgebraTrigReview/AlgebraIntro.html" class="mm-link">Algebra</a>
+              <ul>
+                <li><a href="../../Extras/AlgebraTrigReview/Exponents.html" class="mm-link">Exponents </a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/AbsoluteValue.html" class="mm-link">Absolute Value</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Radicals.html" class="mm-link">Radicals</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Rationalizing.html" class="mm-link">Rationalizing </a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Functions.html" class="mm-link">Functions </a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/MultPoly.html" class="mm-link">Multiplying Polynomials</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Factoring.html" class="mm-link">Factoring</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SimpRatExp.html" class="mm-link">Simplifying Rational Expressions</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Graphing.html" class="mm-link">Graphing and Common Graphs</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveEqnPtI.html" class="mm-link">Solving Equations, Part I</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveEqnPtII.html" class="mm-link">Solving Equations, Part II</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveSystems.html" class="mm-link">Solving Systems of Equations</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveIneq.html" class="mm-link">Solving Inequalities</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveAbsValue.html" class="mm-link">Absolute Value Equations and Inequalities</a></li>
+              </ul>
+            </li>
+            <li><a href="../../Extras/AlgebraTrigReview/TrigIntro.html" class="mm-link">Trigonometry</a>
+              <ul>
+                <li><a href="../../Extras/AlgebraTrigReview/TrigFunctions.html" class="mm-link">Trig Function Evaluation</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/TrigGraphs.html" class="mm-link">Graphs of Trig Functions</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/TrigFormulas.html" class="mm-link">Trig Formulas</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveTrigEqn.html" class="mm-link">Solving Trig Equations</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/InverseTrig.html" class="mm-link">Inverse Trig Functions</a></li>
+              </ul>
+            </li>
+            <li><a href="../../Extras/AlgebraTrigReview/ExpLogIntro.html" class="mm-link">Exponentials & Logarithms</a>
+              <ul>
+                <li><a href="../../Extras/AlgebraTrigReview/ExponentialFcns.html" class="mm-link">Basic Exponential Functions</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/LogarithmFcns.html" class="mm-link">Basic Logarithm Functions</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/LogProperties.html" class="mm-link">Logarithm Properties</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SimpLogs.html" class="mm-link">Simplifying Logarithms</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveExpEqn.html" class="mm-link">Solving Exponential Equations</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveLogEqn.html" class="mm-link">Solving Logarithm Equations</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../../Extras/CommonErrors/CommonMathErrors.html" class="mm-link">Common Math Errors</a>
+          <ul>
+            <li><a href="../../Extras/CommonErrors/GeneralErrors.html" class="mm-link">General Errors</a>
+            </li>
+            <li><a href="../../Extras/CommonErrors/AlgebraErrors.html" class="mm-link">Algebra Errors</a>
+            </li>
+            <li><a href="../../Extras/CommonErrors/TrigErrors.html" class="mm-link">Trig Errors</a>
+            </li>
+            <li><a href="../../Extras/CommonErrors/CommonErrors.html" class="mm-link">Common Errors</a>
+            </li>
+            <li><a href="../../Extras/CommonErrors/CalculusErrors.html" class="mm-link">Calculus Errors</a>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../../Extras/ComplexPrimer/ComplexNumbers.html" class="mm-link">Complex Number Primer</a>
+          <ul>
+            <li><a href="../../Extras/ComplexPrimer/Definition.html" class="mm-link">The Definition</a>
+            </li>
+            <li><a href="../../Extras/ComplexPrimer/Arithmetic.html" class="mm-link">Arithmetic</a>
+            </li>
+            <li><a href="../../Extras/ComplexPrimer/ConjugateModulus.html" class="mm-link">Conjugate and Modulus</a>
+            </li>
+            <li><a href="../../Extras/ComplexPrimer/Forms.html" class="mm-link">Polar and Exponential Forms</a>
+            </li>
+            <li><a href="../../Extras/ComplexPrimer/Roots.html" class="mm-link">Powers and Roots</a>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../../Extras/StudyMath/HowToStudyMath.html" class="mm-link">How To Study Math</a>
+          <ul>
+            <li><a href="../../Extras/StudyMath/GeneralTips.html" class="mm-link">General Tips</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/TakingNotes.html" class="mm-link">Taking Notes</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/GettingHelp.html" class="mm-link">Getting Help</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/Homework.html" class="mm-link">Doing Homework</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/ProblemSolving.html" class="mm-link">Problem Solving</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/StudyForExam.html" class="mm-link">Studying For an Exam</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/TakingExam.html" class="mm-link">Taking an Exam</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/Errors.html" class="mm-link">Learn From Your Errors</a>
+            </li>
+          </ul>
+        </li>
+
+        <li><span>Misc Links</span></li>
+        <li><a href="http://tutorial.math.lamar.edu/contact.aspx" class="mm-link">Contact Me</a></li>
+        <li><a href="../../links.html" class="mm-link">Links</a></li>
+        <li><a href="../../mathjax.html" class="mm-link">MathJax Help and Configuration</a></li>
+        <li><a href="../../mystudents.html" class="mm-link">My Students</a></li>
+        <li><a href="http://tutorial.math.lamar.edu/privacy.aspx" class="mm-link">Privacy Statement</a></li>
+        <li><a href="../../help.html" class="mm-link">Site Help & FAQ</a></li>
+        <li><a href="http://tutorial.math.lamar.edu/terms.aspx" class="mm-link">Terms of Use</a></li>
+      </ul>
+    </nav>
+
+
+
+    <div class="top-info-bar">
+      <span id="mobile-title" class="mobile-header-title header-title">Paul's Online Notes</span>
+      <br />
+      <span class="top-menu-breadcrumb">
+        <a href="../../index.html" id="breadcrumb_home_link" title="Go to Main Page">Home</a>
+        <span id="breadcrumb_h_b_sep_span">/ </span>
+        <a href="CalcI.html" id="breadcrumb_book_link" title="Go to Book Introduction">Calculus I</a>
+        
+        <span id="breadcrumb_b_c_sep_span">/ </span>
+        <a href="DerivAppsIntro.html" id="breadcrumb_chapter_link" title="Go to Chapter Introduction">Applications of Derivatives</a>
+        
+        <span id="breadcrumb_section_span"> / The Mean Value Theorem</span>
+      </span>
+
+    </div>
+
+    <div id="nav_links" class="top-nav-bar">
+      
+      <span id="nav_current_notes">Notes</span>
+      <a href="http://tutorial.math.lamar.edu/Problems/CalcI/MeanValueTheorem.aspx" id="nav_links_practice" title="Go to Practice Problems for current topic.">Practice<span class="nav_desktop_extra"> Problems</span></a>
+      
+      <a href="http://tutorial.math.lamar.edu/ProblemsNS/CalcI/MeanValueTheorem.aspx" id="nav_links_asgn" title="Go to Assignment Problems for current topic.">Assignment<span class="nav_desktop_extra">  Problems</span></a>
+      
+    </div>
+
+    <div class="header-divider"></div>
+
+    <div class="content">  
+      
+      
+      <span id="SHLink_NoteMobile" class="SH-Link content-note-link-mobile">Show Mobile Notice</span>
+      <span id="SHImg_NoteMobile" class="fas fa-caret-right SH-padding content-note-link-mobile" aria-hidden="true"></span>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+
+      <span id="SHALink_S_Note" class="SH-Link SH-Hide SH-Bracket">Show All Notes</span>&nbsp;<span id="SHALink_H_Note" class="SH-Link SH-Hide SH-Bracket">Hide All Notes</span>
+      
+      
+      <div id="SHObj_NoteMobile" class="content-note-container content-note-container-mobile">
+        <div class="content-note-header">Mobile Notice</div>
+        <div class="content-note">You appear to be on a device with a "narrow" screen width (<em>i.e.</em> you are probably on a mobile phone).  Due to the nature of the mathematics on this site it is best views in landscape mode.  If your device is not in landscape mode many of the equations will run off the side of your device (should be able to scroll to see them) and some of the menu items will be cut off due to the narrow screen width.</div>
+      </div>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+
+      
+
+
+  <form method="post" action="http://tutorial.math.lamar.edu/Classes/CalcI/MeanValueTheorem.aspx" id="ctl00">
+<div class="aspNetHidden">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+</div>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="64E3EF9C" />
+</div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </form>
+
+  <h3>Section 4-7 : The Mean Value Theorem</h3>
+
+    <p>In this section we want to take a look at the Mean Value Theorem.  In most traditional textbooks this section comes before the sections containing the First and Second Derivative Tests because many of the proofs in those sections need the Mean Value Theorem.  However, we feel that from a logical point of view it’s better to put the Shape of a Graph sections right after the absolute extrema section.  So, if you’ve been following the proofs from the previous two sections you’ve probably already read through this section.</p>
+    
+    <p>Before we get to the Mean Value Theorem we need to cover the following theorem.</p>
+    
+  <a class="anchor" name="RT"></a>
+   <h4>Rolle’s Theorem</h4>
+  <div class="fact">
+    <p>Suppose \(f\left( x \right)\) is a function that satisfies all of the following.</p>
+          <ol class="general-list">
+            <li>\(f\left( x \right)\) is continuous on the closed interval \(\left[ {a,b} \right]\).<br /><br /></li>
+            <li>\(f\left( x \right)\) is differentiable on the open interval \(\left( {a,b} \right)\).<br /><br /></li>
+            <li>\(f\left( a \right) = f\left( b \right)\)</li>
+      </ol>
+    <p>Then there is a number \(c\) such that \(a &lt; c &lt; b\) and \(f'\left( c \right) = 0\).  Or, in other words \(f\left( x \right)\) has a critical point in \(\left( {a,b} \right)\).</p>
+  </div>
+    
+    <p>To see the proof of Rolle’s Theorem see the <a href="DerivativeAppsProofs.html#Extras_DerAppPf_Rolles">Proofs From Derivative Applications</a> section of the Extras chapter.</p>
+    
+    <p>Let’s take a look at a quick example that uses Rolle’s Theorem.</p>
+    <a class="anchor" name="DerivApps_MVT_Ex1"></a>
+  <div class="example">
+    <span class="example-title">Example 1</span> Show that \(f\left( x \right) = 4{x^5} + {x^3} + 7x - 2\) has exactly one real root.
+    <div class="example-content">
+      <span id="SHLink_Soln1" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln1" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln1" class="soln-content">
+        <p>From basic Algebra principles we know that since \(f\left( x \right)\) is a 5<sup>th</sup> degree polynomial it will have five roots.  What we’re being asked to prove here is that only one of those 5 is a real number and the other 4 must be complex roots.</p>
+          <p>First, we should show that it does have at least one real root.  To do this note that \(f\left( 0 \right) =  - 2\) and that \(f\left( 1 \right) = 10\) and so we can see that \(f\left( 0 \right) &lt; 0 &lt; f\left( 1 \right)\).  Now, because \(f\left( x \right)\) is a polynomial we know that it is continuous everywhere and so by the <a href="Continuity.html#IVT">Intermediate Value Theorem</a> there is a number \(c\) such that \(0 &lt; c &lt; 1\) and \(f\left( c \right) = 0\).  In other words \(f\left( x \right)\) has at least one real root.</p>
+          <p>We now need to show that this is in fact the only real root.  To do this we’ll use an argument that is called contradiction proof.  What we’ll do is assume that \(f\left( x \right)\) has at least two real roots.  This means that we can find real numbers \(a\) and \(b\) (there might be more, but all we need for this particular argument is two) such that \(f\left( a \right) = f\left( b \right) = 0\).  But if we do this then we know from Rolle’s Theorem that there must then be another number \(c\) such that \(f'\left( c \right) = 0\).</p>
+          <p>This is a problem however.  The derivative of this function is,</p>
+        \[f'\left( x \right) = 20{x^4} + 3{x^2} + 7\]
+
+          <p>Because the exponents on the first two terms are even we know that the first two terms will always be greater than or equal to zero and we are then going to add a positive number onto that and so we can see that the smallest the derivative will ever be is 7 and this contradicts the statement above that says we MUST have a number \(c\) such that \(f'\left( c \right) = 0\).</p>
+          <p>We reached these contradictory statements by assuming that \(f\left( x \right)\) has at least two roots.  Since this assumption leads to a contradiction the assumption must be false and so we can only have a single real root.</p>
+      </div>
+    </div>
+  </div>
+    
+    <p>The reason for covering Rolle’s Theorem is that it is needed in the proof of the Mean Value Theorem.  To see the proof see the <a href="DerivativeAppsProofs.html#Extras_DerAppPf_MVT">Proofs From Derivative Applications</a> section of the Extras chapter.  Here is the theorem.</p>
+    
+    <a class="anchor" name="MVT"></a>
+  <h4>Mean Value Theorem</h4>
+  <div class="fact">
+    <p>Suppose \(f\left( x \right)\) is a function that satisfies both of the following.</p>
+    <ol class="general-list">
+      <li>\(f\left( x \right)\) is continuous on the closed interval \(\left[ {a,b} \right]\).<br /><br /></li>
+      <li>\(f\left( x \right)\) is differentiable on the open interval \(\left( {a,b} \right)\).</li>
+    </ol>
+
+    <p>Then there is a number \(c\) such that <em>a &lt; c &lt; b</em> and</p>
+
+    \[f'\left( c \right) = \frac{{f\left( b \right) - f\left( a \right)}}{{b - a}}\]
+
+          <p>Or,</p>
+
+    \[f\left( b \right) - f\left( a \right) = f'\left( c \right)\left( {b - a} \right)\]
+  </div>
+    
+    <p>Note that the Mean Value Theorem doesn’t tell us what \(c\) is.  It only tells us that there is at least one number \(c\) that will satisfy the conclusion of the theorem.</p>
+    
+    <p>Also note that if it weren’t for the fact that we needed Rolle’s Theorem to prove this we could think of Rolle’s Theorem as a special case of the Mean Value Theorem.  To see that just assume that \(f\left( a \right) = f\left( b \right)\) and then the result of the Mean Value Theorem gives the result of Rolle’s Theorem.</p>
+    
+    <p>Before we take a look at a couple of examples let’s think about a geometric interpretation of the Mean Value Theorem.  First define \(A = \left( {a,f\left( a \right)} \right)\) and \(B = \left( {b,f\left( b \right)} \right)\) and then we know from the Mean Value theorem that there is a \(c\) such that \(a &lt; c &lt; b\) and that</p>
+    
+        \[f'\left( c \right) = \frac{{f\left( b \right) - f\left( a \right)}}{{b - a}}\]
+
+    
+    <p>Now, if we draw in the secant line connecting \(A\) and \(B\) then we can know that the slope of the secant line is,</p>
+    
+        \[\frac{{f\left( b \right) - f\left( a \right)}}{{b - a}}\]
+
+    
+    <p>Likewise, if we draw in the tangent line to \(f\left( x \right)\) at \(x = c\) we know that its slope is \(f'\left( c \right)\).</p>
+    
+    <p>What the Mean Value Theorem tells us is that these two slopes must be equal or in other words the secant line connecting \(A\) and \(B\) and the tangent line at \(x = c\) must be parallel.  We can see this in the following sketch.</p>
+    
+      <div class="center-div"><img alt="This is a graph of a graph that is a parabola on the domain a&lt;x&lt;b with a vertex (coordinates not given) in the 1st quadrant and opens downward.  Included in the graph is a secant line that connects the ends points of the graph, (a, f(a)) and (b,f(b)).  Also included in the graph is a sketch of a tangent line to the graph at x=c, a point near the vertex, that is parallel to the secant line." border="0" height="254" src="http://tutorial.math.lamar.edu/Classes/CalcI/MeanValueTheorem_Files/image001.png" width="360" /></div>
+    
+    <p>Let’s now take a look at a couple of examples using the Mean Value Theorem.</p>
+    <a class="anchor" name="DerivApps_MVT_Ex2"></a>
+  <div class="example">
+    <span class="example-title">Example 2</span> Determine all the numbers \(c\) which satisfy the conclusions of the Mean Value Theorem for the following function.
+            \[f\left( x \right) = {x^3} + 2{x^2} - x\hspace{0.25in}{\rm{on}}\hspace{0.25in}\left[ { - 1,2} \right]\]
+    <div class="example-content">
+      <span id="SHLink_Soln2" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln2" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln2" class="soln-content">
+        <p>There isn’t really a whole lot to this problem other than to notice that since \(f\left( x \right)\) is a polynomial it is both continuous and differentiable (<em>i.e.</em> the derivative exists) on the interval given.</p>
+          <p>First let’s find the derivative.</p>
+              \[f'\left( x \right) = 3{x^2} + 4x - 1\]
+
+          <p>Now, to find the numbers that satisfy the conclusions of the Mean Value Theorem all we need to do is plug this into the formula given by the Mean Value Theorem.</p>
+            \[\begin{align*}f'\left( c \right) & = \frac{{f\left( 2 \right) - f\left( { - 1} \right)}}{{2 - \left( { - 1} \right)}}\\ 3{c^2} + 4c - 1 & = \frac{{14 - 2}}{3} = \frac{{12}}{3} = 4\end{align*}\]
+
+          <p>Now, this is just a quadratic equation,</p>
+
+              \[\begin{align*}3{c^2} + 4c - 1 & = 4\\ 3{c^2} + 4c - 5 & = 0\end{align*}\]
+
+          <p>Using the quadratic formula on this we get,</p>
+
+            \[c = \frac{{ - 4 \pm \sqrt {16 - 4\left( 3 \right)\left( { - 5} \right)} }}{6} = \frac{{ - 4 \pm \sqrt {76} }}{6}\]
+
+          <p>So, solving gives two values of \(c\).</p>
+
+            \[c = \frac{{ - 4 + \sqrt {76} }}{6} = 0.7863\hspace{0.25in}\hspace{0.25in}c = \frac{{ - 4 - \sqrt {76} }}{6} =  - 2.1196\]
+
+          <p>Notice that only one of these is actually in the interval given in the problem.  That means that we will exclude the second one (since it isn’t in the interval).  The number that we’re after in this problem is,</p>
+              \[c = 0.7863\]
+
+          <p>Be careful to not assume that only one of the numbers will work.  It is possible for both of them to work.</p>
+      </div>
+    </div>
+  </div>
+
+    <a class="anchor" name="DerivApps_MVT_Ex3"></a>
+  <div class="example">
+    <span class="example-title">Example 3</span> Suppose that we know that \(f\left( x \right)\) is continuous and differentiable on \(\left[ {6,15} \right]\).  Let’s also suppose that we know that \(f\left( 6 \right) =  - 2\) and that we know that \(f'\left( x \right) \le 10\).  What is the largest possible value for \(f\left( {15} \right)\)?
+    <div class="example-content">
+      <span id="SHLink_Soln3" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln3" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln3" class="soln-content">
+        <p>Let’s start with the conclusion of the Mean Value Theorem.</p>
+              \[f\left( {15} \right) - f\left( 6 \right) = f'\left( c \right)\left( {15 - 6} \right)\]
+
+          <p>Plugging in for the known quantities and rewriting this a little gives,</p>
+            \[f\left( {15} \right) = f\left( 6 \right) + f'\left( c \right)\left( {15 - 6} \right) =  - 2 + 9f'\left( c \right)\]
+
+          <p>Now we know that \(f'\left( x \right) \le 10\) so in particular we know that \(f'\left( c \right) \le 10\).  This gives us the following,</p>
+            \[\begin{align*}f\left( {15} \right) & =  - 2 + 9f'\left( c \right)\\ &amp;  \le  - 2 + \left( 9 \right)10\\ &amp;  = 88\end{align*}\]
+
+          <p>All we did was replace \(f'\left( c \right)\) with its largest possible value.</p>
+          <p>This means that the largest possible value for \(f\left( {15} \right)\) is 88.</p>
+      </div>
+    </div>
+  </div>
+
+    <a class="anchor" name="DerivApps_MVT_Ex4"></a>
+  <div class="example">
+    <span class="example-title">Example 4</span> Suppose that we know that \(f\left( x \right)\) is continuous and differentiable everywhere.  Let’s also suppose that we know that \(f\left( x \right)\) has two roots.  Show that \(f'\left( x \right)\) must have at least one root.
+    <div class="example-content">
+      <span id="SHLink_Soln4" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln4" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln4" class="soln-content">
+        <p>It is important to note here that all we can say is that \(f'\left( x \right)\) will have at least one root.  We can’t say that it will have exactly one root.  So don’t confuse this problem with the first one we worked.</p>
+          <p>This is actually a fairly simple thing to prove.  Since we know that \(f\left( x \right)\) has two roots let’s suppose that they are \(a\) and \(b\).  Now, by assumption we know that \(f\left( x \right)\) is continuous and differentiable everywhere and so in particular it is continuous on \(\left[ {a,b} \right]\) and differentiable on \(\left( {a,b} \right)\).</p>
+          <p>Therefore, by the Mean Value Theorem there is a number \(c\) that is between \(a\) and \(b\) (this isn’t needed for this problem, but it’s true so it should be pointed out) and that,</p>
+          
+        \[f'\left( c \right) = \frac{{f\left( b \right) - f\left( a \right)}}{{b - a}}\]
+
+          <p>But we now need to recall that \(a\) and \(b\) are roots of \(f\left( x \right)\) and so this is,</p>
+          
+        \[f'\left( c \right) = \frac{{0 - 0}}{{b - a}} = 0\]
+
+          <p>Or, \(f'\left( x \right)\) has a root at \(x = c\).</p>
+
+          <p>Again, it is important to note that we don’t have a value of \(c\).  We have only shown that it exists.  We also haven’t said anything about \(c\) being the only root.  It is completely possible for \(f'\left( x \right)\) to have more than one root.</p>
+      </div>
+    </div>
+  </div>
+    
+    <p>It is completely possible to generalize the previous example significantly.  For instance if we know that \(f\left( x \right)\) is continuous and differentiable everywhere and has three roots we can then show that not only will \(f'\left( x \right)\) have at least two roots but that \(f''\left( x \right)\) will have at least one root.  We’ll leave it to you to verify this, but the ideas involved are identical to those in the previous example.</p>
+    
+    <p>We’ll close this section out with a couple of nice facts that can be proved using the Mean Value Theorem.  Note that in both of these facts we are assuming the functions are continuous and differentiable on the interval \(\left[ {a,b} \right]\).</p>
+    
+    <h4>Fact 1</h4>
+  <div class="fact">
+    <p>If \(f'\left( x \right) = 0\) for all \(x\) in an interval \(\left( {a,b} \right)\) then \(f\left( x \right)\) is constant on \(\left( {a,b} \right)\).</p>
+  </div>
+    
+    <p>This fact is very easy to prove so let’s do that here.</p>
+
+  <p>First, notice that because we are assuming the derivative exists on \(\left( a,b \right)\)  we know that \(f\left( x \right)\) is differentiable on \(\left( a,b \right)\).  In addition, we <a href="DefnOfDerivative.html#Deriv_Defn_DifCont">know</a> that if a function is differentiable on an interval then it is also continuous on that interval and so \(f\left( x \right)\) will also be continuous on \(\left( a,b \right)\).</p>
+      
+      <p>Now, take any two \(x\)’s in the interval \(\left( {a,b} \right)\), say \({x_1}\) and \({x_2}\).  Then since \(f\left( x \right)\) is continuous and differentiable on \(\left( {a,b} \right)\) it must also be continuous and differentiable on \(\left[ {{x_1},{x_2}} \right]\).  This means that we can apply the Mean Value Theorem for these two values of \(x\).  Doing this gives,</p>
+    
+      \[f\left( {{x_2}} \right) - f\left( {{x_1}} \right) = f'\left( c \right)\left( {{x_2} - {x_1}} \right)\]
+
+    <p>where \({x_1} &lt; c &lt; {x_2}\).  But by assumption \(f'\left( x \right) = 0\) for all \(x\) in an interval \(\left( {a,b} \right)\) and so in particular we must have,</p>
+    
+        \[f'\left( c \right) = 0\]
+
+    
+    <p>Putting this into the equation above gives,</p>
+    
+      \[f\left( {{x_2}} \right) - f\left( {{x_1}} \right) = 0\hspace{0.25in}\hspace{0.25in} \Rightarrow \hspace{0.25in}\hspace{0.25in}f\left( {{x_2}} \right) = f\left( {{x_1}} \right)\]
+
+    
+    <p>Now, since \({x_1}\) and \({x_2}\) where any two values of \(x\) in the interval \(\left( {a,b} \right)\) we can see that we must have \(f\left( {{x_2}} \right) = f\left( {{x_1}} \right)\) for all \({x_1}\) and \({x_2}\) in the interval and this is exactly what it means for a function to be constant on the interval and so we’ve proven the fact.</p>
+
+    <a class="anchor" name="Fact2"></a>
+    <h4>Fact 2</h4>
+  <div class="fact">
+    <p>If \(f'\left( x \right) = g'\left( x \right)\) for all \(x\) in an interval \(\left( {a,b} \right)\) then in this interval we have  \(f\left( x \right) = g\left( x \right) + c\) where \(c\) is some constant.</p>
+  </div>
+  
+    <p>This fact is a direct result of the previous fact and is also easy to prove.</p>
+    
+    <p>If we first define,</p>
+    
+        \[h\left( x \right) = f\left( x \right) - g\left( x \right)\]
+
+    <p>Then since both \(f\left( x \right)\) and \(g\left( x \right)\) are continuous and differentiable in the interval \(\left( {a,b} \right)\) then so must be \(h\left( x \right)\).  Therefore, the derivative of \(h\left( x \right)\) is,</p>
+    
+        \[h'\left( x \right) = f'\left( x \right) - g'\left( x \right)\]
+
+    
+    <p>However, by assumption \(f'\left( x \right) = g'\left( x \right)\) for all \(x\) in an interval \(\left( {a,b} \right)\) and so we must have that \(h'\left( x \right) = 0\) for all \(x\) in an interval \(\left( {a,b} \right)\).  So, by Fact 1 \(h\left( x \right)\) must be constant on the interval.</p>
+    
+    <p>This means that we have,</p>
+    
+      \[\begin{align*}h\left( x \right) & = c\\ f\left( x \right) - g\left( x \right) & = c\\ f\left( x \right) & = g\left( x \right) + c\end{align*}\]
+
+    <p>which is what we were trying to show.</p>
+
+  
+
+
+      
+
+
+
+    </div>
+    <!-- End of content div -->
+
+
+    <div class="footer">
+      <div class="footer-links">
+        [<a href="http://tutorial.math.lamar.edu/Contact.aspx">Contact Me</a>]&nbsp;[<a href="../../MyStudents-2.html">My Students</a>]&nbsp;[<a href="http://tutorial.math.lamar.edu/Privacy.aspx">Privacy Statement</a>]&nbsp;[<a href="../../Help-2.html">Site Help &amp; FAQ</a>]&nbsp;[<a href="http://tutorial.math.lamar.edu/Terms.aspx">Terms of Use</a>]
+      </div>
+      <div class="footer-dates">
+        <div class="footer-copyright"><span id="lblCopyRight">&copy; 2003 - 2019 Paul Dawkins</span></div>
+        <div class="footer-spacer"></div>
+        <div class="footer-modified-date">Page Last Modified : <span id="lblModified">2/21/2019</span></div>
+      </div>
+      
+
+    </div>
+  </div>
+  <!-- End of page div...  -->
+</body>
+
+<!-- Mirrored from tutorial.math.lamar.edu/Classes/CalcI/MeanValueTheorem.aspx by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 27 Feb 2019 06:15:35 GMT -->
+</html>

@@ -1,0 +1,1410 @@
+
+
+<!DOCTYPE html>
+
+<html>
+
+<!-- Mirrored from tutorial.math.lamar.edu/Classes/DE/Modeling.aspx by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 27 Feb 2019 06:15:36 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=yes" /><meta http-equiv="X-UA-Compatible" content="IE=edge" />  <!-- For best MathJax performance on IE  -->
+
+  <meta name="google-site-verification" content="uLoA31CJfOhIVMJWBjCmQL8xNMmmLybZU3LRKavy9WQ" /><title>
+	Differential Equations - Modeling with First Order DE's
+</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="../../../www.googletagmanager.com/gtag/js1872?id=UA-331594-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-331594-1');
+  </script>
+
+  <link type="text/css" href="../../css/jquery.mmenu.all.css" rel="stylesheet" /><link type="text/css" href="../../css/jquery.dropdown.css" rel="stylesheet" /><link href="../../FA/css/fontawesome-all.min.css" rel="stylesheet" /><link type="text/css" href="../../css/notes-all.css" rel="stylesheet" /><link type="text/css" href="../../css/notes-google.css" rel="stylesheet" /><link type="text/css" href="../../css/notes-mmenu.css" rel="stylesheet" /><link type="text/css" href="../../css/notes-dropdown.css" rel="stylesheet" />
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+     TeX: { equationNumbers: { autoNumber: "AMS" } }
+    });
+  </script>
+  <script type="text/javascript" async src="../../../cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax2ba6.js?config=TeX-AMS_CHTML-full"></script>
+  <script type="text/javascript" src="../../../code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="../../js/jquery.mmenu.all.js"></script>
+  <script type="text/javascript" src="../../js/jquery.dropdown.js"></script>
+  <script type="text/javascript" src="../../js/notes-all.js"></script>  
+
+  <script>
+    (function () {
+      var cx = '001004262401526223570:11yv6vpcqvy';
+      var gcse = document.createElement('script');
+      gcse.type = 'text/javascript';
+      gcse.async = true;
+      gcse.src = '../../../cse.google.com/cse07b6.html?cx=' + cx;
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(gcse, s);
+    })();
+  </script>
+
+<meta http-equiv="keywords" name="keywords" content="modeling with differential equations, linear models, modeling with first order differential equations, mixing problems, modeling mixing problems, falling bodies, modeling falling bodies, population problems, modeling population problems" /><meta http-equiv="description" name="description" content="In this section we will use first order differential equations to model physical situations.  In particular we will look at mixing problems (modeling the amount of a substance dissolved in a liquid and liquid both enters and exits), population problems (modeling a population under a variety of situations in which the population can enter or exit) and falling objects (modeling the velocity of a falling object under the influence of both gravity and air resistance)." /></head>
+<body onload="init({Notes: 'NoteMobile;8/21/2018;true'})">
+
+  <div id="page">
+
+    <div class="header">
+      <div class="header-row">
+        <!--<a href="#menu"><span></span></a>-->
+        <div id="side-menu-icon" class="header-side-menu-icon"><a href="#menu"><span class="fas fa-bars fa-lg" aria-hidden="true" title="Main Menu - Change between topics, chapters and sections as well as a few extra pages."></span></a></div>
+        <span class="header-title"><a href="../../index.html" class="header-title-link">Paul's Online Notes</a></span>
+        <div class="header-spacer"></div>
+
+        <div id="content-top-menu" class="top-menu">
+          <button id="content-type-menu" class="top-menu-button" data-jq-dropdown="#jq-dropdown-type" title="View (Notes, Practice Problems or Assignment Problems, Show/Hide Solutions and/or Steps) Menu">
+            <span id="tab_top_menu_notes" class="top-menu-item-title">Notes</span> <span class="far fa-eye fa-lg" aria-hidden="true"></span>
+          </button>
+
+          <button id="quicknav-menu" class="top-menu-button" data-jq-dropdown="#jq-dropdown-quicknav" title="Quick Navigation (Previous/Next Sections and Problems and Full Problem List) Menu">
+            <span class="top-menu-item-title">Quick Nav</span> <span class="fas fa-exchange fa-lg" aria-hidden="true"></span>
+          </button>
+          
+          <button id="download-menu" class="top-menu-button" data-jq-dropdown="#jq-dropdown-download" title="Download pdf Menu">
+            <span class="top-menu-item-title">Download</span> <span class="far fa-download fa-lg" aria-hidden="true"></span>
+          </button>
+
+          <button id="print-menu" class="top-menu-button top-menu-button-icon-only" data-jq-dropdown="#jq-print-download" title="Print Menu">
+            <span class="far fa-print fa-lg" aria-hidden="true"></span>
+          </button>
+        </div>
+
+        <div id="header-google-search" class="header-search">
+          <gcse:search></gcse:search>
+        </div>
+        <div id="header-search-icon" title="Site Search" class="header-menu-icon"><span id="search-icon" class="fas fa-search" aria-hidden="true"></span></div>
+
+      </div>
+    </div>
+
+     <div id="jq-dropdown-type" class="jq-dropdown jq-dropdown-tip">
+      <ul class="jq-dropdown-menu">
+        
+        <li id="li_type_menu_goto" class="top-menu-nav-title">Go To</li>
+        <li id="li_type_menu_notes">
+          <span id="type_menu_notes_span" title="Viewing the Notes for the current topic." class="top-menu-current">Notes</span>
+          
+        </li>
+        <li id="li_type_menu_practice">
+          <span id="type_menu_problem_span_de" class="top-menu-item-text">Practice and Assignment problems are not yet written.  As time permits I am working on them, however I don't have the amount of free time that I used to so it will take a while before anything shows up here.</span>
+          
+          
+        </li>
+        <li id="li_type_menu_asgn">
+          
+          
+        </li>
+        <li id="li_type_menu_sh" class="top-menu-nav-title">Show/Hide</li>
+        <li id="li_type_menu_show" title="Show any hidden solutions and/or steps that may be present on the page."><a href="javascript:SHPrintPage(1,0)" id="view_menu_show">Show all Solutions/Steps/<em>etc.</em></a></li>
+        <li id="li_type_menu_hide" title="Hide any visible solutions and/or steps that may be present on the page."><a href="javascript:SHPrintPage(0,0)" id="view_menu_hide">Hide all Solutions/Steps/<em>etc.</em></a></li>
+      </ul>
+    </div>
+
+    <div id="jq-dropdown-quicknav" class="jq-dropdown jq-dropdown-tip">
+      <ul class="jq-dropdown-menu">
+        <li id="li_nav_menu_sections" class="top-menu-nav-title">Sections</li>
+        <li id="li_nav_menu_prev_section"><a href="IoV.html" id="a_nav_menu_prev_section" class="top-menu-nav-link" title="Previous Section : Intervals of Validity"><span class="top-menu-prev fas fa-chevron-left"></span> Intervals of Validity</a></li>
+        <li id="li_nav_menu_next_section"><a href="EquilibriumSolutions.html" id="a_nav_menu_next_section" class="top-menu-nav-link" title="Next Section : Equilibrium Solutions"><span class="top-menu-prev-hidden fas fa-chevron-left"></span> Equilibrium Solutions <span class="top-menu-next fas fa-chevron-right"></span></a></li>
+        <li id="li_nav_menu_chapters" class="top-menu-nav-title">Chapters</li>
+        <li id="li_nav_menu_prev_chapter"><a href="IntroBasic.html" id="a_nav_menu_prev_chapter" class="top-menu-nav-link" title="Previous Chapter : Basic Concepts"><span class="top-menu-prev fas fa-chevron-left"></span><span class="top-menu-prev fas fa-chevron-left"></span> Basic Concepts</a></li>
+        <li id="li_nav_menu_next_chapter"><a href="IntroSecondOrder.html" id="a_nav_menu_next_chapter" class="top-menu-nav-link" title="Next Chapter : Second Order DE&#39;s"><span class="top-menu-prev-hidden fas fa-chevron-left"></span><span class="top-menu-prev-hidden fas fa-chevron-left"></span> Second Order DE's <span class="top-menu-next fas fa-chevron-right"></span><span class="top-menu-next fas fa-chevron-right"></span></a></li>
+        
+        
+        
+        
+        <li id="li_nav_menu_classes" class="top-menu-nav-title">Classes</li>
+        <li>
+          
+          <a href="../Alg/Alg.html" id="nav_menu_alg_link" title="Go To Algebra Notes">Algebra</a>
+        </li>
+        <li>
+          
+          <a href="../CalcI/CalcI.html" id="nav_menu_calci_link" title="Go To Calculus I Notes">Calculus I</a>
+        </li>
+        <li>
+          
+          <a href="../CalcII/CalcII.html" id="nav_menu_calcii_link" title="Go To Calculus II Notes">Calculus II</a>
+        </li>
+        <li>
+          
+          <a href="../CalcIII/CalcIII.html" id="nav_menu_calciii_link" title="Go To Calculus III Notes">Calculus III</a>
+        </li>
+        <li>
+          <span id="nav_menu_de_span" title="Currently Viewing Differential Equations Material" class="top-menu-current">Differential Equations</span>
+          
+        </li>
+        <li id="li_nav_menu_extras" class="top-menu-nav-title">Extras</li>
+        <li>
+          
+          <a href="../../Extras/AlgebraTrigReview/AlgebraTrig.html" id="nav_menu_algtrig_link" title="Go To Algebra &amp; Trig Review">Algebra &amp; Trig Review</a>
+        </li>
+        <li>
+          
+          <a href="../../Extras/CommonErrors/CommonMathErrors.html" id="nav_menu_commonerrors_link" title="Go To Common Math Errors">Common Math Errors</a>
+        </li>
+        <li>
+          
+          <a href="../../Extras/ComplexPrimer/ComplexNumbers.html" id="nav_menu_complexnumbers_link" title="Go To Complex Numbers Primer">Complex Number Primer</a>
+        </li>
+        <li>
+          
+          <a href="../../Extras/StudyMath/HowToStudyMath.html" id="nav_menu_studymath_link" title="Go To How To Study Math">How To Study Math</a>
+        </li>
+        <li>
+          
+          <a href="../../Extras/CheatSheets_Tables.html" id="nav_menu_cheattables_link" title="Go To List of Cheat Sheets and Tables">Cheat Sheets &amp; Tables</a>
+        </li>
+        <li id="li_nav_menu_misc" class="top-menu-nav-title">Misc</li>
+        <li><a href="http://tutorial.math.lamar.edu/contact.aspx" id="nav_menu_contact" title="Contact Me!">Contact Me</a></li>
+        <li><a href="../../mathjax.html" id="nav_menu_mathjax" title="Info on MathJax and MathJax Configuration Menu">MathJax Help and Configuration</a></li>
+        <li><a href="../../mystudents.html" id="nav_menu_students" title="Go here if you are currently taking a class from me!">My Students</a></li>
+      </ul>
+    </div>
+
+    <div id="jq-dropdown-download" class="jq-dropdown jq-dropdown-anchor-right jq-dropdown-tip">
+      <ul class="jq-dropdown-menu">
+        
+        <li id="li_download_menu_notes" class="top-menu-nav-title">Notes Downloads</li>
+        <li id="li_download_menu_notes_book"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=B,1,N" id="download_menu_notes_book" data-PDF="Download - Menu$Notes - Book$Differential Equations$/Downloads/DE/Notes/Complete.pdf">Complete Book</a></li>
+        
+        <li id="li_download_menu_notes_chapter"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=C,17,N" id="download_menu_notes_chapter" data-PDF="Download - Menu$Notes - Chapter$Differential Equations - First Order DE&#39;s$/Downloads/DE/Notes/First_Order.pdf">Current Chapter</a></li>
+        <li id="li_download_menu_notes_section"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=S,92,N" id="download_menu_notes_section" data-PDF="Download - Menu$Notes - Section$Differential Equations - Modeling with First Order DE&#39;s$/Downloads/DE/Notes/Modeling.pdf">Current Section</a></li>
+        <li id="li_download_menu_practice" class="top-menu-nav-title">Practice Problems Downloads</li>
+        <li id="li_download_menu_practice_de"><span class="top-menu-item-text">Problems not yet written.</span></li>
+        
+        
+        
+        
+        
+        
+        
+        
+        <li id="li_download_menu_asgn" class="top-menu-nav-title">Assignment Problems Downloads</li>
+        <li id="li_download_menu_asgn_de"><span class="top-menu-item-text">Problems not yet written.</span></li>
+        
+        
+        
+        <li id="li_download_menu_other" class="top-menu-nav-title">Other Items</li>
+        <li id="li_download_menu_urls">
+          <a href="http://tutorial.math.lamar.edu/DownloadURLs.aspx?bi=1&amp;ci=17&amp;si=92" id="download_menu_urls">Get URL's for Download Items</a>
+        </li>
+      </ul>
+    </div>
+
+    <div id="jq-print-download" class="jq-dropdown jq-dropdown-anchor-right jq-dropdown-tip">
+      <ul class="jq-dropdown-menu">
+        <li id="li_print_menu_default"><a href="javascript:SHPrintPage()" id="print_menu_default">Print Page in Current Form (Default)</a></li>
+        <li id="li_print_menu_show"><a href="javascript:SHPrintPage(1,1)" id="print_menu_show">Show all Solutions/Steps and Print Page</a></li>
+        <li id="li_print_menu_hide"><a href="javascript:SHPrintPage(0,1)" id="print_menu_hide">Hide all Solutions/Steps and Print Page</a></li>
+      </ul>
+    </div>
+
+
+
+   
+
+    <nav id="menu" class="notes-nav">
+      <ul>
+        <li><a href="../../index.html" class="mm-link">Home</a></li>
+        <li><span>Classes</span></li>
+        <li><a href="../Alg/Alg.html" class="mm-link">Algebra</a>
+          <ul>
+            <li><a href="../Alg/Preliminaries.html" class="mm-link">Preliminaries</a>
+              <ul>
+                <li><a href="../Alg/IntegerExponents.html" class="mm-link">Integer Exponents</a></li>
+                <li><a href="../Alg/RationalExponents.html" class="mm-link">Rational Exponents</a></li>
+                <li><a href="../Alg/Radicals.html" class="mm-link">Radicals</a></li>
+                <li><a href="../Alg/Polynomials.html" class="mm-link">Polynomials</a></li>
+                <li><a href="../Alg/Factoring.html" class="mm-link">Factoring Polynomials</a></li>
+                <li><a href="../Alg/RationalExpressions.html" class="mm-link">Rational Expressions</a></li>
+                <li><a href="../Alg/ComplexNumbers.html" class="mm-link">Complex Numbers</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/Solving.html" class="mm-link">Solving Equations and Inequalities</a>
+              <ul>
+                <li><a href="../Alg/SolutionSets.html" class="mm-link">Solutions and Solution Sets</a></li>
+                <li><a href="../Alg/SolveLinearEqns.html" class="mm-link">Linear Equations</a></li>
+                <li><a href="../Alg/LinearApps.html" class="mm-link">Applications of Linear Equations</a></li>
+                <li><a href="../Alg/SolveMultiVariable.html" class="mm-link">Equations With More Than One Variable</a></li>
+                <li><a href="../Alg/SolveQuadraticEqnsI.html" class="mm-link">Quadratic Equations - Part I</a></li>
+                <li><a href="../Alg/SolveQuadraticEqnsII.html" class="mm-link">Quadratic Equations - Part II</a></li>
+                <li><a href="../Alg/SolveQuadraticEqnSummary.html" class="mm-link">Quadratic Equations : A Summary</a></li>
+                <li><a href="../Alg/QuadraticApps.html" class="mm-link">Applications of Quadratic Equations</a></li>
+                <li><a href="../Alg/ReducibleToQuadratic.html" class="mm-link">Equations Reducible to Quadratic in Form</a></li>
+                <li><a href="../Alg/SolveRadicalEqns.html" class="mm-link">Equations with Radicals</a></li>
+                <li><a href="../Alg/SolveLinearInequalities.html" class="mm-link">Linear Inequalities</a></li>
+                <li><a href="../Alg/SolvePolyInequalities.html" class="mm-link">Polynomial Inequalities</a></li>
+                <li><a href="../Alg/SolveRationalInequalities.html" class="mm-link">Rational Inequalities</a></li>
+                <li><a href="../Alg/SolveAbsValueEqns.html" class="mm-link">Absolute Value Equations</a></li>
+                <li><a href="../Alg/SolveAbsValueIneq.html" class="mm-link">Absolute Value Inequalities</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/Graphing_Functions.html" class="mm-link">Graphing and Functions</a>
+              <ul>
+                <li><a href="../Alg/Graphing.html" class="mm-link">Graphing</a></li>
+                <li><a href="../Alg/Lines.html" class="mm-link">Lines</a></li>
+                <li><a href="../Alg/Circles.html" class="mm-link">Circles</a></li>
+                <li><a href="../Alg/FunctionDefn.html" class="mm-link">The Definition of a Function</a></li>
+                <li><a href="../Alg/GraphFunctions.html" class="mm-link">Graphing Functions</a></li>
+                <li><a href="../Alg/CombineFunctions.html" class="mm-link">Combining Functions</a></li>
+                <li><a href="../Alg/InverseFunctions.html" class="mm-link">Inverse Functions</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/CommonGraphs.html" class="mm-link">Common Graphs</a>
+              <ul>
+                <li><a href="../Alg/Lines_Circles_PWF.html" class="mm-link">Lines, Circles and Piecewise Functions</a></li>
+                <li><a href="../Alg/Parabolas.html" class="mm-link">Parabolas</a></li>
+                <li><a href="../Alg/Ellipses.html" class="mm-link">Ellipses</a></li>
+                <li><a href="../Alg/Hyperbolas.html" class="mm-link">Hyperbolas</a></li>
+                <li><a href="../Alg/MiscFunctions.html" class="mm-link">Miscellaneous Functions</a></li>
+                <li><a href="../Alg/Transformations.html" class="mm-link">Transformations</a></li>
+                <li><a href="../Alg/Symmetry.html" class="mm-link">Symmetry</a></li>
+                <li><a href="../Alg/GraphRationalFcns.html" class="mm-link">Rational Functions</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/PolynomialFunctions.html" class="mm-link">Polynomial Functions</a>
+              <ul>
+                <li><a href="../Alg/DividingPolynomials.html" class="mm-link">Dividing Polynomials</a></li>
+                <li><a href="../Alg/ZeroesOfPolynomials.html" class="mm-link">Zeroes/Roots of Polynomials</a></li>
+                <li><a href="../Alg/GraphingPolynomials.html" class="mm-link">Graphing Polynomials</a></li>
+                <li><a href="../Alg/FindingZeroesOfPolynomials.html" class="mm-link">Finding Zeroes of Polynomials</a></li>
+                <li><a href="../Alg/PartialFractions.html" class="mm-link">Partial Fractions</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/ExpAndLog.html" class="mm-link">Exponential and Logarithm Functions</a>
+              <ul>
+                <li><a href="../Alg/ExpFunctions.html" class="mm-link">Exponential Functions</a></li>
+                <li><a href="../Alg/LogFunctions.html" class="mm-link">Logarithm Functions</a></li>
+                <li><a href="../Alg/SolveExpEqns.html" class="mm-link">Solving Exponential Equations</a></li>
+                <li><a href="../Alg/SolveLogEqns.html" class="mm-link">Solving Logarithm Equations</a></li>
+                <li><a href="../Alg/ExpLogApplications.html" class="mm-link">Applications</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/Systems.html" class="mm-link">Systems of Equations</a>
+              <ul>
+                <li><a href="../Alg/SystemsTwoVrble.html" class="mm-link">Linear Systems with Two Variables</a></li>
+                <li><a href="../Alg/SystemsThreeVrble.html" class="mm-link">Linear Systems with Three Variables</a></li>
+                <li><a href="../Alg/AugmentedMatrix.html" class="mm-link">Augmented Matrices</a></li>
+                <li><a href="../Alg/AugmentedMatrixII.html" class="mm-link">More on the Augmented Matrix</a></li>
+                <li><a href="../Alg/NonlinearSystems.html" class="mm-link">Nonlinear Systems</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../CalcI/CalcI.html" class="mm-link">Calculus I</a>
+          <ul>
+            <li><a href="../CalcI/ReviewIntro.html" class="mm-link">Review</a>
+              <ul>
+                <li><a href="../CalcI/Functions.html" class="mm-link">Functions</a></li>
+                <li><a href="../CalcI/InverseFunctions.html" class="mm-link">Inverse Functions</a></li>
+                <li><a href="../CalcI/TrigFcns.html" class="mm-link">Trig Functions</a></li>
+                <li><a href="../CalcI/TrigEquations.html" class="mm-link">Solving Trig Equations</a></li>
+                <li><a href="../CalcI/TrigEquations_CalcI.html" class="mm-link">Trig Equations with Calculators, Part I</a></li>
+                <li><a href="../CalcI/TrigEquations_CalcII.html" class="mm-link">Trig Equations with Calculators, Part II</a></li>
+                <li><a href="../CalcI/ExpFunctions.html" class="mm-link">Exponential Functions</a></li>
+                <li><a href="../CalcI/LogFcns.html" class="mm-link">Logarithm Functions</a></li>
+                <li><a href="../CalcI/ExpLogEqns.html" class="mm-link">Exponential and Logarithm Equations</a></li>
+                <li><a href="../CalcI/CommonGraphs.html" class="mm-link">Common Graphs</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcI/limitsIntro.html" class="mm-link">Limits</a>
+              <ul>
+                <li><a href="../CalcI/Tangents_Rates.html" class="mm-link">Tangent Lines and Rates of Change</a></li>
+                <li><a href="../CalcI/TheLimit.html" class="mm-link">The Limit</a></li>
+                <li><a href="../CalcI/OneSidedLimits.html" class="mm-link">One-Sided Limits</a></li>
+                <li><a href="../CalcI/LimitsProperties.html" class="mm-link">Limit Properties</a></li>
+                <li><a href="../CalcI/ComputingLimits.html" class="mm-link">Computing Limits</a></li>
+                <li><a href="../CalcI/InfiniteLimits.html" class="mm-link">Infinite Limits</a></li>
+                <li><a href="../CalcI/LimitsAtInfinityI.html" class="mm-link">Limits At Infinity, Part I</a></li>
+                <li><a href="../CalcI/LimitsAtInfinityII.html" class="mm-link">Limits At Infinity, Part II</a></li>
+                <li><a href="../CalcI/Continuity.html" class="mm-link">Continuity</a></li>
+                <li><a href="../CalcI/DefnOfLimit.html" class="mm-link">The Definition of the Limit</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcI/DerivativeIntro.html" class="mm-link">Derivatives</a>
+              <ul>
+                <li><a href="../CalcI/DefnOfDerivative.html" class="mm-link">The Definition of the Derivative</a></li>
+                <li><a href="../CalcI/DerivativeInterp.html" class="mm-link">Interpretation of the Derivative</a></li>
+                <li><a href="../CalcI/DiffFormulas.html" class="mm-link">Differentiation Formulas</a></li>
+                <li><a href="../CalcI/ProductQuotientRule.html" class="mm-link">Product and Quotient Rule</a></li>
+                <li><a href="../CalcI/DiffTrigFcns.html" class="mm-link">Derivatives of Trig Functions</a></li>
+                <li><a href="../CalcI/DiffExpLogFcns.html" class="mm-link">Derivatives of Exponential and Logarithm Functions</a></li>
+                <li><a href="../CalcI/DiffInvTrigFcns.html" class="mm-link">Derivatives of Inverse Trig Functions</a></li>
+                <li><a href="../CalcI/DiffHyperFcns.html" class="mm-link">Derivatives of Hyperbolic Functions</a></li>
+                <li><a href="../CalcI/ChainRule.html" class="mm-link">Chain Rule</a></li>
+                <li><a href="../CalcI/ImplicitDIff.html" class="mm-link">Implicit Differentiation</a></li>
+                <li><a href="../CalcI/RelatedRates.html" class="mm-link">Related Rates</a></li>
+                <li><a href="../CalcI/HigherOrderDerivatives.html" class="mm-link">Higher Order Derivatives</a></li>
+                <li><a href="../CalcI/LogDiff.html" class="mm-link">Logarithmic Differentiation</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcI/DerivAppsIntro.html" class="mm-link">Applications of Derivatives</a>
+              <ul>
+                <li><a href="../CalcI/RateOfChange.html" class="mm-link">Rates of Change</a></li>
+                <li><a href="../CalcI/CriticalPoints.html" class="mm-link">Critical Points</a></li>
+                <li><a href="../CalcI/MinMaxValues.html" class="mm-link">Minimum and Maximum Values</a></li>
+                <li><a href="../CalcI/AbsExtrema.html" class="mm-link">Finding Absolute Extrema</a></li>
+                <li><a href="../CalcI/ShapeofGraphPtI.html" class="mm-link">The Shape of a Graph, Part I</a></li>
+                <li><a href="../CalcI/ShapeofGraphPtII.html" class="mm-link">The Shape of a Graph, Part II</a></li>
+                <li><a href="../CalcI/MeanValueTheorem.html" class="mm-link">The Mean Value Theorem</a></li>
+                <li><a href="../CalcI/Optimization.html" class="mm-link">Optimization</a></li>
+                <li><a href="../CalcI/MoreOptimization.html" class="mm-link">More Optimization Problems</a></li>
+                <li><a href="../CalcI/LHospitalsRule.html" class="mm-link">L'Hospital's Rule and Indeterminate Forms</a></li>
+                <li><a href="../CalcI/LinearApproximations.html" class="mm-link">Linear Approximations</a></li>
+                <li><a href="../CalcI/Differentials.html" class="mm-link">Differentials</a></li>
+                <li><a href="../CalcI/NewtonsMethod.html" class="mm-link">Newton's Method</a></li>
+                <li><a href="../CalcI/BusinessApps.html" class="mm-link">Business Applications</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcI/IntegralsIntro.html" class="mm-link">Integrals</a>
+              <ul>
+                <li><a href="../CalcI/IndefiniteIntegrals.html" class="mm-link">Indefinite Integrals</a></li>
+                <li><a href="../CalcI/ComputingIndefiniteIntegrals.html" class="mm-link">Computing Indefinite Integrals</a></li>
+                <li><a href="../CalcI/SubstitutionRuleIndefinite.html" class="mm-link">Substitution Rule for Indefinite Integrals</a></li>
+                <li><a href="../CalcI/SubstitutionRuleIndefinitePtII.html" class="mm-link">More Substitution Rule</a></li>
+                <li><a href="../CalcI/AreaProblem.html" class="mm-link">Area Problem</a></li>
+                <li><a href="../CalcI/DefnOfDefiniteIntegral.html" class="mm-link">Definition of the Definite Integral</a></li>
+                <li><a href="../CalcI/ComputingDefiniteIntegrals.html" class="mm-link">Computing Definite Integrals</a></li>
+                <li><a href="../CalcI/SubstitutionRuleDefinite.html" class="mm-link">Substitution Rule for Definite Integrals</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcI/IntAppsIntro.html" class="mm-link">Applications of Integrals</a>
+              <ul>
+                <li><a href="../CalcI/AvgFcnValue.html" class="mm-link">Average Function Value</a></li>
+                <li><a href="../CalcI/AreaBetweenCurves.html" class="mm-link">Area Between Curves</a></li>
+                <li><a href="../CalcI/VolumeWithRings.html" class="mm-link">Volumes of Solids of Revolution / Method of Rings</a></li>
+                <li><a href="../CalcI/VolumeWithCylinder.html" class="mm-link">Volumes of Solids of Revolution/Method of Cylinders</a></li>
+                <li><a href="../CalcI/MoreVolume.html" class="mm-link">More Volume Problems</a></li>
+                <li><a href="../CalcI/Work.html" class="mm-link">Work</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcI/ExtrasIntro.html" class="mm-link">Extras</a>
+              <ul>
+                <li><a href="../CalcI/LimitProofs.html" class="mm-link">Proof of Various Limit Properties</a></li>
+                <li><a href="../CalcI/DerivativeProofs.html" class="mm-link">Proof of Various Derivative Properties</a></li>
+                <li><a href="../CalcI/ProofTrigDeriv.html" class="mm-link">Proof of Trig Limits</a></li>
+                <li><a href="../CalcI/DerivativeAppsProofs.html" class="mm-link">Proofs of Derivative Applications Facts</a></li>
+                <li><a href="../CalcI/ProofIntProp.html" class="mm-link">Proof of Various Integral Properties </a></li>
+                <li><a href="../CalcI/Area_Volume_Formulas.html" class="mm-link">Area and Volume Formulas</a></li>
+                <li><a href="../CalcI/TypesOfInfinity.html" class="mm-link">Types of Infinity</a></li>
+                <li><a href="../CalcI/SummationNotation.html" class="mm-link">Summation Notation</a></li>
+                <li><a href="../CalcI/ConstantofIntegration.html" class="mm-link">Constant of Integration</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../CalcII/CalcII.html" class="mm-link">Calculus II</a>
+          <ul>
+            <li><a href="../CalcII/IntTechIntro.html" class="mm-link">Integration Techniques</a>
+              <ul>
+                <li><a href="../CalcII/IntegrationByParts.html" class="mm-link">Integration by Parts</a></li>
+                <li><a href="../CalcII/IntegralsWithTrig.html" class="mm-link">Integrals Involving Trig Functions</a></li>
+                <li><a href="../CalcII/TrigSubstitutions.html" class="mm-link">Trig Substitutions</a></li>
+                <li><a href="../CalcII/PartialFractions.html" class="mm-link">Partial Fractions</a></li>
+                <li><a href="../CalcII/IntegralsWithRoots.html" class="mm-link">Integrals Involving Roots</a></li>
+                <li><a href="../CalcII/IntegralsWithQuadratics.html" class="mm-link">Integrals Involving Quadratics</a></li>
+                <li><a href="../CalcII/IntegrationStrategy.html" class="mm-link">Integration Strategy</a></li>
+                <li><a href="../CalcII/ImproperIntegrals.html" class="mm-link">Improper Integrals</a></li>
+                <li><a href="../CalcII/ImproperIntegralsCompTest.html" class="mm-link">Comparison Test for Improper Integrals</a></li>
+                <li><a href="../CalcII/ApproximatingDefIntegrals.html" class="mm-link">Approximating Definite Integrals</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/IntAppsIntro.html" class="mm-link">Applications of Integrals</a>
+              <ul>
+                <li><a href="../CalcII/ArcLength.html" class="mm-link">Arc Length</a></li>
+                <li><a href="../CalcII/SurfaceArea.html" class="mm-link">Surface Area</a></li>
+                <li><a href="../CalcII/CenterOfMass.html" class="mm-link">Center of Mass</a></li>
+                <li><a href="../CalcII/HydrostaticPressure.html" class="mm-link">Hydrostatic Pressure</a></li>
+                <li><a href="../CalcII/Probability.html" class="mm-link">Probability</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/ParametricIntro.html" class="mm-link">Parametric Equations and Polar Coordinates</a>
+              <ul>
+                <li><a href="../CalcII/ParametricEqn.html" class="mm-link">Parametric Equations and Curves</a></li>
+                <li><a href="../CalcII/ParaTangent.html" class="mm-link">Tangents with Parametric Equations</a></li>
+                <li><a href="../CalcII/ParaArea.html" class="mm-link">Area with Parametric Equations</a></li>
+                <li><a href="../CalcII/ParaArcLength.html" class="mm-link">Arc Length with Parametric Equations</a></li>
+                <li><a href="../CalcII/ParaSurfaceArea.html" class="mm-link">Surface Area with Parametric Equations</a></li>
+                <li><a href="../CalcII/PolarCoordinates.html" class="mm-link">Polar Coordinates</a></li>
+                <li><a href="../CalcII/PolarTangents.html" class="mm-link">Tangents with Polar Coordinates</a></li>
+                <li><a href="../CalcII/PolarArea.html" class="mm-link">Area with Polar Coordinates</a></li>
+                <li><a href="../CalcII/PolarArcLength.html" class="mm-link">Arc Length with Polar Coordinates</a></li>
+                <li><a href="../CalcII/PolarSurfaceArea.html" class="mm-link">Surface Area with Polar Coordinates</a></li>
+                <li><a href="../CalcII/ArcLength_SurfaceArea.html" class="mm-link">Arc Length and Surface Area Revisited</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/SeriesIntro.html" class="mm-link">Series & Sequences</a>
+              <ul>
+                <li><a href="../CalcII/Sequences.html" class="mm-link">Sequences</a></li>
+                <li><a href="../CalcII/MoreSequences.html" class="mm-link">More on Sequences</a></li>
+                <li><a href="../CalcII/Series_Basics.html" class="mm-link">Series - The Basics</a></li>
+                <li><a href="../CalcII/ConvergenceOfSeries.html" class="mm-link">Convergence/Divergence of Series</a></li>
+                <li><a href="../CalcII/Series_Special.html" class="mm-link">Special Series</a></li>
+                <li><a href="../CalcII/IntegralTest.html" class="mm-link">Integral Test</a></li>
+                <li><a href="../CalcII/SeriesCompTest.html" class="mm-link">Comparison Test/Limit Comparison Test</a></li>
+                <li><a href="../CalcII/AlternatingSeries.html" class="mm-link">Alternating Series Test</a></li>
+                <li><a href="../CalcII/AbsoluteConvergence.html" class="mm-link">Absolute Convergence</a></li>
+                <li><a href="../CalcII/RatioTest.html" class="mm-link">Ratio Test</a></li>
+                <li><a href="../CalcII/RootTest.html" class="mm-link">Root Test</a></li>
+                <li><a href="../CalcII/SeriesStrategy.html" class="mm-link">Strategy for Series</a></li>
+                <li><a href="../CalcII/EstimatingSeries.html" class="mm-link">Estimating the Value of a Series</a></li>
+                <li><a href="../CalcII/PowerSeries.html" class="mm-link">Power Series</a></li>
+                <li><a href="../CalcII/PowerSeriesandFunctions.html" class="mm-link">Power Series and Functions</a></li>
+                <li><a href="../CalcII/TaylorSeries.html" class="mm-link">Taylor Series</a></li>
+                <li><a href="../CalcII/TaylorSeriesApps.html" class="mm-link">Applications of Series</a></li>
+                <li><a href="../CalcII/BinomialSeries.html" class="mm-link">Binomial Series</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/VectorsIntro.html" class="mm-link">Vectors</a>
+              <ul>
+                <li><a href="../CalcII/Vectors_Basics.html" class="mm-link">Vectors - The Basics</a></li>
+                <li><a href="../CalcII/VectorArithmetic.html" class="mm-link">Vector Arithmetic</a></li>
+                <li><a href="../CalcII/DotProduct.html" class="mm-link">Dot Product</a></li>
+                <li><a href="../CalcII/CrossProduct.html" class="mm-link">Cross Product</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/3DSpace.html" class="mm-link">3-Dimensional Space</a>
+              <ul>
+                <li><a href="../CalcII/3DCoords.html" class="mm-link">The 3-D Coordinate System</a></li>
+                <li><a href="../CalcII/EqnsOfLines.html" class="mm-link">Equations of Lines</a></li>
+                <li><a href="../CalcII/EqnsOfPlanes.html" class="mm-link">Equations of Planes</a></li>
+                <li><a href="../CalcII/QuadricSurfaces.html" class="mm-link">Quadric Surfaces</a></li>
+                <li><a href="../CalcII/MultiVrbleFcns.html" class="mm-link">Functions of Several Variables</a></li>
+                <li><a href="../CalcII/VectorFunctions.html" class="mm-link">Vector Functions</a></li>
+                <li><a href="../CalcII/VectorFcnsCalculus.html" class="mm-link">Calculus with Vector Functions</a></li>
+                <li><a href="../CalcII/TangentNormalVectors.html" class="mm-link">Tangent, Normal and Binormal Vectors</a></li>
+                <li><a href="../CalcII/VectorArcLength.html" class="mm-link">Arc Length with Vector Functions</a></li>
+                <li><a href="../CalcII/Curvature.html" class="mm-link">Curvature</a></li>
+                <li><a href="../CalcII/Velocity_Acceleration.html" class="mm-link">Velocity and Acceleration</a></li>
+                <li><a href="../CalcII/CylindricalCoords.html" class="mm-link">Cylindrical Coordinates</a></li>
+                <li><a href="../CalcII/SphericalCoords.html" class="mm-link">Spherical Coordinates</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../CalcIII/CalcIII.html" class="mm-link">Calculus III</a>
+          <ul>
+            <li><a href="../CalcIII/3DSpace.html" class="mm-link">3-Dimensional Space</a>
+              <ul>
+                <li><a href="../CalcIII/3DCoords.html" class="mm-link">The 3-D Coordinate System</a></li>
+                <li><a href="../CalcIII/EqnsOfLines.html" class="mm-link">Equations of Lines</a></li>
+                <li><a href="../CalcIII/EqnsOfPlanes.html" class="mm-link">Equations of Planes</a></li>
+                <li><a href="../CalcIII/QuadricSurfaces.html" class="mm-link">Quadric Surfaces</a></li>
+                <li><a href="../CalcIII/MultiVrbleFcns.html" class="mm-link">Functions of Several Variables</a></li>
+                <li><a href="../CalcIII/VectorFunctions.html" class="mm-link">Vector Functions</a></li>
+                <li><a href="../CalcIII/VectorFcnsCalculus.html" class="mm-link">Calculus with Vector Functions</a></li>
+                <li><a href="../CalcIII/TangentNormalVectors.html" class="mm-link">Tangent, Normal and Binormal Vectors</a></li>
+                <li><a href="../CalcIII/VectorArcLength.html" class="mm-link">Arc Length with Vector Functions</a></li>
+                <li><a href="../CalcIII/Curvature.html" class="mm-link">Curvature</a></li>
+                <li><a href="../CalcIII/Velocity_Acceleration.html" class="mm-link">Velocity and Acceleration</a></li>
+                <li><a href="../CalcIII/CylindricalCoords.html" class="mm-link">Cylindrical Coordinates</a></li>
+                <li><a href="../CalcIII/SphericalCoords.html" class="mm-link">Spherical Coordinates</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/PartialDerivsIntro.html" class="mm-link">Partial Derivatives</a>
+              <ul>
+                <li><a href="../CalcIII/Limits.html" class="mm-link">Limits</a></li>
+                <li><a href="../CalcIII/PartialDerivatives.html" class="mm-link">Partial Derivatives</a></li>
+                <li><a href="../CalcIII/PartialDerivInterp.html" class="mm-link">Interpretations of Partial Derivatives</a></li>
+                <li><a href="../CalcIII/HighOrderPartialDerivs.html" class="mm-link">Higher Order Partial Derivatives</a></li>
+                <li><a href="../CalcIII/Differentials.html" class="mm-link">Differentials</a></li>
+                <li><a href="../CalcIII/ChainRule.html" class="mm-link">Chain Rule</a></li>
+                <li><a href="../CalcIII/DirectionalDeriv.html" class="mm-link">Directional Derivatives</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/PartialDerivAppsIntro.html" class="mm-link">Applications of Partial Derivatives</a>
+              <ul>
+                <li><a href="../CalcIII/TangentPlanes.html" class="mm-link">Tangent Planes and Linear Approximations</a></li>
+                <li><a href="../CalcIII/GradientVectorTangentPlane.html" class="mm-link">Gradient Vector, Tangent Planes and Normal Lines</a></li>
+                <li><a href="../CalcIII/RelativeExtrema.html" class="mm-link">Relative Minimums and Maximums</a></li>
+                <li><a href="../CalcIII/AbsoluteExtrema.html" class="mm-link">Absolute Minimums and Maximums</a></li>
+                <li><a href="../CalcIII/LagrangeMultipliers.html" class="mm-link">Lagrange Multipliers</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/MultipleIntegralsIntro.html" class="mm-link">Multiple Integrals</a>
+              <ul>
+                <li><a href="../CalcIII/DoubleIntegrals.html" class="mm-link">Double Integrals</a></li>
+                <li><a href="../CalcIII/IteratedIntegrals.html" class="mm-link">Iterated Integrals</a></li>
+                <li><a href="../CalcIII/DIGeneralRegion.html" class="mm-link">Double Integrals over General Regions</a></li>
+                <li><a href="../CalcIII/DIPolarCoords.html" class="mm-link">Double Integrals in Polar Coordinates</a></li>
+                <li><a href="../CalcIII/TripleIntegrals.html" class="mm-link">Triple Integrals</a></li>
+                <li><a href="../CalcIII/TICylindricalCoords.html" class="mm-link">Triple Integrals in Cylindrical Coordinates</a></li>
+                <li><a href="../CalcIII/TISphericalCoords.html" class="mm-link">Triple Integrals in Spherical Coordinates</a></li>
+                <li><a href="../CalcIII/ChangeOfVariables.html" class="mm-link">Change of Variables</a></li>
+                <li><a href="../CalcIII/SurfaceArea.html" class="mm-link">Surface Area</a></li>
+                <li><a href="../CalcIII/Area_Volume.html" class="mm-link">Area and Volume Revisited</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/LineIntegralsIntro.html" class="mm-link">Line Integrals</a>
+              <ul>
+                <li><a href="../CalcIII/VectorFields.html" class="mm-link">Vector Fields</a></li>
+                <li><a href="../CalcIII/LineIntegralsPtI.html" class="mm-link">Line Integrals - Part I</a></li>
+                <li><a href="../CalcIII/LineIntegralsPtII.html" class="mm-link">Line Integrals - Part II</a></li>
+                <li><a href="../CalcIII/LineIntegralsVectorFields.html" class="mm-link">Line Integrals of Vector Fields</a></li>
+                <li><a href="../CalcIII/FundThmLineIntegrals.html" class="mm-link">Fundamental Theorem for Line Integrals</a></li>
+                <li><a href="../CalcIII/ConservativeVectorField.html" class="mm-link">Conservative Vector Fields</a></li>
+                <li><a href="../CalcIII/GreensTheorem.html" class="mm-link">Green's Theorem</a></li>
+                <li><a href="../CalcIII/CurlDivergence.html" class="mm-link">Curl and Divergence</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcIII/SurfaceIntegralsIntro.html" class="mm-link">Surface Integrals</a>
+              <ul>
+                <li><a href="../CalcIII/ParametricSurfaces.html" class="mm-link">Parametric Surfaces</a></li>
+                <li><a href="../CalcIII/SurfaceIntegrals.html" class="mm-link">Surface Integrals</a></li>
+                <li><a href="../CalcIII/SurfIntVectorField.html" class="mm-link">Surface Integrals of Vector Fields</a></li>
+                <li><a href="../CalcIII/StokesTheorem.html" class="mm-link">Stokes' Theorem</a></li>
+                <li><a href="../CalcIII/DivergenceTheorem.html" class="mm-link">Divergence Theorem</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="DE.html" class="mm-link">Differential Equations</a>
+          <ul>
+            <li><a href="IntroBasic.html" class="mm-link">Basic Concepts</a>
+              <ul>
+                <li><a href="Definitions.html" class="mm-link">Definitions</a></li>
+                <li><a href="DirectionFields.html" class="mm-link">Direction Fields</a></li>
+                <li><a href="FinalThoughts.html" class="mm-link">Final Thoughts</a></li>
+              </ul>
+            </li>
+            <li><a href="IntroFirstOrder.html" class="mm-link">First Order DE's</a>
+              <ul>
+                <li><a href="Linear.html" class="mm-link">Linear Equations</a></li>
+                <li><a href="Separable.html" class="mm-link">Separable Equations</a></li>
+                <li><a href="Exact.html" class="mm-link">Exact Equations</a></li>
+                <li><a href="Bernoulli.html" class="mm-link">Bernoulli Differential Equations</a></li>
+                <li><a href="Substitutions.html" class="mm-link">Substitutions</a></li>
+                <li><a href="IoV.html" class="mm-link">Intervals of Validity</a></li>
+                <li><a href="Modeling.html" class="mm-link">Modeling with First Order DE's</a></li>
+                <li><a href="EquilibriumSolutions.html" class="mm-link">Equilibrium Solutions</a></li>
+                <li><a href="EulersMethod.html" class="mm-link">Euler's Method</a></li>
+              </ul>
+            </li>
+            <li><a href="IntroSecondOrder.html" class="mm-link">Second Order DE's</a>
+              <ul>
+                <li><a href="SecondOrderConcepts.html" class="mm-link">Basic Concepts</a></li>
+                <li><a href="RealRoots.html" class="mm-link">Real & Distinct Roots</a></li>
+                <li><a href="ComplexRoots.html" class="mm-link">Complex Roots</a></li>
+                <li><a href="RepeatedRoots.html" class="mm-link">Repeated Roots</a></li>
+                <li><a href="ReductionofOrder.html" class="mm-link">Reduction of Order</a></li>
+                <li><a href="FundamentalSetsofSolutions.html" class="mm-link">Fundamental Sets of Solutions</a></li>
+                <li><a href="Wronskian.html" class="mm-link">More on the  Wronskian</a></li>
+                <li><a href="NonhomogeneousDE.html" class="mm-link">Nonhomogeneous Differential Equations</a></li>
+                <li><a href="UndeterminedCoefficients.html" class="mm-link">Undetermined Coefficients</a></li>
+                <li><a href="VariationofParameters.html" class="mm-link">Variation of Parameters</a></li>
+                <li><a href="Vibrations.html" class="mm-link">Mechanical Vibrations</a></li>
+              </ul>
+            </li>
+            <li><a href="LaplaceIntro.html" class="mm-link">Laplace Transforms</a>
+              <ul>
+                <li><a href="LaplaceDefinition.html" class="mm-link">The Definition</a></li>
+                <li><a href="LaplaceTransforms.html" class="mm-link">Laplace Transforms</a></li>
+                <li><a href="InverseTransforms.html" class="mm-link">Inverse Laplace Transforms</a></li>
+                <li><a href="StepFunctions.html" class="mm-link">Step Functions</a></li>
+                <li><a href="IVPWithLaplace.html" class="mm-link">Solving IVP's with Laplace Transforms</a></li>
+                <li><a href="IVPWithNonConstantCoefficient.html" class="mm-link">Nonconstant Coefficient IVP's</a></li>
+                <li><a href="IVPWithStepFunction.html" class="mm-link">IVP's With Step Functions</a></li>
+                <li><a href="DiracDeltaFunction.html" class="mm-link">Dirac Delta Function</a></li>
+                <li><a href="ConvolutionIntegrals.html" class="mm-link">Convolution Integrals</a></li>
+                <li><a href="Laplace_Table.html" class="mm-link">Table Of Laplace Transforms</a></li>
+              </ul>
+            </li>
+            <li><a href="SystemsIntro.html" class="mm-link">Systems of DE's</a>
+              <ul>
+                <li><a href="LA_Systems.html" class="mm-link">Review : Systems of Equations</a></li>
+                <li><a href="LA_Matrix.html" class="mm-link">Review : Matrices & Vectors</a></li>
+                <li><a href="LA_Eigen.html" class="mm-link">Review : Eigenvalues & Eigenvectors</a></li>
+                <li><a href="SystemsDE.html" class="mm-link">Systems of Differential Equations</a></li>
+                <li><a href="SolutionsToSystems.html" class="mm-link">Solutions to Systems</a></li>
+                <li><a href="PhasePlane.html" class="mm-link">Phase Plane</a></li>
+                <li><a href="RealEigenvalues.html" class="mm-link">Real Eigenvalues</a></li>
+                <li><a href="ComplexEigenvalues.html" class="mm-link">Complex Eigenvalues</a></li>
+                <li><a href="RepeatedEigenvalues.html" class="mm-link">Repeated Eigenvalues</a></li>
+                <li><a href="NonhomogeneousSystems.html" class="mm-link">Nonhomogeneous Systems</a></li>
+                <li><a href="SystemsLaplace.html" class="mm-link">Laplace Transforms</a></li>
+                <li><a href="SystemsModeling.html" class="mm-link">Modeling</a></li>
+              </ul>
+            </li>
+            <li><a href="SeriesIntro.html" class="mm-link">Series Solutions to DE's</a>
+              <ul>
+                <li><a href="PowerSeries.html" class="mm-link">Review : Power Series</a></li>
+                <li><a href="TaylorSeries.html" class="mm-link">Review : Taylor Series</a></li>
+                <li><a href="SeriesSolutions.html" class="mm-link">Series Solutions</a></li>
+                <li><a href="EulerEquations.html" class="mm-link">Euler Equations</a></li>
+              </ul>
+            </li>
+            <li><a href="IntroHigherOrder.html" class="mm-link">Higher Order Differential Equations</a>
+              <ul>
+                <li><a href="HOBasicConcepts.html" class="mm-link">Basic Concepts for <em>n</em><sup>th</sup> Order Linear Equations</a></li>
+                <li><a href="HOHomogeneousDE.html" class="mm-link">Linear Homogeneous Differential Equations</a></li>
+                <li><a href="HOUndeterminedCoeff.html" class="mm-link">Undetermined Coefficients</a></li>
+                <li><a href="HOVariationOfParam.html" class="mm-link">Variation of Parameters</a></li>
+                <li><a href="HOLaplaceTransforms.html" class="mm-link">Laplace Transforms</a></li>
+                <li><a href="HOSystems.html" class="mm-link">Systems of Differential Equations</a></li>
+                <li><a href="HOSeries.html" class="mm-link">Series Solutions</a></li>
+              </ul>
+            </li>
+            <li><a href="IntroBVP.html" class="mm-link">Boundary Value Problems &amp; Fourier Series</a>
+              <ul>
+                <li><a href="BoundaryValueProblem.html" class="mm-link">Boundary Value Problems</a></li>
+                <li><a href="BVPEvals.html" class="mm-link">Eigenvalues and Eigenfunctions</a></li>
+                <li><a href="PeriodicOrthogonal.html" class="mm-link">Periodic Functions &amp; Orthogonal Functions</a></li>
+                <li><a href="FourierSineSeries.html" class="mm-link">Fourier Sine Series</a></li>
+                <li><a href="FourierCosineSeries.html" class="mm-link">Fourier Cosine Series</a></li>
+                <li><a href="FourierSeries.html" class="mm-link">Fourier Series</a></li>
+                <li><a href="ConvergenceFourierSeries.html" class="mm-link">Convergence of Fourier Series</a></li>
+              </ul>
+            </li>
+            <li><a href="IntroPDE.html" class="mm-link">Partial Differential Equations </a>
+              <ul>
+                <li><a href="TheHeatEquation.html" class="mm-link">The Heat Equation</a></li>
+                <li><a href="TheWaveEquation.html" class="mm-link">The Wave Equation</a></li>
+                <li><a href="PDETerminology.html" class="mm-link">Terminology</a></li>
+                <li><a href="SeparationofVariables.html" class="mm-link">Separation of Variables</a></li>
+                <li><a href="SolvingHeatEquation.html" class="mm-link">Solving the Heat Equation</a></li>
+                <li><a href="HeatEqnNonZero.html" class="mm-link">Heat Equation with Non-Zero Temperature Boundaries</a></li>
+                <li><a href="LaplacesEqn.html" class="mm-link">Laplace's Equation</a></li>
+                <li><a href="VibratingString.html" class="mm-link">Vibrating String</a></li>
+                <li><a href="PDESummary.html" class="mm-link">Summary of Separation of Variables</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><span>Extras</span></li>
+        <li><a href="../../Extras/AlgebraTrigReview/AlgebraTrig.html" class="mm-link">Algebra &amp; Trig Review</a>
+          <ul>
+            <li><a href="../../Extras/AlgebraTrigReview/AlgebraIntro.html" class="mm-link">Algebra</a>
+              <ul>
+                <li><a href="../../Extras/AlgebraTrigReview/Exponents.html" class="mm-link">Exponents </a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/AbsoluteValue.html" class="mm-link">Absolute Value</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Radicals.html" class="mm-link">Radicals</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Rationalizing.html" class="mm-link">Rationalizing </a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Functions.html" class="mm-link">Functions </a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/MultPoly.html" class="mm-link">Multiplying Polynomials</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Factoring.html" class="mm-link">Factoring</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SimpRatExp.html" class="mm-link">Simplifying Rational Expressions</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Graphing.html" class="mm-link">Graphing and Common Graphs</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveEqnPtI.html" class="mm-link">Solving Equations, Part I</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveEqnPtII.html" class="mm-link">Solving Equations, Part II</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveSystems.html" class="mm-link">Solving Systems of Equations</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveIneq.html" class="mm-link">Solving Inequalities</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveAbsValue.html" class="mm-link">Absolute Value Equations and Inequalities</a></li>
+              </ul>
+            </li>
+            <li><a href="../../Extras/AlgebraTrigReview/TrigIntro.html" class="mm-link">Trigonometry</a>
+              <ul>
+                <li><a href="../../Extras/AlgebraTrigReview/TrigFunctions.html" class="mm-link">Trig Function Evaluation</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/TrigGraphs.html" class="mm-link">Graphs of Trig Functions</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/TrigFormulas.html" class="mm-link">Trig Formulas</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveTrigEqn.html" class="mm-link">Solving Trig Equations</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/InverseTrig.html" class="mm-link">Inverse Trig Functions</a></li>
+              </ul>
+            </li>
+            <li><a href="../../Extras/AlgebraTrigReview/ExpLogIntro.html" class="mm-link">Exponentials & Logarithms</a>
+              <ul>
+                <li><a href="../../Extras/AlgebraTrigReview/ExponentialFcns.html" class="mm-link">Basic Exponential Functions</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/LogarithmFcns.html" class="mm-link">Basic Logarithm Functions</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/LogProperties.html" class="mm-link">Logarithm Properties</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SimpLogs.html" class="mm-link">Simplifying Logarithms</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveExpEqn.html" class="mm-link">Solving Exponential Equations</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveLogEqn.html" class="mm-link">Solving Logarithm Equations</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../../Extras/CommonErrors/CommonMathErrors.html" class="mm-link">Common Math Errors</a>
+          <ul>
+            <li><a href="../../Extras/CommonErrors/GeneralErrors.html" class="mm-link">General Errors</a>
+            </li>
+            <li><a href="../../Extras/CommonErrors/AlgebraErrors.html" class="mm-link">Algebra Errors</a>
+            </li>
+            <li><a href="../../Extras/CommonErrors/TrigErrors.html" class="mm-link">Trig Errors</a>
+            </li>
+            <li><a href="../../Extras/CommonErrors/CommonErrors.html" class="mm-link">Common Errors</a>
+            </li>
+            <li><a href="../../Extras/CommonErrors/CalculusErrors.html" class="mm-link">Calculus Errors</a>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../../Extras/ComplexPrimer/ComplexNumbers.html" class="mm-link">Complex Number Primer</a>
+          <ul>
+            <li><a href="../../Extras/ComplexPrimer/Definition.html" class="mm-link">The Definition</a>
+            </li>
+            <li><a href="../../Extras/ComplexPrimer/Arithmetic.html" class="mm-link">Arithmetic</a>
+            </li>
+            <li><a href="../../Extras/ComplexPrimer/ConjugateModulus.html" class="mm-link">Conjugate and Modulus</a>
+            </li>
+            <li><a href="../../Extras/ComplexPrimer/Forms.html" class="mm-link">Polar and Exponential Forms</a>
+            </li>
+            <li><a href="../../Extras/ComplexPrimer/Roots.html" class="mm-link">Powers and Roots</a>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../../Extras/StudyMath/HowToStudyMath.html" class="mm-link">How To Study Math</a>
+          <ul>
+            <li><a href="../../Extras/StudyMath/GeneralTips.html" class="mm-link">General Tips</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/TakingNotes.html" class="mm-link">Taking Notes</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/GettingHelp.html" class="mm-link">Getting Help</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/Homework.html" class="mm-link">Doing Homework</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/ProblemSolving.html" class="mm-link">Problem Solving</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/StudyForExam.html" class="mm-link">Studying For an Exam</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/TakingExam.html" class="mm-link">Taking an Exam</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/Errors.html" class="mm-link">Learn From Your Errors</a>
+            </li>
+          </ul>
+        </li>
+
+        <li><span>Misc Links</span></li>
+        <li><a href="http://tutorial.math.lamar.edu/contact.aspx" class="mm-link">Contact Me</a></li>
+        <li><a href="../../links.html" class="mm-link">Links</a></li>
+        <li><a href="../../mathjax.html" class="mm-link">MathJax Help and Configuration</a></li>
+        <li><a href="../../mystudents.html" class="mm-link">My Students</a></li>
+        <li><a href="http://tutorial.math.lamar.edu/privacy.aspx" class="mm-link">Privacy Statement</a></li>
+        <li><a href="../../help.html" class="mm-link">Site Help & FAQ</a></li>
+        <li><a href="http://tutorial.math.lamar.edu/terms.aspx" class="mm-link">Terms of Use</a></li>
+      </ul>
+    </nav>
+
+
+
+    <div class="top-info-bar">
+      <span id="mobile-title" class="mobile-header-title header-title">Paul's Online Notes</span>
+      <br />
+      <span class="top-menu-breadcrumb">
+        <a href="../../index.html" id="breadcrumb_home_link" title="Go to Main Page">Home</a>
+        <span id="breadcrumb_h_b_sep_span">/ </span>
+        <a href="DE.html" id="breadcrumb_book_link" title="Go to Book Introduction">Differential Equations</a>
+        
+        <span id="breadcrumb_b_c_sep_span">/ </span>
+        <a href="IntroFirstOrder.html" id="breadcrumb_chapter_link" title="Go to Chapter Introduction">First Order DE&#39;s</a>
+        
+        <span id="breadcrumb_section_span"> / Modeling with First Order DE&#39;s</span>
+      </span>
+
+    </div>
+
+    
+
+    <div class="header-divider"></div>
+
+    <div class="content">  
+      
+      
+      <span id="SHLink_NoteMobile" class="SH-Link content-note-link-mobile">Show Mobile Notice</span>
+      <span id="SHImg_NoteMobile" class="fas fa-caret-right SH-padding content-note-link-mobile" aria-hidden="true"></span>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+
+      <span id="SHALink_S_Note" class="SH-Link SH-Hide SH-Bracket">Show All Notes</span>&nbsp;<span id="SHALink_H_Note" class="SH-Link SH-Hide SH-Bracket">Hide All Notes</span>
+      
+      
+      <div id="SHObj_NoteMobile" class="content-note-container content-note-container-mobile">
+        <div class="content-note-header">Mobile Notice</div>
+        <div class="content-note">You appear to be on a device with a "narrow" screen width (<em>i.e.</em> you are probably on a mobile phone).  Due to the nature of the mathematics on this site it is best views in landscape mode.  If your device is not in landscape mode many of the equations will run off the side of your device (should be able to scroll to see them) and some of the menu items will be cut off due to the narrow screen width.</div>
+      </div>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+
+      
+
+
+  <form method="post" action="http://tutorial.math.lamar.edu/Classes/DE/Modeling.aspx" id="ctl00">
+<div class="aspNetHidden">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="+JUa0fPZ84srzNAq12JmiNZGgVXhWUDATdjL6b47TQmY2YqVKTkqsAuMLgPymshwMJvwVSDnnuIra2ar5oDMbVPcq6UccrXeU49EHNcFnDOoYHzgh4yArraajxUAsojFB/0pGuhnqkr8/KbOUAt/T+ttGpQksdOn43VgKKCArXR0/9X8hM02p1PrUdcCoA1IXAft4hXbg2mRZ0Ck/ZTJqHTCWJTpOPpK8DVY7HkpMg42xcVo5cSZHySeaEgBftNEJp2x5qqHUzfWSWYAq/MdyBQxTZ2rXQJHM9dq+B1wiMhctrpUKZSkj+FNO2sph0YYSuQ3SH09uuxEgUVY/eDpXtoz2AMz1wq0jrnB8tb1W0S3cBp5cvSlSVDYOMzpqa4IzNJ2DwpOBb/UpojPIX3fa4eUggJ+lRUdhXHgyZ779zwQGOUw8sS3Sd+T+mmqmYjPBkhgLHsRsS+yKnJU1WI9trOsqn/6NGgybKov91bhLjyL9ZH+fG6KgemO++O2zjda18+8slSuqzriQQ+DTwS1NcalGCV72nrLIk7nXX20/0CdC7mXx87f3fau7ofIzRm6ELsahVuaAurccvSGvdQldpxc+rhzLpo8oy/dzDsOBN+3I/s9bRPNmg4676wLGJchC1txLKOLXKm8eY6rnEZ/ChfiXiJq6fZwRQT3WQWAHBjLL/C9LC1B1KXJpOZLFkMgS0TPRrB6x1LKd3HkWfqXw82jDki/Ae/DCK3GZiynaw6QjeHGpNFHNUKNKQ+u81SEBGr9ne4Y3LqkKohhNMNsA0/xTTyiA+4rwY6qpNRuU4izM0Bll6L9ur6nNJgcxYnfkkie49TvZpv7EJHc997Cvvk/RaSgeL1wLUcHQEQs/9vT/wd/adjXVQx8OtqsxM7PkRaH43E7npdsi05ptWAiE6wsNSWMAMpogb9OlZgoxOr8Fa/8FwoPOPZr3g1Kv6uGuTdXZ0h2tQ4HBg2p8K/F7AdceN5e+XvxNyuCjI9jYr/6BM146AymoI9qPf83WNTMRXTGJDqIq+t3OhyoatSexfHcR4eXgBodXYqyLqm0M7oPjbFN1LcESXx1H94/Sws2uzcUR2DgPfcPfh2obhFNwvgr1PyJsKGOI8vD482yD3qXecr4T1EwfAqIHHE6xZjG8y2yoBZiXxFwiARba9Gc3W/o6WoH2/pXPsNNs6vrI1uz11ErGkXvhOO4JwnMDnZ+KiDEsxr9V7nP48ZQMHtx8ALNqiwSxHRSaOrImd8PDYBcVfIc52aEvo83UTxR8IH/9a61KSWR5dCvSBg3z5dpw1CLrYr3Xya2pLArnlT1uelf3GIIwCHFIkyQNCiRDPGGCWQRiY6SS/KLvySh50vbnQ2RuymD/5p0FvfjRg8PRBUppY7pUBRq6eB9qQn2KLBkJgwe4DD/bBif/KjKQB05GHrVboxO/RTS21GGrIgudCIcPqsUlNcBNX9ta/4GAZTB5AwfGMNBqNhfRKh7pmuNtJZT6d4sMDOa4VoFLd2BIeow6uBZ5ESInwKerBcyc/KZSzjUfhK4edCBPn5Z2qVDbkvU6QHuAuZOW+Rg0XmzOB/uWgj3e81AJvwWURIW6WbEf4rWAVUBeaRgcETPL/1YVLdBLswIofdGw6x4q5EAXAhqiRCpmu3usZj041KMhnd1JHaK1JGKYXo3Fip9RXMm15VvKRA8sGvjQMSgpoSgf+91m3VANKzGQzdgj2RVhwUFfKRWS/CB7qJc6w0nM/7amcfVLLnCAOgyrPiFUeOp7GYHTUD7rTxVME/h2C2Q0OWhVf9ppePtF2nJoUNZisjgsB3g6GJh80xmry4DAVV20DRmp7NVs/abVzkc2fNEgdLfKTQBeuY80kv2srBuCMGmv0CInBGAGfWtkpyEfq84AkDaoujzO7PNGPu6Sd0rrUMKb2QMgoo4MIrxhIaFf7cUu0s4yjTvEC+svcVef6WeQs2vDRL0ShfHkGgbUazN1OgNtcFGfZibME1YV+/EwvrChtpHazHcvS7H2bZrVa0CLKNZNwJcttPVrvk7IYsq4PMJZhw4Yiv6t4eJjI600ZsFMljfJZlbmMpCOfPRt2zQBd1oelIte5/rMuQ1n/ZlQoeuBDJvX/yJx+x4U+GoxSVES3ryBONoJZzJTEZ5ZQuIitzaBBc7KoWmGH0sC/7CEoRcRRNxej7gMMQdAQ3LN5XF/hT3E6CPLCArK58TO8c1l7QXo8nQdyj0ugebW3G6pe82ZKBAlzP/h7ej7gkpqTHtg3mjvv8lNrJPfcBI5FcqtJ8Rj3qfqVQFqmmM6ILJvxDHoqEx6/xP5Vy/l5S/aZQ7y7YG0nyVoQ0XdqHfKV8HN7Dl4r1yad4nSL41k+x6DO1KmGYrJosKQ8eIUpS5ZxgsIrYkudHQ3o0gHlT8eJcIJy6hHwYiGujOXYxKGDKPGIlpY//NUdJttaKUX/CaZvpsjPsMilZlRe90zR6UnbdbhMmXZh9Tx9iK8BglNTgJi4ao8qNnwS8ysRPDo/WOB8LTQ4I/XyK7xyzRtldDHQzj0K3U1H7CFSg1eUcr0tiKN0LEvhLMSbPnUSfG+qeQJCgCryxhKTud6f0Jhea0nev0P+Lrf7cVQBEmwh8jdFBX2iHjWXSGb241E/LG6Sm/381+uWRvT6Bee1EPyIPQXMbIAH8pN5qPE1m5G1rM/1686VXuew+V//9mHSTdmheKRv9FTf4eq6s5JN/8VetnvkQG4+WdkoBBhFM9C2HVk1lLZYeAs2b+4fj1pRdyCRt/81w1fPamBdPa008A/jJWT5Di3qIB/LqtupWLImJkY4DN5wQCJSPY5OsI9xIBctlkrSmxYGdkdLCVLdw/xLKPqzaOu2wp8GRlA+dPfZahkZyaRPBCvQBIgRSbjF1ZON7DVBd+SBTB6ovrVJo2Vc8yDn7TbZjAbErrnQ0009eshu3sIEkQ6G6V8yP3VJOEgtlphSKJd19IGRynQOusre2lx+qH0WXVCUlirw+YtyBawl1muHXm3FqcpngOmfBpHO5doTA8j3YmwblLH64KRQoGr4uYcnQ4eBKkmEUme6YhGYYsW7S/+MEZo4PXAv9h1Ds+LFtDmIn7LtG6HOFpGsohLTaXdj457ySu9T+ZlmjxFcju/sxfyfLlOFLG2oh45NL+hjcTy0tkbC/k6Mv3Qvj3jFm+/OUTSVbmqBpfc0q1mKSuECxPnmipd9m2qsACh/9OYiOOLR+atwMDkTtWeziOx8g+zXyx+zChAiaJ0ZnryIS8WiWj3DEC80Bl9S0DNjNNZ/TvR13pA7na6UDu4+C4/fEpYIfRHY754zGj32Vbf2Yv5Vj/hf8HSTm1gG243lhYte18YQ4p30X+6YGaWmWhdy+mEMOqtDB/9sklutaI02dvdg/ockTnq0pBxLyifGbU+LEpd9hBTsBTQC3cAIjptTDEgsjz5rGUtF3tYO9qUVLYoPnhkcivPWwdPi1ef234mvo5PrdPusvAry3Ewf5nIG+D3Mtk/tDXjTsfbrzhV0SM69zAx9IJm5uYaC3qUhK297uNaClsfOeByqn0AHmlQ+qTWF5gR3r3H1gPtL4xbnoj8uHbKGTw8wK78HQQpaq3AVLneCb2tNpLEpLfoSeRHqDHN8fKhFfm8nFHnVPNLh1oeku9V8BRxKFq7WjhdtJVQe1aiSugKw2TkprSAa7qV1IyXcrfgNoGIC19YC0Y95MmB0bU4F5ozr6Ox0GALJxt5k51/ZqBbH9p6iDoWVdEwxJGkbZU2lQT9KkvFV65EXUoKpq3QTQQ2ziAOqqZ5WfvB+tFCwpCvyYwoy7NcSCjYPxX9spfEV5NGI9jJfOchlKkBbSqiTeJQcOf4Xto8KBjGQSBh+sjIo47+d+v9geAeklt+JJ3TqSX7Dw3cy1q4FR/VAcBVx+/ANsSTmfq32p8Ef1W/f+rk9oFaRuETI/J7HNyM4rnn1a2gALr62LJ2iCN6r2uuUKPaw9lUpkYM3GbHkC3qDCDMyR2aT7ebo7dDN8AnxpSvEtNiPLdXe/yCVLr21TKOu9+QmGJFC2azNNGxTC6iYB5g0K29HQJhFBeMNqHElpWUMidgOlBM2wyzH+M/pO5qtSz8pb47+5yV1P9o0hSdpTorewpMgccHLCh+Kcu/lX41PDTzj6RKT3Z387lxhL5tBAFQWjUJvvxj71V9GYAeoEWzGsMABSCJrbGNtea0feU757q/FvXTslETZZtiRXSPIkSL1UvR4Pd/OOWTliKaZiFECBNPeQ0HPeYEdTDPRlnskIPyW9JDyt/7bz/0TUrWwygaJNzIDrGmKWqaw9ZqhpDgNt/qSc0L/zlNFrnO8/0g4htBYXstGhcXTfeW6vBjn1UsZvTsIc5hDF/Oo6qLF3NXUk2m8ZKk1IkV0R6M7vkACSIoi8MXOhPxM295inB8B1jDy8Hb5lUv8Rza53B9s7j8yWp8TdQbDAFvmq3BtLo4ag250lucgy26oDOi1hiAFq0IEBwkZaGv9h+rzb1tksjrNdxlMI+NWH+FHvS9EFP2Ag1sXqbj09Hw/N/80r4vCvB4iP3ak++WI2KTsx5cAjU2900SEnNJRp5SHgZ/SBlKEAx27zkA+ifapSSTQ+CpyJy9FZQUlwSv+5GQTG3CjcD4mxe7vY2rjbQ1seRYT74ESnkEhaNTD20QZ3+JqwfulFUJB4dlk9yx54vJa5JcEgGx1/0TmR3VxnQMp2FiHORV0Q5wvrTL22T5KW8Dr4jfC1+w5pzUPpZHK68g1UJmvnLhHk67ZMo37h0jBZDOijm0bCD9YgfSar5sVIWk1LmQ6+IM0LlVpob47p4wJzYc8Q8OHmY1ZIWpgdL6Dow2KupcZlS+sKuHPJDhS3rP0PZylmA8/SdUsfICiQhSuYtoa/h09zqcp6ys5OooCFfvnGWgnpjpHUX7mFxUhQQ9L/H7Rr9EUOVXwW1sE1JKeG4I7y/8vnER+d7T2cEfc+Iq4PsTEv5hOOO1lfMi1+RfEIZp6GsxFxOMd7TCMtCNncVhTXlo1Qj7wTaO2aM/V336wTt8DPfl7efX5vfjrhoiUNl+KbWfm+M91Ecwgi0Uvu93/KcRmDIWy9OWRzkUYv+BUKH1tcgA4wEva72shXOchYq1qo6jvbV6m4MKXhH544GLMcn5K5SqRqfg9h+doGzLsl2rLPRvWwwbC7Ddt0SUbR/4eiq996KJ4IkIz1ioBSZsFeVlVYo+/+rpK+7i2ifPSkyoDMIo4N2fkG9nT7qwJkphMwOvPGEjB4oipu8MMAXtAfyUYkWW+Jl+1fPviGWmzHfNrCvhyHskR1n1b9BNO7v" />
+</div>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="0ADE13D5" />
+</div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </form>
+
+  <h3>Section 2-7 : Modeling with First Order Differential Equations</h3>
+
+    
+    <p>We now move into one of the main applications of differential equations both in this class and in general.  Modeling is the process of writing a differential equation to describe a physical situation.  Almost all of the differential equations that you will use in your job (for the engineers out there in the audience) are there because somebody, at some time, modeled a situation to come up with the differential equation that you are using.</p>
+    
+    <p>This section is not intended to completely teach you how to go about modeling all physical situations.  A whole course could be devoted to the subject of modeling and still not cover everything!  This section is designed to introduce you to the process of modeling and show you what is involved in modeling.  We will look at three different situations in this section : Mixing Problems, Population Problems, and Falling Objects.</p>
+    
+    <p>In all of these situations we will be forced to make assumptions that do not accurately depict reality in most cases, but without them the problems would be very difficult and beyond the scope of this discussion (and the course in most cases to be honest).</p>
+    
+    <p>So, let’s get started.</p>
+    
+    <a class="anchor" name="First_Model_Mixing"></a><h4>Mixing Problems</h4>
+    <p>In these problems we will start with a substance that is dissolved in a liquid.  Liquid will be entering and leaving a holding tank.  The liquid entering the tank may or may not contain more of the substance dissolved in it.  Liquid leaving the tank will of course contain the substance dissolved in it.  If \(Q(t)\) gives the amount of the substance dissolved in the liquid in the tank at any time \(t\) we want to develop a differential equation that, when solved, will give us an expression for \(Q(t)\).  Note as well that in many situations we can think of air as a liquid for the purposes of these kinds of discussions and so we don’t actually need to have an actual liquid but could instead use air as the “liquid”.</p>
+    
+    <p>The main assumption that we’ll be using here is that the concentration of the substance in the liquid is uniform throughout the tank.  Clearly this will not be the case, but if we allow the concentration to vary depending on the location in the tank the problem becomes very difficult and will involve partial differential equations, which is not the focus of this course.</p>
+    
+    <p>The main “equation” that we’ll be using to model this situation is :</p>
+    
+      <table class="table-center">
+        <tr>
+          <td class="table-cell-center">Rate of<br />
+              change of<br />
+              \(Q(t)\)</td>
+          <td>=</td>
+          <td class="table-cell-center">Rate at<br />
+              which \(Q(t)\)<br />
+              enters the<br />
+              tank</td>
+          <td>–</td>
+          <td class="table-cell-center">Rate at<br />
+              which \(Q(t)\)<br />
+              exits the<br />
+              tank</td>
+        </tr>
+      </table>
+    
+    
+    <p>where,</p>
+    <table class="table-center">
+        <tr>
+          <td>Rate of change of \(Q(t)\)  :  \(\displaystyle Q\left( t \right) = \frac{{dQ}}{{dt}} = Q'\left( t \right)\)</td>
+        </tr>
+        <tr>
+          <td class="table-cell-right">Rate at which \(Q(t)\) enters the tank  : (flow rate of liquid entering) x<br />
+            (concentration of substance in liquid entering)<br /><br /></td>
+        </tr>
+        <tr>
+          <td class="table-cell-right">Rate at which \(Q(t)\) exits the tank :  (flow rate of liquid exiting) x<br />
+            (concentration of substance in liquid exiting)</td>
+        </tr>
+      </table>
+    
+    <p>Let’s take a look at the first problem.</p>
+    <a class="anchor" name="First_Model_Ex1"></a>
+  <div class="example">
+    <span class="example-title">Example 1</span> A 1500 gallon tank initially contains 600 gallons of water with 5 lbs of salt dissolved in it.  Water enters the tank at a rate of 9 gal/hr and the water entering the tank has a salt concentration of \(\frac{1}{5}\left( {1 + \cos \left( t \right)} \right)\) lbs/gal.  If a well mixed solution leaves the tank at a rate of 6 gal/hr, how much salt is in the tank when it overflows?<
+    <div class="example-content">
+      <span id="SHLink_Soln1" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln1" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln1" class="soln-content">
+        <p>First off, let’s address the “well mixed solution” bit.  This is the assumption that was mentioned earlier.  We are going to assume that the instant the water enters the tank it somehow instantly disperses evenly throughout the tank to give a uniform concentration of salt in the tank at every point.  Again, this will clearly not be the case in reality, but it will allow us to do the problem.</p>
+          
+          <p>Now, to set up the IVP that we’ll need to solve to get \(Q(t)\) we’ll need the flow rate of the water entering (we’ve got that), the concentration of the salt in the water entering (we’ve got that), the flow rate of the water leaving (we’ve got that) and the concentration of the salt in the water exiting (we don’t have this yet).</p>
+          
+          <p>So, we first need to determine the concentration of the salt in the water exiting the tank.  Since we are assuming a uniform concentration of salt in the tank the concentration at any point in the tank and hence in the water exiting is given by,</p>
+          
+            \[{\mbox{Concentration}} = \frac{{{\mbox{Amount of salt in the tank at any time, }}t}}{{{\mbox{Volume of water in the tank at any time, }}t}}\]
+          
+            
+          <p>The amount at any time \(t\) is easy it’s just \(Q(t)\).  The volume is also pretty easy.  We start with 600 gallons and every hour 9 gallons enters and 6 gallons leave.  So, if we use \(t\) in hours, every hour 3 gallons enters the tank, or at any time \(t\) there is 600 + 3\(t\) gallons of water in the tank.</p>
+          
+          <p>So, the IVP for this situation is,</p>
+          
+            \[\begin{align*}Q'\left( t \right) & = \left( 9 \right)\left( {\frac{1}{5}\left( {1 + \cos \left( t \right)} \right)} \right) - \left( 6 \right)\left( {\frac{{Q\left( t \right)}}{{600 + 3t}}} \right)\hspace{0.25in}Q\left( 0 \right) = 5\\ Q'\left( t \right) & = \frac{9}{5}\left( {1 + \cos \left( t \right)} \right) - \frac{{2Q\left( t \right)}}{{200 + t}}\hspace{0.25in}Q\left( 0 \right) = 5\end{align*}\]
+          
+          <p>This is a linear differential equation and it isn’t too difficult to solve (hopefully).  We will show most of the details but leave the description of the solution process out.  If you need a refresher on solving linear first order differential equations go back and take a look at that <a href="Linear.html">section</a>.</p>
+          
+            \[Q'\left( t \right) + \frac{{2Q\left( t \right)}}{{200 + t}} = \frac{9}{5}\left( {1 + \cos \left( t \right)} \right)\]
+          
+            \[\mu \left( t \right) = {{\bf{e}}^{\int{{\frac{2}{{200 + t}}dt}}}} = {{\bf{e}}^{2\ln \left( {200 + t} \right)}} = {\left( {200 + t} \right)^2}\]
+          
+            \[\int{{{{\left( {{{\left( {200 + t} \right)}^2}Q\left( t \right)} \right)}^\prime }\,dt}}\, = \int{{\frac{9}{5}{{\left( {200 + t} \right)}^2}\left( {1 + \cos \left( t \right)} \right)dt}}\]<strong></strong></p>
+          
+            \[\begin{align*}{\left( {200 + t} \right)^2}Q\left( t \right) & = \frac{9}{5}\left( {\frac{1}{3}{{\left( {200 + t} \right)}^3} + {{\left( {200 + t} \right)}^2}\sin \left( t \right) + 2\left( {200 + t} \right)\cos \left( t \right) - 2\sin \left( t \right)} \right) + c\\ Q\left( t \right) & = \frac{9}{5}\left( {\frac{1}{3}\left( {200 + t} \right) + \sin \left( t \right) + \frac{{2\cos \left( t \right)}}{{200 + t}} - \frac{{2\sin \left( t \right)}}{{{{\left( {200 + t} \right)}^2}}}} \right) + \frac{c}{{{{\left( {200 + t} \right)}^2}}}\end{align*}\]
+          
+          <p>So, here’s the general solution.  Now, apply the initial condition to get the value of the constant, \(c\).</p>
+          
+            \[5 = Q\left( 0 \right) = \frac{9}{5}\left( {\frac{1}{3}\left( {200} \right) + \frac{2}{{200}}} \right) + \frac{c}{{{{\left( {200} \right)}^2}}}\hspace{0.25in}c =  - 4600720\]
+          
+          <p>So, the amount of salt in the tank at any time \(t\) is.</p>
+          
+            \[Q\left( t \right) = \frac{9}{5}\left( {\frac{1}{3}\left( {200 + t} \right) + \sin \left( t \right) + \frac{{2\cos \left( t \right)}}{{200 + t}} - \frac{{2\sin \left( t \right)}}{{{{\left( {200 + t} \right)}^2}}}} \right) - \frac{{4600720}}{{{{\left( {200 + t} \right)}^2}}}\]
+          
+            
+          <p>Now, the tank will overflow at \(t\) = 300 hrs.  The amount of salt in the tank at that time is.</p>
+          
+              \[Q\left( {300} \right) = 279.797{\mbox{ lbs}}\]
+          
+          <p>Here’s a graph of the salt in the tank before it overflows.</p>
+          
+            <div class="center-div"><img alt="A graph with domain $0 \le x \le 300$ and range $0 \le y \le 300$.  The graph starts at approximately (0,10) and increases nearly linearly until ending at approximately (300,300)." border="0" height="242" src="http://tutorial.math.lamar.edu/Classes/DE/Modeling_Files/image001.png" width="360" /></div>
+          
+          <p>Note that the whole graph should have small oscillations in it as you can see in the range from 200 to 250.  The scale of the oscillations however was small enough that the program used to generate the image had trouble showing all of them.
+      </div>
+    </div>
+  </div>
+    
+    <p>The work was a little messy with that one, but they will often be that way so don’t get excited about it.  This first example also assumed that nothing would change throughout the life of the process.  That, of course, will usually not be the case.  Let’s take a look at an example where something changes in the process.</p>
+    <a class="anchor" name="First_Model_Ex2"></a>
+  <div class="example">
+    <span class="example-title">Example 2</span> A 1000 gallon holding tank that catches runoff from some chemical process initially has 800 gallons of water with 2 ounces of pollution dissolved in it.  Polluted water flows into the tank at a rate of 3 gal/hr and contains 5 ounces/gal of pollution in it. A well mixed solution leaves the tank at 3 gal/hr as well.  When the amount of pollution in the holding tank reaches 500 ounces the inflow of polluted water is cut off and fresh water will enter the tank at a decreased rate of 2 gal/hr while the outflow is increased to 4 gal/hr.  Determine the amount of pollution in the tank at any time \(t\).
+    <div class="example-content">
+      <span id="SHLink_Soln2" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln2" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln2" class="soln-content">
+        <p>Okay, so clearly the pollution in the tank will increase as time passes.  If the amount of pollution ever reaches the maximum allowed there will be a change in the situation.  This will necessitate a change in the differential equation describing the process as well.  In other words, we’ll need two IVP’s for this problem.  One will describe the initial situation when polluted runoff is entering the tank and one for after the maximum allowed pollution is reached and fresh water is entering the tank.</p>
+          
+          <p>Here are the two IVP’s for this problem.</p>
+          
+            \[\begin{align*}{Q_1}^\prime \left( t \right) & = \left( 3 \right)\left( 5 \right) - \left( 3 \right)\left( {\frac{{{Q_1}\left( t \right)}}{{800}}} \right)\hspace{0.25in}{Q_1}\left( 0 \right) = 2\hspace{0.25in}0 \le t \le {t_m}\\ {Q_2}^\prime \left( t \right) & = \left( 2 \right)\left( 0 \right) - \left( 4 \right)\left( {\frac{{{Q_2}\left( t \right)}}{{800 - 2\left( {t - {t_m}} \right)}}} \right)\hspace{0.25in}{Q_2}\left( {{t_m}} \right) = 500\hspace{0.25in}{t_m} \le t \le {t_e}\end{align*}\]
+          <p>The first one is fairly straight forward and will be valid until the maximum amount of pollution is reached.  We’ll call that time \(t_{m}\).  Also, the volume in the tank remains constant during this time so we don’t need to do anything fancy with that this time in the second term as we did in the previous example.</p>
+          
+          <p>We’ll need a little explanation for the second one.  First notice that we don’t “start over” at \(t = 0\).  We start this one at \(t_{m}\), the time at which the new process starts.  Next, fresh water is flowing into the tank and so the concentration of pollution in the incoming water is zero.  This will drop out the first term, and that’s okay so don’t worry about that.</p>
+          
+          <p>Now, notice that the volume at any time looks a little funny.  During this time frame we are losing two gallons of water every hour of the process so we need the “-2” in there to account for that.  However, we can’t just use \(t\) as we did in the previous example.  When this new process starts up there needs to be 800 gallons of water in the tank and if we just use \(t\) there we won’t have the required 800 gallons that we need in the equation.  So, to make sure that we have the proper volume we need to put in the difference in times.  In this way once we are one hour into the new process (<em>i.e</em> \(t - t_{m} = 1\)) we will have 798 gallons in the tank as 
+            required.</p>
+          
+          <p>Finally, the second process can’t continue forever as eventually the tank will empty.  This is denoted in the time restrictions as \(t_{e}\).  We can also note that \(t_{e} = t_{m} + 400\) since the tank will empty 400 hours after this new process starts up.  Well, it will end provided something doesn’t come along and start changing the situation again.</p>
+          
+          <p>Okay, now that we’ve got all the explanations taken care of here’s the simplified version of the IVP’s that we’ll be solving.</p>
+          
+              \[\begin{align*}{Q_1}^\prime \left( t \right) & = 15 - \frac{{3{Q_1}\left( t \right)}}{{800}}\hspace{0.25in}{Q_1}\left( 0 \right) = 2\hspace{0.25in}0 \le t \le {t_m}\\ {Q_2}^\prime \left( t \right) & =  - \frac{{2{Q_2}\left( t \right)}}{{400 - \left( {t - {t_m}} \right)}}\hspace{0.25in}{Q_2}\left( {{t_m}} \right) = 500\hspace{0.25in}{t_m} \le t \le {t_e}\end{align*}\]
+          
+          <p>The first IVP is a fairly simple linear differential equation so we’ll leave the details of the solution to you to check.  Upon solving you get.</p>
+          
+              \[{Q_1}\left( t \right) = 4000 - 3998{{\bf{e}}^{ - \,\,\frac{{3\,t}}{{800}}}}\]
+          
+          <p>Now, we need to find \(t_{m}\).  This isn’t too bad all we need to do is determine when the amount of pollution reaches 500.  So, we need to solve.</p>
+          
+            \[{Q_1}\left( t \right) = 4000 - 3998{{\bf{e}}^{ - \,\,\frac{{3\,t}}{{800}}}} = 500\hspace{0.25in} \Rightarrow \hspace{0.25in}{t_m} = 35.4750\]
+          
+          <p>So, the second process will pick up at 35.475 hours.  For completeness sake here is the IVP with this information inserted.</p>
+          
+              \[{Q_2}^\prime \left( t \right) =  - \frac{{2{Q_2}\left( t \right)}}{{435.475 - t}}\hspace{0.25in}{Q_2}\left( {35.475} \right) = 500\hspace{0.25in}35.475 \le t \le 435.475\]
+          
+          <p>This differential equation is both linear and separable and again isn’t terribly difficult to solve so I’ll leave the details to you again to check that we should get.</p>
+          
+              \[{Q_2}\left( t \right) = \frac{{{{\left( {435.476 - t} \right)}^2}}}{{320}}\]
+          
+          <p>So, a solution that encompasses the complete running time of the process is</p>
+          
+              \[Q\left( t \right) = \left\{ {\begin{array}{*{20}{l}}{4000 - 3998{{\bf{e}}^{ - \,\,\frac{{3\,t}}{{800}}}}}&amp;{\hspace{0.25in}0 \le t \le 35.475}\\{\displaystyle \frac{{{{\left( {435.476 - t} \right)}^2}}}{{320}}}&amp;{\hspace{0.25in}35.475 \le t \le 435.4758}\end{array}} \right.\]
+          
+          <p>Here is a graph of the amount of pollution in the tank at any time \(t\).</p>
+          
+            <div class="center-div"><img alt="A graph with domain $0 \le t \le 450$ and range $0 \le y \le 500$.  The graph starts at approximately (0,2) and increases nearly linearly until reaching (35,500) and then decreasing until ending at approximately (435,0).  The rate of decrease lessens as the graph nears the t-axis." border="0" height="242" src="http://tutorial.math.lamar.edu/Classes/DE/Modeling_Files/image002.png" width="360" /></div>
+      </div>
+    </div>
+  </div>
+    
+    <p>As you can surely see, these problems can get quite complicated if you want them to.  Take the last example.  A more realistic situation would be that once the pollution dropped below some predetermined point the polluted runoff would, in all likelihood, be allowed to flow back in and then the whole process would repeat itself.  So, realistically, there should be at least one more IVP in the process.</p>
+    
+    <p>Let’s move on to another type of problem now.</p>
+    
+    <a class="anchor" name="First_Model_Pop"></a><h4>Population</h4>
+    <p>These are somewhat easier than the mixing problems although, in some ways, they are very similar to mixing problems.  So, if \(P(t)\) represents a population in a given region at any time \(t\) the basic equation that we’ll use is identical to the one that we used for mixing.  Namely,</p>
+    
+    <table class="table-center">
+        <tr>
+          <td class="table-cell-center">Rate of<br />
+              change of<br />
+              \(P(t)\)</td>
+          <td>=</td>
+          <td class="table-cell-center">Rate at<br />
+              which \(P(t)\)<br />
+              enters the<br />
+              region</td>
+          <td>-</td>
+          <td class="table-cell-center">Rate at<br />
+              which \(P(t)\)<br />
+              exits the<br />
+              region</td>
+        </tr>
+      </table>
+    
+    <p>Here the rate of change of \(P(t)\) is still the derivative.  What’s different this time is the rate at which the population enters and exits the region.  For population problems all the ways for a population to enter the region are included in the entering rate.  Birth rate and migration into the region are examples of terms that would go into the rate at which the population enters the region.  Likewise, all the ways for a population to leave an area will be included in the exiting rate.  Therefore, things like death rate, migration out and predation are examples of terms that would go into the rate at which the population exits the area.</p>
+    
+    <p>Here’s an example.</p>
+    
+    
+    
+    <a class="anchor" name="First_Model_Ex3"></a>
+  <div class="example">
+    <span class="example-title">Example 3</span> A population of insects in a region will grow at a rate that is proportional to their current population.  In the absence of any outside factors the population will triple in two weeks time.  On any given day there is a net migration into the area of 15 insects and 16 are eaten by the local bird population and 7 die of natural causes.  If there are initially 100 insects in the area will the population survive?  If not, when do they die out?
+    <div class="example-content">
+      <span id="SHLink_Soln3" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln3" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln3" class="soln-content">
+        <p>Let’s start out by looking at the birth rate.  We are told that the insects will be born at a rate that is proportional to the current population.  This means that the birth rate can be written as</p>
+          
+              \[rP\]
+          <p>where \(r\) is a positive constant that will need to be determined.  Now, let’s take everything into account and get the IVP for this problem.</p>
+          
+            \[\begin{align*}P' & = \left( {rP + 15} \right) - \left( {16 + 7} \right)\hspace{0.25in}P\left( 0 \right) = 100\\  P' & = rP - 8\hspace{0.25in}P\left( 0 \right) = 100\end{align*}\]
+          
+          <p>Note that in the first line we used parenthesis to note which terms went into which part of the differential equation.  Also note that we don’t make use of the fact that the population will triple in two weeks time in the absence of outside factors here.  In the absence of outside factors means that the ONLY thing that we can consider is birth rate.  Nothing else can enter into the picture and clearly we have other influences in the differential equation.</p>
+          
+          <p>So, just how does this tripling come into play?  Well, we should also note that without knowing \(r\) we will have a difficult time solving the IVP completely.  We will use the fact that the population triples in two weeks time to help us find \(r\).  In the absence of outside factors the differential equation would become.</p>
+          
+            \[P' = rP\hspace{0.25in}P\left( 0 \right) = 100\hspace{0.25in}P\left( {14} \right) = 300\]
+          
+          <p>Note that since we used days as the time frame in the actual IVP I needed to convert the two weeks to 14 days.  We could have just as easily converted the original IVP to weeks as the time frame, in which case there would have been a net change of –56 per week instead of the –8 per day that we are currently using in the original differential equation.</p>
+          
+          <p>Okay back to the differential equation that ignores all the outside factors.  This differential equation is separable and linear (either can be used) and is a simple differential equation to solve.  We’ll leave the detail to you to get the general solution.</p>
+          
+              \[P\left( t \right) = c{{\bf{e}}^{rt}}\]
+          
+          <p>Applying the initial condition gives \(c\) = 100.  Now apply the second condition.</p>
+          
+            \[300 = P\left( {14} \right) = 100{{\bf{e}}^{14r}}\hspace{0.25in}300 = 100{{\bf{e}}^{14r}}\]
+          
+          <p>We need to solve this for \(r\).  First divide both sides by 100, then take the natural log of both sides.</p>
+          
+            \[\begin{align*}3 & = {{\bf{e}}^{14r}}\\ \ln 3 & = \ln {{\bf{e}}^{14r}}\\ \ln 3 & = 14r\\  r & = \frac{{\ln 3}}{{14}}\end{align*}\]
+          
+          <p>We made use of the fact that \(\ln {{\bf{e}}^{g\left( x \right)}} = g\left( x \right)\) here to simplify the problem.  Now, that we have \(r\) we can go back and solve the original differential equation.  We’ll rewrite it a little for the solution process.</p>
+          
+            \[P' - \frac{{\ln 3}}{{14}}P =  - 8\hspace{0.25in}P\left( 0 \right) = 100\]
+          
+          <p>This is a fairly simple linear differential equation, but that coefficient of \(P\) always get people bent out of shape, so we’ll go through at least some of the details here.</p>
+          
+            \[\mu \left( t \right) = {{\bf{e}}^{\int{{ - \,\frac{{\ln 3}}{{14}}dt}}}} = {{\bf{e}}^{ - \,\,\frac{{\ln 3}}{{14}}\,t}}\]
+          
+          <p>Now, don’t get excited about the integrating factor here.  It’s just like \({{\bf{e}}^{2t}}\) only this time the constant is a little more complicated than just a 2, but it is a constant!  Now, solve the differential equation.</p>
+          
+            \[\begin{align*}\int{{{{\left( {P{{\bf{e}}^{ - \,\,\frac{{\ln 3}}{{14}}\,t}}} \right)}^\prime }\,dt}} & = \int{{ - 8{{\bf{e}}^{ - \,\,\frac{{\ln 3}}{{14}}\,t}}\,dt}}\\  P{{\bf{e}}^{ - \,\,\frac{{\ln 3}}{{14}}\,t}} & =  - 8\left( { - \frac{{14}}{{\ln 3}}} \right){{\bf{e}}^{ - \,\,\frac{{\ln 3}}{{14}}\,t}} + c\\ P\left( t \right) & = \frac{{112}}{{\ln 3}} + c{{\bf{e}}^{\frac{{\ln 3}}{{14}}\,t}}\end{align*}\]
+          
+          <p>Again, do not get excited about doing the right hand integral, it’s just like integrating \({{\bf{e}}^{2t}}\)!  Applying the initial condition gives the following.</p>
+          
+              \[P\left( t \right) = \frac{{112}}{{\ln 3}} + \left( {100 - \frac{{112}}{{\ln 3}}} \right){{\bf{e}}^{\frac{{\ln 3}}{{14}}\,t}} = \frac{{112}}{{\ln 3}} - 1.94679{{\bf{e}}^{\frac{{\ln 3}}{{14}}\,t}}\]
+          
+          <p>Now, the exponential has a positive exponent and so will go to plus infinity as \(t\) increases.  Its coefficient, however, is negative and so the whole population will go negative eventually.  Clearly, population can’t be negative, but in order for the population to go negative it must pass through zero.  In other words, eventually all the insects must die.  So, they don’t survive, and we can solve the following to determine when they die out.</p>
+          
+              \[0 = \frac{{112}}{{\ln 3}} - 1.94679{{\bf{e}}^{\frac{{\ln 3}}{{14}}\,t}}\hspace{0.25in} \Rightarrow \hspace{0.25in}t = 50.4415\,{\mbox{days}}\]
+          
+          <p>So, the insects will survive for around 7.2 weeks.  Here is a graph of the population during the time in which they survive.</p>
+          
+            <div class="center-div"><img alt="A graph with domain $0 \le t \le 50$ and range $0 \le y \le 100$.  The graph starts at approximately (0,100) and decreases slightly until reaching approximately (30,90) and then bending downwards and decreasing more sharply until ending at approximately (50,5). " border="0" height="242" src="http://tutorial.math.lamar.edu/Classes/DE/Modeling_Files/image003.png" width="360" /></div>
+      </div>
+    </div>
+  </div>
+
+    <p>As with the mixing problems, we could make the population problems more complicated by changing the circumstances at some point in time.  For instance, if at some point in time the local bird population saw a decrease due to disease they wouldn’t eat as much after that point and a second differential equation to govern the time after this point.</p>
+    
+    <p>Let’s now take a look at the final type of problem that we’ll be modeling in this section.</p>
+    
+    <h4>Falling Object</h4>
+    <p>This will not be the first time that we’ve looked into falling bodies.  If you recall, we looked at one of these when we were looking at <a href="DirectionFields.html">Direction Fields</a>.  In that section we saw that the basic equation that we’ll use is Newton’s Second Law of Motion.</p>
+    
+        \[mv' = F\left( {t,v} \right)\]
+    
+    <p>The two forces that we’ll be looking at here are gravity and air resistance.  The main issue with these problems is to correctly define conventions and then remember to keep those conventions.  By this we mean define which direction will be termed the positive direction and then make sure that all your forces match that convention.  This is especially important for air resistance as this is usually dependent on the velocity and so the “sign” of the velocity can and does affect the “sign” of the air resistance force.</p>
+    
+    <p>Let’s take a look at an example.</p>
+    <a class="anchor" name="First_Model_Ex4"></a>
+  <div class="example">
+    <span class="example-title">Example 4</span> A 50 kg object is shot from a cannon straight up with an initial velocity of 10m/s off a bridge that is 100 meters above the ground.  If air resistance is given by 5\(v\) determine the velocity of the mass when it hits the ground.
+    <div class="example-content">
+      <span id="SHLink_Soln4" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln4" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln4" class="soln-content">
+        <p>First, notice that when we say straight up, we really mean straight up, but in such a way that it will miss the bridge on the way back down.  Here is a sketch of the situation.</p>
+          
+            <div class="center-div"><img border="0" height="210" src="http://tutorial.math.lamar.edu/Classes/DE/Modeling_Files/image004.png" width="307" /></div>
+          
+            
+          <p>Notice the conventions that we set up for this problem.  Since the vast majority of the motion will be in the downward direction we decided to assume that everything acting in the downward direction should be positive.  Note that we also defined the “zero position” as the bridge, which makes the ground have a “position” of 100.</p>
+          
+          <p>Okay, if you think about it we actually have two situations here.  The initial phase in which the mass is rising in the air and the second phase when the mass is on its way down.  We will need to examine both situations and set up an IVP for each.  We will do this simultaneously.  Here are the forces that are acting on the object on the way up and on the way down.</p>
+          
+            <div class="center-div"><img alt="There are two figures in this sketch.  The left sketch is labeled “Up” and the right is labeled “Down”.  Each has a dot representing the object and each has an arrow pointing down from the dot labeled $F_{G}=mg$.  The “up”/left sketch also has an arrow pointing down from the dot labeled $F_{A}=-5v$.  The “down”/right sketch has an arrow pointing up from the dot labeled $F_{A}=-5v$." border="0" height="127" src="http://tutorial.math.lamar.edu/Classes/DE/Modeling_Files/image005.png" width="304" /></div>
+          
+            
+          <p>Notice that the air resistance force needs a negative in both cases in order to get the correct “sign” or direction on the force.  When the mass is moving upwards the velocity (and hence \(v\)) is negative, yet the force must be acting in a downward direction.  Therefore, the “-” must be part of the force to make sure that, overall, the force is positive and hence acting in the downward direction.  Likewise, when the mass is moving downward the velocity (and so \(v\)) is positive.  Therefore, the air resistance must also have a “-” in order to make sure that it’s negative and hence acting in the upward direction.</p>
+          
+          <p>So, the IVP for each of these situations are.</p>
+          
+            \[\begin{array}{*{20}{c}}\begin{aligned}&\hspace{0.5in}{\mbox{Up}}\\ &amp; mv' = mg - 5v\\ &amp; v\left( 0 \right) =  - 10\end{aligned}&amp;\begin{aligned}&\hspace{0.35in}{\mbox{Down}}\\ &amp; mv' = mg - 5v\\ &amp; v\left( {{t_0}} \right) = 0\end{aligned}\end{array}\]
+          
+          <p>In the second IVP, the \(t\)<sub>0</sub> is the time when the object is at the highest point and is ready to start on the way down.  Note that at this time the velocity would be zero.  Also note that the initial condition of the first differential equation will have to be negative since the initial velocity is upward.</p>
+          
+          <p>In this case, the differential equation for both of the situations is identical.  This won’t always happen, but in those cases where it does, we can ignore the second IVP and just let the first govern the whole process.</p>
+          
+          <p>So, let’s actually plug in for the mass and gravity (we’ll be using \(g\) = 9.8 m/s<sup>2</sup> here).  We’ll go ahead and divide out the mass while we’re at it since we’ll need to do that eventually anyway.</p>
+          
+            \[v' = 9.8 - \frac{{5v}}{{50}} = 9.8 - \frac{v}{{10}}\hspace{0.25in}v\left( 0 \right) =  - 10\]
+          
+          <p>This is a simple linear differential equation to solve so we’ll leave the details to you.  Upon solving we arrive at the following equation for the velocity of the object at any time \(t\).</p>
+          
+              \[v\left( t \right) = 98 - 108{{\bf{e}}^{ - \,\frac{{t\,}}{{10}}}}\]
+          
+          <p>Okay, we want the velocity of the ball when it hits the ground.  Of course we need to know <em>when</em> it hits the ground before we can ask this.  In order to find this we will need to find the position function.  This is easy enough to do.</p>
+          
+            \[s\left( t \right) = \int{{v\left( t \right)\,dt}} = \int{{98 - 108{{\bf{e}}^{ - \,\frac{{t\,}}{{10}}}}\,dt}} = 98t + 1080{{\bf{e}}^{ - \,\frac{{t\,}}{{10}}}} + c\]
+          
+          <p>We can now use the fact that I took the convention that \(s\)(0) = 0 to find that \(c\) = -1080.  The position at any time is then.</p>
+          
+              \[s\left( t \right) = 98t + 1080{{\bf{e}}^{ - \,\frac{{t\,}}{{10}}}} - 1080\]
+          
+          <p>To determine when the mass hits the ground we just need to solve.</p>
+          
+            \[100 = 98t + 1080{{\bf{e}}^{ - \,\frac{{t\,}}{{10}}}} - 1080\hspace{0.25in}t =  - 3.32203,\,\,5.98147\]
+          
+          <p>We’ve got two solutions here, but since we are starting things at \(t\) = 0, the negative is clearly the incorrect value.  Therefore, the mass hits the ground at \(t\) = 5.98147.  The velocity of the object upon hitting the ground is then.</p>
+          
+              \[v\left( {5.98147} \right) = 38.61841\]
+      </div>
+    </div>
+  </div>
+
+    
+    <p>This last example gave us an example of a situation where the two differential equations needed for the problem ended up being identical and so we didn’t need the second one after all.  Be careful however to not always expect this.  We could very easily change this problem so that it required two different differential equations.  For instance we could have had a parachute on the mass open at the top of its arc changing its air resistance.  This would have completely changed the second differential equation and forced us to use it as well.  Or, we could have put a river under the bridge so that before it actually hit the ground it would have first had to go through some water which would have a different “air” resistance for that phase necessitating a new differential 
+      equation for that portion.</p>
+    
+    <p>Or, we could be really crazy and have both the parachute and the river which would then require three IVP’s to be solved before we determined the velocity of the mass before it actually hits the solid ground.</p>
+    
+    <p>Finally, we could use a completely different type of air resistance that requires us to use a different differential equation for both the upwards and downwards portion of the motion.  Let’s take a  quick look at an example of this.</p>
+    <a class="anchor" name="First_Model_Ex5"></a>
+  <div class="example">
+    <span class="example-title">Example 5</span> A 50 kg object is shot from a cannon straight up with an initial velocity of 10m/s off a bridge that is 100 meters above the ground.  If air resistance is given by \(5{v^2}\) determine the velocity of the mass at any time \(t\).
+    <div class="example-content">
+      <span id="SHLink_Soln5" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln5" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln5" class="soln-content">
+        <p>So, this is basically the same situation as in the previous example.  We just changed the air resistance from \(5v\) to \(5{v^2}\).  Also, we are just going to find the velocity at any time \(t\) for this problem because, we’ll the solution is really unpleasant and finding the velocity for when the mass hits the ground is simply more work that we want to put into a problem designed to illustrate the fact that we need a separate differential equation for both the upwards and downwards motion of the mass.</p>
+          
+          <p>As with the previous example we will use the convention that everything downwards is positive.  Here are the forces on the mass when the object is on the way and on the way down.</p>
+          
+          
+            <div class="center-div"><img border="0" height="134" src="http://tutorial.math.lamar.edu/Classes/DE/Modeling_Files/image006.gif" width="317" /></div>
+          
+          <p>Now, in this case, when the object is moving upwards the velocity is negative.  However, because of the \({v^2}\) in the air resistance we do not need to add in a minus sign this time to make sure the air resistance is positive as it should be given that it is a downwards acting force.</p>
+          
+          <p>On the downwards phase, however, we still need the minus sign on the air resistance given that it is an upwards force and so should be negative but the \({v^2}\) is positive.</p>
+          
+          <p>This leads to the following IVP’s for each case.</p>
+          
+          <p>\[\begin{array}{*{20}{c}}\begin{aligned}&\hspace{0.5in}{\mbox{Up}}\\ &amp; mv' = mg + 5{v^2}\\ &amp; v' = 9.8 + \frac{1}{{10}}{v^2}\\ &amp; v\left( 0 \right) =  - 10\end{aligned}&amp;\begin{aligned}&\hspace{0.35in}{\mbox{Down}}\\ &amp; mv' = mg - 5{v^2}\\ &amp; v' = 9.8 - \frac{1}{{10}}{v^2}\\ &amp; v\left( {{t_0}} \right) = 0\end{aligned}\end{array}\]
+          
+          <p>These are clearly different differential equations and so, unlike the previous example, we can’t just use the first for the full problem.</p>
+          
+          <p>Also, the solution process for these will be a little more involved than the previous example as neither of the differential equations are linear.  They are both separable differential equations however.</p>
+          
+          <p>So, let’s get the solution process started.  We will first solve the upwards motion differential equation.  Here is the work for solving this differential equation.</p>
+          
+          
+            \[\begin{align*}\int{{\frac{1}{{9.8 + \frac{1}{{10}}{v^2}}}\,dv}} & = \int{{dt}}\\ 10\int{{\frac{1}{{98 + {v^2}}}\,dv}} & = \int{{dt}}\\ \frac{{10}}{{\sqrt {98} }}{\tan ^{ - 1}}\left( {\frac{v}{{\sqrt {98} }}} \right) & = t + c\end{align*}\]
+          
+          <p>Note that we did a little rewrite on the integrand to make the process a little easier in the second step.</p>
+          
+          <p>Now, we have two choices on proceeding from here.  Either we can solve for the velocity now, which we will need to do eventually, or we can apply the initial condition at this stage.  While, we’ve always solved for the function before applying the initial condition we could just as easily apply it here if we wanted to and, in this case, will probably be a little easier.</p>
+          
+          <p>So, to apply the initial condition all we need to do is recall that \(v\) is really \(v\left( t \right)\) and then plug in \(t = 0\).  Doing this gives,</p>
+          <p>\[\frac{{10}}{{\sqrt {98} }}{\tan ^{ - 1}}\left( {\frac{{v\left( 0 \right)}}{{\sqrt {98} }}} \right) = 0 + c\]
+          
+          <p>Now, all we need to do is plug in the fact that we know \(v\left( 0 \right) =  - 10\) to get.</p>
+          
+          <p>\[c = \frac{{10}}{{\sqrt {98} }}{\tan ^{ - 1}}\left( {\frac{{ - 10}}{{\sqrt {98} }}} \right)\]
+          
+          <p>Messy, but there it is.  The velocity for the upward motion of the mass is then,</p>
+          
+          <p>\[\begin{align*}\frac{{10}}{{\sqrt {98} }}{\tan ^{ - 1}}\left( {\frac{v}{{\sqrt {98} }}} \right) & = t + \frac{{10}}{{\sqrt {98} }}{\tan ^{ - 1}}\left( {\frac{{ - 10}}{{\sqrt {98} }}} \right)\\ {\tan ^{ - 1}}\left( {\frac{v}{{\sqrt {98} }}} \right) & = \frac{{\sqrt {98} }}{{10}}t + {\tan ^{ - 1}}\left( {\frac{{ - 10}}{{\sqrt {98} }}} \right)\\  v\left( t \right) & = \sqrt {98} \tan \left( {\frac{{\sqrt {98} }}{{10}}t + {{\tan }^{ - 1}}\left( {\frac{{ - 10}}{{\sqrt {98} }}} \right)} \right)\end{align*}\]
+          
+          <p>Now, we need to determine when the object will reach the apex of its trajectory.  To do this all we need to do is set this equal to zero given that the object at the apex will have zero velocity right before it starts the downward motion.  We will leave it to you to verify that the velocity is zero at the following values of \(t\).</p>
+          
+          <p>\[t = \frac{{10}}{{\sqrt {98} }}\left[ {{{\tan }^{ - 1}}\left( {\frac{{10}}{{\sqrt {98} }}} \right) + \pi n} \right]\hspace{0.25in}n = 0, \pm 1, \pm 2, \pm 3, \ldots \]
+          
+          <p>We clearly do not want all of these.  We want the first positive \(t\) that will give zero velocity.  It doesn’t make sense to take negative \(t\)’s given that we are starting the process at \(t = 0\) and once it hit’s the apex (<em>i.e.</em> the first positive \(t\) for which the velocity is zero) the solution is no longer valid as the object will start to move downwards and this solution is only for upwards motion.</p>
+          
+          <p>Plugging in a few values of \(n\) will quickly show us that the first positive \(t\) will occur for \(n = 0\) and will be \(t = 0.79847\).  We reduced the answer down to a decimal to make the rest of the problem a little easier to deal with.</p>
+          
+          <p>The IVP for the downward motion of the object is then,</p>
+          
+          <p>\[v' = 9.8 - \frac{1}{{10}}{v^2}\hspace{0.25in}v\left( {0.79847} \right) = 0\]
+          
+          <p>Now, this is also a separable differential equation, but it is a little more complicated to solve.  First, let’s separate the differential equation (with a little rewrite) and at least put integrals on it.</p>
+          
+          <p>\[\int{{\frac{1}{{9.8 - \frac{1}{{10}}{v^2}}}\,dv}} = 10\int{{\frac{1}{{98 - {v^2}}}\,dv}} = \int{{dt}}\]
+          
+          <p>The problem here is the minus sign in the denominator.  Because of that this is not an inverse tangent as was the first integral.  To evaluate this integral we could either do a trig substitution (\(v = \sqrt {98} \sin \theta \)) or use <a href="../CalcII/PartialFractions.html">partial fractions</a> using the fact that \(98 - {v^2} = \left( {\sqrt {98}  - v} \right)\left( {\sqrt {98}  + v} \right)\).  You’re probably not used to factoring things like this but the partial fraction work allows us to avoid the trig substitution and it works exactly like it does when everything is an integer and so we’ll do that for this integral.</p>
+          
+          <p>We’ll leave the details of the partial fractioning to you.  Once the partial fractioning has been done the integral becomes,</p>
+          
+          <p>\[\begin{align*}10\left( {\frac{1}{{2\sqrt {98} }}} \right)\int{{\frac{1}{{\sqrt {98}  + v}} + \frac{1}{{\sqrt {98}  - v}}\,dv}} & = \int{{dt}}\\  \frac{5}{{\sqrt {98} }}\left[ {\ln \left| {\sqrt {98}  + v} \right| - \ln \left| {\sqrt {98}  - v} \right|} \right] & = t + c\\ \frac{5}{{\sqrt {98} }}\ln \left| {\frac{{\sqrt {98}  + v}}{{\sqrt {98}  - v}}} \right| & = t + c\end{align*}\]
+          
+          <p>Again, we will apply the initial condition at this stage to make our life a little easier.  Doing this gives,</p>
+          
+          <p>\[\begin{align*}\frac{5}{{\sqrt {98} }}\ln \left| {\frac{{\sqrt {98}  + v\left( {0.79847} \right)}}{{\sqrt {98}  - v(0.79847}}} \right| & = 0.79847 + c\\ \frac{5}{{\sqrt {98} }}\ln \left| {\frac{{\sqrt {98}  + 0}}{{\sqrt {98}  - 0}}} \right| & = 0.79847 + c\\ \frac{5}{{\sqrt {98} }}\ln \left| 1 \right| & = 0.79847 + c\\  c & =  - 0.79847\end{align*}\]
+          
+          <p>The solutions, as we have it written anyway, is then,</p>
+          
+          <p>\[\frac{5}{{\sqrt {98} }}\ln \left| {\frac{{\sqrt {98}  + v}}{{\sqrt {98}  - v}}} \right| = t - 0.79847\]
+          
+          <p>Okay, we now need to solve for \(v\) and to do that we really need the absolute value bars gone and no we can’t just drop them to make our life easier.  We need to know that they can be dropped without have any effect on the eventual solution.</p>
+          
+          <p>To do this let’s do a quick direction field, or more appropriately some sketches of solutions from a direction field.  Here is that sketch,</p>
+          
+            <div class="center-div"><img border="0" height="307" src="http://tutorial.math.lamar.edu/Classes/DE/Modeling_Files/image007.gif" width="300" /></div>
+          
+          <p>Note that \(\sqrt {98}  = 9.89949\) and so is slightly above/below the lines for -10 and 10 shown in the sketch.  The important thing here is to notice the middle region.  If the velocity starts out anywhere in this region, as ours does given that \(v\left( {0.79847} \right) = 0\), then the velocity must always be less that \(\sqrt {98} \).</p>
+          
+          <p>What this means for us is that both \(\sqrt {98}  + v\) and \(\sqrt {98}  - v\) must be positive and so the quantity in the absolute value bars must also be positive.  Therefore, in this case, we can drop the absolute value bars to get,</p>
+          <p>\[\] \[\frac{5}{{\sqrt {98} }}\ln \left[ {\frac{{\sqrt {98}  + v}}{{\sqrt {98}  - v}}} \right] = t - 0.79847\]
+          
+          <p>At this point we have some very messy algebra to solve for \(v\).  We will leave it to you to verify our algebra work.  The solution to the downward motion of the object is,</p>
+          
+          <p>\[v\left( t \right) = \sqrt {98} \frac{{{{\bf{e}}^{\frac{1}{5}\sqrt {98} \left( {t - 0.79847} \right)}} - 1}}{{{{\bf{e}}^{\frac{1}{5}\sqrt {98} \left( {t - 0.79847} \right)}} + 1}}\]
+          
+          <p>Putting everything together here is the full (decidedly unpleasant) solution to this problem.</p>
+          
+          <p>\[v\left( t \right) = \left\{ {\begin{array}{ll}{\sqrt {98} \tan \left( {\frac{{\sqrt {98} }}{{10}}t + {{\tan }^{ - 1}}\left( {\frac{{ - 10}}{{\sqrt {98} }}} \right)} \right)}&amp;{0 \le t \le 0.79847\,\,\,\left( {{\mbox{upward motion}}} \right)}\\{\sqrt {98} \frac{{{{\bf{e}}^{\frac{1}{5}\sqrt {98} \left( {t - 0.79847} \right)}} - 1}}{{{{\bf{e}}^{\frac{1}{5}\sqrt {98} \left( {t - 0.79847} \right)}} + 1}}}&amp;{0.79847 \le t \le {t_{{\mathop{\rm end}\nolimits} }}\,\,\left( {{\mbox{downward motion}}} \right)}\end{array}} \right.\]
+          
+          <p>where \({t_{{\mbox{end}}}}\) is the time when the object hits the ground.  Given the nature of the solution here we will leave it to you to determine that time if you wish to but be forewarned the work is liable to be very unpleasant.</td>
+      </div>
+    </div>
+  </div>
+    
+    <p>And with this problem you now know why we stick mostly with air resistance in the form \(cv\)!  Note as well, we are not saying the air resistance in the above example is even realistic.  It was simply chosen to illustrate two things.  First, sometimes we do need different differential equation for the upwards and downwards portion of the motion.  Secondly, do not get used to solutions always being as nice as most of the falling object ones are.  Sometimes, as this example has illustrated, they can be very unpleasant and involve a lot of work.<em></em></p>
+    
+    <p>Before leaving this section let’s work a couple examples illustrating the importance of remembering the conventions that you set up for the positive direction in these problems.</p>
+    
+    <p>Awhile back I gave my students a problem in which a sky diver jumps out of a plane.  Most of my students are engineering majors and following the standard convention from most of their engineering classes they defined the positive direction as upward, despite the fact that all the motion in the problem was downward.  There is nothing wrong with this assumption, however, because they forgot the convention that up was positive they did not correctly deal with the air resistance which caused them to get the incorrect answer.  So, the moral of this story is : be careful with your convention.  It doesn’t matter what you set it as but you must always remember what convention to decided to use for any given problem.</p>
+    
+    <p>So, let’s take a look at the problem and set up the IVP that will give the sky diver’s velocity at any time \(t\).</p>
+    <a class="anchor" name="First_Model_Ex6"></a>
+  <div class="example">
+    <span class="example-title">Example 6</span> Set up the IVP that will give the velocity of a 60 kg sky diver that jumps out of a plane with no initial velocity and an air resistance of \(0.8\left| v \right|\).  For this example assume that the positive direction is upward.
+    <div class="example-content">
+      <span id="SHLink_Soln6" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln6" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln6" class="soln-content">
+        <p>Here are the forces that are acting on the sky diver</p>
+          
+            <div class="center-div"><img alt="In this sketch there a dot representing the object and an arrow pointing down from the dot labeled $F_{G}=-mg$.  There is also an arrow pointing down from the dot labeled $F_{A}=0.8\left| v \right|$." border="0" height="150" src="http://tutorial.math.lamar.edu/Classes/DE/Modeling_Files/image008.png" width="142" /></div>
+          <p>Because of the conventions the force due to gravity is negative and the force due to air resistance is positive.  As set up, these forces have the correct sign and so the IVP is</p>
+          
+              \[mv' =  - mg + 0.8\left| v \right|\hspace{0.25in}v\left( 0 \right) = 0\]
+          
+          <p>The problem arises when you go to remove the absolute value bars.  In order to do the problem they do need to be removed.  This is where most of the students made their mistake.  Because they had forgotten about the convention and the direction of motion they just dropped the absolute value bars to get.</p>
+          
+            \[mv' =  - mg + 0.8v\hspace{0.25in}v\left( 0 \right) = 0\hspace{0.25in}\left( {{\mbox{incorrect IVP!!}}} \right)\]
+          
+          <p>So, why is this incorrect?  Well remember that the convention is that positive is upward.  However in this case the object is moving downward and so \(v\) is negative!  Upon dropping the absolute value bars the air resistance became a negative force and hence was acting in the downward direction!</p>
+          
+          <p>To get the correct IVP recall that because \(v\) is negative then |\(v\)| = -\(v\).  Using this, the air resistance becomes F<sub>A</sub> = -0.8\(v\) and despite appearances this is a positive force since the “-” cancels out against the velocity (which is negative) to get a positive force.</p>
+          
+          <p>The correct IVP is then</p>
+          
+              \[mv' =  - mg - 0.8v\hspace{0.25in}v\left( 0 \right) = 0\]
+          
+          <p>Plugging in the mass gives</p>
+          
+              \[v' =  - 9.8 - \frac{v}{{75}}\hspace{0.25in}v\left( 0 \right) = 0\]
+          
+          <p>For the sake of completeness the velocity of the sky diver, at least until the parachute opens, which we didn’t include in this problem is.</p>
+          
+              \[v\left( t \right) =  - 735 + 735{{\bf{e}}^{ - \frac{t}{{75}}}}\]
+      </div>
+    </div>
+  </div>
+    
+    <p>This mistake was made in part because the students were in a hurry and weren’t paying attention, but also because they simply forgot about their convention and the direction of motion!  Don’t fall into this mistake.  Always pay attention to your conventions and what is happening in the problems.</p>
+    
+    <p>Just to show you the difference here is the problem worked by assuming that down is positive.</p>
+    <a class="anchor" name="First_Model_Ex7"></a>
+
+  <div class="example">
+    <span class="example-title">Example 7</span> Set up the IVP that will give the velocity of a 60 kg sky diver that jumps out of a plane with no initial velocity and an air resistance of \(0.8\left| v \right|\).  For this example assume that the positive direction is downward.
+    <div class="example-content">
+      <span id="SHLink_Soln7" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln7" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln7" class="soln-content">
+        <p>Here are the forces that are acting on the sky diver</p>
+          
+            <div class="center-div"><img alt="In this sketch there a dot representing the object and an arrow pointing down from the dot labeled $F_{G}=mg$.  There is also an arrow pointing down from the dot labeled $F_{A}=-0.8\left| v \right|$." border="0" height="150" src="http://tutorial.math.lamar.edu/Classes/DE/Modeling_Files/image009.png" width="160" /></div>
+          <p>In this case the force due to gravity is positive since it’s a downward force and air resistance is an upward force and so needs to be negative.  In this case since the motion is downward the velocity is positive so |\(v\)| = \(v\).  The air resistance is then F<sub>A </sub>= -0.8\(v\).  The IVP for this case is</p>
+          
+              \[mv' = mg - 0.8v\hspace{0.25in}v\left( 0 \right) = 0\]
+          
+          <p>Plugging in the mass gives</p>
+          
+              \[v' = 9.8 - \frac{v}{{75}}\hspace{0.25in}v\left( 0 \right) = 0\]
+          
+          <p>Solving this gives</p>
+          
+              \[v\left( t \right) = 735 - 735{{\bf{e}}^{ - \frac{t}{{75}}}}\]
+          
+          <p>This is the same solution as the previous example, except that it’s got the opposite sign.  This is to be expected since the conventions have been switched between the two examples.</p>
+      </div>
+    </div>
+  </div>
+  
+
+
+      
+
+
+
+    </div>
+    <!-- End of content div -->
+
+
+    <div class="footer">
+      <div class="footer-links">
+        [<a href="http://tutorial.math.lamar.edu/Contact.aspx">Contact Me</a>]&nbsp;[<a href="../../MyStudents-2.html">My Students</a>]&nbsp;[<a href="http://tutorial.math.lamar.edu/Privacy.aspx">Privacy Statement</a>]&nbsp;[<a href="../../Help-2.html">Site Help &amp; FAQ</a>]&nbsp;[<a href="http://tutorial.math.lamar.edu/Terms.aspx">Terms of Use</a>]
+      </div>
+      <div class="footer-dates">
+        <div class="footer-copyright"><span id="lblCopyRight">&copy; 2003 - 2019 Paul Dawkins</span></div>
+        <div class="footer-spacer"></div>
+        <div class="footer-modified-date">Page Last Modified : <span id="lblModified">12/3/2018</span></div>
+      </div>
+      
+
+    </div>
+  </div>
+  <!-- End of page div...  -->
+</body>
+
+<!-- Mirrored from tutorial.math.lamar.edu/Classes/DE/Modeling.aspx by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 27 Feb 2019 06:15:36 GMT -->
+</html>

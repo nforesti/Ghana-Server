@@ -1,0 +1,1357 @@
+
+
+<!DOCTYPE html>
+
+<html>
+
+<!-- Mirrored from tutorial.math.lamar.edu/Classes/CalcIII/LagrangeMultipliers.aspx by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 27 Feb 2019 06:15:36 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, user-scalable=yes" /><meta http-equiv="X-UA-Compatible" content="IE=edge" />  <!-- For best MathJax performance on IE  -->
+
+  <meta name="google-site-verification" content="uLoA31CJfOhIVMJWBjCmQL8xNMmmLybZU3LRKavy9WQ" /><title>
+	Calculus III - Lagrange Multipliers
+</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="../../../www.googletagmanager.com/gtag/js1872?id=UA-331594-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-331594-1');
+  </script>
+
+  <link type="text/css" href="../../css/jquery.mmenu.all.css" rel="stylesheet" /><link type="text/css" href="../../css/jquery.dropdown.css" rel="stylesheet" /><link href="../../FA/css/fontawesome-all.min.css" rel="stylesheet" /><link type="text/css" href="../../css/notes-all.css" rel="stylesheet" /><link type="text/css" href="../../css/notes-google.css" rel="stylesheet" /><link type="text/css" href="../../css/notes-mmenu.css" rel="stylesheet" /><link type="text/css" href="../../css/notes-dropdown.css" rel="stylesheet" />
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+     TeX: { equationNumbers: { autoNumber: "AMS" } }
+    });
+  </script>
+  <script type="text/javascript" async src="../../../cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax2ba6.js?config=TeX-AMS_CHTML-full"></script>
+  <script type="text/javascript" src="../../../code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="../../js/jquery.mmenu.all.js"></script>
+  <script type="text/javascript" src="../../js/jquery.dropdown.js"></script>
+  <script type="text/javascript" src="../../js/notes-all.js"></script>  
+
+  <script>
+    (function () {
+      var cx = '001004262401526223570:11yv6vpcqvy';
+      var gcse = document.createElement('script');
+      gcse.type = 'text/javascript';
+      gcse.async = true;
+      gcse.src = '../../../cse.google.com/cse07b6.html?cx=' + cx;
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(gcse, s);
+    })();
+  </script>
+
+<meta http-equiv="keywords" name="keywords" content="lagrange multipliers, optimization" /><meta http-equiv="description" name="description" content="In this section we’ll see discuss how to use the method of Lagrange Multipliers to find the absolute minimums and maximums of functions of two or three variables in which the independent variables are subject to one or more constraints.  We also give a brief justification for how/why the method works." /></head>
+<body onload="init({Notes: 'NoteMobile;8/21/2018;true'})">
+
+  <div id="page">
+
+    <div class="header">
+      <div class="header-row">
+        <!--<a href="#menu"><span></span></a>-->
+        <div id="side-menu-icon" class="header-side-menu-icon"><a href="#menu"><span class="fas fa-bars fa-lg" aria-hidden="true" title="Main Menu - Change between topics, chapters and sections as well as a few extra pages."></span></a></div>
+        <span class="header-title"><a href="../../index.html" class="header-title-link">Paul's Online Notes</a></span>
+        <div class="header-spacer"></div>
+
+        <div id="content-top-menu" class="top-menu">
+          <button id="content-type-menu" class="top-menu-button" data-jq-dropdown="#jq-dropdown-type" title="View (Notes, Practice Problems or Assignment Problems, Show/Hide Solutions and/or Steps) Menu">
+            <span id="tab_top_menu_notes" class="top-menu-item-title">Notes</span> <span class="far fa-eye fa-lg" aria-hidden="true"></span>
+          </button>
+
+          <button id="quicknav-menu" class="top-menu-button" data-jq-dropdown="#jq-dropdown-quicknav" title="Quick Navigation (Previous/Next Sections and Problems and Full Problem List) Menu">
+            <span class="top-menu-item-title">Quick Nav</span> <span class="fas fa-exchange fa-lg" aria-hidden="true"></span>
+          </button>
+          
+          <button id="download-menu" class="top-menu-button" data-jq-dropdown="#jq-dropdown-download" title="Download pdf Menu">
+            <span class="top-menu-item-title">Download</span> <span class="far fa-download fa-lg" aria-hidden="true"></span>
+          </button>
+
+          <button id="print-menu" class="top-menu-button top-menu-button-icon-only" data-jq-dropdown="#jq-print-download" title="Print Menu">
+            <span class="far fa-print fa-lg" aria-hidden="true"></span>
+          </button>
+        </div>
+
+        <div id="header-google-search" class="header-search">
+          <gcse:search></gcse:search>
+        </div>
+        <div id="header-search-icon" title="Site Search" class="header-menu-icon"><span id="search-icon" class="fas fa-search" aria-hidden="true"></span></div>
+
+      </div>
+    </div>
+
+     <div id="jq-dropdown-type" class="jq-dropdown jq-dropdown-tip">
+      <ul class="jq-dropdown-menu">
+        
+        <li id="li_type_menu_goto" class="top-menu-nav-title">Go To</li>
+        <li id="li_type_menu_notes">
+          <span id="type_menu_notes_span" title="Viewing the Notes for the current topic." class="top-menu-current">Notes</span>
+          
+        </li>
+        <li id="li_type_menu_practice">
+          
+          
+          <a href="http://tutorial.math.lamar.edu/Problems/CalcIII/LagrangeMultipliers.aspx" id="type_menu_practice_link" title="Go to Practice Problems for current topic.">Practice Problems</a>
+        </li>
+        <li id="li_type_menu_asgn">
+          
+          <a href="http://tutorial.math.lamar.edu/ProblemsNS/CalcIII/LagrangeMultipliers.aspx" id="type_menu_asgn_link" title="Go to Assignment Problems for current topic.">Assignment Problems</a>
+        </li>
+        <li id="li_type_menu_sh" class="top-menu-nav-title">Show/Hide</li>
+        <li id="li_type_menu_show" title="Show any hidden solutions and/or steps that may be present on the page."><a href="javascript:SHPrintPage(1,0)" id="view_menu_show">Show all Solutions/Steps/<em>etc.</em></a></li>
+        <li id="li_type_menu_hide" title="Hide any visible solutions and/or steps that may be present on the page."><a href="javascript:SHPrintPage(0,0)" id="view_menu_hide">Hide all Solutions/Steps/<em>etc.</em></a></li>
+      </ul>
+    </div>
+
+    <div id="jq-dropdown-quicknav" class="jq-dropdown jq-dropdown-tip">
+      <ul class="jq-dropdown-menu">
+        <li id="li_nav_menu_sections" class="top-menu-nav-title">Sections</li>
+        <li id="li_nav_menu_prev_section"><a href="AbsoluteExtrema.html" id="a_nav_menu_prev_section" class="top-menu-nav-link" title="Previous Section : Absolute Minimums and Maximums"><span class="top-menu-prev fas fa-chevron-left"></span> Absolute Minimums and Maximums</a></li>
+        <li id="li_nav_menu_next_section"><a href="MultipleIntegralsIntro.html" id="a_nav_menu_next_section" class="top-menu-nav-link" title="Next Section : Multiple Integrals Introduction"><span class="top-menu-prev-hidden fas fa-chevron-left"></span> Multiple Integrals Introduction <span class="top-menu-next fas fa-chevron-right"></span></a></li>
+        <li id="li_nav_menu_chapters" class="top-menu-nav-title">Chapters</li>
+        <li id="li_nav_menu_prev_chapter"><a href="PartialDerivsIntro.html" id="a_nav_menu_prev_chapter" class="top-menu-nav-link" title="Previous Chapter : Partial Derivatives"><span class="top-menu-prev fas fa-chevron-left"></span><span class="top-menu-prev fas fa-chevron-left"></span> Partial Derivatives</a></li>
+        <li id="li_nav_menu_next_chapter"><a href="MultipleIntegralsIntro.html" id="a_nav_menu_next_chapter" class="top-menu-nav-link" title="Next Chapter : Multiple Integrals"><span class="top-menu-prev-hidden fas fa-chevron-left"></span><span class="top-menu-prev-hidden fas fa-chevron-left"></span> Multiple Integrals <span class="top-menu-next fas fa-chevron-right"></span><span class="top-menu-next fas fa-chevron-right"></span></a></li>
+        
+        
+        
+        
+        <li id="li_nav_menu_classes" class="top-menu-nav-title">Classes</li>
+        <li>
+          
+          <a href="../Alg/Alg.html" id="nav_menu_alg_link" title="Go To Algebra Notes">Algebra</a>
+        </li>
+        <li>
+          
+          <a href="../CalcI/CalcI.html" id="nav_menu_calci_link" title="Go To Calculus I Notes">Calculus I</a>
+        </li>
+        <li>
+          
+          <a href="../CalcII/CalcII.html" id="nav_menu_calcii_link" title="Go To Calculus II Notes">Calculus II</a>
+        </li>
+        <li>
+          <span id="nav_menu_calciii_span" title="Currently Viewing Calculus III Material" class="top-menu-current">Calculus III</span>
+          
+        </li>
+        <li>
+          
+          <a href="../DE/DE.html" id="nav_menu_de_link" title="Go To Differential Equations Notes">Differential Equations</a>
+        </li>
+        <li id="li_nav_menu_extras" class="top-menu-nav-title">Extras</li>
+        <li>
+          
+          <a href="../../Extras/AlgebraTrigReview/AlgebraTrig.html" id="nav_menu_algtrig_link" title="Go To Algebra &amp; Trig Review">Algebra &amp; Trig Review</a>
+        </li>
+        <li>
+          
+          <a href="../../Extras/CommonErrors/CommonMathErrors.html" id="nav_menu_commonerrors_link" title="Go To Common Math Errors">Common Math Errors</a>
+        </li>
+        <li>
+          
+          <a href="../../Extras/ComplexPrimer/ComplexNumbers.html" id="nav_menu_complexnumbers_link" title="Go To Complex Numbers Primer">Complex Number Primer</a>
+        </li>
+        <li>
+          
+          <a href="../../Extras/StudyMath/HowToStudyMath.html" id="nav_menu_studymath_link" title="Go To How To Study Math">How To Study Math</a>
+        </li>
+        <li>
+          
+          <a href="../../Extras/CheatSheets_Tables.html" id="nav_menu_cheattables_link" title="Go To List of Cheat Sheets and Tables">Cheat Sheets &amp; Tables</a>
+        </li>
+        <li id="li_nav_menu_misc" class="top-menu-nav-title">Misc</li>
+        <li><a href="http://tutorial.math.lamar.edu/contact.aspx" id="nav_menu_contact" title="Contact Me!">Contact Me</a></li>
+        <li><a href="../../mathjax.html" id="nav_menu_mathjax" title="Info on MathJax and MathJax Configuration Menu">MathJax Help and Configuration</a></li>
+        <li><a href="../../mystudents.html" id="nav_menu_students" title="Go here if you are currently taking a class from me!">My Students</a></li>
+      </ul>
+    </div>
+
+    <div id="jq-dropdown-download" class="jq-dropdown jq-dropdown-anchor-right jq-dropdown-tip">
+      <ul class="jq-dropdown-menu">
+        
+        <li id="li_download_menu_notes" class="top-menu-nav-title">Notes Downloads</li>
+        <li id="li_download_menu_notes_book"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=B,11,N" id="download_menu_notes_book" data-PDF="Download - Menu$Notes - Book$Calculus III$/Downloads/CalcIII/Notes/Complete.pdf">Complete Book</a></li>
+        
+        <li id="li_download_menu_notes_chapter"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=C,59,N" id="download_menu_notes_chapter" data-PDF="Download - Menu$Notes - Chapter$Calculus III - Applications of Partial Derivatives$/Downloads/CalcIII/Notes/PartialDerivApps.pdf">Current Chapter</a></li>
+        <li id="li_download_menu_notes_section"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=S,367,N" id="download_menu_notes_section" data-PDF="Download - Menu$Notes - Section$Calculus III - Lagrange Multipliers$/Downloads/CalcIII/Notes/LagrangeMultipliers.pdf">Current Section</a></li>
+        <li id="li_download_menu_practice" class="top-menu-nav-title">Practice Problems Downloads</li>
+        
+        <li id="li_download_menu_practice_book"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=B,11,P" id="download_menu_practice_book" data-PDF="Download - Menu$Practice Problems - Book$Calculus III$/Downloads/CalcIII/Practice Problems/Complete.pdf">Complete Book - Problems Only</a></li>
+        <li id="li_download_menu_solutions_book"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=B,11,S" id="download_menu_solutions_book" data-PDF="Download - Menu$Practice Problems Solutions - Book$Calculus III$/Downloads/CalcIII/Practice Problems Solutions/Complete.pdf">Complete Book - Solutions</a></li>
+        <li id="li_download_menu_b_c" class="top-menu-divider"></li>
+        <li id="li_download_menu_practice_chapter"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=C,59,P" id="download_menu_practice_chapter" data-PDF="Download - Menu$Practice Problems - Chapter$Calculus III - Applications of Partial Derivatives$/Downloads/CalcIII/Practice Problems/PartialDerivApps.pdf">Current Chapter - Problems Only</a></li>
+        <li id="li_download_menu_solutions_chapter"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=C,59,S" id="download_menu_solutions_chapter" data-PDF="Download - Menu$Practice Problems Solutions - Chapter$Calculus III - Applications of Partial Derivatives$/Downloads/CalcIII/Practice Problems Solutions/PartialDerivApps.pdf">Current Chapter - Solutions</a></li>
+        <li id="li_download_menu_c_s" class="top-menu-divider"></li>
+        <li id="li_download_menu_practice_section"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=S,367,P" id="download_menu_practice_section" data-PDF="Download - Menu$Practice Problems - Section$Calculus III - Lagrange Multipliers$/Downloads/CalcIII/Practice Problems/LagrangeMultipliers.pdf">Current Section - Problems Only</a></li>
+        <li id="li_download_menu_solutions_section"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=S,367,S" id="download_menu_solutions_section" data-PDF="Download - Menu$Practice Problems Solutions - Section$Calculus III - Lagrange Multipliers$/Downloads/CalcIII/Practice Problems Solutions/LagrangeMultipliers.pdf">Current Section - Solutions</a></li>
+        <li id="li_download_menu_asgn" class="top-menu-nav-title">Assignment Problems Downloads</li>
+        
+        <li id="li_download_menu_asgn_book"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=B,11,A" id="download_menu_asgn_book" data-PDF="Download - Menu$Assignment Problems - Book$Calculus III$/Downloads/CalcIII/Assignment Problems/Complete.pdf">Complete Book</a></li>
+        <li id="li_download_menu_asgn_chapter"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=C,59,A" id="download_menu_asgn_chapter" data-PDF="Download - Menu$Assignment Problems - Chapter$Calculus III - Applications of Partial Derivatives$/Downloads/CalcIII/Assignment Problems/PartialDerivApps.pdf">Current Chapter</a></li>
+        <li id="li_download_menu_asgn_section"><a href="http://tutorial.math.lamar.edu/GetFile.aspx?file=S,367,A" id="download_menu_asgn_section" data-PDF="Download - Menu$Assignment Problems - Section$Calculus III - Lagrange Multipliers$/Downloads/CalcIII/Assignment Problems/LagrangeMultipliers.pdf">Current Section</a></li>
+        <li id="li_download_menu_other" class="top-menu-nav-title">Other Items</li>
+        <li id="li_download_menu_urls">
+          <a href="http://tutorial.math.lamar.edu/DownloadURLs.aspx?bi=11&amp;ci=59&amp;si=367" id="download_menu_urls">Get URL's for Download Items</a>
+        </li>
+      </ul>
+    </div>
+
+    <div id="jq-print-download" class="jq-dropdown jq-dropdown-anchor-right jq-dropdown-tip">
+      <ul class="jq-dropdown-menu">
+        <li id="li_print_menu_default"><a href="javascript:SHPrintPage()" id="print_menu_default">Print Page in Current Form (Default)</a></li>
+        <li id="li_print_menu_show"><a href="javascript:SHPrintPage(1,1)" id="print_menu_show">Show all Solutions/Steps and Print Page</a></li>
+        <li id="li_print_menu_hide"><a href="javascript:SHPrintPage(0,1)" id="print_menu_hide">Hide all Solutions/Steps and Print Page</a></li>
+      </ul>
+    </div>
+
+
+
+   
+
+    <nav id="menu" class="notes-nav">
+      <ul>
+        <li><a href="../../index.html" class="mm-link">Home</a></li>
+        <li><span>Classes</span></li>
+        <li><a href="../Alg/Alg.html" class="mm-link">Algebra</a>
+          <ul>
+            <li><a href="../Alg/Preliminaries.html" class="mm-link">Preliminaries</a>
+              <ul>
+                <li><a href="../Alg/IntegerExponents.html" class="mm-link">Integer Exponents</a></li>
+                <li><a href="../Alg/RationalExponents.html" class="mm-link">Rational Exponents</a></li>
+                <li><a href="../Alg/Radicals.html" class="mm-link">Radicals</a></li>
+                <li><a href="../Alg/Polynomials.html" class="mm-link">Polynomials</a></li>
+                <li><a href="../Alg/Factoring.html" class="mm-link">Factoring Polynomials</a></li>
+                <li><a href="../Alg/RationalExpressions.html" class="mm-link">Rational Expressions</a></li>
+                <li><a href="../Alg/ComplexNumbers.html" class="mm-link">Complex Numbers</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/Solving.html" class="mm-link">Solving Equations and Inequalities</a>
+              <ul>
+                <li><a href="../Alg/SolutionSets.html" class="mm-link">Solutions and Solution Sets</a></li>
+                <li><a href="../Alg/SolveLinearEqns.html" class="mm-link">Linear Equations</a></li>
+                <li><a href="../Alg/LinearApps.html" class="mm-link">Applications of Linear Equations</a></li>
+                <li><a href="../Alg/SolveMultiVariable.html" class="mm-link">Equations With More Than One Variable</a></li>
+                <li><a href="../Alg/SolveQuadraticEqnsI.html" class="mm-link">Quadratic Equations - Part I</a></li>
+                <li><a href="../Alg/SolveQuadraticEqnsII.html" class="mm-link">Quadratic Equations - Part II</a></li>
+                <li><a href="../Alg/SolveQuadraticEqnSummary.html" class="mm-link">Quadratic Equations : A Summary</a></li>
+                <li><a href="../Alg/QuadraticApps.html" class="mm-link">Applications of Quadratic Equations</a></li>
+                <li><a href="../Alg/ReducibleToQuadratic.html" class="mm-link">Equations Reducible to Quadratic in Form</a></li>
+                <li><a href="../Alg/SolveRadicalEqns.html" class="mm-link">Equations with Radicals</a></li>
+                <li><a href="../Alg/SolveLinearInequalities.html" class="mm-link">Linear Inequalities</a></li>
+                <li><a href="../Alg/SolvePolyInequalities.html" class="mm-link">Polynomial Inequalities</a></li>
+                <li><a href="../Alg/SolveRationalInequalities.html" class="mm-link">Rational Inequalities</a></li>
+                <li><a href="../Alg/SolveAbsValueEqns.html" class="mm-link">Absolute Value Equations</a></li>
+                <li><a href="../Alg/SolveAbsValueIneq.html" class="mm-link">Absolute Value Inequalities</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/Graphing_Functions.html" class="mm-link">Graphing and Functions</a>
+              <ul>
+                <li><a href="../Alg/Graphing.html" class="mm-link">Graphing</a></li>
+                <li><a href="../Alg/Lines.html" class="mm-link">Lines</a></li>
+                <li><a href="../Alg/Circles.html" class="mm-link">Circles</a></li>
+                <li><a href="../Alg/FunctionDefn.html" class="mm-link">The Definition of a Function</a></li>
+                <li><a href="../Alg/GraphFunctions.html" class="mm-link">Graphing Functions</a></li>
+                <li><a href="../Alg/CombineFunctions.html" class="mm-link">Combining Functions</a></li>
+                <li><a href="../Alg/InverseFunctions.html" class="mm-link">Inverse Functions</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/CommonGraphs.html" class="mm-link">Common Graphs</a>
+              <ul>
+                <li><a href="../Alg/Lines_Circles_PWF.html" class="mm-link">Lines, Circles and Piecewise Functions</a></li>
+                <li><a href="../Alg/Parabolas.html" class="mm-link">Parabolas</a></li>
+                <li><a href="../Alg/Ellipses.html" class="mm-link">Ellipses</a></li>
+                <li><a href="../Alg/Hyperbolas.html" class="mm-link">Hyperbolas</a></li>
+                <li><a href="../Alg/MiscFunctions.html" class="mm-link">Miscellaneous Functions</a></li>
+                <li><a href="../Alg/Transformations.html" class="mm-link">Transformations</a></li>
+                <li><a href="../Alg/Symmetry.html" class="mm-link">Symmetry</a></li>
+                <li><a href="../Alg/GraphRationalFcns.html" class="mm-link">Rational Functions</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/PolynomialFunctions.html" class="mm-link">Polynomial Functions</a>
+              <ul>
+                <li><a href="../Alg/DividingPolynomials.html" class="mm-link">Dividing Polynomials</a></li>
+                <li><a href="../Alg/ZeroesOfPolynomials.html" class="mm-link">Zeroes/Roots of Polynomials</a></li>
+                <li><a href="../Alg/GraphingPolynomials.html" class="mm-link">Graphing Polynomials</a></li>
+                <li><a href="../Alg/FindingZeroesOfPolynomials.html" class="mm-link">Finding Zeroes of Polynomials</a></li>
+                <li><a href="../Alg/PartialFractions.html" class="mm-link">Partial Fractions</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/ExpAndLog.html" class="mm-link">Exponential and Logarithm Functions</a>
+              <ul>
+                <li><a href="../Alg/ExpFunctions.html" class="mm-link">Exponential Functions</a></li>
+                <li><a href="../Alg/LogFunctions.html" class="mm-link">Logarithm Functions</a></li>
+                <li><a href="../Alg/SolveExpEqns.html" class="mm-link">Solving Exponential Equations</a></li>
+                <li><a href="../Alg/SolveLogEqns.html" class="mm-link">Solving Logarithm Equations</a></li>
+                <li><a href="../Alg/ExpLogApplications.html" class="mm-link">Applications</a></li>
+              </ul>
+            </li>
+            <li><a href="../Alg/Systems.html" class="mm-link">Systems of Equations</a>
+              <ul>
+                <li><a href="../Alg/SystemsTwoVrble.html" class="mm-link">Linear Systems with Two Variables</a></li>
+                <li><a href="../Alg/SystemsThreeVrble.html" class="mm-link">Linear Systems with Three Variables</a></li>
+                <li><a href="../Alg/AugmentedMatrix.html" class="mm-link">Augmented Matrices</a></li>
+                <li><a href="../Alg/AugmentedMatrixII.html" class="mm-link">More on the Augmented Matrix</a></li>
+                <li><a href="../Alg/NonlinearSystems.html" class="mm-link">Nonlinear Systems</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../CalcI/CalcI.html" class="mm-link">Calculus I</a>
+          <ul>
+            <li><a href="../CalcI/ReviewIntro.html" class="mm-link">Review</a>
+              <ul>
+                <li><a href="../CalcI/Functions.html" class="mm-link">Functions</a></li>
+                <li><a href="../CalcI/InverseFunctions.html" class="mm-link">Inverse Functions</a></li>
+                <li><a href="../CalcI/TrigFcns.html" class="mm-link">Trig Functions</a></li>
+                <li><a href="../CalcI/TrigEquations.html" class="mm-link">Solving Trig Equations</a></li>
+                <li><a href="../CalcI/TrigEquations_CalcI.html" class="mm-link">Trig Equations with Calculators, Part I</a></li>
+                <li><a href="../CalcI/TrigEquations_CalcII.html" class="mm-link">Trig Equations with Calculators, Part II</a></li>
+                <li><a href="../CalcI/ExpFunctions.html" class="mm-link">Exponential Functions</a></li>
+                <li><a href="../CalcI/LogFcns.html" class="mm-link">Logarithm Functions</a></li>
+                <li><a href="../CalcI/ExpLogEqns.html" class="mm-link">Exponential and Logarithm Equations</a></li>
+                <li><a href="../CalcI/CommonGraphs.html" class="mm-link">Common Graphs</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcI/limitsIntro.html" class="mm-link">Limits</a>
+              <ul>
+                <li><a href="../CalcI/Tangents_Rates.html" class="mm-link">Tangent Lines and Rates of Change</a></li>
+                <li><a href="../CalcI/TheLimit.html" class="mm-link">The Limit</a></li>
+                <li><a href="../CalcI/OneSidedLimits.html" class="mm-link">One-Sided Limits</a></li>
+                <li><a href="../CalcI/LimitsProperties.html" class="mm-link">Limit Properties</a></li>
+                <li><a href="../CalcI/ComputingLimits.html" class="mm-link">Computing Limits</a></li>
+                <li><a href="../CalcI/InfiniteLimits.html" class="mm-link">Infinite Limits</a></li>
+                <li><a href="../CalcI/LimitsAtInfinityI.html" class="mm-link">Limits At Infinity, Part I</a></li>
+                <li><a href="../CalcI/LimitsAtInfinityII.html" class="mm-link">Limits At Infinity, Part II</a></li>
+                <li><a href="../CalcI/Continuity.html" class="mm-link">Continuity</a></li>
+                <li><a href="../CalcI/DefnOfLimit.html" class="mm-link">The Definition of the Limit</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcI/DerivativeIntro.html" class="mm-link">Derivatives</a>
+              <ul>
+                <li><a href="../CalcI/DefnOfDerivative.html" class="mm-link">The Definition of the Derivative</a></li>
+                <li><a href="../CalcI/DerivativeInterp.html" class="mm-link">Interpretation of the Derivative</a></li>
+                <li><a href="../CalcI/DiffFormulas.html" class="mm-link">Differentiation Formulas</a></li>
+                <li><a href="../CalcI/ProductQuotientRule.html" class="mm-link">Product and Quotient Rule</a></li>
+                <li><a href="../CalcI/DiffTrigFcns.html" class="mm-link">Derivatives of Trig Functions</a></li>
+                <li><a href="../CalcI/DiffExpLogFcns.html" class="mm-link">Derivatives of Exponential and Logarithm Functions</a></li>
+                <li><a href="../CalcI/DiffInvTrigFcns.html" class="mm-link">Derivatives of Inverse Trig Functions</a></li>
+                <li><a href="../CalcI/DiffHyperFcns.html" class="mm-link">Derivatives of Hyperbolic Functions</a></li>
+                <li><a href="../CalcI/ChainRule.html" class="mm-link">Chain Rule</a></li>
+                <li><a href="../CalcI/ImplicitDIff.html" class="mm-link">Implicit Differentiation</a></li>
+                <li><a href="../CalcI/RelatedRates.html" class="mm-link">Related Rates</a></li>
+                <li><a href="../CalcI/HigherOrderDerivatives.html" class="mm-link">Higher Order Derivatives</a></li>
+                <li><a href="../CalcI/LogDiff.html" class="mm-link">Logarithmic Differentiation</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcI/DerivAppsIntro.html" class="mm-link">Applications of Derivatives</a>
+              <ul>
+                <li><a href="../CalcI/RateOfChange.html" class="mm-link">Rates of Change</a></li>
+                <li><a href="../CalcI/CriticalPoints.html" class="mm-link">Critical Points</a></li>
+                <li><a href="../CalcI/MinMaxValues.html" class="mm-link">Minimum and Maximum Values</a></li>
+                <li><a href="../CalcI/AbsExtrema.html" class="mm-link">Finding Absolute Extrema</a></li>
+                <li><a href="../CalcI/ShapeofGraphPtI.html" class="mm-link">The Shape of a Graph, Part I</a></li>
+                <li><a href="../CalcI/ShapeofGraphPtII.html" class="mm-link">The Shape of a Graph, Part II</a></li>
+                <li><a href="../CalcI/MeanValueTheorem.html" class="mm-link">The Mean Value Theorem</a></li>
+                <li><a href="../CalcI/Optimization.html" class="mm-link">Optimization</a></li>
+                <li><a href="../CalcI/MoreOptimization.html" class="mm-link">More Optimization Problems</a></li>
+                <li><a href="../CalcI/LHospitalsRule.html" class="mm-link">L'Hospital's Rule and Indeterminate Forms</a></li>
+                <li><a href="../CalcI/LinearApproximations.html" class="mm-link">Linear Approximations</a></li>
+                <li><a href="../CalcI/Differentials.html" class="mm-link">Differentials</a></li>
+                <li><a href="../CalcI/NewtonsMethod.html" class="mm-link">Newton's Method</a></li>
+                <li><a href="../CalcI/BusinessApps.html" class="mm-link">Business Applications</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcI/IntegralsIntro.html" class="mm-link">Integrals</a>
+              <ul>
+                <li><a href="../CalcI/IndefiniteIntegrals.html" class="mm-link">Indefinite Integrals</a></li>
+                <li><a href="../CalcI/ComputingIndefiniteIntegrals.html" class="mm-link">Computing Indefinite Integrals</a></li>
+                <li><a href="../CalcI/SubstitutionRuleIndefinite.html" class="mm-link">Substitution Rule for Indefinite Integrals</a></li>
+                <li><a href="../CalcI/SubstitutionRuleIndefinitePtII.html" class="mm-link">More Substitution Rule</a></li>
+                <li><a href="../CalcI/AreaProblem.html" class="mm-link">Area Problem</a></li>
+                <li><a href="../CalcI/DefnOfDefiniteIntegral.html" class="mm-link">Definition of the Definite Integral</a></li>
+                <li><a href="../CalcI/ComputingDefiniteIntegrals.html" class="mm-link">Computing Definite Integrals</a></li>
+                <li><a href="../CalcI/SubstitutionRuleDefinite.html" class="mm-link">Substitution Rule for Definite Integrals</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcI/IntAppsIntro.html" class="mm-link">Applications of Integrals</a>
+              <ul>
+                <li><a href="../CalcI/AvgFcnValue.html" class="mm-link">Average Function Value</a></li>
+                <li><a href="../CalcI/AreaBetweenCurves.html" class="mm-link">Area Between Curves</a></li>
+                <li><a href="../CalcI/VolumeWithRings.html" class="mm-link">Volumes of Solids of Revolution / Method of Rings</a></li>
+                <li><a href="../CalcI/VolumeWithCylinder.html" class="mm-link">Volumes of Solids of Revolution/Method of Cylinders</a></li>
+                <li><a href="../CalcI/MoreVolume.html" class="mm-link">More Volume Problems</a></li>
+                <li><a href="../CalcI/Work.html" class="mm-link">Work</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcI/ExtrasIntro.html" class="mm-link">Extras</a>
+              <ul>
+                <li><a href="../CalcI/LimitProofs.html" class="mm-link">Proof of Various Limit Properties</a></li>
+                <li><a href="../CalcI/DerivativeProofs.html" class="mm-link">Proof of Various Derivative Properties</a></li>
+                <li><a href="../CalcI/ProofTrigDeriv.html" class="mm-link">Proof of Trig Limits</a></li>
+                <li><a href="../CalcI/DerivativeAppsProofs.html" class="mm-link">Proofs of Derivative Applications Facts</a></li>
+                <li><a href="../CalcI/ProofIntProp.html" class="mm-link">Proof of Various Integral Properties </a></li>
+                <li><a href="../CalcI/Area_Volume_Formulas.html" class="mm-link">Area and Volume Formulas</a></li>
+                <li><a href="../CalcI/TypesOfInfinity.html" class="mm-link">Types of Infinity</a></li>
+                <li><a href="../CalcI/SummationNotation.html" class="mm-link">Summation Notation</a></li>
+                <li><a href="../CalcI/ConstantofIntegration.html" class="mm-link">Constant of Integration</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../CalcII/CalcII.html" class="mm-link">Calculus II</a>
+          <ul>
+            <li><a href="../CalcII/IntTechIntro.html" class="mm-link">Integration Techniques</a>
+              <ul>
+                <li><a href="../CalcII/IntegrationByParts.html" class="mm-link">Integration by Parts</a></li>
+                <li><a href="../CalcII/IntegralsWithTrig.html" class="mm-link">Integrals Involving Trig Functions</a></li>
+                <li><a href="../CalcII/TrigSubstitutions.html" class="mm-link">Trig Substitutions</a></li>
+                <li><a href="../CalcII/PartialFractions.html" class="mm-link">Partial Fractions</a></li>
+                <li><a href="../CalcII/IntegralsWithRoots.html" class="mm-link">Integrals Involving Roots</a></li>
+                <li><a href="../CalcII/IntegralsWithQuadratics.html" class="mm-link">Integrals Involving Quadratics</a></li>
+                <li><a href="../CalcII/IntegrationStrategy.html" class="mm-link">Integration Strategy</a></li>
+                <li><a href="../CalcII/ImproperIntegrals.html" class="mm-link">Improper Integrals</a></li>
+                <li><a href="../CalcII/ImproperIntegralsCompTest.html" class="mm-link">Comparison Test for Improper Integrals</a></li>
+                <li><a href="../CalcII/ApproximatingDefIntegrals.html" class="mm-link">Approximating Definite Integrals</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/IntAppsIntro.html" class="mm-link">Applications of Integrals</a>
+              <ul>
+                <li><a href="../CalcII/ArcLength.html" class="mm-link">Arc Length</a></li>
+                <li><a href="../CalcII/SurfaceArea.html" class="mm-link">Surface Area</a></li>
+                <li><a href="../CalcII/CenterOfMass.html" class="mm-link">Center of Mass</a></li>
+                <li><a href="../CalcII/HydrostaticPressure.html" class="mm-link">Hydrostatic Pressure</a></li>
+                <li><a href="../CalcII/Probability.html" class="mm-link">Probability</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/ParametricIntro.html" class="mm-link">Parametric Equations and Polar Coordinates</a>
+              <ul>
+                <li><a href="../CalcII/ParametricEqn.html" class="mm-link">Parametric Equations and Curves</a></li>
+                <li><a href="../CalcII/ParaTangent.html" class="mm-link">Tangents with Parametric Equations</a></li>
+                <li><a href="../CalcII/ParaArea.html" class="mm-link">Area with Parametric Equations</a></li>
+                <li><a href="../CalcII/ParaArcLength.html" class="mm-link">Arc Length with Parametric Equations</a></li>
+                <li><a href="../CalcII/ParaSurfaceArea.html" class="mm-link">Surface Area with Parametric Equations</a></li>
+                <li><a href="../CalcII/PolarCoordinates.html" class="mm-link">Polar Coordinates</a></li>
+                <li><a href="../CalcII/PolarTangents.html" class="mm-link">Tangents with Polar Coordinates</a></li>
+                <li><a href="../CalcII/PolarArea.html" class="mm-link">Area with Polar Coordinates</a></li>
+                <li><a href="../CalcII/PolarArcLength.html" class="mm-link">Arc Length with Polar Coordinates</a></li>
+                <li><a href="../CalcII/PolarSurfaceArea.html" class="mm-link">Surface Area with Polar Coordinates</a></li>
+                <li><a href="../CalcII/ArcLength_SurfaceArea.html" class="mm-link">Arc Length and Surface Area Revisited</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/SeriesIntro.html" class="mm-link">Series & Sequences</a>
+              <ul>
+                <li><a href="../CalcII/Sequences.html" class="mm-link">Sequences</a></li>
+                <li><a href="../CalcII/MoreSequences.html" class="mm-link">More on Sequences</a></li>
+                <li><a href="../CalcII/Series_Basics.html" class="mm-link">Series - The Basics</a></li>
+                <li><a href="../CalcII/ConvergenceOfSeries.html" class="mm-link">Convergence/Divergence of Series</a></li>
+                <li><a href="../CalcII/Series_Special.html" class="mm-link">Special Series</a></li>
+                <li><a href="../CalcII/IntegralTest.html" class="mm-link">Integral Test</a></li>
+                <li><a href="../CalcII/SeriesCompTest.html" class="mm-link">Comparison Test/Limit Comparison Test</a></li>
+                <li><a href="../CalcII/AlternatingSeries.html" class="mm-link">Alternating Series Test</a></li>
+                <li><a href="../CalcII/AbsoluteConvergence.html" class="mm-link">Absolute Convergence</a></li>
+                <li><a href="../CalcII/RatioTest.html" class="mm-link">Ratio Test</a></li>
+                <li><a href="../CalcII/RootTest.html" class="mm-link">Root Test</a></li>
+                <li><a href="../CalcII/SeriesStrategy.html" class="mm-link">Strategy for Series</a></li>
+                <li><a href="../CalcII/EstimatingSeries.html" class="mm-link">Estimating the Value of a Series</a></li>
+                <li><a href="../CalcII/PowerSeries.html" class="mm-link">Power Series</a></li>
+                <li><a href="../CalcII/PowerSeriesandFunctions.html" class="mm-link">Power Series and Functions</a></li>
+                <li><a href="../CalcII/TaylorSeries.html" class="mm-link">Taylor Series</a></li>
+                <li><a href="../CalcII/TaylorSeriesApps.html" class="mm-link">Applications of Series</a></li>
+                <li><a href="../CalcII/BinomialSeries.html" class="mm-link">Binomial Series</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/VectorsIntro.html" class="mm-link">Vectors</a>
+              <ul>
+                <li><a href="../CalcII/Vectors_Basics.html" class="mm-link">Vectors - The Basics</a></li>
+                <li><a href="../CalcII/VectorArithmetic.html" class="mm-link">Vector Arithmetic</a></li>
+                <li><a href="../CalcII/DotProduct.html" class="mm-link">Dot Product</a></li>
+                <li><a href="../CalcII/CrossProduct.html" class="mm-link">Cross Product</a></li>
+              </ul>
+            </li>
+            <li><a href="../CalcII/3DSpace.html" class="mm-link">3-Dimensional Space</a>
+              <ul>
+                <li><a href="../CalcII/3DCoords.html" class="mm-link">The 3-D Coordinate System</a></li>
+                <li><a href="../CalcII/EqnsOfLines.html" class="mm-link">Equations of Lines</a></li>
+                <li><a href="../CalcII/EqnsOfPlanes.html" class="mm-link">Equations of Planes</a></li>
+                <li><a href="../CalcII/QuadricSurfaces.html" class="mm-link">Quadric Surfaces</a></li>
+                <li><a href="../CalcII/MultiVrbleFcns.html" class="mm-link">Functions of Several Variables</a></li>
+                <li><a href="../CalcII/VectorFunctions.html" class="mm-link">Vector Functions</a></li>
+                <li><a href="../CalcII/VectorFcnsCalculus.html" class="mm-link">Calculus with Vector Functions</a></li>
+                <li><a href="../CalcII/TangentNormalVectors.html" class="mm-link">Tangent, Normal and Binormal Vectors</a></li>
+                <li><a href="../CalcII/VectorArcLength.html" class="mm-link">Arc Length with Vector Functions</a></li>
+                <li><a href="../CalcII/Curvature.html" class="mm-link">Curvature</a></li>
+                <li><a href="../CalcII/Velocity_Acceleration.html" class="mm-link">Velocity and Acceleration</a></li>
+                <li><a href="../CalcII/CylindricalCoords.html" class="mm-link">Cylindrical Coordinates</a></li>
+                <li><a href="../CalcII/SphericalCoords.html" class="mm-link">Spherical Coordinates</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="CalcIII.html" class="mm-link">Calculus III</a>
+          <ul>
+            <li><a href="3DSpace.html" class="mm-link">3-Dimensional Space</a>
+              <ul>
+                <li><a href="3DCoords.html" class="mm-link">The 3-D Coordinate System</a></li>
+                <li><a href="EqnsOfLines.html" class="mm-link">Equations of Lines</a></li>
+                <li><a href="EqnsOfPlanes.html" class="mm-link">Equations of Planes</a></li>
+                <li><a href="QuadricSurfaces.html" class="mm-link">Quadric Surfaces</a></li>
+                <li><a href="MultiVrbleFcns.html" class="mm-link">Functions of Several Variables</a></li>
+                <li><a href="VectorFunctions.html" class="mm-link">Vector Functions</a></li>
+                <li><a href="VectorFcnsCalculus.html" class="mm-link">Calculus with Vector Functions</a></li>
+                <li><a href="TangentNormalVectors.html" class="mm-link">Tangent, Normal and Binormal Vectors</a></li>
+                <li><a href="VectorArcLength.html" class="mm-link">Arc Length with Vector Functions</a></li>
+                <li><a href="Curvature.html" class="mm-link">Curvature</a></li>
+                <li><a href="Velocity_Acceleration.html" class="mm-link">Velocity and Acceleration</a></li>
+                <li><a href="CylindricalCoords.html" class="mm-link">Cylindrical Coordinates</a></li>
+                <li><a href="SphericalCoords.html" class="mm-link">Spherical Coordinates</a></li>
+              </ul>
+            </li>
+            <li><a href="PartialDerivsIntro.html" class="mm-link">Partial Derivatives</a>
+              <ul>
+                <li><a href="Limits.html" class="mm-link">Limits</a></li>
+                <li><a href="PartialDerivatives.html" class="mm-link">Partial Derivatives</a></li>
+                <li><a href="PartialDerivInterp.html" class="mm-link">Interpretations of Partial Derivatives</a></li>
+                <li><a href="HighOrderPartialDerivs.html" class="mm-link">Higher Order Partial Derivatives</a></li>
+                <li><a href="Differentials.html" class="mm-link">Differentials</a></li>
+                <li><a href="ChainRule.html" class="mm-link">Chain Rule</a></li>
+                <li><a href="DirectionalDeriv.html" class="mm-link">Directional Derivatives</a></li>
+              </ul>
+            </li>
+            <li><a href="PartialDerivAppsIntro.html" class="mm-link">Applications of Partial Derivatives</a>
+              <ul>
+                <li><a href="TangentPlanes.html" class="mm-link">Tangent Planes and Linear Approximations</a></li>
+                <li><a href="GradientVectorTangentPlane.html" class="mm-link">Gradient Vector, Tangent Planes and Normal Lines</a></li>
+                <li><a href="RelativeExtrema.html" class="mm-link">Relative Minimums and Maximums</a></li>
+                <li><a href="AbsoluteExtrema.html" class="mm-link">Absolute Minimums and Maximums</a></li>
+                <li><a href="LagrangeMultipliers.html" class="mm-link">Lagrange Multipliers</a></li>
+              </ul>
+            </li>
+            <li><a href="MultipleIntegralsIntro.html" class="mm-link">Multiple Integrals</a>
+              <ul>
+                <li><a href="DoubleIntegrals.html" class="mm-link">Double Integrals</a></li>
+                <li><a href="IteratedIntegrals.html" class="mm-link">Iterated Integrals</a></li>
+                <li><a href="DIGeneralRegion.html" class="mm-link">Double Integrals over General Regions</a></li>
+                <li><a href="DIPolarCoords.html" class="mm-link">Double Integrals in Polar Coordinates</a></li>
+                <li><a href="TripleIntegrals.html" class="mm-link">Triple Integrals</a></li>
+                <li><a href="TICylindricalCoords.html" class="mm-link">Triple Integrals in Cylindrical Coordinates</a></li>
+                <li><a href="TISphericalCoords.html" class="mm-link">Triple Integrals in Spherical Coordinates</a></li>
+                <li><a href="ChangeOfVariables.html" class="mm-link">Change of Variables</a></li>
+                <li><a href="SurfaceArea.html" class="mm-link">Surface Area</a></li>
+                <li><a href="Area_Volume.html" class="mm-link">Area and Volume Revisited</a></li>
+              </ul>
+            </li>
+            <li><a href="LineIntegralsIntro.html" class="mm-link">Line Integrals</a>
+              <ul>
+                <li><a href="VectorFields.html" class="mm-link">Vector Fields</a></li>
+                <li><a href="LineIntegralsPtI.html" class="mm-link">Line Integrals - Part I</a></li>
+                <li><a href="LineIntegralsPtII.html" class="mm-link">Line Integrals - Part II</a></li>
+                <li><a href="LineIntegralsVectorFields.html" class="mm-link">Line Integrals of Vector Fields</a></li>
+                <li><a href="FundThmLineIntegrals.html" class="mm-link">Fundamental Theorem for Line Integrals</a></li>
+                <li><a href="ConservativeVectorField.html" class="mm-link">Conservative Vector Fields</a></li>
+                <li><a href="GreensTheorem.html" class="mm-link">Green's Theorem</a></li>
+                <li><a href="CurlDivergence.html" class="mm-link">Curl and Divergence</a></li>
+              </ul>
+            </li>
+            <li><a href="SurfaceIntegralsIntro.html" class="mm-link">Surface Integrals</a>
+              <ul>
+                <li><a href="ParametricSurfaces.html" class="mm-link">Parametric Surfaces</a></li>
+                <li><a href="SurfaceIntegrals.html" class="mm-link">Surface Integrals</a></li>
+                <li><a href="SurfIntVectorField.html" class="mm-link">Surface Integrals of Vector Fields</a></li>
+                <li><a href="StokesTheorem.html" class="mm-link">Stokes' Theorem</a></li>
+                <li><a href="DivergenceTheorem.html" class="mm-link">Divergence Theorem</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../DE/DE.html" class="mm-link">Differential Equations</a>
+          <ul>
+            <li><a href="../DE/IntroBasic.html" class="mm-link">Basic Concepts</a>
+              <ul>
+                <li><a href="../DE/Definitions.html" class="mm-link">Definitions</a></li>
+                <li><a href="../DE/DirectionFields.html" class="mm-link">Direction Fields</a></li>
+                <li><a href="../DE/FinalThoughts.html" class="mm-link">Final Thoughts</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/IntroFirstOrder.html" class="mm-link">First Order DE's</a>
+              <ul>
+                <li><a href="../DE/Linear.html" class="mm-link">Linear Equations</a></li>
+                <li><a href="../DE/Separable.html" class="mm-link">Separable Equations</a></li>
+                <li><a href="../DE/Exact.html" class="mm-link">Exact Equations</a></li>
+                <li><a href="../DE/Bernoulli.html" class="mm-link">Bernoulli Differential Equations</a></li>
+                <li><a href="../DE/Substitutions.html" class="mm-link">Substitutions</a></li>
+                <li><a href="../DE/IoV.html" class="mm-link">Intervals of Validity</a></li>
+                <li><a href="../DE/Modeling.html" class="mm-link">Modeling with First Order DE's</a></li>
+                <li><a href="../DE/EquilibriumSolutions.html" class="mm-link">Equilibrium Solutions</a></li>
+                <li><a href="../DE/EulersMethod.html" class="mm-link">Euler's Method</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/IntroSecondOrder.html" class="mm-link">Second Order DE's</a>
+              <ul>
+                <li><a href="../DE/SecondOrderConcepts.html" class="mm-link">Basic Concepts</a></li>
+                <li><a href="../DE/RealRoots.html" class="mm-link">Real & Distinct Roots</a></li>
+                <li><a href="../DE/ComplexRoots.html" class="mm-link">Complex Roots</a></li>
+                <li><a href="../DE/RepeatedRoots.html" class="mm-link">Repeated Roots</a></li>
+                <li><a href="../DE/ReductionofOrder.html" class="mm-link">Reduction of Order</a></li>
+                <li><a href="../DE/FundamentalSetsofSolutions.html" class="mm-link">Fundamental Sets of Solutions</a></li>
+                <li><a href="../DE/Wronskian.html" class="mm-link">More on the  Wronskian</a></li>
+                <li><a href="../DE/NonhomogeneousDE.html" class="mm-link">Nonhomogeneous Differential Equations</a></li>
+                <li><a href="../DE/UndeterminedCoefficients.html" class="mm-link">Undetermined Coefficients</a></li>
+                <li><a href="../DE/VariationofParameters.html" class="mm-link">Variation of Parameters</a></li>
+                <li><a href="../DE/Vibrations.html" class="mm-link">Mechanical Vibrations</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/LaplaceIntro.html" class="mm-link">Laplace Transforms</a>
+              <ul>
+                <li><a href="../DE/LaplaceDefinition.html" class="mm-link">The Definition</a></li>
+                <li><a href="../DE/LaplaceTransforms.html" class="mm-link">Laplace Transforms</a></li>
+                <li><a href="../DE/InverseTransforms.html" class="mm-link">Inverse Laplace Transforms</a></li>
+                <li><a href="../DE/StepFunctions.html" class="mm-link">Step Functions</a></li>
+                <li><a href="../DE/IVPWithLaplace.html" class="mm-link">Solving IVP's with Laplace Transforms</a></li>
+                <li><a href="../DE/IVPWithNonConstantCoefficient.html" class="mm-link">Nonconstant Coefficient IVP's</a></li>
+                <li><a href="../DE/IVPWithStepFunction.html" class="mm-link">IVP's With Step Functions</a></li>
+                <li><a href="../DE/DiracDeltaFunction.html" class="mm-link">Dirac Delta Function</a></li>
+                <li><a href="../DE/ConvolutionIntegrals.html" class="mm-link">Convolution Integrals</a></li>
+                <li><a href="../DE/Laplace_Table.html" class="mm-link">Table Of Laplace Transforms</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/SystemsIntro.html" class="mm-link">Systems of DE's</a>
+              <ul>
+                <li><a href="../DE/LA_Systems.html" class="mm-link">Review : Systems of Equations</a></li>
+                <li><a href="../DE/LA_Matrix.html" class="mm-link">Review : Matrices & Vectors</a></li>
+                <li><a href="../DE/LA_Eigen.html" class="mm-link">Review : Eigenvalues & Eigenvectors</a></li>
+                <li><a href="../DE/SystemsDE.html" class="mm-link">Systems of Differential Equations</a></li>
+                <li><a href="../DE/SolutionsToSystems.html" class="mm-link">Solutions to Systems</a></li>
+                <li><a href="../DE/PhasePlane.html" class="mm-link">Phase Plane</a></li>
+                <li><a href="../DE/RealEigenvalues.html" class="mm-link">Real Eigenvalues</a></li>
+                <li><a href="../DE/ComplexEigenvalues.html" class="mm-link">Complex Eigenvalues</a></li>
+                <li><a href="../DE/RepeatedEigenvalues.html" class="mm-link">Repeated Eigenvalues</a></li>
+                <li><a href="../DE/NonhomogeneousSystems.html" class="mm-link">Nonhomogeneous Systems</a></li>
+                <li><a href="../DE/SystemsLaplace.html" class="mm-link">Laplace Transforms</a></li>
+                <li><a href="../DE/SystemsModeling.html" class="mm-link">Modeling</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/SeriesIntro.html" class="mm-link">Series Solutions to DE's</a>
+              <ul>
+                <li><a href="../DE/PowerSeries.html" class="mm-link">Review : Power Series</a></li>
+                <li><a href="../DE/TaylorSeries.html" class="mm-link">Review : Taylor Series</a></li>
+                <li><a href="../DE/SeriesSolutions.html" class="mm-link">Series Solutions</a></li>
+                <li><a href="../DE/EulerEquations.html" class="mm-link">Euler Equations</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/IntroHigherOrder.html" class="mm-link">Higher Order Differential Equations</a>
+              <ul>
+                <li><a href="../DE/HOBasicConcepts.html" class="mm-link">Basic Concepts for <em>n</em><sup>th</sup> Order Linear Equations</a></li>
+                <li><a href="../DE/HOHomogeneousDE.html" class="mm-link">Linear Homogeneous Differential Equations</a></li>
+                <li><a href="../DE/HOUndeterminedCoeff.html" class="mm-link">Undetermined Coefficients</a></li>
+                <li><a href="../DE/HOVariationOfParam.html" class="mm-link">Variation of Parameters</a></li>
+                <li><a href="../DE/HOLaplaceTransforms.html" class="mm-link">Laplace Transforms</a></li>
+                <li><a href="../DE/HOSystems.html" class="mm-link">Systems of Differential Equations</a></li>
+                <li><a href="../DE/HOSeries.html" class="mm-link">Series Solutions</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/IntroBVP.html" class="mm-link">Boundary Value Problems &amp; Fourier Series</a>
+              <ul>
+                <li><a href="../DE/BoundaryValueProblem.html" class="mm-link">Boundary Value Problems</a></li>
+                <li><a href="../DE/BVPEvals.html" class="mm-link">Eigenvalues and Eigenfunctions</a></li>
+                <li><a href="../DE/PeriodicOrthogonal.html" class="mm-link">Periodic Functions &amp; Orthogonal Functions</a></li>
+                <li><a href="../DE/FourierSineSeries.html" class="mm-link">Fourier Sine Series</a></li>
+                <li><a href="../DE/FourierCosineSeries.html" class="mm-link">Fourier Cosine Series</a></li>
+                <li><a href="../DE/FourierSeries.html" class="mm-link">Fourier Series</a></li>
+                <li><a href="../DE/ConvergenceFourierSeries.html" class="mm-link">Convergence of Fourier Series</a></li>
+              </ul>
+            </li>
+            <li><a href="../DE/IntroPDE.html" class="mm-link">Partial Differential Equations </a>
+              <ul>
+                <li><a href="../DE/TheHeatEquation.html" class="mm-link">The Heat Equation</a></li>
+                <li><a href="../DE/TheWaveEquation.html" class="mm-link">The Wave Equation</a></li>
+                <li><a href="../DE/PDETerminology.html" class="mm-link">Terminology</a></li>
+                <li><a href="../DE/SeparationofVariables.html" class="mm-link">Separation of Variables</a></li>
+                <li><a href="../DE/SolvingHeatEquation.html" class="mm-link">Solving the Heat Equation</a></li>
+                <li><a href="../DE/HeatEqnNonZero.html" class="mm-link">Heat Equation with Non-Zero Temperature Boundaries</a></li>
+                <li><a href="../DE/LaplacesEqn.html" class="mm-link">Laplace's Equation</a></li>
+                <li><a href="../DE/VibratingString.html" class="mm-link">Vibrating String</a></li>
+                <li><a href="../DE/PDESummary.html" class="mm-link">Summary of Separation of Variables</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><span>Extras</span></li>
+        <li><a href="../../Extras/AlgebraTrigReview/AlgebraTrig.html" class="mm-link">Algebra &amp; Trig Review</a>
+          <ul>
+            <li><a href="../../Extras/AlgebraTrigReview/AlgebraIntro.html" class="mm-link">Algebra</a>
+              <ul>
+                <li><a href="../../Extras/AlgebraTrigReview/Exponents.html" class="mm-link">Exponents </a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/AbsoluteValue.html" class="mm-link">Absolute Value</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Radicals.html" class="mm-link">Radicals</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Rationalizing.html" class="mm-link">Rationalizing </a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Functions.html" class="mm-link">Functions </a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/MultPoly.html" class="mm-link">Multiplying Polynomials</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Factoring.html" class="mm-link">Factoring</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SimpRatExp.html" class="mm-link">Simplifying Rational Expressions</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/Graphing.html" class="mm-link">Graphing and Common Graphs</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveEqnPtI.html" class="mm-link">Solving Equations, Part I</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveEqnPtII.html" class="mm-link">Solving Equations, Part II</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveSystems.html" class="mm-link">Solving Systems of Equations</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveIneq.html" class="mm-link">Solving Inequalities</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveAbsValue.html" class="mm-link">Absolute Value Equations and Inequalities</a></li>
+              </ul>
+            </li>
+            <li><a href="../../Extras/AlgebraTrigReview/TrigIntro.html" class="mm-link">Trigonometry</a>
+              <ul>
+                <li><a href="../../Extras/AlgebraTrigReview/TrigFunctions.html" class="mm-link">Trig Function Evaluation</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/TrigGraphs.html" class="mm-link">Graphs of Trig Functions</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/TrigFormulas.html" class="mm-link">Trig Formulas</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveTrigEqn.html" class="mm-link">Solving Trig Equations</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/InverseTrig.html" class="mm-link">Inverse Trig Functions</a></li>
+              </ul>
+            </li>
+            <li><a href="../../Extras/AlgebraTrigReview/ExpLogIntro.html" class="mm-link">Exponentials & Logarithms</a>
+              <ul>
+                <li><a href="../../Extras/AlgebraTrigReview/ExponentialFcns.html" class="mm-link">Basic Exponential Functions</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/LogarithmFcns.html" class="mm-link">Basic Logarithm Functions</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/LogProperties.html" class="mm-link">Logarithm Properties</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SimpLogs.html" class="mm-link">Simplifying Logarithms</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveExpEqn.html" class="mm-link">Solving Exponential Equations</a></li>
+                <li><a href="../../Extras/AlgebraTrigReview/SolveLogEqn.html" class="mm-link">Solving Logarithm Equations</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../../Extras/CommonErrors/CommonMathErrors.html" class="mm-link">Common Math Errors</a>
+          <ul>
+            <li><a href="../../Extras/CommonErrors/GeneralErrors.html" class="mm-link">General Errors</a>
+            </li>
+            <li><a href="../../Extras/CommonErrors/AlgebraErrors.html" class="mm-link">Algebra Errors</a>
+            </li>
+            <li><a href="../../Extras/CommonErrors/TrigErrors.html" class="mm-link">Trig Errors</a>
+            </li>
+            <li><a href="../../Extras/CommonErrors/CommonErrors.html" class="mm-link">Common Errors</a>
+            </li>
+            <li><a href="../../Extras/CommonErrors/CalculusErrors.html" class="mm-link">Calculus Errors</a>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../../Extras/ComplexPrimer/ComplexNumbers.html" class="mm-link">Complex Number Primer</a>
+          <ul>
+            <li><a href="../../Extras/ComplexPrimer/Definition.html" class="mm-link">The Definition</a>
+            </li>
+            <li><a href="../../Extras/ComplexPrimer/Arithmetic.html" class="mm-link">Arithmetic</a>
+            </li>
+            <li><a href="../../Extras/ComplexPrimer/ConjugateModulus.html" class="mm-link">Conjugate and Modulus</a>
+            </li>
+            <li><a href="../../Extras/ComplexPrimer/Forms.html" class="mm-link">Polar and Exponential Forms</a>
+            </li>
+            <li><a href="../../Extras/ComplexPrimer/Roots.html" class="mm-link">Powers and Roots</a>
+            </li>
+          </ul>
+        </li>
+
+        <li><a href="../../Extras/StudyMath/HowToStudyMath.html" class="mm-link">How To Study Math</a>
+          <ul>
+            <li><a href="../../Extras/StudyMath/GeneralTips.html" class="mm-link">General Tips</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/TakingNotes.html" class="mm-link">Taking Notes</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/GettingHelp.html" class="mm-link">Getting Help</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/Homework.html" class="mm-link">Doing Homework</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/ProblemSolving.html" class="mm-link">Problem Solving</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/StudyForExam.html" class="mm-link">Studying For an Exam</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/TakingExam.html" class="mm-link">Taking an Exam</a>
+            </li>
+            <li><a href="../../Extras/StudyMath/Errors.html" class="mm-link">Learn From Your Errors</a>
+            </li>
+          </ul>
+        </li>
+
+        <li><span>Misc Links</span></li>
+        <li><a href="http://tutorial.math.lamar.edu/contact.aspx" class="mm-link">Contact Me</a></li>
+        <li><a href="../../links.html" class="mm-link">Links</a></li>
+        <li><a href="../../mathjax.html" class="mm-link">MathJax Help and Configuration</a></li>
+        <li><a href="../../mystudents.html" class="mm-link">My Students</a></li>
+        <li><a href="http://tutorial.math.lamar.edu/privacy.aspx" class="mm-link">Privacy Statement</a></li>
+        <li><a href="../../help.html" class="mm-link">Site Help & FAQ</a></li>
+        <li><a href="http://tutorial.math.lamar.edu/terms.aspx" class="mm-link">Terms of Use</a></li>
+      </ul>
+    </nav>
+
+
+
+    <div class="top-info-bar">
+      <span id="mobile-title" class="mobile-header-title header-title">Paul's Online Notes</span>
+      <br />
+      <span class="top-menu-breadcrumb">
+        <a href="../../index.html" id="breadcrumb_home_link" title="Go to Main Page">Home</a>
+        <span id="breadcrumb_h_b_sep_span">/ </span>
+        <a href="CalcIII.html" id="breadcrumb_book_link" title="Go to Book Introduction">Calculus III</a>
+        
+        <span id="breadcrumb_b_c_sep_span">/ </span>
+        <a href="PartialDerivAppsIntro.html" id="breadcrumb_chapter_link" title="Go to Chapter Introduction">Applications of Partial Derivatives</a>
+        
+        <span id="breadcrumb_section_span"> / Lagrange Multipliers</span>
+      </span>
+
+    </div>
+
+    <div id="nav_links" class="top-nav-bar">
+      
+      <span id="nav_current_notes">Notes</span>
+      <a href="http://tutorial.math.lamar.edu/Problems/CalcIII/LagrangeMultipliers.aspx" id="nav_links_practice" title="Go to Practice Problems for current topic.">Practice<span class="nav_desktop_extra"> Problems</span></a>
+      
+      <a href="http://tutorial.math.lamar.edu/ProblemsNS/CalcIII/LagrangeMultipliers.aspx" id="nav_links_asgn" title="Go to Assignment Problems for current topic.">Assignment<span class="nav_desktop_extra">  Problems</span></a>
+      
+    </div>
+
+    <div class="header-divider"></div>
+
+    <div class="content">  
+      
+      
+      <span id="SHLink_NoteMobile" class="SH-Link content-note-link-mobile">Show Mobile Notice</span>
+      <span id="SHImg_NoteMobile" class="fas fa-caret-right SH-padding content-note-link-mobile" aria-hidden="true"></span>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+
+      <span id="SHALink_S_Note" class="SH-Link SH-Hide SH-Bracket">Show All Notes</span>&nbsp;<span id="SHALink_H_Note" class="SH-Link SH-Hide SH-Bracket">Hide All Notes</span>
+      
+      
+      <div id="SHObj_NoteMobile" class="content-note-container content-note-container-mobile">
+        <div class="content-note-header">Mobile Notice</div>
+        <div class="content-note">You appear to be on a device with a "narrow" screen width (<em>i.e.</em> you are probably on a mobile phone).  Due to the nature of the mathematics on this site it is best views in landscape mode.  If your device is not in landscape mode many of the equations will run off the side of your device (should be able to scroll to see them) and some of the menu items will be cut off due to the narrow screen width.</div>
+      </div>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+
+      
+
+
+  <form method="post" action="http://tutorial.math.lamar.edu/Classes/CalcIII/LagrangeMultipliers.aspx" id="ctl00">
+<div class="aspNetHidden">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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" />
+</div>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="49C90B5C" />
+</div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </form>
+
+  <h3>Section 3-5 : Lagrange Multipliers</h3>
+
+    
+    <p>In the previous section we optimized (<em>i.e.</em> found the absolute extrema) a function on a region that contained its boundary.  Finding potential optimal points in the interior of the region isn’t too bad in general, all that we needed to do was find the critical points and plug them into the function.  However, as we saw in the examples finding potential optimal points on the boundary was often a fairly long and messy process.</p>
+    
+    <p>In this section we are going to take a look at another way of optimizing a function subject to given constraint(s).  The constraint(s) may be the equation(s) that describe the boundary of a region although in this section we won’t concentrate on those types of problems since this method just requires a general constraint and doesn’t really care where the constraint came from.</p>
+    
+    <p>So, let’s get things set up.  We want to optimize (<em>i.e.</em> find the minimum and maximum value of) a function, \(f\left( {x,y,z} \right)\), subject to the constraint \(g\left( {x,y,z} \right) = k\).  Again, the constraint may be the equation that describes the boundary of a region or it may not be.  The process is actually fairly simple, although the work can still be a little overwhelming at times.</p>
+    
+    <h4>Method of Lagrange Multipliers</h4>
+  <div class="fact">
+    <ol class="general-list">
+      <li>Solve the following system of equations.
+          \[\begin{align*}\nabla f\left( {x,y,z} \right) & = \lambda \,\,\nabla g\left( {x,y,z} \right)\\ g\left( {x,y,z} \right) & = k\end{align*}\]
+      </li>
+      <li>Plug in all solutions, \(\left( {x,y,z} \right)\), from the first step into \(f\left( {x,y,z} \right)\) and identify the minimum and maximum values, provided they exist and \(\nabla g \ne \vec{0}\) at the point.</li>
+    </ol>
+    <p>The constant, \(\lambda \), is called the <strong>Lagrange Multiplier</strong>.</p>
+  </div>
+    
+    <p>Notice that the system of equations from the method actually has four equations, we just wrote the system in a simpler form.  To see this let’s take the first equation and put in the definition of the gradient vector to see what we get.</p>
+    
+      \[\left\langle {{f_x},{f_y},{f_z}} \right\rangle  = \lambda \left\langle {{g_x},{g_y},{g_z}} \right\rangle  = \left\langle {\lambda {g_x},\lambda {g_y},\lambda {g_z}} \right\rangle \]
+    
+    <p>In order for these two vectors to be equal the individual components must also be equal.  So, we actually have three equations here.</p>
+    
+      \[{f_x} = \lambda {g_x}\hspace{0.25in}{f_y} = \lambda {g_y}\hspace{0.25in}{f_z} = \lambda {g_z}\]
+    <p>These three equations along with the constraint, \(g\left( {x,y,z} \right) = c\), give four equations with four unknowns \(x\), \(y\), \(z\), and \(\lambda \).</p>
+    
+    <p>Note as well that if we only have functions of two variables then we won’t have the third component of the gradient and so will only have three equations in three unknowns \(x\), \(y\), and \(\lambda \).</p>
+    
+    <p>As a final note we also need to be careful with the fact that in some cases minimums and maximums won’t exist even though the method will seem to imply that they do.  In every problem we’ll need to make sure that minimums and maximums will exist before we start the problem.</p>
+    
+    <p>To see a physical justification for the formulas above.  Let’s consider the minimum and maximum value of \(f\left( {x,y} \right) = 8{x^2} - 2y\) subject to the constraint \({x^2} + {y^2} = 1\).  In the practice problems for this section (problem #2 to be exact) we will show that minimum value of \(f\left( {x,y} \right)\) is -2 which occurs at \(\left( {0,1} \right)\) and the maximum value of \(f\left( {x,y} \right)\) is 8.125 which occurs at \(\left( { - \frac{{3\sqrt 7 }}{8}, - \frac{1}{8}} \right)\) and \(\left( {\frac{{3\sqrt 7 }}{8}, - \frac{1}{8}} \right)\).</p>
+    
+    <p>Here is a sketch of the constraint as well as \(f\left( {x.y} \right) = k\) for various values of \(k\).</p>
+    
+      <div class="center-div"><img height="430" src="http://tutorial.math.lamar.edu/Classes/CalcIII/LagrangeMultipliers_Files/image001.gif" width="415" /></div>
+    
+    
+    <p>First remember that solutions to the system must be somewhere on the graph of the constraint, \({x^2} + {y^2} = 1\) in this case.  Because we are looking for the minimum/maximum value of \(f\left( {x,y} \right)\) this, in turn,  means that the location of the minimum/maximum value of \(f\left( {x,y} \right)\), <em>i.e.</em> the point \(\left( {x,y} \right)\),  must occur where the graph of \(f\left( {x,y} \right) = k\) intersects the graph of the constraint when \(k\) is either the minimum or maximum value of \(f\left( {x,y} \right)\).</p>
+    
+    <p>Now, we can see that the graph of \(f\left( {x,y} \right) =  - 2\), <em>i.e.</em> the graph of the minimum value of \(f\left( {x,y} \right)\),  just touches the graph of the constraint at \(\left( {0,1} \right)\).  In fact, the two graphs at that point are tangent.</p>
+    
+    <p>If the two graphs are tangent at that point then their normal vectors must be parallel, <em>i.e.</em> the two normal vectors must be scalar multiples of each other.  Mathematically, this means,</p>
+    
+    
+      \[\nabla f\left( {x,y,z} \right) = \lambda \,\,\nabla g\left( {x,y,z} \right)\]
+    
+    <p>for some scalar \(\lambda \) and this is exactly the first equation in the system we need to solve in the method.</p>
+    
+    <p>Note as well that if \(k\) is smaller than the minimum value of \(f\left( {x,y} \right)\)  the graph of \(f\left( {x,y} \right) = k\) doesn’t intersect the graph of the constraint and so it is not possible for the function to take that value of \(k\) at a point that will satisfy the constraint.</p>
+    
+    <p>Likewise, if \(k\) is larger than the minimum value of \(f\left( {x,y} \right)\) the graph of \(f\left( {x,y} \right) = k\) will intersect the graph of the constraint but the two graphs are not tangent at the intersection point(s).  This means that the method will not find those intersection points as we solve the system of equations.</p>
+    
+    <p>Next, the graph below shows a different set of values of \(k\).  In this case, the values of \(k\) include the maximum value of \(f\left( {x,y} \right)\) as well as a few values on either side of the maximum value.</p>
+    
+    <p>Again, we can see that the graph of \(f\left( {x,y} \right) = 8.125\) will just touch the graph of the constraint at two points.  This is a good thing as we know the solution does say that it should occur at two points.  Also note that at those points again the graph of \(f\left( {x,y} \right) = 8.125\)and the constraint are tangent and so, just as with the minimum values, the normal vectors must be parallel at these points.</p>
+    
+    <p>Likewise, for value of \(k\) greater than 8.125 the graph of \(f\left( {x,y} \right) = k\) does not intersect the graph of the constraint and so it will not be possible for \(f\left( {x,y} \right)\) to take on those larger values at points that are on the constraint.</p>
+    
+    <p>Also, for values of \(k\) less than 8.125 the graph of \(f\left( {x,y} \right) = k\) does intersect the graph of the constraint but will not be tangent at the intersection points and so again the method will not produce these intersection points as we solve the system of equations.</p>
+
+      <div class="center-div"><img height="642" src="http://tutorial.math.lamar.edu/Classes/CalcIII/LagrangeMultipliers_Files/image002.gif" width="350" /></div>
+    
+    
+    <p>So, with these graphs we’ve seen that the minimum/maximum values of \(f\left( {x,y} \right)\)  will come where the graph of \(f\left( {x,y} \right) = k\) and the graph of the constraint are tangent and so their normal vectors are parallel.  Also, because the point must occur on the constraint itself.  In other words, the system of equations we need to solve to determine the minimum/maximum value of  \(f\left( {x,y} \right)\) are exactly those given in the above when we introduced the method.</p>
+  
+  <p>Note that the physical justification above was done for a two dimensional system but the same justification can be done in higher dimensions.  The difference is that in higher dimensions we won’t be working with curves.  For example, in three dimensions we would be working with surfaces.  However, the same ideas will still hold.  At the points that give minimum and maximum value(s) of   the surfaces would be parallel and so the normal vectors would also be parallel.</p>
+
+    
+    <p>Let’s work a couple of examples.</p>
+    <a class="anchor" name="PDApps_Lagrange_Ex1"></a>
+  <div class="example">
+    <span class="example-title">Example 1</span> Find the dimensions of the box with largest volume if the total surface area is 64 cm<sup>2</sup>.
+    <div class="example-content">
+      <span id="SHLink_Soln1" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln1" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln1" class="soln-content">
+        <p>Before we start the process here note that we also saw a way to solve this kind of problem in <a href="../CalcI/Optimization.html">Calculus I</a>, except in those problems we required a condition that related one of the sides of the box to the other sides so that we could get down to a volume and surface area function that only involved two variables.  We no longer need this condition for these problems.</p>
+          
+          <p>Now, let’s get on to solving the problem.  We first need to identify the function that we’re going to optimize as well as the constraint.  Let’s set the length of the box to be \(x\), the width of the box to be \(y\) and the height of the box to be \(z\).  Let’s also note that because we’re dealing with the dimensions of a box it is safe to assume that \(x\), \(y\), and \(z\) are all positive quantities.</p>
+          
+          <p>We want to find the largest volume and so the function that we want to optimize is given by,</p>
+          
+              \[f\left( {x,y,z} \right) = xyz\]
+          
+          <p>Next, we know that the surface area of the box must be a constant 64.  So this is the constraint.  The surface area of a box is simply the sum of the areas of each of the sides so the constraint is given by,</p>
+          
+          
+            \[2xy + 2xz + 2yz = 64\hspace{0.5in} \Rightarrow \hspace{0.5in}xy + xz + yz = 32\]
+          
+          <p>Note that we divided the constraint by 2 to simplify the equation a little.  Also, we get the function \(g\left( {x,y,z} \right)\) from this.</p>
+          
+              \[g\left( {x,y,z} \right) = xy + xz + yz\]
+          
+          <p>The function itself, \(f\left( {x,y,z} \right) = xyz\) will clearly have neither minimums or maximums unless we put some restrictions on the variables.  The only real restriction that we’ve got is that all the variables must be positive.  This, of course, instantly means that the function does have a minimum, zero, even though this is a silly value as it also means we pretty much don’t have a box.  It does however mean that we know minimum of \(f\left( {x,yz} \right)\) does exist.</p>
+          
+          <p>So, let’s now see if \(f\left( {x,y,z} \right)\)  will have a maximum. Clearly, hopefully, \(f\left( {x,y,z} \right)\) will not have a maximum if all the variables are allowed to increase without bound.  That however, can’t happen because of the constraint,</p>
+          
+          \[xy + xz + yz = 32\]
+          
+          <p>Here we’ve got the sum of three positive numbers (remember that we \(x\), \(y\), and \(z\) are positive because we are working with a box) and the sum must equal 32.  So, if one of the variables gets very large, say \(x\), then because each of the products must be less than 32 both \(y\) and \(z\) must be very small to make sure the first two terms are less than 32.  So, there is no way for all the variables to increase without bound and so it should make some sense that the function, \(f\left( {x,y,z} \right) = xyz\), will have a maximum.</p>
+          
+          <p>This is not an exact proof that \(f\left( {x,y,z} \right)\) will have a maximum but it should help to visualize that \(f\left( {x,y,z} \right)\) should have a maximum value as long as it is subject to the constraint.</p>
+          
+          <p>Here are the four equations that we need to solve.</p>
+          
+            \[\begin{equation}yz = \lambda \left( {y + z} \right)\hspace{0.75in}\left( {{f_x} = \lambda {g_x}} \right) \label{eq:eq1}\end{equation}\]
+          
+            \[\begin{equation}xz = \lambda \left( {x + z} \right)\hspace{0.75in}\left( {{f_y} = \lambda {g_y}} \right)\label{eq:eq2}\end{equation}\] 
+          
+            \[\begin{equation}xy = \lambda \left( {x + y} \right)\hspace{0.75in}\left( {{f_z} = \lambda {g_z}} \right)\label{eq:eq3}\end{equation}\] 
+          
+            \[\begin{equation}xy + xz + yz = 32\hspace{0.75in}\left( {g\left( {x,y,z} \right) = 32} \right) \label{eq:eq4} \end{equation}\]  
+          
+          <p>There are many ways to solve this system.  We’ll solve it in the following way.  Let’s multiply equation \(\eqref{eq:eq1}\)  by \(x\), equation \(\eqref{eq:eq2}\) by \(y\) and equation \(\eqref{eq:eq3}\) by \(z\).  This gives,</p>
+          
+              \[\begin{equation}xyz = \lambda x\left( {y + z} \right)\label{eq:eq5}\end{equation}\]
+          
+              \[\begin{equation}xyz = \lambda y\left( {x + z} \right)\label{eq:eq6}\end{equation}\]
+          
+              \[\begin{equation}xyz = \lambda z\left( {x + y} \right)\label{eq:eq7}\end{equation}\]
+
+          <p>Now notice that we can set equations \(\eqref{eq:eq5}\) and \(\eqref{eq:eq6}\) equal.  Doing this gives,</p>
+          
+            \[\begin{align*}\lambda x\left( {y + z} \right) & = \lambda y\left( {x + z} \right)\\ \lambda \left( {xy + xz} \right) - \lambda \left( {yx + yz} \right) &= 0\\ \lambda \left( {xz - yz} \right) & = 0\hspace{0.5in} \Rightarrow \hspace{0.5in}\lambda  = 0\,\,\,\,\,\,{\mbox{or}}\,\,\,\,\,xz = yz\end{align*}\]
+          
+          <p>This gave two possibilities.  The first, \(\lambda  = 0\) is not possible since if this was the case equation \(\eqref{eq:eq1}\) would reduce to</p>
+          
+            \[yz = 0\hspace{0.5in} \Rightarrow \hspace{0.25in}y = 0\,\,\,{\mbox{or}}\,\,\,z = 0\]
+          <p>Since we are talking about the dimensions of a box neither of these are possible so we can discount \(\lambda  = 0\).  This leaves the second possibility.</p>
+          
+              \[xz = yz\]
+          
+          <p>Since we know that \(z \ne 0\) (again since we are talking about the dimensions of a box) we can cancel the \(z\) from both sides.  This gives,</p>
+          
+              \[\begin{equation}x = y\label{eq:eq8}\end{equation}\]
+          
+          <p>Next, let’s set equations \(\eqref{eq:eq6}\) and \(\eqref{eq:eq7}\) equal.  Doing this gives,</p>
+          
+            \[\begin{align*}\lambda y\left( {x + z} \right) & = \lambda z\left( {x + y} \right)\\ \lambda \left( {yx + yz - zx - zy} \right) & = 0\\ \lambda \left( {yx - zx} \right) & = 0\hspace{0.5in} \Rightarrow \hspace{0.5in}\lambda  = 0\,\,\,{\mbox{or}}\,\,\,\,yx = zx\end{align*}\]
+
+          <p>As already discussed we know that \(\lambda  = 0\) won’t work and so this leaves,</p>
+          
+              \[yx = zx\]
+          <p>We can also say that \(x \ne 0\)since we are dealing with the dimensions of a box so we must have,</p>
+          
+              \[\begin{equation}z = y\label{eq:eq9}\end{equation}\]
+          
+          <p>Plugging equations \(\eqref{eq:eq8}\) and \(\eqref{eq:eq9}\) into equation \(\eqref{eq:eq4}\) we get,</p>
+          
+            \[{y^2} + {y^2} + {y^2} = 3{y^2} = 32\hspace{0.5in}y =  \pm \sqrt {\frac{{32}}{3}}  =  \pm \,3.266\]
+          
+          <p>However, we know that \(y\) must be positive since we are talking about the dimensions of a box.  Therefore, the only solution that makes physical sense here is</p>
+          
+          
+              \[x = y = z = \,3.266\]
+          
+          <p>So, it looks like we’ve got a cube.</p>
+          
+          <p>We should be a little careful here.  Since we’ve only got one solution we might be tempted to assume that these are the dimensions that will give the largest volume.  Anytime we get a single solution we really need to verify that it is a maximum (or minimum if that is what we are looking for).</p>
+          
+          <p>This is actually pretty simple to do.  First, let’s note that the volume at our solution above is,</p>
+          
+          <p>\[V = f\left( {\sqrt {\frac{{32}}{2}} ,\sqrt {\frac{{32}}{2}} ,\sqrt {\frac{{32}}{2}} } \right) = {\left( {\sqrt {\frac{{32}}{2}} } \right)^3} = 34.8376\]
+          
+          <p>Now, we know that a maximum of \(f\left( {x,y,z} \right)\) will exist (“proved” that earlier in the solution) and so to verify that that this really is a maximum all we need to do if find another set of dimensions that satisfy our constraint and check the volume.  If the volume of this new set of dimensions is smaller that the volume above then we know that our solution does give a maximum.</p>
+          
+          <p>If, on the other hand, the new set of dimensions give a larger volume we have a problem.  We only have a single solution and we know that a maximum exists and the method should generate that maximum.  So, in this case, the likely issue is that we will have made a mistake somewhere and we’ll need to go back and find it.</p>
+          
+          <p>So, let’s find a new set of dimensions for the box.  The only thing we need to worry about is that they will satisfy the constraint.  Outside of that there aren’t other constraints on the size of the dimensions.  So, we can freely pick two values and then use the constraint to determine the third value.</p>
+          
+          <p>Let’s choose \(x = y = 1\).  No reason for these values other than they are “easy” to work with.  Plugging these into the constraint gives,</p>
+          
+          <p>\[1 + z + z = 32\hspace{0.25in} \to \hspace{0.25in}2z = 31\hspace{0.25in} \to \hspace{0.25in}z = \frac{{31}}{2}\]
+          
+          <p>So, this is a set of dimensions that satisfy the constraint and the volume for this set of dimensions is,</p>
+          
+          <p>\[V = f\left( {1,1,\frac{{31}}{2}} \right) = \frac{{31}}{2} = 15.5 &lt; 34.8376\]
+          <p>So, the new dimensions give a smaller volume and so our solution above is, in fact, the dimensions that will give a maximum volume of the box are \(x = y = z = \,3.266\)</p>
+      </div>
+    </div>
+  </div>
+    
+    <p>Notice that we never actually found values for \(\lambda \) in the above example.  This is fairly standard for these kinds of problems.  The value of \(\lambda \) isn’t really important to determining if the point is a maximum or a minimum so often we will not bother with finding a value for it.  On occasion we will need its value to help solve the system, but even in those cases we won’t use it past finding the point.</p>
+    <a class="anchor" name="PDApps_Lagrange_Ex2"></a>
+  <div class="example">
+    <span class="example-title">Example 2</span> Find the maximum and minimum of \(f\left( {x,y} \right) = 5x - 3y\) subject to the constraint \({x^2} + {y^2} = 136\).
+    <div class="example-content">
+      <span id="SHLink_Soln2" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln2" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln2" class="soln-content">
+        <p>This one is going to be a little easier than the previous one since it only has two variables.  Also, note that it’s clear from the constraint that region of possible solutions lies on a disk of radius \(\sqrt {136} \) which is a closed and bounded region, \( - \sqrt {136}  \le x,y \le \sqrt {136} \), and hence by the <a href="AbsoluteExtrema.html#PdApps_AbsExt_EVT">Extreme Value Theorem</a>  we know that a minimum and maximum value must exist.</p>
+          
+          <p>Here is the system that we need to solve.</p>
+          
+            \[\begin{align*}5 & = 2\lambda x\\ - 3 & = 2\lambda y\\ {x^2} + {y^2} & = 136\end{align*}\]
+          
+          <p>Notice that, as with the last example, we can’t have \(\lambda  = 0\) since that would not satisfy the first two equations.  So, since we know that \(\lambda  \ne 0\)we can solve the first two equations for \(x\) and \(y\) respectively.  This gives,</p>
+          
+            \[x = \frac{5}{{2\lambda }}\hspace{0.75in}y =  - \frac{3}{{2\lambda }}\]
+          
+          <p>Plugging these into the constraint gives,</p>
+          
+            \[\frac{{25}}{{4{\lambda ^2}}} + \frac{9}{{4{\lambda ^2}}} = \frac{{17}}{{2{\lambda ^2}}} = 136\]
+          
+          <p>We can solve this for \(\lambda \).</p>
+          
+            \[{\lambda ^2} = \frac{1}{{16}}\hspace{0.25in} \Rightarrow \hspace{0.25in}\,\,\,\,\,\lambda  =  \pm \frac{1}{4}\]
+          
+          <p>Now, that we know \(\lambda \) we can find the points that will be potential maximums and/or minimums.</p>
+          
+          <p>If \(\lambda  =  - \frac{1}{4}\) we get,</p>
+          
+              \[x =  - 10\hspace{0.75in}y = 6\]
+          <p>and if \(\lambda  = \frac{1}{4}\) we get,</p>
+          
+              \[x = 10\hspace{0.75in}\hspace{0.25in}y =  - 6\]
+          
+          <p>To determine if we have maximums or minimums we just need to plug these into the function.  Also recall from the discussion at the start of this solution that we know these will be the minimum and maximums because the Extreme Value Theorem tells us that minimums and maximums will exist for this problem.</p>
+          
+          <p>Here are the minimum and maximum values of the function.</p>
+          
+            \[\begin{align*}f\left( { - 10,6} \right) & =  - 68 & \hspace{0.25in} &{\mbox{Minimum at }}\left( { - 10,6} \right)\\ f\left( {10, - 6} \right) & = 68 & \hspace{0.5in} & {\mbox{Maximum at }}\left( {10, - 6} \right)\end{align*}\]
+      </div>
+    </div>
+  </div>
+    
+    <p>In the first two examples we’ve excluded \(\lambda  = 0\) either for physical reasons or because it wouldn’t solve one or more of the equations.  Do not always expect this to happen.  Sometimes we will be able to automatically exclude a value of \(\lambda \) and sometimes we won’t.</p>
+    
+    <p>Let’s take a look at another example.</p>
+    <a class="anchor" name="PDApps_Lagrange_Ex3"></a>
+  <div class="example">
+    <span class="example-title">Example 3</span> Find the maximum and minimum values of \(f\left( {x,y,z} \right) = xyz\) subject to the constraint \(x + y + z = 1\).  Assume that \(x,y,z \ge 0\).
+    <div class="example-content">
+      <span id="SHLink_Soln3" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln3" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln3" class="soln-content">
+        <p>First note that our constraint is a sum of three positive or zero number and it must be 1.  Therefore, it is clear that our solution will fall in the range \(0 \le x,y,z \le 1\) and so the solution must lie in a closed and bounded region and so by the <a href="AbsoluteExtrema.html#PdApps_AbsExt_EVT">Extreme Value Theorem</a>  we know that a minimum and maximum value must exist.</p>
+          
+          <p>Here is the system of equation that we need to solve.</p>
+          
+              \[\begin{equation}yz = \lambda \label{eq:eq10}\end{equation}\] 
+          
+              \[\begin{equation}xz = \lambda  \label{eq:eq11}\end{equation}\] 
+          
+              \[\begin{equation}xy = \lambda  \label{eq:eq12}\end{equation}\] 
+          
+              \[\begin{equation}x + y + z = 1  \label{eq:eq13}\end{equation}\] 
+          
+          <p>Let’s start this solution process off by noticing that since the first three equations all have \(\lambda \) they are all equal.  So, let’s start off by setting equations \(\eqref{eq:eq10}\) and \(\eqref{eq:eq11}\) equal.</p>
+          
+          
+            \[yz = xz\hspace{0.5in} \Rightarrow \hspace{0.25in}\,\,\,z\left( {y - x} \right) = 0\hspace{0.25in}\,\,\,\,\, \Rightarrow \hspace{0.25in}\,\,\,\,z = 0\,\,\,{\mbox{or}}\,\,\,\,y = x\]
+          
+          <p>So, we’ve got two possibilities here.  Let’s start off with by assuming that \(z = 0\).  In this case we can see from either equation \(\eqref{eq:eq10}\) or \(\eqref{eq:eq11}\) that we must then have \(\lambda  = 0\).  From equation \(\eqref{eq:eq12}\) we see that this means that \(xy = 0\).  This in turn means that either \(x = 0\) or \(y = 0\).</p>
+          
+          <p>So, we’ve got two possible cases to deal with there.  In each case two of the variables must be zero.  Once we know this we can plug into the constraint, equation \(\eqref{eq:eq13}\), to find the remaining value.</p>
+          
+          
+            \[\begin{align*}z = 0,\,\,x = 0 & : & \Rightarrow \hspace{0.25in}y = 1\\ z = 0,\,\,y = 0 & : & \Rightarrow \hspace{0.25in}x = 1\end{align*}\]
+          
+          <p>So, we’ve got two possible solutions \(\left( {0,1,0} \right)\) and \(\left( {1,0,0} \right)\).</p>
+          
+          <p>Now let’s go back and take a look at the other possibility, \(y = x\).  We also have two possible cases to look at here as well.</p>
+          
+          <p>This first case is\(x = y = 0\).  In this case we can see from the constraint that we must have \(z = 1\) and so we now have a third solution \(\left( {0,0,1} \right)\).</p>
+          
+          <p>The second case is \(x = y \ne 0\).  Let’s set equations \(\eqref{eq:eq11}\) and \(\eqref{eq:eq12}\) equal.</p>
+          
+            \[xz = xy\hspace{0.5in} \Rightarrow \hspace{0.25in}\,\,\,x\left( {z - y} \right) = 0\hspace{0.25in}\,\,\,\,\, \Rightarrow \hspace{0.25in}\,\,\,\,x = 0\,\,\,{\mbox{or}}\,\,\,z = y\]
+          
+          <p>Now, we’ve already assumed that \(x \ne 0\) and so the only possibility is that \(z = y\).  However, this also means that,</p>
+          
+              \[x = y = z\]
+          
+          <p>Using this in the constraint gives,</p>
+          
+            \[3x = 1\hspace{0.5in} \Rightarrow \hspace{0.25in}\,\,\,\,\,x = \frac{1}{3}\]
+          <p>So, the next solution is \(\left( {\frac{1}{3},\frac{1}{3},\frac{1}{3}} \right)\).</p>
+          
+          <p>We got four solutions by setting the first two equations equal.</p>
+          
+          <p>To completely finish this problem out we should probably set equations \(\eqref{eq:eq10}\) and \(\eqref{eq:eq12}\) equal as well as setting equations \(\eqref{eq:eq11}\) and \(\eqref{eq:eq12}\) equal to see what we get.  Doing this gives,</p>
+          
+            \[\begin{align*}yz  & = xy\hspace{0.5in} \Rightarrow \hspace{0.25in}\,\,\,y\left( {z - x} \right) = 0\hspace{0.25in}\,\,\,\,\, \Rightarrow \hspace{0.25in}\,\,\,\,y = 0\,\,\,{\mbox{or}}\,\,\,z = x\\ xz & = xy\hspace{0.5in} \Rightarrow \hspace{0.25in}\,\,\,x\left( {z - y} \right) = 0\hspace{0.25in}\,\,\,\,\, \Rightarrow \hspace{0.25in}\,\,\,\,x = 0\,\,\,{\mbox{or}}\,\,\,z = y\end{align*}\]
+          
+          <p>Both of these are very similar to the first situation that we looked at and we’ll leave it up to you to show that in each of these cases we arrive back at the four solutions that we already found.</p>
+          
+          <p>So, we have four solutions that we need to check in the function to see whether we have minimums or maximums.</p>
+          
+            \[\begin{align*}f\left( {0,0,1} \right) & = 0\hspace{0.25in}\,\,\,f\left( {0,1,0} \right) = 0\hspace{0.25in}\,\,\,\,f\left( {1,0,0} \right) = 0 & \hspace{0.25in} & {\mbox{All Minimums}}\\ f\left( {\frac{1}{3},\frac{1}{3},\frac{1}{3}} \right) & = \frac{1}{{27}} & \hspace{0.25in} & {\mbox{Maximum}}\end{align*}\]
+          
+          <p>So, in this case the maximum occurs only once while the minimum occurs three times.</p>
+          
+          <p>Note as well that we never really used the assumption that \(x,y,z \ge 0\) in the actual solution to the problem.  We used it to make sure that we had a closed and bounded region to guarantee we would have absolute extrema.  To see why this is important let's take a look at what might happen without this assumption  Without this assumption it wouldn’t be too difficult to find points that give both larger and smaller values of the functions.  For example.</p>
+          
+            \[\begin{align*}x =  - 100,\,\,y = 100,\,\,z = 1\,\, &amp; :\,\,\,\, - 100 + 100 + 1 = 1\,\,\,\,\,\,\,\,f\left( { - 100,100,1} \right) =  - 10000\\ x =  - 50,\,\,y =  - 50,\,\,z = 101\,\, &amp; :\,\,\,\, - 50 - 50 + 101 = 1\,\,\,\,\,\,\,\,f\left( { - 50, - 50,101} \right) = 252500\end{align*}\]
+          
+          <p>With these examples you can clearly see that it’s not too hard to find points that will give larger and smaller function values.  However, all of these examples required negative values of \(x\), \(y\) and/or \(z\) to make sure we satisfy the constraint.  By eliminating these we will know that we’ve got minimum and maximum values by the Extreme Value Theorem.</p>
+      </div>
+    </div>
+  </div>
+
+  <p>Before we proceed we need to address a quick issue that the last example illustrates about the method of Lagrange Multipliers.  We found the absolute minimum and maximum to the function.  However, what we did not find is all the locations for the absolute minimum.  For example, assuming \(x,y,z\ge 0\), consider the following sets of points.</p>
+
+\[\begin{array}{ll}
+ \left( 0,y,z \right) & \text{where}\,\,\,\,y+z=1 \\ 
+ \left( x,0,z \right) & \text{where}\,\,\,\,x+z=1 \\ 
+ \left( x,y,0 \right) & \text{where}\,\,\,\,x+y=1 \\ 
+\end{array}\]
+
+  <p>Every point in this set of points will satisfy the constraint from the problem and in every case the function will evaluate to zero and so also give the absolute minimum.</p>
+
+  <p>So, what is going on?  Recall from the previous section that we had to check both the critical points and the boundaries to make sure we had the absolute extrema.  The same was true in Calculus I.  We had to check both critical points and end points of the interval to make sure we had the absolute extrema.</p>
+
+  <p>It turns out that we really need to do the same thing here if we want to know that we’ve found all the locations of the absolute extrema.  The method of Lagrange multipliers will find the absolute extrema, it just might not find all the locations of them as the method does not take the end points of variables ranges into account (note that we might luck into some of these points but we can’t guarantee that).</p>
+
+  <p>So, after going through the Lagrange Multiplier method we should then ask what happens at the end points of our variable ranges.  For the example that means looking at what happens if \(x=0\), \(y=0\), \(z=0\), \(x=1\), \(y=1\), and \(z=1\).  In the first three cases we get the points listed above that do happen to also give the absolute minimum.  For the later three cases we can see that if one of the variables are 1 the other two must be zero (to meet the constraint) and those were actually found in the example.  Sometimes that will happen and sometimes it won’t.</p>
+
+  <p>In the case of this example the end points of each of the variable ranges gave absolute extrema but there is no reason to expect that to happen every time.  In Example 2 above, for example, the end points of the ranges for the variables do not give absolute extrema (we’ll let you verify this).  </p>
+
+  <p>The moral of this is that if we want to know that we have every location of the absolute extrema for a particular problem we should also check the end points of any variable ranges that we might have.  If all we are interested in is the value of the absolute extrema then there is no reason to do this.</p>
+
+    
+    <p>Okay, it’s time to move on to a slightly different topic.  To this point we’ve only looked at constraints that were equations.  We can also have constraints that are inequalities.  The process for these types of problems is nearly identical to what we’ve been doing in this section to this point.  The main difference between the two types of problems is that we will also need to find all the critical points that satisfy the inequality in the constraint and check these in the function when we check the values we found using Lagrange Multipliers.</p>
+    
+    <p>Let’s work an example to see how these kinds of problems work.</p>
+    <a class="anchor" name="PDApps_Lagrange_Ex4"></a>
+  <div class="example">
+    <span class="example-title">Example 4</span> Find the maximum and minimum values of \(f\left( {x,y} \right) = 4{x^2} + 10{y^2}\) on the disk \({x^2} + {y^2} \le 4\).
+    <div class="example-content">
+      <span id="SHLink_Soln4" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln4" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln4" class="soln-content">
+        <p>Note that the constraint here is the inequality for the disk.  Because this is a closed and bounded region the <a href="AbsoluteExtrema.html#PdApps_AbsExt_EVT">Extreme Value Theorem</a> tells us that a minimum and maximum value must exist.</p>
+          
+          <p>The first step is to find all the critical points that are in the disk (<em>i.e.</em> satisfy the constraint).  This is easy enough to do for this problem.  Here are the two first order partial derivatives.</p>
+          
+            \[\begin{align*}{f_x} & = 8x &  & \Rightarrow \hspace{0.25in}\,\,\,8x = 0\hspace{0.25in} \Rightarrow \hspace{0.25in}\,\,\,\,\,\,x = 0\\ {f_y} & = 20y &  & \Rightarrow \hspace{0.25in}20y = 0\hspace{0.25in} \Rightarrow \hspace{0.25in}\,\,\,\,\,\,y = 0\end{align*}\]
+          
+          <p>So, the only critical point is \(\left( {0,0} \right)\) and it does satisfy the inequality.</p>
+          
+          <p>At this point we proceed with Lagrange Multipliers and we treat the constraint as an equality instead of the inequality.  We only need to deal with the inequality when finding the critical points.</p>
+          
+          <p>So, here is the system of equations that we need to solve.</p>
+          
+            \[\begin{align*}8x & = 2\lambda x\\ 20y & = 2\lambda y\\ {x^2} + {y^2} & = 4\end{align*}\]
+          
+          <p>From the first equation we get,</p>
+          
+            \[2x\left( {4 - \lambda } \right) = 0\hspace{0.5in} \Rightarrow \hspace{0.25in}\,\,\,\,\,x = 0\,\,\,\,{\mbox{or}}\,\,\,\,\,\lambda  = 4\]
+          
+          <p>If we have \(x = 0\) then the constraint gives us \(y =  \pm \,2\).</p>
+          
+          <p>If we have \(\lambda  = 4\) the second equation gives us,</p>
+          
+              \[20y = 8y\hspace{0.25in} \Rightarrow \hspace{0.25in}\,\,\,y = 0\]
+          <p>The constraint then tells us that \(x =  \pm \,2\).</p>
+          
+          <p>If we’d performed a similar analysis on the second equation we would arrive at the same points.</p>
+          
+          <p>So, Lagrange Multipliers gives us four points to check :\(\left( {0,2} \right)\), \(\left( {0, - 2} \right)\), \(\left( {2,0} \right)\), and \(\left( { - 2,0} \right)\).</p>
+          
+          <p>To find the maximum and minimum we need to simply plug these four points along with the critical point in the function.</p>
+          
+            \[\begin{align*}f\left( {0,0} \right) & = 0 & \hspace{0.25in} & {\mbox{Minimum}}\\  f\left( {2,0} \right) & = f\left( { - 2,0} \right) = 16 & &\\ f\left( {0,2} \right) & = f\left( {0, - 2} \right) = 40 & \hspace{0.25in} & {\mbox{Maximum}}\end{align*}\]
+          
+          <p>In this case, the minimum was interior to the disk and the maximum was on the boundary of the disk.</p>
+      </div>
+    </div>
+  </div>
+    
+    <p>The final topic that we need to discuss in this section is what to do if we have more than one constraint.  We will look only at two constraints, but we can naturally extend the work here to more than two constraints.</p>
+    
+    <p>We want to optimize \(f\left( {x,y,z} \right)\) subject to the constraints \(g\left( {x,y,z} \right) = c\) and \(h\left( {x,y,z} \right) = k\).  The system that we need to solve in this case is,</p>
+    
+    
+      \[\begin{align*}\nabla f\left( {x,y,z} \right) & = \lambda \nabla g\left( {x,y,z} \right) + \mu \nabla h\left( {x,y,z} \right)\\ g\left( {x,y,z} \right) & =  c\\  h\left( {x,y,z} \right) & = k\end{align*}\]
+    
+    <p>So, in this case we get two Lagrange Multipliers.  Also, note that the first equation really is three equations as we saw in the previous examples.  Let’s see an example of this kind of optimization problem.</p>
+    <a class="anchor" name="PDApps_Lagrange_Ex5"></a>
+  <div class="example">
+    <span class="example-title">Example 5</span> Find the maximum and minimum of \(f\left( {x,y,z} \right) = 4y - 2z\) subject to the constraints \(2x - y - z = 2\) and \({x^2} + {y^2} = 1\).
+    <div class="example-content">
+      <span id="SHLink_Soln5" class="SH-Link soln-title">Show Solution</span> <span id="SHImg_Soln5" class="fas fa-caret-right" aria-hidden="true"></span>
+      <div id="SHObj_Soln5" class="soln-content">
+        <p>Verifying that we will have a minimum and maximum value here is a little trickier.  Clearly, because of the second constraint we’ve got to have \( - 1 \le x,y \le 1\).  With this in mind there must also be a set of limits on \(z\) in order to make sure that the first constraint is met.  If one really wanted to determine that range you could find the minimum and maximum values of \(2x - y\) subject to \({x^2} + {y^2} = 1\) and you could then use this to determine the minimum and maximum values of \(z\).  We won’t do that here.  The point is only to acknowledge that once again the 
+            possible solutions must lie in a closed and bounded region and so minimum and maximum values must exist by the <a href="AbsoluteExtrema.html#PdApps_AbsExt_EVT">Extreme Value Theorem</a>.</p>
+          
+          <p>Here is the system of equations that we need to solve.</p>
+          
+            \[\begin{equation}0 = 2\lambda  + 2\mu x\hspace{0.5in}\left( {{f_x} = \lambda {g_x} + \mu {h_x}} \right)\label{eq:eq14}\end{equation}\]
+          
+            \[\begin{equation}4 =  - \lambda  + 2\mu y\hspace{0.5in}\left( {{f_y} = \lambda {g_y} + \mu {h_y}} \right)\label{eq:eq15}\end{equation}\] 
+          
+            \[\begin{equation} - 2 =  - \lambda \hspace{0.5in}\left( {{f_z} = \lambda {g_z} + \mu {h_z}} \right)\label{eq:eq16}\end{equation}\]  
+          
+            \[\begin{equation}2x - y - z = 2 \label{eq:eq17}\end{equation}\]
+          
+            \[\begin{equation}{x^2} + {y^2} = 1 \label{eq:eq18}\end{equation}\]
+          
+          <p>First, let’s notice that from equation \(\eqref{eq:eq16}\) we get \(\lambda  = 2\).  Plugging this into equation \(\eqref{eq:eq14}\) and equation \(\eqref{eq:eq15}\) and solving for \(x\) and \(y\) respectively gives,</p>
+          
+              \[\begin{align*}0 & = 4 + 2\mu x & \hspace{0.1in} & \Rightarrow \hspace{0.5in}x =  - \frac{2}{\mu }\\ 4 & =  - 2 + 2\mu y & \hspace{0.1in} & \Rightarrow \hspace{0.5in}y = \frac{3}{\mu }\end{align*}\]
+          
+          <p>Now, plug these into equation \(\eqref{eq:eq18}\).</p>
+          
+            \[\frac{4}{{{\mu ^2}}} + \frac{9}{{{\mu ^2}}} = \frac{{13}}{{{\mu ^2}}} = 1\hspace{0.25in}\,\,\,\,\,\,\, \Rightarrow \hspace{0.5in}\,\mu  =  \pm \,\sqrt {13} \]
+          
+          <p>So, we have two cases to look at here.  First, let’s see what we get when \(\mu  = \sqrt {13} \).  In this case we know that,</p>
+          
+            \[x =  - \frac{2}{{\sqrt {13} }}\hspace{0.5in}y = \frac{3}{{\sqrt {13} }}\]
+          
+        <p>Plugging these into equation \(\eqref{eq:eq17}\) gives,</p>
+          
+            \[ - \frac{4}{{\sqrt {13} }} - \frac{3}{{\sqrt {13} }} - z = 2\hspace{0.5in} \Rightarrow \hspace{0.5in}z =  - 2 - \frac{7}{{\sqrt {13} }}\]
+          <p>So, we’ve got one solution.</p>
+          
+          <p>Let’s now see what we get if we take \(\mu  =  - \sqrt {13} \).  Here we have,</p>
+          
+            \[x = \frac{2}{{\sqrt {13} }}\hspace{0.5in}y =  - \frac{3}{{\sqrt {13} }}\]
+          <p>Plugging these into equation \(\eqref{eq:eq17}\) gives,</p>
+          
+            \[\frac{4}{{\sqrt {13} }} + \frac{3}{{\sqrt {13} }} - z = 2\hspace{0.5in} \Rightarrow \hspace{0.5in}z =  - 2 + \frac{7}{{\sqrt {13} }}\]
+          <p>and there’s a second solution.</p>
+          
+          <p>Now all that we need to is check the two solutions in the function to see which is the maximum and which is the minimum.</p>
+          
+          
+            \[\begin{align*}f\left( { - \frac{2}{{\sqrt {13} }},\frac{3}{{\sqrt {13} }}, - 2 - \frac{7}{{\sqrt {13} }}} \right) & = 4 + \frac{{26}}{{\sqrt {13} }} = 11.2111\\ f\left( {\frac{2}{{\sqrt {13} }}, - \frac{3}{{\sqrt {13} }}, - 2 + \frac{7}{{\sqrt {13} }}} \right) & = 4 - \frac{{26}}{{\sqrt {13} }} =  - 3.2111\end{align*}\]
+          
+          <p>So, we have a maximum at \(\left( { - \frac{2}{{\sqrt {13} }},\frac{3}{{\sqrt {13} }}, - 2 - \frac{7}{{\sqrt {13} }}} \right)\) and a minimum at \(\left( {\frac{2}{{\sqrt {13} }}, - \frac{3}{{\sqrt {13} }}, - 2 + \frac{7}{{\sqrt {13} }}} \right)\).</p>
+      </div>
+    </div>
+  </div>
+
+  
+
+
+      
+
+
+
+    </div>
+    <!-- End of content div -->
+
+
+    <div class="footer">
+      <div class="footer-links">
+        [<a href="http://tutorial.math.lamar.edu/Contact.aspx">Contact Me</a>]&nbsp;[<a href="../../MyStudents-2.html">My Students</a>]&nbsp;[<a href="http://tutorial.math.lamar.edu/Privacy.aspx">Privacy Statement</a>]&nbsp;[<a href="../../Help-2.html">Site Help &amp; FAQ</a>]&nbsp;[<a href="http://tutorial.math.lamar.edu/Terms.aspx">Terms of Use</a>]
+      </div>
+      <div class="footer-dates">
+        <div class="footer-copyright"><span id="lblCopyRight">&copy; 2003 - 2019 Paul Dawkins</span></div>
+        <div class="footer-spacer"></div>
+        <div class="footer-modified-date">Page Last Modified : <span id="lblModified">9/25/2018</span></div>
+      </div>
+      
+
+    </div>
+  </div>
+  <!-- End of page div...  -->
+</body>
+
+<!-- Mirrored from tutorial.math.lamar.edu/Classes/CalcIII/LagrangeMultipliers.aspx by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 27 Feb 2019 06:15:36 GMT -->
+</html>
