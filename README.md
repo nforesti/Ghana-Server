@@ -1,12 +1,12 @@
 # SchoolHouse Ghana Web Server
 
-__HOW TO RUN:__
+__HOW TO RUN:__  
     bash deploy.sh (Will work on making this an executable)  
     navigate to localhost:3000 to view  
 
 
-*** GENERAL DEVELOPMENT NOTES ***
-__Flow of data for download queue:__
+*** GENERAL DEVELOPMENT NOTES ***  
+__Flow of data for download queue:__  
 downloadQueue -> downloadQueue.json -> download.js -> files.json  
 https://docs.google.com/document/d/  13heu4vK2OfDJkcxBbfYzQ-bOZI_pIzu2_mopADX0gTo/edit?usp=sharing  
 MUST HAVE VALID downloadQueue.json AND files.json PRESENT  
