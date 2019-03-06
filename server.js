@@ -19,6 +19,7 @@ http.listen(3000, function(){
 /** Serving pages */
 app.get('/', function(req, res){
   res.sendFile(__dirname + '/html/downloadPage.html');
+  //res.sendFile(__dirname + "/html/aboutpage.html"); 
 });
 
 app.get('/gradepage', function(req, res) {
@@ -26,8 +27,8 @@ app.get('/gradepage', function(req, res) {
 })
 
 /** Serving CSS */
-app.get('/css/*', function(req, res) {
-  res.sendFile(__dirname + req.url);
+app.get(' /*', function(req, res) {
+  res.sendFile(__dirname + "/html/" + req.url);
 })
 
 /** Serving JS */
