@@ -20,7 +20,7 @@ __How the server is set up:__
             https://medium.com/@LindaVivah/the-beginners-guide-understanding-node-js-express-js-fundamentals-e15493462be1
      * Formatting of links:
         *  HTML files: href="/<name_of_file.html>"
-            CSS: href="/css/<name_of_file.css>"
+        *  CSS: href="/css/<name_of_file.css>"
 *  PugJS is a template library for creating dynamic HTML pages. By using PugJS, we can 
     create a basic HTML file and populate the page with the necessary texts, links,
     images, etc. 
@@ -29,7 +29,7 @@ __How the server is set up:__
             are grade level, subject, and links.    
 
 
-__Notes on Httrack:__
+__Notes on Httrack:__  
     FAQ: http://www.httrack.com/html/faq  
     Brief + visual manual: https://www.httrack.com/html/step9_opt2.html  
     full manual found with "man httrack"  
