@@ -19,7 +19,7 @@ __How the server is set up:__
     *    Useful link on ExpressJS:
             https://medium.com/@LindaVivah/the-beginners-guide-understanding-node-js-express-js-fundamentals-e15493462be1
      * Formatting of links:
-        *  HTML files: href="/<name_of_file.html>"
+        *  HTML files: href="/html/<name_of_file.html>"
         *  CSS: href="/css/<name_of_file.css>"
 *  PugJS is a template library for creating dynamic HTML pages. By using PugJS, we can 
     create a basic HTML file and populate the page with the necessary texts, links,
