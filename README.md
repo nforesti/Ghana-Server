@@ -1,15 +1,15 @@
 # SchoolHouse Ghana Web Server
 
 __HOW TO RUN:__
-    bash deploy.sh (Will work on making this an executable)
-    navigate to localhost:3000 to view
+    bash deploy.sh (Will work on making this an executable)  
+    navigate to localhost:3000 to view  
 
 
 *** GENERAL DEVELOPMENT NOTES ***
 __Flow of data for download queue:__
-downloadQueue -> downloadQueue.json -> download.js -> files.json
-https://docs.google.com/document/d/13heu4vK2OfDJkcxBbfYzQ-bOZI_pIzu2_mopADX0gTo/edit?usp=sharing
-MUST HAVE VALID downloadQueue.json AND files.json PRESENT
+downloadQueue -> downloadQueue.json -> download.js -> files.json  
+https://docs.google.com/document/d/  13heu4vK2OfDJkcxBbfYzQ-bOZI_pIzu2_mopADX0gTo/edit?usp=sharing  
+MUST HAVE VALID downloadQueue.json AND files.json PRESENT  
 
 __How the server is set up:__
 * ExpressJS is the core of the backend system. This server.js utilizes ExpressJS to
@@ -30,10 +30,10 @@ __How the server is set up:__
 
 
 __Notes on Httrack:__
-    FAQ: http://www.httrack.com/html/faq
-    Brief + visual manual: https://www.httrack.com/html/step9_opt2.html
-    full manual found with "man httrack"
-    Known to be troublesome sites: http://www.httrack.com/html/faq.html#Q0
+    FAQ: http://www.httrack.com/html/faq  
+    Brief + visual manual: https://www.httrack.com/html/step9_opt2.html  
+    full manual found with "man httrack"  
+    Known to be troublesome sites: http://www.httrack.com/html/faq.html#Q0  
 
 
 *** LOGISTICAL NOTES ***
