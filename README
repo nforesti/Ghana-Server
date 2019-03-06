@@ -1,32 +1,42 @@
-SSH info:
-admin@132.239.189.105
-globalties
-
 HOW TO RUN:
-bash deploy.sh
-navigate to localhost:3000 to view
+    bash deploy.sh (Will work on making this an executable)
+    navigate to localhost:3000 to view
 
+
+*** GENERAL DEVELOPMENT NOTES ***
 Flow of data for download queue:
 downloadQueue -> downloadQueue.json -> download.js -> files.json
 https://docs.google.com/document/d/13heu4vK2OfDJkcxBbfYzQ-bOZI_pIzu2_mopADX0gTo/edit?usp=sharing
 **MUST HAVE VALID downloadQueue.json AND files.json PRESENT**
 
+How the server is set up:
+    ExpressJS is the core of the backend system. This server.js utilizes ExpressJS to
+    communicate through http requests with the webpage loaded on the client's laptop.
+    Webpages, css, images, and all other forms of communcation or transfer of 
+    data are served by parsing http requests and responding accordingly.
+        Useful link on ExpressJS:
+            https://medium.com/@LindaVivah/the-beginners-guide-understanding-node-js-express-js-fundamentals-e15493462be1
+        Formatting of links:
+            HTML files: href="/<name_of_file.html>"
+            CSS: href="/css/<name_of_file.css>"
+    PugJS is a template library for creating dynamic HTML pages. By using PugJS, we can 
+    create a basic HTML file and populate the page with the necessary texts, links,
+    images, etc. 
+        One use case in this project for PugJS are the display pages of content
+            for downloaded sites. Here, the only differences between the various pages
+            are grade level, subject, and links. 
 
-***Need to implement refresh mechanics, httrack commands, file management, download progress***
+
 Notes on Httrack:
-READ THE FAQ: http://www.httrack.com/html/faq
-Brief + visual manual: https://www.httrack.com/html/step9_opt2.html
-full manual found with "man httrack"
-Knwon to be troublesome sites: http://www.httrack.com/html/faq.html#Q0
+    FAQ: http://www.httrack.com/html/faq
+    Brief + visual manual: https://www.httrack.com/html/step9_opt2.html
+    full manual found with "man httrack"
+    Known to be troublesome sites: http://www.httrack.com/html/faq.html#Q0
 
 
-use Socket.io for live updates on download progress (integration of frontend with backend)
-https://stackoverflow.com/questions/9914816/what-is-an-example-of-the-simplest-possible-socket-io-example
-
-
-NOTES for further development:
-
-
-
-*** NOTES ***
+*** LOGISTICAL NOTES ***
 URL: http://schoolhouseghana:3000/
+
+SSH info:
+    admin@132.239.189.105
+    globalties
