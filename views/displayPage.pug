@@ -5,19 +5,51 @@ html
       include displayPage.css
     h2= title
   body
-    // Need to delegate space for each div
+    div(class='w3-top')
+      div(class='w3-bar w3-red w3-card w3-left-align w3-large')
+        a(class='w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red' href='javascript:void(0);' onclick='myFunctin()' title='Toggle Navigation Menu')
+          i(class='fa fa-bars')
+        a(href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white") Home
+        a(href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white") About Us
+        a(href="#" class="w3-bar-item w3-button w3-padding-large w3-white") Student Portal
+        a(href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white") Teacher Portal
+        a(href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white") FAQ
+        a(href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white") Contact Us 
+      div(id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large")
+        a(href="#" class="w3-bar-item w3-button w3-padding-large") About Us
+        a(href="#" class="w3-bar-item w3-button w3-padding-large") Student Portal
+        a(href="#" class="w3-bar-item w3-button w3-padding-large") Teacher Portal
+        a(href="#" class="w3-bar-item w3-button w3-padding-large") Contact Us
+    header(class="w3-container w3-grey w3-center" style="padding:128px 16px")
+      h1(class="w3-margin w3-jumbo") Schoolhouse Ghana Student Portal
+    h2(class='w3-center')=title
+    h2(class='w3-center')=subject
     div(class='links_display')
-      h3 
-        a(name="math") Math
-      each val in math
-        a(href='/SITES/'+val+'/index.html')= val
-    div(class='links_display')
-      h3 
-        a(name='reading') Reading
-      each val in reading
-        a(href='/SITES/'+val+'/index.html')= val
-    div(class='links_display')
-      h3 
-        a(name='science') Science
-      each val in science
-        a(href='/SITES/'+val+'/index.html')= val
+      each link in links
+        a(href='/SITES/'+link+'/index.html')= link
+
+
+
+
+
+
+
+
+
+
+
+    //- div(class='links_display')
+    //-   h3 
+    //-     a(name="math") Math
+    //-   each val in math
+    //-     a(href='/SITES/'+val+'/index.html')= val
+    //- div(class='links_display')
+    //-   h3 
+    //-     a(name='reading') Reading
+    //-   each val in reading
+    //-     a(href='/SITES/'+val+'/index.html')= val
+    //- div(class='links_display')
+    //-   h3 
+    //-     a(name='science') Science
+    //-   each val in science
+    //-     a(href='/SITES/'+val+'/index.html')= val

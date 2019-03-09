@@ -24,70 +24,7 @@ app.get('/', function(req, res){
 
 app.get('/html/*', function(req, res) {
   // serving all regular pages
-  if ( req.url.indexOf("/list/") == -1 ) {
-    res.sendFile(__dirname + req.url);
-  }
-  // Serving download display page
-  else {
-    fs.readFile("JSON/files.json", (err, data) => {
-      if ( err ) {
-        console.error("ERROR ACCESSING FILES (JSON/files.json):"+ err)
-        res.send("ERROR ACCESSING FILES (JSON/files.json):"+ err);
-        return;
-      }
-  
-      let grade = req.query.grade.substring(6);
-  
-      switch(grade) {
-        case '1':
-          grade = "First";
-          break;
-        case '2':
-          grade = "Second";
-          break;
-        case '3':
-          grade = "Third";
-          break;
-        case '4':
-          grade = "Fourth";
-          break;
-        case '5':
-          grade = "Fifth";
-          break;
-        case '6':
-          grade = "Sixth";
-          break;
-      }
-  
-      let math = [];
-      let reading = [];
-      let science = [];
-  
-      let siteList = JSON.parse(data);
-  
-      Object.keys(siteList).forEach((key) => {
-        if ( (siteList[key].grades).includes(req.query.grade) ) {
-          if ( siteList[key].subjects.includes("math") ) {
-            math.push(key);
-          }
-          else if ( siteList[key].subjects.includes("reading") ) {
-            reading.push(key);
-          }
-          else if ( siteList[key].subjects.includes("science") ) {
-            science.push(key);
-          }
-        }
-      })
-  
-      res.render('displayPage', { 
-        title: grade + " Grade Links",
-        math: math,
-        reading: reading,
-        science: science
-      })
-    })
-  }
-  
+  res.sendFile(__dirname + req.url);  
 })
 
 /** Serving CSS */
@@ -100,6 +37,86 @@ app.get('/axios', function(req, res) {
   res.sendFile(__dirname + "/JS_Libraries/axios.js");
 })
 
+/** Serving Display page */
+app.get('/list/*', function(req, res) {
+  // Serving download display page
+  fs.readFile("JSON/files.json", (err, data) => {
+    if ( err ) {
+      console.error("ERROR ACCESSING FILES (JSON/files.json):"+ err)
+      res.send("ERROR ACCESSING FILES (JSON/files.json):"+ err);
+      return;
+    }
+
+    let grade = req.query.grade.substring(6);
+
+    switch(grade) {
+      case '1':
+        grade = "First";
+        break;
+      case '2':
+        grade = "Second";
+        break;
+      case '3':
+        grade = "Third";
+        break;
+      case '4':
+        grade = "Fourth";
+        break;
+      case '5':
+        grade = "Fifth";
+        break;
+      case '6':
+        grade = "Sixth";
+        break;
+    }
+
+    let math = [];
+    let reading = [];
+    let science = [];
+
+    let siteList = JSON.parse(data);
+
+    Object.keys(siteList).forEach((key) => {
+      if ( (siteList[key].grades).includes(req.query.grade) ) {
+        if ( siteList[key].subjects.includes("math") ) {
+          math.push(key);
+        }
+        else if ( siteList[key].subjects.includes("reading") ) {
+          reading.push(key);
+        }
+        else if ( siteList[key].subjects.includes("science") ) {
+          science.push(key);
+        }
+      }
+    })
+
+    console.log("subject: " , req.query);
+
+    if ( req.query.subject === 'math' ) {
+      res.render('displayPage', {
+        title: grade + " Grade Links",
+        subject: "Math",
+        links: math
+      })
+    }
+    else if ( req.body.subject === 'science' ) {
+      res.render('displayPage', {
+        title: grade + " Grade Links",
+        subject: "Science",
+        links: science
+      })
+    }
+    else if ( req.body.subject === 'reading' ) {
+      res.render('displayPage', {
+        title: grade + " Grade Links",
+        subject: "Reading",
+        links: reading
+      })
+    }
+  })
+})
+
+/** Serving downloaded sites */
 app.get('/SITES/*', function(req, res) {
   res.sendFile(__dirname + req.url.replace( /%20/g, ' '));
 })
