@@ -18,7 +18,7 @@ http.listen(3000, function(){
 
 /** Serving pages */
 app.get('/', function(req, res){
-  res.sendFile(__dirname + '/html/downloadPage.html');
+  res.sendFile(__dirname + '/html/aboutpage.html');
   //res.sendFile(__dirname + "/html/aboutpage.html"); 
 });
 
