@@ -33,8 +33,8 @@ app.get('/css/*', function(req, res) {
 })
 
 /** Serving JS */
-app.get('/axios', function(req, res) {
-  res.sendFile(__dirname + "/JS_Libraries/axios.js");
+app.get('/JS_Libraries/*', function(req, res) {
+  res.sendFile(__dirname + req.url);
 })
 
 /** Serving Display page */
@@ -89,9 +89,6 @@ app.get('/list/*', function(req, res) {
         }
       }
     })
-
-    console.log("subject: " , req.query);
-
     if ( req.query.subject === 'math' ) {
       res.render('displayPage', {
         title: grade + " Grade Links",
@@ -99,14 +96,14 @@ app.get('/list/*', function(req, res) {
         links: math
       })
     }
-    else if ( req.body.subject === 'science' ) {
+    else if ( req.query.subject === 'science' ) {
       res.render('displayPage', {
         title: grade + " Grade Links",
         subject: "Science",
         links: science
       })
     }
-    else if ( req.body.subject === 'reading' ) {
+    else if ( req.query.subject === 'reading' ) {
       res.render('displayPage', {
         title: grade + " Grade Links",
         subject: "Reading",
