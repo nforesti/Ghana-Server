@@ -86,21 +86,22 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 <!-- First Grid -->
 
 
-  <h1>Add Link to Download</h1>
+
   <div id="form_container">
-    <form id="link_download_form">
+    <h1 id="title">Add Link to Download</h1>
+    <form>
       <div id="input_display">
-        <div>
-          <p id="name" >Page Title:<input type="text" id="page_title" placeholder="Page Title" ></p>
+        <div id="name">
+          <p >Page Title:<input type="text" id="page_title" placeholder="Page Title" ></p>
         </div>
-        <div>
-          <p id="url">URL:<input type="text" id="page_URL" placeholder="URL" /></p>
-        </div>
+        <div id="date">
+            <p>Due Date:<input type="date" id="due_date" name="page_due_date" /></p>
+          </div>
       </div>
-      <div>
-        <p>Due Date:<input type="date" id="due_date" name="page_due_date" /></p>
+    
+      <div id="url">
+        <p>URL:<input type="text" id="page_URL" placeholder="URL" /></p>
       </div>
-      
       <div class="checkboxes">
         <p>Grade:</p>
         <label>
@@ -139,9 +140,8 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
         <input type="text" id="page_description" placeholder="Page Description"/>
       </div>
     </form>
+    <button class="button" onclick="download()" id="download_btn">Add to Queue</button>
   </div>
-
-  <button class="button" onclick="download()">Add to Queue</button>
 </body>
 
 <script src="/JS_Libraries/axios.js"></script>
@@ -170,8 +170,8 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 
     /** CHANGE NAME TO TEACHER NAME WHEN ACCOUNTS ARE SET UP**/
     var downloadRequest = {};
-    downloadRequest[name] = {
-        name: name,
+    downloadRequest[title] = {
+        name: title,
         url: url,
         grades: grades,
         subjects: subjects,

@@ -114,7 +114,13 @@ app.get('/list/*', function(req, res) {
 
 /** Serving downloaded sites */
 app.get('/SITES/*', function(req, res) {
-  res.sendFile(__dirname + req.url.replace( /%20/g, ' '));
+  let parsed = req.url.replace( /%20/g, ' ');
+
+  let index = parsed.indexOf('?');
+  let url = ( index === -1 ) ? parsed : parsed.substring(0, parsed.indexOf('?'));
+
+  console.log("SERVING: ", parsed);
+  res.sendFile(__dirname + url);
 })
 
 

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    
+<!-- Mirrored from mdn.mozillademos.org/en-US/docs/Web/HTML/Element/input/checkbox$samples/Examples?revision=1444457 by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 12 Mar 2019 08:39:10 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+        <meta charset="utf-8">
+        <link href="https://developer.mozilla.org/static/build/styles/samples.37902ba3b7fe.css" rel="stylesheet" type="text/css" />
+        
+        <style type="text/css">
+            html {
+  font-family: sans-serif;
+}
+
+form {
+  width: 600px;
+  margin: 0 auto;
+}
+
+div {
+  margin-bottom: 10px;
+}
+
+fieldset {
+  background: cyan;
+  border: 5px solid blue;
+}
+
+legend {
+  padding: 10px;
+  background: blue;
+  color: cyan;
+}
+
+        </style>
+        
+        <title>&lt;input type=&#34;checkbox&#34;&gt; - Examples - code sample</title>
+    </head>
+    <body>
+        
+            <form>
+  <fieldset>
+  <legend>Choose your interests</legend>
+    <div>
+      <input type="checkbox" id="coding" name="interest" value="coding">
+      <label for="coding">Coding</label>
+    </div>
+    <div>
+      <input type="checkbox" id="music" name="interest" value="music">
+      <label for="music">Music</label>
+    </div>
+    <div>
+      <input type="checkbox" id="art" name="interest" value="art">
+      <label for="art">Art</label>
+    </div>
+    <div>
+      <input type="checkbox" id="sports" name="interest" value="sports">
+      <label for="sports">Sports</label>
+    </div>
+    <div>
+      <input type="checkbox" id="cooking" name="interest" value="cooking">
+      <label for="cooking">Cooking</label>
+    </div>
+    <div>
+      <input type="checkbox" id="other" name="interest" value="other">
+      <label for="other">Other</label>
+      <input type="text" id="otherValue" name="other">
+    </div>
+    <div>
+      <button type="submit">Submit form</button>
+    </div>
+  </fieldset>
+</form>
+        
+        
+            <script>
+                var otherCheckbox = document.querySelector('input[value="other"]');
+var otherText = document.querySelector('input[id="otherValue"]');
+otherText.style.visibility = 'hidden';
+
+otherCheckbox.onchange = function() {
+  if(otherCheckbox.checked) {
+    otherText.style.visibility = 'visible';
+    otherText.value = '';
+  } else {
+    otherText.style.visibility = 'hidden';
+  }
+};
+            </script>
+        
+    </body>
+
+<!-- Mirrored from mdn.mozillademos.org/en-US/docs/Web/HTML/Element/input/checkbox$samples/Examples?revision=1444457 by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 12 Mar 2019 08:39:10 GMT -->
+</html>
