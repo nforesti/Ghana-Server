@@ -28,9 +28,13 @@ html
     div(class='links_display')
       div(id='links')
         h5 Links:
-        each link in links
-          a(href='/SITES/'+link+'/index.html' class="link")= link
+        each elem in links
+          a(href='/SITES/'+elem.link+'/index.html' class="link")= elem.link
       div(id='descriptions')
         h5 Description:
+        each elem in links
+          a(href='/SITES/'+elem.link+'/index.html' class="link")= elem.description
       div(id='due_dates')
         h5 Due Date:
+        each elem in links
+          a(href='/SITES/'+elem.link+'/index.html' class="link")= elem.dueDate

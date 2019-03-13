@@ -78,16 +78,29 @@ app.get('/list/*', function(req, res) {
     Object.keys(siteList).forEach((key) => {
       if ( (siteList[key].grades).includes(req.query.grade) ) {
         if ( siteList[key].subjects.includes("math") ) {
-          math.push(key);
+          math.push({
+            link: key,
+            description: siteList[key].description,
+            dueDate: siteList[key].dueDate
+          });
         }
         else if ( siteList[key].subjects.includes("reading") ) {
-          reading.push(key);
+          reading.push({
+            link: key,
+            description: siteList[key].description,
+            dueDate: siteList[key].dueDate
+          });
         }
         else if ( siteList[key].subjects.includes("science") ) {
-          science.push(key);
+          science.push({
+            link: key,
+            description: siteList[key].description,
+            dueDate: siteList[key].dueDate
+          });
         }
       }
     })
+    
     if ( req.query.subject === 'math' ) {
       res.render('displayPage', {
         title: grade + " Grade Links",
@@ -226,7 +239,7 @@ setInterval(() => {
   else {
     console.log("Download in progress:", available.name);
   }
-}, 5000);
+}, 2000);
 
 const updateAvailable = () => {
   console.log("Download Complete:", available.name);
