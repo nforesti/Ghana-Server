@@ -1,0 +1,1464 @@
+
+
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr" class="no-js">
+
+<!-- Mirrored from developer.mozilla.org/en-US/docs/tag/Element by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 12 Mar 2019 08:39:12 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head prefix="og: http://ogp.me/ns#">
+  <meta charset="utf-8">
+
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <script>(function(d) { d.className = d.className.replace(/\bno-js/, ''); })(document.documentElement);</script>
+  <title>Articles tagged: Element | MDN</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+
+  
+<link rel="preload" href="https://developer.mozilla.org/static/fonts/locales/ZillaSlab-Regular.subset.bbc33fb47cf6.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="home" href="https://developer.mozilla.org/en-US/">
+    <link rel="license" href="#license">
+  
+
+  
+    
+
+    <link href="https://developer.mozilla.org/static/build/styles/mdn.0383adf7981f.css" rel="stylesheet" type="text/css" />
+
+    
+  
+    <link href="https://developer.mozilla.org/static/build/styles/wiki.c0fead7a1495.css" rel="stylesheet" type="text/css" />
+
+
+  <link href="https://developer.mozilla.org/static/build/styles/locale-en-US.520ecdcaef8c.css" rel="stylesheet" type="text/css" />
+
+  
+    <script>
+    // Mozilla DNT Helper
+    /* This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0. If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/. */ if(typeof Mozilla==='undefined'){var Mozilla={}}Mozilla.dntEnabled=function(dnt,ua){'use strict';var dntStatus=dnt||navigator.doNotTrack||window.doNotTrack||navigator.msDoNotTrack;var userAgent=ua||navigator.userAgent;var anomalousWinVersions=['Windows NT 6.1','Windows NT 6.2','Windows NT 6.3'];var fxMatch=userAgent.match(/Firefox\/(\d+)/);var ieRegEx=/MSIE|Trident/i;var isIE=ieRegEx.test(userAgent);var platform=userAgent.match(/Windows.+?(?=;)/g);if(isIE&&typeof Array.prototype.indexOf!=='function'){return false}else if(fxMatch&&parseInt(fxMatch[1],10)<32){dntStatus='Unspecified'}else if(isIE&&platform&&anomalousWinVersions.indexOf(platform.toString())!==-1){dntStatus='Unspecified'}else{dntStatus={'0':'Disabled','1':'Enabled'}[dntStatus]||'Unspecified'}return dntStatus==='Enabled'?true:false};
+    // only load GA if DNT is not enabled
+    if (Mozilla && !Mozilla.dntEnabled()) {
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-36116321-5', 'mozilla.org');
+        ga('set', 'anonymizeIp', true);
+
+        
+
+        // dimension9 == "Section editing"
+        
+
+        (function() {
+            // http://cfsimplicity.com/61/removing-analytics-clutter-from-campaign-urls
+            var win = window;
+            var removeUtms = function(){
+                var location = win.location;
+                if (location.href.indexOf('utm') != -1 && win.history.replaceState) {
+                    win.history.replaceState({}, '', location.pathname);
+                }
+            };
+
+            ga('send', 'pageview', {'hitCallback': removeUtms});
+        })();
+    }
+</script>
+  
+
+  
+    <script>
+    // util for setting performance marks and mesaures
+    var mdn=window.mdn||{};mdn.perf={getDuration:function(e){"use strict";if(void 0!==performance.getEntriesByName)return performance.getEntriesByName(e)[0].duration;console.error("performance.getEntriesByName is not supported by your user-agent")},setMark:function(e){"use strict";if(void 0!==performance.mark)try{performance.mark(e)}catch(e){console.error("Error while setting performance mark: ",e)}else console.error("performance.mark is not supported by your user-agent")},setMeasure:function(e){"use strict";void 0!==performance.measure?performance.measure(e.measureName,e.startMark,e.endMark):console.error("performance.measure is not supported by your user-agent")}};
+    /* util specifically for postMessages sent from the
+       `head` of the interactive examples iframe */
+    function handlePerfMarks(e){e.measureName?(window.mdn.perf.setMark(e.markName),window.mdn.perf.setMeasure({measureName:e.measureName,startMark:e.startMark,endMark:e.endMark}),ga&&ga.create&&ga("send",{hitType:"timing",timingCategory:"RUM - Interactive Examples",timingVar:e.measureName,timingValue:window.mdn.perf.getDuration(e.measureName)||0})):window.mdn.perf.setMark(e.markName)}function perfMsgHandler(e){"use strict";var a=window.mdn.interactiveEditor.editorUrl||"https://interactive-examples.mdn.mozilla.net",r=e.data;if(e.origin!==a)return!1;r.markName&&-1<r.markName.indexOf("interactive-editor-")&&handlePerfMarks(r)}window.addEventListener("message",perfMsgHandler,!1);
+</script>
+
+    <!-- common social tags -->
+    
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://developer.mozilla.org/static/img/opengraph-logo.72382e605ce3.png">
+    <meta property="og:site_name" content="MDN Web Docs">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content="https://developer.mozilla.org/static/img/opengraph-logo.72382e605ce3.png">
+    <meta name="twitter:site" content="@MozDevNet">
+    <meta name="twitter:creator" content="@MozDevNet">
+    <link rel="search" type="application/opensearchdescription+xml" href="https://developer.mozilla.org/en-US/search/xml" title="MDN Web Docs">
+    
+  
+  <!-- third-generation iPad with high-resolution Retina display: -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://developer.mozilla.org/static/img/favicon144.e7e21ca263ca.png">
+  <!-- iPhone with high-resolution Retina display: -->
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://developer.mozilla.org/static/img/favicon114.d526f38b09c5.png">
+  <!-- first- and second-generation iPad: -->
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://developer.mozilla.org/static/img/favicon72.cc65d1d762a0.png">
+  <!-- non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+  <link rel="apple-touch-icon-precomposed" href="https://developer.mozilla.org/static/img/favicon57.de33179910ae.png">
+  <!-- basic favicon -->
+  <link rel="shortcut icon" href="https://developer.mozilla.org/static/img/favicon32.7f3da72dcea1.png">
+  <!--[if IE]>
+  <meta http-equiv="imagetoolbar" content="no">
+  <script type="text/javascript" src="https://developer.mozilla.org/static/build/js/html5shiv.ae1ac46eaf58.js" charset="utf-8"></script>
+  <![endif]-->
+
+  
+  
+      <link rel="alternate" type="application/atom+xml" title="Articles tagged: Element"
+          href="https://developer.mozilla.org/en-US/docs/feeds/atom/tag/Element" />
+  
+
+</head>
+<body  class="">
+
+  <script>
+    // make sure global mdn object exists
+    var mdn = window.mdn || {};
+
+    (function(win) {
+        'use strict';
+
+        (function(){
+  var FLAGS = {
+    'kumaediting': false,'page_move': false,'section_edit': false,'spam_checks_enabled': true,'spam_submissions_enabled': false,'spam_admin_override': false,'spam_spammer_override': false,'spam_testing_mode': false,'sg_task_completion': false,'contrib_beta': false,'recurring_payment_beta': true
+    },
+    SWITCHES = {
+    'welcome_email': true,'application_ACAO': true,'store_revision_ips': true,'foundation_callout': false,'helpful-survey-2': true,'wiki_spam_training': true,'registration_disabled': false
+    },
+    SAMPLES = {
+    
+    };
+  window.waffle = {
+    "flag_is_active": function waffle_flag(flag_name) {
+      
+      return !!FLAGS[flag_name];
+    },
+    "switch_is_active": function waffle_switch(switch_name) {
+      
+      return !!SWITCHES[switch_name];
+    },
+    "sample_is_active": function waffle_sample(sample_name) {
+      
+      return !!SAMPLES[sample_name];
+    },
+    "FLAGS": FLAGS,
+    "SWITCHES": SWITCHES,
+    "SAMPLES": SAMPLES
+  };
+})();
+
+
+        // This needs to be set before ckeditor.js loads
+        window.CKEDITOR_BASEPATH = 'https://developer.mozilla.org/static/js/libs/ckeditor/build/ckeditor/';
+
+        // Site configuration
+        win.mdn.ckeditor = {};
+        win.mdn.features = {};
+        win.mdn.siteUrl = '';
+        win.mdn.staticPath = 'https://developer.mozilla.org/static/';
+        win.mdn.wiki = {
+            autosuggestTitleUrl: '/en-US/docs/get-documents'
+        };
+        win.mdn.assets = {
+            css: {
+                'editor-content': ['https://developer.mozilla.org/static/build/styles/editor-content.616a803bd108.css','https://developer.mozilla.org/static/build/styles/editor-locale-en-US.520ecdcaef8c.css',
+                ],
+
+                'wiki-compat-tables': ['https://developer.mozilla.org/static/build/styles/wiki-compat-tables.eef64bf9b6fe.css',]
+            },
+            js: {
+                'syntax-prism': ['https://developer.mozilla.org/static/build/js/syntax-prism.55264ed331d2.js',],
+                'wiki-compat-tables': ['https://developer.mozilla.org/static/build/js/wiki-compat-tables.3a4ab2cc8ca1.js',]
+            }
+        };
+
+        win.mdn.notifications = [];
+        win.mdn.contributions = {
+            enabled: true,
+            popup: false
+        };
+
+        
+
+        // interactive editor config
+        win.mdn.interactiveEditor = {
+            siteUrl: "https://developer.mozilla.org",
+            editorUrl: "https://interactive-examples.mdn.mozilla.net"
+        };
+        win.mdn.langCookieName = "django_language";
+
+    })(this);
+</script>
+    
+    <ul id="nav-access">
+  <li><a href="#content" id="skip-main">Skip to main content</a></li>
+  <li><a id="skip-language" href="#language">Select language</a></li>
+  <li><a href="#q" id="skip-search">Skip to search</a></li>
+</ul>
+
+    <!-- Header -->
+    <header id="main-header" class="header-main">
+      <a href="https://developer.mozilla.org/en-US/" class="logo">MDN Web Docs</a>
+      <div class="nav-toolbox-wrapper">
+        <nav id="main-nav" class="nav-main" role="navigation">
+    <ul>
+        <li class="nav-main-item">
+            <a href="https://developer.mozilla.org/en-US/docs/Web">Technologies
+                <svg class="icon icon-caret-down" xmlns="http://www.w3.org/2000/svg" width="16" height="28" viewBox="0 0 16 28"><path d="M16 11a.99.99 0 0 1-.297.703l-7 7C8.516 18.89 8.265 19 8 19s-.516-.109-.703-.297l-7-7A.996.996 0 0 1 0 11c0-.547.453-1 1-1h14c.547 0 1 .453 1 1z"/></svg>
+            </a>
+            <div class="submenu js-submenu" id="nav-tech-submenu">
+                <div class="submenu-column">
+                  <ul>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML">HTML</a></li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a></li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">JavaScript</a></li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/Graphics">Graphics</a></li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP">HTTP</a></li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/API">APIs / DOM</a></li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions">Browser Extensions</a></li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/MathML">MathML</a></li>
+                  </ul>
+                </div>
+            </div>
+        </li>
+        <li class="nav-main-item">
+            <a href="https://developer.mozilla.org/en-US/docs/Learn">References & Guides
+                <svg class="icon icon-caret-down" xmlns="http://www.w3.org/2000/svg" width="16" height="28" viewBox="0 0 16 28"><path d="M16 11a.99.99 0 0 1-.297.703l-7 7C8.516 18.89 8.265 19 8 19s-.516-.109-.703-.297l-7-7A.996.996 0 0 1 0 11c0-.547.453-1 1-1h14c.547 0 1 .453 1 1z"/></svg>
+            </a>
+            <div class="submenu js-submenu" id="nav-learn-submenu">
+                <div class="submenu-column">
+                  <ul>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Learn">Learn web development</a></li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/Tutorials">Tutorials</a></li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/Reference">References</a></li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/Guide">Developer Guides</a></li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility">Accessibility</a></li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Games">Game development</a></li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web">...more docs</a></li>
+                  </ul>
+                </div>
+            </div>
+        </li>
+        <li class="nav-main-item">
+            <a href="https://developer.mozilla.org/en-US/docs/MDN/Feedback">Feedback
+                <svg class="icon icon-caret-down" xmlns="http://www.w3.org/2000/svg" width="16" height="28" viewBox="0 0 16 28"><path d="M16 11a.99.99 0 0 1-.297.703l-7 7C8.516 18.89 8.265 19 8 19s-.516-.109-.703-.297l-7-7A.996.996 0 0 1 0 11c0-.547.453-1 1-1h14c.547 0 1 .453 1 1z"/></svg>
+            </a>
+            <div class="submenu js-submenu" id="nav-contact-submenu">
+              <div class="submenu-column">
+                <ul>
+                  <li>
+                      <a href="https://support.mozilla.org/">Get Firefox help
+                          <svg class="icon icon-external-link" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" aria-hidden="true"><path d="M22 14.5v5c0 2.484-2.016 4.5-4.5 4.5h-13A4.502 4.502 0 0 1 0 19.5v-13C0 4.016 2.016 2 4.5 2h11c.281 0 .5.219.5.5v1c0 .281-.219.5-.5.5h-11A2.507 2.507 0 0 0 2 6.5v13C2 20.875 3.125 22 4.5 22h13c1.375 0 2.5-1.125 2.5-2.5v-5c0-.281.219-.5.5-.5h1c.281 0 .5.219.5.5zM28 1v8c0 .547-.453 1-1 1a.99.99 0 0 1-.703-.297l-2.75-2.75L13.36 17.14c-.094.094-.234.156-.359.156s-.266-.063-.359-.156l-1.781-1.781c-.094-.094-.156-.234-.156-.359s.063-.266.156-.359L21.048 4.454l-2.75-2.75a.996.996 0 0 1-.297-.703c0-.547.453-1 1-1h8c.547 0 1 .453 1 1z"/></svg>
+                      </a>
+                  </li>
+                  <li>
+                      <a href="https://stackoverflow.com/">Get web development help
+                          <svg class="icon icon-external-link" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" aria-hidden="true"><path d="M22 14.5v5c0 2.484-2.016 4.5-4.5 4.5h-13A4.502 4.502 0 0 1 0 19.5v-13C0 4.016 2.016 2 4.5 2h11c.281 0 .5.219.5.5v1c0 .281-.219.5-.5.5h-11A2.507 2.507 0 0 0 2 6.5v13C2 20.875 3.125 22 4.5 22h13c1.375 0 2.5-1.125 2.5-2.5v-5c0-.281.219-.5.5-.5h1c.281 0 .5.219.5.5zM28 1v8c0 .547-.453 1-1 1a.99.99 0 0 1-.703-.297l-2.75-2.75L13.36 17.14c-.094.094-.234.156-.359.156s-.266-.063-.359-.156l-1.781-1.781c-.094-.094-.156-.234-.156-.359s.063-.266.156-.359L21.048 4.454l-2.75-2.75a.996.996 0 0 1-.297-.703c0-.547.453-1 1-1h8c.547 0 1 .453 1 1z"/></svg>
+                      </a>
+                  </li>
+                </ul>
+                <ul>
+                  <li>
+                      <a href="https://developer.mozilla.org/en-US/docs/MDN/Community">Join the MDN community</a>
+                  </li>
+                  <li>
+                      <a target="_blank" rel="noopener" href="https://github.com/mdn/sprints/issues/new?template=issue-template.md&amp;projects=mdn/sprints/2&amp;labels=user-report&amp;title=https%3A//developer.mozilla.org/en-US/docs/tag/Element">Report a content problem
+                          <svg class="icon icon-external-link" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" aria-hidden="true"><path d="M22 14.5v5c0 2.484-2.016 4.5-4.5 4.5h-13A4.502 4.502 0 0 1 0 19.5v-13C0 4.016 2.016 2 4.5 2h11c.281 0 .5.219.5.5v1c0 .281-.219.5-.5.5h-11A2.507 2.507 0 0 0 2 6.5v13C2 20.875 3.125 22 4.5 22h13c1.375 0 2.5-1.125 2.5-2.5v-5c0-.281.219-.5.5-.5h1c.281 0 .5.219.5.5zM28 1v8c0 .547-.453 1-1 1a.99.99 0 0 1-.703-.297l-2.75-2.75L13.36 17.14c-.094.094-.234.156-.359.156s-.266-.063-.359-.156l-1.781-1.781c-.094-.094-.156-.234-.156-.359s.063-.266.156-.359L21.048 4.454l-2.75-2.75a.996.996 0 0 1-.297-.703c0-.547.453-1 1-1h8c.547 0 1 .453 1 1z"/></svg>
+                      </a>
+                  </li>
+                  <li>
+                      <a target="_blank" rel="noopener" href="https://bugzilla.mozilla.org/form.mdn">Report a bug
+                          <svg class="icon icon-external-link" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" aria-hidden="true"><path d="M22 14.5v5c0 2.484-2.016 4.5-4.5 4.5h-13A4.502 4.502 0 0 1 0 19.5v-13C0 4.016 2.016 2 4.5 2h11c.281 0 .5.219.5.5v1c0 .281-.219.5-.5.5h-11A2.507 2.507 0 0 0 2 6.5v13C2 20.875 3.125 22 4.5 22h13c1.375 0 2.5-1.125 2.5-2.5v-5c0-.281.219-.5.5-.5h1c.281 0 .5.219.5.5zM28 1v8c0 .547-.453 1-1 1a.99.99 0 0 1-.703-.297l-2.75-2.75L13.36 17.14c-.094.094-.234.156-.359.156s-.266-.063-.359-.156l-1.781-1.781c-.094-.094-.156-.234-.156-.359s.063-.266.156-.359L21.048 4.454l-2.75-2.75a.996.996 0 0 1-.297-.703c0-.547.453-1 1-1h8c.547 0 1 .453 1 1z"/></svg>
+                      </a>
+                  </li>
+                </ul>
+              </div>
+          </div>
+      </li>
+  </ul>
+</nav>
+        <div id="toolbox" class="toolbox">
+  <ul>
+    
+    <li class="nav-login"><div class="login">
+    
+        
+        <a href="https://developer.mozilla.org/users/github/login/?next=%2Fen-US%2Fdocs%2Ftag%2FElement" class="login-link js-login-link" data-service="GitHub" rel="nofollow">
+            Sign in<svg class="icon icon-github" xmlns="http://www.w3.org/2000/svg" width="24" height="28" viewBox="0 0 24 28" aria-label="GitHub" role="img" focusable="false">
+    <title>Github</title>
+    <path d="M12 2c6.625 0 12 5.375 12 12 0 5.297-3.437 9.797-8.203 11.391-.609.109-.828-.266-.828-.578 0-.391.016-1.687.016-3.297 0-1.125-.375-1.844-.812-2.219 2.672-.297 5.484-1.313 5.484-5.922 0-1.313-.469-2.375-1.234-3.219.125-.313.531-1.531-.125-3.187-1-.313-3.297 1.234-3.297 1.234a11.28 11.28 0 0 0-6 0S6.704 6.656 5.704 6.969c-.656 1.656-.25 2.875-.125 3.187-.766.844-1.234 1.906-1.234 3.219 0 4.594 2.797 5.625 5.469 5.922-.344.313-.656.844-.766 1.609-.688.313-2.438.844-3.484-1-.656-1.141-1.844-1.234-1.844-1.234-1.172-.016-.078.734-.078.734.781.359 1.328 1.75 1.328 1.75.703 2.141 4.047 1.422 4.047 1.422 0 1 .016 1.937.016 2.234 0 .313-.219.688-.828.578C3.439 23.796.002 19.296.002 13.999c0-6.625 5.375-12 12-12zM4.547 19.234c.031-.063-.016-.141-.109-.187-.094-.031-.172-.016-.203.031-.031.063.016.141.109.187.078.047.172.031.203-.031zm.484.532c.063-.047.047-.156-.031-.25-.078-.078-.187-.109-.25-.047-.063.047-.047.156.031.25.078.078.187.109.25.047zm.469.703c.078-.063.078-.187 0-.297-.063-.109-.187-.156-.266-.094-.078.047-.078.172 0 .281s.203.156.266.109zm.656.656c.063-.063.031-.203-.063-.297-.109-.109-.25-.125-.313-.047-.078.063-.047.203.063.297.109.109.25.125.313.047zm.891.391c.031-.094-.063-.203-.203-.25-.125-.031-.266.016-.297.109s.063.203.203.234c.125.047.266 0 .297-.094zm.984.078c0-.109-.125-.187-.266-.172-.141 0-.25.078-.25.172 0 .109.109.187.266.172.141 0 .25-.078.25-.172zm.906-.156c-.016-.094-.141-.156-.281-.141-.141.031-.234.125-.219.234.016.094.141.156.281.125s.234-.125.219-.219z"/>
+</svg>
+        </a>
+    
+</div></li>
+  </ul>
+</div>
+      </div>
+      <form id="nav-main-search" action="https://developer.mozilla.org/en-US/search" method="get" role="search" class="nav-main-search">
+  <div class="search-wrap">
+    <label for="main-q" class="offscreen">Search</label>
+    <input type="search" id="main-q" name="q" placeholder="Search" data-value="" value="" aria-hidden="true" />
+    <span class="search-trigger">
+        <svg class="icon icon-search" xmlns="http://www.w3.org/2000/svg" width="26" height="28" viewBox="0 0 26 28" aria-hidden="true">
+    <path d="M18 13c0-3.859-3.141-7-7-7s-7 3.141-7 7 3.141 7 7 7 7-3.141 7-7zm8 13c0 1.094-.906 2-2 2a1.96 1.96 0 0 1-1.406-.594l-5.359-5.344a10.971 10.971 0 0 1-6.234 1.937c-6.078 0-11-4.922-11-11s4.922-11 11-11 11 4.922 11 11c0 2.219-.672 4.406-1.937 6.234l5.359 5.359c.359.359.578.875.578 1.406z"/>
+</svg>
+    </span>
+    <button type="submit" class="offscreen">Search</button>
+    <button type="button" id="close-header-search" class="close-header-search transparent">
+        <span class="offscreen">Close search</span>
+        <svg class="icon icon-close" xmlns="http://www.w3.org/2000/svg" width="22" height="28" viewBox="0 0 22 28" aria-hidden="true"><path d="M20.281 20.656c0 .391-.156.781-.438 1.062l-2.125 2.125c-.281.281-.672.438-1.062.438s-.781-.156-1.062-.438L11 19.249l-4.594 4.594c-.281.281-.672.438-1.062.438s-.781-.156-1.062-.438l-2.125-2.125c-.281-.281-.438-.672-.438-1.062s.156-.781.438-1.062L6.751 15l-4.594-4.594c-.281-.281-.438-.672-.438-1.062s.156-.781.438-1.062l2.125-2.125c.281-.281.672-.438 1.062-.438s.781.156 1.062.438L11 10.751l4.594-4.594c.281-.281.672-.438 1.062-.438s.781.156 1.062.438l2.125 2.125c.281.281.438.672.438 1.062s-.156.781-.438 1.062L15.249 15l4.594 4.594c.281.281.438.672.438 1.062z"/></svg>
+    </button>
+  </div>
+</form>
+    </header> 
+
+  <!-- Content will go here -->
+  <main id="content">
+      
+      <div class="center clear">
+      
+
+    <div id="document-list" class="boxed">
+      <h1>Articles tagged: Element</h1>
+      
+        
+  <ol class="pagination">
+  
+  
+  
+    <li class="selected">
+      <a href="https://developer.mozilla.org/en-US/docs/tag/Element?page=1">1</a>
+    </li>
+  
+    <li>
+      <a href="https://developer.mozilla.org/en-US/docs/tag/Element?page=2">2</a>
+    </li>
+  
+    <li>
+      <a href="https://developer.mozilla.org/en-US/docs/tag/Element?page=3">3</a>
+    </li>
+  
+    <li>
+      <a href="https://developer.mozilla.org/en-US/docs/tag/Element?page=4">4</a>
+    </li>
+  
+  
+  
+    <li class="next">
+      <a href="https://developer.mozilla.org/en-US/docs/tag/Element?page=2">
+        Next
+      </a>
+    </li>
+  
+  </ol>
+
+
+
+        <p>Found 351 documents</p>
+        <ul class="document-list">
+          
+            <li>
+              <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS/Selectors">Learn/CSS/Introduction_to_CSS/Selectors</a>
+                
+                  <small>In CSS, selectors are used to target the HTML elements on our web pages that we want to style....</small>
+                
+            </li>
+          
+            <li>
+              <a href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Getting_started">Learn/HTML/Introduction_to_HTML/Getting_started</a>
+                
+                  <small>You&#39;ve reached the end of the article — we hope you enjoyed your tour of the very basics of...</small>
+                
+            </li>
+          
+            <li>
+              <a href="https://developer.mozilla.org/en-US/docs/MDN/Contribute/Structures/Page_types/HTML_element_page_template">MDN/Contribute/Structures/Page_types/HTML_element_page_template</a>
+                
+                  <small>The summary paragraph — start by naming the element and saying what it does. This should ideally...</small>
+                
+            </li>
+          
+            <li>
+              <a href="https://developer.mozilla.org/en-US/docs/MDN/Contribute/Structures/Page_types/SVG_element_page_template">MDN/Contribute/Structures/Page_types/SVG_element_page_template</a>
+                
+                  <small>The summary paragraph — start by naming the element and saying what it does. This should ideally...</small>
+                
+            </li>
+          
+            <li>
+              <a href="https://developer.mozilla.org/en-US/docs/Mozilla/Tech/XUL/tabbrowser">Mozilla/Tech/XUL/tabbrowser</a>
+                
+                  <small>This element is used for holding a set of read-only views of Web documents. It is similar to the...</small>
+                
+            </li>
+          
+            <li>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element">Web/API/Element</a>
+                
+                  <small>Element is the most general base class from which all objects in a Document inherit. It only has...</small>
+                
+            </li>
+          
+            <li>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/accessKey">Web/API/Element/accessKey</a>
+                
+                  <small>The Element.accessKey property sets the keystroke which a user can press to jump to a given element.</small>
+                
+            </li>
+          
+            <li>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/animate">Web/API/Element/animate</a>
+                
+                  <small>The Element interface&#39;s animate() method is a shortcut method which creates a new Animation,...</small>
+                
+            </li>
+          
+            <li>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/attachShadow">Web/API/Element/attachShadow</a>
+                
+                  <small>The Element.attachShadow() method attaches a shadow DOM tree to the specified element and...</small>
+                
+            </li>
+          
+            <li>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/attributes">Web/API/Element/attributes</a>
+                
+                  <small>The Element.attributes property returns a live collection of all attribute nodes registered to...</small>
+                
+            </li>
+          
+            <li>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/classList">Web/API/Element/classList</a>
+                
+                  <small>The Element.classList is a read-only property that returns a live DOMTokenList collection of the...</small>
+                
+            </li>
+          
+            <li>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/closest">Web/API/Element/closest</a>
+                
+                  <small>For browsers that do not support Element.closest(), but carry support for element.matches() (or...</small>
+                
+            </li>
+          
+            <li>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/computedStyleMap">Web/API/Element/computedStyleMap</a>
+                
+                  <small>The computedStyleMap() method of the Element interface returns a StylePropertyMapReadOnly...</small>
+                
+            </li>
+          
+            <li>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/createShadowRoot">Web/API/Element/createShadowRoot</a>
+                
+                  <small>Use Element.createShadowRoot to create an instance of shadow DOM. When shadow DOM is created, it...</small>
+                
+            </li>
+          
+            <li>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/getAttribute">Web/API/Element/getAttribute</a>
+                
+                  <small>The getAttribute() method of the Element interface returns the value of a specified attribute on...</small>
+                
+            </li>
+          
+            <li>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/getAttributeNames">Web/API/Element/getAttributeNames</a>
+                
+                  <small>The getAttributeNames() method of the Element interface returns the attribute names of the...</small>
+                
+            </li>
+          
+            <li>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/getAttributeNode">Web/API/Element/getAttributeNode</a>
+                
+                  <small>Returns the specified attribute of the specified element, as an Attr node.</small>
+                
+            </li>
+          
+            <li>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/getAttributeNS">Web/API/Element/getAttributeNS</a>
+                
+                  <small>The getAttributeNS() method of the Element interface returns the string value of the attribute...</small>
+                
+            </li>
+          
+            <li>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/getBoundingClientRect">Web/API/Element/getBoundingClientRect</a>
+                
+                  <small>The Element.getBoundingClientRect() method returns the size of an element and its position...</small>
+                
+            </li>
+          
+            <li>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/getClientRects">Web/API/Element/getClientRects</a>
+                
+                  <small>The getClientRects() method of the Element interface returns a collection of DOMRect objects...</small>
+                
+            </li>
+          
+            <li>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/getElementsByClassName">Web/API/Element/getElementsByClassName</a>
+                
+                  <small>The Element method getElementsByClassName() returns a live HTMLCollection which contains every...</small>
+                
+            </li>
+          
+            <li>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/getElementsByTagName">Web/API/Element/getElementsByTagName</a>
+                
+                  <small>The Element.getElementsByTagName() method returns a live HTMLCollection of elements with the...</small>
+                
+            </li>
+          
+            <li>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/getElementsByTagNameNS">Web/API/Element/getElementsByTagNameNS</a>
+                
+                  <small>The Element.getElementsByTagNameNS() method returns a live HTMLCollection of elements with the...</small>
+                
+            </li>
+          
+            <li>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/hasAttribute">Web/API/Element/hasAttribute</a>
+                
+                  <small>The Element.hasAttribute() method returns a Boolean value indicating whether the specified...</small>
+                
+            </li>
+          
+            <li>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/hasAttributeNS">Web/API/Element/hasAttributeNS</a>
+                
+                  <small>hasAttributeNS returns a boolean value indicating whether the current element has the specified...</small>
+                
+            </li>
+          
+            <li>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/hasAttributes">Web/API/Element/hasAttributes</a>
+                
+                  <small>The hasAttributes() method of the Element interface returns a Boolean indicating whether the...</small>
+                
+            </li>
+          
+            <li>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/hasPointerCapture">Web/API/Element/hasPointerCapture</a>
+                
+                  <small>The hasPointerCapture() method of the Element interface sets whether the element on which it is...</small>
+                
+            </li>
+          
+            <li>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/id">Web/API/Element/id</a>
+                
+                  <small>The id property of the Element interface represents the element&#39;s identifier, reflecting the id...</small>
+                
+            </li>
+          
+            <li>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/innerHTML">Web/API/Element/innerHTML</a>
+                
+                  <small>The Element property innerHTML gets or sets the HTML or XML markup contained within the element.</small>
+                
+            </li>
+          
+            <li>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/insertAdjacentElement">Web/API/Element/insertAdjacentElement</a>
+                
+                  <small>The insertAdjacentElement() method of the Element interface inserts a given element node at a...</small>
+                
+            </li>
+          
+            <li>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/insertAdjacentHTML">Web/API/Element/insertAdjacentHTML</a>
+                
+                  <small>The insertAdjacentHTML() method of the Element interface parses the specified text as HTML or...</small>
+                
+            </li>
+          
+            <li>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/insertAdjacentText">Web/API/Element/insertAdjacentText</a>
+                
+                  <small>The insertAdjacentText() method of the Element interface inserts a given text node at a given...</small>
+                
+            </li>
+          
+            <li>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/matches">Web/API/Element/matches</a>
+                
+                  <small>The matches() method of the Element interface returns true if the element would be selected by...</small>
+                
+            </li>
+          
+            <li>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/name">Web/API/Element/name</a>
+                
+                  <small>name gets or sets the name property of an element in the DOM. It only applies to the following...</small>
+                
+            </li>
+          
+            <li>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/onfullscreenchange">Web/API/Element/onfullscreenchange</a>
+                
+                  <small>The Element interface&#39;s onfullscreenchange property is an event handler for the fullscreenchange...</small>
+                
+            </li>
+          
+            <li>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/onfullscreenerror">Web/API/Element/onfullscreenerror</a>
+                
+                  <small>The Element interface&#39;s onfullscreenerror property is an event handler for the fullscreenerror...</small>
+                
+            </li>
+          
+            <li>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/openOrClosedShadowRoot">Web/API/Element/openOrClosedShadowRoot</a>
+                
+                  <small>The Element.openOrCloseShadowRoot read-only property represents the shadow root hosted by the...</small>
+                
+            </li>
+          
+            <li>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/outerHTML">Web/API/Element/outerHTML</a>
+                
+                  <small>The outerHTML attribute of the Element DOM interface gets the serialized HTML fragment...</small>
+                
+            </li>
+          
+            <li>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/querySelector">Web/API/Element/querySelector</a>
+                
+                  <small>The querySelector() method of the Element interface returns the first element that is a...</small>
+                
+            </li>
+          
+            <li>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/querySelectorAll">Web/API/Element/querySelectorAll</a>
+                
+                  <small>The Element method querySelectorAll() returns a static (not live) NodeList representing a list...</small>
+                
+            </li>
+          
+            <li>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/releasePointerCapture">Web/API/Element/releasePointerCapture</a>
+                
+                  <small>The releasePointerCapture() method of the Element interface releases (stops) pointer capture...</small>
+                
+            </li>
+          
+            <li>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/removeAttribute">Web/API/Element/removeAttribute</a>
+                
+                  <small>The Element method removeAttribute() removes the attribute with the specified name from the element.</small>
+                
+            </li>
+          
+            <li>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/removeAttributeNode">Web/API/Element/removeAttributeNode</a>
+                
+                  <small>The removeAttributeNode() method of the Element object removes the specified attribute from the...</small>
+                
+            </li>
+          
+            <li>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/removeAttributeNS">Web/API/Element/removeAttributeNS</a>
+                
+                  <small>The removeAttributeNS() method of the Element interface removes the specified attribute from an element.</small>
+                
+            </li>
+          
+            <li>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/requestFullScreen">Web/API/Element/requestFullScreen</a>
+                
+                  <small>The Element.requestFullscreen() method issues an asynchronous request to make the element be...</small>
+                
+            </li>
+          
+            <li>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/scroll">Web/API/Element/scroll</a>
+                
+                  <small>The scroll() method of the Element interface scrolls the element to a particular set of...</small>
+                
+            </li>
+          
+            <li>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollBy">Web/API/Element/scrollBy</a>
+                
+                  <small>The scrollBy() method of the Element interface scrolls an element by the given amount.</small>
+                
+            </li>
+          
+            <li>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollIntoView">Web/API/Element/scrollIntoView</a>
+                
+                  <small>The element may not be scrolled completely to the top or bottom depending on the layout of other...</small>
+                
+            </li>
+          
+            <li>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollIntoViewIfNeeded">Web/API/Element/scrollIntoViewIfNeeded</a>
+                
+                  <small>The Element.scrollIntoViewIfNeeded() method scrolls the current element into the visible area of...</small>
+                
+            </li>
+          
+            <li>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollLeftMax">Web/API/Element/scrollLeftMax</a>
+                
+                  <small>The Element.scrollLeftMax read-only property returns a Number representing the maximum left...</small>
+                
+            </li>
+          
+            <li>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollTo">Web/API/Element/scrollTo</a>
+                
+                  <small>The scrollTo() method of the Element interface scrolls to a particular set of coordinates inside...</small>
+                
+            </li>
+          
+            <li>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollTopMax">Web/API/Element/scrollTopMax</a>
+                
+                  <small>The Element.scrollTopMax read-only property returns a Number representing the maximum top scroll...</small>
+                
+            </li>
+          
+            <li>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/setAttribute">Web/API/Element/setAttribute</a>
+                
+                  <small>Sets the value of an attribute on the specified element. If the attribute already exists, the...</small>
+                
+            </li>
+          
+            <li>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/setAttributeNode">Web/API/Element/setAttributeNode</a>
+                
+                  <small>The setAttributeNode() method adds a new Attr node to the specified element.</small>
+                
+            </li>
+          
+            <li>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/setAttributeNodeNS">Web/API/Element/setAttributeNodeNS</a>
+                
+                  <small>setAttributeNodeNS adds a new namespaced attribute node to an element.</small>
+                
+            </li>
+          
+            <li>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/setAttributeNS">Web/API/Element/setAttributeNS</a>
+                
+                  <small>setAttributeNS adds a new attribute or changes the value of an attribute with the given...</small>
+                
+            </li>
+          
+            <li>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/setCapture">Web/API/Element/setCapture</a>
+                
+                  <small>Call this method during the handling of a mousedown event to retarget all mouse events to this...</small>
+                
+            </li>
+          
+            <li>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/setPointerCapture">Web/API/Element/setPointerCapture</a>
+                
+                  <small>The setPointerCapture() method of the Element interface is used to designate a specific element...</small>
+                
+            </li>
+          
+            <li>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/shadowRoot">Web/API/Element/shadowRoot</a>
+                
+                  <small>The Element.shadowRoot read-only property represents the shadow root hosted by the element.</small>
+                
+            </li>
+          
+            <li>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/slot">Web/API/Element/slot</a>
+                
+                  <small>The slot property of the Element interface returns the name of the shadow DOM slot the element...</small>
+                
+            </li>
+          
+            <li>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/tabStop">Web/API/Element/tabStop</a>
+                
+                  <small>The tabStop property of the Element interface returns a Boolean indicating if the element can...</small>
+                
+            </li>
+          
+            <li>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/tagName">Web/API/Element/tagName</a>
+                
+                  <small>The tagName read-only property of the Element interface returns the tag name of the element on...</small>
+                
+            </li>
+          
+            <li>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/toggleAttribute">Web/API/Element/toggleAttribute</a>
+                
+                  <small>The toggleAttribute() method of the Element interface toggles a Boolean attribute (removing it...</small>
+                
+            </li>
+          
+            <li>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onanimationcancel">Web/API/GlobalEventHandlers/onanimationcancel</a>
+                
+                  <small>The onanimationcancel property of the GlobalEventHandlers mixin is the EventHandler for...</small>
+                
+            </li>
+          
+            <li>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onanimationend">Web/API/GlobalEventHandlers/onanimationend</a>
+                
+                  <small>The onanimationend property of the GlobalEventHandlers mixin is the EventHandler for processing...</small>
+                
+            </li>
+          
+            <li>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onpointerdown">Web/API/GlobalEventHandlers/onpointerdown</a>
+                
+                  <small>The GlobalEventHandlers event handler onpointerdown is used to specify the event handler for the...</small>
+                
+            </li>
+          
+            <li>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/ontransitionend">Web/API/GlobalEventHandlers/ontransitionend</a>
+                
+                  <small>The ontransitionend property of the GlobalEventHandlers mixin is an EventHandler that processes...</small>
+                
+            </li>
+          
+            <li>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/contextMenu">Web/API/HTMLElement/contextMenu</a>
+                
+                  <small></small>
+                
+            </li>
+          
+            <li>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/hidden">Web/API/HTMLElement/hidden</a>
+                
+                  <small>The HTMLElement property hidden is a Boolean which is true if the element is hidden; otherwise...</small>
+                
+            </li>
+          
+            <li>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLLinkElement/as">Web/API/HTMLLinkElement/as</a>
+                
+                  <small>The as property of the HTMLLinkElement interface returns a DOMString representing the type of...</small>
+                
+            </li>
+          
+            <li>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/load">Web/API/HTMLMediaElement/load</a>
+                
+                  <small>The HTMLMediaElement method load() resets the media element to its initial state and begins the...</small>
+                
+            </li>
+          
+            <li>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserverEntry/target">Web/API/IntersectionObserverEntry/target</a>
+                
+                  <small>The IntersectionObserverEntry interface&#39;s read-only target property indicates which targeted...</small>
+                
+            </li>
+          
+            <li>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Date_and_time_formats">Web/HTML/Date_and_time_formats</a>
+                
+                  <small>Certain HTML elements use date and/or time values. The formats of the strings that specify these...</small>
+                
+            </li>
+          
+            <li>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element">Web/HTML/Element</a>
+                
+                  <small>This page lists all the HTML elements, which are created using tags.</small>
+                
+            </li>
+          
+            <li>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a">Web/HTML/Element/a</a>
+                
+                  <small>The HTML a element (or anchor element) creates a hyperlink to other web pages, files, locations...</small>
+                
+            </li>
+          
+            <li>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/abbr">Web/HTML/Element/abbr</a>
+                
+                  <small>The HTML Abbreviation element (abbr) represents an abbreviation or acronym; the optional title...</small>
+                
+            </li>
+          
+            <li>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/acronym">Web/HTML/Element/acronym</a>
+                
+                  <small>The HTML Acronym Element (acronym) allows authors to clearly indicate a sequence of characters...</small>
+                
+            </li>
+          
+            <li>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/address">Web/HTML/Element/address</a>
+                
+                  <small>The HTML address element indicates that the enclosed HTML provides contact information for a...</small>
+                
+            </li>
+          
+            <li>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/applet">Web/HTML/Element/applet</a>
+                
+                  <small>The obsolete HTML Applet Element (applet) embeds a Java applet into the document; this element...</small>
+                
+            </li>
+          
+            <li>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/area">Web/HTML/Element/area</a>
+                
+                  <small>The HTML area element defines a hot-spot region on an image, and optionally associates it with a...</small>
+                
+            </li>
+          
+            <li>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/article">Web/HTML/Element/article</a>
+                
+                  <small>The HTML article element represents a self-contained composition in a document, page,...</small>
+                
+            </li>
+          
+            <li>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/aside">Web/HTML/Element/aside</a>
+                
+                  <small>The HTML aside element represents a portion of a document whose content is only indirectly...</small>
+                
+            </li>
+          
+            <li>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/audio">Web/HTML/Element/audio</a>
+                
+                  <small>The HTML audio element is used to embed sound content in documents. It may contain one or more...</small>
+                
+            </li>
+          
+            <li>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/b">Web/HTML/Element/b</a>
+                
+                  <small>The HTML Bring Attention To element (b)  is used to draw the reader&#39;s attention to the element&#39;s...</small>
+                
+            </li>
+          
+            <li>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base">Web/HTML/Element/base</a>
+                
+                  <small>The HTML base element specifies the base URL to use for all relative URLs contained within a...</small>
+                
+            </li>
+          
+            <li>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/basefont">Web/HTML/Element/basefont</a>
+                
+                  <small>The obsolete HTML Base Font element (basefont) sets a default font face, size, and color for the...</small>
+                
+            </li>
+          
+            <li>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/bdi">Web/HTML/Element/bdi</a>
+                
+                  <small>The HTML Bidirectional Isolate element (bdi)  tells the browser&#39;s bidirectional algorithm to...</small>
+                
+            </li>
+          
+            <li>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/bdo">Web/HTML/Element/bdo</a>
+                
+                  <small>The HTML Bidirectional Text Override element (bdo) overrides the current directionality of text,...</small>
+                
+            </li>
+          
+            <li>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/bgsound">Web/HTML/Element/bgsound</a>
+                
+                  <small>The Internet Explorer only HTML Background Sound element (bgsound) sets up a sound file to play...</small>
+                
+            </li>
+          
+            <li>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/big">Web/HTML/Element/big</a>
+                
+                  <small>The obsolete HTML Big Element (big) renders the enclosed text at a font size one level larger...</small>
+                
+            </li>
+          
+            <li>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/blink">Web/HTML/Element/blink</a>
+                
+                  <small>The HTML Blink Element (blink) is a non-standard element which causes the enclosed text to flash slowly.</small>
+                
+            </li>
+          
+            <li>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/blockquote">Web/HTML/Element/blockquote</a>
+                
+                  <small>The HTML blockquote Element (or HTML Block Quotation Element) indicates that the enclosed text...</small>
+                
+            </li>
+          
+            <li>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/body">Web/HTML/Element/body</a>
+                
+                  <small>The HTML body Element represents the content of an HTML document. There can be only one body...</small>
+                
+            </li>
+          
+            <li>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/br">Web/HTML/Element/br</a>
+                
+                  <small>The HTML br element produces a line break in text (carriage-return). It is useful for writing a...</small>
+                
+            </li>
+          
+            <li>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button">Web/HTML/Element/button</a>
+                
+                  <small>The HTML button element represents a clickable button, which can be used in forms or anywhere in...</small>
+                
+            </li>
+          
+            <li>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/canvas">Web/HTML/Element/canvas</a>
+                
+                  <small>Use the HTML canvas element with either the canvas scripting API or the WebGL API to draw...</small>
+                
+            </li>
+          
+            <li>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/caption">Web/HTML/Element/caption</a>
+                
+                  <small>The HTML Table Caption element (caption) specifies the caption (or title) of a table, and if...</small>
+                
+            </li>
+          
+            <li>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/center">Web/HTML/Element/center</a>
+                
+                  <small>The obsolete HTML Center Element (center) is a block-level element that displays its block-level...</small>
+                
+            </li>
+          
+            <li>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/cite">Web/HTML/Element/cite</a>
+                
+                  <small>The HTML Citation element (cite) is used to describe a reference to a cited creative work, and...</small>
+                
+            </li>
+          
+            <li>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/code">Web/HTML/Element/code</a>
+                
+                  <small>The HTML code element displays its contents styled in a fashion intended to indicate that the...</small>
+                
+            </li>
+          
+        </ul>
+        
+  <ol class="pagination">
+  
+  
+  
+    <li class="selected">
+      <a href="https://developer.mozilla.org/en-US/docs/tag/Element?page=1">1</a>
+    </li>
+  
+    <li>
+      <a href="https://developer.mozilla.org/en-US/docs/tag/Element?page=2">2</a>
+    </li>
+  
+    <li>
+      <a href="https://developer.mozilla.org/en-US/docs/tag/Element?page=3">3</a>
+    </li>
+  
+    <li>
+      <a href="https://developer.mozilla.org/en-US/docs/tag/Element?page=4">4</a>
+    </li>
+  
+  
+  
+    <li class="next">
+      <a href="https://developer.mozilla.org/en-US/docs/tag/Element?page=2">
+        Next
+      </a>
+    </li>
+  
+  </ol>
+
+
+
+      
+    </div>
+
+
+      </div>
+  </main>
+  <!-- Footer -->
+    <footer id="nav-footer" class="nav-footer">
+      <div class="center">
+          <a href="https://developer.mozilla.org/en-US/" class="nav-footer-logo">MDN Web Docs</a>
+<div class="footer-group footer-group-mdn">
+  <h2 class="footer-title">MDN</h2>
+  <ul class="footer-list">
+    <li><a href="https://developer.mozilla.org/en-US/docs/Web">Web Technologies</a></li>
+    <li><a href="https://developer.mozilla.org/en-US/docs/Learn">Learn Web Development</a></li>
+    <li><a href="https://developer.mozilla.org/docs/MDN/About">About MDN</a></li>
+    <li><a href="https://developer.mozilla.org/en-US/docs/MDN/Feedback">Feedback</a></li>
+    <li class="footer-social">
+        <a href="https://twitter.com/mozdevnet">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-twitter" width="26" height="28" viewBox="0 0 26 28" aria-label="Twitter" role="img" focusable="false">
+    <title>Twitter</title>
+    <path d="M25.312 6.375a10.85 10.85 0 0 1-2.531 2.609c.016.219.016.438.016.656 0 6.672-5.078 14.359-14.359 14.359-2.859 0-5.516-.828-7.75-2.266.406.047.797.063 1.219.063 2.359 0 4.531-.797 6.266-2.156a5.056 5.056 0 0 1-4.719-3.5c.313.047.625.078.953.078.453 0 .906-.063 1.328-.172a5.048 5.048 0 0 1-4.047-4.953v-.063a5.093 5.093 0 0 0 2.281.641 5.044 5.044 0 0 1-2.25-4.203c0-.938.25-1.797.688-2.547a14.344 14.344 0 0 0 10.406 5.281 5.708 5.708 0 0 1-.125-1.156 5.045 5.045 0 0 1 5.047-5.047 5.03 5.03 0 0 1 3.687 1.594 9.943 9.943 0 0 0 3.203-1.219 5.032 5.032 0 0 1-2.219 2.781c1.016-.109 2-.391 2.906-.781z"></path>
+</svg>
+        </a>
+    </li>
+    <li class="footer-social">
+        <a href="https://github.com/mdn/">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-github" width="24" height="28" viewBox="0 0 24 28" aria-label="GitHub" role="img" focusable="false">
+    <title>GitHub</title>
+    <path d="M12 2c6.625 0 12 5.375 12 12 0 5.297-3.437 9.797-8.203 11.391-.609.109-.828-.266-.828-.578 0-.391.016-1.687.016-3.297 0-1.125-.375-1.844-.812-2.219 2.672-.297 5.484-1.313 5.484-5.922 0-1.313-.469-2.375-1.234-3.219.125-.313.531-1.531-.125-3.187-1-.313-3.297 1.234-3.297 1.234a11.28 11.28 0 0 0-6 0S6.704 6.656 5.704 6.969c-.656 1.656-.25 2.875-.125 3.187-.766.844-1.234 1.906-1.234 3.219 0 4.594 2.797 5.625 5.469 5.922-.344.313-.656.844-.766 1.609-.688.313-2.438.844-3.484-1-.656-1.141-1.844-1.234-1.844-1.234-1.172-.016-.078.734-.078.734.781.359 1.328 1.75 1.328 1.75.703 2.141 4.047 1.422 4.047 1.422 0 1 .016 1.937.016 2.234 0 .313-.219.688-.828.578C3.439 23.796.002 19.296.002 13.999c0-6.625 5.375-12 12-12zM4.547 19.234c.031-.063-.016-.141-.109-.187-.094-.031-.172-.016-.203.031-.031.063.016.141.109.187.078.047.172.031.203-.031zm.484.532c.063-.047.047-.156-.031-.25-.078-.078-.187-.109-.25-.047-.063.047-.047.156.031.25.078.078.187.109.25.047zm.469.703c.078-.063.078-.187 0-.297-.063-.109-.187-.156-.266-.094-.078.047-.078.172 0 .281s.203.156.266.109zm.656.656c.063-.063.031-.203-.063-.297-.109-.109-.25-.125-.313-.047-.078.063-.047.203.063.297.109.109.25.125.313.047zm.891.391c.031-.094-.063-.203-.203-.25-.125-.031-.266.016-.297.109s.063.203.203.234c.125.047.266 0 .297-.094zm.984.078c0-.109-.125-.187-.266-.172-.141 0-.25.078-.25.172 0 .109.109.187.266.172.141 0 .25-.078.25-.172zm.906-.156c-.016-.094-.141-.156-.281-.141-.141.031-.234.125-.219.234.016.094.141.156.281.125s.234-.125.219-.219z"></path>
+</svg>
+        </a>
+    </li>
+  </ul>
+</div>
+
+          <a href="https://mozilla.org/" class="nav-footer-mozilla">Mozilla</a>
+<div class="footer-group footer-group-mozilla">
+  <h2 class="footer-title">Mozilla</h2>
+  <ul class="footer-list">
+    <li><a href="https://www.mozilla.org/about/">About</a></li>
+    <li><a href="https://www.mozilla.org/contact/">Contact Us</a></li>
+    <li><a href="https://www.mozilla.org/firefox/?utm_source=developer.mozilla.org&amp;utm_campaign=footer&amp;utm_medium=referral">Firefox</a></li>
+    <li class="footer-social">
+        <a href="https://twitter.com/mozilla">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-twitter" width="26" height="28" viewBox="0 0 26 28" aria-label="Twitter" role="img" focusable="false">
+    <title>Twitter</title>
+    <path d="M25.312 6.375a10.85 10.85 0 0 1-2.531 2.609c.016.219.016.438.016.656 0 6.672-5.078 14.359-14.359 14.359-2.859 0-5.516-.828-7.75-2.266.406.047.797.063 1.219.063 2.359 0 4.531-.797 6.266-2.156a5.056 5.056 0 0 1-4.719-3.5c.313.047.625.078.953.078.453 0 .906-.063 1.328-.172a5.048 5.048 0 0 1-4.047-4.953v-.063a5.093 5.093 0 0 0 2.281.641 5.044 5.044 0 0 1-2.25-4.203c0-.938.25-1.797.688-2.547a14.344 14.344 0 0 0 10.406 5.281 5.708 5.708 0 0 1-.125-1.156 5.045 5.045 0 0 1 5.047-5.047 5.03 5.03 0 0 1 3.687 1.594 9.943 9.943 0 0 0 3.203-1.219 5.032 5.032 0 0 1-2.219 2.781c1.016-.109 2-.391 2.906-.781z"></path>
+</svg>
+        </a>
+    </li>
+    <li class="footer-social">
+        <a href="https://www.facebook.com/mozilla">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-facebook" width="16" height="28" viewBox="0 0 16 28" aria-label="Facebook" role="img" focusable="false">
+    <title>Facebook</title>
+    <path d="M14.984.187v4.125h-2.453c-1.922 0-2.281.922-2.281 2.25v2.953h4.578l-.609 4.625H10.25v11.859H5.469V14.14H1.485V9.515h3.984V6.109C5.469 2.156 7.891 0 11.422 0c1.687 0 3.141.125 3.563.187z"></path>
+</svg>
+        </a>
+    </li>
+    <li class="footer-social">
+        <a href="https://www.instagram.com/mozillagram/">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-instagram" width="24" height="28" viewBox="0 0 24 28" aria-label="Instagram" role="img" focusable="false">
+    <title>Instagram</title>
+    <path d="M16 14c0-2.203-1.797-4-4-4s-4 1.797-4 4 1.797 4 4 4 4-1.797 4-4zm2.156 0c0 3.406-2.75 6.156-6.156 6.156S5.844 17.406 5.844 14 8.594 7.844 12 7.844s6.156 2.75 6.156 6.156zm1.688-6.406c0 .797-.641 1.437-1.437 1.437S16.97 8.39 16.97 7.594s.641-1.437 1.437-1.437 1.437.641 1.437 1.437zM12 4.156c-1.75 0-5.5-.141-7.078.484-.547.219-.953.484-1.375.906s-.688.828-.906 1.375c-.625 1.578-.484 5.328-.484 7.078s-.141 5.5.484 7.078c.219.547.484.953.906 1.375s.828.688 1.375.906c1.578.625 5.328.484 7.078.484s5.5.141 7.078-.484c.547-.219.953-.484 1.375-.906s.688-.828.906-1.375c.625-1.578.484-5.328.484-7.078s.141-5.5-.484-7.078c-.219-.547-.484-.953-.906-1.375s-.828-.688-1.375-.906C17.5 4.015 13.75 4.156 12 4.156zM24 14c0 1.656.016 3.297-.078 4.953-.094 1.922-.531 3.625-1.937 5.031s-3.109 1.844-5.031 1.937c-1.656.094-3.297.078-4.953.078s-3.297.016-4.953-.078c-1.922-.094-3.625-.531-5.031-1.937S.173 20.875.08 18.953C-.014 17.297.002 15.656.002 14s-.016-3.297.078-4.953c.094-1.922.531-3.625 1.937-5.031s3.109-1.844 5.031-1.937c1.656-.094 3.297-.078 4.953-.078s3.297-.016 4.953.078c1.922.094 3.625.531 5.031 1.937s1.844 3.109 1.937 5.031C24.016 10.703 24 12.344 24 14z"></path>
+</svg>
+        </a>
+    </li>
+  </ul>
+</div>
+
+          
+            
+
+<form class="languages go" method="get" action="#">
+  <label for="language">Other languages:</label>
+  
+  <select id="language" class="autosubmit" name="lang">
+    <option title="English (US)" data-locale="en-US" value="en-US">
+      English (US) (en-US)
+    </option>
+    
+        <option title="Afrikaans" data-locale="af" value="af">
+          Afrikaans (af)
+        </option>
+      
+        <option title="Arabic" data-locale="ar" value="ar">
+          عربي (ar)
+        </option>
+      
+        <option title="Azerbaijani" data-locale="az" value="az">
+          Azərbaycanca (az)
+        </option>
+      
+        <option title="Bulgarian" data-locale="bg" value="bg">
+          Български (bg)
+        </option>
+      
+        <option title="Bambara" data-locale="bm" value="bm">
+          Bamanankan (bm)
+        </option>
+      
+        <option title="Bengali (Bangladesh)" data-locale="bn-BD" value="bn-BD">
+          বাংলা (বাংলাদেশ) (bn-BD)
+        </option>
+      
+        <option title="Bengali (India)" data-locale="bn-IN" value="bn-IN">
+          বাংলা (ভারত) (bn-IN)
+        </option>
+      
+        <option title="Catalan" data-locale="ca" value="ca">
+          Català (ca)
+        </option>
+      
+        <option title="Czech" data-locale="cs" value="cs">
+          Čeština (cs)
+        </option>
+      
+        <option title="German" data-locale="de" value="de">
+          Deutsch (de)
+        </option>
+      
+        <option title="Ewe" data-locale="ee" value="ee">
+          Eʋe (ee)
+        </option>
+      
+        <option title="Greek" data-locale="el" value="el">
+          Ελληνικά (el)
+        </option>
+      
+        <option title="Spanish" data-locale="es" value="es">
+          Español (es)
+        </option>
+      
+        <option title="Persian" data-locale="fa" value="fa">
+          فارسی (fa)
+        </option>
+      
+        <option title="Fulah" data-locale="ff" value="ff">
+          Pulaar-Fulfulde (ff)
+        </option>
+      
+        <option title="Finnish" data-locale="fi" value="fi">
+          suomi (fi)
+        </option>
+      
+        <option title="French" data-locale="fr" value="fr">
+          Français (fr)
+        </option>
+      
+        <option title="Frisian" data-locale="fy-NL" value="fy-NL">
+          Frysk (fy-NL)
+        </option>
+      
+        <option title="Irish" data-locale="ga-IE" value="ga-IE">
+          Gaeilge (ga-IE)
+        </option>
+      
+        <option title="Hausa" data-locale="ha" value="ha">
+          Hausa (ha)
+        </option>
+      
+        <option title="Hebrew" data-locale="he" value="he">
+          עברית (he)
+        </option>
+      
+        <option title="Hindi (India)" data-locale="hi-IN" value="hi-IN">
+          हिन्दी (भारत) (hi-IN)
+        </option>
+      
+        <option title="Croatian" data-locale="hr" value="hr">
+          Hrvatski (hr)
+        </option>
+      
+        <option title="Hungarian" data-locale="hu" value="hu">
+          magyar (hu)
+        </option>
+      
+        <option title="Indonesian" data-locale="id" value="id">
+          Bahasa Indonesia (id)
+        </option>
+      
+        <option title="Igbo" data-locale="ig" value="ig">
+          Igbo (ig)
+        </option>
+      
+        <option title="Italian" data-locale="it" value="it">
+          Italiano (it)
+        </option>
+      
+        <option title="Japanese" data-locale="ja" value="ja">
+          日本語 (ja)
+        </option>
+      
+        <option title="Georgian" data-locale="ka" value="ka">
+          ქართული (ka)
+        </option>
+      
+        <option title="Kabyle" data-locale="kab" value="kab">
+          Taqbaylit (kab)
+        </option>
+      
+        <option title="Korean" data-locale="ko" value="ko">
+          한국어 (ko)
+        </option>
+      
+        <option title="Lingala" data-locale="ln" value="ln">
+          Lingála (ln)
+        </option>
+      
+        <option title="Malagasy" data-locale="mg" value="mg">
+          Malagasy (mg)
+        </option>
+      
+        <option title="Malayalam" data-locale="ml" value="ml">
+          മലയാളം (ml)
+        </option>
+      
+        <option title="Malay" data-locale="ms" value="ms">
+          Melayu (ms)
+        </option>
+      
+        <option title="Burmese" data-locale="my" value="my">
+          မြန်မာဘာသာ (my)
+        </option>
+      
+        <option title="Dutch" data-locale="nl" value="nl">
+          Nederlands (nl)
+        </option>
+      
+        <option title="Polish" data-locale="pl" value="pl">
+          Polski (pl)
+        </option>
+      
+        <option title="Portuguese (Brazilian)" data-locale="pt-BR" value="pt-BR">
+          Português (do Brasil) (pt-BR)
+        </option>
+      
+        <option title="Portuguese (Portugal)" data-locale="pt-PT" value="pt-PT">
+          Português (Europeu) (pt-PT)
+        </option>
+      
+        <option title="Romanian" data-locale="ro" value="ro">
+          Română (ro)
+        </option>
+      
+        <option title="Russian" data-locale="ru" value="ru">
+          Русский (ru)
+        </option>
+      
+        <option title="Songhai" data-locale="son" value="son">
+          Soŋay (son)
+        </option>
+      
+        <option title="Albanian" data-locale="sq" value="sq">
+          Shqip (sq)
+        </option>
+      
+        <option title="Serbian" data-locale="sr" value="sr">
+          Српски (sr)
+        </option>
+      
+        <option title="Serbian" data-locale="sr-Latn" value="sr-Latn">
+          Srpski (sr-Latn)
+        </option>
+      
+        <option title="Swedish" data-locale="sv-SE" value="sv-SE">
+          Svenska (sv-SE)
+        </option>
+      
+        <option title="Swahili" data-locale="sw" value="sw">
+          Kiswahili (sw)
+        </option>
+      
+        <option title="Tamil" data-locale="ta" value="ta">
+          தமிழ் (ta)
+        </option>
+      
+        <option title="Telugu" data-locale="te" value="te">
+          తెలుగు (te)
+        </option>
+      
+        <option title="Thai" data-locale="th" value="th">
+          ไทย (th)
+        </option>
+      
+        <option title="Tagalog" data-locale="tl" value="tl">
+          Tagalog (tl)
+        </option>
+      
+        <option title="Tswana" data-locale="tn" value="tn">
+          Setswana (tn)
+        </option>
+      
+        <option title="Turkish" data-locale="tr" value="tr">
+          Türkçe (tr)
+        </option>
+      
+        <option title="Ukrainian" data-locale="uk" value="uk">
+          Українська (uk)
+        </option>
+      
+        <option title="Vietnamese" data-locale="vi" value="vi">
+          Tiếng Việt (vi)
+        </option>
+      
+        <option title="Wolof" data-locale="wo" value="wo">
+          Wolof (wo)
+        </option>
+      
+        <option title="Xhosa" data-locale="xh" value="xh">
+          isiXhosa (xh)
+        </option>
+      
+        <option title="Yoruba" data-locale="yo" value="yo">
+          Yorùbá (yo)
+        </option>
+      
+        <option title="Chinese (Simplified)" data-locale="zh-CN" value="zh-CN">
+          中文 (简体) (zh-CN)
+        </option>
+      
+        <option title="Chinese (Traditional)" data-locale="zh-TW" value="zh-TW">
+          正體中文 (繁體) (zh-TW)
+        </option>
+      
+        <option title="Zulu" data-locale="zu" value="zu">
+          isiZulu (zu)
+        </option>
+      
+  </select>
+  <noscript><button type="submit">Go</button></noscript>
+</form>
+          
+
+          
+            <ul class="footer-tos">
+              <li><a href="https://www.mozilla.org/about/legal/terms/mozilla">Terms</a></li>
+              <li><a href="https://www.mozilla.org/privacy/websites/">Privacy</a></li>
+              <li><a href="https://www.mozilla.org/privacy/websites/#cookies">Cookies</a></li>
+            </ul>
+
+            <div id="license" class="contentinfo">
+              <p>&copy; 2005-2019 Mozilla and individual contributors.</p> <p>Content is available under <a href="https://developer.mozilla.org/en-US/docs/MDN/About#Copyrights_and_licenses">these licenses</a>.</p>
+            </div>
+          
+      </div>
+    </footer> 
+
+  <!-- site js -->
+  
+    
+    <!--[if lte IE 8]><script type="text/javascript" src="https://developer.mozilla.org/static/build/js/selectivizr.8bb9e662e963.js" charset="utf-8"></script><![endif]-->
+
+    
+    <script src="https://developer.mozilla.org/static/jsi18n/en-US/javascript.414b87adc480.js"></script>
+    <script type="text/javascript" src="https://developer.mozilla.org/static/build/js/main.0ed22a584ec2.js" charset="utf-8"></script>
+    <script>
+    if (window.mdn && mdn.analytics) mdn.analytics.trackOutboundLinks();
+  </script>
+    
+  
+    <script async type="text/javascript" src="https://developer.mozilla.org/static/build/js/wiki.6d974031a430.js" charset="utf-8"></script>
+
+
+  
+</body>
+
+<!-- Mirrored from developer.mozilla.org/en-US/docs/tag/Element by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 12 Mar 2019 08:39:12 GMT -->
+</html>

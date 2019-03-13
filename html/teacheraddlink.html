@@ -7,6 +7,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/teacheraddlink.css">
 
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -60,19 +61,19 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 <div class="w3-top">
   <div class="w3-bar w3-red w3-card w3-left-align w3-large">
     <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Home</a>
-    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">About Us</a>
- 	<a href="#" class="w3-bar-item w3-button w3-padding-large w3-white">Student Portal</a>
-    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Teacher Portal</a>
-    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">FAQ</a>
-    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Contact Us </div>
+    <a href="/html/aboutpage.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">About Us</a>
+    <a href="/html/gradepage.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Student Portal</a>
+    <a href="/html/teacheraddlink.html" class="w3-bar-item w3-button w3-padding-large w3-white">Teacher Portal</a>
+    <a href="/html/games.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Games</a>
+    <a href="/html/faq.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">FAQ</a>
+    <a href="/html/contactpage.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Contact Us </div>
 
   <!-- Navbar on small screens -->
   <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
-    <a href="#" class="w3-bar-item w3-button w3-padding-large">About Us</a>
-    <a href="#" class="w3-bar-item w3-button w3-padding-large">Student Portal</a>
-    <a href="#" class="w3-bar-item w3-button w3-padding-large">Teacher Portal</a>
-    <a href="#" class="w3-bar-item w3-button w3-padding-large">Contact Us</a>
+    <a href="aboutpage.html" class="w3-bar-item w3-button w3-padding-large">About Us</a>
+    <a href="gradepage.html" class="w3-bar-item w3-button w3-padding-large">Student Portal</a>
+    <a href="teacheraddlink.html" class="w3-bar-item w3-button w3-padding-large">Teacher Portal</a>
+    <a href="contactpage.html" class="w3-bar-item w3-button w3-padding-large">Contact Us</a>
   </div>
 </div>
 
@@ -83,92 +84,109 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 </header>
 
 <!-- First Grid -->
-<div class="w3-row-padding w3-padding-64 w3-container">
-  <div class="w3-content">
-    <div class="w3-center">
-      <h1>Add Link</h1>
-      <label>Page Name</label>
-      <input type = "text"
-             id = "myText"
-             value = "Enter Page Name" />
-	  <p>
-          <label>Page Description</label>
-          <textarea>Enter Page Description</textarea>
-               
-      </p>  
-      <p>
-      	   <label>Link</label>
-      	   <input type = "text"
-           		id = "myText"
-             	value = "Enter URL" />
-      </p>
-   	  <h5 class="w3-padding-32">
-</h5>
-	<button class="accordion">Grade Level</button>
-		<div class="panel">
-			<button class="button">1st</button>
-			<button class="button">2nd</button>
-			<button class="button">3rd</button>
-			<button class="button">4th</button>
-            <button class="button">5th</button>
-
-		</div>
-
-	<button class="accordion">Subject</button>
-		<div class="panel">
-			<button class="button">Math</button>
-			<button class="button">History</button>
-			<button class="button">Science</button>
 
 
-		</div>
 
-    </div>
+  <div id="form_container">
+    <h1 id="title">Add Link to Download</h1>
+    <form>
+      <div id="input_display">
+        <div id="name">
+          <p >Page Title:<input type="text" id="page_title" placeholder="Page Title" ></p>
+        </div>
+        <div id="date">
+            <p>Due Date:<input type="date" id="due_date" name="page_due_date" /></p>
+          </div>
+      </div>
+    
+      <div id="url">
+        <p>URL:<input type="text" id="page_URL" placeholder="URL" /></p>
+      </div>
+      <div class="checkboxes">
+        <p>Grade:</p>
+        <label>
+          <input type="checkbox" name="Grade" value="Grade_1">First Grade
+        </label>
+        <label>
+          <input type="checkbox" name="Grade" value="Grade_2">Second Grade
+        </label>
+        <label>
+          <input type="checkbox" name="Grade" value="Grade_3">Third Grade
+        </label>
+        <label>
+          <input type="checkbox" name="Grade" value="Grade_4">Fourth Grade
+        </label>
+        <label>
+          <input type="checkbox" name="Grade" value="Grade_5">Fifth Grade
+        </label>
+        <label>
+          <input type="checkbox" name="Grade" value="Grade_6">Sixth Grade
+        </label>
+      </div>
+      <div class="checkboxes">
+        <p>Subject:</p>
+        <label>
+          <input type="checkbox" name="subject" value="math">Math
+        </label>
+        <label>
+          <input type="checkbox" name="subject" value="reading">Reading
+        </label>
+        <label>
+          <input type="checkbox" name="subject" value="science">Science
+        </label>
+      </div>
+      <div>
+        <p>Page Description:</p>
+        <input type="text" id="page_description" placeholder="Page Description"/>
+      </div>
+    </form>
+    <button class="button" onclick="download()" id="download_btn">Add to Queue</button>
   </div>
-</div>
+</body>
 
-<div class="w3-container w3-black w3-center w3-opacity w3-padding-64">
-</div>
-
-<!-- Footer -->
-<footer class="w3-container w3-padding-64 w3-center w3-opacity">  
-  <div class="w3-xlarge w3-padding-32">
-    <i class="fa fa-facebook-official w3-hover-opacity"></i>
-    <i class="fa fa-instagram w3-hover-opacity"></i>
-    <i class="fa fa-snapchat w3-hover-opacity"></i>
-    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-    <i class="fa fa-twitter w3-hover-opacity"></i>
-    <i class="fa fa-linkedin w3-hover-opacity"></i>
- </div>
- <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
-</footer>
-
+<script src="/JS_Libraries/axios.js"></script>
 <script>
-// Used to toggle the menu on small screens when clicking on the menu button
-function myFunction() {
-  var x = document.getElementById("navDemo");
-  if (x.className.indexOf("w3-show") == -1) {
-    x.className += " w3-show";
-  } else { 
-    x.className = x.className.replace(" w3-show", "");
-  }
-}
 
-var acc = document.getElementsByClassName("accordion");
-var i;
+  function download() {
+    var title = document.getElementById("page_title").value;
+    var url = document.getElementById("page_URL").value;
+    var dueDate = document.getElementById("due_date").value;
+    var description = document.getElementById("page_description").value;
 
-for (i = 0; i < acc.length; i++) {
-  acc[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    var panel = this.nextElementSibling;
-    if (panel.style.display === "block") {
-      panel.style.display = "none";
-    } else {
-      panel.style.display = "block";
+
+    var grades = [];
+    document.getElementsByName("Grade").forEach(function(elem) {
+      if ( elem.checked ) {
+        grades.push(elem.value);
+      }
+    });
+
+    var subjects = [];
+    document.getElementsByName("subject").forEach(function(elem) {
+      if ( elem.checked ) {
+        subjects.push(elem.value);
+      }
+    });
+
+    /** CHANGE NAME TO TEACHER NAME WHEN ACCOUNTS ARE SET UP**/
+    var downloadRequest = {};
+    downloadRequest[title] = {
+        name: title,
+        url: url,
+        grades: grades,
+        subjects: subjects,
+        dueDate: dueDate,
+        description: description,
+        time: new Date()
     }
-  });
-}
+
+    axios.post('/api/download', downloadRequest).then(function(res) {
+        console.log("POST RESPONSE:", res);
+    }).catch(function(err) {
+        console.err(err);
+    })
+    
+  }
 </script>
 
-</body>
 </html>

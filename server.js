@@ -18,11 +18,12 @@ http.listen(3000, function(){
 
 /** Serving pages */
 app.get('/', function(req, res){
-  res.sendFile(__dirname + '/html/downloadPage.html');
+  res.sendFile(__dirname + '/html/aboutpage.html');
 });
 
-app.get('/gradepage', function(req, res) {
-  res.sendFile(__dirname + '/html/gradepage.html');
+app.get('/html/*', function(req, res) {
+  // serving all regular pages
+  res.sendFile(__dirname + req.url);  
 })
 
 /** Serving CSS */
@@ -31,12 +32,13 @@ app.get('/css/*', function(req, res) {
 })
 
 /** Serving JS */
-app.get('/axios', function(req, res) {
-  res.sendFile(__dirname + "/JS_Libraries/axios.js");
+app.get('/JS_Libraries/*', function(req, res) {
+  res.sendFile(__dirname + req.url);
 })
 
-/** Serving downloaded sites */
+/** Serving Display page */
 app.get('/list/*', function(req, res) {
+  // Serving download display page
   fs.readFile("JSON/files.json", (err, data) => {
     if ( err ) {
       console.error("ERROR ACCESSING FILES (JSON/files.json):"+ err)
@@ -86,18 +88,39 @@ app.get('/list/*', function(req, res) {
         }
       }
     })
-
-    res.render('displayPage', { 
-      title: grade + " Grade Links",
-      math: math,
-      reading: reading,
-      science: science
-    })
+    if ( req.query.subject === 'math' ) {
+      res.render('displayPage', {
+        title: grade + " Grade Links",
+        subject: "Math",
+        links: math
+      })
+    }
+    else if ( req.query.subject === 'science' ) {
+      res.render('displayPage', {
+        title: grade + " Grade Links",
+        subject: "Science",
+        links: science
+      })
+    }
+    else if ( req.query.subject === 'reading' ) {
+      res.render('displayPage', {
+        title: grade + " Grade Links",
+        subject: "Reading",
+        links: reading
+      })
+    }
   })
 })
 
+/** Serving downloaded sites */
 app.get('/SITES/*', function(req, res) {
-  res.sendFile(__dirname + req.url.replace( /%20/g, ' '));
+  let parsed = req.url.replace( /%20/g, ' ');
+
+  let index = parsed.indexOf('?');
+  let url = ( index === -1 ) ? parsed : parsed.substring(0, parsed.indexOf('?'));
+
+  console.log("SERVING: ", parsed);
+  res.sendFile(__dirname + url);
 })
 
 
