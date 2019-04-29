@@ -16,10 +16,10 @@ http.listen(3000, function(){
 });
 
 
-open('http://localhost:3000', {app: 'firefox'});
+//open('http://localhost:3000', {app: 'firefox'});
 
 
-//open('http://localhost:3000');
+open('http://localhost:3000');
 
 app.get('/', function(req, res) {
   res.sendFile(__dirname + '/Source/downloadPage.html');

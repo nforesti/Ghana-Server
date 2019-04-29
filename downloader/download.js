@@ -1,13 +1,11 @@
 const shell = require('shelljs');
 const fs = require('fs');
+const utubedl = require('youtube-dl');
 
-function httrackWrap(data, updateAvailable) {
-    console.log("DATA:", data);
-    //shell.exec('httrack -r1 -%i '+url);
+const httrackWrap = (data, updateAvailable) => {
+    console.log("Static Page Download:", data);
     //-*p3 = save all files
-  
-    //shell.exec('httrack ' + url + '-O ./TESTSITES');
-  console.log("hi")
+
     /*** This likes to stall and take forever to download for -rN where N >= 2 ***/
     /* N controls the depth of the mirror (aka recursive depth) */
     shell.exec('httrack ' + data.url + ' -O ./CONTENT/\"' + data.name + '\" -r2 +*', {silent: true}, (avail = updateAvailable) => {
@@ -33,41 +31,19 @@ function httrackWrap(data, updateAvailable) {
     });
 }
   
+const youtubeDownloader = (data, updateAvailable) => {
+    console.log("Youtube Video Download");
 
-  
-//   app.get('/video', function(req, res) {
-//     const path = './myvideo.mp4'
-//     const stat = fs.statSync(path)
-//     const fileSize = stat.size
-//     const range = req.headers.range
-//     if (range) {
-//       const parts = range.replace(/bytes=/, "").split("-")
-//       const start = parseInt(parts[0], 10)
-//       const end = parts[1] 
-//         ? parseInt(parts[1], 10)
-//         : fileSize-1
-//       const chunksize = (end-start)+1
-//       const file = fs.createReadStream(path, {start, end})
-//       const head = {
-//         'Content-Range': `bytes ${start}-${end}/${fileSize}`,
-//         'Accept-Ranges': 'bytes',
-//         'Content-Length': chunksize,
-//         'Content-Type': 'video/mp4',
-//       }
-//       res.writeHead(206, head);
-//       file.pipe(res);
-//     } else {
-//       const head = {
-//         'Content-Length': fileSize,
-//         'Content-Type': 'video/mp4',
-//       }
-//       res.writeHead(200, head)
-//       fs.createReadStream(path).pipe(res)
-//     }
-//   });
-
-const youtubeDownloader = data => {
-    console.log("YOUTUBE DOWNLOADER");
+    var video = youtubedl(data.url, ['--format=18'], { cwd: __dirname });
+ 
+    // Will be called when the download starts.
+    video.on('info', function(info) {
+    console.log('Download started');
+    console.log('filename: ' + info._filename);
+    console.log('size: ' + info.size);
+    });
+    
+    video.pipe(fs.createWriteStream('myvideo.mp4'));
 }
 
 module.exports = {
