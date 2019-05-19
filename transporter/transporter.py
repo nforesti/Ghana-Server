@@ -1,5 +1,7 @@
 #!/usr/bin/env python
 
+# PYTHON3
+
 import time
 import json
 import pyudev
@@ -29,9 +31,14 @@ def checkDrive():
         print(os.listdir(src))
 
         if "files.json" in os.listdir(src):
-          print("hi")
           print()
           for f in os.listdir(src):
+            if f == "files.json":
+              with open(f) as filesUSB:
+                data = json.load(filesUSB)
+              with open(dest + "/files.json", 'r+') as sysFiles:
+                data.update(json.load(sysFiles))
+                json.dump(data, sysFiles)
             if f != "System Volume Information":
               # Perform more checking + combine json files
               shutil.copy2(src + "/" +  f, dest)
