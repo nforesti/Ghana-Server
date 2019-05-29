@@ -131,6 +131,8 @@ setInterval(() => {
       }
 
       queueDownload = JSON.parse(data);
+      queueDownload["complete"] = "Downoading"
+
       if ( Object.keys(queueDownload).length !== 0 ) {
         const key = Object.keys(queueDownload)[0];
         currDownload = queueDownload[key];

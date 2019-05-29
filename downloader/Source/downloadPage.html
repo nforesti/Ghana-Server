@@ -121,7 +121,8 @@
         subjects: subjects,
         dueDate: dueDate,
         description: description,
-        time: new Date()
+        time: new Date(),
+        complete: "-----"
     }
 
     axios.post('/api/download', downloadRequest).then(function(res) {
@@ -138,15 +139,15 @@
       update = ""
       for (var key in res.data[0]) {
         console.log("complete")
-        update += createDownloadProgressModule(res.data[0][key], new Date());
+        update += createDownloadProgressModule(res.data[0][key]);
       }
       for (var key in res.data[1]) {
         console.log("curr")
-        update += createDownloadProgressModule(res.data[1][key], "Downloading");
+        update += createDownloadProgressModule(res.data[1][key]);
       }
       for (var key in res.data[2]) {
         console.log("queue")
-        update += createDownloadProgressModule(res.data[2][key], "-----");
+        update += createDownloadProgressModule(res.data[2][key]);
       }
       document.getElementById("download_progress_contents").innerHTML = update;
     })
@@ -159,8 +160,11 @@
         "<a href=\"api/nav/" + data.url + "\">" + data.url + "</a>" +
       "</div>" +
       "<div class=\"queue_item_status\">" +
+        "<div>" + 
+          "<p>" + data.time + "</p>" +
+        "</div>" +
         "<div>" +
-          "<p>" + status + "</p>" +
+          "<p>" + data.complete + "</p>" +
         "</div>" +
       "</div>" +
     "</div>"
