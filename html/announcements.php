@@ -1,9 +1,8 @@
-<?php
-$myObj->name = "John";
-$myObj->age = 30;
-$myObj->city = "New York";
+<html>
+<body>
 
-$myJSON = json_encode($myObj);
+<?php echo $_POST["title"]; ?><br>
+<?php echo $_POST["content"]; ?>
 
-echo $myJSON;
-?>
+</body>
+</html>
