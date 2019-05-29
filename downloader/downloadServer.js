@@ -15,9 +15,11 @@ http.listen(3000, function(){
   console.log('listening on *:3000');
 });
 
+var queueDownload = {}
+var currDownload = {}
+var completedDownload = {}
 
 //open('http://localhost:3000', {app: 'firefox'});
-
 
 open('http://localhost:3000');
 
@@ -39,7 +41,6 @@ app.get('/axios', function(req, res) {
  */
 app.post('/api/download', function(req, res) {
   //res.setHeader("Access-Control-Allow-Origin", "*");
-console.log("REACHED");
   urlExists(req.body[Object.keys(req.body)[0]].url, (err, exists) => {
 
     var cont = true;
@@ -92,6 +93,28 @@ console.log("REACHED");
   })
 })
 
+app.get("/api/nav/*", function(req, res) {
+  res.statusCode = 302;
+  res.setHeader("Location", req.url.substring(9, req.url.length));
+  res.end();
+})
+
+app.get("/api/update", function(req, res) {
+  fs.readFile("JSON/files.json", (err, data) => {
+    if ( err ) {
+      console.error("ERROR ACCESSING FILES.JSON");
+      return;
+    }
+
+    completedDownload = JSON.parse(data);
+    fs.writeFileSync("JSON/files.json", JSON.stringify(completedDownload, null, 4))
+  })
+
+  res.statusCode = 200;
+  res.send([completedDownload, currDownload, queueDownload]);
+  res.end();
+})
+
 /**
  * Manages current download
  */
@@ -107,25 +130,25 @@ setInterval(() => {
         return;
       }
 
-      let queue = JSON.parse(data);
-      if ( Object.keys(queue).length !== 0 ) {
-        const key = Object.keys(queue)[0];
-        const val = queue[key];
+      queueDownload = JSON.parse(data);
+      if ( Object.keys(queueDownload).length !== 0 ) {
+        const key = Object.keys(queueDownload)[0];
+        currDownload = queueDownload[key];
 
         // Determine download type
-        if ( queue[key].url.indexOf("youtube") === -1 ) {
-          download.httrack(val, updateAvailable);
+        if ( queueDownload[key].url.indexOf("youtube") === -1 ) {
+          download.httrack(currDownload, updateAvailable);
         }
         else {
-          download.youtube(val, updateAvailable);
+          download.youtube(currDownload, updateAvailable);
         }
-        delete queue[key];
+        delete queueDownload[key];
         
-        fs.writeFileSync("JSON/downloadQueue.json", JSON.stringify(queue,null, 4));
+        fs.writeFileSync("JSON/downloadQueue.json", JSON.stringify(queueDownload,null, 4));
 
         available = {
           avail: false,
-          name: val.name
+          name: currDownload.name
         };
       }
     })
