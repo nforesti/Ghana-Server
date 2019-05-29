@@ -8,60 +8,83 @@
 </head>
 
 <body>
-  <div id="form_container">
-    <h1 id="title">Add Link to Download</h1>
-    <form>
-      <div id="input_display">
-        <div id="name">
-          <p >Page Title:<input type="text" id="page_title" placeholder="Page Title" ></p>
-        </div>
-        <div id="date">
-            <p>Due Date:<input type="date" id="due_date" name="page_due_date" /></p>
+  <div id="page_container">
+    <div id="form_container">
+      <h1 id="title">Add Link to Download</h1>
+      <form>
+        <div id="input_display">
+          <div id="name">
+            <p >Page Title:<input type="text" id="page_title" placeholder="Page Title" ></p>
           </div>
+          <div id="date">
+              <p>Due Date:<input type="date" id="due_date" name="page_due_date" /></p>
+            </div>
+        </div>
+      
+        <div id="url">
+          <p id="url-container">URL:<input type="text" id="page_URL" placeholder="URL" /></p>
+        </div>
+        <div class="checkboxes">
+          <p>Grade:</p>
+          <label>
+            <input type="checkbox" name="Grade" value="Grade_1">First Grade
+          </label>
+          <label>
+            <input type="checkbox" name="Grade" value="Grade_2">Second Grade
+          </label>
+          <label>
+            <input type="checkbox" name="Grade" value="Grade_3">Third Grade
+          </label>
+          <label>
+            <input type="checkbox" name="Grade" value="Grade_4">Fourth Grade
+          </label>
+          <label>
+            <input type="checkbox" name="Grade" value="Grade_5">Fifth Grade
+          </label>
+          <label>
+            <input type="checkbox" name="Grade" value="Grade_6">Sixth Grade
+          </label>
+        </div>
+        <div class="checkboxes">
+          <p>Subject:</p>
+          <label>
+            <input type="checkbox" name="subject" value="math">Math
+          </label>
+          <label>
+            <input type="checkbox" name="subject" value="reading">Reading
+          </label>
+          <label>
+            <input type="checkbox" name="subject" value="science">Science
+          </label>
+        </div>
+        <div>
+          <p>Page Description:</p>
+          <input type="text" id="page_description" placeholder="Page Description"/>
+        </div>
+      </form>
+      <button class="button" onclick="download()" id="download_btn">Add to Queue</button>
+    </div>
+    <div id="download_progress_container">
+      <h1 id="download_progress_title">Download Queue</h1>
+      <div id="download_progress_contents">
+
+        <div class="queue_item">
+          <div class="queue_item_details">
+            <h2>title</h2>
+            <a href="api/nav/https:/google.com">URL</a>
+          </div>
+          <div class="queue_item_status" id="">
+            <div>
+              <p>queued time</p>
+            </div>
+            <div>
+              <p>done time</p>
+            </div>
+          </div>
+        </div>
+
       </div>
-    
-      <div id="url">
-        <p>URL:<input type="text" id="page_URL" placeholder="URL" /></p>
-      </div>
-      <div class="checkboxes">
-        <p>Grade:</p>
-        <label>
-          <input type="checkbox" name="Grade" value="Grade_1">First Grade
-        </label>
-        <label>
-          <input type="checkbox" name="Grade" value="Grade_2">Second Grade
-        </label>
-        <label>
-          <input type="checkbox" name="Grade" value="Grade_3">Third Grade
-        </label>
-        <label>
-          <input type="checkbox" name="Grade" value="Grade_4">Fourth Grade
-        </label>
-        <label>
-          <input type="checkbox" name="Grade" value="Grade_5">Fifth Grade
-        </label>
-        <label>
-          <input type="checkbox" name="Grade" value="Grade_6">Sixth Grade
-        </label>
-      </div>
-      <div class="checkboxes">
-        <p>Subject:</p>
-        <label>
-          <input type="checkbox" name="subject" value="math">Math
-        </label>
-        <label>
-          <input type="checkbox" name="subject" value="reading">Reading
-        </label>
-        <label>
-          <input type="checkbox" name="subject" value="science">Science
-        </label>
-      </div>
-      <div>
-        <p>Page Description:</p>
-        <input type="text" id="page_description" placeholder="Page Description"/>
-      </div>
-    </form>
-    <button class="button" onclick="download()" id="download_btn">Add to Queue</button>
+    </div>
   </div>
 </body>
 
@@ -107,6 +130,41 @@
         console.err(err);
     })
     
+  }
+
+  setInterval(function() {
+    console.log("hi")
+    axios.get('/api/update').then(function(res) {
+      update = ""
+      for (var key in res.data[0]) {
+        console.log("complete")
+        update += createDownloadProgressModule(res.data[0][key], new Date());
+      }
+      for (var key in res.data[1]) {
+        console.log("curr")
+        update += createDownloadProgressModule(res.data[1][key], "Downloading");
+      }
+      for (var key in res.data[2]) {
+        console.log("queue")
+        update += createDownloadProgressModule(res.data[2][key], "-----");
+      }
+      document.getElementById("download_progress_contents").innerHTML = update;
+    })
+  }, 1500)
+
+  function createDownloadProgressModule(data, status) {
+    result = "<div class=\"queue_item\">" +
+      "<div class=\"queue_item_details\">" +
+        "<h2>" + data.name + "</h2>" +
+        "<a href=\"api/nav/" + data.url + "\">" + data.url + "</a>" +
+      "</div>" +
+      "<div class=\"queue_item_status\">" +
+        "<div>" +
+          "<p>" + status + "</p>" +
+        "</div>" +
+      "</div>" +
+    "</div>"
+    return result;
   }
 </script>
 
