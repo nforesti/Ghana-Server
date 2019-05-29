@@ -108,11 +108,20 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 
 <div style="padding: 20px">
     <h1 id="title">Add Home Page Announcements</h1>
-<form action="announcements.php" method="post" style="padding: 20px">
-  Announcement Title: <br><input type="text" name="title"><br>
-  Announcement Content: <br><input type="text" name="content"><br><br>
+<form action="javascript:announcements();" method="get" style="padding: 20px">
+  Announcement Title: <br><input id="title" type="text" name="title"><br>
+  Announcement Content: <br><input id="content" type="text" name="content"><br><br>
   <input type="submit" value="Submit">
+  <br>
+  Announcement: <input id="ann" type="text" disabled>
 </form>
+<br>
+<script>
+  function announcements()
+  {
+  document.getElementById('ann').value = parseInt(document.getElementById('title').value);
+  }
+  </script>
 </div>
 <!-- First Grid -->
 
