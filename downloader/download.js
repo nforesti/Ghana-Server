@@ -20,6 +20,7 @@ const httrackWrap = (data, updateAvailable) => {
 
             let tmp = {};
             // Object.assign(JSON.parse(data), NEW FILE PATH)
+            data["complete"] = new Date();
             tmp[data.name] = data;
             // INCLUDE FILE PATH
             fs.writeFileSync("JSON/files.json", 
