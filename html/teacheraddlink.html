@@ -108,115 +108,26 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 
 <div style="padding: 20px">
     <h1 id="title">Add Home Page Announcements</h1>
-<form action="announcements.php" method="get" style="padding: 20px">
-  Announcement Title: <br><input type="text" name="title"><br>
-  Announcement Content: <br><input type="text" name="content"><br><br>
+<form action="javascript:announcements();" method="get" style="padding: 20px">
+  Announcement Title: <br><input id="title" type="text" name="title"><br>
+  Announcement Content: <br><input id="content" type="text" name="content"><br><br>
   <input type="submit" value="Submit">
+  <br>
+  Announcement: <input id="ann" type="text" disabled>
 </form>
+<br>
+<script>
+  function announcements()
+  {
+  document.getElementById('ann').value = parseInt(document.getElementById('title').value);
+  }
+  </script>
 </div>
 <!-- First Grid -->
 
-  <div id="form_container" style="padding: 20px">
-    <h1 id="title">Add Link to Download</h1>
-    <form>
-      <div id="input_display">
-        <div id="name">
-          <p >Page Title:<input type="text" id="page_title" placeholder="Page Title" ></p>
-        </div>
-        <div id="date">
-            <p>Due Date:<input type="date" id="due_date" name="page_due_date" /></p>
-          </div>
-      </div>
-    
-      <div id="url">
-        <p>URL:<input type="text" id="page_URL" placeholder="URL" /></p>
-      </div>
-      <div class="checkboxes">
-        <p>Grade:</p>
-        <label>
-          <input type="checkbox" name="Grade" value="Grade_1">First Grade
-        </label>
-        <label>
-          <input type="checkbox" name="Grade" value="Grade_2">Second Grade
-        </label>
-        <label>
-          <input type="checkbox" name="Grade" value="Grade_3">Third Grade
-        </label>
-        <label>
-          <input type="checkbox" name="Grade" value="Grade_4">Fourth Grade
-        </label>
-        <label>
-          <input type="checkbox" name="Grade" value="Grade_5">Fifth Grade
-        </label>
-        <label>
-          <input type="checkbox" name="Grade" value="Grade_6">Sixth Grade
-        </label>
-      </div>
-      <div class="checkboxes">
-        <p>Subject:</p>
-        <label>
-          <input type="checkbox" name="subject" value="math">Math
-        </label>
-        <label>
-          <input type="checkbox" name="subject" value="reading">Reading
-        </label>
-        <label>
-          <input type="checkbox" name="subject" value="science">Science
-        </label>
-      </div>
-      <div>
-        <p>Page Description:</p>
-        <input type="text" id="page_description" placeholder="Page Description"/>
-      </div>
-    </form>
-    <button class="button" onclick="download()" id="download_btn">Add to Queue</button>
-  </div>
-</body>
-
-<script src="/JS_Libraries/axios.js"></script>
-<script>
-
-  function download() {
-    var title = document.getElementById("page_title").value;
-    var url = document.getElementById("page_URL").value;
-    var dueDate = document.getElementById("due_date").value;
-    var description = document.getElementById("page_description").value;
-
-
-    var grades = [];
-    document.getElementsByName("Grade").forEach(function(elem) {
-      if ( elem.checked ) {
-        grades.push(elem.value);
-      }
-    });
-
-    var subjects = [];
-    document.getElementsByName("subject").forEach(function(elem) {
-      if ( elem.checked ) {
-        subjects.push(elem.value);
-      }
-    });
-
-    /** CHANGE NAME TO TEACHER NAME WHEN ACCOUNTS ARE SET UP**/
-    var downloadRequest = {};
-    downloadRequest[title] = {
-        name: title,
-        url: url,
-        grades: grades,
-        subjects: subjects,
-        dueDate: dueDate,
-        description: description,
-        time: new Date()
-    }
-
-    axios.post('/api/download', downloadRequest).then(function(res) {
-        console.log("POST RESPONSE:", res);
-    }).catch(function(err) {
-        console.err(err);
-    })
-    
-  }
-</script>
+<div style="padding: 20px" class="buttonD" style="width: 50%">
+<button type="button">Downloader</button>
+</div>
 
 <!-- Footer -->
 <footer style="padding:1px 1px; background: rgb(31, 31, 37)" class="w3-container w3-center">  
