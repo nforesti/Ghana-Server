@@ -131,11 +131,12 @@ setInterval(() => {
       }
 
       queueDownload = JSON.parse(data);
-      queueDownload["complete"] = "Downoading"
 
       if ( Object.keys(queueDownload).length !== 0 ) {
         const key = Object.keys(queueDownload)[0];
         currDownload = queueDownload[key];
+
+        currDownload["complete"] = "Downloading"
 
         // Determine download type
         if ( queueDownload[key].url.indexOf("youtube") === -1 ) {
